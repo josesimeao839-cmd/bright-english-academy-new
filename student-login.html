@@ -22,87 +22,56 @@
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f8ff;
-    color:#17233c;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
     min-height:100vh;
-}
-
-/* NAVIGATION */
-
-nav{
-    background:white;
-    box-shadow:0 3px 18px rgba(0,0,0,.08);
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    padding:15px 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    text-decoration:none;
-    color:#0757c9;
-
-    font-size:20px;
-    font-weight:800;
-}
-
-.logo-icon{
-    width:42px;
-    height:42px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:12px;
 
     background:
-        linear-gradient(
-            135deg,
-            #0757c9,
-            #13a6e8
-        );
+    linear-gradient(
+        135deg,
+        #eef6ff,
+        #f7fbff
+    );
 
-    color:white;
-    font-size:22px;
-}
-
-.back{
-    text-decoration:none;
-    color:#0757c9;
-    font-weight:bold;
-}
-
-/* MAIN */
-
-main{
-    min-height:calc(100vh - 75px);
+    color:#17233c;
 
     display:flex;
-    justify-content:center;
+
     align-items:center;
 
-    padding:40px 20px;
+    justify-content:center;
+
+    padding:20px;
+
 }
 
-.login-card{
+
+/* =========================
+   CONTAINER
+========================= */
+
+.login-container{
+
     width:100%;
+
     max-width:460px;
+
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.login-card{
 
     background:white;
 
-    padding:40px;
+    padding:35px;
 
     border-radius:22px;
 
@@ -110,112 +79,196 @@ main{
 
     box-shadow:
         0 15px 45px
-        rgba(20,53,100,.10);
+        rgba(20,53,100,.12);
+
 }
 
-.icon{
-    width:75px;
-    height:75px;
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+
+.logo-icon{
+
+    width:65px;
+
+    height:65px;
+
+    margin:0 auto 12px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
-    margin:0 auto 18px;
+    border-radius:18px;
 
-    border-radius:20px;
+    background:
+        linear-gradient(
+            135deg,
+            #0757c9,
+            #13a6e8
+        );
 
-    background:#e8f5ff;
+    color:white;
 
-    font-size:38px;
+    font-size:34px;
+
 }
 
-h1{
-    text-align:center;
+
+.logo h1{
+
     color:#0757c9;
-    margin-bottom:8px;
+
+    font-size:25px;
+
+    margin-bottom:5px;
+
 }
 
-.subtitle{
-    text-align:center;
+
+.logo p{
+
     color:#64748b;
-    margin-bottom:28px;
+
+    font-size:14px;
+
 }
 
-/* FORM */
 
-.form-group{
-    margin-bottom:20px;
-}
+/* =========================
+   TABS
+========================= */
 
-label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:7px;
-}
+.tabs{
 
-input{
-    width:100%;
+    display:grid;
 
-    padding:14px;
+    grid-template-columns:1fr 1fr;
 
-    border:1px solid #ccd7e7;
+    gap:8px;
+
+    background:#eef4fb;
+
+    padding:5px;
 
     border-radius:10px;
 
-    font-size:15px;
+    margin-bottom:25px;
 
-    outline:none;
 }
 
-input:focus{
+
+.tab{
+
+    border:none;
+
+    padding:11px;
+
+    border-radius:8px;
+
+    background:transparent;
+
+    color:#64748b;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}
+
+
+.tab.active{
+
+    background:white;
+
+    color:#0757c9;
+
+    box-shadow:
+        0 2px 8px
+        rgba(20,53,100,.08);
+
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group{
+
+    margin-bottom:17px;
+
+}
+
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    color:#17233c;
+
+}
+
+
+.form-group input{
+
+    width:100%;
+
+    padding:13px 14px;
+
+    border:1px solid #d5dfeb;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.2s;
+
+}
+
+
+.form-group input:focus{
+
     border-color:#0757c9;
 
     box-shadow:
         0 0 0 3px
         rgba(7,87,201,.10);
+
 }
 
-/* PASSWORD */
 
-.password-box{
-    position:relative;
+/* =========================
+   MAIN BUTTON
+========================= */
+
+.main-btn{
+
     width:100%;
-}
-
-.password-box input{
-    padding-right:55px;
-}
-
-.show-password{
-    position:absolute;
-
-    right:8px;
-    top:50%;
-
-    transform:translateY(-50%);
 
     border:none;
 
-    background:transparent;
-
-    cursor:pointer;
-
-    font-size:20px;
-
-    padding:5px;
-
-    line-height:1;
-}
-
-/* LOGIN BUTTON */
-
-.login-btn{
-    width:100%;
-
-    border:0;
-
-    padding:15px;
+    padding:14px;
 
     border-radius:10px;
 
@@ -228,115 +281,162 @@ input:focus{
 
     color:white;
 
-    font-size:17px;
+    font-size:16px;
 
     font-weight:bold;
 
     cursor:pointer;
 
     margin-top:5px;
+
 }
 
-.login-btn:hover{
-    opacity:.92;
+
+.main-btn:hover{
+
+    opacity:.93;
+
 }
 
-/* MESSAGE */
+
+.main-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
 
 .message{
+
     display:none;
 
-    margin-top:18px;
+    padding:12px;
 
-    padding:14px;
+    border-radius:9px;
 
-    border-radius:10px;
+    margin-bottom:18px;
 
-    text-align:center;
+    font-size:14px;
 
     font-weight:bold;
+
 }
 
-.error{
+
+.message.success{
+
+    display:block;
+
+    background:#e8f7ee;
+
+    color:#147844;
+
+}
+
+
+.message.error{
+
+    display:block;
+
     background:#fff0f0;
 
     color:#c62828;
 
-    border:1px solid #f0bcbc;
 }
 
-.success{
-    background:#e9f8ef;
 
-    color:#138a4b;
+.message.info{
 
-    border:1px solid #b9e2ca;
+    display:block;
+
+    background:#eaf3ff;
+
+    color:#0757c9;
+
 }
 
-/* LINKS */
 
-.register-link{
+/* =========================
+   BACK
+========================= */
+
+.back-link{
+
+    display:block;
+
     text-align:center;
 
-    margin-top:23px;
+    margin-top:20px;
 
-    color:#64748b;
-}
-
-.register-link a{
     color:#0757c9;
+
+    text-decoration:none;
 
     font-weight:bold;
 
-    text-decoration:none;
+    font-size:14px;
+
 }
 
-.info{
-    margin-top:25px;
 
-    padding:16px;
+.back-link:hover{
 
-    border-radius:12px;
+    text-decoration:underline;
 
-    background:#f4f8ff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    text-align:center;
+
+    margin-top:18px;
 
     color:#64748b;
 
-    font-size:13px;
+    font-size:12px;
 
-    text-align:center;
 }
 
-/* FOOTER */
 
-footer{
-    background:#17233c;
+.footer strong{
 
-    color:white;
+    color:#0757c9;
 
-    text-align:center;
-
-    padding:25px 15px;
 }
 
-footer strong{
-    color:#58c7ff;
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden{
+
+    display:none;
+
 }
 
-.creator{
-    margin-top:7px;
-}
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:550px){
+@media(max-width:500px){
 
     .login-card{
-        padding:28px 20px;
-    }
 
-    .logo{
-        font-size:16px;
+        padding:25px 20px;
+
     }
 
 }
@@ -349,113 +449,121 @@ footer strong{
 <body>
 
 
-<!-- NAVIGATION -->
+<div class="login-container">
 
-<nav>
-
-<div class="nav-container">
-
-<a href="index.html"
-   class="logo">
-
-<span class="logo-icon">
-📚
-</span>
-
-Bright English Academy
-
-</a>
-
-<a href="index.html"
-   class="back">
-
-← Home
-
-</a>
-
-</div>
-
-</nav>
-
-
-<!-- LOGIN -->
-
-<main>
 
 <div class="login-card">
 
 
-<div class="icon">
-🔐
-</div>
+<!-- =========================
+     LOGO
+========================= -->
 
+<div class="logo">
+
+<div class="logo-icon">
+📚
+</div>
 
 <h1>
-Student Login
+Bright English Academy
 </h1>
 
-
-<p class="subtitle">
-
-Welcome back!
-
-Log in to continue learning English.
-
+<p>
+Speak English with Confidence
 </p>
-
-
-<form id="loginForm">
-
-
-<div class="form-group">
-
-<label for="username">
-Username or Email
-</label>
-
-<input
-type="text"
-id="username"
-placeholder="Enter your username or email"
-required>
 
 </div>
 
 
-<div class="form-group">
+<!-- =========================
+     TABS
+========================= -->
 
-<label for="password">
-Password
-</label>
-
-<div class="password-box">
-
-<input
-type="password"
-id="password"
-placeholder="Enter your password"
-required>
+<div class="tabs">
 
 <button
-type="button"
-class="show-password"
-onclick="togglePassword('password', this)"
-title="Show password">
+id="loginTab"
+class="tab active"
+onclick="showLogin()">
 
-👁️
+Login
+
+</button>
+
+
+<button
+id="registerTab"
+class="tab"
+onclick="showRegister()">
+
+Register
 
 </button>
 
 </div>
 
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
+<div
+id="message"
+class="message">
+
+</div>
+
+
+<!-- =========================
+     LOGIN FORM
+========================= -->
+
+<form
+id="loginForm"
+onsubmit="loginStudent(event)">
+
+
+<div class="form-group">
+
+<label for="loginEmail">
+
+Email
+
+</label>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="loginPassword">
+
+Password
+
+</label>
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Enter your password"
+required>
+
 </div>
 
 
 <button
-type="submit"
-class="login-btn">
+id="loginButton"
+class="main-btn"
+type="submit">
 
-🚀 Login to My Account
+🔐 Login
 
 </button>
 
@@ -463,45 +571,112 @@ class="login-btn">
 </form>
 
 
-<div id="message"
-     class="message">
+<!-- =========================
+     REGISTER FORM
+========================= -->
+
+<form
+id="registerForm"
+class="hidden"
+onsubmit="registerStudent(event)">
+
+
+<div class="form-group">
+
+<label for="registerName">
+
+Full Name
+
+</label>
+
+<input
+type="text"
+id="registerName"
+placeholder="Enter your full name"
+required>
+
 </div>
 
 
-<div class="register-link">
+<div class="form-group">
 
-Don't have an account?
+<label for="registerEmail">
 
-<a href="student-register.html">
+Email
 
-Create Account
+</label>
+
+<input
+type="email"
+id="registerEmail"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="registerPassword">
+
+Password
+
+</label>
+
+<input
+type="password"
+id="registerPassword"
+placeholder="Create a password"
+minlength="6"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="registerPassword2">
+
+Confirm Password
+
+</label>
+
+<input
+type="password"
+id="registerPassword2"
+placeholder="Repeat your password"
+minlength="6"
+required>
+
+</div>
+
+
+<button
+id="registerButton"
+class="main-btn"
+type="submit">
+
+📝 Create Student Account
+
+</button>
+
+
+</form>
+
+
+<a
+href="index.html"
+class="back-link">
+
+← Back to Bright English Academy
 
 </a>
 
-</div>
-
-
-<div class="info">
-
-📊 Your lessons, exercises,
-quizzes and progress will be
-available in your student dashboard.
-
-<br><br>
-
-🔐 Keep your login information private.
 
 </div>
 
 
-</div>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
+<div class="footer">
 
 <p>
 
@@ -512,165 +687,800 @@ Bright English Academy
 </p>
 
 <p>
-Speak English with Confidence
+Created by José Simeão
 </p>
 
-<p class="creator">
+</div>
 
-👤 Created by
 
-<strong>
-José Simeão
-</strong>
+</div>
 
-</p>
 
-</footer>
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
 <script>
 
-/* SHOW / HIDE PASSWORD */
+/* =====================================================
+   SUPABASE CONFIGURATION
+===================================================== */
 
-function togglePassword(inputId, button){
-
-    const input =
-        document.getElementById(inputId);
+const SUPABASE_URL =
+    "https://yvdadrqimaavubqcxned.supabase.co";
 
 
-    if(input.type === "password"){
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W4";
 
-        input.type = "text";
 
-        button.textContent = "🙈";
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY,
+        {
+            auth:{
+                autoRefreshToken:true,
+                persistSession:true,
+                detectSessionInUrl:true
+            }
+        }
+    );
 
-        button.title = "Hide password";
 
-    }else{
+/* =====================================================
+   MESSAGE SYSTEM
+===================================================== */
 
-        input.type = "password";
+function showMessage(
+    text,
+    type
+){
 
-        button.textContent = "👁️";
+    const message =
+        document.getElementById(
+            "message"
+        );
 
-        button.title = "Show password";
+
+    message.textContent =
+        text;
+
+
+    message.className =
+        "message " + type;
+
+}
+
+
+/* =====================================================
+   LOGIN TAB
+===================================================== */
+
+function showLogin(){
+
+    document.getElementById(
+        "loginForm"
+    ).classList.remove(
+        "hidden"
+    );
+
+
+    document.getElementById(
+        "registerForm"
+    ).classList.add(
+        "hidden"
+    );
+
+
+    document.getElementById(
+        "loginTab"
+    ).classList.add(
+        "active"
+    );
+
+
+    document.getElementById(
+        "registerTab"
+    ).classList.remove(
+        "active"
+    );
+
+
+    showMessage(
+        "",
+        ""
+    );
+
+}
+
+
+/* =====================================================
+   REGISTER TAB
+===================================================== */
+
+function showRegister(){
+
+    document.getElementById(
+        "registerForm"
+    ).classList.remove(
+        "hidden"
+    );
+
+
+    document.getElementById(
+        "loginForm"
+    ).classList.add(
+        "hidden"
+    );
+
+
+    document.getElementById(
+        "registerTab"
+    ).classList.add(
+        "active"
+    );
+
+
+    document.getElementById(
+        "loginTab"
+    ).classList.remove(
+        "active"
+    );
+
+
+    showMessage(
+        "",
+        ""
+    );
+
+}
+
+
+/* =====================================================
+   REGISTER STUDENT
+===================================================== */
+
+async function registerStudent(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById(
+            "registerName"
+        ).value.trim();
+
+
+    const email =
+        document.getElementById(
+            "registerEmail"
+        ).value.trim();
+
+
+    const password =
+        document.getElementById(
+            "registerPassword"
+        ).value;
+
+
+    const password2 =
+        document.getElementById(
+            "registerPassword2"
+        ).value;
+
+
+    if(password !== password2){
+
+        showMessage(
+            "❌ The passwords do not match.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    if(password.length < 6){
+
+        showMessage(
+            "❌ Password must contain at least 6 characters.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const button =
+        document.getElementById(
+            "registerButton"
+        );
+
+
+    button.disabled = true;
+
+    button.textContent =
+        "Creating account...";
+
+
+    showMessage(
+        "⏳ Creating your student account...",
+        "info"
+    );
+
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+        await supabaseClient.auth.signUp({
+
+            email:email,
+
+            password:password,
+
+            options:{
+
+                data:{
+
+                    full_name:name
+
+                }
+
+            }
+
+        });
+
+
+        if(error){
+
+            throw error;
+
+        }
+
+
+        /*
+         * Supabase may require email confirmation.
+         * If confirmation is disabled, a session
+         * may already exist.
+         */
+
+
+        if(data.user){
+
+            /*
+             * Create profile when a session
+             * is available.
+             */
+
+            if(data.session){
+
+                const {
+                    error:profileError
+                } =
+                await supabaseClient
+                    .from("profiles")
+                    .upsert({
+
+                        id:data.user.id,
+
+                        full_name:name,
+
+                        role:"student"
+
+                    });
+
+
+                if(profileError){
+
+                    console.error(
+                        profileError
+                    );
+
+                }
+
+            }
+
+
+            if(data.session){
+
+                showMessage(
+                    "✅ Account created! Opening your dashboard...",
+                    "success"
+                );
+
+
+                localStorage.setItem(
+                    "brightAcademyLoggedIn",
+                    "true"
+                );
+
+
+                localStorage.setItem(
+                    "brightAcademyStudent",
+                    JSON.stringify({
+
+                        id:data.user.id,
+
+                        fullname:name,
+
+                        email:email
+
+                    })
+                );
+
+
+                setTimeout(
+                    function(){
+
+                        window.location.href =
+                            "student-dashboard.html";
+
+                    },
+                    1000
+                );
+
+
+            }
+            else{
+
+                showMessage(
+                    "✅ Account created! Check your email to confirm your account, then return here and log in.",
+                    "success"
+                );
+
+
+                document.getElementById(
+                    "registerForm"
+                ).reset();
+
+            }
+
+        }
+
+    }
+    catch(error){
+
+        console.error(
+            "Registration error:",
+            error
+        );
+
+
+        showMessage(
+            "❌ " +
+            getFriendlyError(
+                error
+            ),
+            "error"
+        );
+
+    }
+    finally{
+
+        button.disabled = false;
+
+        button.textContent =
+            "📝 Create Student Account";
 
     }
 
 }
 
 
-/* LOGIN */
+/* =====================================================
+   LOGIN STUDENT
+===================================================== */
 
-const form =
-    document.getElementById("loginForm");
-
-const message =
-    document.getElementById("message");
-
-
-form.addEventListener(
-"submit",
-function(event){
+async function loginStudent(event){
 
     event.preventDefault();
 
 
-    const username =
-        document
-        .getElementById("username")
-        .value
-        .trim();
+    const email =
+        document.getElementById(
+            "loginEmail"
+        ).value.trim();
 
 
     const password =
-        document
-        .getElementById("password")
-        .value;
+        document.getElementById(
+            "loginPassword"
+        ).value;
 
 
-    const savedStudent =
-        localStorage.getItem(
-            "brightAcademyStudent"
+    const button =
+        document.getElementById(
+            "loginButton"
         );
 
 
-    message.className =
-        "message";
+    button.disabled = true;
+
+    button.textContent =
+        "Logging in...";
 
 
-    if(!savedStudent){
+    showMessage(
+        "⏳ Checking your account...",
+        "info"
+    );
 
-        message.classList.add("error");
 
-        message.textContent =
-            "❌ No student account was found. Please create an account first.";
+    try{
 
-        message.style.display =
-            "block";
+        const {
+            data,
+            error
+        } =
+        await supabaseClient.auth.signInWithPassword({
 
-        return;
+            email:email,
+
+            password:password
+
+        });
+
+
+        if(error){
+
+            throw error;
+
+        }
+
+
+        if(!data.user){
+
+            throw new Error(
+                "Unable to find your account."
+            );
+
+        }
+
+
+        /*
+         * Get profile from database.
+         */
+
+        let profile = null;
+
+
+        const {
+            data:profileData,
+            error:profileError
+        } =
+        await supabaseClient
+            .from("profiles")
+            .select(
+                "id, full_name, role"
+            )
+            .eq(
+                "id",
+                data.user.id
+            )
+            .maybeSingle();
+
+
+        if(profileError){
+
+            console.error(
+                profileError
+            );
+
+        }
+        else{
+
+            profile =
+                profileData;
+
+        }
+
+
+        /*
+         * If profile does not exist,
+         * create it.
+         */
+
+        if(!profile){
+
+            const name =
+                data.user.user_metadata
+                    ?.full_name ||
+                email.split("@")[0];
+
+
+            const {
+                data:newProfile,
+                error:newProfileError
+            } =
+            await supabaseClient
+                .from("profiles")
+                .insert({
+
+                    id:data.user.id,
+
+                    full_name:name,
+
+                    role:"student"
+
+                })
+                .select()
+                .single();
+
+
+            if(newProfileError){
+
+                throw newProfileError;
+
+            }
+
+
+            profile =
+                newProfile;
+
+        }
+
+
+        /*
+         * Do not allow the student login
+         * page to enter the teacher area.
+         */
+
+        if(profile.role === "teacher"){
+
+            showMessage(
+                "👨‍🏫 This is a teacher account. Please use the teacher login.",
+                "error"
+            );
+
+
+            await supabaseClient.auth.signOut();
+
+
+            button.disabled = false;
+
+            button.textContent =
+                "🔐 Login";
+
+
+            return;
+
+        }
+
+
+        /*
+         * Save compatibility data.
+         */
+
+        localStorage.setItem(
+            "brightAcademyLoggedIn",
+            "true"
+        );
+
+
+        localStorage.setItem(
+            "brightAcademyStudent",
+            JSON.stringify({
+
+                id:data.user.id,
+
+                fullname:
+                    profile.full_name,
+
+                email:
+                    data.user.email
+
+            })
+        );
+
+
+        showMessage(
+            "✅ Login successful! Opening your dashboard...",
+            "success"
+        );
+
+
+        setTimeout(
+            function(){
+
+                window.location.href =
+                    "student-dashboard.html";
+
+            },
+            700
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Login error:",
+            error
+        );
+
+
+        showMessage(
+            "❌ " +
+            getFriendlyError(
+                error
+            ),
+            "error"
+        );
+
+
+        button.disabled = false;
+
+        button.textContent =
+            "🔐 Login";
+
     }
 
-
-    const student =
-        JSON.parse(savedStudent);
+}
 
 
-    const usernameMatch =
-        username === student.username ||
-        username === student.email;
+/* =====================================================
+   FRIENDLY ERRORS
+===================================================== */
 
+function getFriendlyError(error){
 
-    const passwordMatch =
-        password === student.password;
+    const message =
+        error?.message ||
+        "Something went wrong.";
 
 
     if(
-        !usernameMatch ||
-        !passwordMatch
+        message
+        .toLowerCase()
+        .includes(
+            "invalid login credentials"
+        )
     ){
 
-        message.classList.add("error");
+        return "Email or password is incorrect.";
 
-        message.textContent =
-            "❌ Incorrect username/email or password.";
-
-        message.style.display =
-            "block";
-
-        return;
     }
 
 
-    message.classList.add("success");
+    if(
+        message
+        .toLowerCase()
+        .includes(
+            "user already registered"
+        )
+    ){
 
-    message.textContent =
-        "✅ Login successful! Welcome, "
-        + student.fullname
-        + "!";
+        return "This email is already registered. Please log in.";
 
-
-    message.style.display =
-        "block";
-
-
-    localStorage.setItem(
-        "brightAcademyLoggedIn",
-        "true"
-    );
+    }
 
 
-    setTimeout(
-    function(){
+    if(
+        message
+        .toLowerCase()
+        .includes(
+            "password should be at least"
+        )
+    ){
 
-        window.location.href =
-            "student-dashboard.html";
+        return "Password must contain at least 6 characters.";
 
-    },
-    1000
-    );
+    }
 
-});
+
+    if(
+        message
+        .toLowerCase()
+        .includes(
+            "email not confirmed"
+        )
+    ){
+
+        return "Please confirm your email before logging in.";
+
+    }
+
+
+    return message;
+
+}
+
+
+/* =====================================================
+   CHECK EXISTING SESSION
+===================================================== */
+
+async function checkExistingSession(){
+
+    const {
+        data
+    } =
+    await supabaseClient.auth.getSession();
+
+
+    if(
+        data &&
+        data.session &&
+        data.session.user
+    ){
+
+        /*
+         * Already logged in.
+         * Send the student directly
+         * to the dashboard.
+         */
+
+        const user =
+            data.session.user;
+
+
+        const {
+            data:profile
+        } =
+        await supabaseClient
+            .from("profiles")
+            .select(
+                "id, full_name, role"
+            )
+            .eq(
+                "id",
+                user.id
+            )
+            .maybeSingle();
+
+
+        if(
+            profile &&
+            profile.role === "student"
+        ){
+
+            localStorage.setItem(
+                "brightAcademyLoggedIn",
+                "true"
+            );
+
+
+            localStorage.setItem(
+                "brightAcademyStudent",
+                JSON.stringify({
+
+                    id:user.id,
+
+                    fullname:
+                        profile.full_name,
+
+                    email:
+                        user.email
+
+                })
+            );
+
+
+            window.location.href =
+                "student-dashboard.html";
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+checkExistingSession();
+
 
 </script>
 
