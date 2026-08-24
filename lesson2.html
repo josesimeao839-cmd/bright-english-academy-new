@@ -13,6 +13,9 @@
 
 <title>Lesson 2 — Personal Information | Bright English Academy</title>
 
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 
 *{
@@ -483,6 +486,7 @@ footer strong{
     .page-navigation a{
         text-align:center;
     }
+
 }
 
 </style>
@@ -622,100 +626,76 @@ Ask simple questions about another person.
 
 <div class="vocabulary-grid">
 
-
 <div class="word-card">
 <div class="word">Name</div>
 <div class="translation">Nome</div>
-<button class="listen-btn"
-onclick="speak('Name')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Name')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Age</div>
 <div class="translation">Idade</div>
-<button class="listen-btn"
-onclick="speak('Age')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Age')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Country</div>
 <div class="translation">País</div>
-<button class="listen-btn"
-onclick="speak('Country')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Country')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Nationality</div>
 <div class="translation">Nacionalidade</div>
-<button class="listen-btn"
-onclick="speak('Nationality')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Nationality')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">City</div>
 <div class="translation">Cidade</div>
-<button class="listen-btn"
-onclick="speak('City')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('City')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Address</div>
 <div class="translation">Endereço</div>
-<button class="listen-btn"
-onclick="speak('Address')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Address')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Phone number</div>
 <div class="translation">Número de telefone</div>
-<button class="listen-btn"
-onclick="speak('Phone number')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Phone number')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Email</div>
 <div class="translation">E-mail</div>
-<button class="listen-btn"
-onclick="speak('Email')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Email')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Student</div>
 <div class="translation">Estudante</div>
-<button class="listen-btn"
-onclick="speak('Student')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Student')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Teacher</div>
 <div class="translation">Professor / Professora</div>
-<button class="listen-btn"
-onclick="speak('Teacher')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Teacher')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">From</div>
 <div class="translation">De</div>
-<button class="listen-btn"
-onclick="speak('From')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('From')">🔊 Listen</button>
 </div>
-
 
 <div class="word-card">
 <div class="word">Live</div>
 <div class="translation">Morar / Viver</div>
-<button class="listen-btn"
-onclick="speak('Live')">🔊 Listen</button>
+<button class="listen-btn" onclick="speak('Live')">🔊 Listen</button>
 </div>
 
 </div>
@@ -726,7 +706,6 @@ onclick="speak('Live')">🔊 Listen</button>
 <section id="grammar" class="card">
 
 <h2>📚 Grammar — Personal Information</h2>
-
 
 <div class="grammar-box">
 
@@ -948,7 +927,6 @@ onclick="speak('Where do you live? I live in Maputo.')">
 Listen and repeat.
 </p>
 
-
 <div class="example">
 
 <strong>
@@ -963,7 +941,6 @@ onclick="speak('My name is José.')">
 </button>
 
 </div>
-
 
 <div class="example">
 
@@ -980,7 +957,6 @@ onclick="speak('I am from Mozambique.')">
 
 </div>
 
-
 <div class="example">
 
 <strong>
@@ -996,7 +972,6 @@ onclick="speak('I live in Maputo.')">
 
 </div>
 
-
 <div class="example">
 
 <strong>
@@ -1011,7 +986,6 @@ onclick="speak('How old are you?')">
 </button>
 
 </div>
-
 
 <div class="example">
 
@@ -1136,7 +1110,6 @@ onclick="speakConversation()">
 <section id="exercises" class="card">
 
 <h2>✏️ Exercises</h2>
-
 
 <div class="exercise">
 
@@ -1369,14 +1342,12 @@ My name is Maria.
 
 </div>
 
-
 </section>
 
 
 <section id="activities" class="card">
 
 <h2>🧩 Interactive Activities</h2>
-
 
 <div class="activity">
 
@@ -1477,15 +1448,10 @@ Try to answer:
 <ul>
 
 <li>What is your name?</li>
-
 <li>How old are you?</li>
-
 <li>Where are you from?</li>
-
 <li>What is your nationality?</li>
-
 <li>Where do you live?</li>
-
 <li>Are you a student?</li>
 
 </ul>
@@ -1519,15 +1485,10 @@ Try to include:
 <ul>
 
 <li>Your name</li>
-
 <li>Your age</li>
-
 <li>Your country</li>
-
 <li>Your nationality</li>
-
 <li>Your city</li>
-
 <li>Your occupation or school</li>
 
 </ul>
@@ -1570,7 +1531,6 @@ Choose the best answer.
 </p>
 
 <form id="quizForm">
-
 
 <div class="quiz-question">
 
@@ -1864,7 +1824,6 @@ onclick="submitQuiz()">
 
 </form>
 
-
 <div id="quizResult"></div>
 
 </section>
@@ -1926,37 +1885,21 @@ Review the most important points from Lesson 2.
 
 <h3>⭐ Key Sentences</h3>
 
-<p>
-My name is José.
-</p>
+<p>My name is José.</p>
 
-<p>
-I am twenty years old.
-</p>
+<p>I am twenty years old.</p>
 
-<p>
-I am from Mozambique.
-</p>
+<p>I am from Mozambique.</p>
 
-<p>
-I am Mozambican.
-</p>
+<p>I am Mozambican.</p>
 
-<p>
-I live in Maputo.
-</p>
+<p>I live in Maputo.</p>
 
-<p>
-How old are you?
-</p>
+<p>How old are you?</p>
 
-<p>
-Where do you live?
-</p>
+<p>Where do you live?</p>
 
-<p>
-What is your nationality?
-</p>
+<p>What is your nationality?</p>
 
 <br>
 
@@ -2037,31 +1980,211 @@ Day 2 / Lesson 2
 
 <script>
 
+/* =========================================================
+   SUPABASE CONFIGURATION
+   ========================================================= */
+
+const SUPABASE_URL =
+"https://yvdadrqimaavubqcxned.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
+
+const supabaseClient =
+window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY,
+    {
+        auth:{
+            autoRefreshToken:true,
+            persistSession:true,
+            detectSessionInUrl:true
+        }
+    }
+);
+
+
+/* =========================================================
+   STUDENT SESSION CHECK
+   ========================================================= */
+
+async function checkStudentSession(){
+
+    try{
+
+        const {
+            data,
+            error
+        } =
+        await supabaseClient.auth.getSession();
+
+
+        if(error){
+
+            console.error(
+                "Supabase session error:",
+                error
+            );
+
+            return;
+
+        }
+
+
+        if(
+            !data ||
+            !data.session ||
+            !data.session.user
+        ){
+
+            console.log(
+                "No active student session."
+            );
+
+            window.location.replace(
+                "student-login.html"
+            );
+
+            return;
+
+        }
+
+
+        const user =
+            data.session.user;
+
+
+        localStorage.setItem(
+            "brightAcademyLoggedIn",
+            "true"
+        );
+
+
+        localStorage.setItem(
+            "brightAcademyStudent",
+            JSON.stringify({
+
+                id:user.id,
+
+                fullname:
+                    user.user_metadata?.full_name ||
+                    user.user_metadata?.name ||
+                    user.email,
+
+                email:user.email
+
+            })
+        );
+
+
+        console.log(
+            "Student authenticated:",
+            user.email
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            "Session verification error:",
+            error
+        );
+
+    }
+
+}
+
+
+/*
+ * Start authentication check.
+ */
+
+checkStudentSession();
+
+
+/* =========================================================
+   AUTH STATE LISTENER
+   ========================================================= */
+
+supabaseClient.auth.onAuthStateChange(
+    function(event, session){
+
+        console.log(
+            "Auth event:",
+            event
+        );
+
+
+        if(
+            event === "SIGNED_OUT"
+        ){
+
+            localStorage.removeItem(
+                "brightAcademyLoggedIn"
+            );
+
+            localStorage.removeItem(
+                "brightAcademyStudent"
+            );
+
+            window.location.replace(
+                "student-login.html"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   AUDIO
+   ========================================================= */
+
 function speak(text){
 
-    if(!("speechSynthesis" in window)){
+    if(
+        !("speechSynthesis" in window)
+    ){
 
         alert(
             "Audio is not supported by this browser."
         );
 
         return;
+
     }
 
+
     window.speechSynthesis.cancel();
+
 
     const speech =
         new SpeechSynthesisUtterance(text);
 
-    speech.lang="en-US";
 
-    speech.rate=0.88;
+    speech.lang =
+        "en-US";
 
-    speech.pitch=1;
 
-    window.speechSynthesis.speak(speech);
+    speech.rate =
+        0.88;
+
+
+    speech.pitch =
+        1;
+
+
+    window.speechSynthesis.speak(
+        speech
+    );
+
 }
 
+
+/* =========================================================
+   CONVERSATION AUDIO
+   ========================================================= */
 
 function speakConversation(){
 
@@ -2104,6 +2227,10 @@ function speakConversation(){
 }
 
 
+/* =========================================================
+   EXERCISES
+   ========================================================= */
+
 function checkAnswer(
     button,
     correct,
@@ -2111,22 +2238,32 @@ function checkAnswer(
 ){
 
     const answer =
-        document.getElementById(answerId);
+        document.getElementById(
+            answerId
+        );
 
-    answer.style.display="block";
+
+    answer.style.display =
+        "block";
+
 
     if(correct){
 
-        answer.className="answer correct";
+        answer.className =
+            "answer correct";
 
-        answer.textContent=
+
+        answer.textContent =
             "✅ Correct! Well done.";
 
-    }else{
+    }
+    else{
 
-        answer.className="answer wrong";
+        answer.className =
+            "answer wrong";
 
-        answer.textContent=
+
+        answer.textContent =
             "❌ Try again.";
 
     }
@@ -2134,16 +2271,26 @@ function checkAnswer(
 }
 
 
+/* =========================================================
+   ACTIVITIES
+   ========================================================= */
+
 function activityAnswer(message){
 
-    alert("💡 "+message);
+    alert(
+        "💡 " + message
+    );
 
 }
 
 
+/* =========================================================
+   QUIZ
+   ========================================================= */
+
 function submitQuiz(){
 
-    const answers={
+    const answers = {
 
         q1:"a",
         q2:"a",
@@ -2158,22 +2305,25 @@ function submitQuiz(){
 
     };
 
-    let score=0;
+
+    let score = 0;
+
 
     for(
         let question in answers
     ){
 
-        const selected=
+        const selected =
             document.querySelector(
-                'input[name="'+
-                question+
+                'input[name="' +
+                question +
                 '"]:checked'
             );
 
+
         if(
             selected &&
-            selected.value===
+            selected.value ===
             answers[question]
         ){
 
@@ -2183,30 +2333,42 @@ function submitQuiz(){
 
     }
 
-    const percentage=
-        score*10;
 
-    const result=
+    const percentage =
+        score * 10;
+
+
+    const result =
         document.getElementById(
             "quizResult"
         );
 
-    result.style.display="block";
 
-    result.innerHTML=
+    result.style.display =
+        "block";
 
-        "🎯 Your Score: "+
-        score+
-        "/10 ("+
-        percentage+
-        "%)<br><br>"+
+
+    result.innerHTML =
+
+        "🎯 Your Score: " +
+        score +
+        "/10 (" +
+        percentage +
+        "%)<br><br>" +
+
         (
-            percentage>=70
+            percentage >= 70
+
             ?
+
             "🏆 Excellent! Keep learning!"
+
             :
+
             "📚 Keep practicing and try again!"
+
         );
+
 
     localStorage.setItem(
         "lesson2Score",
@@ -2216,21 +2378,30 @@ function submitQuiz(){
 }
 
 
+/* =========================================================
+   COMPLETE LESSON
+   ========================================================= */
+
 function completeLesson(){
 
-    const message=
+    const message =
         document.getElementById(
             "completeMessage"
         );
 
-    message.style.display="block";
 
-    let completed=
+    message.style.display =
+        "block";
+
+
+    let completed =
+
         JSON.parse(
             localStorage.getItem(
                 "completedLessons"
             )
         ) || [];
+
 
     if(
         !completed.includes(2)
@@ -2240,52 +2411,98 @@ function completeLesson(){
 
     }
 
+
     localStorage.setItem(
         "completedLessons",
-        JSON.stringify(completed)
+        JSON.stringify(
+            completed
+        )
     );
+
 
     updateProgress();
 
 }
 
 
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
 function updateProgress(){
 
-    const completed=
+    const completed =
+
         JSON.parse(
             localStorage.getItem(
                 "completedLessons"
             )
         ) || [];
 
-    const isComplete=
+
+    const isComplete =
         completed.includes(2);
 
-    const percentage=
-        isComplete ? 100 : 0;
 
-    document.getElementById(
-        "progressFill"
-    ).style.width=
-        percentage+"%";
+    const percentage =
+        isComplete
+        ? 100
+        : 0;
 
-    document.getElementById(
-        "progressText"
-    ).textContent=
-        percentage+"%";
+
+    const progressFill =
+        document.getElementById(
+            "progressFill"
+        );
+
+
+    const progressText =
+        document.getElementById(
+            "progressText"
+        );
+
+
+    if(progressFill){
+
+        progressFill.style.width =
+            percentage + "%";
+
+    }
+
+
+    if(progressText){
+
+        progressText.textContent =
+            percentage + "%";
+
+    }
 
 }
 
 
+/* =========================================================
+   LOAD PROGRESS
+   ========================================================= */
+
 updateProgress();
 
+
+/* =========================================================
+   STOP AUDIO WHEN LEAVING
+   ========================================================= */
 
 window.addEventListener(
     "beforeunload",
     function(){
 
-        window.speechSynthesis.cancel();
+        if(
+            "speechSynthesis"
+            in window
+        ){
+
+            window.speechSynthesis.cancel();
+
+        }
 
     }
 );
