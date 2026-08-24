@@ -25,9 +25,7 @@ content="Bright English Academy - Student Registration">
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-
     min-height:100vh;
-
     display:flex;
     align-items:center;
     justify-content:center;
@@ -43,166 +41,105 @@ body{
 }
 
 .register-card{
-
     width:100%;
     max-width:450px;
-
     background:white;
-
     border-radius:22px;
-
     padding:35px;
 
     box-shadow:
         0 20px 50px
         rgba(0,0,0,.20);
-
 }
 
 .logo{
-
     text-align:center;
-
     font-size:25px;
-
     font-weight:800;
-
     color:#0757c9;
-
     margin-bottom:8px;
-
 }
 
 .subtitle{
-
     text-align:center;
-
     color:#64748b;
-
     margin-bottom:25px;
-
 }
 
 .icon{
-
     text-align:center;
-
     font-size:55px;
-
     margin-bottom:10px;
-
 }
 
 h1{
-
     text-align:center;
-
     color:#17233c;
-
     font-size:26px;
-
     margin-bottom:8px;
-
 }
 
 .description{
-
     text-align:center;
-
     color:#64748b;
-
     font-size:14px;
-
     margin-bottom:25px;
-
 }
 
 .form-group{
-
     margin-bottom:17px;
-
 }
 
 label{
-
     display:block;
-
     font-size:14px;
-
     font-weight:bold;
-
     color:#17233c;
-
     margin-bottom:7px;
-
 }
 
 input{
-
     width:100%;
-
     padding:13px;
-
     border:1px solid #dce5f1;
-
     border-radius:10px;
-
     outline:none;
-
     font-size:15px;
-
 }
 
 input:focus{
-
     border-color:#0757c9;
 
     box-shadow:
         0 0 0 3px
         rgba(7,87,201,.10);
-
 }
 
 .input-wrapper{
-
     position:relative;
-
 }
 
 .input-wrapper input{
-
     padding-right:45px;
-
 }
 
 .password-toggle{
-
     position:absolute;
-
     right:12px;
-
     top:50%;
-
     transform:translateY(-50%);
 
     border:none;
-
     background:none;
-
     cursor:pointer;
 
     font-size:18px;
-
 }
 
 .register-btn{
-
     width:100%;
-
     border:none;
-
     padding:14px;
-
     border-radius:10px;
 
     background:
@@ -213,172 +150,125 @@ input:focus{
         );
 
     color:white;
-
     font-size:16px;
-
     font-weight:bold;
 
     cursor:pointer;
-
     margin-top:5px;
-
 }
 
 .register-btn:hover{
-
     opacity:.92;
-
 }
 
 .register-btn:disabled{
-
     opacity:.6;
-
     cursor:not-allowed;
-
 }
 
 .message{
-
     display:none;
-
-    padding:12px;
-
-    border-radius:9px;
-
+    padding:15px;
+    border-radius:10px;
     margin-bottom:18px;
 
     font-size:14px;
-
     text-align:center;
-
+    line-height:1.5;
 }
 
 .error{
-
     background:#fff0f0;
-
     color:#c62828;
-
+    border:1px solid #ffcaca;
 }
 
 .success{
-
     background:#effff5;
-
     color:#138a4b;
+    border:1px solid #bcefd0;
+}
 
+.info{
+    background:#eef7ff;
+    color:#0757c9;
+    border:1px solid #c7e3ff;
+}
+
+.status-title{
+    font-weight:bold;
+    display:block;
+    margin-bottom:5px;
 }
 
 .login-link{
-
     text-align:center;
-
     margin-top:22px;
-
     color:#64748b;
-
     font-size:14px;
-
 }
 
 .login-link a{
-
     color:#0757c9;
-
     font-weight:bold;
-
     text-decoration:none;
-
 }
 
 .login-link a:hover{
-
     text-decoration:underline;
-
 }
 
 .back-link{
-
     display:block;
-
     text-align:center;
-
     margin-top:18px;
-
     color:#0757c9;
-
     font-weight:bold;
-
     text-decoration:none;
-
     font-size:14px;
-
 }
 
 .footer{
-
     text-align:center;
-
     margin-top:25px;
-
     color:#64748b;
-
     font-size:13px;
-
 }
 
 .footer strong{
-
     color:#0757c9;
-
 }
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <div class="register-card">
 
-
 <div class="logo">
-
 📚 Bright English Academy
-
 </div>
-
 
 <div class="subtitle">
-
 Student Portal
-
 </div>
-
 
 <div class="icon">
-
 👨‍🎓
-
 </div>
 
-
 <h1>
-
 Create Student Account
-
 </h1>
 
-
 <p class="description">
-
 Create your account and start learning English.
-
 </p>
 
+
+<!-- ERROR MESSAGE -->
 
 <div
 id="errorBox"
@@ -386,9 +276,19 @@ class="message error">
 </div>
 
 
+<!-- SUCCESS MESSAGE -->
+
 <div
 id="successBox"
 class="message success">
+</div>
+
+
+<!-- INFO MESSAGE -->
+
+<div
+id="infoBox"
+class="message info">
 </div>
 
 
@@ -397,9 +297,7 @@ class="message success">
 <div class="form-group">
 
 <label for="fullName">
-
 Full Name
-
 </label>
 
 <input
@@ -416,9 +314,7 @@ autocomplete="name">
 <div class="form-group">
 
 <label for="email">
-
 Email
-
 </label>
 
 <input
@@ -435,11 +331,8 @@ autocomplete="email">
 <div class="form-group">
 
 <label for="password">
-
 Password
-
 </label>
-
 
 <div class="input-wrapper">
 
@@ -448,7 +341,6 @@ id="password"
 type="password"
 placeholder="Create a password"
 autocomplete="new-password">
-
 
 <button
 type="button"
@@ -469,11 +361,8 @@ onclick="togglePassword('password')">
 <div class="form-group">
 
 <label for="confirmPassword">
-
 Confirm Password
-
 </label>
-
 
 <div class="input-wrapper">
 
@@ -482,7 +371,6 @@ id="confirmPassword"
 type="password"
 placeholder="Confirm your password"
 autocomplete="new-password">
-
 
 <button
 type="button"
@@ -497,6 +385,8 @@ onclick="togglePassword('confirmPassword')">
 
 </div>
 
+
+<!-- REGISTER -->
 
 <button
 id="registerBtn"
@@ -513,9 +403,7 @@ onclick="registerStudent()">
 Already have an account?
 
 <a href="student-login.html">
-
 Student Login
-
 </a>
 
 </div>
@@ -533,11 +421,9 @@ class="back-link">
 <div class="footer">
 
 <p>
-
 <strong>
 Bright English Academy
 </strong>
-
 </p>
 
 <p>
@@ -545,25 +431,22 @@ Speak English with Confidence
 </p>
 
 <p style="margin-top:6px;">
-
 👤 Created by
 <strong>
 José Simeão
 </strong>
-
 </p>
 
 </div>
-
 
 </div>
 
 
 <script>
 
-/* =====================================
-   SUPABASE CONFIGURATION
-===================================== */
+/* =========================================
+   SUPABASE - NEW PROJECT
+========================================= */
 
 const SUPABASE_URL =
 "https://yvdadrqimaavubqcxned.supabase.co";
@@ -579,102 +462,106 @@ supabase.createClient(
 );
 
 
-/* =====================================
+/* =========================================
    PASSWORD TOGGLE
-===================================== */
+========================================= */
 
 function togglePassword(id){
 
-    const password =
+    const input =
         document.getElementById(id);
 
+    if(input.type === "password"){
 
-    if(
-        password.type ===
-        "password"
-    ){
+        input.type = "text";
 
-        password.type =
-            "text";
+    }else{
 
-    }
-    else{
-
-        password.type =
-            "password";
+        input.type = "password";
 
     }
 
 }
 
 
-/* =====================================
+/* =========================================
    MESSAGES
-===================================== */
+========================================= */
+
+function hideMessages(){
+
+    document.getElementById(
+        "errorBox"
+    ).style.display = "none";
+
+    document.getElementById(
+        "successBox"
+    ).style.display = "none";
+
+    document.getElementById(
+        "infoBox"
+    ).style.display = "none";
+
+}
+
 
 function showError(message){
+
+    hideMessages();
 
     const box =
         document.getElementById(
             "errorBox"
         );
 
-    box.textContent =
-        "❌ " + message;
+    box.innerHTML =
+        "<span class='status-title'>❌ Registration Error</span>"
+        + message;
 
-    box.style.display =
-        "block";
-
-
-    document.getElementById(
-        "successBox"
-    ).style.display =
-        "none";
+    box.style.display = "block";
 
 }
 
 
 function showSuccess(message){
 
+    hideMessages();
+
     const box =
         document.getElementById(
             "successBox"
         );
 
-    box.textContent =
-        "✅ " + message;
+    box.innerHTML =
+        "<span class='status-title'>✅ Success</span>"
+        + message;
 
-    box.style.display =
-        "block";
-
-
-    document.getElementById(
-        "errorBox"
-    ).style.display =
-        "none";
+    box.style.display = "block";
 
 }
 
 
-function hideMessages(){
+function showInfo(message){
 
-    document.getElementById(
-        "errorBox"
-    ).style.display =
-        "none";
+    hideMessages();
 
+    const box =
+        document.getElementById(
+            "infoBox"
+        );
 
-    document.getElementById(
-        "successBox"
-    ).style.display =
-        "none";
+    box.innerHTML =
+        "<span class='status-title'>ℹ️ Information</span>"
+        + message;
+
+    box.style.display = "block";
 
 }
 
 
-/* =====================================
+/* =========================================
    REGISTER STUDENT
-===================================== */
+========================================= */
 
 async function registerStudent(){
 
@@ -705,7 +592,9 @@ async function registerStudent(){
         ).value;
 
 
-    /* VALIDATION */
+    /* =====================================
+       VALIDATION
+    ===================================== */
 
     if(!fullName){
 
@@ -714,7 +603,6 @@ async function registerStudent(){
         );
 
         return;
-
     }
 
 
@@ -725,7 +613,6 @@ async function registerStudent(){
         );
 
         return;
-
     }
 
 
@@ -736,7 +623,6 @@ async function registerStudent(){
         );
 
         return;
-
     }
 
 
@@ -747,7 +633,6 @@ async function registerStudent(){
         );
 
         return;
-
     }
 
 
@@ -758,9 +643,12 @@ async function registerStudent(){
         );
 
         return;
-
     }
 
+
+    /* =====================================
+       BUTTON
+    ===================================== */
 
     const button =
         document.getElementById(
@@ -768,32 +656,29 @@ async function registerStudent(){
         );
 
 
-    button.disabled =
-        true;
+    button.disabled = true;
 
     button.textContent =
         "⏳ Creating account...";
 
 
+    showInfo(
+        "Connecting to Bright English Academy..."
+    );
+
+
     try{
 
-
         /* =================================
-           CREATE SUPABASE ACCOUNT
+           SUPABASE AUTH
         ================================= */
 
-        const {
-            data,
-            error
-        } =
-        await supabaseClient.auth
-            .signUp({
+        const result =
+            await supabaseClient.auth.signUp({
 
-                email:
-                    email,
+                email: email,
 
-                password:
-                    password,
+                password: password,
 
                 options:{
 
@@ -812,24 +697,40 @@ async function registerStudent(){
             });
 
 
+        const data =
+            result.data;
+
+        const error =
+            result.error;
+
+
+        /* =================================
+           AUTH ERROR
+        ================================= */
+
         if(error){
 
-            console.error(error);
+            console.error(
+                "Supabase Auth Error:",
+                error
+            );
 
             showError(
                 error.message
             );
 
-            button.disabled =
-                false;
+            button.disabled = false;
 
             button.textContent =
                 "🚀 Create Student Account";
 
             return;
-
         }
 
+
+        /* =================================
+           USER CHECK
+        ================================= */
 
         if(
             !data ||
@@ -837,81 +738,123 @@ async function registerStudent(){
         ){
 
             showError(
-                "Account could not be created. Please try again."
+                "The account could not be created. Please try again."
             );
 
-            button.disabled =
-                false;
+            button.disabled = false;
 
             button.textContent =
                 "🚀 Create Student Account";
 
             return;
-
         }
 
-
-        /* =================================
-           CREATE / UPDATE PROFILE
-        ================================= */
 
         const userId =
             data.user.id;
 
 
-        const {
-            error:profileError
-        } =
-        await supabaseClient
-            .from("profiles")
-            .upsert({
+        /* =================================
+           PROFILE
+        ================================= */
 
-                id:
-                    userId,
+        showInfo(
+            "Account created. Creating student profile..."
+        );
 
-                full_name:
-                    fullName,
 
-                role:
-                    "student"
+        const profileResult =
+            await supabaseClient
+                .from("profiles")
+                .upsert({
 
-            });
+                    id:
+                        userId,
+
+                    full_name:
+                        fullName,
+
+                    role:
+                        "student"
+
+                });
+
+
+        const profileError =
+            profileResult.error;
 
 
         if(profileError){
 
             console.error(
+                "Profile Error:",
                 profileError
             );
 
+
             /*
-               The account was created,
-               but the profile could not
-               be created.
+             Account exists even if
+             profile creation failed.
             */
 
             showError(
-                "Your account was created, but your student profile could not be created. Please contact the administrator."
+                "Your account was created, but the student profile could not be created. Please check the profiles table permissions in Supabase."
             );
 
-            button.disabled =
-                false;
+
+            button.disabled = false;
 
             button.textContent =
                 "🚀 Create Student Account";
 
             return;
-
         }
 
 
         /* =================================
-           SUCCESS
+           CHECK SESSION
+        ================================= */
+
+        const sessionResult =
+            await supabaseClient.auth.getSession();
+
+
+        const session =
+            sessionResult.data.session;
+
+
+        /* =================================
+           EMAIL CONFIRMATION
+        ================================= */
+
+        if(!session){
+
+            showSuccess(
+                "Your account was created successfully! Please check your email to confirm your account before logging in."
+            );
+
+
+            button.disabled = false;
+
+            button.textContent =
+                "✅ Account Created";
+
+
+            return;
+        }
+
+
+        /* =================================
+           FINAL SUCCESS
         ================================= */
 
         showSuccess(
             "Account created successfully! Opening Student Dashboard..."
         );
+
+
+        button.textContent =
+            "✅ Account Created";
 
 
         setTimeout(
@@ -921,14 +864,17 @@ async function registerStudent(){
                     "student-dashboard.html";
 
             },
-            1000
+            1200
         );
 
 
     }
     catch(error){
 
-        console.error(error);
+        console.error(
+            "Unexpected Error:",
+            error
+        );
 
 
         showError(
@@ -936,8 +882,7 @@ async function registerStudent(){
         );
 
 
-        button.disabled =
-            false;
+        button.disabled = false;
 
         button.textContent =
             "🚀 Create Student Account";
@@ -947,17 +892,16 @@ async function registerStudent(){
 }
 
 
-/* =====================================
+/* =========================================
    ENTER KEY
-===================================== */
+========================================= */
 
 document.addEventListener(
     "keydown",
     function(event){
 
         if(
-            event.key ===
-            "Enter"
+            event.key === "Enter"
         ){
 
             registerStudent();
@@ -968,7 +912,6 @@ document.addEventListener(
 );
 
 </script>
-
 
 </body>
 
