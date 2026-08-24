@@ -8,6 +8,9 @@
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
+<meta name="description"
+content="Teacher Login - Bright English Academy">
+
 <title>Teacher Login | Bright English Academy</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -21,132 +24,239 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+
     min-height:100vh;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
     background:
-        linear-gradient(
-            135deg,
-            #0757c9,
-            #13a6e8
-        );
-
-    padding:20px;
-}
-
-.login-card{
-    width:100%;
-    max-width:430px;
-
-    background:white;
-
-    border-radius:22px;
-
-    padding:35px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.20);
-}
-
-.logo{
-    text-align:center;
-
-    font-size:25px;
-
-    font-weight:800;
-
-    color:#0757c9;
-
-    margin-bottom:10px;
-}
-
-.subtitle{
-    text-align:center;
-
-    color:#64748b;
-
-    margin-bottom:30px;
-}
-
-.teacher-icon{
-    text-align:center;
-
-    font-size:55px;
-
-    margin-bottom:15px;
-}
-
-h1{
-    text-align:center;
+    linear-gradient(
+        135deg,
+        #eef6ff,
+        #f7fbff
+    );
 
     color:#17233c;
 
-    font-size:25px;
+    display:flex;
 
-    margin-bottom:8px;
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
 }
 
-.description{
+.container{
+
+    width:100%;
+
+    max-width:460px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    border:1px solid #e0e7f1;
+
+    box-shadow:
+        0 15px 45px
+        rgba(20,53,100,.12);
+
+}
+
+.logo{
+
     text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.logo-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    margin-bottom:14px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0757c9,
+        #13a6e8
+    );
+
+    color:white;
+
+    font-size:36px;
+
+}
+
+.logo h1{
+
+    color:#0757c9;
+
+    font-size:25px;
+
+    margin-bottom:5px;
+
+}
+
+.logo p{
 
     color:#64748b;
 
     font-size:14px;
 
+}
+
+.portal{
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    font-weight:bold;
+
     margin-bottom:25px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+}
+
+.message{
+
+    display:none;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    margin-bottom:18px;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    font-weight:bold;
+
+}
+
+.message.error{
+
+    display:block;
+
+    background:#fff0f0;
+
+    color:#c62828;
+
+}
+
+.message.success{
+
+    display:block;
+
+    background:#e8f7ee;
+
+    color:#147844;
+
+}
+
+.message.info{
+
+    display:block;
+
+    background:#eaf3ff;
+
+    color:#0757c9;
+
 }
 
 .form-group{
+
     margin-bottom:18px;
+
 }
 
-label{
+.form-group label{
+
     display:block;
 
     font-size:14px;
 
     font-weight:bold;
 
-    color:#17233c;
-
     margin-bottom:7px;
+
 }
 
 .input-wrapper{
+
     position:relative;
+
 }
 
-input{
+.form-group input{
+
     width:100%;
 
-    padding:13px 45px 13px 13px;
+    padding:13px 48px 13px 14px;
 
-    border:1px solid #dce5f1;
+    border:
+
+    1px solid #d5dfeb;
 
     border-radius:10px;
 
     outline:none;
 
     font-size:15px;
+
+    transition:.2s;
+
 }
 
-input:focus{
+.form-group input:focus{
+
     border-color:#0757c9;
 
     box-shadow:
-        0 0 0 3px
-        rgba(7,87,201,.10);
+    0 0 0 3px
+    rgba(7,87,201,.10);
+
 }
 
 .password-toggle{
+
     position:absolute;
 
-    right:12px;
+    right:10px;
 
     top:50%;
 
@@ -154,14 +264,18 @@ input:focus{
 
     border:none;
 
-    background:none;
+    background:transparent;
 
     cursor:pointer;
 
-    font-size:18px;
+    font-size:20px;
+
+    padding:5px;
+
 }
 
 .login-btn{
+
     width:100%;
 
     border:none;
@@ -171,11 +285,11 @@ input:focus{
     border-radius:10px;
 
     background:
-        linear-gradient(
-            135deg,
-            #0757c9,
-            #13a6e8
-        );
+    linear-gradient(
+        135deg,
+        #0757c9,
+        #13a6e8
+    );
 
     color:white;
 
@@ -186,198 +300,160 @@ input:focus{
     cursor:pointer;
 
     margin-top:5px;
+
 }
 
 .login-btn:hover{
-    opacity:.92;
+
+    opacity:.93;
+
 }
 
 .login-btn:disabled{
+
     opacity:.6;
 
     cursor:not-allowed;
+
 }
 
-.error{
-    display:none;
+.back{
 
-    background:#fff0f0;
-
-    color:#c62828;
-
-    padding:12px;
-
-    border-radius:9px;
-
-    margin-bottom:18px;
-
-    font-size:14px;
+    display:block;
 
     text-align:center;
-}
 
-.success{
-    display:none;
+    margin-top:20px;
 
-    background:#effff5;
-
-    color:#138a4b;
-
-    padding:12px;
-
-    border-radius:9px;
-
-    margin-bottom:18px;
-
-    font-size:14px;
-
-    text-align:center;
-}
-
-.teacher-area{
-    margin-top:25px;
-
-    padding:18px;
-
-    background:#f4f8ff;
-
-    border-radius:12px;
-}
-
-.teacher-area h3{
     color:#0757c9;
 
-    margin-bottom:10px;
+    text-decoration:none;
 
-    font-size:16px;
+    font-weight:bold;
+
+    font-size:14px;
+
 }
 
-.teacher-area p{
-    color:#64748b;
+.back:hover{
 
-    font-size:13px;
+    text-decoration:underline;
 
-    margin:7px 0;
 }
 
 .footer{
+
     text-align:center;
 
-    margin-top:25px;
+    margin-top:18px;
 
     color:#64748b;
 
-    font-size:13px;
+    font-size:12px;
+
 }
 
 .footer strong{
+
     color:#0757c9;
+
+}
+
+@media(max-width:500px){
+
+    .card{
+
+        padding:25px 20px;
+
+    }
+
 }
 
 </style>
 
 </head>
 
-
 <body>
 
 
-<div class="login-card">
+<div class="container">
+
+
+<div class="card">
 
 
 <div class="logo">
 
-📚 Bright English Academy
-
-</div>
-
-
-<div class="subtitle">
-
-Teacher Portal
-
-</div>
-
-
-<div class="teacher-icon">
-
+<div class="logo-icon">
 👨‍🏫
-
 </div>
-
 
 <h1>
-
-Teacher Login
-
+Bright English Academy
 </h1>
 
-
-<p class="description">
-
-Access the Bright English Academy
-teacher dashboard.
-
+<p>
+Speak English with Confidence
 </p>
 
+</div>
 
-<div
-id="errorBox"
-class="error">
 
+<div class="portal">
+Teacher Portal
 </div>
 
 
 <div
-id="successBox"
-class="success">
-
+id="message"
+class="message">
 </div>
 
 
-<!-- EMAIL -->
+<form
+id="teacherLoginForm"
+onsubmit="teacherLogin(event)">
+
 
 <div class="form-group">
 
-<label for="email">
-
+<label for="teacherEmail">
 Teacher Email
-
 </label>
 
 <input
-id="email"
 type="email"
-placeholder="Enter your teacher email"
-autocomplete="email">
+id="teacherEmail"
+placeholder="Enter teacher email"
+autocomplete="email"
+required>
 
 </div>
 
 
-<!-- PASSWORD -->
-
 <div class="form-group">
 
-<label for="password">
-
+<label for="teacherPassword">
 Password
-
 </label>
 
 
 <div class="input-wrapper">
 
 <input
-id="password"
 type="password"
+id="teacherPassword"
 placeholder="Enter your password"
-autocomplete="current-password">
+autocomplete="current-password"
+required>
 
 
 <button
 type="button"
 class="password-toggle"
-onclick="togglePassword()">
+id="passwordToggle"
+onclick="togglePassword()"
+aria-label="Show password">
 
 👁️
 
@@ -389,38 +465,26 @@ onclick="togglePassword()">
 
 
 <button
-id="loginBtn"
-class="login-btn"
-onclick="teacherLogin()">
+type="submit"
+id="loginButton"
+class="login-btn">
 
 🔐 Access Teacher Dashboard
 
 </button>
 
 
-<div class="teacher-area">
+</form>
 
-<h3>
 
-👨‍🏫 Teacher area
+<a
+href="index.html"
+class="back">
 
-</h3>
+← Back to Bright English Academy
 
-<p>
-📊 Monitor student progress
-</p>
+</a>
 
-<p>
-📝 View exercise results
-</p>
-
-<p>
-🏆 Track student scores
-</p>
-
-<p>
-📚 Manage course progress
-</p>
 
 </div>
 
@@ -428,204 +492,312 @@ onclick="teacherLogin()">
 <div class="footer">
 
 <p>
-<strong>Bright English Academy</strong>
+
+<strong>
+Bright English Academy
+</strong>
+
 </p>
 
 <p>
-Speak English with Confidence
-</p>
-
-<p style="margin-top:6px;">
-
-👤 Created by
-<strong>José Simeão</strong>
-
+Created by José Simeão
 </p>
 
 </div>
 
 
 </div>
+
 
 
 <script>
 
-/* =====================================
-   SUPABASE CONFIG
-===================================== */
+/* =====================================================
+   SUPABASE — NEW PROJECT
+===================================================== */
 
 const SUPABASE_URL =
 "https://yvdadrqimaavubqcxned.supabase.co";
 
-const SUPABASE_KEY =
+
+const SUPABASE_PUBLISHABLE_KEY =
 "sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
 
 
+/* =====================================================
+   CREATE SUPABASE CLIENT
+===================================================== */
+
 const supabaseClient =
-supabase.createClient(
+window.supabase.createClient(
+
     SUPABASE_URL,
-    SUPABASE_KEY
+
+    SUPABASE_PUBLISHABLE_KEY,
+
+    {
+
+        auth:{
+
+            autoRefreshToken:true,
+
+            persistSession:true,
+
+            detectSessionInUrl:true
+
+        }
+
+    }
+
 );
 
 
-/* =====================================
-   PASSWORD
-===================================== */
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(
+    text,
+    type
+){
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+    message.textContent =
+        text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+function clearMessage(){
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+    message.textContent = "";
+
+    message.className =
+        "message";
+
+}
+
+
+/* =====================================================
+   SHOW / HIDE PASSWORD
+===================================================== */
 
 function togglePassword(){
 
     const password =
         document.getElementById(
-            "password"
+            "teacherPassword"
         );
 
-    if(
-        password.type ===
-        "password"
-    ){
+    const button =
+        document.getElementById(
+            "passwordToggle"
+        );
 
-        password.type =
-            "text";
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        button.textContent = "🙈";
+
+        button.setAttribute(
+            "aria-label",
+            "Hide password"
+        );
 
     }
     else{
 
-        password.type =
-            "password";
+        password.type = "password";
+
+        button.textContent = "👁️";
+
+        button.setAttribute(
+            "aria-label",
+            "Show password"
+        );
 
     }
 
 }
 
 
-/* =====================================
-   ERROR
-===================================== */
+/* =====================================================
+   FRIENDLY ERROR
+===================================================== */
 
-function showError(
-    message
-){
+function getFriendlyError(error){
 
-    const box =
-        document.getElementById(
-            "errorBox"
-        );
+    if(!error){
 
-    box.textContent =
-        "❌ " + message;
+        return "Something went wrong.";
 
-    box.style.display =
-        "block";
+    }
+
+
+    const message =
+        error.message ||
+        String(error);
+
+
+    const lower =
+        message.toLowerCase();
+
+
+    if(
+        lower.includes(
+            "invalid login credentials"
+        )
+    ){
+
+        return "Incorrect teacher email or password.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "email not confirmed"
+        )
+    ){
+
+        return "Please confirm the teacher email before logging in.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "invalid api key"
+        )
+    ){
+
+        return "The new Supabase Publishable Key was rejected. Check that this page is using the NEW Supabase project.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "failed to fetch"
+        )
+    ){
+
+        return "Could not connect to the new Supabase project. Check your internet connection and make sure this page is using the NEW Supabase URL.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "networkerror"
+        )
+    ){
+
+        return "Network error. Please check your internet connection.";
+
+    }
+
+
+    return message;
 
 }
 
 
-function hideMessages(){
-
-    document.getElementById(
-        "errorBox"
-    ).style.display =
-        "none";
-
-    document.getElementById(
-        "successBox"
-    ).style.display =
-        "none";
-
-}
-
-
-/* =====================================
+/* =====================================================
    TEACHER LOGIN
-===================================== */
+===================================================== */
 
-async function teacherLogin(){
+async function teacherLogin(event){
 
-    hideMessages();
+    event.preventDefault();
+
+
+    clearMessage();
 
 
     const email =
         document.getElementById(
-            "email"
+            "teacherEmail"
         ).value.trim();
 
 
     const password =
         document.getElementById(
-            "password"
+            "teacherPassword"
         ).value;
-
-
-    if(!email){
-
-        showError(
-            "Please enter your teacher email."
-        );
-
-        return;
-
-    }
-
-
-    if(!password){
-
-        showError(
-            "Please enter your password."
-        );
-
-        return;
-
-    }
 
 
     const button =
         document.getElementById(
-            "loginBtn"
+            "loginButton"
         );
 
 
-    button.disabled =
-        true;
+    if(!email || !password){
+
+        showMessage(
+            "❌ Please enter your teacher email and password.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    button.disabled = true;
 
     button.textContent =
-        "⏳ Signing in...";
+        "Checking account...";
+
+
+    showMessage(
+        "⏳ Connecting to Bright English Academy...",
+        "info"
+    );
 
 
     try{
 
-        /*
-           LOGIN SUPABASE
-        */
 
-        const {
-            data,
-            error
-        } =
-        await supabaseClient.auth
-            .signInWithPassword({
+        /* =============================================
+           SIGN IN
+        ============================================= */
 
-                email:
-                    email,
+        const result =
+            await supabaseClient.auth.signInWithPassword({
 
-                password:
-                    password
+                email:email,
+
+                password:password
 
             });
 
 
+        const data =
+            result.data;
+
+        const error =
+            result.error;
+
+
         if(error){
 
-            showError(
-                error.message
-            );
-
-            button.disabled =
-                false;
-
-            button.textContent =
-                "🔐 Access Teacher Dashboard";
-
-            return;
+            throw error;
 
         }
 
@@ -635,133 +807,149 @@ async function teacherLogin(){
             !data.user
         ){
 
-            showError(
-                "Login failed. Please try again."
+            throw new Error(
+                "Teacher account could not be found."
             );
-
-            button.disabled =
-                false;
-
-            button.textContent =
-                "🔐 Access Teacher Dashboard";
-
-            return;
 
         }
 
 
-        /*
-           CHECK PROFILE
-        */
-
-        const {
-            data:profile,
-            error:profileError
-        } =
-        await supabaseClient
-            .from("profiles")
-            .select(
-                "id, full_name, role"
-            )
-            .eq(
-                "id",
-                data.user.id
-            )
-            .single();
+        const user =
+            data.user;
 
 
-        if(profileError){
+        /* =============================================
+           GET TEACHER PROFILE
+        ============================================= */
 
+        const profileResult =
             await supabaseClient
-                .auth
-                .signOut();
+                .from("profiles")
+                .select(
+                    "id, full_name, role"
+                )
+                .eq(
+                    "id",
+                    user.id
+                )
+                .maybeSingle();
 
 
-            showError(
-                "Your account exists, but your teacher profile was not found."
-            );
+        if(profileResult.error){
 
-            button.disabled =
-                false;
-
-            button.textContent =
-                "🔐 Access Teacher Dashboard";
-
-            return;
+            throw profileResult.error;
 
         }
 
 
-        /*
-           CHECK ROLE
-        */
-
-        if(
-            !profile ||
-            profile.role !==
-            "teacher"
-        ){
-
-            await supabaseClient
-                .auth
-                .signOut();
+        let profile =
+            profileResult.data;
 
 
-            showError(
+        /* =============================================
+           PROFILE DOES NOT EXIST
+        ============================================= */
+
+        if(!profile){
+
+            await supabaseClient.auth.signOut();
+
+
+            throw new Error(
+                "This account does not have a teacher profile. Please create the teacher profile in Supabase first."
+            );
+
+        }
+
+
+        /* =============================================
+           VERIFY TEACHER ROLE
+        ============================================= */
+
+        if(profile.role !== "teacher"){
+
+            await supabaseClient.auth.signOut();
+
+
+            throw new Error(
                 "This account is not registered as a teacher."
             );
 
-            button.disabled =
-                false;
-
-            button.textContent =
-                "🔐 Access Teacher Dashboard";
-
-            return;
-
         }
 
 
-        /*
+        /* =============================================
+           SAVE TEACHER SESSION
+        ============================================= */
+
+        localStorage.setItem(
+            "brightAcademyTeacherLoggedIn",
+            "true"
+        );
+
+
+        localStorage.setItem(
+            "brightAcademyTeacher",
+
+            JSON.stringify({
+
+                id:user.id,
+
+                fullname:
+                    profile.full_name ||
+                    user.email,
+
+                email:
+                    user.email,
+
+                role:"teacher"
+
+            })
+
+        );
+
+
+        /* =============================================
            SUCCESS
-        */
+        ============================================= */
 
-        document.getElementById(
-            "successBox"
-        ).textContent =
-            "✅ Login successful. Opening Teacher Dashboard...";
-
-
-        document.getElementById(
-            "successBox"
-        ).style.display =
-            "block";
+        showMessage(
+            "✅ Teacher login successful! Opening dashboard...",
+            "success"
+        );
 
 
         setTimeout(
+
             function(){
 
                 window.location.href =
                     "teacher-dashboard.html";
 
             },
+
             700
+
         );
 
 
     }
     catch(error){
 
-        console.error(error);
-
-
-        showError(
-            "An unexpected error occurred."
+        console.error(
+            "Teacher login error:",
+            error
         );
 
 
-        button.disabled =
-            false;
+        showMessage(
+            "❌ " +
+            getFriendlyError(error),
+            "error"
+        );
+
+
+        button.disabled = false;
 
         button.textContent =
             "🔐 Access Teacher Dashboard";
@@ -771,27 +959,108 @@ async function teacherLogin(){
 }
 
 
-/* =====================================
-   ENTER KEY
-===================================== */
+/* =====================================================
+   CHECK EXISTING SESSION
+===================================================== */
 
-document.addEventListener(
-    "keydown",
-    function(event){
+async function checkExistingTeacherSession(){
+
+    try{
+
+        const result =
+            await supabaseClient.auth.getSession();
+
+
+        if(result.error){
+
+            console.error(
+                "Session error:",
+                result.error
+            );
+
+            return;
+
+        }
+
+
+        const session =
+            result.data?.session;
+
 
         if(
-            event.key ===
-            "Enter"
+            !session ||
+            !session.user
         ){
 
-            teacherLogin();
+            return;
+
+        }
+
+
+        const user =
+            session.user;
+
+
+        const profileResult =
+            await supabaseClient
+                .from("profiles")
+                .select(
+                    "id, full_name, role"
+                )
+                .eq(
+                    "id",
+                    user.id
+                )
+                .maybeSingle();
+
+
+        if(profileResult.error){
+
+            console.error(
+                "Profile check error:",
+                profileResult.error
+            );
+
+            return;
+
+        }
+
+
+        const profile =
+            profileResult.data;
+
+
+        if(
+            profile &&
+            profile.role === "teacher"
+        ){
+
+            window.location.href =
+                "teacher-dashboard.html";
 
         }
 
     }
-);
+    catch(error){
+
+        console.error(
+            "Session check failed:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+checkExistingTeacherSession();
 
 </script>
+
 
 </body>
 
