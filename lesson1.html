@@ -9,7 +9,7 @@
       content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="Bright English Academy - Day 1 Lesson 1 - Greetings and Introductions">
+      content="Bright English Academy - Lesson 1 - Greetings and Introductions">
 
 <title>Lesson 1 — Greetings & Introductions | Bright English Academy</title>
 
@@ -31,19 +31,34 @@ body{
     line-height:1.6;
 }
 
+/* ==============================
+   HEADER
+============================== */
+
 header{
-    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    background:
+    linear-gradient(
+        135deg,
+        #0b4f9c,
+        #087fc1
+    );
+
     color:white;
     padding:18px 20px;
+
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,.15);
+
+    box-shadow:
+    0 3px 15px
+    rgba(0,0,0,.15);
 }
 
 .header-container{
     max-width:1100px;
     margin:auto;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -75,6 +90,10 @@ nav a:hover{
     background:rgba(255,255,255,.15);
 }
 
+/* ==============================
+   MAIN
+============================== */
+
 .container{
     max-width:1000px;
     margin:auto;
@@ -86,12 +105,26 @@ nav a:hover{
     padding:28px;
     border-radius:18px;
     margin-bottom:24px;
-    box-shadow:0 5px 22px rgba(20,53,100,.08);
+
+    box-shadow:
+    0 5px 22px
+    rgba(20,53,100,.08);
+
     border:1px solid #e2eaf4;
 }
 
+/* ==============================
+   HERO
+============================== */
+
 .hero{
-    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    background:
+    linear-gradient(
+        135deg,
+        #0b4f9c,
+        #087fc1
+    );
+
     color:white;
 }
 
@@ -107,13 +140,20 @@ nav a:hover{
 
 .day-badge{
     display:inline-block;
+
     background:#ffd34d;
     color:#17233c;
+
     padding:7px 13px;
     border-radius:20px;
+
     font-weight:bold;
     margin-bottom:12px;
 }
+
+/* ==============================
+   PROGRESS
+============================== */
 
 .progress-area{
     margin-top:20px;
@@ -122,6 +162,7 @@ nav a:hover{
 .progress-title{
     display:flex;
     justify-content:space-between;
+
     margin-bottom:7px;
     font-weight:bold;
 }
@@ -129,7 +170,10 @@ nav a:hover{
 .progress-bar{
     width:100%;
     height:12px;
-    background:rgba(255,255,255,.3);
+
+    background:
+    rgba(255,255,255,.3);
+
     border-radius:20px;
     overflow:hidden;
 }
@@ -137,10 +181,16 @@ nav a:hover{
 .progress-fill{
     width:0%;
     height:100%;
+
     background:#ffd34d;
+
     border-radius:20px;
     transition:.4s;
 }
+
+/* ==============================
+   LESSON NAV
+============================== */
 
 .lesson-nav{
     display:flex;
@@ -152,9 +202,12 @@ nav a:hover{
 .lesson-nav a{
     background:#eaf3ff;
     color:#0b4f9c;
+
     text-decoration:none;
+
     padding:8px 12px;
     border-radius:7px;
+
     font-size:14px;
     font-weight:bold;
 }
@@ -162,6 +215,10 @@ nav a:hover{
 .lesson-nav a:hover{
     background:#d7eaff;
 }
+
+/* ==============================
+   HEADINGS
+============================== */
 
 h2{
     color:#0b4f9c;
@@ -174,6 +231,14 @@ h3{
     margin-bottom:8px;
 }
 
+.section-icon{
+    margin-right:7px;
+}
+
+/* ==============================
+   OBJECTIVES
+============================== */
+
 .objective-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
@@ -183,8 +248,11 @@ h3{
 .objective{
     background:#f5f9ff;
     padding:18px;
+
     border-radius:12px;
-    border-left:5px solid #0b4f9c;
+
+    border-left:
+    5px solid #0b4f9c;
 }
 
 .objective strong{
@@ -192,6 +260,10 @@ h3{
     color:#0b4f9c;
     margin-bottom:5px;
 }
+
+/* ==============================
+   VOCABULARY
+============================== */
 
 .vocabulary-grid{
     display:grid;
@@ -201,8 +273,11 @@ h3{
 
 .word-card{
     background:#f8fbff;
+
     border:1px solid #dfe8f3;
+
     padding:18px;
+
     border-radius:12px;
 }
 
@@ -219,10 +294,14 @@ h3{
 
 .listen-btn{
     border:none;
+
     background:#ffd34d;
     color:#17233c;
+
     padding:9px 14px;
+
     border-radius:8px;
+
     cursor:pointer;
     font-weight:bold;
 }
@@ -231,18 +310,30 @@ h3{
     background:#f2bf1f;
 }
 
+/* ==============================
+   GRAMMAR
+============================== */
+
 .grammar-box{
     background:#f5f9ff;
-    border-left:5px solid #0b4f9c;
+
+    border-left:
+    5px solid #0b4f9c;
+
     padding:20px;
+
     border-radius:10px;
+
     margin-bottom:18px;
 }
 
 .example{
     background:white;
+
     padding:13px;
+
     border-radius:8px;
+
     margin-top:12px;
 }
 
@@ -250,6 +341,10 @@ h3{
     font-weight:bold;
     color:#0b4f9c;
 }
+
+/* ==============================
+   CONVERSATION
+============================== */
 
 .dialogue{
     background:#f7f9fc;
@@ -271,11 +366,19 @@ h3{
     font-weight:bold;
 }
 
+/* ==============================
+   EXERCISES
+============================== */
+
 .exercise{
     background:#f8fbff;
+
     border:1px solid #dfe8f3;
+
     padding:20px;
+
     border-radius:12px;
+
     margin-bottom:18px;
 }
 
@@ -288,9 +391,13 @@ h3{
 
 .options button{
     border:1px solid #cdd9e8;
+
     background:white;
+
     padding:10px 15px;
+
     border-radius:8px;
+
     cursor:pointer;
 }
 
@@ -300,9 +407,13 @@ h3{
 
 .answer{
     display:none;
+
     margin-top:12px;
+
     padding:10px;
+
     border-radius:8px;
+
     font-weight:bold;
 }
 
@@ -316,20 +427,33 @@ h3{
     color:#c62828;
 }
 
+/* ==============================
+   INTERACTIVE
+============================== */
+
 .activity{
     background:#fffaf0;
-    border:1px solid #f2dfaa;
+
+    border:
+    1px solid #f2dfaa;
+
     padding:20px;
+
     border-radius:12px;
+
     margin-bottom:18px;
 }
 
 .activity button{
     border:none;
+
     background:#0b4f9c;
     color:white;
+
     padding:10px 17px;
+
     border-radius:8px;
+
     cursor:pointer;
     font-weight:bold;
 }
@@ -338,10 +462,23 @@ h3{
     background:#083b75;
 }
 
+/* ==============================
+   CHALLENGE
+============================== */
+
 .challenge{
-    background:linear-gradient(135deg,#eef6ff,#f7fbff);
-    border:1px solid #d8e8f8;
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ff,
+        #f7fbff
+    );
+
+    border:
+    1px solid #d8e8f8;
+
     padding:22px;
+
     border-radius:14px;
 }
 
@@ -349,9 +486,15 @@ h3{
     margin-bottom:8px;
 }
 
+/* ==============================
+   QUIZ
+============================== */
+
 .quiz-question{
     padding:18px;
-    border-bottom:1px solid #e3e9f1;
+
+    border-bottom:
+    1px solid #e3e9f1;
 }
 
 .quiz-question:last-child{
@@ -370,8 +513,11 @@ h3{
 
 .quiz-options label{
     background:#f7faff;
+
     padding:10px;
+
     border-radius:7px;
+
     cursor:pointer;
 }
 
@@ -381,13 +527,20 @@ h3{
 
 .quiz-submit{
     border:none;
+
     background:#0b4f9c;
     color:white;
+
     padding:13px 24px;
+
     border-radius:9px;
+
     font-size:16px;
+
     font-weight:bold;
+
     cursor:pointer;
+
     margin-top:20px;
 }
 
@@ -397,19 +550,25 @@ h3{
 
 #quizResult{
     display:none;
+
     margin-top:20px;
+
     padding:18px;
+
     border-radius:12px;
+
     background:#eaf7ef;
+
     color:#147844;
+
     font-weight:bold;
+
     font-size:18px;
 }
 
-.quiz-failed{
-    background:#fff4e5 !important;
-    color:#9a5b00 !important;
-}
+/* ==============================
+   FINAL REVIEW
+============================== */
 
 .review-list{
     display:grid;
@@ -419,41 +578,82 @@ h3{
 
 .review-item{
     background:#f5f9ff;
+
     padding:13px;
+
     border-radius:9px;
 }
 
-.completion-box{
+/* ==============================
+   COMPLETE LESSON
+============================== */
+
+.complete-box{
     text-align:center;
-    background:linear-gradient(135deg,#f1f8ff,#ffffff);
+
+    background:
+    linear-gradient(
+        135deg,
+        #f1f8ff,
+        #ffffff
+    );
 }
 
-.completion-status{
-    padding:18px;
-    border-radius:12px;
-    background:#f5f9ff;
-    color:#64748b;
+.complete-btn{
+    border:none;
+
+    background:#168348;
+    color:white;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.complete-btn:hover{
+    background:#116b3b;
+}
+
+#completeMessage{
+    display:none;
+
+    margin-top:15px;
+
+    color:#168348;
+
     font-weight:bold;
 }
 
-.completion-success{
-    background:#e8f7ee;
-    color:#168348;
-}
+/* ==============================
+   NAVIGATION
+============================== */
 
 .page-navigation{
     display:flex;
+
     justify-content:space-between;
+
     gap:15px;
+
     margin-top:25px;
 }
 
 .page-navigation a{
     background:#0b4f9c;
     color:white;
+
     text-decoration:none;
+
     padding:12px 18px;
+
     border-radius:9px;
+
     font-weight:bold;
 }
 
@@ -461,20 +661,27 @@ h3{
     background:#083b75;
 }
 
-#nextLessonLink{
-    display:none;
-}
+/* ==============================
+   FOOTER
+============================== */
 
 footer{
     background:#17233c;
+
     color:white;
+
     text-align:center;
+
     padding:30px 15px;
 }
 
 footer strong{
     color:#58c7ff;
 }
+
+/* ==============================
+   MOBILE
+============================== */
 
 @media(max-width:700px){
 
@@ -511,24 +718,30 @@ footer strong{
 
 </head>
 
+
 <body>
+
+
+<!-- ==============================
+     HEADER
+============================== -->
 
 <header>
 
 <div class="header-container">
 
-<a href="beginner1.html" class="logo">
+<a href="student-dashboard.html"
+   class="logo">
+
 📚 Bright English Academy
+
 </a>
+
 
 <nav>
 
-<a href="index.html">
-Home
-</a>
-
-<a href="beginner1.html">
-Course
+<a href="student-dashboard.html">
+Dashboard
 </a>
 
 <a href="student-login.html">
@@ -542,24 +755,38 @@ Login
 </header>
 
 
+
 <main class="container">
 
+
+<!-- ==============================
+     HERO
+============================== -->
 
 <section class="card hero">
 
 <span class="day-badge">
+
 📚 Day 1 / Lesson 1
+
 </span>
 
+
 <h1>
+
 👋 Greetings & Introductions
+
 </h1>
 
+
 <p>
+
 Learn how to greet people,
 say goodbye and introduce yourself
 in English.
+
 </p>
+
 
 <div class="progress-area">
 
@@ -575,10 +802,13 @@ Lesson Progress
 
 </div>
 
+
 <div class="progress-bar">
 
-<div id="progressFill"
-     class="progress-fill">
+<div
+id="progressFill"
+class="progress-fill">
+
 </div>
 
 </div>
@@ -587,23 +817,43 @@ Lesson Progress
 
 </section>
 
+
+
+<!-- ==============================
+     LESSON MENU
+============================== -->
 
 <section class="lesson-nav">
 
 <a href="#objectives">Objectives</a>
+
 <a href="#vocabulary">Vocabulary</a>
+
 <a href="#grammar">Grammar</a>
+
 <a href="#pronunciation">Pronunciation</a>
+
 <a href="#conversation">Conversation</a>
+
 <a href="#exercises">Exercises</a>
+
 <a href="#activities">Activities</a>
+
 <a href="#speaking">Speaking</a>
+
 <a href="#writing">Writing</a>
+
 <a href="#quiz">Quiz</a>
+
 <a href="#review">Review</a>
 
 </section>
 
+
+
+<!-- ==============================
+     OBJECTIVES
+============================== -->
 
 <section id="objectives" class="card">
 
@@ -616,44 +866,88 @@ By the end of this lesson,
 you will be able to:
 </p>
 
+
 <div class="objective-grid">
 
+
 <div class="objective">
-<strong>👋 Greetings</strong>
+
+<strong>
+👋 Greetings
+</strong>
+
 Say hello in different situations.
+
 </div>
 
+
 <div class="objective">
-<strong>👋 Saying Goodbye</strong>
+
+<strong>
+👋 Saying Goodbye
+</strong>
+
 Say goodbye politely.
+
 </div>
 
+
 <div class="objective">
-<strong>🙋 Introduce Yourself</strong>
+
+<strong>
+🙋 Introduce Yourself
+</strong>
+
 Say your name and basic information.
+
 </div>
 
+
 <div class="objective">
-<strong>❓ Ask Someone's Name</strong>
+
+<strong>
+❓ Ask Someone's Name
+</strong>
+
 Ask and answer:
 "What is your name?"
+
 </div>
 
+
 <div class="objective">
-<strong>😊 Ask How Someone Is</strong>
+
+<strong>
+😊 Ask How Someone Is
+</strong>
+
 Use:
 "How are you?"
+
 </div>
 
+
 <div class="objective">
-<strong>💬 Basic Conversation</strong>
-Have a short introduction conversation.
+
+<strong>
+💬 Basic Conversation
+</strong>
+
+Have a short introduction
+conversation.
+
 </div>
+
 
 </div>
 
 </section>
 
+
+
+<!-- ==============================
+     VOCABULARY
+============================== -->
 
 <section id="vocabulary" class="card">
 
@@ -661,84 +955,270 @@ Have a short introduction conversation.
 📚 Basic Greetings Vocabulary
 </h2>
 
+
 <div class="vocabulary-grid">
 
-<div class="word-card">
-<div class="word">Hello</div>
-<div class="translation">Olá</div>
-<button class="listen-btn" onclick="speak('Hello')">🔊 Listen</button>
-</div>
 
 <div class="word-card">
-<div class="word">Hi</div>
-<div class="translation">Oi / Olá</div>
-<button class="listen-btn" onclick="speak('Hi')">🔊 Listen</button>
+
+<div class="word">
+Hello
 </div>
 
-<div class="word-card">
-<div class="word">Good morning</div>
-<div class="translation">Bom dia</div>
-<button class="listen-btn" onclick="speak('Good morning')">🔊 Listen</button>
+<div class="translation">
+Olá
 </div>
 
-<div class="word-card">
-<div class="word">Good afternoon</div>
-<div class="translation">Boa tarde</div>
-<button class="listen-btn" onclick="speak('Good afternoon')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Hello')">
+
+🔊 Listen
+
+</button>
+
 </div>
 
-<div class="word-card">
-<div class="word">Good evening</div>
-<div class="translation">Boa noite / Boa tarde-noite</div>
-<button class="listen-btn" onclick="speak('Good evening')">🔊 Listen</button>
-</div>
+
 
 <div class="word-card">
-<div class="word">Goodbye</div>
-<div class="translation">Adeus / Tchau</div>
-<button class="listen-btn" onclick="speak('Goodbye')">🔊 Listen</button>
+
+<div class="word">
+Hi
 </div>
 
-<div class="word-card">
-<div class="word">See you later</div>
-<div class="translation">Até logo</div>
-<button class="listen-btn" onclick="speak('See you later')">🔊 Listen</button>
+<div class="translation">
+Oi / Olá
 </div>
 
-<div class="word-card">
-<div class="word">Nice to meet you</div>
-<div class="translation">Prazer em conhecer-te</div>
-<button class="listen-btn" onclick="speak('Nice to meet you')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Hi')">
+
+🔊 Listen
+
+</button>
+
 </div>
 
-<div class="word-card">
-<div class="word">How are you?</div>
-<div class="translation">Como estás?</div>
-<button class="listen-btn" onclick="speak('How are you?')">🔊 Listen</button>
-</div>
+
 
 <div class="word-card">
-<div class="word">I am fine.</div>
-<div class="translation">Estou bem.</div>
-<button class="listen-btn" onclick="speak('I am fine')">🔊 Listen</button>
+
+<div class="word">
+Good morning
 </div>
 
-<div class="word-card">
-<div class="word">Thank you.</div>
-<div class="translation">Obrigado / Obrigada.</div>
-<button class="listen-btn" onclick="speak('Thank you')">🔊 Listen</button>
+<div class="translation">
+Bom dia
 </div>
 
-<div class="word-card">
-<div class="word">My name is...</div>
-<div class="translation">O meu nome é...</div>
-<button class="listen-btn" onclick="speak('My name is')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Good morning')">
+
+🔊 Listen
+
+</button>
+
 </div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+Good afternoon
+</div>
+
+<div class="translation">
+Boa tarde
+</div>
+
+<button class="listen-btn"
+onclick="speak('Good afternoon')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+Good evening
+</div>
+
+<div class="translation">
+Boa noite / Boa tarde-noite
+</div>
+
+<button class="listen-btn"
+onclick="speak('Good evening')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+Goodbye
+</div>
+
+<div class="translation">
+Adeus / Tchau
+</div>
+
+<button class="listen-btn"
+onclick="speak('Goodbye')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+See you later
+</div>
+
+<div class="translation">
+Até logo
+</div>
+
+<button class="listen-btn"
+onclick="speak('See you later')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+Nice to meet you
+</div>
+
+<div class="translation">
+Prazer em conhecer-te
+</div>
+
+<button class="listen-btn"
+onclick="speak('Nice to meet you')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+How are you?
+</div>
+
+<div class="translation">
+Como estás?
+</div>
+
+<button class="listen-btn"
+onclick="speak('How are you?')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+I am fine.
+</div>
+
+<div class="translation">
+Estou bem.
+</div>
+
+<button class="listen-btn"
+onclick="speak('I am fine')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+Thank you.
+</div>
+
+<div class="translation">
+Obrigado / Obrigada.
+</div>
+
+<button class="listen-btn"
+onclick="speak('Thank you')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+
+<div class="word-card">
+
+<div class="word">
+My name is...
+</div>
+
+<div class="translation">
+O meu nome é...
+</div>
+
+<button class="listen-btn"
+onclick="speak('My name is')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
 
 </div>
 
 </section>
 
+
+
+<!-- ==============================
+     GRAMMAR
+============================== -->
 
 <section id="grammar" class="card">
 
@@ -746,14 +1226,18 @@ Have a short introduction conversation.
 📚 Grammar — Introducing Yourself
 </h2>
 
+
 <div class="grammar-box">
 
-<h3>1️⃣ My name is...</h3>
+<h3>
+1️⃣ My name is...
+</h3>
 
 <p>
 Use <strong>My name is</strong>
 to tell someone your name.
 </p>
+
 
 <div class="example">
 
@@ -767,9 +1251,12 @@ O meu nome é José.
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('My name is José')">
+
 🔊 Listen
+
 </button>
 
 </div>
@@ -777,15 +1264,19 @@ onclick="speak('My name is José')">
 </div>
 
 
+
 <div class="grammar-box">
 
-<h3>2️⃣ I am...</h3>
+<h3>
+2️⃣ I am...
+</h3>
 
 <p>
 Use <strong>I am</strong>
 to give basic information
 about yourself.
 </p>
+
 
 <div class="example">
 
@@ -799,9 +1290,12 @@ Eu sou estudante.
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('I am a student')">
+
 🔊 Listen
+
 </button>
 
 </div>
@@ -809,14 +1303,18 @@ onclick="speak('I am a student')">
 </div>
 
 
+
 <div class="grammar-box">
 
-<h3>3️⃣ What's your name?</h3>
+<h3>
+3️⃣ What's your name?
+</h3>
 
 <p>
 Use this question to ask
 someone's name.
 </p>
+
 
 <div class="example">
 
@@ -830,9 +1328,12 @@ Qual é o teu nome?
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('What is your name?')">
+
 🔊 Listen
+
 </button>
 
 </div>
@@ -840,14 +1341,18 @@ onclick="speak('What is your name?')">
 </div>
 
 
+
 <div class="grammar-box">
 
-<h3>4️⃣ How are you?</h3>
+<h3>
+4️⃣ How are you?
+</h3>
 
 <p>
 Use this question to ask
 about someone's condition.
 </p>
+
 
 <div class="example">
 
@@ -861,9 +1366,12 @@ Como estás?
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('How are you?')">
+
 🔊 Listen
+
 </button>
 
 </div>
@@ -871,9 +1379,12 @@ onclick="speak('How are you?')">
 </div>
 
 
+
 <div class="grammar-box">
 
-<h3>5️⃣ Short Answers</h3>
+<h3>
+5️⃣ Short Answers
+</h3>
 
 <div class="example">
 
@@ -909,8 +1420,14 @@ Estou ótimo!
 
 </div>
 
+
 </section>
 
+
+
+<!-- ==============================
+     PRONUNCIATION
+============================== -->
 
 <section id="pronunciation" class="card">
 
@@ -918,9 +1435,11 @@ Estou ótimo!
 🔊 Pronunciation Practice
 </h2>
 
+
 <p>
 Listen and repeat each sentence.
 </p>
+
 
 <div class="example">
 
@@ -930,12 +1449,16 @@ Hello! My name is José.
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('Hello! My name is José.')">
+
 🔊 Listen
+
 </button>
 
 </div>
+
 
 <div class="example">
 
@@ -945,12 +1468,16 @@ Nice to meet you.
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('Nice to meet you.')">
+
 🔊 Listen
+
 </button>
 
 </div>
+
 
 <div class="example">
 
@@ -960,12 +1487,16 @@ How are you today?
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('How are you today?')">
+
 🔊 Listen
+
 </button>
 
 </div>
+
 
 <div class="example">
 
@@ -975,12 +1506,16 @@ I am fine, thank you.
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('I am fine, thank you.')">
+
 🔊 Listen
+
 </button>
 
 </div>
+
 
 <div class="example">
 
@@ -990,15 +1525,24 @@ See you later!
 
 <br><br>
 
-<button class="listen-btn"
+<button
+class="listen-btn"
 onclick="speak('See you later!')">
+
 🔊 Listen
+
 </button>
 
 </div>
 
+
 </section>
 
+
+
+<!-- ==============================
+     CONVERSATION
+============================== -->
 
 <section id="conversation" class="card">
 
@@ -1006,79 +1550,148 @@ onclick="speak('See you later!')">
 💬 Real-life Conversation
 </h2>
 
+
 <p>
 José and Álvaro are meeting for
 the first time.
 </p>
 
+
 <div class="dialogue">
 
+
 <p>
-<span class="jose">José:</span>
+<span class="jose">
+José:
+</span>
+
 Hello! Good morning.
+
 </p>
 
+
 <p>
-<span class="student">Álvaro:</span>
+<span class="student">
+Álvaro:
+</span>
+
 Good morning!
+
 </p>
 
+
 <p>
-<span class="jose">José:</span>
+<span class="jose">
+José:
+</span>
+
 What's your name?
+
 </p>
 
+
 <p>
-<span class="student">Álvaro:</span>
+<span class="student">
+Álvaro:
+</span>
+
 My name is Álvaro. What's your name?
+
 </p>
 
+
 <p>
-<span class="jose">José:</span>
+<span class="jose">
+José:
+</span>
+
 My name is José. Nice to meet you.
+
 </p>
 
+
 <p>
-<span class="student">Álvaro:</span>
+<span class="student">
+Álvaro:
+</span>
+
 Nice to meet you too.
+
 </p>
 
+
 <p>
-<span class="jose">José:</span>
+<span class="jose">
+José:
+</span>
+
 How are you?
+
 </p>
 
+
 <p>
-<span class="student">Álvaro:</span>
+<span class="student">
+Álvaro:
+</span>
+
 I'm fine, thank you. How are you?
+
 </p>
 
+
 <p>
-<span class="jose">José:</span>
+<span class="jose">
+José:
+</span>
+
 I'm great, thank you!
+
 </p>
 
+
 <p>
-<span class="student">Álvaro:</span>
+<span class="student">
+Álvaro:
+</span>
+
 See you later!
+
 </p>
 
+
 <p>
-<span class="jose">José:</span>
+<span class="jose">
+José:
+</span>
+
 See you!
+
 </p>
+
 
 </div>
 
+
 <br>
 
-<button class="listen-btn"
+
+<button
+class="listen-btn"
 onclick="speakConversation()">
+
 🔊 Listen to Conversation
+
 </button>
+
 
 </section>
 
+
+
+<!-- ==============================
+     EXERCISES
+============================== -->
 
 <section id="exercises" class="card">
 
@@ -1097,25 +1710,36 @@ onclick="speakConversation()">
 It is 8:00 in the morning.
 </p>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer1')">
+<button onclick="checkAnswer(
+this,true,'answer1'
+)">
 Good morning
 </button>
 
-<button onclick="checkAnswer(this,false,'answer1')">
+
+<button onclick="checkAnswer(
+this,false,'answer1'
+)">
 Good evening
 </button>
 
-<button onclick="checkAnswer(this,false,'answer1')">
+
+<button onclick="checkAnswer(
+this,false,'answer1'
+)">
 Goodbye
 </button>
 
 </div>
 
+
 <div id="answer1" class="answer"></div>
 
 </div>
+
 
 
 <div class="exercise">
@@ -1128,25 +1752,36 @@ Goodbye
 My name ___ José.
 </p>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer2')">
+<button onclick="checkAnswer(
+this,true,'answer2'
+)">
 is
 </button>
 
-<button onclick="checkAnswer(this,false,'answer2')">
+
+<button onclick="checkAnswer(
+this,false,'answer2'
+)">
 are
 </button>
 
-<button onclick="checkAnswer(this,false,'answer2')">
+
+<button onclick="checkAnswer(
+this,false,'answer2'
+)">
 am
 </button>
 
 </div>
 
+
 <div id="answer2" class="answer"></div>
 
 </div>
+
 
 
 <div class="exercise">
@@ -1159,25 +1794,36 @@ am
 You want to ask someone's name.
 </p>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer3')">
+<button onclick="checkAnswer(
+this,true,'answer3'
+)">
 What's your name?
 </button>
 
-<button onclick="checkAnswer(this,false,'answer3')">
+
+<button onclick="checkAnswer(
+this,false,'answer3'
+)">
 How old are you?
 </button>
 
-<button onclick="checkAnswer(this,false,'answer3')">
+
+<button onclick="checkAnswer(
+this,false,'answer3'
+)">
 Where is the school?
 </button>
 
 </div>
 
+
 <div id="answer3" class="answer"></div>
 
 </div>
+
 
 
 <div class="exercise">
@@ -1190,25 +1836,36 @@ Where is the school?
 How ___ you?
 </p>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer4')">
+<button onclick="checkAnswer(
+this,true,'answer4'
+)">
 are
 </button>
 
-<button onclick="checkAnswer(this,false,'answer4')">
+
+<button onclick="checkAnswer(
+this,false,'answer4'
+)">
 is
 </button>
 
-<button onclick="checkAnswer(this,false,'answer4')">
+
+<button onclick="checkAnswer(
+this,false,'answer4'
+)">
 am
 </button>
 
 </div>
 
+
 <div id="answer4" class="answer"></div>
 
 </div>
+
 
 
 <div class="exercise">
@@ -1217,25 +1874,36 @@ am
 5. Choose the correct goodbye:
 </strong>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer5')">
+<button onclick="checkAnswer(
+this,true,'answer5'
+)">
 See you later
 </button>
 
-<button onclick="checkAnswer(this,false,'answer5')">
+
+<button onclick="checkAnswer(
+this,false,'answer5'
+)">
 Good morning
 </button>
 
-<button onclick="checkAnswer(this,false,'answer5')">
+
+<button onclick="checkAnswer(
+this,false,'answer5'
+)">
 Nice to meet you
 </button>
 
 </div>
 
+
 <div id="answer5" class="answer"></div>
 
 </div>
+
 
 
 <div class="exercise">
@@ -1248,25 +1916,36 @@ Nice to meet you
 "Prazer em conhecer-te."
 </p>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer6')">
+<button onclick="checkAnswer(
+this,true,'answer6'
+)">
 Nice to meet you
 </button>
 
-<button onclick="checkAnswer(this,false,'answer6')">
+
+<button onclick="checkAnswer(
+this,false,'answer6'
+)">
 Goodbye
 </button>
 
-<button onclick="checkAnswer(this,false,'answer6')">
+
+<button onclick="checkAnswer(
+this,false,'answer6'
+)">
 How are you?
 </button>
 
 </div>
 
+
 <div id="answer6" class="answer"></div>
 
 </div>
+
 
 
 <div class="exercise">
@@ -1279,25 +1958,36 @@ How are you?
 I ___ fine.
 </p>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer7')">
+<button onclick="checkAnswer(
+this,true,'answer7'
+)">
 am
 </button>
 
-<button onclick="checkAnswer(this,false,'answer7')">
+
+<button onclick="checkAnswer(
+this,false,'answer7'
+)">
 is
 </button>
 
-<button onclick="checkAnswer(this,false,'answer7')">
+
+<button onclick="checkAnswer(
+this,false,'answer7'
+)">
 are
 </button>
 
 </div>
 
+
 <div id="answer7" class="answer"></div>
 
 </div>
+
 
 
 <div class="exercise">
@@ -1310,28 +2000,44 @@ are
 How are you?
 </p>
 
+
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer8')">
+<button onclick="checkAnswer(
+this,true,'answer8'
+)">
 I'm fine, thank you.
 </button>
 
-<button onclick="checkAnswer(this,false,'answer8')">
+
+<button onclick="checkAnswer(
+this,false,'answer8'
+)">
 My name is José.
 </button>
 
-<button onclick="checkAnswer(this,false,'answer8')">
+
+<button onclick="checkAnswer(
+this,false,'answer8'
+)">
 Goodbye.
 </button>
 
 </div>
 
+
 <div id="answer8" class="answer"></div>
 
 </div>
 
+
 </section>
 
+
+
+<!-- ==============================
+     ACTIVITIES
+============================== -->
 
 <section id="activities" class="card">
 
@@ -1339,9 +2045,12 @@ Goodbye.
 🧩 Interactive Activities
 </h2>
 
+
 <div class="activity">
 
-<h3>Activity 1</h3>
+<h3>
+Activity 1
+</h3>
 
 <p>
 Someone says:
@@ -1352,16 +2061,24 @@ Someone says:
 What is the best response?
 </p>
 
-<button onclick="activityAnswer('Great! Nice to meet you too.')">
+
+<button onclick="activityAnswer(
+'Great! Nice to meet you too.'
+)">
+
 Choose Answer
+
 </button>
 
 </div>
 
 
+
 <div class="activity">
 
-<h3>Activity 2</h3>
+<h3>
+Activity 2
+</h3>
 
 <p>
 Build the sentence:
@@ -1373,16 +2090,24 @@ name / My / is / José
 </strong>
 </p>
 
-<button onclick="activityAnswer('Correct sentence: My name is José.')">
+
+<button onclick="activityAnswer(
+'Correct sentence: My name is José.'
+)">
+
 Check
+
 </button>
 
 </div>
 
 
+
 <div class="activity">
 
-<h3>Activity 3</h3>
+<h3>
+Activity 3
+</h3>
 
 <p>
 Build the question:
@@ -1394,30 +2119,49 @@ your / What / name / is?
 </strong>
 </p>
 
-<button onclick="activityAnswer('Correct question: What is your name?')">
+
+<button onclick="activityAnswer(
+'Correct question: What is your name?'
+)">
+
 Check
+
 </button>
 
 </div>
 
 
+
 <div class="activity">
 
-<h3>Activity 4</h3>
+<h3>
+Activity 4
+</h3>
 
 <p>
 Someone asks:
 "How are you?"
 </p>
 
-<button onclick="activityAnswer('A good answer is: I am fine, thank you.')">
+
+<button onclick="activityAnswer(
+'A good answer is: I am fine, thank you.'
+)">
+
 Check
+
 </button>
 
 </div>
 
+
 </section>
 
+
+
+<!-- ==============================
+     SPEAKING
+============================== -->
 
 <section id="speaking" class="card">
 
@@ -1425,40 +2169,61 @@ Check
 🗣️ Speaking Challenge
 </h2>
 
+
 <div class="challenge">
 
 <h3>
 🎤 Introduce Yourself
 </h3>
 
+
 <p>
 Speak for 30–60 seconds.
 </p>
+
 
 <p>
 Try to say:
 </p>
 
+
 <ul>
 
 <li>Hello.</li>
+
 <li>My name is...</li>
+
 <li>I am a student.</li>
+
 <li>I am from...</li>
+
 <li>Nice to meet you.</li>
+
 <li>Thank you.</li>
 
 </ul>
 
-<button class="listen-btn"
-onclick="speak('Hello. My name is José. I am a student. I am from Mozambique. Nice to meet you. Thank you.')">
+
+<button
+class="listen-btn"
+onclick="speak(
+'Hello. My name is José. I am a student. I am from Mozambique. Nice to meet you. Thank you.'
+)">
+
 🔊 Hear a Model
+
 </button>
+
 
 </div>
 
 </section>
 
+
+
+<!-- ==============================
+     WRITING
+============================== -->
 
 <section id="writing" class="card">
 
@@ -1466,25 +2231,33 @@ onclick="speak('Hello. My name is José. I am a student. I am from Mozambique. N
 ✍️ Writing Challenge
 </h2>
 
+
 <div class="challenge">
 
 <p>
 Write 5–6 sentences introducing yourself.
 </p>
 
+
 <p>
 Try to include:
 </p>
 
+
 <ul>
 
 <li>Your name</li>
+
 <li>Your age</li>
+
 <li>Your country</li>
+
 <li>Your city</li>
+
 <li>How you are</li>
 
 </ul>
+
 
 <div class="example">
 
@@ -1508,10 +2281,16 @@ Nice to meet you.
 
 </div>
 
+
 </div>
 
 </section>
 
+
+
+<!-- ==============================
+     QUIZ
+============================== -->
 
 <section id="quiz" class="card">
 
@@ -1519,11 +2298,11 @@ Nice to meet you.
 🎯 10-Question Quiz
 </h2>
 
+
 <p>
 Choose the best answer.
-You need at least <strong>70%</strong>
-to complete Lesson 1.
 </p>
+
 
 <form id="quizForm">
 
@@ -1556,6 +2335,7 @@ Good evening
 </div>
 
 
+
 <div class="quiz-question">
 
 <p>
@@ -1582,6 +2362,7 @@ are
 </div>
 
 </div>
+
 
 
 <div class="quiz-question">
@@ -1612,6 +2393,7 @@ Goodbye!
 </div>
 
 
+
 <div class="quiz-question">
 
 <p>
@@ -1640,6 +2422,7 @@ are
 </div>
 
 
+
 <div class="quiz-question">
 
 <p>
@@ -1666,6 +2449,7 @@ Obrigado
 </div>
 
 </div>
+
 
 
 <div class="quiz-question">
@@ -1697,6 +2481,7 @@ Goodbye.
 </div>
 
 
+
 <div class="quiz-question">
 
 <p>
@@ -1723,6 +2508,7 @@ Bom dia.
 </div>
 
 </div>
+
 
 
 <div class="quiz-question">
@@ -1753,6 +2539,7 @@ am
 </div>
 
 
+
 <div class="quiz-question">
 
 <p>
@@ -1779,6 +2566,7 @@ Nice to meet you.
 </div>
 
 </div>
+
 
 
 <div class="quiz-question">
@@ -1810,6 +2598,7 @@ am
 </div>
 
 
+
 <button
 type="button"
 class="quiz-submit"
@@ -1819,14 +2608,21 @@ onclick="submitQuiz()">
 
 </button>
 
+
 </form>
 
 
 <div id="quizResult">
 </div>
 
+
 </section>
 
+
+
+<!-- ==============================
+     DAILY REVIEW
+============================== -->
 
 <section id="review" class="card">
 
@@ -1834,12 +2630,15 @@ onclick="submitQuiz()">
 🔄 Daily Review
 </h2>
 
+
 <p>
 Review the most important points
 from Lesson 1.
 </p>
 
+
 <div class="review-list">
+
 
 <div class="review-item">
 👋 <strong>Hello</strong> = Olá
@@ -1881,13 +2680,17 @@ from Lesson 1.
 💬 <strong>I am fine.</strong> = Estou bem.
 </div>
 
+
 </div>
 
+
 <br>
+
 
 <h3>
 ⭐ Key Sentences
 </h3>
+
 
 <p>
 Hello! My name is José.
@@ -1913,38 +2716,66 @@ I'm fine, thank you.
 See you later!
 </p>
 
+
 <br>
+
 
 <button
 class="listen-btn"
-onclick="speak('Hello! My name is José. What is your name? Nice to meet you. How are you? I am fine, thank you. See you later!')">
+onclick="speak(
+'Hello! My name is José. What is your name? Nice to meet you. How are you? I am fine, thank you. See you later!'
+)">
 
 🔊 Listen
 
 </button>
 
+
 </section>
+
 
 
 <!-- ==============================
-     AUTOMATIC COMPLETION
+     COMPLETE LESSON
 ============================== -->
 
-<section class="card completion-box">
+<section class="card complete-box">
+
 
 <h2>
-🏆 Lesson 1 Status
+🏆 Lesson 1 Complete
 </h2>
 
-<div id="completionStatus"
-     class="completion-status">
 
-📚 Complete the 10-question quiz
-with at least 70% to unlock Lesson 2.
+<p>
+Finished all the activities?
+Click the button below to save your progress.
+</p>
+
+
+<button
+id="completeButton"
+class="complete-btn"
+onclick="completeLesson()">
+
+✅ Complete Lesson 1
+
+</button>
+
+
+<div id="completeMessage">
+
+🎉 Lesson 1 completed successfully!
+
+<br><br>
+
+Lesson 2 is now unlocked.
 
 </div>
 
+
 </section>
+
 
 
 <!-- ==============================
@@ -1953,14 +2784,20 @@ with at least 70% to unlock Lesson 2.
 
 <div class="page-navigation">
 
-<a href="beginner1.html">
-← Back to Course
+
+<a href="student-dashboard.html">
+
+← Back to Dashboard
+
 </a>
 
-<a href="lesson2.html"
-   id="nextLessonLink">
+
+<a href="lesson2.html">
+
 Next Lesson →
+
 </a>
+
 
 </div>
 
@@ -1968,17 +2805,26 @@ Next Lesson →
 </main>
 
 
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
 <footer>
 
 <p>
+
 <strong>
 Bright English Academy
 </strong>
+
 </p>
+
 
 <p>
 Speak English with Confidence
 </p>
+
 
 <p>
 👤 Created by
@@ -1987,6 +2833,7 @@ José Simeão
 </strong>
 </p>
 
+
 <p>
 Day 1 / Lesson 1
 </p>
@@ -1994,15 +2841,14 @@ Day 1 / Lesson 1
 </footer>
 
 
+
 <script>
 
 /* =================================
-   STORAGE KEY
-   MUST MATCH beginner1.html
+   LESSON NUMBER
 ================================= */
 
-const PROGRESS_KEY =
-    "brightEnglishAcademy_beginner1_completed";
+const CURRENT_LESSON = 1;
 
 
 /* =================================
@@ -2011,32 +2857,44 @@ const PROGRESS_KEY =
 
 function speak(text){
 
-    if(!("speechSynthesis" in window)){
+    if(
+        !("speechSynthesis" in window)
+    ){
 
         alert(
             "Audio is not supported by this browser."
         );
 
         return;
+
     }
+
 
     window.speechSynthesis.cancel();
 
+
     const speech =
-        new SpeechSynthesisUtterance(text);
+        new SpeechSynthesisUtterance(
+            text
+        );
+
 
     speech.lang =
         "en-US";
 
+
     speech.rate =
         0.88;
+
 
     speech.pitch =
         1;
 
+
     window.speechSynthesis.speak(
         speech
     );
+
 }
 
 
@@ -2071,6 +2929,7 @@ function speakConversation(){
         "José: See you!"
 
     );
+
 }
 
 
@@ -2089,8 +2948,10 @@ function checkAnswer(
             answerId
         );
 
+
     answer.style.display =
         "block";
+
 
     if(correct){
 
@@ -2100,7 +2961,8 @@ function checkAnswer(
         answer.textContent =
             "✅ Correct! Well done.";
 
-    }else{
+    }
+    else{
 
         answer.className =
             "answer wrong";
@@ -2109,6 +2971,7 @@ function checkAnswer(
             "❌ Try again.";
 
     }
+
 }
 
 
@@ -2116,125 +2979,13 @@ function checkAnswer(
    ACTIVITIES
 ================================= */
 
-function activityAnswer(message){
+function activityAnswer(
+    message
+){
 
     alert(
         "💡 " + message
     );
-}
-
-
-/* =================================
-   GET COMPLETED LESSONS
-================================= */
-
-function getCompletedLessons(){
-
-    try{
-
-        const saved =
-            localStorage.getItem(
-                PROGRESS_KEY
-            );
-
-        if(!saved){
-            return [];
-        }
-
-        const data =
-            JSON.parse(saved);
-
-        if(!Array.isArray(data)){
-            return [];
-        }
-
-        return data;
-
-    }catch(error){
-
-        return [];
-
-    }
-}
-
-
-/* =================================
-   SAVE LESSON 1 COMPLETION
-================================= */
-
-function saveLesson1Completion(){
-
-    let completed =
-        getCompletedLessons();
-
-    if(!completed.includes(1)){
-
-        completed.push(1);
-
-    }
-
-    /*
-       Keep the list clean and ordered.
-    */
-
-    completed =
-        [...new Set(completed)]
-        .sort(
-            function(a,b){
-                return a-b;
-            }
-        );
-
-    localStorage.setItem(
-        PROGRESS_KEY,
-        JSON.stringify(completed)
-    );
-
-}
-
-
-/* =================================
-   CHECK IF LESSON 1 IS COMPLETE
-================================= */
-
-function isLesson1Complete(){
-
-    return getCompletedLessons()
-        .includes(1);
-
-}
-
-
-/* =================================
-   COMPLETE LESSON AUTOMATICALLY
-================================= */
-
-function completeLessonAutomatically(){
-
-    saveLesson1Completion();
-
-    updateProgress();
-
-    const status =
-        document.getElementById(
-            "completionStatus"
-        );
-
-    status.className =
-        "completion-status completion-success";
-
-    status.innerHTML =
-        "🎉 <strong>Lesson 1 completed!</strong><br><br>" +
-        "You scored 70% or more in the quiz.<br>" +
-        "🔓 Lesson 2 is now unlocked.";
-
-    const next =
-        document.getElementById(
-            "nextLessonLink"
-        );
-
-    next.style.display =
-        "inline-block";
 
 }
 
@@ -2263,8 +3014,6 @@ function submitQuiz(){
 
     let score = 0;
 
-    let unanswered = 0;
-
 
     for(
         let question in answers
@@ -2278,16 +3027,8 @@ function submitQuiz(){
             );
 
 
-        if(!selected){
-
-            unanswered++;
-
-            continue;
-
-        }
-
-
         if(
+            selected &&
             selected.value ===
             answers[question]
         ){
@@ -2299,10 +3040,9 @@ function submitQuiz(){
     }
 
 
-    /*
-       The student must answer
-       all 10 questions.
-    */
+    const percentage =
+        score * 10;
+
 
     const result =
         document.getElementById(
@@ -2310,29 +3050,38 @@ function submitQuiz(){
         );
 
 
-    if(unanswered > 0){
-
-        result.style.display =
-            "block";
-
-        result.className =
-            "quiz-failed";
-
-        result.innerHTML =
-            "⚠️ Please answer all 10 questions before submitting the quiz.";
-
-        return;
-
-    }
+    result.style.display =
+        "block";
 
 
-    const percentage =
-        score * 10;
+    result.innerHTML =
+
+        "🎯 Your Score: " +
+
+        score +
+
+        "/10 (" +
+
+        percentage +
+
+        "%)<br><br>" +
+
+        (
+            percentage >= 70
+
+            ?
+
+            "🏆 Excellent! Keep learning!"
+
+            :
+
+            "📚 Keep practicing and try again!"
+        );
 
 
-    /*
-       Save quiz score.
-    */
+    /* =========================
+       SAVE SCORE
+    ========================= */
 
     localStorage.setItem(
         "lesson1Score",
@@ -2340,75 +3089,241 @@ function submitQuiz(){
     );
 
 
-    result.style.display =
-        "block";
-
-
-    if(percentage >= 70){
-
-        result.className =
-            "";
-
-        result.innerHTML =
-
-            "🎯 Your Score: " +
-
-            score +
-
-            "/10 (" +
-
-            percentage +
-
-            "%)<br><br>" +
-
-            "🏆 Excellent! You passed Lesson 1.";
-
-
-        /*
-           AUTOMATIC COMPLETION
-        */
-
-        completeLessonAutomatically();
-
-
-    }else{
-
-        result.className =
-            "quiz-failed";
-
-        result.innerHTML =
-
-            "🎯 Your Score: " +
-
-            score +
-
-            "/10 (" +
-
-            percentage +
-
-            "%)<br><br>" +
-
-            "📚 You need at least 70% to complete Lesson 1. " +
-
-            "Review the lesson and try the quiz again.";
-
-    }
+    saveStudentScore(
+        percentage
+    );
 
 }
 
 
 /* =================================
-   UPDATE LESSON PROGRESS
+   SAVE SCORE TO STUDENT
+================================= */
+
+function saveStudentScore(
+    percentage
+){
+
+    const savedStudent =
+        localStorage.getItem(
+            "brightAcademyStudent"
+        );
+
+
+    if(!savedStudent){
+
+        return;
+
+    }
+
+
+    const student =
+        JSON.parse(
+            savedStudent
+        );
+
+
+    if(
+        !Array.isArray(
+            student.scores
+        )
+    ){
+
+        student.scores = [];
+
+    }
+
+
+    /*
+       Prevent adding the same score
+       repeatedly during one quiz session.
+    */
+
+    if(
+        !window.lesson1ScoreSaved
+    ){
+
+        student.scores.push(
+            percentage
+        );
+
+        window.lesson1ScoreSaved =
+            true;
+
+    }
+
+
+    localStorage.setItem(
+        "brightAcademyStudent",
+        JSON.stringify(student)
+    );
+
+}
+
+
+/* =================================
+   COMPLETE LESSON
+================================= */
+
+function completeLesson(){
+
+    /*
+       Get current completed lessons.
+    */
+
+    let completed =
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+
+    if(!Array.isArray(completed)){
+
+        completed = [];
+
+    }
+
+
+    /*
+       Add Lesson 1.
+    */
+
+    if(
+        !completed.includes(
+            CURRENT_LESSON
+        )
+    ){
+
+        completed.push(
+            CURRENT_LESSON
+        );
+
+    }
+
+
+    /*
+       Save completed lessons.
+    */
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+
+    /*
+       Synchronize with student account.
+    */
+
+    const savedStudent =
+        localStorage.getItem(
+            "brightAcademyStudent"
+        );
+
+
+    if(savedStudent){
+
+        const student =
+            JSON.parse(
+                savedStudent
+            );
+
+
+        student.completedLessons =
+            completed;
+
+
+        localStorage.setItem(
+            "brightAcademyStudent",
+            JSON.stringify(student)
+        );
+
+    }
+
+
+    /*
+       Update visual progress.
+    */
+
+    updateProgress();
+
+
+    /*
+       Show completion message.
+    */
+
+    const message =
+        document.getElementById(
+            "completeMessage"
+        );
+
+
+    message.style.display =
+        "block";
+
+
+    /*
+       Change button.
+    */
+
+    const button =
+        document.getElementById(
+            "completeButton"
+        );
+
+
+    button.textContent =
+        "✅ Lesson 1 Completed";
+
+
+    button.style.background =
+        "#138a4b";
+
+
+    /*
+       Tell the student that
+       Lesson 2 is unlocked.
+    */
+
+    setTimeout(
+        function(){
+
+            alert(
+                "🎉 Lesson 1 completed!\n\n" +
+                "🔓 Lesson 2 is now unlocked."
+            );
+
+        },
+        100
+    );
+
+}
+
+
+/* =================================
+   UPDATE PROGRESS
 ================================= */
 
 function updateProgress(){
 
-    const complete =
-        isLesson1Complete();
+    const completed =
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+
+    const isComplete =
+        completed.includes(
+            CURRENT_LESSON
+        );
 
 
     const percentage =
-        complete
+        isComplete
         ? 100
         : 0;
 
@@ -2425,41 +3340,26 @@ function updateProgress(){
         percentage + "%";
 
 
-    const status =
+    if(isComplete){
+
         document.getElementById(
-            "completionStatus"
-        );
+            "completeMessage"
+        ).style.display =
+            "block";
 
 
-    const next =
-        document.getElementById(
-            "nextLessonLink"
-        );
+        const button =
+            document.getElementById(
+                "completeButton"
+            );
 
 
-    if(complete){
+        button.textContent =
+            "✅ Lesson 1 Completed";
 
-        status.className =
-            "completion-status completion-success";
 
-        status.innerHTML =
-            "🎉 <strong>Lesson 1 completed!</strong><br><br>" +
-            "🔓 Lesson 2 is unlocked.";
-
-        next.style.display =
-            "inline-block";
-
-    }else{
-
-        status.className =
-            "completion-status";
-
-        status.innerHTML =
-            "📚 Complete the 10-question quiz " +
-            "with at least 70% to unlock Lesson 2.";
-
-        next.style.display =
-            "none";
+        button.style.background =
+            "#138a4b";
 
     }
 
@@ -2467,41 +3367,10 @@ function updateProgress(){
 
 
 /* =================================
-   PROTECT NEXT LESSON
-================================= */
-
-document.getElementById(
-    "nextLessonLink"
-).addEventListener(
-    "click",
-    function(event){
-
-        if(!isLesson1Complete()){
-
-            event.preventDefault();
-
-            alert(
-                "🔒 Lesson 2 is locked. Complete Lesson 1 first."
-            );
-
-        }
-
-    }
-);
-
-
-/* =================================
    PAGE LOAD
 ================================= */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        updateProgress();
-
-    }
-);
+updateProgress();
 
 
 /* =================================
@@ -2513,7 +3382,8 @@ window.addEventListener(
     function(){
 
         if(
-            "speechSynthesis" in window
+            "speechSynthesis"
+            in window
         ){
 
             window.speechSynthesis.cancel();
