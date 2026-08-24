@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -125,6 +126,7 @@ nav a:hover {
 .intro p {
     color: #64748b;
     font-size: 17px;
+    line-height: 1.7;
 }
 
 /* =========================
@@ -211,6 +213,26 @@ nav a:hover {
 }
 
 /* =========================
+   LESSON STATUS
+========================= */
+
+.lesson-status {
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.status-completed {
+    color: #15803d;
+}
+
+.status-pending {
+    color: #64748b;
+}
+
+/* =========================
    BUTTONS
 ========================= */
 
@@ -223,14 +245,16 @@ nav a:hover {
 }
 
 .listen-btn,
-.open-btn {
+.open-btn,
+.complete-btn {
+
     border: none;
 
-    padding: 13px 20px;
+    padding: 13px 18px;
 
     border-radius: 10px;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: bold;
 
@@ -267,6 +291,24 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
+.complete-btn {
+    background: #16a34a;
+
+    color: white;
+}
+
+.complete-btn:hover {
+    background: #15803d;
+
+    transform: translateY(-2px);
+}
+
+.complete-btn.completed {
+    background: #64748b;
+
+    cursor: default;
+}
+
 /* =========================
    PROGRESS
 ========================= */
@@ -285,12 +327,24 @@ nav a:hover {
 
 .progress-box h3 {
     color: #0757c9;
+
+    margin-top: 0;
+}
+
+.progress-text {
+    font-size: 20px;
+
+    font-weight: 800;
+
+    color: #0757c9;
+
+    margin-top: 15px;
 }
 
 .progress-bar {
     width: 100%;
 
-    height: 14px;
+    height: 16px;
 
     background: #dce8f7;
 
@@ -313,6 +367,14 @@ nav a:hover {
     );
 
     border-radius: 20px;
+
+    transition: width .5s ease;
+}
+
+.completed-text {
+    color: #64748b;
+
+    font-weight: bold;
 }
 
 /* =========================
@@ -386,12 +448,12 @@ footer h3 {
     }
 
     .listen-btn,
-    .open-btn {
+    .open-btn,
+    .complete-btn {
         flex: 1;
 
         text-align: center;
     }
-
 }
 
 </style>
@@ -475,6 +537,7 @@ footer h3 {
 
 <div class="course-card">
 
+
 <div class="course-title">
 
     <h2>
@@ -488,35 +551,44 @@ footer h3 {
 </div>
 
 
-<!-- =========================
-     LESSON 1
-========================= -->
+<!-- LESSON 1 -->
 
 <div class="lesson">
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 1
-</div>
+    <div class="lesson-number">
+        Lesson 1
+    </div>
 
-<div class="lesson-title">
-Greetings & Introductions
-</div>
+    <div class="lesson-title">
+        Greetings & Introductions
+    </div>
+
+    <div class="lesson-status"
+         id="status1">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 1. Greetings and Introductions')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 1. Greetings and Introductions')">
+        🔊 Listen
+    </button>
 
-<a href="lesson1.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson1.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete1"
+            onclick="toggleComplete(1)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -529,27 +601,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 2
-</div>
+    <div class="lesson-number">
+        Lesson 2
+    </div>
 
-<div class="lesson-title">
-Personal Information
-</div>
+    <div class="lesson-title">
+        Personal Information
+    </div>
+
+    <div class="lesson-status"
+         id="status2">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 2. Personal Information')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 2. Personal Information')">
+        🔊 Listen
+    </button>
 
-<a href="lesson2.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson2.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete2"
+            onclick="toggleComplete(2)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -562,27 +645,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 3
-</div>
+    <div class="lesson-number">
+        Lesson 3
+    </div>
 
-<div class="lesson-title">
-Numbers
-</div>
+    <div class="lesson-title">
+        Numbers
+    </div>
+
+    <div class="lesson-status"
+         id="status3">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 3. Numbers')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 3. Numbers')">
+        🔊 Listen
+    </button>
 
-<a href="lesson3.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson3.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete3"
+            onclick="toggleComplete(3)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -595,27 +689,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 4
-</div>
+    <div class="lesson-number">
+        Lesson 4
+    </div>
 
-<div class="lesson-title">
-Days & Months
-</div>
+    <div class="lesson-title">
+        Days & Months
+    </div>
+
+    <div class="lesson-status"
+         id="status4">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 4. Days and Months')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 4. Days and Months')">
+        🔊 Listen
+    </button>
 
-<a href="lesson4.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson4.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete4"
+            onclick="toggleComplete(4)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -628,27 +733,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 5
-</div>
+    <div class="lesson-number">
+        Lesson 5
+    </div>
 
-<div class="lesson-title">
-Colors
-</div>
+    <div class="lesson-title">
+        Colors
+    </div>
+
+    <div class="lesson-status"
+         id="status5">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 5. Colors')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 5. Colors')">
+        🔊 Listen
+    </button>
 
-<a href="lesson5.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson5.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete5"
+            onclick="toggleComplete(5)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -661,27 +777,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 6
-</div>
+    <div class="lesson-number">
+        Lesson 6
+    </div>
 
-<div class="lesson-title">
-Classroom English
-</div>
+    <div class="lesson-title">
+        Classroom English
+    </div>
+
+    <div class="lesson-status"
+         id="status6">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 6. Classroom English')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 6. Classroom English')">
+        🔊 Listen
+    </button>
 
-<a href="lesson6.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson6.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete6"
+            onclick="toggleComplete(6)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -694,27 +821,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 7
-</div>
+    <div class="lesson-number">
+        Lesson 7
+    </div>
 
-<div class="lesson-title">
-Family & Possessive Adjectives
-</div>
+    <div class="lesson-title">
+        Family & Possessive Adjectives
+    </div>
+
+    <div class="lesson-status"
+         id="status7">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 7. Family and Possessive Adjectives')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 7. Family and Possessive Adjectives')">
+        🔊 Listen
+    </button>
 
-<a href="lesson7.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson7.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete7"
+            onclick="toggleComplete(7)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -727,27 +865,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 8
-</div>
+    <div class="lesson-number">
+        Lesson 8
+    </div>
 
-<div class="lesson-title">
-Daily Routines & Present Simple
-</div>
+    <div class="lesson-title">
+        Daily Routines & Present Simple
+    </div>
+
+    <div class="lesson-status"
+         id="status8">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 8. Daily Routines and Present Simple')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 8. Daily Routines and Present Simple')">
+        🔊 Listen
+    </button>
 
-<a href="lesson8.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson8.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete8"
+            onclick="toggleComplete(8)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -760,27 +909,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 9
-</div>
+    <div class="lesson-number">
+        Lesson 9
+    </div>
 
-<div class="lesson-title">
-Past Simple — Yesterday & Past Activities
-</div>
+    <div class="lesson-title">
+        Past Simple — Yesterday & Past Activities
+    </div>
+
+    <div class="lesson-status"
+         id="status9">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 9. Past Simple. Yesterday and Past Activities')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 9. Past Simple. Yesterday and Past Activities')">
+        🔊 Listen
+    </button>
 
-<a href="lesson9.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson9.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete9"
+            onclick="toggleComplete(9)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -793,62 +953,82 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 10
-</div>
+    <div class="lesson-number">
+        Lesson 10
+    </div>
 
-<div class="lesson-title">
-Future Plans — Will & Going To
-</div>
+    <div class="lesson-title">
+        Future Plans — Will & Going To
+    </div>
+
+    <div class="lesson-status"
+         id="status10">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 10. Future Plans. Will and Going To')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 10. Future Plans. Will and Going To')">
+        🔊 Listen
+    </button>
 
-<a href="lesson10.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson10.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete10"
+            onclick="toggleComplete(10)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
 </div>
 
 
-<!-- =========================
-     LESSON 11
-========================= -->
+<!-- LESSON 11 -->
 
 <div class="lesson">
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 11
-</div>
+    <div class="lesson-number">
+        Lesson 11
+    </div>
 
-<div class="lesson-title">
-Food & Drinks
-</div>
+    <div class="lesson-title">
+        Food & Drinks
+    </div>
+
+    <div class="lesson-status"
+         id="status11">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 11. Food and Drinks')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 11. Food and Drinks')">
+        🔊 Listen
+    </button>
 
-<a href="lesson11.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson11.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete11"
+            onclick="toggleComplete(11)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -861,27 +1041,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 12
-</div>
+    <div class="lesson-number">
+        Lesson 12
+    </div>
 
-<div class="lesson-title">
-Likes & Dislikes
-</div>
+    <div class="lesson-title">
+        Likes & Dislikes
+    </div>
+
+    <div class="lesson-status"
+         id="status12">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 12. Likes and Dislikes')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 12. Likes and Dislikes')">
+        🔊 Listen
+    </button>
 
-<a href="lesson12.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson12.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete12"
+            onclick="toggleComplete(12)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -894,27 +1085,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 13
-</div>
+    <div class="lesson-number">
+        Lesson 13
+    </div>
 
-<div class="lesson-title">
-Shopping & Prices
-</div>
+    <div class="lesson-title">
+        Shopping & Prices
+    </div>
+
+    <div class="lesson-status"
+         id="status13">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 13. Shopping and Prices')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 13. Shopping and Prices')">
+        🔊 Listen
+    </button>
 
-<a href="lesson13.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson13.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete13"
+            onclick="toggleComplete(13)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -927,27 +1129,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 14
-</div>
+    <div class="lesson-number">
+        Lesson 14
+    </div>
 
-<div class="lesson-title">
-Clothes & Appearance
-</div>
+    <div class="lesson-title">
+        Clothes & Appearance
+    </div>
+
+    <div class="lesson-status"
+         id="status14">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 14. Clothes and Appearance')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 14. Clothes and Appearance')">
+        🔊 Listen
+    </button>
 
-<a href="lesson14.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson14.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete14"
+            onclick="toggleComplete(14)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -960,27 +1173,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 15
-</div>
+    <div class="lesson-number">
+        Lesson 15
+    </div>
 
-<div class="lesson-title">
-Weather & Seasons
-</div>
+    <div class="lesson-title">
+        Weather & Seasons
+    </div>
+
+    <div class="lesson-status"
+         id="status15">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 15. Weather and Seasons')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 15. Weather and Seasons')">
+        🔊 Listen
+    </button>
 
-<a href="lesson15.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson15.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete15"
+            onclick="toggleComplete(15)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -993,27 +1217,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 16
-</div>
+    <div class="lesson-number">
+        Lesson 16
+    </div>
 
-<div class="lesson-title">
-Places in Town
-</div>
+    <div class="lesson-title">
+        Places in Town
+    </div>
+
+    <div class="lesson-status"
+         id="status16">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 16. Places in Town')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 16. Places in Town')">
+        🔊 Listen
+    </button>
 
-<a href="lesson16.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson16.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete16"
+            onclick="toggleComplete(16)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1026,27 +1261,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 17
-</div>
+    <div class="lesson-number">
+        Lesson 17
+    </div>
 
-<div class="lesson-title">
-Directions & Prepositions
-</div>
+    <div class="lesson-title">
+        Directions & Prepositions
+    </div>
+
+    <div class="lesson-status"
+         id="status17">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 17. Directions and Prepositions')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 17. Directions and Prepositions')">
+        🔊 Listen
+    </button>
 
-<a href="lesson17.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson17.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete17"
+            onclick="toggleComplete(17)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1059,27 +1305,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 18
-</div>
+    <div class="lesson-number">
+        Lesson 18
+    </div>
 
-<div class="lesson-title">
-Transportation & Travel
-</div>
+    <div class="lesson-title">
+        Transportation & Travel
+    </div>
+
+    <div class="lesson-status"
+         id="status18">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 18. Transportation and Travel')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 18. Transportation and Travel')">
+        🔊 Listen
+    </button>
 
-<a href="lesson18.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson18.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete18"
+            onclick="toggleComplete(18)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1092,27 +1349,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 19
-</div>
+    <div class="lesson-number">
+        Lesson 19
+    </div>
 
-<div class="lesson-title">
-My City & Neighborhood
-</div>
+    <div class="lesson-title">
+        My City & Neighborhood
+    </div>
+
+    <div class="lesson-status"
+         id="status19">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 19. My City and Neighborhood')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 19. My City and Neighborhood')">
+        🔊 Listen
+    </button>
 
-<a href="lesson19.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson19.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete19"
+            onclick="toggleComplete(19)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1125,27 +1393,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 20
-</div>
+    <div class="lesson-number">
+        Lesson 20
+    </div>
 
-<div class="lesson-title">
-My Home & Rooms
-</div>
+    <div class="lesson-title">
+        My Home & Rooms
+    </div>
+
+    <div class="lesson-status"
+         id="status20">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 20. My Home and Rooms')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 20. My Home and Rooms')">
+        🔊 Listen
+    </button>
 
-<a href="lesson20.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson20.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete20"
+            onclick="toggleComplete(20)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1158,27 +1437,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 21
-</div>
+    <div class="lesson-number">
+        Lesson 21
+    </div>
 
-<div class="lesson-title">
-Furniture & Household Objects
-</div>
+    <div class="lesson-title">
+        Furniture & Household Objects
+    </div>
+
+    <div class="lesson-status"
+         id="status21">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 21. Furniture and Household Objects')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 21. Furniture and Household Objects')">
+        🔊 Listen
+    </button>
 
-<a href="lesson21.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson21.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete21"
+            onclick="toggleComplete(21)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1191,27 +1481,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 22
-</div>
+    <div class="lesson-number">
+        Lesson 22
+    </div>
 
-<div class="lesson-title">
-Jobs & Occupations
-</div>
+    <div class="lesson-title">
+        Jobs & Occupations
+    </div>
+
+    <div class="lesson-status"
+         id="status22">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 22. Jobs and Occupations')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 22. Jobs and Occupations')">
+        🔊 Listen
+    </button>
 
-<a href="lesson22.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson22.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete22"
+            onclick="toggleComplete(22)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1224,27 +1525,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 23
-</div>
+    <div class="lesson-number">
+        Lesson 23
+    </div>
 
-<div class="lesson-title">
-Abilities — Can & Can't
-</div>
+    <div class="lesson-title">
+        Abilities — Can & Can't
+    </div>
+
+    <div class="lesson-status"
+         id="status23">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 23. Abilities. Can and Cannot')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 23. Abilities. Can and Cannot')">
+        🔊 Listen
+    </button>
 
-<a href="lesson23.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson23.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete23"
+            onclick="toggleComplete(23)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1257,27 +1569,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 24
-</div>
+    <div class="lesson-number">
+        Lesson 24
+    </div>
 
-<div class="lesson-title">
-Hobbies & Free Time
-</div>
+    <div class="lesson-title">
+        Hobbies & Free Time
+    </div>
+
+    <div class="lesson-status"
+         id="status24">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 24. Hobbies and Free Time')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 24. Hobbies and Free Time')">
+        🔊 Listen
+    </button>
 
-<a href="lesson24.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson24.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete24"
+            onclick="toggleComplete(24)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1290,27 +1613,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 25
-</div>
+    <div class="lesson-number">
+        Lesson 25
+    </div>
 
-<div class="lesson-title">
-Sports & Activities
-</div>
+    <div class="lesson-title">
+        Sports & Activities
+    </div>
+
+    <div class="lesson-status"
+         id="status25">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 25. Sports and Activities')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 25. Sports and Activities')">
+        🔊 Listen
+    </button>
 
-<a href="lesson25.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson25.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete25"
+            onclick="toggleComplete(25)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1323,27 +1657,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 26
-</div>
+    <div class="lesson-number">
+        Lesson 26
+    </div>
 
-<div class="lesson-title">
-Health & Healthy Habits
-</div>
+    <div class="lesson-title">
+        Health & Healthy Habits
+    </div>
+
+    <div class="lesson-status"
+         id="status26">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 26. Health and Healthy Habits')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 26. Health and Healthy Habits')">
+        🔊 Listen
+    </button>
 
-<a href="lesson26.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson26.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete26"
+            onclick="toggleComplete(26)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1356,27 +1701,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 27
-</div>
+    <div class="lesson-number">
+        Lesson 27
+    </div>
 
-<div class="lesson-title">
-Technology & Everyday Life
-</div>
+    <div class="lesson-title">
+        Technology & Everyday Life
+    </div>
+
+    <div class="lesson-status"
+         id="status27">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 27. Technology and Everyday Life')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 27. Technology and Everyday Life')">
+        🔊 Listen
+    </button>
 
-<a href="lesson27.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson27.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete27"
+            onclick="toggleComplete(27)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1389,27 +1745,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 28
-</div>
+    <div class="lesson-number">
+        Lesson 28
+    </div>
 
-<div class="lesson-title">
-Making Plans & Invitations
-</div>
+    <div class="lesson-title">
+        Making Plans & Invitations
+    </div>
+
+    <div class="lesson-status"
+         id="status28">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 28. Making Plans and Invitations')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 28. Making Plans and Invitations')">
+        🔊 Listen
+    </button>
 
-<a href="lesson28.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson28.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete28"
+            onclick="toggleComplete(28)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1422,27 +1789,38 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 29
-</div>
+    <div class="lesson-number">
+        Lesson 29
+    </div>
 
-<div class="lesson-title">
-English Review & Practice
-</div>
+    <div class="lesson-title">
+        English Review & Practice
+    </div>
+
+    <div class="lesson-status"
+         id="status29">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 29. English Review and Practice')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 29. English Review and Practice')">
+        🔊 Listen
+    </button>
 
-<a href="lesson29.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson29.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete29"
+            onclick="toggleComplete(29)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
@@ -1455,53 +1833,76 @@ Open Lesson
 
 <div class="lesson-info">
 
-<div class="lesson-number">
-Lesson 30
-</div>
+    <div class="lesson-number">
+        Lesson 30
+    </div>
 
-<div class="lesson-title">
-🏆 Final Review & Assessment
-</div>
+    <div class="lesson-title">
+        🏆 Final Review & Assessment
+    </div>
+
+    <div class="lesson-status"
+         id="status30">
+        Not completed yet
+    </div>
 
 </div>
 
 <div class="lesson-buttons">
 
-<button class="listen-btn"
-onclick="speak('Lesson 30. Final Review and Assessment')">
-🔊 Listen
-</button>
+    <button class="listen-btn"
+            onclick="speak('Lesson 30. Final Review and Assessment')">
+        🔊 Listen
+    </button>
 
-<a href="lesson30.html"
-class="open-btn">
-Open Lesson
-</a>
+    <a href="lesson30.html"
+       class="open-btn">
+        Open Lesson
+    </a>
+
+    <button class="complete-btn"
+            id="complete30"
+            onclick="toggleComplete(30)">
+        ✅ Mark Complete
+    </button>
 
 </div>
 
 </div>
 
 
-<!-- PROGRESS -->
+<!-- =========================
+     PROGRESS
+========================= -->
 
 <div class="progress-box">
 
-<h3>
-🎯 Beginner A1 — 30 Lessons
-</h3>
+    <h3>
+        🎯 Your Course Progress
+    </h3>
 
-<p>
-Complete the lessons step by step
-and improve your English every day.
-</p>
+    <p>
+        Complete the lessons step by step
+        and improve your English every day.
+    </p>
 
-<div class="progress-bar">
+    <div class="progress-text"
+         id="progressText">
+        0% Complete
+    </div>
 
-<div class="progress-fill"
-     id="progressFill">
-</div>
+    <div class="progress-bar">
 
-</div>
+        <div class="progress-fill"
+             id="progressFill">
+        </div>
+
+    </div>
+
+    <p class="completed-text"
+       id="completedText">
+        0 / 30 Lessons Completed
+    </p>
 
 </div>
 
@@ -1512,10 +1913,9 @@ and improve your English every day.
 <a href="index.html"
    class="back">
 
-← Back to Home
+    ← Back to Home
 
 </a>
-
 
 </div>
 
@@ -1526,26 +1926,30 @@ and improve your English every day.
 
 <footer>
 
-<h3>
-Bright English Academy
-</h3>
+    <h3>
+        Bright English Academy
+    </h3>
 
-<p>
-Speak English with Confidence
-</p>
+    <p>
+        Speak English with Confidence
+    </p>
 
-<p>
-👤 Created by José Simeão
-</p>
+    <p>
+        👤 Created by José Simeão
+    </p>
 
 </footer>
 
 
 <!-- =========================
-     AUDIO
+     JAVASCRIPT
 ========================= -->
 
 <script>
+
+/* =========================
+   AUDIO
+========================= */
 
 function speak(text) {
 
@@ -1574,9 +1978,279 @@ function speak(text) {
 
 }
 
+
+/* =========================
+   PROGRESS STORAGE
+========================= */
+
+const PROGRESS_KEY =
+    "brightEnglishAcademy_beginner1_progress";
+
+
+function getCompletedLessons() {
+
+    try {
+
+        const saved =
+            localStorage.getItem(
+                PROGRESS_KEY
+            );
+
+        if (!saved) {
+            return [];
+        }
+
+        const lessons =
+            JSON.parse(saved);
+
+        if (!Array.isArray(lessons)) {
+            return [];
+        }
+
+        return lessons;
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+/* =========================
+   SAVE PROGRESS
+========================= */
+
+function saveCompletedLessons(lessons) {
+
+    localStorage.setItem(
+        PROGRESS_KEY,
+        JSON.stringify(lessons)
+    );
+
+}
+
+
+/* =========================
+   CHECK LESSON
+========================= */
+
+function isLessonCompleted(number) {
+
+    const lessons =
+        getCompletedLessons();
+
+    return lessons.includes(number);
+
+}
+
+
+/* =========================
+   MARK COMPLETE
+========================= */
+
+function toggleComplete(number) {
+
+    let lessons =
+        getCompletedLessons();
+
+
+    if (!lessons.includes(number)) {
+
+        lessons.push(number);
+
+    } else {
+
+        lessons =
+            lessons.filter(
+                function (lesson) {
+                    return lesson !== number;
+                }
+            );
+
+    }
+
+
+    lessons.sort(
+        function (a, b) {
+            return a - b;
+        }
+    );
+
+
+    saveCompletedLessons(
+        lessons
+    );
+
+
+    updateLessonStatus(
+        number
+    );
+
+    updateProgress();
+
+}
+
+
+/* =========================
+   UPDATE LESSON STATUS
+========================= */
+
+function updateLessonStatus(number) {
+
+    const status =
+        document.getElementById(
+            "status" + number
+        );
+
+    const button =
+        document.getElementById(
+            "complete" + number
+        );
+
+
+    if (!status || !button) {
+        return;
+    }
+
+
+    if (isLessonCompleted(number)) {
+
+        status.textContent =
+            "✅ Completed";
+
+        status.className =
+            "lesson-status status-completed";
+
+        button.textContent =
+            "✅ Completed";
+
+        button.classList.add(
+            "completed"
+        );
+
+    } else {
+
+        status.textContent =
+            "Not completed yet";
+
+        status.className =
+            "lesson-status status-pending";
+
+        button.textContent =
+            "✅ Mark Complete";
+
+        button.classList.remove(
+            "completed"
+        );
+
+    }
+
+}
+
+
+/* =========================
+   UPDATE ALL LESSONS
+========================= */
+
+function updateAllLessons() {
+
+    for (
+        let number = 1;
+        number <= 30;
+        number++
+    ) {
+
+        updateLessonStatus(
+            number
+        );
+
+    }
+
+}
+
+
+/* =========================
+   UPDATE PROGRESS
+========================= */
+
+function updateProgress() {
+
+    const completed =
+        getCompletedLessons();
+
+    const total =
+        30;
+
+    const percentage =
+        Math.round(
+            (completed.length / total) * 100
+        );
+
+
+    const progressFill =
+        document.getElementById(
+            "progressFill"
+        );
+
+    const progressText =
+        document.getElementById(
+            "progressText"
+        );
+
+    const completedText =
+        document.getElementById(
+            "completedText"
+        );
+
+
+    if (progressFill) {
+
+        progressFill.style.width =
+            percentage + "%";
+
+    }
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            percentage + "% Complete";
+
+    }
+
+
+    if (completedText) {
+
+        completedText.textContent =
+            completed.length +
+            " / 30 Lessons Completed";
+
+    }
+
+}
+
+
+/* =========================
+   PAGE START
+========================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        updateAllLessons();
+
+        updateProgress();
+
+    }
+);
+
 </script>
 
 
 </body>
 
 </html>
+```
