@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="Teacher Dashboard - Bright English Academy">
+content="Teacher Login - Bright English Academy">
 
-<title>Teacher Dashboard | Bright English Academy</title>
+<title>Teacher Login | Bright English Academy</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -25,25 +25,81 @@
 
 body{
 
+    min-height:100vh;
+
     font-family:
     Arial,
     Helvetica,
     sans-serif;
 
-    background:#f4f8ff;
+    background:
+    linear-gradient(
+        135deg,
+        #eef6ff,
+        #f7fbff
+    );
 
     color:#17233c;
 
-    min-height:100vh;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
 
 }
 
+.container{
 
-/* =========================================
-   HEADER
-========================================= */
+    width:100%;
 
-header{
+    max-width:460px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    border:1px solid #e0e7f1;
+
+    box-shadow:
+        0 15px 45px
+        rgba(20,53,100,.12);
+
+}
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.logo-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    margin-bottom:14px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     background:
     linear-gradient(
@@ -54,584 +110,97 @@ header{
 
     color:white;
 
-    padding:18px 20px;
-
-    box-shadow:
-        0 3px 15px
-        rgba(0,0,0,.15);
+    font-size:36px;
 
 }
 
-.header-container{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-}
-
-.logo{
-
-    font-size:21px;
-
-    font-weight:800;
-
-}
-
-.logout{
-
-    border:none;
-
-    background:white;
+.logo h1{
 
     color:#0757c9;
 
-    padding:10px 16px;
-
-    border-radius:9px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-}
-
-.logout:hover{
-
-    background:#eef7ff;
-
-}
-
-
-/* =========================================
-   MAIN
-========================================= */
-
-main{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:30px 20px 60px;
-
-}
-
-
-/* =========================================
-   WELCOME
-========================================= */
-
-.welcome{
-
-    background:white;
-
-    padding:28px;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(20,53,100,.08);
-
-    margin-bottom:25px;
-
-    border:1px solid #e0e7f1;
-
-}
-
-.welcome h1{
-
-    color:#0757c9;
-
-    margin-bottom:8px;
-
-}
-
-.welcome p{
-
-    color:#64748b;
-
-    line-height:1.5;
-
-}
-
-
-/* =========================================
-   ERROR
-========================================= */
-
-.error{
-
-    background:#fff0f0;
-
-    color:#c62828;
-
-    padding:15px;
-
-    border-radius:10px;
-
-    margin-bottom:20px;
-
-    display:none;
-
-    white-space:pre-wrap;
-
-    line-height:1.5;
-
-}
-
-
-/* =========================================
-   SUCCESS
-========================================= */
-
-.success-message{
-
-    background:#e8f7ee;
-
-    color:#147844;
-
-    padding:15px;
-
-    border-radius:10px;
-
-    margin-bottom:20px;
-
-    display:none;
-
-}
-
-
-/* =========================================
-   STATS
-========================================= */
-
-.stats{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:18px;
-
-    margin-bottom:25px;
-
-}
-
-.stat{
-
-    background:white;
-
-    padding:22px;
-
-    border-radius:17px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(20,53,100,.07);
-
-    border:1px solid #e0e7f1;
-
-}
-
-.stat-title{
-
-    color:#64748b;
-
-    font-size:14px;
-
-    margin-bottom:7px;
-
-}
-
-.stat-value{
-
-    color:#0757c9;
-
-    font-size:28px;
-
-    font-weight:800;
-
-}
-
-
-/* =========================================
-   CARD
-========================================= */
-
-.card{
-
-    background:white;
-
-    padding:28px;
-
-    border-radius:20px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(20,53,100,.07);
-
-    border:1px solid #e0e7f1;
-
-    margin-bottom:25px;
-
-}
-
-.section-title{
-
-    color:#0757c9;
-
-    margin-bottom:20px;
-
-}
-
-
-/* =========================================
-   TOP BAR
-========================================= */
-
-.top-bar{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-bottom:20px;
-
-}
-
-.refresh{
-
-    border:none;
-
-    background:#0757c9;
-
-    color:white;
-
-    padding:11px 18px;
-
-    border-radius:9px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-}
-
-.refresh:hover{
-
-    background:#064ba9;
-
-}
-
-.refresh:disabled{
-
-    opacity:.6;
-
-    cursor:not-allowed;
-
-}
-
-
-/* =========================================
-   STUDENTS
-========================================= */
-
-.students{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:18px;
-
-}
-
-.student-card{
-
-    border:1px solid #dce5f1;
-
-    border-radius:15px;
-
-    padding:20px;
-
-    background:#fbfdff;
-
-    transition:.2s;
-
-}
-
-.student-card:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 20px
-        rgba(20,53,100,.08);
-
-}
-
-.student-name{
-
-    font-size:20px;
-
-    font-weight:800;
-
-    color:#0757c9;
-
-    margin-bottom:6px;
-
-}
-
-.student-email{
-
-    color:#64748b;
-
-    font-size:14px;
-
-    margin-bottom:15px;
-
-    word-break:break-word;
-
-}
-
-.student-date{
-
-    color:#64748b;
-
-    font-size:12px;
-
-    margin-bottom:15px;
-
-}
-
-
-/* =========================================
-   PROGRESS
-========================================= */
-
-.progress-title{
-
-    font-weight:bold;
+    font-size:25px;
 
     margin-bottom:5px;
 
 }
 
-.progress-bar{
-
-    width:100%;
-
-    height:13px;
-
-    background:#e6edf7;
-
-    border-radius:20px;
-
-    overflow:hidden;
-
-    margin:8px 0 15px;
-
-}
-
-.progress-fill{
-
-    height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #0757c9,
-            #13a6e8
-        );
-
-    border-radius:20px;
-
-    transition:width .4s ease;
-
-}
-
-
-/* =========================================
-   INFO
-========================================= */
-
-.info{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:10px;
-
-    margin-bottom:15px;
-
-}
-
-.info-box{
-
-    background:#f4f8ff;
-
-    padding:12px;
-
-    border-radius:9px;
-
-}
-
-.info-label{
-
-    font-size:12px;
+.logo p{
 
     color:#64748b;
 
-}
-
-.info-value{
-
-    font-weight:bold;
-
-    margin-top:3px;
+    font-size:14px;
 
 }
 
-
-/* =========================================
-   EVALUATION
-========================================= */
-
-.evaluate-btn{
-
-    width:100%;
-
-    border:none;
-
-    background:#138a4b;
-
-    color:white;
-
-    padding:11px;
-
-    border-radius:9px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-}
-
-.evaluate-btn:hover{
-
-    background:#0d713c;
-
-}
-
-
-/* =========================================
-   LOADING
-========================================= */
-
-.loading{
+.portal{
 
     text-align:center;
 
-    padding:30px;
-
     color:#64748b;
 
-    line-height:1.6;
-
-}
-
-
-/* =========================================
-   MODAL
-========================================= */
-
-.modal{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.5);
-
-    z-index:999;
-
-    align-items:center;
-
-    justify-content:center;
-
-    padding:20px;
-
-}
-
-.modal-box{
-
-    background:white;
-
-    width:100%;
-
-    max-width:500px;
-
-    max-height:90vh;
-
-    overflow-y:auto;
-
-    border-radius:18px;
-
-    padding:25px;
-
-    box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.2);
-
-}
-
-.modal-box h2{
-
-    color:#0757c9;
-
-    margin-bottom:18px;
-
-}
-
-.evaluation-student{
+    font-size:13px;
 
     font-weight:bold;
 
+    margin-bottom:25px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+}
+
+.message{
+
+    display:none;
+
+    padding:13px;
+
+    border-radius:10px;
+
+    margin-bottom:18px;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+    font-weight:bold;
+
+}
+
+.message.error{
+
+    display:block;
+
+    background:#fff0f0;
+
+    color:#c62828;
+
+}
+
+.message.success{
+
+    display:block;
+
+    background:#e8f7ee;
+
+    color:#147844;
+
+}
+
+.message.info{
+
+    display:block;
+
+    background:#eaf3ff;
+
     color:#0757c9;
-
-    margin-bottom:20px;
-
-    padding:12px;
-
-    background:#f4f8ff;
-
-    border-radius:9px;
 
 }
 
 .form-group{
 
-    margin-bottom:15px;
+    margin-bottom:18px;
 
 }
 
@@ -639,96 +208,108 @@ main{
 
     display:block;
 
-    font-size:13px;
+    font-size:14px;
 
     font-weight:bold;
 
-    margin-bottom:6px;
+    margin-bottom:7px;
 
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
+.input-wrapper{
+
+    position:relative;
+
+}
+
+.form-group input{
 
     width:100%;
 
-    padding:11px;
+    padding:13px 48px 13px 14px;
 
-    border:1px solid #dce5f1;
+    border:
 
-    border-radius:9px;
+    1px solid #d5dfeb;
 
-    font-family:Arial,sans-serif;
-
-    font-size:14px;
+    border-radius:10px;
 
     outline:none;
 
+    font-size:15px;
+
+    transition:.2s;
+
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
+.form-group input:focus{
 
     border-color:#0757c9;
 
     box-shadow:
-        0 0 0 3px
-        rgba(7,87,201,.10);
+    0 0 0 3px
+    rgba(7,87,201,.10);
 
 }
 
-.form-group textarea{
+.password-toggle{
 
-    min-height:110px;
+    position:absolute;
 
-    resize:vertical;
+    right:10px;
 
-}
+    top:50%;
 
-.modal-buttons{
-
-    display:flex;
-
-    gap:10px;
-
-    margin-top:20px;
-
-}
-
-.save-btn,
-.cancel-btn{
-
-    flex:1;
+    transform:translateY(-50%);
 
     border:none;
 
-    padding:11px;
+    background:transparent;
 
-    border-radius:9px;
+    cursor:pointer;
+
+    font-size:20px;
+
+    padding:5px;
+
+}
+
+.login-btn{
+
+    width:100%;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0757c9,
+        #13a6e8
+    );
+
+    color:white;
+
+    font-size:16px;
 
     font-weight:bold;
 
     cursor:pointer;
 
-}
-
-.save-btn{
-
-    background:#0757c9;
-
-    color:white;
+    margin-top:5px;
 
 }
 
-.save-btn:hover{
+.login-btn:hover{
 
-    background:#064ba9;
+    opacity:.93;
 
 }
 
-.save-btn:disabled{
+.login-btn:disabled{
 
     opacity:.6;
 
@@ -736,118 +317,53 @@ main{
 
 }
 
-.cancel-btn{
+.back{
 
-    background:#e9eef5;
-
-    color:#17233c;
-
-}
-
-.cancel-btn:hover{
-
-    background:#dfe6ef;
-
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-
-    background:#17233c;
-
-    color:white;
+    display:block;
 
     text-align:center;
 
-    padding:25px;
+    margin-top:20px;
 
-    line-height:1.8;
+    color:#0757c9;
 
-}
+    text-decoration:none;
 
-footer strong{
+    font-weight:bold;
 
-    color:#58c7ff;
-
-}
-
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width:900px){
-
-    .stats{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-    }
-
-    .students{
-
-        grid-template-columns:1fr;
-
-    }
+    font-size:14px;
 
 }
 
-@media(max-width:600px){
+.back:hover{
 
-    .stats{
+    text-decoration:underline;
 
-        grid-template-columns:1fr;
+}
 
-    }
+.footer{
 
-    .header-container{
+    text-align:center;
 
-        flex-direction:column;
+    margin-top:18px;
 
-        align-items:flex-start;
+    color:#64748b;
 
-    }
+    font-size:12px;
 
-    main{
+}
 
-        padding:20px 15px 50px;
+.footer strong{
 
-    }
+    color:#0757c9;
 
-    .top-bar{
+}
 
-        flex-direction:column;
-
-        align-items:stretch;
-
-    }
-
-    .refresh{
-
-        width:100%;
-
-    }
+@media(max-width:500px){
 
     .card{
 
-        padding:20px;
-
-    }
-
-    .welcome{
-
-        padding:22px;
-
-    }
-
-    .modal-buttons{
-
-        flex-direction:column;
+        padding:25px 20px;
 
     }
 
@@ -857,319 +373,89 @@ footer strong{
 
 </head>
 
-
 <body>
 
 
-<!-- =========================================
-     HEADER
-========================================= -->
+<div class="container">
 
-<header>
 
-<div class="header-container">
+<div class="card">
+
 
 <div class="logo">
 
-📚 Bright English Academy — Teacher
-
+<div class="logo-icon">
+👨‍🏫
 </div>
-
-<button
-class="logout"
-id="logoutButton"
-onclick="logout()">
-
-🚪 Logout
-
-</button>
-
-</div>
-
-</header>
-
-
-<!-- =========================================
-     MAIN
-========================================= -->
-
-<main>
-
-
-<section class="welcome">
 
 <h1>
-👨‍🏫 Teacher Dashboard
+Bright English Academy
 </h1>
 
-<p id="teacherWelcome">
-
-Manage students and monitor their English learning progress.
-
+<p>
+Speak English with Confidence
 </p>
 
-</section>
+</div>
 
 
-<div
-id="errorBox"
-class="error">
+<div class="portal">
+Teacher Portal
 </div>
 
 
 <div
-id="successBox"
-class="success-message">
+id="message"
+class="message">
 </div>
 
 
-<!-- =========================================
-     STATISTICS
-========================================= -->
-
-<section class="stats">
-
-
-<div class="stat">
-
-<div class="stat-title">
-👨‍🎓 Registered Students
-</div>
-
-<div
-id="studentCount"
-class="stat-value">
-
-0
-
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-title">
-📚 Lessons Completed
-</div>
-
-<div
-id="lessonCount"
-class="stat-value">
-
-0
-
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-title">
-📊 Average Progress
-</div>
-
-<div
-id="averageProgress"
-class="stat-value">
-
-0%
-
-</div>
-
-</div>
-
-
-<div class="stat">
-
-<div class="stat-title">
-🏆 Average Score
-</div>
-
-<div
-id="averageScore"
-class="stat-value">
-
-—
-
-</div>
-
-</div>
-
-
-</section>
-
-
-<!-- =========================================
-     STUDENTS
-========================================= -->
-
-<section class="card">
-
-
-<div class="top-bar">
-
-<h2
-class="section-title"
-style="margin-bottom:0;">
-
-👨‍🎓 My Students
-
-</h2>
-
-
-<button
-id="refreshButton"
-class="refresh"
-onclick="loadStudents()">
-
-🔄 Refresh
-
-</button>
-
-</div>
-
-
-<div
-id="studentsContainer"
-class="students">
-
-<div class="loading">
-
-⏳ Loading students...
-
-</div>
-
-</div>
-
-
-</section>
-
-
-</main>
-
-
-<!-- =========================================
-     EVALUATION MODAL
-========================================= -->
-
-<div
-id="evaluationModal"
-class="modal">
-
-<div class="modal-box">
-
-<h2>
-📝 Evaluate Student
-</h2>
-
-
-<div
-id="evaluationStudentName"
-class="evaluation-student">
-
-</div>
+<form
+id="teacherLoginForm"
+onsubmit="teacherLogin(event)">
 
 
 <div class="form-group">
 
-<label for="evaluationLesson">
-
-Lesson
-
-</label>
-
-<select
-id="evaluationLesson">
-
-<option value="1">Lesson 1</option>
-<option value="2">Lesson 2</option>
-<option value="3">Lesson 3</option>
-<option value="4">Lesson 4</option>
-<option value="5">Lesson 5</option>
-<option value="6">Lesson 6</option>
-<option value="7">Lesson 7</option>
-<option value="8">Lesson 8</option>
-<option value="9">Lesson 9</option>
-<option value="10">Lesson 10</option>
-<option value="11">Lesson 11</option>
-<option value="12">Lesson 12</option>
-<option value="13">Lesson 13</option>
-<option value="14">Lesson 14</option>
-<option value="15">Lesson 15</option>
-<option value="16">Lesson 16</option>
-<option value="17">Lesson 17</option>
-<option value="18">Lesson 18</option>
-<option value="19">Lesson 19</option>
-<option value="20">Lesson 20</option>
-<option value="21">Lesson 21</option>
-<option value="22">Lesson 22</option>
-<option value="23">Lesson 23</option>
-<option value="24">Lesson 24</option>
-<option value="25">Lesson 25</option>
-<option value="26">Lesson 26</option>
-<option value="27">Lesson 27</option>
-<option value="28">Lesson 28</option>
-<option value="29">Lesson 29</option>
-<option value="30">Lesson 30</option>
-
-</select>
-
-</div>
-
-
-<div class="form-group">
-
-<label for="evaluationScore">
-
-Score
-
+<label for="teacherEmail">
+Teacher Email
 </label>
 
 <input
-id="evaluationScore"
-type="number"
-min="0"
-max="100"
-step="1"
-placeholder="Example: 85">
+type="email"
+id="teacherEmail"
+placeholder="Enter teacher email"
+autocomplete="email"
+required>
 
 </div>
 
 
 <div class="form-group">
 
-<label for="evaluationText">
-
-Evaluation / Comment
-
+<label for="teacherPassword">
+Password
 </label>
 
-<textarea
-id="evaluationText"
-placeholder="Write your evaluation of the student..."></textarea>
 
-</div>
+<div class="input-wrapper">
 
-
-<div class="modal-buttons">
-
-<button
-class="cancel-btn"
-onclick="closeEvaluation()">
-
-Cancel
-
-</button>
+<input
+type="password"
+id="teacherPassword"
+placeholder="Enter your password"
+autocomplete="current-password"
+required>
 
 
 <button
-id="saveEvaluationButton"
-class="save-btn"
-onclick="saveEvaluation()">
+type="button"
+class="password-toggle"
+id="passwordToggle"
+onclick="togglePassword()"
+aria-label="Show password">
 
-💾 Save Evaluation
+👁️
 
 </button>
 
@@ -1177,14 +463,33 @@ onclick="saveEvaluation()">
 
 </div>
 
+
+<button
+type="submit"
+id="loginButton"
+class="login-btn">
+
+🔐 Access Teacher Dashboard
+
+</button>
+
+
+</form>
+
+
+<a
+href="index.html"
+class="back">
+
+← Back to Bright English Academy
+
+</a>
+
+
 </div>
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
+<div class="footer">
 
 <p>
 
@@ -1195,18 +500,14 @@ Bright English Academy
 </p>
 
 <p>
-Speak English with Confidence
+Created by José Simeão
 </p>
 
-<p>
-👤 Created by
-<strong>
-José Simeão
-</strong>
+</div>
 
-</p>
 
-</footer>
+</div>
+
 
 
 <script>
@@ -1216,988 +517,118 @@ José Simeão
 ===================================================== */
 
 const SUPABASE_URL =
-    "https://yvdadrqimaavubqcxned.supabase.co";
+"https://yvdadrqimaavubqcxned.supabase.co";
 
 
 const SUPABASE_PUBLISHABLE_KEY =
-    "sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
+"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
 
+
+/* =====================================================
+   CREATE SUPABASE CLIENT
+===================================================== */
 
 const supabaseClient =
-    window.supabase.createClient(
+window.supabase.createClient(
 
-        SUPABASE_URL,
+    SUPABASE_URL,
 
-        SUPABASE_PUBLISHABLE_KEY,
+    SUPABASE_PUBLISHABLE_KEY,
 
-        {
+    {
 
-            auth:{
+        auth:{
 
-                autoRefreshToken:true,
+            autoRefreshToken:true,
 
-                persistSession:true,
+            persistSession:true,
 
-                detectSessionInUrl:true
-
-            }
+            detectSessionInUrl:true
 
         }
-
-    );
-
-
-/* =====================================================
-   CONSTANTS
-===================================================== */
-
-const TOTAL_LESSONS = 30;
-
-
-/* =====================================================
-   GLOBAL VARIABLES
-===================================================== */
-
-let currentTeacher = null;
-
-let selectedStudent = null;
-
-
-/* =====================================================
-   MESSAGE FUNCTIONS
-===================================================== */
-
-function showError(message){
-
-    const box =
-        document.getElementById(
-            "errorBox"
-        );
-
-    box.textContent =
-        message;
-
-    box.style.display =
-        "block";
-
-}
-
-
-function hideError(){
-
-    const box =
-        document.getElementById(
-            "errorBox"
-        );
-
-    box.textContent =
-        "";
-
-    box.style.display =
-        "none";
-
-}
-
-
-function showSuccess(message){
-
-    const box =
-        document.getElementById(
-            "successBox"
-        );
-
-    box.textContent =
-        message;
-
-    box.style.display =
-        "block";
-
-
-    setTimeout(
-        function(){
-
-            box.style.display =
-                "none";
-
-        },
-        4000
-    );
-
-}
-
-
-/* =====================================================
-   CHECK TEACHER
-===================================================== */
-
-async function checkTeacher(){
-
-    try{
-
-        const {
-            data:userData,
-            error:userError
-        } =
-        await supabaseClient.auth.getUser();
-
-
-        if(
-            userError ||
-            !userData ||
-            !userData.user
-        ){
-
-            window.location.href =
-                "teacher-login.html";
-
-            return false;
-
-        }
-
-
-        currentTeacher =
-            userData.user;
-
-
-        const {
-            data:profile,
-            error:profileError
-        } =
-        await supabaseClient
-            .from("profiles")
-            .select(
-                "id, full_name, role"
-            )
-            .eq(
-                "id",
-                currentTeacher.id
-            )
-            .maybeSingle();
-
-
-        if(profileError){
-
-            showError(
-                "Could not verify teacher profile:\n\n" +
-                profileError.message
-            );
-
-            return false;
-
-        }
-
-
-        if(
-            !profile ||
-            profile.role !== "teacher"
-        ){
-
-            alert(
-                "This account is not registered as a teacher."
-            );
-
-
-            await supabaseClient
-                .auth
-                .signOut();
-
-
-            window.location.href =
-                "teacher-login.html";
-
-
-            return false;
-
-        }
-
-
-        const teacherName =
-            profile.full_name ||
-            "Teacher";
-
-
-        document.getElementById(
-            "teacherWelcome"
-        ).textContent =
-            "Welcome, " +
-            teacherName +
-            "! Manage students and monitor their English learning progress.";
-
-
-        return true;
-
-    }
-    catch(error){
-
-        console.error(
-            "Teacher verification error:",
-            error
-        );
-
-
-        showError(
-            "Unable to verify teacher account."
-        );
-
-
-        return false;
 
     }
 
-}
+);
 
 
 /* =====================================================
-   LOAD STUDENTS
+   MESSAGE
 ===================================================== */
 
-async function loadStudents(){
-
-    hideError();
-
-    const refreshButton =
-        document.getElementById(
-            "refreshButton"
-        );
-
-
-    refreshButton.disabled =
-        true;
-
-    refreshButton.textContent =
-        "⏳ Loading...";
-
-
-    const allowed =
-        await checkTeacher();
-
-
-    if(!allowed){
-
-        refreshButton.disabled =
-            false;
-
-        refreshButton.textContent =
-            "🔄 Refresh";
-
-        return;
-
-    }
-
-
-    const container =
-        document.getElementById(
-            "studentsContainer"
-        );
-
-
-    container.innerHTML =
-        '<div class="loading">⏳ Loading students...</div>';
-
-
-    try{
-
-        /* =========================================
-           GET STUDENTS
-        ========================================= */
-
-        const {
-            data:students,
-            error:studentsError
-        } =
-        await supabaseClient
-            .from("profiles")
-            .select(
-                "id, full_name, role, created_at"
-            )
-            .eq(
-                "role",
-                "student"
-            )
-            .order(
-                "created_at",
-                {
-                    ascending:false
-                }
-            );
-
-
-        if(studentsError){
-
-            throw new Error(
-                "Could not load students: " +
-                studentsError.message
-            );
-
-        }
-
-
-        const studentList =
-            students || [];
-
-
-        if(studentList.length === 0){
-
-            container.innerHTML = `
-
-                <div class="loading">
-
-                    👨‍🎓 No students registered yet.
-
-                    <br><br>
-
-                    When a student creates an account,
-                    the student will appear here.
-
-                </div>
-
-            `;
-
-
-            updateStatistics(
-                [],
-                [],
-                []
-            );
-
-
-            return;
-
-        }
-
-
-        /* =========================================
-           GET LESSON PROGRESS
-        ========================================= */
-
-        const {
-            data:progressData,
-            error:progressError
-        } =
-        await supabaseClient
-            .from("lesson_progress")
-            .select(
-                "user_id, lesson_number, completed"
-            );
-
-
-        if(progressError){
-
-            throw new Error(
-                "Could not load lesson progress: " +
-                progressError.message
-            );
-
-        }
-
-
-        /* =========================================
-           GET QUIZ RESULTS
-        ========================================= */
-
-        const {
-            data:quizData,
-            error:quizError
-        } =
-        await supabaseClient
-            .from("quiz_results")
-            .select(
-                "user_id, lesson_number, score"
-            );
-
-
-        if(quizError){
-
-            throw new Error(
-                "Could not load quiz results: " +
-                quizError.message
-            );
-
-        }
-
-
-        renderStudents(
-            studentList,
-            progressData || [],
-            quizData || []
-        );
-
-
-        updateStatistics(
-            studentList,
-            progressData || [],
-            quizData || []
-        );
-
-    }
-    catch(error){
-
-        console.error(
-            "Load students error:",
-            error
-        );
-
-
-        showError(
-            error.message ||
-            "Could not load students."
-        );
-
-
-        container.innerHTML = `
-
-            <div class="loading">
-
-                ❌ Unable to load students.
-
-                <br><br>
-
-                Check the Supabase tables and
-                permissions.
-
-            </div>
-
-        `;
-
-    }
-    finally{
-
-        refreshButton.disabled =
-            false;
-
-        refreshButton.textContent =
-            "🔄 Refresh";
-
-    }
-
-}
-
-
-/* =====================================================
-   RENDER STUDENTS
-===================================================== */
-
-function renderStudents(
-    students,
-    progressData,
-    quizData
+function showMessage(
+    text,
+    type
 ){
 
-    const container =
+    const message =
         document.getElementById(
-            "studentsContainer"
+            "message"
         );
 
+    message.textContent =
+        text;
 
-    container.innerHTML =
-        "";
+    message.className =
+        "message " + type;
 
+}
 
-    students.forEach(
-        function(student){
 
-            const studentProgress =
-                progressData.filter(
-                    function(item){
+function clearMessage(){
 
-                        return (
-                            item.user_id ===
-                            student.id
-                            &&
-                            item.completed === true
-                            &&
-                            Number(item.lesson_number) >= 1
-                            &&
-                            Number(item.lesson_number) <=
-                                TOTAL_LESSONS
-                        );
+    const message =
+        document.getElementById(
+            "message"
+        );
 
-                    }
-                );
+    message.textContent = "";
 
-
-            /*
-             * Remove duplicate lessons.
-             */
-
-            const completedLessons =
-                new Set(
-                    studentProgress.map(
-                        function(item){
-
-                            return Number(
-                                item.lesson_number
-                            );
-
-                        }
-                    )
-                );
-
-
-            const completed =
-                completedLessons.size;
-
-
-            const progress =
-                Math.min(
-                    100,
-                    Math.round(
-                        (
-                            completed /
-                            TOTAL_LESSONS
-                        ) * 100
-                    )
-                );
-
-
-            /* =====================================
-               QUIZ SCORES
-            ===================================== */
-
-            const studentQuizzes =
-                quizData.filter(
-                    function(item){
-
-                        return (
-                            item.user_id ===
-                            student.id
-                        );
-
-                    }
-                );
-
-
-            let average =
-                "—";
-
-
-            if(
-                studentQuizzes.length > 0
-            ){
-
-                const scoreValues =
-                    studentQuizzes
-                        .map(
-                            function(item){
-
-                                return Number(
-                                    item.score
-                                );
-
-                            }
-                        )
-                        .filter(
-                            function(score){
-
-                                return (
-                                    Number.isFinite(
-                                        score
-                                    )
-                                );
-
-                            }
-                        );
-
-
-                if(scoreValues.length > 0){
-
-                    const total =
-                        scoreValues.reduce(
-                            function(
-                                sum,
-                                score
-                            ){
-
-                                return (
-                                    sum +
-                                    score
-                                );
-
-                            },
-                            0
-                        );
-
-
-                    average =
-                        Math.round(
-                            total /
-                            scoreValues.length
-                        ) + "%";
-
-                }
-
-            }
-
-
-            /* =====================================
-               DATE
-            ===================================== */
-
-            let createdDate =
-                "—";
-
-
-            if(student.created_at){
-
-                const date =
-                    new Date(
-                        student.created_at
-                    );
-
-
-                if(
-                    !Number.isNaN(
-                        date.getTime()
-                    )
-                ){
-
-                    createdDate =
-                        date.toLocaleDateString();
-
-                }
-
-            }
-
-
-            /* =====================================
-               CARD
-            ===================================== */
-
-            const card =
-                document.createElement(
-                    "div"
-                );
-
-
-            card.className =
-                "student-card";
-
-
-            card.innerHTML = `
-
-                <div class="student-name">
-
-                    👨‍🎓
-                    ${escapeHTML(
-                        student.full_name ||
-                        "Student"
-                    )}
-
-                </div>
-
-
-                <div class="student-email">
-
-                    🆔 ${escapeHTML(
-                        student.id
-                    )}
-
-                </div>
-
-
-                <div class="student-date">
-
-                    📅 Registered:
-                    ${escapeHTML(
-                        createdDate
-                    )}
-
-                </div>
-
-
-                <div class="progress-title">
-
-                    Course Progress:
-                    ${progress}%
-
-                </div>
-
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        style="width:${progress}%">
-
-                    </div>
-
-                </div>
-
-
-                <div class="info">
-
-
-                    <div class="info-box">
-
-                        <div class="info-label">
-
-                            Lessons
-
-                        </div>
-
-                        <div class="info-value">
-
-                            ${completed}
-                            /
-                            ${TOTAL_LESSONS}
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-box">
-
-                        <div class="info-label">
-
-                            Average Score
-
-                        </div>
-
-                        <div class="info-value">
-
-                            ${average}
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-                <button
-                    class="evaluate-btn"
-                    data-student-id="${escapeAttribute(
-                        student.id
-                    )}"
-                    data-student-name="${escapeAttribute(
-                        student.full_name ||
-                        "Student"
-                    )}">
-
-                    📝 Evaluate Student
-
-                </button>
-
-            `;
-
-
-            const evaluateButton =
-                card.querySelector(
-                    ".evaluate-btn"
-                );
-
-
-            evaluateButton.addEventListener(
-                "click",
-                function(){
-
-                    openEvaluation(
-                        student.id,
-                        student.full_name ||
-                        "Student"
-                    );
-
-                }
-            );
-
-
-            container.appendChild(
-                card
-            );
-
-        }
-    );
+    message.className =
+        "message";
 
 }
 
 
 /* =====================================================
-   STATISTICS
+   SHOW / HIDE PASSWORD
 ===================================================== */
 
-function updateStatistics(
-    students,
-    progressData,
-    quizData
-){
+function togglePassword(){
 
-    document.getElementById(
-        "studentCount"
-    ).textContent =
-        students.length;
-
-
-    let totalLessons =
-        0;
-
-
-    let totalProgress =
-        0;
-
-
-    const scoreValues =
-        [];
-
-
-    students.forEach(
-        function(student){
-
-            const completedLessons =
-                new Set(
-
-                    progressData
-                        .filter(
-                            function(item){
-
-                                return (
-                                    item.user_id ===
-                                    student.id
-                                    &&
-                                    item.completed ===
-                                    true
-                                    &&
-                                    Number(
-                                        item.lesson_number
-                                    ) >= 1
-                                    &&
-                                    Number(
-                                        item.lesson_number
-                                    ) <=
-                                        TOTAL_LESSONS
-                                );
-
-                            }
-                        )
-                        .map(
-                            function(item){
-
-                                return Number(
-                                    item.lesson_number
-                                );
-
-                            }
-                        )
-
-                );
-
-
-            const completed =
-                completedLessons.size;
-
-
-            totalLessons +=
-                completed;
-
-
-            totalProgress +=
-                Math.round(
-                    (
-                        completed /
-                        TOTAL_LESSONS
-                    ) * 100
-                );
-
-
-            quizData
-                .filter(
-                    function(item){
-
-                        return (
-                            item.user_id ===
-                            student.id
-                        );
-
-                    }
-                )
-                .forEach(
-                    function(item){
-
-                        const score =
-                            Number(
-                                item.score
-                            );
-
-
-                        if(
-                            Number.isFinite(
-                                score
-                            )
-                        ){
-
-                            scoreValues.push(
-                                score
-                            );
-
-                        }
-
-                    }
-                );
-
-        }
-    );
-
-
-    const averageProgress =
-        students.length > 0
-        ?
-        Math.round(
-            totalProgress /
-            students.length
-        )
-        :
-        0;
-
-
-    document.getElementById(
-        "lessonCount"
-    ).textContent =
-        totalLessons;
-
-
-    document.getElementById(
-        "averageProgress"
-    ).textContent =
-        averageProgress +
-        "%";
-
-
-    if(scoreValues.length > 0){
-
-        const total =
-            scoreValues.reduce(
-                function(
-                    sum,
-                    score
-                ){
-
-                    return (
-                        sum +
-                        score
-                    );
-
-                },
-                0
-            );
-
-
+    const password =
         document.getElementById(
-            "averageScore"
-        ).textContent =
-            Math.round(
-                total /
-                scoreValues.length
-            ) +
-            "%";
+            "teacherPassword"
+        );
+
+    const button =
+        document.getElementById(
+            "passwordToggle"
+        );
+
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        button.textContent = "🙈";
+
+        button.setAttribute(
+            "aria-label",
+            "Hide password"
+        );
 
     }
     else{
 
-        document.getElementById(
-            "averageScore"
-        ).textContent =
-            "—";
+        password.type = "password";
+
+        button.textContent = "👁️";
+
+        button.setAttribute(
+            "aria-label",
+            "Show password"
+        );
 
     }
 
@@ -2205,199 +636,163 @@ function updateStatistics(
 
 
 /* =====================================================
-   OPEN EVALUATION
+   FRIENDLY ERROR
 ===================================================== */
 
-function openEvaluation(
-    studentId,
-    studentName
-){
+function getFriendlyError(error){
 
-    selectedStudent =
-        studentId;
+    if(!error){
 
-
-    document.getElementById(
-        "evaluationStudentName"
-    ).textContent =
-        "Student: " +
-        studentName;
-
-
-    document.getElementById(
-        "evaluationLesson"
-    ).value =
-        "1";
-
-
-    document.getElementById(
-        "evaluationScore"
-    ).value =
-        "";
-
-
-    document.getElementById(
-        "evaluationText"
-    ).value =
-        "";
-
-
-    document.getElementById(
-        "evaluationModal"
-    ).style.display =
-        "flex";
-
-}
-
-
-/* =====================================================
-   CLOSE EVALUATION
-===================================================== */
-
-function closeEvaluation(){
-
-    selectedStudent =
-        null;
-
-
-    document.getElementById(
-        "evaluationModal"
-    ).style.display =
-        "none";
-
-}
-
-
-/* =====================================================
-   SAVE EVALUATION
-===================================================== */
-
-async function saveEvaluation(){
-
-    if(!selectedStudent){
-
-        alert(
-            "Please select a student."
-        );
-
-        return;
+        return "Something went wrong.";
 
     }
 
 
-    const lesson =
-        Number(
-            document.getElementById(
-                "evaluationLesson"
-            ).value
-        );
+    const message =
+        error.message ||
+        String(error);
 
 
-    const score =
-        Number(
-            document.getElementById(
-                "evaluationScore"
-            ).value
-        );
+    const lower =
+        message.toLowerCase();
 
 
-    const evaluation =
+    if(
+        lower.includes(
+            "invalid login credentials"
+        )
+    ){
+
+        return "Incorrect teacher email or password.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "email not confirmed"
+        )
+    ){
+
+        return "Please confirm the teacher email before logging in.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "invalid api key"
+        )
+    ){
+
+        return "The new Supabase Publishable Key was rejected. Check that this page is using the NEW Supabase project.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "failed to fetch"
+        )
+    ){
+
+        return "Could not connect to the new Supabase project. Check your internet connection and make sure this page is using the NEW Supabase URL.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "networkerror"
+        )
+    ){
+
+        return "Network error. Please check your internet connection.";
+
+    }
+
+
+    return message;
+
+}
+
+
+/* =====================================================
+   TEACHER LOGIN
+===================================================== */
+
+async function teacherLogin(event){
+
+    event.preventDefault();
+
+
+    clearMessage();
+
+
+    const email =
         document.getElementById(
-            "evaluationText"
+            "teacherEmail"
         ).value.trim();
 
 
-    if(
-        !Number.isInteger(lesson) ||
-        lesson < 1 ||
-        lesson > TOTAL_LESSONS
-    ){
-
-        alert(
-            "Please select a valid lesson."
-        );
-
-        return;
-
-    }
-
-
-    if(
-        !Number.isInteger(score) ||
-        score < 0 ||
-        score > 100
-    ){
-
-        alert(
-            "Please enter a score between 0 and 100."
-        );
-
-        return;
-
-    }
-
-
-    if(!evaluation){
-
-        alert(
-            "Please write an evaluation."
-        );
-
-        return;
-
-    }
-
-
-    if(!currentTeacher){
-
-        alert(
-            "Teacher session not found."
-        );
-
-        return;
-
-    }
+    const password =
+        document.getElementById(
+            "teacherPassword"
+        ).value;
 
 
     const button =
         document.getElementById(
-            "saveEvaluationButton"
+            "loginButton"
         );
 
 
-    button.disabled =
-        true;
+    if(!email || !password){
 
+        showMessage(
+            "❌ Please enter your teacher email and password.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    button.disabled = true;
 
     button.textContent =
-        "Saving...";
+        "Checking account...";
+
+
+    showMessage(
+        "⏳ Connecting to Bright English Academy...",
+        "info"
+    );
 
 
     try{
 
-        const {
-            error
-        } =
-        await supabaseClient
-            .from("teacher_evaluations")
-            .insert({
 
-                student_id:
-                    selectedStudent,
+        /* =============================================
+           SIGN IN
+        ============================================= */
 
-                teacher_id:
-                    currentTeacher.id,
+        const result =
+            await supabaseClient.auth.signInWithPassword({
 
-                lesson_number:
-                    lesson,
+                email:email,
 
-                evaluation:
-                    evaluation,
-
-                score:
-                    score
+                password:password
 
             });
+
+
+        const data =
+            result.data;
+
+        const error =
+            result.error;
 
 
         if(error){
@@ -2407,38 +802,157 @@ async function saveEvaluation(){
         }
 
 
-        closeEvaluation();
+        if(
+            !data ||
+            !data.user
+        ){
+
+            throw new Error(
+                "Teacher account could not be found."
+            );
+
+        }
 
 
-        showSuccess(
-            "✅ Evaluation saved successfully!"
+        const user =
+            data.user;
+
+
+        /* =============================================
+           GET TEACHER PROFILE
+        ============================================= */
+
+        const profileResult =
+            await supabaseClient
+                .from("profiles")
+                .select(
+                    "id, full_name, role"
+                )
+                .eq(
+                    "id",
+                    user.id
+                )
+                .maybeSingle();
+
+
+        if(profileResult.error){
+
+            throw profileResult.error;
+
+        }
+
+
+        let profile =
+            profileResult.data;
+
+
+        /* =============================================
+           PROFILE DOES NOT EXIST
+        ============================================= */
+
+        if(!profile){
+
+            await supabaseClient.auth.signOut();
+
+
+            throw new Error(
+                "This account does not have a teacher profile. Please create the teacher profile in Supabase first."
+            );
+
+        }
+
+
+        /* =============================================
+           VERIFY TEACHER ROLE
+        ============================================= */
+
+        if(profile.role !== "teacher"){
+
+            await supabaseClient.auth.signOut();
+
+
+            throw new Error(
+                "This account is not registered as a teacher."
+            );
+
+        }
+
+
+        /* =============================================
+           SAVE TEACHER SESSION
+        ============================================= */
+
+        localStorage.setItem(
+            "brightAcademyTeacherLoggedIn",
+            "true"
         );
 
 
-        await loadStudents();
+        localStorage.setItem(
+            "brightAcademyTeacher",
+
+            JSON.stringify({
+
+                id:user.id,
+
+                fullname:
+                    profile.full_name ||
+                    user.email,
+
+                email:
+                    user.email,
+
+                role:"teacher"
+
+            })
+
+        );
+
+
+        /* =============================================
+           SUCCESS
+        ============================================= */
+
+        showMessage(
+            "✅ Teacher login successful! Opening dashboard...",
+            "success"
+        );
+
+
+        setTimeout(
+
+            function(){
+
+                window.location.href =
+                    "teacher-dashboard.html";
+
+            },
+
+            700
+
+        );
+
 
     }
     catch(error){
 
         console.error(
-            "Evaluation error:",
+            "Teacher login error:",
             error
         );
 
 
-        alert(
-            "Could not save evaluation:\n\n" +
-            error.message
+        showMessage(
+            "❌ " +
+            getFriendlyError(error),
+            "error"
         );
 
-    }
-    finally{
 
-        button.disabled =
-            false;
+        button.disabled = false;
 
         button.textContent =
-            "💾 Save Evaluation";
+            "🔐 Access Teacher Dashboard";
 
     }
 
@@ -2446,185 +960,104 @@ async function saveEvaluation(){
 
 
 /* =====================================================
-   ESCAPE HTML
+   CHECK EXISTING SESSION
 ===================================================== */
 
-function escapeHTML(value){
-
-    return String(value)
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
-
-/* =====================================================
-   ESCAPE ATTRIBUTE
-===================================================== */
-
-function escapeAttribute(value){
-
-    return String(value)
-        .replace(
-            /\\/g,
-            "\\\\"
-        )
-        .replace(
-            /'/g,
-            "\\'"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        );
-
-}
-
-
-/* =====================================================
-   LOGOUT
-===================================================== */
-
-async function logout(){
-
-    const button =
-        document.getElementById(
-            "logoutButton"
-        );
-
-
-    button.disabled =
-        true;
-
-
-    button.textContent =
-        "Logging out...";
-
+async function checkExistingTeacherSession(){
 
     try{
 
-        await supabaseClient
-            .auth
-            .signOut();
+        const result =
+            await supabaseClient.auth.getSession();
+
+
+        if(result.error){
+
+            console.error(
+                "Session error:",
+                result.error
+            );
+
+            return;
+
+        }
+
+
+        const session =
+            result.data?.session;
+
+
+        if(
+            !session ||
+            !session.user
+        ){
+
+            return;
+
+        }
+
+
+        const user =
+            session.user;
+
+
+        const profileResult =
+            await supabaseClient
+                .from("profiles")
+                .select(
+                    "id, full_name, role"
+                )
+                .eq(
+                    "id",
+                    user.id
+                )
+                .maybeSingle();
+
+
+        if(profileResult.error){
+
+            console.error(
+                "Profile check error:",
+                profileResult.error
+            );
+
+            return;
+
+        }
+
+
+        const profile =
+            profileResult.data;
+
+
+        if(
+            profile &&
+            profile.role === "teacher"
+        ){
+
+            window.location.href =
+                "teacher-dashboard.html";
+
+        }
 
     }
     catch(error){
 
         console.error(
-            "Logout error:",
+            "Session check failed:",
             error
         );
 
     }
 
-
-    localStorage.removeItem(
-        "brightAcademyLoggedIn"
-    );
-
-
-    localStorage.removeItem(
-        "brightAcademyStudent"
-    );
-
-
-    window.location.href =
-        "teacher-login.html";
-
 }
 
 
 /* =====================================================
-   CLOSE MODAL WHEN CLICKING OUTSIDE
+   START
 ===================================================== */
 
-document.getElementById(
-    "evaluationModal"
-).addEventListener(
-    "click",
-    function(event){
-
-        if(
-            event.target ===
-            this
-        ){
-
-            closeEvaluation();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   CLOSE MODAL WITH ESC
-===================================================== */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(
-            event.key ===
-            "Escape"
-        ){
-
-            closeEvaluation();
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   AUTH STATE
-===================================================== */
-
-supabaseClient.auth.onAuthStateChange(
-    function(
-        event,
-        session
-    ){
-
-        if(
-            event ===
-            "SIGNED_OUT"
-        ){
-
-            window.location.href =
-                "teacher-login.html";
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   START DASHBOARD
-===================================================== */
-
-loadStudents();
+checkExistingTeacherSession();
 
 </script>
 
