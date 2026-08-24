@@ -191,18 +191,23 @@ main{
 
 .stat-icon{
     font-size:28px;
+
     margin-bottom:10px;
 }
 
 .stat-title{
     color:#64748b;
+
     font-size:14px;
+
     margin-bottom:5px;
 }
 
 .stat-value{
     color:#0757c9;
+
     font-size:26px;
+
     font-weight:800;
 }
 
@@ -407,10 +412,9 @@ main{
     background:#064ba9;
 }
 
-/* COMPLETED */
-
 .lesson.completed{
     border-color:#b9e2ca;
+
     background:#f3fff7;
 }
 
@@ -418,38 +422,24 @@ main{
     background:#138a4b;
 }
 
-/* LOCKED */
+/* =========================
+   LOCKED LESSON
+========================= */
 
 .lesson.locked{
-    background:#f1f4f8;
-    border-color:#d9e0e8;
+    background:#f7f9fc;
+
     opacity:.78;
 }
 
-.lesson.locked:hover{
-    transform:none;
-    box-shadow:none;
-}
+.lesson.locked .lesson-btn{
+    background:#94a3b8;
 
-.lesson.locked .lesson-number{
-    color:#64748b;
-}
-
-.lesson.locked .lesson-title{
-    color:#64748b;
-}
-
-.lesson.locked .lesson-status{
-    color:#9aa6b5;
-}
-
-.lesson-btn.locked-btn{
-    background:#9aa6b5;
     cursor:not-allowed;
 }
 
-.lesson-btn.locked-btn:hover{
-    background:#9aa6b5;
+.lesson.locked .lesson-btn:hover{
+    background:#94a3b8;
 }
 
 /* =========================
@@ -668,7 +658,6 @@ onclick="logout()">
 </header>
 
 
-
 <!-- =========================
      MAIN
 ========================= -->
@@ -690,7 +679,6 @@ and improve your English every day.
 </p>
 
 </section>
-
 
 
 <!-- STATISTICS -->
@@ -719,7 +707,6 @@ class="stat-value">
 </div>
 
 
-
 <div class="stat-card">
 
 <div class="stat-icon">
@@ -741,7 +728,6 @@ class="stat-value">
 </div>
 
 
-
 <div class="stat-card">
 
 <div class="stat-icon">
@@ -761,7 +747,6 @@ class="stat-value">
 </div>
 
 </div>
-
 
 
 <div class="stat-card">
@@ -788,10 +773,7 @@ class="stat-value">
 </section>
 
 
-
-<!-- =========================
-     PROGRESS
-========================= -->
+<!-- PROGRESS -->
 
 <section class="progress-card">
 
@@ -826,10 +808,7 @@ class="progress-fill">
 </section>
 
 
-
-<!-- =========================
-     COURSE
-========================= -->
+<!-- COURSE -->
 
 <section class="course-card">
 
@@ -861,11 +840,9 @@ A1 BEGINNER
 </div>
 
 
-
 <h2 class="section-title">
 📚 My 30 Lessons
 </h2>
-
 
 
 <div
@@ -878,10 +855,7 @@ class="lessons-grid">
 </section>
 
 
-
-<!-- =========================
-     RESULTS
-========================= -->
+<!-- RESULTS -->
 
 <section class="results">
 
@@ -901,7 +875,6 @@ No tests completed yet.
 </div>
 
 </div>
-
 
 
 <div class="result-card">
@@ -927,10 +900,7 @@ and finish the final review.
 </section>
 
 
-
-<!-- =========================
-     MOTIVATION
-========================= -->
+<!-- MOTIVATION -->
 
 <section class="motivation">
 
@@ -948,7 +918,6 @@ with confidence.
 
 
 </main>
-
 
 
 <!-- =========================
@@ -979,7 +948,6 @@ José Simeão
 </footer>
 
 
-
 <script>
 
 /* =========================
@@ -997,6 +965,11 @@ localStorage.getItem(
 );
 
 
+/*
+   SOMENTE ALUNOS LOGADOS
+   PODEM USAR ESTE DASHBOARD.
+*/
+
 if(
     loggedIn !== "true" ||
     !savedStudent
@@ -1012,20 +985,64 @@ if(
    STUDENT DATA
 ========================= */
 
-const student =
+let student =
 JSON.parse(savedStudent);
 
+
+/* =========================
+   GARANTIR DADOS
+========================= */
+
+if(
+    !Array.isArray(
+        student.completedLessons
+    )
+){
+
+    student.completedLessons = [];
+
+}
+
+
+if(
+    !Array.isArray(
+        student.scores
+    )
+){
+
+    student.scores = [];
+
+}
+
+
+/* =========================
+   SAVE STUDENT
+========================= */
+
+function saveStudent(){
+
+    localStorage.setItem(
+        "brightAcademyStudent",
+        JSON.stringify(student)
+    );
+
+}
+
+
+/* =========================
+   STUDENT NAME
+========================= */
 
 document.getElementById(
     "studentName"
 ).textContent =
-    student.fullname;
+    student.fullname || "Student";
 
 
 document.getElementById(
     "welcomeName"
 ).textContent =
-    student.fullname;
+    student.fullname || "Student";
 
 
 /* =========================
@@ -1069,50 +1086,6 @@ const lessons = [
 
 
 /* =========================
-   GET COMPLETED LESSONS
-========================= */
-
-/*
-   We use the same localStorage key
-   used by the lesson pages.
-
-   This makes the Dashboard and
-   Lesson pages work together.
-*/
-
-let completedLessons =
-    JSON.parse(
-        localStorage.getItem(
-            "completedLessons"
-        )
-    ) || [];
-
-
-/*
-   Make sure it is an array.
-*/
-
-if(!Array.isArray(completedLessons)){
-
-    completedLessons = [];
-
-}
-
-
-/*
-   Also keep student data synchronized.
-*/
-
-student.completedLessons =
-    completedLessons;
-
-localStorage.setItem(
-    "brightAcademyStudent",
-    JSON.stringify(student)
-);
-
-
-/* =========================
    LESSON GRID
 ========================= */
 
@@ -1130,31 +1103,33 @@ function(title,index){
 
 
     const completed =
-        completedLessons
+        student.completedLessons
         .includes(lessonNumber);
 
 
     /*
-       LESSON 1 is always available.
+       REGRA PRINCIPAL:
 
-       Lesson 2 requires Lesson 1.
+       Lesson 1 fica disponível.
 
-       Lesson 3 requires Lesson 2.
+       Lesson 2 só abre quando
+       Lesson 1 estiver concluída.
 
-       And so on.
+       Lesson 3 só abre quando
+       Lesson 2 estiver concluída.
+
+       E assim por diante.
     */
 
     const unlocked =
         lessonNumber === 1 ||
-        completedLessons.includes(
+        student.completedLessons.includes(
             lessonNumber - 1
         );
 
 
     const lesson =
-        document.createElement(
-            "div"
-        );
+        document.createElement("div");
 
 
     lesson.className =
@@ -1179,7 +1154,7 @@ function(title,index){
     }
 
 
-    let statusText = "";
+    let statusText;
 
 
     if(completed){
@@ -1191,20 +1166,18 @@ function(title,index){
     else if(unlocked){
 
         statusText =
-            "▶️ Ready to start";
+            "🔓 Available";
 
     }
     else{
 
         statusText =
-            "🔒 Complete Lesson " +
-            (lessonNumber - 1) +
-            " first";
+            "🔒 Complete the previous lesson first";
 
     }
 
 
-    let buttonText = "";
+    let buttonText;
 
 
     if(completed){
@@ -1251,13 +1224,9 @@ function(title,index){
 
 
         <button
-            class="lesson-btn
-            ${!unlocked ? "locked-btn" : ""}"
-            onclick="openLesson(
-                ${lessonNumber},
-                ${unlocked}
-            )"
-            ${!unlocked ? "disabled" : ""}>
+            class="lesson-btn"
+            onclick="openLesson(${lessonNumber})"
+            ${unlocked ? "" : "disabled"}>
 
             ${buttonText}
 
@@ -1278,13 +1247,13 @@ function(title,index){
 ========================= */
 
 const completed =
-    completedLessons.length;
+student.completedLessons.length;
 
 
 const progress =
-    Math.round(
-        (completed / 30) * 100
-    );
+Math.round(
+    (completed / 30) * 100
+);
 
 
 document.getElementById(
@@ -1316,9 +1285,7 @@ document.getElementById(
 ========================= */
 
 const scores =
-    Array.isArray(student.scores)
-    ? student.scores
-    : [];
+student.scores;
 
 
 document.getElementById(
@@ -1331,8 +1298,12 @@ if(scores.length > 0){
 
     const total =
         scores.reduce(
-            (sum,score) =>
-            sum + Number(score),
+            function(sum,score){
+
+                return sum +
+                    Number(score);
+
+            },
             0
         );
 
@@ -1352,9 +1323,11 @@ if(scores.length > 0){
     document.getElementById(
         "lastScore"
     ).textContent =
-        "Latest result: "
-        + scores[scores.length - 1]
-        + "%";
+        "Latest result: " +
+        scores[
+            scores.length - 1
+        ] +
+        "%";
 
 }
 
@@ -1363,15 +1336,36 @@ if(scores.length > 0){
    OPEN LESSON
 ========================= */
 
-function openLesson(
-    number,
-    unlocked
-){
+function openLesson(number){
 
     /*
-       Security on the dashboard:
-       locked lessons cannot be opened.
+       LESSON 1:
+       abre diretamente lesson1.html
+
+       NÃO abre beginner1.html.
     */
+
+    if(number === 1){
+
+        window.location.href =
+            "lesson1.html";
+
+        return;
+
+    }
+
+
+    /*
+       Só permite abrir uma aula
+       se a anterior estiver concluída.
+    */
+
+    const unlocked =
+        number === 1 ||
+        student.completedLessons.includes(
+            number - 1
+        );
+
 
     if(!unlocked){
 
@@ -1389,19 +1383,93 @@ function openLesson(
 
 
     /*
-       Every lesson has its own page.
+       Aqui vamos ligar as próximas
+       páginas individualmente.
 
-       Lesson 1 → lesson1.html
-       Lesson 2 → lesson2.html
-       Lesson 3 → lesson3.html
-       ...
-       Lesson 30 → lesson30.html
+       Por enquanto, somente Lesson 1
+       está conectada.
     */
 
-    window.location.href =
-        "lesson" +
-        number +
-        ".html";
+    const lessonPages = {
+
+        1:"lesson1.html",
+
+        2:"lesson2.html",
+
+        3:"lesson3.html",
+
+        4:"lesson4.html",
+
+        5:"lesson5.html",
+
+        6:"lesson6.html",
+
+        7:"lesson7.html",
+
+        8:"lesson8.html",
+
+        9:"lesson9.html",
+
+        10:"lesson10.html",
+
+        11:"lesson11.html",
+
+        12:"lesson12.html",
+
+        13:"lesson13.html",
+
+        14:"lesson14.html",
+
+        15:"lesson15.html",
+
+        16:"lesson16.html",
+
+        17:"lesson17.html",
+
+        18:"lesson18.html",
+
+        19:"lesson19.html",
+
+        20:"lesson20.html",
+
+        21:"lesson21.html",
+
+        22:"lesson22.html",
+
+        23:"lesson23.html",
+
+        24:"lesson24.html",
+
+        25:"lesson25.html",
+
+        26:"lesson26.html",
+
+        27:"lesson27.html",
+
+        28:"lesson28.html",
+
+        29:"lesson29.html",
+
+        30:"lesson30.html"
+
+    };
+
+
+    if(
+        lessonPages[number]
+    ){
+
+        window.location.href =
+            lessonPages[number];
+
+    }
+    else{
+
+        alert(
+            "This lesson is not available yet."
+        );
+
+    }
 
 }
 
@@ -1414,6 +1482,11 @@ function logout(){
 
     localStorage.removeItem(
         "brightAcademyLoggedIn"
+    );
+
+
+    localStorage.removeItem(
+        "brightAcademyStudent"
     );
 
 
