@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="Bright English Academy - Student Registration">
+content="Bright English Academy - Student Registration">
 
 <title>Student Register | Bright English Academy</title>
 
@@ -25,6 +25,7 @@
 
 body{
     font-family:Arial,Helvetica,sans-serif;
+
     min-height:100vh;
 
     display:flex;
@@ -42,6 +43,7 @@ body{
 }
 
 .register-card{
+
     width:100%;
     max-width:450px;
 
@@ -54,47 +56,57 @@ body{
     box-shadow:
         0 20px 50px
         rgba(0,0,0,.20);
+
 }
 
 .logo{
+
     text-align:center;
 
-    font-size:24px;
+    font-size:25px;
 
     font-weight:800;
 
     color:#0757c9;
 
     margin-bottom:8px;
+
 }
 
 .subtitle{
+
     text-align:center;
 
     color:#64748b;
 
     margin-bottom:25px;
+
 }
 
-.student-icon{
+.icon{
+
     text-align:center;
 
     font-size:55px;
 
     margin-bottom:10px;
+
 }
 
 h1{
+
     text-align:center;
 
     color:#17233c;
 
-    font-size:25px;
+    font-size:26px;
 
     margin-bottom:8px;
+
 }
 
 .description{
+
     text-align:center;
 
     color:#64748b;
@@ -102,13 +114,17 @@ h1{
     font-size:14px;
 
     margin-bottom:25px;
+
 }
 
 .form-group{
+
     margin-bottom:17px;
+
 }
 
 label{
+
     display:block;
 
     font-size:14px;
@@ -118,16 +134,14 @@ label{
     color:#17233c;
 
     margin-bottom:7px;
-}
 
-.input-wrapper{
-    position:relative;
 }
 
 input{
+
     width:100%;
 
-    padding:13px 45px 13px 13px;
+    padding:13px;
 
     border:1px solid #dce5f1;
 
@@ -136,17 +150,33 @@ input{
     outline:none;
 
     font-size:15px;
+
 }
 
 input:focus{
+
     border-color:#0757c9;
 
     box-shadow:
         0 0 0 3px
         rgba(7,87,201,.10);
+
+}
+
+.input-wrapper{
+
+    position:relative;
+
+}
+
+.input-wrapper input{
+
+    padding-right:45px;
+
 }
 
 .password-toggle{
+
     position:absolute;
 
     right:12px;
@@ -162,9 +192,11 @@ input:focus{
     cursor:pointer;
 
     font-size:18px;
+
 }
 
 .register-btn{
+
     width:100%;
 
     border:none;
@@ -189,111 +221,116 @@ input:focus{
     cursor:pointer;
 
     margin-top:5px;
+
 }
 
 .register-btn:hover{
+
     opacity:.92;
+
 }
 
 .register-btn:disabled{
+
     opacity:.6;
 
     cursor:not-allowed;
+
+}
+
+.message{
+
+    display:none;
+
+    padding:12px;
+
+    border-radius:9px;
+
+    margin-bottom:18px;
+
+    font-size:14px;
+
+    text-align:center;
+
 }
 
 .error{
-    display:none;
 
     background:#fff0f0;
 
     color:#c62828;
 
-    padding:12px;
-
-    border-radius:9px;
-
-    margin-bottom:18px;
-
-    font-size:14px;
-
-    text-align:center;
 }
 
 .success{
-    display:none;
 
     background:#effff5;
 
     color:#138a4b;
 
-    padding:12px;
-
-    border-radius:9px;
-
-    margin-bottom:18px;
-
-    font-size:14px;
-
-    text-align:center;
 }
 
 .login-link{
+
     text-align:center;
 
-    margin-top:20px;
+    margin-top:22px;
 
     color:#64748b;
 
     font-size:14px;
+
 }
 
 .login-link a{
+
     color:#0757c9;
 
     font-weight:bold;
 
     text-decoration:none;
+
 }
 
 .login-link a:hover{
+
     text-decoration:underline;
+
 }
 
-.info-box{
-    margin-top:22px;
+.back-link{
 
-    padding:15px;
+    display:block;
 
-    background:#f4f8ff;
+    text-align:center;
 
-    border-radius:11px;
+    margin-top:18px;
 
-    color:#64748b;
+    color:#0757c9;
 
-    font-size:13px;
+    font-weight:bold;
 
-    line-height:1.6;
+    text-decoration:none;
+
+    font-size:14px;
+
 }
 
 .footer{
+
     text-align:center;
 
-    margin-top:22px;
+    margin-top:25px;
 
     color:#64748b;
 
     font-size:13px;
+
 }
 
 .footer strong{
+
     color:#0757c9;
-}
-
-@media(max-width:500px){
-
-    .register-card{
-        padding:25px 20px;
-    }
 
 }
 
@@ -322,7 +359,7 @@ Student Portal
 </div>
 
 
-<div class="student-icon">
+<div class="icon">
 
 👨‍🎓
 
@@ -338,27 +375,24 @@ Create Student Account
 
 <p class="description">
 
-Create your account and start your
-English learning journey.
+Create your account and start learning English.
 
 </p>
 
 
 <div
 id="errorBox"
-class="error">
+class="message error">
 </div>
 
 
 <div
 id="successBox"
-class="success">
+class="message success">
 </div>
 
 
-<!-- =========================
-     FULL NAME
-========================== -->
+<!-- FULL NAME -->
 
 <div class="form-group">
 
@@ -377,9 +411,7 @@ autocomplete="name">
 </div>
 
 
-<!-- =========================
-     EMAIL
-========================== -->
+<!-- EMAIL -->
 
 <div class="form-group">
 
@@ -398,9 +430,7 @@ autocomplete="email">
 </div>
 
 
-<!-- =========================
-     PASSWORD
-========================== -->
+<!-- PASSWORD -->
 
 <div class="form-group">
 
@@ -410,6 +440,7 @@ Password
 
 </label>
 
+
 <div class="input-wrapper">
 
 <input
@@ -418,11 +449,11 @@ type="password"
 placeholder="Create a password"
 autocomplete="new-password">
 
+
 <button
 type="button"
 class="password-toggle"
-onclick="togglePassword('password','passwordEye')"
-id="passwordEye">
+onclick="togglePassword('password')">
 
 👁️
 
@@ -433,9 +464,7 @@ id="passwordEye">
 </div>
 
 
-<!-- =========================
-     CONFIRM PASSWORD
-========================== -->
+<!-- CONFIRM PASSWORD -->
 
 <div class="form-group">
 
@@ -445,6 +474,7 @@ Confirm Password
 
 </label>
 
+
 <div class="input-wrapper">
 
 <input
@@ -453,11 +483,11 @@ type="password"
 placeholder="Confirm your password"
 autocomplete="new-password">
 
+
 <button
 type="button"
 class="password-toggle"
-onclick="togglePassword('confirmPassword','confirmEye')"
-id="confirmEye">
+onclick="togglePassword('confirmPassword')">
 
 👁️
 
@@ -468,10 +498,6 @@ id="confirmEye">
 </div>
 
 
-<!-- =========================
-     REGISTER
-========================== -->
-
 <button
 id="registerBtn"
 class="register-btn"
@@ -480,37 +506,6 @@ onclick="registerStudent()">
 🚀 Create Student Account
 
 </button>
-
-
-<div class="info-box">
-
-<strong>📚 Your student account includes:</strong>
-
-<br>
-
-✅ Access to the Beginner A1 course
-
-<br>
-
-✅ 30 English lessons
-
-<br>
-
-✅ Exercises and activities
-
-<br>
-
-✅ Audio pronunciation practice
-
-<br>
-
-✅ Progress tracking
-
-<br>
-
-✅ Quizzes and assessments
-
-</div>
 
 
 <div class="login-link">
@@ -526,10 +521,23 @@ Student Login
 </div>
 
 
+<a
+href="index.html"
+class="back-link">
+
+← Back to Bright English Academy
+
+</a>
+
+
 <div class="footer">
 
 <p>
-<strong>Bright English Academy</strong>
+
+<strong>
+Bright English Academy
+</strong>
+
 </p>
 
 <p>
@@ -539,7 +547,9 @@ Speak English with Confidence
 <p style="margin-top:6px;">
 
 👤 Created by
-<strong>José Simeão</strong>
+<strong>
+José Simeão
+</strong>
 
 </p>
 
@@ -570,39 +580,28 @@ supabase.createClient(
 
 
 /* =====================================
-   PASSWORD VISIBILITY
+   PASSWORD TOGGLE
 ===================================== */
 
-function togglePassword(
-    inputId,
-    buttonId
-){
+function togglePassword(id){
 
-    const input =
-        document.getElementById(
-            inputId
-        );
-
-    const button =
-        document.getElementById(
-            buttonId
-        );
+    const password =
+        document.getElementById(id);
 
 
     if(
-        input.type === "password"
+        password.type ===
+        "password"
     ){
 
-        input.type = "text";
-
-        button.textContent = "🙈";
+        password.type =
+            "text";
 
     }
     else{
 
-        input.type = "password";
-
-        button.textContent = "👁️";
+        password.type =
+            "password";
 
     }
 
@@ -615,54 +614,44 @@ function togglePassword(
 
 function showError(message){
 
-    const errorBox =
+    const box =
         document.getElementById(
             "errorBox"
         );
 
-    const successBox =
-        document.getElementById(
-            "successBox"
-        );
-
-
-    successBox.style.display =
-        "none";
-
-
-    errorBox.textContent =
+    box.textContent =
         "❌ " + message;
 
-
-    errorBox.style.display =
+    box.style.display =
         "block";
+
+
+    document.getElementById(
+        "successBox"
+    ).style.display =
+        "none";
 
 }
 
 
 function showSuccess(message){
 
-    const errorBox =
-        document.getElementById(
-            "errorBox"
-        );
-
-    const successBox =
+    const box =
         document.getElementById(
             "successBox"
         );
 
-
-    errorBox.style.display =
-        "none";
-
-
-    successBox.textContent =
+    box.textContent =
         "✅ " + message;
 
-
-    successBox.style.display =
+    box.style.display =
         "block";
+
+
+    document.getElementById(
+        "errorBox"
+    ).style.display =
+        "none";
 
 }
 
@@ -701,8 +690,7 @@ async function registerStudent(){
     const email =
         document.getElementById(
             "email"
-        ).value.trim()
-        .toLowerCase();
+        ).value.trim();
 
 
     const password =
@@ -717,9 +705,7 @@ async function registerStudent(){
         ).value;
 
 
-    /* ================================
-       VALIDATION
-    ================================= */
+    /* VALIDATION */
 
     if(!fullName){
 
@@ -732,32 +718,10 @@ async function registerStudent(){
     }
 
 
-    if(fullName.length < 2){
-
-        showError(
-            "Please enter a valid full name."
-        );
-
-        return;
-
-    }
-
-
     if(!email){
 
         showError(
             "Please enter your email."
-        );
-
-        return;
-
-    }
-
-
-    if(!email.includes("@")){
-
-        showError(
-            "Please enter a valid email address."
         );
 
         return;
@@ -798,10 +762,6 @@ async function registerStudent(){
     }
 
 
-    /* ================================
-       BUTTON
-    ================================= */
-
     const button =
         document.getElementById(
             "registerBtn"
@@ -811,7 +771,6 @@ async function registerStudent(){
     button.disabled =
         true;
 
-
     button.textContent =
         "⏳ Creating account...";
 
@@ -819,8 +778,8 @@ async function registerStudent(){
     try{
 
 
-        /* ================================
-           CREATE SUPABASE AUTH USER
+        /* =================================
+           CREATE SUPABASE ACCOUNT
         ================================= */
 
         const {
@@ -854,6 +813,8 @@ async function registerStudent(){
 
 
         if(error){
+
+            console.error(error);
 
             showError(
                 error.message
@@ -890,7 +851,7 @@ async function registerStudent(){
         }
 
 
-        /* ================================
+        /* =================================
            CREATE / UPDATE PROFILE
         ================================= */
 
@@ -914,47 +875,24 @@ async function registerStudent(){
                 role:
                     "student"
 
-            },{
-                onConflict:
-                    "id"
-
             });
 
 
         if(profileError){
 
             console.error(
-                "Profile error:",
                 profileError
             );
 
-
             /*
-               If email confirmation is enabled,
-               the user may not have an active
-               session yet. The profile insert
-               can therefore be blocked by RLS.
+               The account was created,
+               but the profile could not
+               be created.
             */
 
-            if(
-                profileError.code ===
-                "42501"
-            ){
-
-                showError(
-                    "Account created, but the student profile could not be saved. Please check your Supabase profiles table permissions."
-                );
-
-            }
-            else{
-
-                showError(
-                    "Account created, but the student profile could not be created: " +
-                    profileError.message
-                );
-
-            }
-
+            showError(
+                "Your account was created, but your student profile could not be created. Please contact the administrator."
+            );
 
             button.disabled =
                 false;
@@ -967,62 +905,30 @@ async function registerStudent(){
         }
 
 
-        /* ================================
+        /* =================================
            SUCCESS
         ================================= */
 
         showSuccess(
-            "Student account created successfully!"
+            "Account created successfully! Opening Student Dashboard..."
         );
 
 
-        button.textContent =
-            "✅ Account Created";
+        setTimeout(
+            function(){
 
+                window.location.href =
+                    "student-dashboard.html";
 
-        /*
-           If the account has an active session,
-           go directly to the student dashboard.
-        */
-
-        if(
-            data.session
-        ){
-
-            setTimeout(
-                function(){
-
-                    window.location.href =
-                        "student-dashboard.html";
-
-                },
-                1000
-            );
-
-        }
-        else{
-
-            /*
-               Email confirmation enabled.
-            */
-
-            showSuccess(
-                "Account created! Please check your email to confirm your account."
-            );
-
-
-            button.disabled =
-                false;
-
-        }
+            },
+            1000
+        );
 
 
     }
     catch(error){
 
-        console.error(
-            error
-        );
+        console.error(error);
 
 
         showError(
@@ -1032,7 +938,6 @@ async function registerStudent(){
 
         button.disabled =
             false;
-
 
         button.textContent =
             "🚀 Create Student Account";
@@ -1051,7 +956,8 @@ document.addEventListener(
     function(event){
 
         if(
-            event.key === "Enter"
+            event.key ===
+            "Enter"
         ){
 
             registerStudent();
@@ -1062,6 +968,7 @@ document.addEventListener(
 );
 
 </script>
+
 
 </body>
 
