@@ -13,6 +13,8 @@
 
 <title>Student Dashboard | Bright English Academy</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 
 *{
@@ -191,23 +193,18 @@ main{
 
 .stat-icon{
     font-size:28px;
-
     margin-bottom:10px;
 }
 
 .stat-title{
     color:#64748b;
-
     font-size:14px;
-
     margin-bottom:5px;
 }
 
 .stat-value{
     color:#0757c9;
-
     font-size:26px;
-
     font-weight:800;
 }
 
@@ -233,37 +230,27 @@ main{
 
 .section-title{
     color:#0757c9;
-
     font-size:22px;
-
     margin-bottom:18px;
 }
 
 .progress-info{
     display:flex;
-
     justify-content:space-between;
-
     margin-bottom:8px;
-
     font-weight:bold;
 }
 
 .progress-bar{
     width:100%;
-
     height:16px;
-
     background:#e6edf7;
-
     border-radius:20px;
-
     overflow:hidden;
 }
 
 .progress-fill{
     height:100%;
-
     width:0%;
 
     background:
@@ -301,33 +288,23 @@ main{
 
 .course-header{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     margin-bottom:22px;
 }
 
 .course-name{
     font-size:21px;
-
     font-weight:800;
-
     color:#17233c;
 }
 
 .course-level{
     background:#e8f5ff;
-
     color:#0757c9;
-
     padding:8px 13px;
-
     border-radius:20px;
-
     font-size:13px;
-
     font-weight:bold;
 }
 
@@ -366,27 +343,20 @@ main{
 
 .lesson-number{
     color:#0757c9;
-
     font-size:13px;
-
     font-weight:bold;
-
     margin-bottom:6px;
 }
 
 .lesson-title{
     font-weight:bold;
-
     margin-bottom:12px;
-
     min-height:38px;
 }
 
 .lesson-status{
     font-size:12px;
-
     color:#64748b;
-
     margin-bottom:10px;
 }
 
@@ -414,32 +384,11 @@ main{
 
 .lesson.completed{
     border-color:#b9e2ca;
-
     background:#f3fff7;
 }
 
 .lesson.completed .lesson-btn{
     background:#138a4b;
-}
-
-/* =========================
-   LOCKED LESSON
-========================= */
-
-.lesson.locked{
-    background:#f7f9fc;
-
-    opacity:.78;
-}
-
-.lesson.locked .lesson-btn{
-    background:#94a3b8;
-
-    cursor:not-allowed;
-}
-
-.lesson.locked .lesson-btn:hover{
-    background:#94a3b8;
 }
 
 /* =========================
@@ -473,19 +422,14 @@ main{
 
 .result-value{
     font-size:30px;
-
     font-weight:800;
-
     color:#0757c9;
-
     margin-top:8px;
 }
 
 .empty-result{
     color:#64748b;
-
     font-size:14px;
-
     margin-top:8px;
 }
 
@@ -509,8 +453,17 @@ main{
 
 .motivation h2{
     color:#9a7000;
-
     margin-bottom:8px;
+}
+
+/* =========================
+   LOADING
+========================= */
+
+.loading{
+    text-align:center;
+    padding:30px;
+    color:#64748b;
 }
 
 /* =========================
@@ -519,11 +472,8 @@ main{
 
 footer{
     background:#17233c;
-
     color:white;
-
     text-align:center;
-
     padding:25px 15px;
 }
 
@@ -594,9 +544,7 @@ footer strong{
 
     .course-header{
         flex-direction:column;
-
         align-items:flex-start;
-
         gap:10px;
     }
 
@@ -610,14 +558,9 @@ footer strong{
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
 <div class="header-container">
-
 
 <a href="index.html"
    class="logo">
@@ -652,36 +595,35 @@ onclick="logout()">
 
 </div>
 
-
 </div>
 
 </header>
 
 
-<!-- =========================
-     MAIN
-========================= -->
-
 <main>
 
-
-<!-- WELCOME -->
 
 <section class="welcome">
 
 <h1>
-Welcome, <span id="welcomeName">Student</span>! 👋
+
+Welcome,
+<span id="welcomeName">
+Student
+</span>!
+👋
+
 </h1>
 
 <p>
+
 Keep learning, complete your lessons
 and improve your English every day.
+
 </p>
 
 </section>
 
-
-<!-- STATISTICS -->
 
 <section class="stats">
 
@@ -773,8 +715,6 @@ class="stat-value">
 </section>
 
 
-<!-- PROGRESS -->
-
 <section class="progress-card">
 
 <h2 class="section-title">
@@ -808,8 +748,6 @@ class="progress-fill">
 </section>
 
 
-<!-- COURSE -->
-
 <section class="course-card">
 
 
@@ -818,13 +756,17 @@ class="progress-fill">
 <div>
 
 <div class="course-name">
+
 🇬🇧 English Beginner A1
+
 </div>
 
 <div
-style="color:#64748b;
-       margin-top:5px;
-       font-size:14px;">
+style="
+color:#64748b;
+margin-top:5px;
+font-size:14px;
+">
 
 Bright English Academy
 
@@ -834,14 +776,18 @@ Bright English Academy
 
 
 <div class="course-level">
+
 A1 BEGINNER
+
 </div>
 
 </div>
 
 
 <h2 class="section-title">
+
 📚 My 30 Lessons
+
 </h2>
 
 
@@ -849,13 +795,17 @@ A1 BEGINNER
 id="lessonsGrid"
 class="lessons-grid">
 
+<div class="loading">
+
+Loading lessons...
+
+</div>
+
 </div>
 
 
 </section>
 
-
-<!-- RESULTS -->
 
 <section class="results">
 
@@ -863,7 +813,9 @@ class="lessons-grid">
 <div class="result-card">
 
 <h2 class="section-title">
+
 📝 My Results
+
 </h2>
 
 <div
@@ -880,11 +832,15 @@ No tests completed yet.
 <div class="result-card">
 
 <h2 class="section-title">
+
 🎯 Learning Goal
+
 </h2>
 
 <div class="result-value">
+
 A1
+
 </div>
 
 <div class="empty-result">
@@ -900,18 +856,20 @@ and finish the final review.
 </section>
 
 
-<!-- MOTIVATION -->
-
 <section class="motivation">
 
 <h2>
+
 🌟 Keep Going!
+
 </h2>
 
 <p>
+
 Every lesson brings you one step
 closer to speaking English
 with confidence.
+
 </p>
 
 </section>
@@ -920,16 +878,14 @@ with confidence.
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
 <p>
+
 <strong>
 Bright English Academy
 </strong>
+
 </p>
 
 <p>
@@ -950,9 +906,28 @@ José Simeão
 
 <script>
 
-/* =========================
-   CHECK LOGIN
-========================= */
+/* =====================================================
+   SUPABASE
+===================================================== */
+
+const SUPABASE_URL =
+"https://yvdadrqimaavubqcxned.supabase.co";
+
+
+const SUPABASE_KEY =
+"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
+
+
+const supabaseClient =
+supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+/* =====================================================
+   LOCAL LOGIN
+===================================================== */
 
 const loggedIn =
 localStorage.getItem(
@@ -966,8 +941,8 @@ localStorage.getItem(
 
 
 /*
-   SOMENTE ALUNOS LOGADOS
-   PODEM USAR ESTE DASHBOARD.
+   Se não estiver logado,
+   volta para o login.
 */
 
 if(
@@ -981,17 +956,29 @@ if(
 }
 
 
-/* =========================
-   STUDENT DATA
-========================= */
+/* =====================================================
+   STUDENT
+===================================================== */
 
-let student =
-JSON.parse(savedStudent);
+let student;
 
+try{
 
-/* =========================
-   GARANTIR DADOS
-========================= */
+    student =
+        JSON.parse(
+            savedStudent
+        );
+
+}catch(error){
+
+    student = {
+        fullname:"Student",
+        completedLessons:[],
+        scores:[]
+    };
+
+}
+
 
 if(
     !Array.isArray(
@@ -1015,79 +1002,90 @@ if(
 }
 
 
-/* =========================
-   SAVE STUDENT
-========================= */
-
-function saveStudent(){
-
-    localStorage.setItem(
-        "brightAcademyStudent",
-        JSON.stringify(student)
-    );
-
-}
-
-
-/* =========================
-   STUDENT NAME
-========================= */
-
 document.getElementById(
     "studentName"
 ).textContent =
-    student.fullname || "Student";
+    student.fullname;
 
 
 document.getElementById(
     "welcomeName"
 ).textContent =
-    student.fullname || "Student";
+    student.fullname;
 
 
-/* =========================
-   LESSON TITLES
-========================= */
+/* =====================================================
+   30 LESSONS
+===================================================== */
 
 const lessons = [
 
 "Greetings & Introductions",
+
 "The Alphabet",
+
 "Numbers 0–100",
+
 "Days & Months",
+
 "Colors",
+
 "Classroom English",
+
 "Personal Information",
+
 "Countries & Nationalities",
+
 "Verb To Be",
+
 "Family",
+
 "Possessive Adjectives",
+
 "This / That / These / Those",
+
 "Daily Routines",
+
 "Present Simple",
+
 "Questions & Answers",
+
 "Time & Schedules",
+
 "Places in Town",
+
 "Prepositions",
+
 "Food & Drinks",
+
 "Inocêncio & Antônio Conversation",
+
 "Juan & Laima Conversation",
+
 "Felizarda & Promisse Conversation",
+
 "José & Álvaro Conversation",
+
 "Ácima & Yasmine Conversation",
+
 "Review & Practice",
+
 "Extra Practice",
+
 "Real-Life English",
+
 "Grammar Review",
+
 "Final Preparation",
+
 "Final Review — A1 Review & Real-Life English"
 
 ];
 
 
-/* =========================
+/* =====================================================
    LESSON GRID
-========================= */
+===================================================== */
 
 const grid =
 document.getElementById(
@@ -1095,41 +1093,25 @@ document.getElementById(
 );
 
 
+grid.innerHTML = "";
+
+
 lessons.forEach(
 function(title,index){
 
-    const lessonNumber =
+    const number =
         index + 1;
 
 
     const completed =
         student.completedLessons
-        .includes(lessonNumber);
-
-
-    /*
-       REGRA PRINCIPAL:
-
-       Lesson 1 fica disponível.
-
-       Lesson 2 só abre quando
-       Lesson 1 estiver concluída.
-
-       Lesson 3 só abre quando
-       Lesson 2 estiver concluída.
-
-       E assim por diante.
-    */
-
-    const unlocked =
-        lessonNumber === 1 ||
-        student.completedLessons.includes(
-            lessonNumber - 1
-        );
+        .includes(number);
 
 
     const lesson =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     lesson.className =
@@ -1145,69 +1127,13 @@ function(title,index){
     }
 
 
-    if(!unlocked){
-
-        lesson.classList.add(
-            "locked"
-        );
-
-    }
-
-
-    let statusText;
-
-
-    if(completed){
-
-        statusText =
-            "✅ Completed";
-
-    }
-    else if(unlocked){
-
-        statusText =
-            "🔓 Available";
-
-    }
-    else{
-
-        statusText =
-            "🔒 Complete the previous lesson first";
-
-    }
-
-
-    let buttonText;
-
-
-    if(completed){
-
-        buttonText =
-            "🔄 Review Lesson";
-
-    }
-    else if(unlocked){
-
-        buttonText =
-            "▶️ Start Lesson";
-
-    }
-    else{
-
-        buttonText =
-            "🔒 Locked";
-
-    }
-
-
     lesson.innerHTML = `
 
         <div class="lesson-number">
 
-            LESSON ${lessonNumber}
+            LESSON ${number}
 
         </div>
-
 
         <div class="lesson-title">
 
@@ -1215,20 +1141,25 @@ function(title,index){
 
         </div>
 
-
         <div class="lesson-status">
 
-            ${statusText}
+            ${
+                completed
+                ? "✅ Completed"
+                : "🔒 Not completed"
+            }
 
         </div>
 
-
         <button
             class="lesson-btn"
-            onclick="openLesson(${lessonNumber})"
-            ${unlocked ? "" : "disabled"}>
+            onclick="openLesson(${number})">
 
-            ${buttonText}
+            ${
+                completed
+                ? "🔄 Review Lesson"
+                : "▶️ Start Lesson"
+            }
 
         </button>
 
@@ -1242,153 +1173,22 @@ function(title,index){
 });
 
 
-/* =========================
-   PROGRESS
-========================= */
-
-const completed =
-student.completedLessons.length;
-
-
-const progress =
-Math.round(
-    (completed / 30) * 100
-);
-
-
-document.getElementById(
-    "completedCount"
-).textContent =
-    completed + " / 30";
-
-
-document.getElementById(
-    "progressValue"
-).textContent =
-    progress + "%";
-
-
-document.getElementById(
-    "progressPercent"
-).textContent =
-    progress + "%";
-
-
-document.getElementById(
-    "progressFill"
-).style.width =
-    progress + "%";
-
-
-/* =========================
-   SCORES
-========================= */
-
-const scores =
-student.scores;
-
-
-document.getElementById(
-    "exerciseCount"
-).textContent =
-    scores.length;
-
-
-if(scores.length > 0){
-
-    const total =
-        scores.reduce(
-            function(sum,score){
-
-                return sum +
-                    Number(score);
-
-            },
-            0
-        );
-
-
-    const average =
-        Math.round(
-            total / scores.length
-        );
-
-
-    document.getElementById(
-        "averageScore"
-    ).textContent =
-        average + "%";
-
-
-    document.getElementById(
-        "lastScore"
-    ).textContent =
-        "Latest result: " +
-        scores[
-            scores.length - 1
-        ] +
-        "%";
-
-}
-
-
-/* =========================
+/* =====================================================
    OPEN LESSON
-========================= */
+===================================================== */
 
 function openLesson(number){
 
     /*
-       LESSON 1:
-       abre diretamente lesson1.html
+       AQUI ESTÁ A MUDANÇA PRINCIPAL.
 
-       NÃO abre beginner1.html.
+       Lesson 1 NÃO vai mais para beginner1.html.
+
+       Agora vai diretamente para:
+
+       lesson1.html
     */
 
-    if(number === 1){
-
-        window.location.href =
-            "lesson1.html";
-
-        return;
-
-    }
-
-
-    /*
-       Só permite abrir uma aula
-       se a anterior estiver concluída.
-    */
-
-    const unlocked =
-        number === 1 ||
-        student.completedLessons.includes(
-            number - 1
-        );
-
-
-    if(!unlocked){
-
-        alert(
-            "🔒 Complete Lesson " +
-            (number - 1) +
-            " before starting Lesson " +
-            number +
-            "."
-        );
-
-        return;
-
-    }
-
-
-    /*
-       Aqui vamos ligar as próximas
-       páginas individualmente.
-
-       Por enquanto, somente Lesson 1
-       está conectada.
-    */
 
     const lessonPages = {
 
@@ -1455,28 +1255,121 @@ function openLesson(number){
     };
 
 
-    if(
-        lessonPages[number]
-    ){
+    const page =
+        lessonPages[number];
+
+
+    if(page){
 
         window.location.href =
-            lessonPages[number];
-
-    }
-    else{
-
-        alert(
-            "This lesson is not available yet."
-        );
+            page;
 
     }
 
 }
 
 
-/* =========================
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function updateProgress(){
+
+    const completed =
+        student.completedLessons.length;
+
+
+    const progress =
+        Math.round(
+            (completed / 30) * 100
+        );
+
+
+    document.getElementById(
+        "completedCount"
+    ).textContent =
+        completed + " / 30";
+
+
+    document.getElementById(
+        "progressValue"
+    ).textContent =
+        progress + "%";
+
+
+    document.getElementById(
+        "progressPercent"
+    ).textContent =
+        progress + "%";
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        progress + "%";
+
+}
+
+
+updateProgress();
+
+
+/* =====================================================
+   SCORES
+===================================================== */
+
+const scores =
+student.scores;
+
+
+document.getElementById(
+    "exerciseCount"
+).textContent =
+    scores.length;
+
+
+if(scores.length > 0){
+
+    const total =
+        scores.reduce(
+            function(sum,score){
+
+                return sum +
+                    Number(score);
+
+            },
+            0
+        );
+
+
+    const average =
+        Math.round(
+            total /
+            scores.length
+        );
+
+
+    document.getElementById(
+        "averageScore"
+    ).textContent =
+        average + "%";
+
+
+    document.getElementById(
+        "lastScore"
+    ).textContent =
+        "Latest result: " +
+        scores[
+            scores.length - 1
+        ] +
+        "%";
+
+}
+
+
+/* =====================================================
    LOGOUT
-========================= */
+===================================================== */
 
 function logout(){
 
@@ -1495,8 +1388,57 @@ function logout(){
 
 }
 
-</script>
 
+/* =====================================================
+   SUPABASE CONNECTION TEST
+===================================================== */
+
+async function testSupabase(){
+
+    try{
+
+        const {
+            error
+        } =
+        await supabaseClient
+        .from("students")
+        .select("id")
+        .limit(1);
+
+
+        if(error){
+
+            console.log(
+                "Supabase:",
+                error.message
+            );
+
+            return;
+
+        }
+
+
+        console.log(
+            "✅ Supabase conectado!"
+        );
+
+    }
+
+    catch(error){
+
+        console.log(
+            "Supabase connection error:",
+            error
+        );
+
+    }
+
+}
+
+
+testSupabase();
+
+</script>
 
 </body>
 
