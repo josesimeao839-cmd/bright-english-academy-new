@@ -13,6 +13,8 @@
 
 <title>Student Login | Bright English Academy</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <style>
 
 *{
@@ -316,7 +318,7 @@ body{
 
     display:none;
 
-    padding:12px;
+    padding:13px;
 
     border-radius:9px;
 
@@ -325,6 +327,8 @@ body{
     font-size:14px;
 
     font-weight:bold;
+
+    line-height:1.5;
 
 }
 
@@ -536,6 +540,7 @@ Email
 type="email"
 id="loginEmail"
 placeholder="Enter your email"
+autocomplete="email"
 required>
 
 </div>
@@ -553,6 +558,7 @@ Password
 type="password"
 id="loginPassword"
 placeholder="Enter your password"
+autocomplete="current-password"
 required>
 
 </div>
@@ -593,6 +599,7 @@ Full Name
 type="text"
 id="registerName"
 placeholder="Enter your full name"
+autocomplete="name"
 required>
 
 </div>
@@ -610,6 +617,7 @@ Email
 type="email"
 id="registerEmail"
 placeholder="Enter your email"
+autocomplete="email"
 required>
 
 </div>
@@ -627,6 +635,7 @@ Password
 type="password"
 id="registerPassword"
 placeholder="Create a password"
+autocomplete="new-password"
 minlength="6"
 required>
 
@@ -645,6 +654,7 @@ Confirm Password
 type="password"
 id="registerPassword2"
 placeholder="Repeat your password"
+autocomplete="new-password"
 minlength="6"
 required>
 
@@ -696,18 +706,11 @@ Created by José Simeão
 </div>
 
 
-
-<!-- =====================================================
-     SUPABASE
-===================================================== -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
 <script>
 
 /* =====================================================
    SUPABASE CONFIGURATION
+   NEW BRIGHT ENGLISH ACADEMY PROJECT
 ===================================================== */
 
 const SUPABASE_URL =
@@ -715,20 +718,30 @@ const SUPABASE_URL =
 
 
 const SUPABASE_PUBLISHABLE_KEY =
-    "sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W4";
+    "sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
 
 
 const supabaseClient =
     window.supabase.createClient(
+
         SUPABASE_URL,
+
         SUPABASE_PUBLISHABLE_KEY,
+
         {
+
             auth:{
+
                 autoRefreshToken:true,
+
                 persistSession:true,
+
                 detectSessionInUrl:true
+
             }
+
         }
+
     );
 
 
@@ -753,6 +766,33 @@ function showMessage(
 
     message.className =
         "message " + type;
+
+
+    message.style.display =
+        "block";
+
+}
+
+
+/* =====================================================
+   CLEAR MESSAGE
+===================================================== */
+
+function clearMessage(){
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+
+    message.textContent = "";
+
+    message.className =
+        "message";
+
+    message.style.display =
+        "none";
 
 }
 
@@ -791,10 +831,7 @@ function showLogin(){
     );
 
 
-    showMessage(
-        "",
-        ""
-    );
+    clearMessage();
 
 }
 
@@ -833,10 +870,7 @@ function showRegister(){
     );
 
 
-    showMessage(
-        "",
-        ""
-    );
+    clearMessage();
 
 }
 
@@ -872,6 +906,18 @@ async function registerStudent(event){
         document.getElementById(
             "registerPassword2"
         ).value;
+
+
+    if(!name){
+
+        showMessage(
+            "❌ Please enter your full name.",
+            "error"
+        );
+
+        return;
+
+    }
 
 
     if(password !== password2){
@@ -918,27 +964,33 @@ async function registerStudent(event){
 
     try{
 
-        const {
-            data,
-            error
-        } =
-        await supabaseClient.auth.signUp({
+        const result =
+            await supabaseClient.auth.signUp({
 
-            email:email,
+                email:email,
 
-            password:password,
+                password:password,
 
-            options:{
+                options:{
 
-                data:{
+                    data:{
 
-                    full_name:name
+                        full_name:name,
+
+                        role:"student"
+
+                    }
 
                 }
 
-            }
+            });
 
-        });
+
+        const data =
+            result.data;
+
+        const error =
+            result.error;
 
 
         if(error){
@@ -948,25 +1000,22 @@ async function registerStudent(event){
         }
 
 
-        /*
-         * Supabase may require email confirmation.
-         * If confirmation is disabled, a session
-         * may already exist.
-         */
+        if(!data || !data.user){
+
+            throw new Error(
+                "The account could not be created."
+            );
+
+        }
 
 
-        if(data.user){
+        /* =========================================
+           CREATE PROFILE
+        ========================================= */
 
-            /*
-             * Create profile when a session
-             * is available.
-             */
+        if(data.session){
 
-            if(data.session){
-
-                const {
-                    error:profileError
-                } =
+            const profileResult =
                 await supabaseClient
                     .from("profiles")
                     .upsert({
@@ -980,70 +1029,80 @@ async function registerStudent(event){
                     });
 
 
-                if(profileError){
+            if(profileResult.error){
 
-                    console.error(
-                        profileError
-                    );
-
-                }
+                console.error(
+                    "Profile error:",
+                    profileResult.error
+                );
 
             }
 
-
-            if(data.session){
-
-                showMessage(
-                    "✅ Account created! Opening your dashboard...",
-                    "success"
-                );
+        }
 
 
-                localStorage.setItem(
-                    "brightAcademyLoggedIn",
-                    "true"
-                );
+        /* =========================================
+           SESSION EXISTS
+        ========================================= */
+
+        if(data.session){
+
+            localStorage.setItem(
+                "brightAcademyLoggedIn",
+                "true"
+            );
 
 
-                localStorage.setItem(
-                    "brightAcademyStudent",
-                    JSON.stringify({
+            localStorage.setItem(
+                "brightAcademyStudent",
 
-                        id:data.user.id,
+                JSON.stringify({
 
-                        fullname:name,
+                    id:data.user.id,
 
-                        email:email
+                    fullname:name,
 
-                    })
-                );
+                    email:email
 
+                })
 
-                setTimeout(
-                    function(){
-
-                        window.location.href =
-                            "student-dashboard.html";
-
-                    },
-                    1000
-                );
+            );
 
 
-            }
-            else{
-
-                showMessage(
-                    "✅ Account created! Check your email to confirm your account, then return here and log in.",
-                    "success"
-                );
+            showMessage(
+                "✅ Account created successfully! Opening your dashboard...",
+                "success"
+            );
 
 
-                document.getElementById(
-                    "registerForm"
-                ).reset();
+            setTimeout(
+                function(){
 
-            }
+                    window.location.href =
+                        "student-dashboard.html";
+
+                },
+                1000
+            );
+
+
+        }
+
+        /* =========================================
+           EMAIL CONFIRMATION REQUIRED
+        ========================================= */
+
+        else{
+
+            showMessage(
+                "✅ Account created successfully! Please check your email to confirm your account, then return here and log in.",
+                "success"
+            );
+
+
+            document.getElementById(
+                "registerForm"
+            ).reset();
 
         }
 
@@ -1058,9 +1117,7 @@ async function registerStudent(event){
 
         showMessage(
             "❌ " +
-            getFriendlyError(
-                error
-            ),
+            getFriendlyError(error),
             "error"
         );
 
@@ -1118,17 +1175,22 @@ async function loginStudent(event){
 
     try{
 
-        const {
-            data,
-            error
-        } =
-        await supabaseClient.auth.signInWithPassword({
+        const result =
+            await supabaseClient.auth
+                .signInWithPassword({
 
-            email:email,
+                    email:email,
 
-            password:password
+                    password:password
 
-        });
+                });
+
+
+        const data =
+            result.data;
+
+        const error =
+            result.error;
 
 
         if(error){
@@ -1138,7 +1200,7 @@ async function loginStudent(event){
         }
 
 
-        if(!data.user){
+        if(!data || !data.user){
 
             throw new Error(
                 "Unable to find your account."
@@ -1147,93 +1209,85 @@ async function loginStudent(event){
         }
 
 
-        /*
-         * Get profile from database.
-         */
+        /* =========================================
+           GET PROFILE
+        ========================================= */
 
         let profile = null;
 
 
-        const {
-            data:profileData,
-            error:profileError
-        } =
-        await supabaseClient
-            .from("profiles")
-            .select(
-                "id, full_name, role"
-            )
-            .eq(
-                "id",
-                data.user.id
-            )
-            .maybeSingle();
+        const profileResult =
+            await supabaseClient
+                .from("profiles")
+                .select(
+                    "id, full_name, role"
+                )
+                .eq(
+                    "id",
+                    data.user.id
+                )
+                .maybeSingle();
 
 
-        if(profileError){
+        if(profileResult.error){
 
             console.error(
-                profileError
+                "Profile read error:",
+                profileResult.error
             );
 
         }
         else{
 
             profile =
-                profileData;
+                profileResult.data;
 
         }
 
 
-        /*
-         * If profile does not exist,
-         * create it.
-         */
+        /* =========================================
+           CREATE PROFILE IF MISSING
+        ========================================= */
 
         if(!profile){
 
             const name =
-                data.user.user_metadata
-                    ?.full_name ||
+                data.user.user_metadata?.full_name ||
                 email.split("@")[0];
 
 
-            const {
-                data:newProfile,
-                error:newProfileError
-            } =
-            await supabaseClient
-                .from("profiles")
-                .insert({
+            const newProfileResult =
+                await supabaseClient
+                    .from("profiles")
+                    .insert({
 
-                    id:data.user.id,
+                        id:data.user.id,
 
-                    full_name:name,
+                        full_name:name,
 
-                    role:"student"
+                        role:"student"
 
-                })
-                .select()
-                .single();
+                    })
+                    .select()
+                    .single();
 
 
-            if(newProfileError){
+            if(newProfileResult.error){
 
-                throw newProfileError;
+                throw newProfileResult.error;
 
             }
 
 
             profile =
-                newProfile;
+                newProfileResult.data;
 
         }
 
 
-        /*
-         * Do not allow the student login
-         * page to enter the teacher area.
-         */
+        /* =========================================
+           PREVENT TEACHER LOGIN HERE
+        ========================================= */
 
         if(profile.role === "teacher"){
 
@@ -1257,9 +1311,9 @@ async function loginStudent(event){
         }
 
 
-        /*
-         * Save compatibility data.
-         */
+        /* =========================================
+           SAVE STUDENT DATA
+        ========================================= */
 
         localStorage.setItem(
             "brightAcademyLoggedIn",
@@ -1269,6 +1323,7 @@ async function loginStudent(event){
 
         localStorage.setItem(
             "brightAcademyStudent",
+
             JSON.stringify({
 
                 id:data.user.id,
@@ -1280,8 +1335,13 @@ async function loginStudent(event){
                     data.user.email
 
             })
+
         );
 
+
+        /* =========================================
+           SUCCESS
+        ========================================= */
 
         showMessage(
             "✅ Login successful! Opening your dashboard...",
@@ -1310,9 +1370,7 @@ async function loginStudent(event){
 
         showMessage(
             "❌ " +
-            getFriendlyError(
-                error
-            ),
+            getFriendlyError(error),
             "error"
         );
 
@@ -1338,10 +1396,12 @@ function getFriendlyError(error){
         "Something went wrong.";
 
 
+    const lower =
+        message.toLowerCase();
+
+
     if(
-        message
-        .toLowerCase()
-        .includes(
+        lower.includes(
             "invalid login credentials"
         )
     ){
@@ -1352,9 +1412,7 @@ function getFriendlyError(error){
 
 
     if(
-        message
-        .toLowerCase()
-        .includes(
+        lower.includes(
             "user already registered"
         )
     ){
@@ -1365,9 +1423,7 @@ function getFriendlyError(error){
 
 
     if(
-        message
-        .toLowerCase()
-        .includes(
+        lower.includes(
             "password should be at least"
         )
     ){
@@ -1378,14 +1434,23 @@ function getFriendlyError(error){
 
 
     if(
-        message
-        .toLowerCase()
-        .includes(
+        lower.includes(
             "email not confirmed"
         )
     ){
 
         return "Please confirm your email before logging in.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "invalid api key"
+        )
+    ){
+
+        return "The Supabase API key is not being accepted by this project. Please verify the Publishable key in Supabase.";
 
     }
 
@@ -1401,74 +1466,86 @@ function getFriendlyError(error){
 
 async function checkExistingSession(){
 
-    const {
-        data
-    } =
-    await supabaseClient.auth.getSession();
+    try{
+
+        const result =
+            await supabaseClient.auth
+                .getSession();
 
 
-    if(
-        data &&
-        data.session &&
-        data.session.user
-    ){
-
-        /*
-         * Already logged in.
-         * Send the student directly
-         * to the dashboard.
-         */
-
-        const user =
-            data.session.user;
-
-
-        const {
-            data:profile
-        } =
-        await supabaseClient
-            .from("profiles")
-            .select(
-                "id, full_name, role"
-            )
-            .eq(
-                "id",
-                user.id
-            )
-            .maybeSingle();
+        const session =
+            result.data?.session;
 
 
         if(
-            profile &&
-            profile.role === "student"
+            session &&
+            session.user
         ){
 
-            localStorage.setItem(
-                "brightAcademyLoggedIn",
-                "true"
-            );
+            const user =
+                session.user;
 
 
-            localStorage.setItem(
-                "brightAcademyStudent",
-                JSON.stringify({
-
-                    id:user.id,
-
-                    fullname:
-                        profile.full_name,
-
-                    email:
-                        user.email
-
-                })
-            );
+            const profileResult =
+                await supabaseClient
+                    .from("profiles")
+                    .select(
+                        "id, full_name, role"
+                    )
+                    .eq(
+                        "id",
+                        user.id
+                    )
+                    .maybeSingle();
 
 
-            window.location.href =
-                "student-dashboard.html";
+            const profile =
+                profileResult.data;
+
+
+            if(
+                profile &&
+                profile.role === "student"
+            ){
+
+                localStorage.setItem(
+                    "brightAcademyLoggedIn",
+                    "true"
+                );
+
+
+                localStorage.setItem(
+                    "brightAcademyStudent",
+
+                    JSON.stringify({
+
+                        id:user.id,
+
+                        fullname:
+                            profile.full_name,
+
+                        email:
+                            user.email
+
+                    })
+
+                );
+
+
+                window.location.href =
+                    "student-dashboard.html";
+
+            }
 
         }
+
+    }
+    catch(error){
+
+        console.error(
+            "Session check error:",
+            error
+        );
 
     }
 
@@ -1480,7 +1557,6 @@ async function checkExistingSession(){
 ===================================================== */
 
 checkExistingSession();
-
 
 </script>
 
