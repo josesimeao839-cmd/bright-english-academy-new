@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Bright English Academy - Day 2 Lesson 2 - Personal Information">
+
+<title>Lesson 2 — Personal Information | Bright English Academy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#17233c;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 18px 60px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:24px;
+    box-shadow:0 5px 22px rgba(20,53,100,.08);
+    border:1px solid #e2eaf4;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+}
+
+.hero h1{
+    color:white;
+    font-size:34px;
+    margin-top:0;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.day-badge{
+    display:inline-block;
+    background:#ffd34d;
+    color:#17233c;
+    padding:7px 13px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.progress-area{
+    margin-top:20px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+    background:rgba(255,255,255,.3);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#ffd34d;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.lesson-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:24px;
+}
+
+.lesson-nav a{
+    background:#eaf3ff;
+    color:#0b4f9c;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.lesson-nav a:hover{
+    background:#d7eaff;
+}
+
+h2{
+    color:#0b4f9c;
+    font-size:26px;
+    margin-top:0;
+}
+
+h3{
+    color:#0b4f9c;
+    margin-bottom:8px;
+}
+
+.objective-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.objective{
+    background:#f5f9ff;
+    padding:18px;
+    border-radius:12px;
+    border-left:5px solid #0b4f9c;
+}
+
+.objective strong{
+    display:block;
+    color:#0b4f9c;
+    margin-bottom:5px;
+}
+
+.vocabulary-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.word-card{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:18px;
+    border-radius:12px;
+}
+
+.word{
+    font-size:20px;
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.translation{
+    color:#64748b;
+    margin:5px 0 12px;
+}
+
+.listen-btn{
+    border:none;
+    background:#ffd34d;
+    color:#17233c;
+    padding:9px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.listen-btn:hover{
+    background:#f2bf1f;
+}
+
+.grammar-box{
+    background:#f5f9ff;
+    border-left:5px solid #0b4f9c;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+.example{
+    background:white;
+    padding:13px;
+    border-radius:8px;
+    margin-top:12px;
+}
+
+.english{
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.dialogue{
+    background:#f7f9fc;
+    padding:20px;
+    border-radius:14px;
+}
+
+.dialogue p{
+    margin:10px 0;
+}
+
+.jose{
+    color:#0b4f9c;
+    font-weight:bold;
+}
+
+.student{
+    color:#087f54;
+    font-weight:bold;
+}
+
+.exercise{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+}
+
+.options button{
+    border:1px solid #cdd9e8;
+    background:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.options button:hover{
+    background:#eaf3ff;
+}
+
+.answer{
+    display:none;
+    margin-top:12px;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#e8f7ee;
+    color:#168348;
+}
+
+.wrong{
+    background:#fff0f0;
+    color:#c62828;
+}
+
+.activity{
+    background:#fffaf0;
+    border:1px solid #f2dfaa;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.activity button{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:10px 17px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.challenge{
+    background:linear-gradient(135deg,#eef6ff,#f7fbff);
+    border:1px solid #d8e8f8;
+    padding:22px;
+    border-radius:14px;
+}
+
+.challenge li{
+    margin-bottom:8px;
+}
+
+.quiz-question{
+    padding:18px;
+    border-bottom:1px solid #e3e9f1;
+}
+
+.quiz-question p{
+    font-weight:bold;
+}
+
+.quiz-options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.quiz-options label{
+    background:#f7faff;
+    padding:10px;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.quiz-options label:hover{
+    background:#eaf3ff;
+}
+
+.quiz-submit{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:13px 24px;
+    border-radius:9px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+#quizResult{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    background:#eaf7ef;
+    color:#147844;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.review-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.review-item{
+    background:#f5f9ff;
+    padding:13px;
+    border-radius:9px;
+}
+
+.complete-box{
+    text-align:center;
+}
+
+.complete-btn{
+    border:none;
+    background:#168348;
+    color:white;
+    padding:14px 25px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#completeMessage{
+    display:none;
+    margin-top:15px;
+    color:#168348;
+    font-weight:bold;
+}
+
+.page-navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:25px;
+}
+
+.page-navigation a{
+    background:#0b4f9c;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+footer{
+    background:#17233c;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:#58c7ff;
+}
+
+@media(max-width:700px){
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .objective-grid,
+    .vocabulary-grid,
+    .review-list{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .card{
+        padding:21px;
+    }
+
+    .page-navigation{
+        flex-direction:column;
+    }
+
+    .page-navigation a{
+        text-align:center;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a href="beginner1.html" class="logo">
+📚 Bright English Academy
+</a>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="beginner1.html">Course</a>
+
+<a href="student-login.html">Login</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<section class="card hero">
+
+<span class="day-badge">
+📚 Day 2 / Lesson 2
+</span>
+
+<h1>
+🙋 Personal Information
+</h1>
+
+<p>
+Learn how to give and ask for basic personal information in English.
+</p>
+
+<div class="progress-area">
+
+<div class="progress-title">
+
+<span>Lesson Progress</span>
+
+<span id="progressText">0%</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div id="progressFill"
+     class="progress-fill">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="lesson-nav">
+
+<a href="#objectives">Objectives</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#grammar">Grammar</a>
+<a href="#pronunciation">Pronunciation</a>
+<a href="#conversation">Conversation</a>
+<a href="#exercises">Exercises</a>
+<a href="#activities">Activities</a>
+<a href="#speaking">Speaking</a>
+<a href="#writing">Writing</a>
+<a href="#quiz">Quiz</a>
+<a href="#review">Review</a>
+
+</section>
+
+
+<section id="objectives" class="card">
+
+<h2>🎯 Lesson Objectives</h2>
+
+<p>
+By the end of this lesson, you will be able to:
+</p>
+
+<div class="objective-grid">
+
+<div class="objective">
+<strong>🙋 Personal Information</strong>
+Give basic information about yourself.
+</div>
+
+<div class="objective">
+<strong>🎂 Age</strong>
+Say and ask someone's age.
+</div>
+
+<div class="objective">
+<strong>🌍 Nationality</strong>
+Talk about countries and nationalities.
+</div>
+
+<div class="objective">
+<strong>🏙️ Where You Live</strong>
+Say where you live.
+</div>
+
+<div class="objective">
+<strong>📱 Contact Information</strong>
+Ask for basic contact information.
+</div>
+
+<div class="objective">
+<strong>💬 Questions</strong>
+Ask simple questions about another person.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="vocabulary" class="card">
+
+<h2>📚 Personal Information Vocabulary</h2>
+
+<div class="vocabulary-grid">
+
+
+<div class="word-card">
+<div class="word">Name</div>
+<div class="translation">Nome</div>
+<button class="listen-btn"
+onclick="speak('Name')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Age</div>
+<div class="translation">Idade</div>
+<button class="listen-btn"
+onclick="speak('Age')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Country</div>
+<div class="translation">País</div>
+<button class="listen-btn"
+onclick="speak('Country')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Nationality</div>
+<div class="translation">Nacionalidade</div>
+<button class="listen-btn"
+onclick="speak('Nationality')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">City</div>
+<div class="translation">Cidade</div>
+<button class="listen-btn"
+onclick="speak('City')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Address</div>
+<div class="translation">Endereço</div>
+<button class="listen-btn"
+onclick="speak('Address')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Phone number</div>
+<div class="translation">Número de telefone</div>
+<button class="listen-btn"
+onclick="speak('Phone number')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Email</div>
+<div class="translation">E-mail</div>
+<button class="listen-btn"
+onclick="speak('Email')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Student</div>
+<div class="translation">Estudante</div>
+<button class="listen-btn"
+onclick="speak('Student')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Teacher</div>
+<div class="translation">Professor / Professora</div>
+<button class="listen-btn"
+onclick="speak('Teacher')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">From</div>
+<div class="translation">De</div>
+<button class="listen-btn"
+onclick="speak('From')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Live</div>
+<div class="translation">Morar / Viver</div>
+<button class="listen-btn"
+onclick="speak('Live')">🔊 Listen</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="grammar" class="card">
+
+<h2>📚 Grammar — Personal Information</h2>
+
+
+<div class="grammar-box">
+
+<h3>1️⃣ I am...</h3>
+
+<p>
+Use <strong>I am</strong> to give information about yourself.
+</p>
+
+<div class="example">
+
+<span class="english">
+I am 20 years old.
+</span>
+
+<br>
+
+Eu tenho 20 anos.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I am twenty years old.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>2️⃣ I am from...</h3>
+
+<p>
+Use <strong>I am from</strong> to say your country or place of origin.
+</p>
+
+<div class="example">
+
+<span class="english">
+I am from Mozambique.
+</span>
+
+<br>
+
+Eu sou de Moçambique.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I am from Mozambique.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>3️⃣ I live in...</h3>
+
+<p>
+Use <strong>I live in</strong> to say where you live.
+</p>
+
+<div class="example">
+
+<span class="english">
+I live in Maputo.
+</span>
+
+<br>
+
+Eu moro em Maputo.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I live in Maputo.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>4️⃣ What is your nationality?</h3>
+
+<p>
+Use this question to ask someone's nationality.
+</p>
+
+<div class="example">
+
+<span class="english">
+What is your nationality?
+</span>
+
+<br>
+
+Qual é a tua nacionalidade?
+
+<br><br>
+
+<span class="english">
+I am Mozambican.
+</span>
+
+<br>
+
+Eu sou moçambicano / moçambicana.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What is your nationality? I am Mozambican.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>5️⃣ How old are you?</h3>
+
+<p>
+Use this question to ask someone's age.
+</p>
+
+<div class="example">
+
+<span class="english">
+How old are you?
+</span>
+
+<br>
+
+Quantos anos tens?
+
+<br><br>
+
+<span class="english">
+I am eighteen years old.
+</span>
+
+<br>
+
+Eu tenho dezoito anos.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('How old are you? I am eighteen years old.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>6️⃣ Where do you live?</h3>
+
+<p>
+Use this question to ask where someone lives.
+</p>
+
+<div class="example">
+
+<span class="english">
+Where do you live?
+</span>
+
+<br>
+
+Onde moras?
+
+<br><br>
+
+<span class="english">
+I live in Maputo.
+</span>
+
+<br>
+
+Eu moro em Maputo.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Where do you live? I live in Maputo.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pronunciation" class="card">
+
+<h2>🔊 Pronunciation Practice</h2>
+
+<p>
+Listen and repeat.
+</p>
+
+
+<div class="example">
+
+<strong>
+My name is José.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('My name is José.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+I am from Mozambique.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I am from Mozambique.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+I live in Maputo.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I live in Maputo.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+How old are you?
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('How old are you?')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+What is your nationality?
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What is your nationality?')">
+🔊 Listen
+</button>
+
+</div>
+
+</section>
+
+
+<section id="conversation" class="card">
+
+<h2>💬 Real-life Conversation</h2>
+
+<p>
+José and Maria are meeting and sharing personal information.
+</p>
+
+<div class="dialogue">
+
+<p>
+<span class="jose">José:</span>
+Hello! What's your name?
+</p>
+
+<p>
+<span class="student">Maria:</span>
+Hi! My name is Maria. What's your name?
+</p>
+
+<p>
+<span class="jose">José:</span>
+My name is José. Nice to meet you.
+</p>
+
+<p>
+<span class="student">Maria:</span>
+Nice to meet you too.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Where are you from?
+</p>
+
+<p>
+<span class="student">Maria:</span>
+I am from Mozambique.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Where do you live?
+</p>
+
+<p>
+<span class="student">Maria:</span>
+I live in Maputo.
+</p>
+
+<p>
+<span class="jose">José:</span>
+How old are you?
+</p>
+
+<p>
+<span class="student">Maria:</span>
+I am eighteen years old. How old are you?
+</p>
+
+<p>
+<span class="jose">José:</span>
+I am twenty years old.
+</p>
+
+<p>
+<span class="student">Maria:</span>
+What is your nationality?
+</p>
+
+<p>
+<span class="jose">José:</span>
+I am Mozambican.
+</p>
+
+<p>
+<span class="student">Maria:</span>
+That's great!
+</p>
+
+<p>
+<span class="jose">José:</span>
+It was nice talking to you.
+</p>
+
+<p>
+<span class="student">Maria:</span>
+Nice talking to you too. See you later!
+</p>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speakConversation()">
+🔊 Listen to Conversation
+</button>
+
+</section>
+
+
+<section id="exercises" class="card">
+
+<h2>✏️ Exercises</h2>
+
+
+<div class="exercise">
+
+<strong>1. Complete:</strong>
+
+<p>
+I ___ from Mozambique.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true,'answer1')">
+am
+</button>
+
+<button onclick="checkAnswer(this,false,'answer1')">
+is
+</button>
+
+<button onclick="checkAnswer(this,false,'answer1')">
+are
+</button>
+
+</div>
+
+<div id="answer1" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>2. Complete:</strong>
+
+<p>
+I ___ in Maputo.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true,'answer2')">
+live
+</button>
+
+<button onclick="checkAnswer(this,false,'answer2')">
+lives
+</button>
+
+<button onclick="checkAnswer(this,false,'answer2')">
+living
+</button>
+
+</div>
+
+<div id="answer2" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>3. Choose the correct question:</strong>
+
+<p>
+You want to ask someone's age.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true,'answer3')">
+How old are you?
+</button>
+
+<button onclick="checkAnswer(this,false,'answer3')">
+Where do you live?
+</button>
+
+<button onclick="checkAnswer(this,false,'answer3')">
+What is your name?
+</button>
+
+</div>
+
+<div id="answer3" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>4. Choose the correct question:</strong>
+
+<p>
+You want to know where someone lives.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,false,'answer4')">
+How old are you?
+</button>
+
+<button onclick="checkAnswer(this,true,'answer4')">
+Where do you live?
+</button>
+
+<button onclick="checkAnswer(this,false,'answer4')">
+What is your nationality?
+</button>
+
+</div>
+
+<div id="answer4" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>5. Complete:</strong>
+
+<p>
+I am ___ Mozambique.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true,'answer5')">
+from
+</button>
+
+<button onclick="checkAnswer(this,false,'answer5')">
+in
+</button>
+
+<button onclick="checkAnswer(this,false,'answer5')">
+at
+</button>
+
+</div>
+
+<div id="answer5" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>6. Translate:</strong>
+
+<p>
+"I live in Maputo."
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true,'answer6')">
+Eu moro em Maputo.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer6')">
+Eu sou de Maputo.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer6')">
+Eu tenho Maputo.
+</button>
+
+</div>
+
+<div id="answer6" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>7. Complete:</strong>
+
+<p>
+How ___ are you?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true,'answer7')">
+old
+</button>
+
+<button onclick="checkAnswer(this,false,'answer7')">
+many
+</button>
+
+<button onclick="checkAnswer(this,false,'answer7')">
+much
+</button>
+
+</div>
+
+<div id="answer7" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>8. Choose the correct answer:</strong>
+
+<p>
+Where are you from?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(this,true,'answer8')">
+I am from Mozambique.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer8')">
+I am eighteen.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer8')">
+My name is Maria.
+</button>
+
+</div>
+
+<div id="answer8" class="answer"></div>
+
+</div>
+
+
+</section>
+
+
+<section id="activities" class="card">
+
+<h2>🧩 Interactive Activities</h2>
+
+
+<div class="activity">
+
+<h3>Activity 1</h3>
+
+<p>
+Someone asks:
+<strong>Where are you from?</strong>
+</p>
+
+<button onclick="activityAnswer('A good answer is: I am from Mozambique.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 2</h3>
+
+<p>
+Build the sentence:
+</p>
+
+<p>
+<strong>
+am / I / Mozambique / from
+</strong>
+</p>
+
+<button onclick="activityAnswer('Correct sentence: I am from Mozambique.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 3</h3>
+
+<p>
+Build the question:
+</p>
+
+<p>
+<strong>
+old / are / How / you?
+</strong>
+</p>
+
+<button onclick="activityAnswer('Correct question: How old are you?')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 4</h3>
+
+<p>
+Someone says:
+<strong>I live in Maputo.</strong>
+</p>
+
+<p>
+What information did they give?
+</p>
+
+<button onclick="activityAnswer('They gave their city or place of residence.')">
+Check
+</button>
+
+</div>
+
+</section>
+
+
+<section id="speaking" class="card">
+
+<h2>🗣️ Speaking Challenge</h2>
+
+<div class="challenge">
+
+<h3>🎤 Talk About Yourself</h3>
+
+<p>
+Speak for 30–60 seconds.
+</p>
+
+<p>
+Try to answer:
+</p>
+
+<ul>
+
+<li>What is your name?</li>
+
+<li>How old are you?</li>
+
+<li>Where are you from?</li>
+
+<li>What is your nationality?</li>
+
+<li>Where do you live?</li>
+
+<li>Are you a student?</li>
+
+</ul>
+
+<button class="listen-btn"
+onclick="speak('Hello. My name is José. I am twenty years old. I am from Mozambique. I am Mozambican. I live in Maputo. I am a student.')">
+
+🔊 Hear a Model
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="writing" class="card">
+
+<h2>✍️ Writing Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Write 6–8 sentences about yourself.
+</p>
+
+<p>
+Try to include:
+</p>
+
+<ul>
+
+<li>Your name</li>
+
+<li>Your age</li>
+
+<li>Your country</li>
+
+<li>Your nationality</li>
+
+<li>Your city</li>
+
+<li>Your occupation or school</li>
+
+</ul>
+
+<div class="example">
+
+<strong>Example:</strong>
+
+<br><br>
+
+Hello.
+
+My name is José.
+
+I am twenty years old.
+
+I am from Mozambique.
+
+I am Mozambican.
+
+I live in Maputo.
+
+I am a student.
+
+Nice to meet you.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="quiz" class="card">
+
+<h2>🎯 10-Question Quiz</h2>
+
+<p>
+Choose the best answer.
+</p>
+
+<form id="quizForm">
+
+
+<div class="quiz-question">
+
+<p>
+1. Complete: I ___ from Mozambique.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q1" value="a">
+am
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+is
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+are
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+2. Complete: I ___ in Maputo.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q2" value="a">
+live
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+lives
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+living
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+3. How do you ask someone's age?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q3" value="a">
+How old are you?
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+Where do you live?
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+What's your name?
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+4. What does "country" mean?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q4" value="a">
+Cidade
+</label>
+
+<label>
+<input type="radio" name="q4" value="b">
+País
+</label>
+
+<label>
+<input type="radio" name="q4" value="c">
+Idade
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+5. Complete: I am ___ Mozambique.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q5" value="a">
+from
+</label>
+
+<label>
+<input type="radio" name="q5" value="b">
+at
+</label>
+
+<label>
+<input type="radio" name="q5" value="c">
+on
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+6. "How old are you?" asks about:
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q6" value="a">
+Your age
+</label>
+
+<label>
+<input type="radio" name="q6" value="b">
+Your country
+</label>
+
+<label>
+<input type="radio" name="q6" value="c">
+Your name
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+7. What does "nationality" mean?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q7" value="a">
+Nacionalidade
+</label>
+
+<label>
+<input type="radio" name="q7" value="b">
+Endereço
+</label>
+
+<label>
+<input type="radio" name="q7" value="c">
+Número
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+8. Choose the correct sentence.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q8" value="a">
+I live in Maputo.
+</label>
+
+<label>
+<input type="radio" name="q8" value="b">
+I lives in Maputo.
+</label>
+
+<label>
+<input type="radio" name="q8" value="c">
+I living Maputo.
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+9. What is the correct answer?
+Where do you live?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q9" value="a">
+I am eighteen.
+</label>
+
+<label>
+<input type="radio" name="q9" value="b">
+I live in Maputo.
+</label>
+
+<label>
+<input type="radio" name="q9" value="c">
+I am Mozambican.
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+10. Choose the correct sentence.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q10" value="a">
+I am Mozambican.
+</label>
+
+<label>
+<input type="radio" name="q10" value="b">
+I am Mozambique.
+</label>
+
+<label>
+<input type="radio" name="q10" value="c">
+I Mozambican am.
+</label>
+
+</div>
+
+</div>
+
+
+<button
+type="button"
+class="quiz-submit"
+onclick="submitQuiz()">
+
+🎯 Submit Quiz
+
+</button>
+
+</form>
+
+
+<div id="quizResult"></div>
+
+</section>
+
+
+<section id="review" class="card">
+
+<h2>🔄 Daily Review</h2>
+
+<p>
+Review the most important points from Lesson 2.
+</p>
+
+<div class="review-list">
+
+<div class="review-item">
+🙋 <strong>Name</strong> = Nome
+</div>
+
+<div class="review-item">
+🎂 <strong>Age</strong> = Idade
+</div>
+
+<div class="review-item">
+🌍 <strong>Country</strong> = País
+</div>
+
+<div class="review-item">
+🌎 <strong>Nationality</strong> = Nacionalidade
+</div>
+
+<div class="review-item">
+🏙️ <strong>City</strong> = Cidade
+</div>
+
+<div class="review-item">
+🏠 <strong>Address</strong> = Endereço
+</div>
+
+<div class="review-item">
+📱 <strong>Phone number</strong> = Número de telefone
+</div>
+
+<div class="review-item">
+📧 <strong>Email</strong> = E-mail
+</div>
+
+<div class="review-item">
+🌍 <strong>I am from...</strong> = Eu sou de...
+</div>
+
+<div class="review-item">
+🏠 <strong>I live in...</strong> = Eu moro em...
+</div>
+
+</div>
+
+<br>
+
+<h3>⭐ Key Sentences</h3>
+
+<p>
+My name is José.
+</p>
+
+<p>
+I am twenty years old.
+</p>
+
+<p>
+I am from Mozambique.
+</p>
+
+<p>
+I am Mozambican.
+</p>
+
+<p>
+I live in Maputo.
+</p>
+
+<p>
+How old are you?
+</p>
+
+<p>
+Where do you live?
+</p>
+
+<p>
+What is your nationality?
+</p>
+
+<br>
+
+<button
+class="listen-btn"
+onclick="speak('My name is José. I am twenty years old. I am from Mozambique. I am Mozambican. I live in Maputo. How old are you? Where do you live? What is your nationality?')">
+
+🔊 Listen
+
+</button>
+
+</section>
+
+
+<section class="card complete-box">
+
+<h2>
+🏆 Lesson 2 Complete
+</h2>
+
+<p>
+Finished all the activities?
+Save your lesson progress.
+</p>
+
+<button
+class="complete-btn"
+onclick="completeLesson()">
+
+✅ Complete Lesson 2
+
+</button>
+
+<div id="completeMessage">
+
+🎉 Lesson 2 completed successfully!
+
+</div>
+
+</section>
+
+
+<div class="page-navigation">
+
+<a href="lesson1.html">
+← Previous Lesson
+</a>
+
+<a href="lesson3.html">
+Next Lesson →
+</a>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p>
+Day 2 / Lesson 2
+</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+    if(!("speechSynthesis" in window)){
+
+        alert(
+            "Audio is not supported by this browser."
+        );
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang="en-US";
+
+    speech.rate=0.88;
+
+    speech.pitch=1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+
+function speakConversation(){
+
+    speak(
+
+        "José: Hello! What's your name? " +
+
+        "Maria: Hi! My name is Maria. What's your name? " +
+
+        "José: My name is José. Nice to meet you. " +
+
+        "Maria: Nice to meet you too. " +
+
+        "José: Where are you from? " +
+
+        "Maria: I am from Mozambique. " +
+
+        "José: Where do you live? " +
+
+        "Maria: I live in Maputo. " +
+
+        "José: How old are you? " +
+
+        "Maria: I am eighteen years old. How old are you? " +
+
+        "José: I am twenty years old. " +
+
+        "Maria: What is your nationality? " +
+
+        "José: I am Mozambican. " +
+
+        "Maria: That's great! " +
+
+        "José: It was nice talking to you. " +
+
+        "Maria: Nice talking to you too. See you later!"
+
+    );
+
+}
+
+
+function checkAnswer(
+    button,
+    correct,
+    answerId
+){
+
+    const answer =
+        document.getElementById(answerId);
+
+    answer.style.display="block";
+
+    if(correct){
+
+        answer.className="answer correct";
+
+        answer.textContent=
+            "✅ Correct! Well done.";
+
+    }else{
+
+        answer.className="answer wrong";
+
+        answer.textContent=
+            "❌ Try again.";
+
+    }
+
+}
+
+
+function activityAnswer(message){
+
+    alert("💡 "+message);
+
+}
+
+
+function submitQuiz(){
+
+    const answers={
+
+        q1:"a",
+        q2:"a",
+        q3:"a",
+        q4:"b",
+        q5:"a",
+        q6:"a",
+        q7:"a",
+        q8:"a",
+        q9:"b",
+        q10:"a"
+
+    };
+
+    let score=0;
+
+    for(
+        let question in answers
+    ){
+
+        const selected=
+            document.querySelector(
+                'input[name="'+
+                question+
+                '"]:checked'
+            );
+
+        if(
+            selected &&
+            selected.value===
+            answers[question]
+        ){
+
+            score++;
+
+        }
+
+    }
+
+    const percentage=
+        score*10;
+
+    const result=
+        document.getElementById(
+            "quizResult"
+        );
+
+    result.style.display="block";
+
+    result.innerHTML=
+
+        "🎯 Your Score: "+
+        score+
+        "/10 ("+
+        percentage+
+        "%)<br><br>"+
+        (
+            percentage>=70
+            ?
+            "🏆 Excellent! Keep learning!"
+            :
+            "📚 Keep practicing and try again!"
+        );
+
+    localStorage.setItem(
+        "lesson2Score",
+        percentage
+    );
+
+}
+
+
+function completeLesson(){
+
+    const message=
+        document.getElementById(
+            "completeMessage"
+        );
+
+    message.style.display="block";
+
+    let completed=
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+    if(
+        !completed.includes(2)
+    ){
+
+        completed.push(2);
+
+    }
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+    updateProgress();
+
+}
+
+
+function updateProgress(){
+
+    const completed=
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+    const isComplete=
+        completed.includes(2);
+
+    const percentage=
+        isComplete ? 100 : 0;
+
+    document.getElementById(
+        "progressFill"
+    ).style.width=
+        percentage+"%";
+
+    document.getElementById(
+        "progressText"
+    ).textContent=
+        percentage+"%";
+
+}
+
+
+updateProgress();
+
+
+window.addEventListener(
+    "beforeunload",
+    function(){
+
+        window.speechSynthesis.cancel();
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

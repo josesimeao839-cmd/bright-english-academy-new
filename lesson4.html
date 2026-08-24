@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Bright English Academy - Day 4 Lesson 4 - Days and Months">
+
+<title>Lesson 4 — Days & Months | Bright English Academy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#17233c;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 18px 60px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:24px;
+    box-shadow:0 5px 22px rgba(20,53,100,.08);
+    border:1px solid #e2eaf4;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+}
+
+.hero h1{
+    color:white;
+    font-size:34px;
+    margin-top:0;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.day-badge{
+    display:inline-block;
+    background:#ffd34d;
+    color:#17233c;
+    padding:7px 13px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.progress-area{
+    margin-top:20px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+    background:rgba(255,255,255,.3);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#ffd34d;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.lesson-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:24px;
+}
+
+.lesson-nav a{
+    background:#eaf3ff;
+    color:#0b4f9c;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+h2{
+    color:#0b4f9c;
+    font-size:26px;
+    margin-top:0;
+}
+
+h3{
+    color:#0b4f9c;
+}
+
+.objective-grid,
+.vocabulary-grid,
+.day-grid,
+.month-grid,
+.review-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.objective{
+    background:#f5f9ff;
+    padding:18px;
+    border-radius:12px;
+    border-left:5px solid #0b4f9c;
+}
+
+.objective strong{
+    display:block;
+    color:#0b4f9c;
+    margin-bottom:5px;
+}
+
+.word-card{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:18px;
+    border-radius:12px;
+}
+
+.word{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.translation{
+    color:#64748b;
+    margin:5px 0 12px;
+}
+
+.day-card,
+.month-card{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:17px;
+    border-radius:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.day-name,
+.month-name{
+    font-size:20px;
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.listen-btn{
+    border:none;
+    background:#ffd34d;
+    color:#17233c;
+    padding:9px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.listen-btn:hover{
+    background:#f2bf1f;
+}
+
+.grammar-box{
+    background:#f5f9ff;
+    border-left:5px solid #0b4f9c;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+.example{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    margin-top:12px;
+}
+
+.english{
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.dialogue{
+    background:#f7f9fc;
+    padding:20px;
+    border-radius:14px;
+}
+
+.dialogue p{
+    margin:10px 0;
+}
+
+.jose{
+    color:#0b4f9c;
+    font-weight:bold;
+}
+
+.maria{
+    color:#087f54;
+    font-weight:bold;
+}
+
+.exercise{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+}
+
+.options button{
+    border:1px solid #cdd9e8;
+    background:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.options button:hover{
+    background:#eaf3ff;
+}
+
+.answer{
+    display:none;
+    margin-top:12px;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#e8f7ee;
+    color:#168348;
+}
+
+.wrong{
+    background:#fff0f0;
+    color:#c62828;
+}
+
+.activity{
+    background:#fffaf0;
+    border:1px solid #f2dfaa;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.activity button{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:10px 17px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.challenge{
+    background:linear-gradient(135deg,#eef6ff,#f7fbff);
+    border:1px solid #d8e8f8;
+    padding:22px;
+    border-radius:14px;
+}
+
+.challenge li{
+    margin-bottom:8px;
+}
+
+.quiz-question{
+    padding:18px;
+    border-bottom:1px solid #e3e9f1;
+}
+
+.quiz-question p{
+    font-weight:bold;
+}
+
+.quiz-options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.quiz-options label{
+    background:#f7faff;
+    padding:10px;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.quiz-options label:hover{
+    background:#eaf3ff;
+}
+
+.quiz-submit{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:13px 24px;
+    border-radius:9px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+#quizResult{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    background:#eaf7ef;
+    color:#147844;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.review-item{
+    background:#f5f9ff;
+    padding:13px;
+    border-radius:9px;
+}
+
+.complete-box{
+    text-align:center;
+}
+
+.complete-btn{
+    border:none;
+    background:#168348;
+    color:white;
+    padding:14px 25px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#completeMessage{
+    display:none;
+    margin-top:15px;
+    color:#168348;
+    font-weight:bold;
+}
+
+.page-navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:25px;
+}
+
+.page-navigation a{
+    background:#0b4f9c;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+footer{
+    background:#17233c;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:#58c7ff;
+}
+
+@media(max-width:700px){
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .objective-grid,
+    .vocabulary-grid,
+    .day-grid,
+    .month-grid,
+    .review-list{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .card{
+        padding:21px;
+    }
+
+    .day-card,
+    .month-card{
+        align-items:flex-start;
+    }
+
+    .page-navigation{
+        flex-direction:column;
+    }
+
+    .page-navigation a{
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a href="beginner1.html" class="logo">
+📚 Bright English Academy
+</a>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="beginner1.html">Course</a>
+
+<a href="student-login.html">Login</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<section class="card hero">
+
+<span class="day-badge">
+📚 Day 4 / Lesson 4
+</span>
+
+<h1>
+📅 Days & Months
+</h1>
+
+<p>
+Learn the days of the week, months of the year and how to talk about dates.
+</p>
+
+<div class="progress-area">
+
+<div class="progress-title">
+
+<span>Lesson Progress</span>
+
+<span id="progressText">0%</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div id="progressFill"
+     class="progress-fill">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="lesson-nav">
+
+<a href="#objectives">Objectives</a>
+<a href="#days">Days</a>
+<a href="#months">Months</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#grammar">Grammar</a>
+<a href="#pronunciation">Pronunciation</a>
+<a href="#conversation">Conversation</a>
+<a href="#exercises">Exercises</a>
+<a href="#activities">Activities</a>
+<a href="#speaking">Speaking</a>
+<a href="#writing">Writing</a>
+<a href="#quiz">Quiz</a>
+<a href="#review">Review</a>
+
+</section>
+
+
+<section id="objectives" class="card">
+
+<h2>🎯 Lesson Objectives</h2>
+
+<p>
+By the end of this lesson, you will be able to:
+</p>
+
+<div class="objective-grid">
+
+<div class="objective">
+<strong>📅 Days</strong>
+Name the seven days of the week.
+</div>
+
+<div class="objective">
+<strong>🗓️ Months</strong>
+Name the twelve months of the year.
+</div>
+
+<div class="objective">
+<strong>📍 Dates</strong>
+Talk about simple dates.
+</div>
+
+<div class="objective">
+<strong>⏰ Time</strong>
+Talk about when events happen.
+</div>
+
+<div class="objective">
+<strong>❓ Questions</strong>
+Ask when something happens.
+</div>
+
+<div class="objective">
+<strong>🗣️ Speaking</strong>
+Use days and months in everyday English.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="days" class="card">
+
+<h2>📅 Days of the Week</h2>
+
+<p>
+Learn the seven days of the week.
+</p>
+
+<div class="day-grid">
+
+<div class="day-card">
+<div>
+<div class="day-name">Monday</div>
+Segunda-feira
+</div>
+<button class="listen-btn"
+onclick="speak('Monday')">🔊 Listen</button>
+</div>
+
+<div class="day-card">
+<div>
+<div class="day-name">Tuesday</div>
+Terça-feira
+</div>
+<button class="listen-btn"
+onclick="speak('Tuesday')">🔊 Listen</button>
+</div>
+
+<div class="day-card">
+<div>
+<div class="day-name">Wednesday</div>
+Quarta-feira
+</div>
+<button class="listen-btn"
+onclick="speak('Wednesday')">🔊 Listen</button>
+</div>
+
+<div class="day-card">
+<div>
+<div class="day-name">Thursday</div>
+Quinta-feira
+</div>
+<button class="listen-btn"
+onclick="speak('Thursday')">🔊 Listen</button>
+</div>
+
+<div class="day-card">
+<div>
+<div class="day-name">Friday</div>
+Sexta-feira
+</div>
+<button class="listen-btn"
+onclick="speak('Friday')">🔊 Listen</button>
+</div>
+
+<div class="day-card">
+<div>
+<div class="day-name">Saturday</div>
+Sábado
+</div>
+<button class="listen-btn"
+onclick="speak('Saturday')">🔊 Listen</button>
+</div>
+
+<div class="day-card">
+<div>
+<div class="day-name">Sunday</div>
+Domingo
+</div>
+<button class="listen-btn"
+onclick="speak('Sunday')">🔊 Listen</button>
+</div>
+
+</div>
+
+<br>
+
+<div class="example">
+
+<strong>Days in order:</strong>
+
+<br><br>
+
+Monday → Tuesday → Wednesday → Thursday → Friday → Saturday → Sunday
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="months" class="card">
+
+<h2>🗓️ Months of the Year</h2>
+
+<p>
+Learn the twelve months of the year.
+</p>
+
+<div class="month-grid">
+
+<div class="month-card">
+<div>
+<div class="month-name">January</div>
+Janeiro
+</div>
+<button class="listen-btn"
+onclick="speak('January')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">February</div>
+Fevereiro
+</div>
+<button class="listen-btn"
+onclick="speak('February')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">March</div>
+Março
+</div>
+<button class="listen-btn"
+onclick="speak('March')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">April</div>
+Abril
+</div>
+<button class="listen-btn"
+onclick="speak('April')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">May</div>
+Maio
+</div>
+<button class="listen-btn"
+onclick="speak('May')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">June</div>
+Junho
+</div>
+<button class="listen-btn"
+onclick="speak('June')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">July</div>
+Julho
+</div>
+<button class="listen-btn"
+onclick="speak('July')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">August</div>
+Agosto
+</div>
+<button class="listen-btn"
+onclick="speak('August')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">September</div>
+Setembro
+</div>
+<button class="listen-btn"
+onclick="speak('September')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">October</div>
+Outubro
+</div>
+<button class="listen-btn"
+onclick="speak('October')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">November</div>
+Novembro
+</div>
+<button class="listen-btn"
+onclick="speak('November')">🔊 Listen</button>
+</div>
+
+<div class="month-card">
+<div>
+<div class="month-name">December</div>
+Dezembro
+</div>
+<button class="listen-btn"
+onclick="speak('December')">🔊 Listen</button>
+</div>
+
+</div>
+
+<br>
+
+<div class="example">
+
+<strong>Months in order:</strong>
+
+<br><br>
+
+January → February → March → April → May → June → July → August → September → October → November → December
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('January, February, March, April, May, June, July, August, September, October, November, December.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="vocabulary" class="card">
+
+<h2>📚 Calendar Vocabulary</h2>
+
+<div class="vocabulary-grid">
+
+<div class="word-card">
+
+<div class="word">Day</div>
+
+<div class="translation">Dia</div>
+
+<button class="listen-btn"
+onclick="speak('Day')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Week</div>
+
+<div class="translation">Semana</div>
+
+<button class="listen-btn"
+onclick="speak('Week')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Month</div>
+
+<div class="translation">Mês</div>
+
+<button class="listen-btn"
+onclick="speak('Month')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Year</div>
+
+<div class="translation">Ano</div>
+
+<button class="listen-btn"
+onclick="speak('Year')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Today</div>
+
+<div class="translation">Hoje</div>
+
+<button class="listen-btn"
+onclick="speak('Today')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Tomorrow</div>
+
+<div class="translation">Amanhã</div>
+
+<button class="listen-btn"
+onclick="speak('Tomorrow')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Yesterday</div>
+
+<div class="translation">Ontem</div>
+
+<button class="listen-btn"
+onclick="speak('Yesterday')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">Weekend</div>
+
+<div class="translation">Fim de semana</div>
+
+<button class="listen-btn"
+onclick="speak('Weekend')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="grammar" class="card">
+
+<h2>📚 Grammar — Talking About Days & Months</h2>
+
+
+<div class="grammar-box">
+
+<h3>1️⃣ What day is it?</h3>
+
+<p>
+Use this question to ask about the day.
+</p>
+
+<div class="example">
+
+<span class="english">
+What day is it?
+</span>
+
+<br>
+
+Que dia é hoje?
+
+<br><br>
+
+<span class="english">
+It is Monday.
+</span>
+
+<br>
+
+É segunda-feira.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What day is it? It is Monday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>2️⃣ What month is it?</h3>
+
+<div class="example">
+
+<span class="english">
+What month is it?
+</span>
+
+<br>
+
+Que mês é?
+
+<br><br>
+
+<span class="english">
+It is August.
+</span>
+
+<br>
+
+É agosto.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What month is it? It is August.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>3️⃣ Today, Tomorrow and Yesterday</h3>
+
+<div class="example">
+
+<span class="english">
+Today is Monday.
+</span>
+
+<br>
+
+Hoje é segunda-feira.
+
+<br><br>
+
+<span class="english">
+Tomorrow is Tuesday.
+</span>
+
+<br>
+
+Amanhã é terça-feira.
+
+<br><br>
+
+<span class="english">
+Yesterday was Sunday.
+</span>
+
+<br>
+
+Ontem foi domingo.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Today is Monday. Tomorrow is Tuesday. Yesterday was Sunday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>4️⃣ Talking About Birthdays</h3>
+
+<div class="example">
+
+<span class="english">
+My birthday is in May.
+</span>
+
+<br>
+
+O meu aniversário é em maio.
+
+<br><br>
+
+<span class="english">
+My birthday is on Monday.
+</span>
+
+<br>
+
+O meu aniversário é na segunda-feira.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('My birthday is in May. My birthday is on Monday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>5️⃣ Asking When Something Happens</h3>
+
+<div class="example">
+
+<span class="english">
+When is your English class?
+</span>
+
+<br>
+
+Quando é a tua aula de inglês?
+
+<br><br>
+
+<span class="english">
+It is on Friday.
+</span>
+
+<br>
+
+É na sexta-feira.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('When is your English class? It is on Friday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pronunciation" class="card">
+
+<h2>🔊 Pronunciation Practice</h2>
+
+<p>
+Listen and repeat.
+</p>
+
+<div class="example">
+
+<strong>
+Monday, Tuesday, Wednesday.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Monday, Tuesday, Wednesday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+Thursday, Friday, Saturday, Sunday.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Thursday, Friday, Saturday, Sunday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+January, February, March, April.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('January, February, March, April.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+May, June, July, August.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('May, June, July, August.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+September, October, November, December.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('September, October, November, December.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="conversation" class="card">
+
+<h2>💬 Real-life Conversation</h2>
+
+<p>
+José and Maria are talking about days, months and birthdays.
+</p>
+
+<div class="dialogue">
+
+<p>
+<span class="jose">José:</span>
+Hi, Maria! What day is it today?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+Today is Monday.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Oh, really? What month is it?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+It is August.
+</p>
+
+<p>
+<span class="jose">José:</span>
+When is your birthday?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+My birthday is in December.
+</p>
+
+<p>
+<span class="jose">José:</span>
+That's nice! What day is your birthday?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+It is on Friday this year.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Great! Are you having a party?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+Yes, I am.
+</p>
+
+<p>
+<span class="jose">José:</span>
+What day is your English class?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+My English class is on Wednesday.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Excellent! See you on Wednesday.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+See you!
+</p>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speakConversation()">
+
+🔊 Listen to Conversation
+
+</button>
+
+</section>
+
+
+<section id="exercises" class="card">
+
+<h2>✏️ Exercises</h2>
+
+
+<div class="exercise">
+
+<strong>1. Choose the correct answer:</strong>
+
+<p>
+What day comes after Monday?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer1')">
+Tuesday
+</button>
+
+<button onclick="checkAnswer(false,'answer1')">
+Sunday
+</button>
+
+<button onclick="checkAnswer(false,'answer1')">
+Friday
+</button>
+
+</div>
+
+<div id="answer1" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>2. Choose the correct answer:</strong>
+
+<p>
+What day comes before Friday?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer2')">
+Monday
+</button>
+
+<button onclick="checkAnswer(true,'answer2')">
+Thursday
+</button>
+
+<button onclick="checkAnswer(false,'answer2')">
+Sunday
+</button>
+
+</div>
+
+<div id="answer2" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>3. Complete:</strong>
+
+<p>
+Today is Monday. Tomorrow is ______.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer3')">
+Tuesday
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+Sunday
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+Friday
+</button>
+
+</div>
+
+<div id="answer3" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>4. Complete:</strong>
+
+<p>
+Yesterday was Sunday. Today is ______.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer4')">
+Monday
+</button>
+
+<button onclick="checkAnswer(false,'answer4')">
+Tuesday
+</button>
+
+<button onclick="checkAnswer(false,'answer4')">
+Saturday
+</button>
+
+</div>
+
+<div id="answer4" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>5. What is "January"?</strong>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer5')">
+Janeiro
+</button>
+
+<button onclick="checkAnswer(false,'answer5')">
+Junho
+</button>
+
+<button onclick="checkAnswer(false,'answer5')">
+Julho
+</button>
+
+</div>
+
+<div id="answer5" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>6. What is "December"?</strong>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer6')">
+Março
+</button>
+
+<button onclick="checkAnswer(true,'answer6')">
+Dezembro
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+Setembro
+</button>
+
+</div>
+
+<div id="answer6" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>7. Complete:</strong>
+
+<p>
+My birthday is ______ May.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer7')">
+in
+</button>
+
+<button onclick="checkAnswer(false,'answer7')">
+on
+</button>
+
+<button onclick="checkAnswer(false,'answer7')">
+at
+</button>
+
+</div>
+
+<div id="answer7" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>8. Choose the correct question:</strong>
+
+<p>
+You want to ask about someone's English class.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer8')">
+When is your English class?
+</button>
+
+<button onclick="checkAnswer(false,'answer8')">
+What is your English class?
+</button>
+
+<button onclick="checkAnswer(false,'answer8')">
+Where month is your class?
+</button>
+
+</div>
+
+<div id="answer8" class="answer"></div>
+
+</div>
+
+</section>
+
+
+<section id="activities" class="card">
+
+<h2>🧩 Interactive Activities</h2>
+
+
+<div class="activity">
+
+<h3>Activity 1</h3>
+
+<p>
+What day comes after Wednesday?
+</p>
+
+<button onclick="activityAnswer('Thursday')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 2</h3>
+
+<p>
+What month comes after March?
+</p>
+
+<button onclick="activityAnswer('April')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 3</h3>
+
+<p>
+Build the sentence:
+</p>
+
+<p>
+<strong>
+is / Monday / Today
+</strong>
+</p>
+
+<button onclick="activityAnswer('Correct sentence: Today is Monday.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 4</h3>
+
+<p>
+Build the sentence:
+</p>
+
+<p>
+<strong>
+birthday / My / is / December / in
+</strong>
+</p>
+
+<button onclick="activityAnswer('Correct sentence: My birthday is in December.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 5</h3>
+
+<p>
+What comes after November?
+</p>
+
+<button onclick="activityAnswer('December')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 6</h3>
+
+<p>
+What day comes before Sunday?
+</p>
+
+<button onclick="activityAnswer('Saturday')">
+Check
+</button>
+
+</div>
+
+</section>
+
+
+<section id="speaking" class="card">
+
+<h2>🗣️ Speaking Challenge</h2>
+
+<div class="challenge">
+
+<h3>🎤 Talk About Your Week</h3>
+
+<p>
+Speak for 30–60 seconds.
+</p>
+
+<p>
+Try to answer:
+</p>
+
+<ul>
+
+<li>What day is it today?</li>
+
+<li>What day is tomorrow?</li>
+
+<li>What day was yesterday?</li>
+
+<li>What is your favorite day?</li>
+
+<li>When is your birthday?</li>
+
+<li>When is your English class?</li>
+
+</ul>
+
+<button class="listen-btn"
+onclick="speak('Today is Monday. Tomorrow is Tuesday. Yesterday was Sunday. My favorite day is Saturday. My birthday is in December. My English class is on Wednesday.')">
+
+🔊 Hear a Model
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="writing" class="card">
+
+<h2>✍️ Writing Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Write 6–8 sentences about your week and important dates.
+</p>
+
+<p>
+Try to use:
+</p>
+
+<ul>
+
+<li>Today is...</li>
+
+<li>Tomorrow is...</li>
+
+<li>Yesterday was...</li>
+
+<li>My favorite day is...</li>
+
+<li>My birthday is in...</li>
+
+<li>My English class is on...</li>
+
+</ul>
+
+<div class="example">
+
+<strong>Example:</strong>
+
+<br><br>
+
+Today is Monday.
+
+Tomorrow is Tuesday.
+
+Yesterday was Sunday.
+
+My favorite day is Saturday.
+
+My birthday is in December.
+
+My English class is on Wednesday.
+
+I like Friday too.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="quiz" class="card">
+
+<h2>🎯 10-Question Quiz</h2>
+
+<p>
+Choose the best answer.
+</p>
+
+<form id="quizForm">
+
+
+<div class="quiz-question">
+
+<p>
+1. What day comes after Monday?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q1" value="a">
+Tuesday
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+Sunday
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+Friday
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+2. What day comes before Sunday?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q2" value="a">
+Friday
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+Saturday
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+Monday
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+3. What month comes after March?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q3" value="a">
+April
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+August
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+May
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+4. What month comes before December?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q4" value="a">
+January
+</label>
+
+<label>
+<input type="radio" name="q4" value="b">
+October
+</label>
+
+<label>
+<input type="radio" name="q4" value="c">
+November
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+5. What is "August"?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q5" value="a">
+Agosto
+</label>
+
+<label>
+<input type="radio" name="q5" value="b">
+Abril
+</label>
+
+<label>
+<input type="radio" name="q5" value="c">
+Outubro
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+6. Complete: Today is Monday. Tomorrow is ___.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q6" value="a">
+Sunday
+</label>
+
+<label>
+<input type="radio" name="q6" value="b">
+Tuesday
+</label>
+
+<label>
+<input type="radio" name="q6" value="c">
+Friday
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+7. Complete: My birthday is ___ May.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q7" value="a">
+on
+</label>
+
+<label>
+<input type="radio" name="q7" value="b">
+in
+</label>
+
+<label>
+<input type="radio" name="q7" value="c">
+at
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+8. Choose the correct question.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q8" value="a">
+When is your English class?
+</label>
+
+<label>
+<input type="radio" name="q8" value="b">
+When your English class?
+</label>
+
+<label>
+<input type="radio" name="q8" value="c">
+What when your class?
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+9. What is "Wednesday"?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q9" value="a">
+Quinta-feira
+</label>
+
+<label>
+<input type="radio" name="q9" value="b">
+Quarta-feira
+</label>
+
+<label>
+<input type="radio" name="q9" value="c">
+Terça-feira
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+10. What is "December"?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q10" value="a">
+Dezembro
+</label>
+
+<label>
+<input type="radio" name="q10" value="b">
+Novembro
+</label>
+
+<label>
+<input type="radio" name="q10" value="c">
+Outubro
+</label>
+
+</div>
+
+</div>
+
+
+<button
+type="button"
+class="quiz-submit"
+onclick="submitQuiz()">
+
+🎯 Submit Quiz
+
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</section>
+
+
+<section id="review" class="card">
+
+<h2>🔄 Daily Review</h2>
+
+<p>
+Review the most important points from Lesson 4.
+</p>
+
+<div class="review-list">
+
+<div class="review-item">
+📅 <strong>Monday</strong> = Segunda-feira
+</div>
+
+<div class="review-item">
+📅 <strong>Tuesday</strong> = Terça-feira
+</div>
+
+<div class="review-item">
+📅 <strong>Wednesday</strong> = Quarta-feira
+</div>
+
+<div class="review-item">
+📅 <strong>Thursday</strong> = Quinta-feira
+</div>
+
+<div class="review-item">
+📅 <strong>Friday</strong> = Sexta-feira
+</div>
+
+<div class="review-item">
+📅 <strong>Saturday</strong> = Sábado
+</div>
+
+<div class="review-item">
+📅 <strong>Sunday</strong> = Domingo
+</div>
+
+<div class="review-item">
+🗓️ <strong>January</strong> = Janeiro
+</div>
+
+<div class="review-item">
+🗓️ <strong>August</strong> = Agosto
+</div>
+
+<div class="review-item">
+🗓️ <strong>December</strong> = Dezembro
+</div>
+
+</div>
+
+<br>
+
+<h3>⭐ Key Sentences</h3>
+
+<p>
+Today is Monday.
+</p>
+
+<p>
+Tomorrow is Tuesday.
+</p>
+
+<p>
+Yesterday was Sunday.
+</p>
+
+<p>
+My birthday is in December.
+</p>
+
+<p>
+My English class is on Wednesday.
+</p>
+
+<p>
+When is your English class?
+</p>
+
+<br>
+
+<button
+class="listen-btn"
+onclick="speak('Today is Monday. Tomorrow is Tuesday. Yesterday was Sunday. My birthday is in December. My English class is on Wednesday. When is your English class?')">
+
+🔊 Listen
+
+</button>
+
+</section>
+
+
+<section class="card complete-box">
+
+<h2>
+🏆 Lesson 4 Complete
+</h2>
+
+<p>
+Finished all the activities?
+Save your lesson progress.
+</p>
+
+<button
+class="complete-btn"
+onclick="completeLesson()">
+
+✅ Complete Lesson 4
+
+</button>
+
+<div id="completeMessage">
+
+🎉 Lesson 4 completed successfully!
+
+</div>
+
+</section>
+
+
+<div class="page-navigation">
+
+<a href="lesson3.html">
+← Previous Lesson
+</a>
+
+<a href="lesson5.html">
+Next Lesson →
+</a>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p>
+Day 4 / Lesson 4
+</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+    if(!("speechSynthesis" in window)){
+
+        alert(
+            "Audio is not supported by this browser."
+        );
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang="en-US";
+    speech.rate=0.88;
+    speech.pitch=1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+
+function speakConversation(){
+
+    speak(
+
+        "José: Hi, Maria! What day is it today? " +
+
+        "Maria: Today is Monday. " +
+
+        "José: Oh, really? What month is it? " +
+
+        "Maria: It is August. " +
+
+        "José: When is your birthday? " +
+
+        "Maria: My birthday is in December. " +
+
+        "José: That's nice! What day is your birthday? " +
+
+        "Maria: It is on Friday this year. " +
+
+        "José: Great! Are you having a party? " +
+
+        "Maria: Yes, I am. " +
+
+        "José: What day is your English class? " +
+
+        "Maria: My English class is on Wednesday. " +
+
+        "José: Excellent! See you on Wednesday. " +
+
+        "Maria: See you!"
+
+    );
+
+}
+
+
+function checkAnswer(correct,answerId){
+
+    const answer=
+        document.getElementById(answerId);
+
+    answer.style.display="block";
+
+    if(correct){
+
+        answer.className="answer correct";
+
+        answer.textContent=
+            "✅ Correct! Well done.";
+
+    }else{
+
+        answer.className="answer wrong";
+
+        answer.textContent=
+            "❌ Try again.";
+
+    }
+
+}
+
+
+function activityAnswer(message){
+
+    alert("💡 "+message);
+
+}
+
+
+function submitQuiz(){
+
+    const answers={
+
+        q1:"a",
+        q2:"b",
+        q3:"a",
+        q4:"c",
+        q5:"a",
+        q6:"b",
+        q7:"b",
+        q8:"a",
+        q9:"b",
+        q10:"a"
+
+    };
+
+    let score=0;
+
+    for(let question in answers){
+
+        const selected=
+            document.querySelector(
+                'input[name="'+
+                question+
+                '"]:checked'
+            );
+
+        if(
+            selected &&
+            selected.value===
+            answers[question]
+        ){
+
+            score++;
+
+        }
+
+    }
+
+    const percentage=score*10;
+
+    const result=
+        document.getElementById("quizResult");
+
+    result.style.display="block";
+
+    result.innerHTML=
+
+        "🎯 Your Score: "+
+        score+
+        "/10 ("+
+        percentage+
+        "%)<br><br>"+
+        (
+            percentage>=70
+            ?
+            "🏆 Excellent! Keep learning!"
+            :
+            "📚 Keep practicing and try again!"
+        );
+
+    localStorage.setItem(
+        "lesson4Score",
+        percentage
+    );
+
+}
+
+
+function completeLesson(){
+
+    const message=
+        document.getElementById(
+            "completeMessage"
+        );
+
+    message.style.display="block";
+
+    let completed=
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+    if(!completed.includes(4)){
+
+        completed.push(4);
+
+    }
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+    updateProgress();
+
+}
+
+
+function updateProgress(){
+
+    const completed=
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+    const isComplete=
+        completed.includes(4);
+
+    const percentage=
+        isComplete ? 100 : 0;
+
+    document.getElementById(
+        "progressFill"
+    ).style.width=
+        percentage+"%";
+
+    document.getElementById(
+        "progressText"
+    ).textContent=
+        percentage+"%";
+
+}
+
+
+updateProgress();
+
+
+window.addEventListener(
+    "beforeunload",
+    function(){
+
+        if("speechSynthesis" in window){
+
+            window.speechSynthesis.cancel();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

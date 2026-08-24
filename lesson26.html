@@ -1,0 +1,2498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Bright English Academy - Day 26 Travel & Transportation - A1 English Course.">
+
+<title>Day 26 — Travel & Transportation | Bright English Academy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8ff;
+    color:#17233c;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#0757c9,#13a6e8);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+.academy{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+header h1{
+    font-size:clamp(30px,5vw,50px);
+    margin-bottom:8px;
+}
+
+header p{
+    font-size:18px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:18px;
+    padding:9px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    font-weight:bold;
+}
+
+.progress-container{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    padding:10px 18px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.progress-info{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.progress-bar{
+    max-width:1100px;
+    margin:auto;
+    height:9px;
+    background:#e4eaf3;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#0757c9,#13a6e8);
+    transition:.4s;
+}
+
+nav{
+    max-width:1100px;
+    margin:22px auto;
+    padding:0 18px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0757c9;
+    background:white;
+    border:1px solid #d7e1ef;
+    padding:8px 13px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:#0757c9;
+    color:white;
+}
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:10px 18px 60px;
+}
+
+section{
+    background:white;
+    border:1px solid #e4eaf2;
+    border-radius:18px;
+    padding:28px;
+    margin:25px 0;
+    box-shadow:0 7px 25px rgba(20,53,100,.07);
+}
+
+.section-title{
+    color:#0757c9;
+    font-size:27px;
+    margin-bottom:17px;
+}
+
+.section-subtitle{
+    color:#5d6b80;
+    margin-bottom:20px;
+}
+
+.objectives{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:14px;
+}
+
+.objective{
+    padding:18px;
+    background:#f2f7ff;
+    border-left:5px solid #0757c9;
+    border-radius:12px;
+}
+
+.objective strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.vocab-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.vocab-card{
+    padding:20px;
+    border:1px solid #dfe7f2;
+    background:#fbfdff;
+    border-radius:14px;
+}
+
+.vocab-card h3{
+    color:#0757c9;
+    margin-bottom:10px;
+}
+
+.vocab-card p{
+    margin:5px 0;
+}
+
+.listen{
+    border:0;
+    background:#0757c9;
+    color:white;
+    padding:8px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.listen:hover{
+    background:#06459f;
+}
+
+.grammar-box{
+    background:#eef6ff;
+    border-left:6px solid #0757c9;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+.formula{
+    background:#17233c;
+    color:white;
+    padding:16px;
+    border-radius:10px;
+    margin:12px 0;
+    font-family:"Courier New",monospace;
+    overflow-x:auto;
+}
+
+.example{
+    background:#f7f9fc;
+    border:1px solid #e1e7ef;
+    padding:15px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.conversation{
+    background:linear-gradient(135deg,#f1f7ff,#fff);
+    border:1px solid #dce7f4;
+    padding:22px;
+    border-radius:15px;
+}
+
+.line{
+    padding:8px 0;
+}
+
+.speaker{
+    color:#0757c9;
+    font-weight:bold;
+}
+
+.map-box{
+    position:relative;
+    min-height:330px;
+    background:#edf4fb;
+    border:2px solid #cbd9e8;
+    border-radius:18px;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.road{
+    position:absolute;
+    background:#d5dde6;
+    border-radius:20px;
+}
+
+.road1{
+    width:100%;
+    height:55px;
+    top:135px;
+    left:0;
+}
+
+.road2{
+    width:55px;
+    height:100%;
+    left:47%;
+    top:0;
+}
+
+.place{
+    position:absolute;
+    background:white;
+    border:2px solid #0757c9;
+    border-radius:10px;
+    padding:9px 12px;
+    font-weight:bold;
+    font-size:13px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.school{
+    top:25px;
+    left:8%;
+}
+
+.station{
+    top:25px;
+    right:8%;
+}
+
+.bank{
+    bottom:25px;
+    left:8%;
+}
+
+.hotel{
+    bottom:25px;
+    right:8%;
+}
+
+.center{
+    top:140px;
+    left:43%;
+}
+
+.exercise{
+    border:1px solid #dfe6f0;
+    background:#fcfdff;
+    padding:20px;
+    border-radius:14px;
+    margin:16px 0;
+}
+
+.exercise p{
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+select,
+input[type="text"],
+textarea{
+    width:100%;
+    padding:11px 13px;
+    border:1px solid #cbd7e8;
+    border-radius:9px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+.check{
+    margin-top:10px;
+    border:0;
+    background:#0757c9;
+    color:white;
+    padding:10px 17px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.feedback{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.activity-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:15px;
+}
+
+.activity{
+    padding:20px;
+    background:#f4f8ff;
+    border:1px solid #dbe5f3;
+    border-radius:15px;
+}
+
+.activity h3{
+    color:#0757c9;
+    margin-bottom:8px;
+}
+
+.choice{
+    border:1px solid #cad8ea;
+    background:white;
+    padding:8px 12px;
+    border-radius:20px;
+    cursor:pointer;
+    margin:5px 3px;
+}
+
+.choice.selected{
+    background:#0757c9;
+    color:white;
+}
+
+.challenge{
+    background:linear-gradient(135deg,#fff9e8,#fff);
+    border-left:6px solid #f0a500;
+    padding:22px;
+    border-radius:12px;
+}
+
+.quiz-question{
+    padding:20px;
+    border:1px solid #dfe6f0;
+    background:#fcfdff;
+    border-radius:14px;
+    margin:15px 0;
+}
+
+.quiz-question h3{
+    font-size:17px;
+    margin-bottom:12px;
+}
+
+.option{
+    display:block;
+    border:1px solid #dce4ef;
+    padding:10px;
+    margin:8px 0;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#f0f6ff;
+}
+
+.option input{
+    margin-right:8px;
+}
+
+.quiz-button{
+    width:100%;
+    padding:15px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0757c9,#13a6e8);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.result{
+    display:none;
+    margin-top:20px;
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    background:#eef8f2;
+    border:1px solid #b9e2ca;
+}
+
+.score{
+    font-size:44px;
+    font-weight:bold;
+    color:#138a4b;
+}
+
+footer{
+    background:#17233c;
+    color:white;
+    text-align:center;
+    padding:35px 18px;
+}
+
+footer strong{
+    color:#58c7ff;
+}
+
+.creator{
+    margin-top:12px;
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:20px;
+        border-radius:14px;
+    }
+
+    .section-title{
+        font-size:23px;
+    }
+
+    .map-box{
+        min-height:400px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="academy">
+Bright English Academy
+</div>
+
+<h1>
+✈️ Travel & Transportation
+</h1>
+
+<p>
+Travel, transportation and asking for directions
+</p>
+
+<div class="badge">
+📚 Day 26 / Lesson 26
+</div>
+
+</header>
+
+
+<div class="progress-container">
+
+<div class="progress-info">
+
+<span>Lesson Progress</span>
+
+<span id="progressText">0%</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill" id="progressFill"></div>
+
+</div>
+
+</div>
+
+
+<nav>
+
+<a href="#objectives">Objectives</a>
+<a href="#transport">Transportation</a>
+<a href="#travel">Travel</a>
+<a href="#directions">Directions</a>
+<a href="#grammar">Grammar</a>
+<a href="#conversation">Conversation</a>
+<a href="#map">Map</a>
+<a href="#exercises">Exercises</a>
+<a href="#activities">Activities</a>
+<a href="#speaking">Speaking</a>
+<a href="#writing">Writing</a>
+<a href="#quiz">Quiz</a>
+<a href="#review">Review</a>
+
+</nav>
+
+
+<main>
+
+
+<section id="objectives">
+
+<h2 class="section-title">
+🎯 Lesson Objectives
+</h2>
+
+<p class="section-subtitle">
+By the end of this lesson, you will be able to:
+</p>
+
+<div class="objectives">
+
+<div class="objective">
+<strong>🚌 Transportation</strong>
+Name common means of transportation.
+</div>
+
+<div class="objective">
+<strong>✈️ Travel</strong>
+Use basic travel vocabulary.
+</div>
+
+<div class="objective">
+<strong>📍 Directions</strong>
+Ask for and give simple directions.
+</div>
+
+<div class="objective">
+<strong>🧠 Questions</strong>
+Use Where, How and When.
+</div>
+
+<div class="objective">
+<strong>📚 Prepositions</strong>
+Use basic prepositions of place.
+</div>
+
+<div class="objective">
+<strong>💬 Conversation</strong>
+Communicate in travel situations.
+</div>
+
+<div class="objective">
+<strong>🗣️ Speaking</strong>
+Talk about a journey.
+</div>
+
+<div class="objective">
+<strong>✍️ Writing</strong>
+Write a short travel plan.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="transport">
+
+<h2 class="section-title">
+🚌 Transportation Vocabulary
+</h2>
+
+<p class="section-subtitle">
+Learn the most useful transportation words.
+</p>
+
+<div class="vocab-grid">
+
+
+<div class="vocab-card">
+
+<h3>🚌 Bus</h3>
+
+<p><strong>Bus</strong> — Autocarro</p>
+<p>Example: I go to school by bus.</p>
+
+<button class="listen"
+onclick="speak('Bus. I go to school by bus.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🚕 Taxi</h3>
+
+<p><strong>Taxi</strong> — Táxi</p>
+<p>Example: I take a taxi to the airport.</p>
+
+<button class="listen"
+onclick="speak('Taxi. I take a taxi to the airport.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🚗 Car</h3>
+
+<p><strong>Car</strong> — Carro</p>
+<p>Example: My father drives a car.</p>
+
+<button class="listen"
+onclick="speak('Car. My father drives a car.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🏍️ Motorcycle</h3>
+
+<p><strong>Motorcycle</strong> — Motorizada</p>
+<p>Example: He rides a motorcycle.</p>
+
+<button class="listen"
+onclick="speak('Motorcycle. He rides a motorcycle.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🚆 Train</h3>
+
+<p><strong>Train</strong> — Comboio</p>
+<p>Example: The train leaves at eight.</p>
+
+<button class="listen"
+onclick="speak('Train. The train leaves at eight.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>✈️ Plane</h3>
+
+<p><strong>Plane</strong> — Avião</p>
+<p>Example: The plane is at the airport.</p>
+
+<button class="listen"
+onclick="speak('Plane. The plane is at the airport.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🚲 Bicycle</h3>
+
+<p><strong>Bicycle</strong> — Bicicleta</p>
+<p>Example: I ride my bicycle.</p>
+
+<button class="listen"
+onclick="speak('Bicycle. I ride my bicycle.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🚢 Boat</h3>
+
+<p><strong>Boat</strong> — Barco</p>
+<p>Example: We travel by boat.</p>
+
+<button class="listen"
+onclick="speak('Boat. We travel by boat.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="travel">
+
+<h2 class="section-title">
+✈️ Travel Vocabulary
+</h2>
+
+<div class="vocab-grid">
+
+
+<div class="vocab-card">
+
+<h3>🛫 Airport</h3>
+
+<p>Airport — Aeroporto</p>
+
+<p>
+The airport is far from my house.
+</p>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🎫 Ticket</h3>
+
+<p>Ticket — Bilhete</p>
+
+<p>
+I need a bus ticket.
+</p>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🧳 Luggage</h3>
+
+<p>Luggage — Bagagem</p>
+
+<p>
+My luggage is heavy.
+</p>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🏨 Hotel</h3>
+
+<p>Hotel — Hotel</p>
+
+<p>
+We are staying at a hotel.
+</p>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🛂 Passport</h3>
+
+<p>Passport — Passaporte</p>
+
+<p>
+I have my passport.
+</p>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🎟️ Station</h3>
+
+<p>Station — Estação</p>
+
+<p>
+The train station is near here.
+</p>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🗺️ Map</h3>
+
+<p>Map — Mapa</p>
+
+<p>
+I have a map of the city.
+</p>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>🛣️ Road</h3>
+
+<p>Road — Estrada</p>
+
+<p>
+This road goes to the city.
+</p>
+
+</div>
+
+</div>
+
+
+<button class="listen"
+onclick="speak('Airport. Ticket. Luggage. Hotel. Passport. Station. Map. Road.')">
+🔊 Listen to Vocabulary
+</button>
+
+</section>
+
+
+<section id="directions">
+
+<h2 class="section-title">
+📍 Asking for Directions
+</h2>
+
+<div class="grammar-box">
+
+<h3>
+Useful Questions
+</h3>
+
+<div class="formula">
+
+Where is the bus station?
+
+<br><br>
+
+Where is the airport?
+
+<br><br>
+
+How can I get to the hotel?
+
+<br><br>
+
+How do I get to the bank?
+
+<br><br>
+
+Is there a bus station near here?
+
+<br><br>
+
+When does the train leave?
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>
+Useful Answers
+</h3>
+
+<div class="example">
+
+Go straight.
+
+<br><br>
+
+Turn left.
+
+<br><br>
+
+Turn right.
+
+<br><br>
+
+It is next to the bank.
+
+<br><br>
+
+It is opposite the school.
+
+<br><br>
+
+It is near the hotel.
+
+<br><br>
+
+It is far from here.
+
+</div>
+
+</div>
+
+
+<button class="listen"
+onclick="speak('Where is the bus station? How can I get to the hotel? Go straight. Turn left. Turn right. It is next to the bank.')">
+🔊 Listen
+</button>
+
+</section>
+
+
+<section id="grammar">
+
+<h2 class="section-title">
+🧠 Where / How / When
+</h2>
+
+<div class="vocab-grid">
+
+
+<div class="vocab-card">
+
+<h3>📍 WHERE</h3>
+
+<p>
+Use <strong>where</strong> to ask about a place.
+</p>
+
+<p>
+Where is the airport?
+</p>
+
+<p>
+Where is the hotel?
+</p>
+
+<button class="listen"
+onclick="speak('Where is the airport? Where is the hotel?')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>❓ HOW</h3>
+
+<p>
+Use <strong>how</strong> to ask about method or way.
+</p>
+
+<p>
+How do I get there?
+</p>
+
+<p>
+How can I travel there?
+</p>
+
+<button class="listen"
+onclick="speak('How do I get there? How can I travel there?')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="vocab-card">
+
+<h3>⏰ WHEN</h3>
+
+<p>
+Use <strong>when</strong> to ask about time.
+</p>
+
+<p>
+When does the bus leave?
+</p>
+
+<p>
+When does the train arrive?
+</p>
+
+<button class="listen"
+onclick="speak('When does the bus leave? When does the train arrive?')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>
+📍 Prepositions of Place
+</h3>
+
+<div class="formula">
+
+next to = ao lado de
+
+<br>
+
+near = perto de
+
+<br>
+
+far from = longe de
+
+<br>
+
+opposite = em frente de
+
+<br>
+
+between = entre
+
+<br>
+
+behind = atrás de
+
+<br>
+
+in front of = em frente de
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="conversation">
+
+<h2 class="section-title">
+💬 Real-life Conversation
+</h2>
+
+<p class="section-subtitle">
+Marta and Samuel are at a bus station.
+</p>
+
+<div class="conversation">
+
+<div class="line">
+<span class="speaker">Marta:</span>
+Excuse me. Where is the bus station?
+</div>
+
+<div class="line">
+<span class="speaker">Samuel:</span>
+It is near the market.
+</div>
+
+<div class="line">
+<span class="speaker">Marta:</span>
+How can I get there?
+</div>
+
+<div class="line">
+<span class="speaker">Samuel:</span>
+Go straight and turn left.
+</div>
+
+<div class="line">
+<span class="speaker">Marta:</span>
+Is it far from here?
+</div>
+
+<div class="line">
+<span class="speaker">Samuel:</span>
+No, it is very near.
+</div>
+
+<div class="line">
+<span class="speaker">Marta:</span>
+Thank you very much.
+</div>
+
+<div class="line">
+<span class="speaker">Samuel:</span>
+You're welcome.
+</div>
+
+<div class="line">
+<span class="speaker">Marta:</span>
+When does the bus leave?
+</div>
+
+<div class="line">
+<span class="speaker">Samuel:</span>
+It leaves at nine o'clock.
+</div>
+
+<div class="line">
+<span class="speaker">Marta:</span>
+Great. I need one ticket, please.
+</div>
+
+<div class="line">
+<span class="speaker">Samuel:</span>
+Sure. Here you are.
+</div>
+
+<div class="line">
+<span class="speaker">Marta:</span>
+Thank you!
+</div>
+
+<div class="line">
+<span class="speaker">Samuel:</span>
+Have a nice trip!
+</div>
+
+</div>
+
+
+<button class="listen"
+onclick="speak('Marta: Excuse me. Where is the bus station? Samuel: It is near the market. Marta: How can I get there? Samuel: Go straight and turn left. Marta: Is it far from here? Samuel: No, it is very near. Marta: Thank you very much. Samuel: You are welcome. Marta: When does the bus leave? Samuel: It leaves at nine o clock. Marta: Great. I need one ticket, please. Samuel: Sure. Here you are. Marta: Thank you. Samuel: Have a nice trip!')">
+🔊 Listen to Conversation
+</button>
+
+</section>
+
+
+<section id="map">
+
+<h2 class="section-title">
+🗺️ Interactive Map Activity
+</h2>
+
+<p class="section-subtitle">
+Look at the simple city map and answer the questions.
+</p>
+
+<div class="map-box">
+
+<div class="road road1"></div>
+
+<div class="road road2"></div>
+
+<div class="place school">
+🏫 School
+</div>
+
+<div class="place station">
+🚉 Station
+</div>
+
+<div class="place bank">
+🏦 Bank
+</div>
+
+<div class="place hotel">
+🏨 Hotel
+</div>
+
+<div class="place center">
+🛣️ Main Road
+</div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+Where is the station?
+</p>
+
+<select id="map1">
+
+<option value="">Choose...</option>
+<option value="a">Near the school</option>
+<option value="b">Near the bank</option>
+<option value="c">Near the hotel</option>
+
+</select>
+
+<button class="check"
+onclick="check('map1','a','mapf1')">
+Check
+</button>
+
+<div id="mapf1" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+Where is the hotel?
+</p>
+
+<select id="map2">
+
+<option value="">Choose...</option>
+<option value="a">At the bottom right</option>
+<option value="b">At the top left</option>
+<option value="c">At the top right</option>
+
+</select>
+
+<button class="check"
+onclick="check('map2','a','mapf2')">
+Check
+</button>
+
+<div id="mapf2" class="feedback"></div>
+
+</div>
+
+</section>
+
+
+<section id="exercises">
+
+<h2 class="section-title">
+✏️ Exercises
+</h2>
+
+
+<div class="exercise">
+
+<p>
+1. Complete:
+</p>
+
+<p>
+I travel to school ______ bus.
+</p>
+
+<select id="e1">
+
+<option value="">Choose...</option>
+<option value="by">by</option>
+<option value="on">on</option>
+<option value="in">in</option>
+
+</select>
+
+<button class="check"
+onclick="check('e1','by','f1')">
+Check
+</button>
+
+<div id="f1" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+2. Complete:
+</p>
+
+<p>
+Where ______ the airport?
+</p>
+
+<select id="e2">
+
+<option value="">Choose...</option>
+<option value="is">is</option>
+<option value="are">are</option>
+<option value="am">am</option>
+
+</select>
+
+<button class="check"
+onclick="check('e2','is','f2')">
+Check
+</button>
+
+<div id="f2" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+3. Complete:
+</p>
+
+<p>
+Turn ______ at the next street.
+</p>
+
+<select id="e3">
+
+<option value="">Choose...</option>
+<option value="left">left</option>
+<option value="near">near</option>
+<option value="straight">straight</option>
+
+</select>
+
+<button class="check"
+onclick="check('e3','left','f3')">
+Check
+</button>
+
+<div id="f3" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+4. Complete:
+</p>
+
+<p>
+The hotel is ______ the bank.
+</p>
+
+<select id="e4">
+
+<option value="">Choose...</option>
+<option value="next to">next to</option>
+<option value="when">when</option>
+<option value="how">how</option>
+
+</select>
+
+<button class="check"
+onclick="check('e4','next to','f4')">
+Check
+</button>
+
+<div id="f4" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+5. Complete:
+</p>
+
+<p>
+______ does the train leave?
+</p>
+
+<select id="e5">
+
+<option value="">Choose...</option>
+<option value="Where">Where</option>
+<option value="When">When</option>
+<option value="How">How</option>
+
+</select>
+
+<button class="check"
+onclick="check('e5','when','f5')">
+Check
+</button>
+
+<div id="f5" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+6. Translate:
+</p>
+
+<p>
+"Como chego ao aeroporto?"
+</p>
+
+<input type="text"
+id="e6"
+placeholder="Write in English">
+
+<button class="check"
+onclick="textCheck('e6',['how do i get to the airport'],'f6')">
+Check
+</button>
+
+<div id="f6" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+7. Translate:
+</p>
+
+<p>
+"O hotel fica perto da estação."
+</p>
+
+<input type="text"
+id="e7"
+placeholder="Write in English">
+
+<button class="check"
+onclick="textCheck('e7',['the hotel is near the station'],'f7')">
+Check
+</button>
+
+<div id="f7" class="feedback"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<p>
+8. Choose the correct sentence:
+</p>
+
+<select id="e8">
+
+<option value="">Choose...</option>
+<option value="a">Go straight and turn right.</option>
+<option value="b">Go straight and turn rights.</option>
+<option value="c">Going straight and turn right.</option>
+
+</select>
+
+<button class="check"
+onclick="check('e8','a','f8')">
+Check
+</button>
+
+<div id="f8" class="feedback"></div>
+
+</div>
+
+</section>
+
+
+<section id="activities">
+
+<h2 class="section-title">
+🧩 Interactive Activities
+</h2>
+
+<div class="activity-grid">
+
+
+<div class="activity">
+
+<h3>🚕 Activity 1</h3>
+
+<p>
+How do you travel to school?
+</p>
+
+<button class="choice"
+onclick="activityChoice(this,'a1','❌ Try again.')">
+By airplane
+</button>
+
+<button class="choice"
+onclick="activityChoice(this,'a1','✅ Good choice!')">
+By bus
+</button>
+
+<p id="a1" class="feedback"></p>
+
+</div>
+
+
+<div class="activity">
+
+<h3>📍 Activity 2</h3>
+
+<p>
+Which expression means "vá em frente"?
+</p>
+
+<button class="choice"
+onclick="activityChoice(this,'a2','❌ Try again.')">
+Turn left
+</button>
+
+<button class="choice"
+onclick="activityChoice(this,'a2','✅ Correct!')">
+Go straight
+</button>
+
+<p id="a2" class="feedback"></p>
+
+</div>
+
+
+<div class="activity">
+
+<h3>⏰ Activity 3</h3>
+
+<p>
+Which word asks about time?
+</p>
+
+<button class="choice"
+onclick="activityChoice(this,'a3','❌ Try again.')">
+Where
+</button>
+
+<button class="choice"
+onclick="activityChoice(this,'a3','✅ Correct!')">
+When
+</button>
+
+<p id="a3" class="feedback"></p>
+
+</div>
+
+
+<div class="activity">
+
+<h3>🗺️ Activity 4</h3>
+
+<p>
+Which word means "perto"?
+</p>
+
+<button class="choice"
+onclick="activityChoice(this,'a4','❌ Try again.')">
+Far
+</button>
+
+<button class="choice"
+onclick="activityChoice(this,'a4','✅ Correct!')">
+Near
+</button>
+
+<p id="a4" class="feedback"></p>
+
+</div>
+
+
+<div class="activity">
+
+<h3>✈️ Activity 5</h3>
+
+<p>
+Where do planes arrive?
+</p>
+
+<button class="choice"
+onclick="activityChoice(this,'a5','❌ Try again.')">
+Hotel
+</button>
+
+<button class="choice"
+onclick="activityChoice(this,'a5','✅ Correct!')">
+Airport
+</button>
+
+<p id="a5" class="feedback"></p>
+
+</div>
+
+
+<div class="activity">
+
+<h3>🎫 Activity 6</h3>
+
+<p>
+What do you need to travel by bus?
+</p>
+
+<button class="choice"
+onclick="activityChoice(this,'a6','❌ Try again.')">
+A ticket
+</button>
+
+<button class="choice"
+onclick="activityChoice(this,'a6','Try again.')">
+A table
+</button>
+
+<p id="a6" class="feedback"></p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="speaking">
+
+<h2 class="section-title">
+🗣️ Speaking Challenge
+</h2>
+
+<div class="challenge">
+
+<h3>
+🎤 Talk about a trip.
+</h3>
+
+<p style="margin-top:10px;">
+Speak for 1–2 minutes.
+</p>
+
+<br>
+
+<ul style="margin-left:20px;">
+
+<li>Where are you going?</li>
+
+<li>How will you travel?</li>
+
+<li>Who will travel with you?</li>
+
+<li>Where will you stay?</li>
+
+<li>What places will you visit?</li>
+
+<li>When will you leave?</li>
+
+</ul>
+
+<br>
+
+<button class="listen"
+onclick="speak('I am going to travel to the city. I will travel by bus. I will go with my family. We will stay at a hotel. We will visit different places. We will leave in the morning.')">
+🔊 Hear a Model
+</button>
+
+</div>
+
+</section>
+
+
+<section id="writing">
+
+<h2 class="section-title">
+✍️ Writing Challenge
+</h2>
+
+<p class="section-subtitle">
+Write 8–10 sentences about a trip you would like to take.
+</p>
+
+<div class="challenge">
+
+<p>
+Try to include:
+</p>
+
+<ul style="margin-left:20px;margin-top:8px;">
+
+<li>Destination</li>
+<li>Transportation</li>
+<li>Time</li>
+<li>Hotel</li>
+<li>Places you want to visit</li>
+<li>At least two prepositions</li>
+
+</ul>
+
+<br>
+
+<textarea
+id="writing"
+placeholder="Write your travel plan here..."></textarea>
+
+<button class="check"
+onclick="checkWriting()">
+Check My Writing
+</button>
+
+<p id="writingFeedback" class="feedback"></p>
+
+</div>
+
+</section>
+
+
+<section id="quiz">
+
+<h2 class="section-title">
+🎯 10-Question Quiz
+</h2>
+
+<p class="section-subtitle">
+Test your knowledge of Travel & Transportation.
+</p>
+
+
+<div class="quiz-question">
+
+<h3>1. I go to school ______ bus.</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+by
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+on
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+at
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>2. Where ______ the airport?</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+are
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+is
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+am
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>3. Which word means "avião"?</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+Train
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+Plane
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+Boat
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>4. Which expression means "vire à esquerda"?</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+Turn left
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+Go straight
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+Turn right
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>5. Which word asks about time?</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+Where
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+How
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+When
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>6. The hotel is ______ the station.</h3>
+
+<label class="option">
+<input type="radio" name="q6" value="a">
+near
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="b">
+when
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="c">
+how
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>7. Where do you usually catch a train?</h3>
+
+<label class="option">
+<input type="radio" name="q7" value="a">
+At a station
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="b">
+At a hotel
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="c">
+At a bank
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>8. What do you need to travel by bus?</h3>
+
+<label class="option">
+<input type="radio" name="q8" value="a">
+A ticket
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="b">
+A passport only
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="c">
+A bedroom
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>9. Which sentence is correct?</h3>
+
+<label class="option">
+<input type="radio" name="q9" value="a">
+How do I get to the airport?
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="b">
+How I get to the airport?
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="c">
+How does I get to the airport?
+</label>
+
+</div>
+
+
+<div class="quiz-question">
+
+<h3>10. "Go straight and turn right." is used to:</h3>
+
+<label class="option">
+<input type="radio" name="q10" value="a">
+Give directions
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="b">
+Order food
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="c">
+Introduce yourself
+</label>
+
+</div>
+
+
+<button class="quiz-button"
+onclick="calculateQuiz()">
+🎯 Submit Quiz
+</button>
+
+
+<div class="result" id="quizResult">
+
+<p>Quiz Score</p>
+
+<div class="score" id="score">
+0/10
+</div>
+
+<h3 id="resultTitle"></h3>
+
+<p id="resultMessage"></p>
+
+</div>
+
+</section>
+
+
+<section id="review">
+
+<h2 class="section-title">
+🔄 Daily Review
+</h2>
+
+<div class="vocab-grid">
+
+<div class="vocab-card">
+
+<h3>🚌 Transportation</h3>
+
+<p>
+Bus, taxi, car, train, plane, bicycle, boat and motorcycle.
+</p>
+
+</div>
+
+<div class="vocab-card">
+
+<h3>✈️ Travel</h3>
+
+<p>
+Airport, ticket, luggage, hotel, passport, station and map.
+</p>
+
+</div>
+
+<div class="vocab-card">
+
+<h3>📍 Directions</h3>
+
+<p>
+Go straight, turn left, turn right, near, far and next to.
+</p>
+
+</div>
+
+<div class="vocab-card">
+
+<h3>❓ Questions</h3>
+
+<p>
+Where? How? When?
+</p>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box" style="margin-top:25px;">
+
+<h3>
+🏆 What You Learned Today
+</h3>
+
+<p style="margin-top:10px;">
+You learned how to talk about transportation and travel,
+ask for directions, understand simple travel conversations,
+and describe a journey in English.
+</p>
+
+<button class="listen"
+onclick="speak('Congratulations! Today you learned how to talk about travel and transportation, ask for directions, and communicate in everyday travel situations.')">
+🔊 Listen
+</button>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p class="creator">
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p style="margin-top:10px;opacity:.7;">
+Day 26 / Lesson 26
+</p>
+
+</footer>
+
+
+<script>
+
+
+function speak(text){
+
+if(!("speechSynthesis" in window)){
+
+alert("Audio is not supported by this browser.");
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+speech.rate=.85;
+speech.pitch=1;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+function check(id,answer,feedbackId){
+
+const value =
+document.getElementById(id)
+.value
+.trim()
+.toLowerCase();
+
+const feedback =
+document.getElementById(feedbackId);
+
+if(value===answer.toLowerCase()){
+
+feedback.textContent=
+"✅ Correct! Excellent work.";
+
+feedback.style.color="#138a4b";
+
+}else{
+
+feedback.textContent=
+"❌ Not quite. Try again.";
+
+feedback.style.color="#c62828";
+
+}
+
+updateProgress();
+
+}
+
+
+function textCheck(id,answers,feedbackId){
+
+const value =
+document.getElementById(id)
+.value
+.trim()
+.toLowerCase()
+.replace(/[’']/g,"");
+
+const correct =
+answers.some(answer=>
+value===
+answer.toLowerCase()
+.replace(/[’']/g,"")
+);
+
+const feedback =
+document.getElementById(feedbackId);
+
+if(correct){
+
+feedback.textContent=
+"✅ Correct! Excellent!";
+
+feedback.style.color="#138a4b";
+
+}else{
+
+feedback.textContent=
+"❌ Try again.";
+
+feedback.style.color="#c62828";
+
+}
+
+updateProgress();
+
+}
+
+
+function activityChoice(button,id,message){
+
+const parent =
+button.parentElement;
+
+parent.querySelectorAll(".choice")
+.forEach(item=>
+item.classList.remove("selected")
+);
+
+button.classList.add("selected");
+
+const feedback =
+document.getElementById(id);
+
+feedback.textContent=message;
+
+feedback.style.color=
+message.startsWith("✅")
+? "#138a4b"
+: "#c62828";
+
+updateProgress();
+
+}
+
+
+function checkWriting(){
+
+const text =
+document.getElementById("writing")
+.value
+.trim();
+
+const feedback =
+document.getElementById("writingFeedback");
+
+if(text.length<80){
+
+feedback.textContent=
+"✏️ Write more. Try to write 8–10 sentences.";
+
+feedback.style.color="#c62828";
+
+return;
+
+}
+
+const lower=text.toLowerCase();
+
+let found=0;
+
+const words=[
+
+"travel",
+"bus",
+"train",
+"plane",
+"airport",
+"hotel",
+"ticket",
+"station",
+"near",
+"far",
+"left",
+"right",
+"straight"
+
+];
+
+words.forEach(word=>{
+
+if(lower.includes(word)){
+
+found++;
+
+}
+
+});
+
+if(found>=4){
+
+feedback.textContent=
+"✅ Excellent! Your travel plan contains useful vocabulary.";
+
+feedback.style.color="#138a4b";
+
+}else{
+
+feedback.textContent=
+"👍 Good effort! Try adding more travel vocabulary.";
+
+feedback.style.color="#b06b00";
+
+}
+
+updateProgress();
+
+}
+
+
+function calculateQuiz(){
+
+const answers={
+
+q1:"a",
+q2:"b",
+q3:"b",
+q4:"a",
+q5:"c",
+q6:"a",
+q7:"a",
+q8:"a",
+q9:"a",
+q10:"a"
+
+};
+
+let score=0;
+
+for(const question in answers){
+
+const selected=
+document.querySelector(
+`input[name="${question}"]:checked`
+);
+
+if(
+selected &&
+selected.value===
+answers[question]
+){
+
+score++;
+
+}
+
+}
+
+const result=
+document.getElementById("quizResult");
+
+const scoreElement=
+document.getElementById("score");
+
+const title=
+document.getElementById("resultTitle");
+
+const message=
+document.getElementById("resultMessage");
+
+scoreElement.textContent=
+score+"/10";
+
+
+if(score===10){
+
+title.textContent=
+"🏆 Perfect Score!";
+
+message.textContent=
+"Outstanding! You mastered today's lesson.";
+
+}else if(score>=8){
+
+title.textContent=
+"🌟 Excellent Work!";
+
+message.textContent=
+"Your travel English is very strong.";
+
+}else if(score>=6){
+
+title.textContent=
+"👏 Good Work!";
+
+message.textContent=
+"Review a few points and keep practicing.";
+
+}else{
+
+title.textContent=
+"📚 Keep Practicing!";
+
+message.textContent=
+"Review the lesson and try the quiz again.";
+
+}
+
+result.style.display="block";
+
+result.scrollIntoView({
+
+behavior:"smooth",
+block:"center"
+
+});
+
+updateProgress();
+
+}
+
+
+function updateProgress(){
+
+const sections=[
+
+"objectives",
+"transport",
+"travel",
+"directions",
+"grammar",
+"conversation",
+"map",
+"exercises",
+"activities",
+"speaking",
+"writing",
+"quiz",
+"review"
+
+];
+
+const scrollTop=window.scrollY;
+
+const documentHeight=
+document.documentElement.scrollHeight-
+window.innerHeight;
+
+let scrollProgress=0;
+
+if(documentHeight>0){
+
+scrollProgress=
+(scrollTop/documentHeight)*100;
+
+}
+
+let visible=0;
+
+sections.forEach(id=>{
+
+const section=
+document.getElementById(id);
+
+if(!section)return;
+
+const rect=
+section.getBoundingClientRect();
+
+if(
+rect.top<
+window.innerHeight*.75 &&
+rect.bottom>
+window.innerHeight*.25
+){
+
+visible++;
+
+}
+
+});
+
+const sectionProgress=
+(visible/sections.length)*100;
+
+let progress=
+Math.max(
+scrollProgress,
+sectionProgress
+);
+
+progress=
+Math.min(
+100,
+Math.round(progress)
+);
+
+document.getElementById(
+"progressFill"
+).style.width=
+progress+"%";
+
+document.getElementById(
+"progressText"
+).textContent=
+progress+"%";
+
+}
+
+
+window.addEventListener(
+"scroll",
+updateProgress
+);
+
+window.addEventListener(
+"load",
+updateProgress
+);
+
+
+</script>
+
+</body>
+
+</html>

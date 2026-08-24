@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson 9 — Family & Possessives | Bright English Academy</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#17233c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#0b4f9c,#087fc1);
+color:white;
+padding:18px 20px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+color:white;
+text-decoration:none;
+font-size:21px;
+font-weight:800;
+}
+
+nav{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:7px 10px;
+border-radius:6px;
+font-weight:bold;
+}
+
+nav a:hover{
+background:rgba(255,255,255,.15);
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px 18px 60px;
+}
+
+.card{
+background:white;
+padding:28px;
+border-radius:18px;
+margin-bottom:24px;
+box-shadow:0 5px 22px rgba(20,53,100,.08);
+border:1px solid #e2eaf4;
+}
+
+.hero{
+background:linear-gradient(135deg,#0b4f9c,#087fc1);
+color:white;
+}
+
+.hero h1{
+color:white;
+font-size:34px;
+margin-top:0;
+}
+
+.day-badge{
+display:inline-block;
+background:#ffd34d;
+color:#17233c;
+padding:7px 13px;
+border-radius:20px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.progress-title{
+display:flex;
+justify-content:space-between;
+margin-bottom:7px;
+font-weight:bold;
+}
+
+.progress-bar{
+width:100%;
+height:12px;
+background:rgba(255,255,255,.3);
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+width:0%;
+height:100%;
+background:#ffd34d;
+transition:.4s;
+}
+
+.lesson-nav{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:24px;
+}
+
+.lesson-nav a{
+background:#eaf3ff;
+color:#0b4f9c;
+text-decoration:none;
+padding:8px 12px;
+border-radius:7px;
+font-size:14px;
+font-weight:bold;
+}
+
+h2{
+color:#0b4f9c;
+font-size:26px;
+margin-top:0;
+}
+
+h3{
+color:#0b4f9c;
+}
+
+.objective-grid,
+.vocabulary-grid,
+.review-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.objective{
+background:#f5f9ff;
+padding:18px;
+border-radius:12px;
+border-left:5px solid #0b4f9c;
+}
+
+.objective strong{
+display:block;
+color:#0b4f9c;
+margin-bottom:5px;
+}
+
+.word-card{
+background:#f8fbff;
+border:1px solid #dfe8f3;
+padding:18px;
+border-radius:12px;
+}
+
+.word{
+font-size:22px;
+font-weight:bold;
+color:#0b4f9c;
+}
+
+.translation{
+color:#64748b;
+margin:5px 0 12px;
+}
+
+.listen-btn{
+border:none;
+background:#ffd34d;
+color:#17233c;
+padding:9px 14px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.listen-btn:hover{
+background:#f2bf1f;
+}
+
+.grammar-box{
+background:#f5f9ff;
+border-left:5px solid #0b4f9c;
+padding:20px;
+border-radius:10px;
+margin-bottom:18px;
+}
+
+.example{
+background:white;
+padding:15px;
+border-radius:8px;
+margin-top:12px;
+}
+
+.english{
+font-weight:bold;
+color:#0b4f9c;
+}
+
+.dialogue{
+background:#f7f9fc;
+padding:20px;
+border-radius:14px;
+}
+
+.dialogue p{
+margin:10px 0;
+}
+
+.person1{
+color:#0b4f9c;
+font-weight:bold;
+}
+
+.person2{
+color:#087f54;
+font-weight:bold;
+}
+
+.exercise{
+background:#f8fbff;
+border:1px solid #dfe8f3;
+padding:20px;
+border-radius:12px;
+margin-bottom:18px;
+}
+
+.options{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:12px;
+}
+
+.options button{
+border:1px solid #cdd9e8;
+background:white;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.options button:hover{
+background:#eaf3ff;
+}
+
+.answer{
+display:none;
+margin-top:12px;
+padding:10px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.correct{
+background:#e8f7ee;
+color:#168348;
+}
+
+.wrong{
+background:#fff0f0;
+color:#c62828;
+}
+
+.activity{
+background:#fffaf0;
+border:1px solid #f2dfaa;
+padding:20px;
+border-radius:12px;
+margin-bottom:18px;
+}
+
+.activity button{
+border:none;
+background:#0b4f9c;
+color:white;
+padding:10px 17px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.challenge{
+background:linear-gradient(135deg,#eef6ff,#f7fbff);
+border:1px solid #d8e8f8;
+padding:22px;
+border-radius:14px;
+}
+
+.quiz-question{
+padding:18px;
+border-bottom:1px solid #e3e9f1;
+}
+
+.quiz-question p{
+font-weight:bold;
+}
+
+.quiz-options{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.quiz-options label{
+background:#f7faff;
+padding:10px;
+border-radius:7px;
+cursor:pointer;
+}
+
+.quiz-options label:hover{
+background:#eaf3ff;
+}
+
+.quiz-submit{
+border:none;
+background:#0b4f9c;
+color:white;
+padding:13px 24px;
+border-radius:9px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
+
+#quizResult{
+display:none;
+margin-top:20px;
+padding:18px;
+border-radius:12px;
+background:#eaf7ef;
+color:#147844;
+font-weight:bold;
+font-size:18px;
+}
+
+.review-item{
+background:#f5f9ff;
+padding:13px;
+border-radius:9px;
+}
+
+.complete-box{
+text-align:center;
+}
+
+.complete-btn{
+border:none;
+background:#168348;
+color:white;
+padding:14px 25px;
+border-radius:10px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#completeMessage{
+display:none;
+margin-top:15px;
+color:#168348;
+font-weight:bold;
+}
+
+.page-navigation{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-top:25px;
+}
+
+.page-navigation a{
+background:#0b4f9c;
+color:white;
+text-decoration:none;
+padding:12px 18px;
+border-radius:9px;
+font-weight:bold;
+}
+
+footer{
+background:#17233c;
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+footer strong{
+color:#58c7ff;
+}
+
+@media(max-width:700px){
+
+.header-container{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.objective-grid,
+.vocabulary-grid,
+.review-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:27px;
+}
+
+.card{
+padding:21px;
+}
+
+.page-navigation{
+flex-direction:column;
+}
+
+.page-navigation a{
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a href="beginner1.html" class="logo">
+📚 Bright English Academy
+</a>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="beginner1.html">Course</a>
+
+<a href="student-login.html">Login</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<section class="card hero">
+
+<span class="day-badge">
+📚 Day 9 / Lesson 9
+</span>
+
+<h1>
+👨‍👩‍👧‍👦 Family & Possessives
+</h1>
+
+<p>
+Talk about your family and show who things belong to.
+</p>
+
+<div class="progress-title">
+
+<span>Lesson Progress</span>
+
+<span id="progressText">0%</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div id="progressFill" class="progress-fill"></div>
+
+</div>
+
+</section>
+
+
+<section class="lesson-nav">
+
+<a href="#objectives">Objectives</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#family">Family</a>
+<a href="#grammar">Grammar</a>
+<a href="#pronunciation">Pronunciation</a>
+<a href="#conversation">Conversation</a>
+<a href="#exercises">Exercises</a>
+<a href="#activities">Activities</a>
+<a href="#speaking">Speaking</a>
+<a href="#writing">Writing</a>
+<a href="#quiz">Quiz</a>
+<a href="#review">Review</a>
+
+</section>
+
+
+<section id="objectives" class="card">
+
+<h2>🎯 Lesson Objectives</h2>
+
+<p>
+By the end of this lesson, you will be able to:
+</p>
+
+<div class="objective-grid">
+
+<div class="objective">
+<strong>👨‍👩‍👧 Family Vocabulary</strong>
+Name common family members.
+</div>
+
+<div class="objective">
+<strong>👪 Describe Family</strong>
+Talk about your family.
+</div>
+
+<div class="objective">
+<strong>📚 Possessive Adjectives</strong>
+Use my, your, his, her, our and their.
+</div>
+
+<div class="objective">
+<strong>🔑 Possession</strong>
+Show who owns something.
+</div>
+
+<div class="objective">
+<strong>❓ Questions</strong>
+Ask about someone's family.
+</div>
+
+<div class="objective">
+<strong>💬 Conversation</strong>
+Talk about family in everyday English.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="vocabulary" class="card">
+
+<h2>👨‍👩‍👧‍👦 Family Vocabulary</h2>
+
+<p>
+Learn useful words for talking about your family.
+</p>
+
+<div class="vocabulary-grid">
+
+
+<div class="word-card">
+<div class="word">Father</div>
+<div class="translation">Pai</div>
+<button class="listen-btn" onclick="speak('Father')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Mother</div>
+<div class="translation">Mãe</div>
+<button class="listen-btn" onclick="speak('Mother')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Brother</div>
+<div class="translation">Irmão</div>
+<button class="listen-btn" onclick="speak('Brother')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Sister</div>
+<div class="translation">Irmã</div>
+<button class="listen-btn" onclick="speak('Sister')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Son</div>
+<div class="translation">Filho</div>
+<button class="listen-btn" onclick="speak('Son')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Daughter</div>
+<div class="translation">Filha</div>
+<button class="listen-btn" onclick="speak('Daughter')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Husband</div>
+<div class="translation">Marido</div>
+<button class="listen-btn" onclick="speak('Husband')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Wife</div>
+<div class="translation">Esposa</div>
+<button class="listen-btn" onclick="speak('Wife')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Grandfather</div>
+<div class="translation">Avô</div>
+<button class="listen-btn" onclick="speak('Grandfather')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Grandmother</div>
+<div class="translation">Avó</div>
+<button class="listen-btn" onclick="speak('Grandmother')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Uncle</div>
+<div class="translation">Tio</div>
+<button class="listen-btn" onclick="speak('Uncle')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="word">Aunt</div>
+<div class="translation">Tia</div>
+<button class="listen-btn" onclick="speak('Aunt')">🔊 Listen</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="family" class="card">
+
+<h2>👪 Talking About Family</h2>
+
+<div class="grammar-box">
+
+<h3>My Family</h3>
+
+<div class="example">
+
+<span class="english">
+This is my family.
+</span>
+
+<br>
+
+Esta é a minha família.
+
+<br><br>
+
+<span class="english">
+My father is a teacher.
+</span>
+
+<br>
+
+O meu pai é professor.
+
+<br><br>
+
+<span class="english">
+My mother is a nurse.
+</span>
+
+<br>
+
+A minha mãe é enfermeira.
+
+<br><br>
+
+<span class="english">
+I have one brother and two sisters.
+</span>
+
+<br>
+
+Eu tenho um irmão e duas irmãs.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is my family. My father is a teacher. My mother is a nurse. I have one brother and two sisters.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="grammar" class="card">
+
+<h2>📚 Grammar — Possessive Adjectives</h2>
+
+<p>
+Possessive adjectives show who something belongs to.
+</p>
+
+
+<div class="grammar-box">
+
+<h3>1️⃣ My</h3>
+
+<p>
+Use <strong>my</strong> when something belongs to me.
+</p>
+
+<div class="example">
+
+<span class="english">
+This is my mother.
+</span>
+
+<br>
+
+Esta é a minha mãe.
+
+<br><br>
+
+<span class="english">
+My brother is a student.
+</span>
+
+<br>
+
+O meu irmão é estudante.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is my mother. My brother is a student.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>2️⃣ Your</h3>
+
+<p>
+Use <strong>your</strong> when something belongs to you.
+</p>
+
+<div class="example">
+
+<span class="english">
+This is your sister.
+</span>
+
+<br>
+
+Esta é a tua irmã.
+
+<br><br>
+
+<span class="english">
+What is your mother's name?
+</span>
+
+<br>
+
+Qual é o nome da tua mãe?
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is your sister. What is your mother’s name?')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>3️⃣ His</h3>
+
+<p>
+Use <strong>his</strong> for something belonging to a male person.
+</p>
+
+<div class="example">
+
+<span class="english">
+This is his father.
+</span>
+
+<br>
+
+Este é o pai dele.
+
+<br><br>
+
+<span class="english">
+His brother is a doctor.
+</span>
+
+<br>
+
+O irmão dele é médico.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is his father. His brother is a doctor.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>4️⃣ Her</h3>
+
+<p>
+Use <strong>her</strong> for something belonging to a female person.
+</p>
+
+<div class="example">
+
+<span class="english">
+This is her mother.
+</span>
+
+<br>
+
+Esta é a mãe dela.
+
+<br><br>
+
+<span class="english">
+Her sister is a student.
+</span>
+
+<br>
+
+A irmã dela é estudante.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is her mother. Her sister is a student.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>5️⃣ Our</h3>
+
+<p>
+Use <strong>our</strong> for something belonging to us.
+</p>
+
+<div class="example">
+
+<span class="english">
+This is our house.
+</span>
+
+<br>
+
+Esta é a nossa casa.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is our house.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>6️⃣ Their</h3>
+
+<p>
+Use <strong>their</strong> for something belonging to them.
+</p>
+
+<div class="example">
+
+<span class="english">
+This is their family.
+</span>
+
+<br>
+
+Esta é a família deles.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is their family.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pronunciation" class="card">
+
+<h2>🔊 Pronunciation Practice</h2>
+
+<p>Listen and repeat.</p>
+
+
+<div class="example">
+
+<strong>This is my family.</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is my family.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>My father is a teacher.</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('My father is a teacher.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>Her sister is a student.</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Her sister is a student.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>His brother is a doctor.</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('His brother is a doctor.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>What is your mother's name?</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What is your mother’s name?')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="conversation" class="card">
+
+<h2>💬 Real-life Conversation</h2>
+
+<p>
+Maria and Daniel are talking about their families.
+</p>
+
+<div class="dialogue">
+
+<p>
+<span class="person1">Maria:</span>
+Hi, Daniel! Tell me about your family.
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+Sure. I have a small family.
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+How many people are in your family?
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+There are four people in my family.
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+Who are they?
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+My father, my mother, my sister and me.
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+What is your father's name?
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+His name is John.
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+And what is your mother's name?
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+Her name is Anna.
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+Do you have a sister?
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+Yes. Her name is Lucy.
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+How old is she?
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+She is twelve years old.
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+That's nice! I have two brothers.
+</p>
+
+<p>
+<span class="person2">Daniel:</span>
+Really? What are their names?
+</p>
+
+<p>
+<span class="person1">Maria:</span>
+Their names are Peter and James.
+</p>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speakConversation()">
+
+🔊 Listen to Conversation
+
+</button>
+
+</section>
+
+
+<section id="exercises" class="card">
+
+<h2>✏️ Exercises</h2>
+
+
+<div class="exercise">
+
+<strong>1. Complete:</strong>
+
+<p>
+This is ______ mother.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer1')">my</button>
+<button onclick="checkAnswer(false,'answer1')">his</button>
+<button onclick="checkAnswer(false,'answer1')">their</button>
+
+</div>
+
+<div id="answer1" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>2. Complete:</strong>
+
+<p>
+This is ______ father. He is a doctor.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer2')">her</button>
+<button onclick="checkAnswer(true,'answer2')">his</button>
+<button onclick="checkAnswer(false,'answer2')">our</button>
+
+</div>
+
+<div id="answer2" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>3. Complete:</strong>
+
+<p>
+Anna loves ______ family.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer3')">his</button>
+<button onclick="checkAnswer(true,'answer3')">her</button>
+<button onclick="checkAnswer(false,'answer3')">their</button>
+
+</div>
+
+<div id="answer3" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>4. Complete:</strong>
+
+<p>
+We live in ______ house.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer4')">our</button>
+<button onclick="checkAnswer(false,'answer4')">their</button>
+<button onclick="checkAnswer(false,'answer4')">his</button>
+
+</div>
+
+<div id="answer4" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>5. Complete:</strong>
+
+<p>
+They love ______ children.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer5')">our</button>
+<button onclick="checkAnswer(false,'answer5')">his</button>
+<button onclick="checkAnswer(true,'answer5')">their</button>
+
+</div>
+
+<div id="answer5" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>6. Translate:</strong>
+
+<p>
+"My brother is a student."
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer6')">
+O meu irmão é estudante.
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+A minha irmã é estudante.
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+O pai dele é estudante.
+</button>
+
+</div>
+
+<div id="answer6" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>7. Choose the correct word:</strong>
+
+<p>
+This is ______ sister. Her name is Lucy.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer7')">his</button>
+<button onclick="checkAnswer(true,'answer7')">my</button>
+<button onclick="checkAnswer(false,'answer7')">our</button>
+
+</div>
+
+<div id="answer7" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>8. Complete:</strong>
+
+<p>
+What is ______ mother's name?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer8')">your</button>
+<button onclick="checkAnswer(false,'answer8')">their</button>
+<button onclick="checkAnswer(false,'answer8')">his</button>
+
+</div>
+
+<div id="answer8" class="answer"></div>
+
+</div>
+
+</section>
+
+
+<section id="activities" class="card">
+
+<h2>🧩 Interactive Activities</h2>
+
+
+<div class="activity">
+
+<h3>Activity 1</h3>
+
+<p>
+I have a sister. ______ name is Anna.
+</p>
+
+<button onclick="activityAnswer('her')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 2</h3>
+
+<p>
+I have a brother. ______ name is John.
+</p>
+
+<button onclick="activityAnswer('his')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 3</h3>
+
+<p>
+Build the sentence:
+</p>
+
+<p>
+<strong>
+my / This / family / is
+</strong>
+</p>
+
+<button onclick="activityAnswer('This is my family.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 4</h3>
+
+<p>
+We have a house. It is ______ house.
+</p>
+
+<button onclick="activityAnswer('our')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 5</h3>
+
+<p>
+They have two children. They love ______ children.
+</p>
+
+<button onclick="activityAnswer('their')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 6</h3>
+
+<p>
+Choose the correct sentence.
+</p>
+
+<p>
+<strong>
+Her brother is a student.
+</strong>
+</p>
+
+<button onclick="activityAnswer('Correct!')">
+Check
+</button>
+
+</div>
+
+</section>
+
+
+<section id="speaking" class="card">
+
+<h2>🗣️ Speaking Challenge</h2>
+
+<div class="challenge">
+
+<h3>🎤 Talk About Your Family</h3>
+
+<p>
+Speak for 30–60 seconds.
+</p>
+
+<p>
+Try to answer:
+</p>
+
+<ul>
+
+<li>How many people are in your family?</li>
+
+<li>Who are they?</li>
+
+<li>What is your father's name?</li>
+
+<li>What is your mother's name?</li>
+
+<li>Do you have brothers or sisters?</li>
+
+<li>How old are they?</li>
+
+</ul>
+
+<button class="listen-btn"
+onclick="speak('There are four people in my family. My father is a teacher. My mother is a nurse. I have one brother and one sister. My brother is a student. My sister is twelve years old.')">
+
+🔊 Hear a Model
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="writing" class="card">
+
+<h2>✍️ Writing Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Write 6–8 sentences about your family.
+</p>
+
+<p>
+Try to use:
+</p>
+
+<ul>
+
+<li>My...</li>
+
+<li>His...</li>
+
+<li>Her...</li>
+
+<li>Our...</li>
+
+<li>Their...</li>
+
+</ul>
+
+<div class="example">
+
+<strong>Example:</strong>
+
+<br><br>
+
+This is my family.
+
+My father is a teacher.
+
+My mother is a nurse.
+
+I have one brother.
+
+His name is John.
+
+I have one sister.
+
+Her name is Anna.
+
+We live in our house together.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="quiz" class="card">
+
+<h2>🎯 10-Question Quiz</h2>
+
+<p>
+Choose the best answer.
+</p>
+
+<form id="quizForm">
+
+
+<div class="quiz-question">
+
+<p>1. What is "father"?</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q1" value="a">
+Pai
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+Mãe
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+Irmão
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>2. Complete: This is ______ mother.</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q2" value="a">
+my
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+his
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+their
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>3. Complete: He loves ______ family.</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q3" value="a">
+her
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+his
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+our
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>4. Complete: She loves ______ family.</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q4" value="a">
+his
+</label>
+
+<label>
+<input type="radio" name="q4" value="b">
+her
+</label>
+
+<label>
+<input type="radio" name="q4" value="c">
+their
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>5. What is "sister"?</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q5" value="a">
+Irmã
+</label>
+
+<label>
+<input type="radio" name="q5" value="b">
+Tia
+</label>
+
+<label>
+<input type="radio" name="q5" value="c">
+Avó
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>6. Complete: We love ______ family.</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q6" value="a">
+our
+</label>
+
+<label>
+<input type="radio" name="q6" value="b">
+his
+</label>
+
+<label>
+<input type="radio" name="q6" value="c">
+her
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>7. Complete: They love ______ children.</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q7" value="a">
+our
+</label>
+
+<label>
+<input type="radio" name="q7" value="b">
+their
+</label>
+
+<label>
+<input type="radio" name="q7" value="c">
+his
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>8. What is "brother"?</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q8" value="a">
+Irmão
+</label>
+
+<label>
+<input type="radio" name="q8" value="b">
+Filho
+</label>
+
+<label>
+<input type="radio" name="q8" value="c">
+Pai
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>9. Complete: What is ______ father's name?</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q9" value="a">
+your
+</label>
+
+<label>
+<input type="radio" name="q9" value="b">
+her
+</label>
+
+<label>
+<input type="radio" name="q9" value="c">
+our
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>10. Choose the correct sentence.</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q10" value="a">
+This is my family.
+</label>
+
+<label>
+<input type="radio" name="q10" value="b">
+This is me family.
+</label>
+
+<label>
+<input type="radio" name="q10" value="c">
+This my is family.
+</label>
+
+</div>
+
+</div>
+
+
+<button
+type="button"
+class="quiz-submit"
+onclick="submitQuiz()">
+
+🎯 Submit Quiz
+
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</section>
+
+
+<section id="review" class="card">
+
+<h2>🔄 Daily Review</h2>
+
+<p>
+Review the most important points from Lesson 9.
+</p>
+
+<div class="review-grid">
+
+<div class="review-item">
+👨 <strong>Father</strong> = Pai
+</div>
+
+<div class="review-item">
+👩 <strong>Mother</strong> = Mãe
+</div>
+
+<div class="review-item">
+👦 <strong>Brother</strong> = Irmão
+</div>
+
+<div class="review-item">
+👧 <strong>Sister</strong> = Irmã
+</div>
+
+<div class="review-item">
+👴 <strong>Grandfather</strong> = Avô
+</div>
+
+<div class="review-item">
+👵 <strong>Grandmother</strong> = Avó
+</div>
+
+<div class="review-item">
+🔑 <strong>My</strong> = meu/minha
+</div>
+
+<div class="review-item">
+🔑 <strong>Your</strong> = teu/tua
+</div>
+
+<div class="review-item">
+🔑 <strong>His</strong> = dele
+</div>
+
+<div class="review-item">
+🔑 <strong>Her</strong> = dela
+</div>
+
+<div class="review-item">
+🔑 <strong>Our</strong> = nosso/nossa
+</div>
+
+<div class="review-item">
+🔑 <strong>Their</strong> = deles/delas
+</div>
+
+</div>
+
+<br>
+
+<h3>⭐ Key Sentences</h3>
+
+<p>This is my family.</p>
+
+<p>My father is a teacher.</p>
+
+<p>Her sister is a student.</p>
+
+<p>His brother is a doctor.</p>
+
+<p>This is our house.</p>
+
+<p>They love their children.</p>
+
+<br>
+
+<button class="listen-btn"
+onclick="speak('This is my family. My father is a teacher. Her sister is a student. His brother is a doctor. This is our house. They love their children.')">
+
+🔊 Listen
+
+</button>
+
+</section>
+
+
+<section class="card complete-box">
+
+<h2>🏆 Lesson 9 Complete</h2>
+
+<p>
+Finished all the activities? Save your lesson progress.
+</p>
+
+<button class="complete-btn"
+onclick="completeLesson()">
+
+✅ Complete Lesson 9
+
+</button>
+
+<div id="completeMessage">
+🎉 Lesson 9 completed successfully!
+</div>
+
+</section>
+
+
+<div class="page-navigation">
+
+<a href="lesson8.html">
+← Previous Lesson
+</a>
+
+<a href="lesson10.html">
+Next Lesson →
+</a>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p>
+Day 9 / Lesson 9
+</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+if(!("speechSynthesis" in window)){
+
+alert("Audio is not supported by this browser.");
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+speech.rate=.88;
+speech.pitch=1;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+function speakConversation(){
+
+speak(
+"Maria: Hi, Daniel! Tell me about your family. "+
+"Daniel: Sure. I have a small family. "+
+"Maria: How many people are in your family? "+
+"Daniel: There are four people in my family. "+
+"Maria: Who are they? "+
+"Daniel: My father, my mother, my sister and me. "+
+"Maria: What is your father's name? "+
+"Daniel: His name is John. "+
+"Maria: And what is your mother's name? "+
+"Daniel: Her name is Anna. "+
+"Maria: Do you have a sister? "+
+"Daniel: Yes. Her name is Lucy. "+
+"Maria: How old is she? "+
+"Daniel: She is twelve years old. "+
+"Maria: That's nice! I have two brothers. "+
+"Daniel: Really? What are their names? "+
+"Maria: Their names are Peter and James."
+);
+
+}
+
+
+function checkAnswer(correct,id){
+
+const answer =
+document.getElementById(id);
+
+answer.style.display="block";
+
+if(correct){
+
+answer.className="answer correct";
+
+answer.textContent="✅ Correct! Well done.";
+
+}else{
+
+answer.className="answer wrong";
+
+answer.textContent="❌ Try again.";
+
+}
+
+}
+
+
+function activityAnswer(message){
+
+alert("💡 "+message);
+
+}
+
+
+function submitQuiz(){
+
+const answers={
+
+q1:"a",
+q2:"a",
+q3:"b",
+q4:"b",
+q5:"a",
+q6:"a",
+q7:"b",
+q8:"a",
+q9:"a",
+q10:"a"
+
+};
+
+let score=0;
+
+for(let question in answers){
+
+const selected =
+document.querySelector(
+'input[name="'+question+'"]:checked'
+);
+
+if(
+selected &&
+selected.value===answers[question]
+){
+
+score++;
+
+}
+
+}
+
+const percentage=score*10;
+
+const result =
+document.getElementById("quizResult");
+
+result.style.display="block";
+
+result.innerHTML=
+"🎯 Your Score: "+
+score+
+"/10 ("+
+percentage+
+"%)<br><br>"+
+(
+percentage>=70
+?
+"🏆 Excellent! Keep learning!"
+:
+"📚 Keep practicing and try again!"
+);
+
+localStorage.setItem(
+"lesson9Score",
+percentage
+);
+
+}
+
+
+function completeLesson(){
+
+const message =
+document.getElementById("completeMessage");
+
+message.style.display="block";
+
+let completed =
+JSON.parse(
+localStorage.getItem("completedLessons")
+)||[];
+
+if(!completed.includes(9)){
+
+completed.push(9);
+
+}
+
+localStorage.setItem(
+"completedLessons",
+JSON.stringify(completed)
+);
+
+updateProgress();
+
+}
+
+
+function updateProgress(){
+
+const completed =
+JSON.parse(
+localStorage.getItem("completedLessons")
+)||[];
+
+const complete =
+completed.includes(9);
+
+const percentage =
+complete ? 100 : 0;
+
+document.getElementById(
+"progressFill"
+).style.width=
+percentage+"%";
+
+document.getElementById(
+"progressText"
+).textContent=
+percentage+"%";
+
+}
+
+
+updateProgress();
+
+</script>
+
+</body>
+
+</html>

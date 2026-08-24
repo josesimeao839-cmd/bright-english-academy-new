@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Bright English Academy - Day 3 Lesson 3 - Numbers">
+
+<title>Lesson 3 — Numbers | Bright English Academy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#17233c;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 18px 60px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:24px;
+    box-shadow:0 5px 22px rgba(20,53,100,.08);
+    border:1px solid #e2eaf4;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+}
+
+.hero h1{
+    color:white;
+    font-size:34px;
+    margin-top:0;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.day-badge{
+    display:inline-block;
+    background:#ffd34d;
+    color:#17233c;
+    padding:7px 13px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.progress-area{
+    margin-top:20px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+    background:rgba(255,255,255,.3);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#ffd34d;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.lesson-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:24px;
+}
+
+.lesson-nav a{
+    background:#eaf3ff;
+    color:#0b4f9c;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+h2{
+    color:#0b4f9c;
+    font-size:26px;
+    margin-top:0;
+}
+
+h3{
+    color:#0b4f9c;
+}
+
+.objective-grid,
+.vocabulary-grid,
+.number-grid,
+.review-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.objective{
+    background:#f5f9ff;
+    padding:18px;
+    border-radius:12px;
+    border-left:5px solid #0b4f9c;
+}
+
+.objective strong{
+    display:block;
+    color:#0b4f9c;
+    margin-bottom:5px;
+}
+
+.word-card{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:18px;
+    border-radius:12px;
+}
+
+.word{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.translation{
+    color:#64748b;
+    margin:5px 0 12px;
+}
+
+.listen-btn{
+    border:none;
+    background:#ffd34d;
+    color:#17233c;
+    padding:9px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.listen-btn:hover{
+    background:#f2bf1f;
+}
+
+.number-card{
+    background:#f5f9ff;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #dce7f4;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+
+.number{
+    font-size:20px;
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.grammar-box{
+    background:#f5f9ff;
+    border-left:5px solid #0b4f9c;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+.example{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    margin-top:12px;
+}
+
+.english{
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.dialogue{
+    background:#f7f9fc;
+    padding:20px;
+    border-radius:14px;
+}
+
+.dialogue p{
+    margin:10px 0;
+}
+
+.jose{
+    color:#0b4f9c;
+    font-weight:bold;
+}
+
+.maria{
+    color:#087f54;
+    font-weight:bold;
+}
+
+.exercise{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+}
+
+.options button{
+    border:1px solid #cdd9e8;
+    background:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.options button:hover{
+    background:#eaf3ff;
+}
+
+.answer{
+    display:none;
+    margin-top:12px;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#e8f7ee;
+    color:#168348;
+}
+
+.wrong{
+    background:#fff0f0;
+    color:#c62828;
+}
+
+.activity{
+    background:#fffaf0;
+    border:1px solid #f2dfaa;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.activity button{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:10px 17px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.challenge{
+    background:linear-gradient(135deg,#eef6ff,#f7fbff);
+    border:1px solid #d8e8f8;
+    padding:22px;
+    border-radius:14px;
+}
+
+.challenge li{
+    margin-bottom:8px;
+}
+
+.quiz-question{
+    padding:18px;
+    border-bottom:1px solid #e3e9f1;
+}
+
+.quiz-question p{
+    font-weight:bold;
+}
+
+.quiz-options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.quiz-options label{
+    background:#f7faff;
+    padding:10px;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.quiz-options label:hover{
+    background:#eaf3ff;
+}
+
+.quiz-submit{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:13px 24px;
+    border-radius:9px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+#quizResult{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    background:#eaf7ef;
+    color:#147844;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.review-item{
+    background:#f5f9ff;
+    padding:13px;
+    border-radius:9px;
+}
+
+.complete-box{
+    text-align:center;
+}
+
+.complete-btn{
+    border:none;
+    background:#168348;
+    color:white;
+    padding:14px 25px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#completeMessage{
+    display:none;
+    margin-top:15px;
+    color:#168348;
+    font-weight:bold;
+}
+
+.page-navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:25px;
+}
+
+.page-navigation a{
+    background:#0b4f9c;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+footer{
+    background:#17233c;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:#58c7ff;
+}
+
+@media(max-width:700px){
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .objective-grid,
+    .vocabulary-grid,
+    .number-grid,
+    .review-list{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .card{
+        padding:21px;
+    }
+
+    .number-card{
+        align-items:flex-start;
+    }
+
+    .page-navigation{
+        flex-direction:column;
+    }
+
+    .page-navigation a{
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a href="beginner1.html" class="logo">
+📚 Bright English Academy
+</a>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="beginner1.html">Course</a>
+
+<a href="student-login.html">Login</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<section class="card hero">
+
+<span class="day-badge">
+📚 Day 3 / Lesson 3
+</span>
+
+<h1>
+🔢 Numbers
+</h1>
+
+<p>
+Learn numbers in English, talk about quantities, ages, prices and phone numbers.
+</p>
+
+<div class="progress-area">
+
+<div class="progress-title">
+
+<span>Lesson Progress</span>
+
+<span id="progressText">0%</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div id="progressFill"
+     class="progress-fill">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="lesson-nav">
+
+<a href="#objectives">Objectives</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#numbers">Numbers</a>
+<a href="#grammar">Grammar</a>
+<a href="#pronunciation">Pronunciation</a>
+<a href="#conversation">Conversation</a>
+<a href="#exercises">Exercises</a>
+<a href="#activities">Activities</a>
+<a href="#speaking">Speaking</a>
+<a href="#writing">Writing</a>
+<a href="#quiz">Quiz</a>
+<a href="#review">Review</a>
+
+</section>
+
+
+<section id="objectives" class="card">
+
+<h2>🎯 Lesson Objectives</h2>
+
+<p>
+By the end of this lesson, you will be able to:
+</p>
+
+<div class="objective-grid">
+
+<div class="objective">
+<strong>🔢 Numbers</strong>
+Say numbers from 0 to 100.
+</div>
+
+<div class="objective">
+<strong>🎂 Age</strong>
+Talk about your age.
+</div>
+
+<div class="objective">
+<strong>💰 Prices</strong>
+Understand simple prices.
+</div>
+
+<div class="objective">
+<strong>📱 Phone Numbers</strong>
+Say numbers in a phone number.
+</div>
+
+<div class="objective">
+<strong>👥 Quantities</strong>
+Talk about how many things there are.
+</div>
+
+<div class="objective">
+<strong>🗣️ Speaking</strong>
+Use numbers in everyday conversations.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="vocabulary" class="card">
+
+<h2>📚 Number Vocabulary</h2>
+
+<div class="vocabulary-grid">
+
+<div class="word-card">
+<div class="word">Number</div>
+<div class="translation">Número</div>
+<button class="listen-btn"
+onclick="speak('Number')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Zero</div>
+<div class="translation">Zero</div>
+<button class="listen-btn"
+onclick="speak('Zero')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">One</div>
+<div class="translation">Um</div>
+<button class="listen-btn"
+onclick="speak('One')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Two</div>
+<div class="translation">Dois</div>
+<button class="listen-btn"
+onclick="speak('Two')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Three</div>
+<div class="translation">Três</div>
+<button class="listen-btn"
+onclick="speak('Three')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Four</div>
+<div class="translation">Quatro</div>
+<button class="listen-btn"
+onclick="speak('Four')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Five</div>
+<div class="translation">Cinco</div>
+<button class="listen-btn"
+onclick="speak('Five')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Six</div>
+<div class="translation">Seis</div>
+<button class="listen-btn"
+onclick="speak('Six')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Seven</div>
+<div class="translation">Sete</div>
+<button class="listen-btn"
+onclick="speak('Seven')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Eight</div>
+<div class="translation">Oito</div>
+<button class="listen-btn"
+onclick="speak('Eight')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Nine</div>
+<div class="translation">Nove</div>
+<button class="listen-btn"
+onclick="speak('Nine')">
+🔊 Listen
+</button>
+</div>
+
+<div class="word-card">
+<div class="word">Ten</div>
+<div class="translation">Dez</div>
+<button class="listen-btn"
+onclick="speak('Ten')">
+🔊 Listen
+</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="numbers" class="card">
+
+<h2>🔢 Numbers 0–100</h2>
+
+<p>
+Listen and repeat the numbers.
+</p>
+
+<div class="number-grid">
+
+<div class="number-card">
+<span><strong>0</strong> — Zero</span>
+<button class="listen-btn"
+onclick="speak('Zero')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>1</strong> — One</span>
+<button class="listen-btn"
+onclick="speak('One')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>2</strong> — Two</span>
+<button class="listen-btn"
+onclick="speak('Two')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>3</strong> — Three</span>
+<button class="listen-btn"
+onclick="speak('Three')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>4</strong> — Four</span>
+<button class="listen-btn"
+onclick="speak('Four')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>5</strong> — Five</span>
+<button class="listen-btn"
+onclick="speak('Five')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>6</strong> — Six</span>
+<button class="listen-btn"
+onclick="speak('Six')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>7</strong> — Seven</span>
+<button class="listen-btn"
+onclick="speak('Seven')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>8</strong> — Eight</span>
+<button class="listen-btn"
+onclick="speak('Eight')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>9</strong> — Nine</span>
+<button class="listen-btn"
+onclick="speak('Nine')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>10</strong> — Ten</span>
+<button class="listen-btn"
+onclick="speak('Ten')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>11</strong> — Eleven</span>
+<button class="listen-btn"
+onclick="speak('Eleven')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>12</strong> — Twelve</span>
+<button class="listen-btn"
+onclick="speak('Twelve')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>13</strong> — Thirteen</span>
+<button class="listen-btn"
+onclick="speak('Thirteen')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>14</strong> — Fourteen</span>
+<button class="listen-btn"
+onclick="speak('Fourteen')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>15</strong> — Fifteen</span>
+<button class="listen-btn"
+onclick="speak('Fifteen')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>16</strong> — Sixteen</span>
+<button class="listen-btn"
+onclick="speak('Sixteen')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>17</strong> — Seventeen</span>
+<button class="listen-btn"
+onclick="speak('Seventeen')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>18</strong> — Eighteen</span>
+<button class="listen-btn"
+onclick="speak('Eighteen')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>19</strong> — Nineteen</span>
+<button class="listen-btn"
+onclick="speak('Nineteen')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>20</strong> — Twenty</span>
+<button class="listen-btn"
+onclick="speak('Twenty')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>30</strong> — Thirty</span>
+<button class="listen-btn"
+onclick="speak('Thirty')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>40</strong> — Forty</span>
+<button class="listen-btn"
+onclick="speak('Forty')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>50</strong> — Fifty</span>
+<button class="listen-btn"
+onclick="speak('Fifty')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>60</strong> — Sixty</span>
+<button class="listen-btn"
+onclick="speak('Sixty')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>70</strong> — Seventy</span>
+<button class="listen-btn"
+onclick="speak('Seventy')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>80</strong> — Eighty</span>
+<button class="listen-btn"
+onclick="speak('Eighty')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>90</strong> — Ninety</span>
+<button class="listen-btn"
+onclick="speak('Ninety')">🔊</button>
+</div>
+
+<div class="number-card">
+<span><strong>100</strong> — One hundred</span>
+<button class="listen-btn"
+onclick="speak('One hundred')">🔊</button>
+</div>
+
+</div>
+
+<br>
+
+<div class="example">
+
+<strong>Tip:</strong>
+
+<br>
+
+For numbers like 21, 35 and 48, combine the tens and the number.
+
+<br><br>
+
+<span class="english">
+21 = twenty-one
+</span>
+
+<br>
+
+<span class="english">
+35 = thirty-five
+</span>
+
+<br>
+
+<span class="english">
+48 = forty-eight
+</span>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Twenty-one. Thirty-five. Forty-eight.')">
+🔊 Listen
+</button>
+
+</div>
+
+</section>
+
+
+<section id="grammar" class="card">
+
+<h2>📚 Grammar — Using Numbers</h2>
+
+
+<div class="grammar-box">
+
+<h3>1️⃣ Talking About Age</h3>
+
+<p>
+Use:
+<strong>I am + number + years old.</strong>
+</p>
+
+<div class="example">
+
+<span class="english">
+I am twenty years old.
+</span>
+
+<br>
+
+Eu tenho vinte anos.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I am twenty years old.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>2️⃣ Asking About Age</h3>
+
+<div class="example">
+
+<span class="english">
+How old are you?
+</span>
+
+<br>
+
+Quantos anos tens?
+
+<br><br>
+
+<span class="english">
+I am eighteen years old.
+</span>
+
+<br>
+
+Eu tenho dezoito anos.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('How old are you? I am eighteen years old.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>3️⃣ Talking About Quantity</h3>
+
+<p>
+Use numbers to say how many things or people there are.
+</p>
+
+<div class="example">
+
+<span class="english">
+I have two brothers.
+</span>
+
+<br>
+
+Eu tenho dois irmãos.
+
+<br><br>
+
+<span class="english">
+There are five students.
+</span>
+
+<br>
+
+Há cinco estudantes.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I have two brothers. There are five students.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>4️⃣ Talking About Prices</h3>
+
+<div class="example">
+
+<span class="english">
+How much is it?
+</span>
+
+<br>
+
+Quanto custa?
+
+<br><br>
+
+<span class="english">
+It is ten dollars.
+</span>
+
+<br>
+
+Custa dez dólares.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('How much is it? It is ten dollars.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>5️⃣ Phone Numbers</h3>
+
+<p>
+Phone numbers are usually said one number at a time.
+</p>
+
+<div class="example">
+
+<span class="english">
+My phone number is 82 123 4567.
+</span>
+
+<br>
+
+O meu número de telefone é 82 123 4567.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('My phone number is eight two, one two three, four five six seven.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pronunciation" class="card">
+
+<h2>🔊 Pronunciation Practice</h2>
+
+<p>
+Listen and repeat.
+</p>
+
+
+<div class="example">
+
+<strong>
+One, two, three, four, five.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('One, two, three, four, five.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+Six, seven, eight, nine, ten.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Six, seven, eight, nine, ten.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+Twenty, thirty, forty, fifty.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Twenty, thirty, forty, fifty.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+Sixty, seventy, eighty, ninety, one hundred.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Sixty, seventy, eighty, ninety, one hundred.')">
+🔊 Listen
+</button>
+
+</div>
+
+</section>
+
+
+<section id="conversation" class="card">
+
+<h2>💬 Real-life Conversation</h2>
+
+<p>
+José and Maria are talking about numbers and personal information.
+</p>
+
+<div class="dialogue">
+
+<p>
+<span class="jose">José:</span>
+Hi, Maria! How old are you?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+I am eighteen years old. How old are you?
+</p>
+
+<p>
+<span class="jose">José:</span>
+I am twenty years old.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+How many brothers do you have?
+</p>
+
+<p>
+<span class="jose">José:</span>
+I have two brothers.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+And how many sisters do you have?
+</p>
+
+<p>
+<span class="jose">José:</span>
+I have one sister.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+That's nice! How many students are in your class?
+</p>
+
+<p>
+<span class="jose">José:</span>
+There are thirty students.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+Wow! That's a big class.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Yes, it is!
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+How much is this book?
+</p>
+
+<p>
+<span class="jose">José:</span>
+It is ten dollars.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+Okay. Thank you!
+</p>
+
+<p>
+<span class="jose">José:</span>
+You're welcome!
+</p>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speakConversation()">
+
+🔊 Listen to Conversation
+
+</button>
+
+</section>
+
+
+<section id="exercises" class="card">
+
+<h2>✏️ Exercises</h2>
+
+
+<div class="exercise">
+
+<strong>1. Choose the correct word:</strong>
+
+<p>
+7 = ?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer1')">
+Seven
+</button>
+
+<button onclick="checkAnswer(false,'answer1')">
+Seventeen
+</button>
+
+<button onclick="checkAnswer(false,'answer1')">
+Seventy
+</button>
+
+</div>
+
+<div id="answer1" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>2. Choose the correct number:</strong>
+
+<p>
+Twenty = ?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer2')">
+12
+</button>
+
+<button onclick="checkAnswer(true,'answer2')">
+20
+</button>
+
+<button onclick="checkAnswer(false,'answer2')">
+30
+</button>
+
+</div>
+
+<div id="answer2" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>3. Complete:</strong>
+
+<p>
+I am ___ years old.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer3')">
+eighteen
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+eighteenth
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+eighty
+</button>
+
+</div>
+
+<div id="answer3" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>4. Choose the correct question:</strong>
+
+<p>
+You want to ask someone's age.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer4')">
+How old are you?
+</button>
+
+<button onclick="checkAnswer(false,'answer4')">
+How many are you?
+</button>
+
+<button onclick="checkAnswer(false,'answer4')">
+How much are you?
+</button>
+
+</div>
+
+<div id="answer4" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>5. Choose the correct translation:</strong>
+
+<p>
+"Thirty students"
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer5')">
+Trinta estudantes
+</button>
+
+<button onclick="checkAnswer(false,'answer5')">
+Treze estudantes
+</button>
+
+<button onclick="checkAnswer(false,'answer5')">
+Três estudantes
+</button>
+
+</div>
+
+<div id="answer5" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>6. Complete:</strong>
+
+<p>
+I have ___ brothers.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer6')">
+two
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+second
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+twenty
+</button>
+
+</div>
+
+<div id="answer6" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>7. Choose:</strong>
+
+<p>
+100 = ?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer7')">
+One thousand
+</button>
+
+<button onclick="checkAnswer(true,'answer7')">
+One hundred
+</button>
+
+<button onclick="checkAnswer(false,'answer7')">
+Ten hundred
+</button>
+
+</div>
+
+<div id="answer7" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>8. Complete:</strong>
+
+<p>
+How ___ is it?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer8')">
+many
+</button>
+
+<button onclick="checkAnswer(true,'answer8')">
+much
+</button>
+
+<button onclick="checkAnswer(false,'answer8')">
+old
+</button>
+
+</div>
+
+<div id="answer8" class="answer"></div>
+
+</div>
+
+</section>
+
+
+<section id="activities" class="card">
+
+<h2>🧩 Interactive Activities</h2>
+
+
+<div class="activity">
+
+<h3>Activity 1</h3>
+
+<p>
+What is <strong>15</strong> in English?
+</p>
+
+<button onclick="activityAnswer('Fifteen')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 2</h3>
+
+<p>
+What is <strong>40</strong> in English?
+</p>
+
+<button onclick="activityAnswer('Forty')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 3</h3>
+
+<p>
+Build the sentence:
+</p>
+
+<p>
+<strong>
+am / twenty / I / years / old
+</strong>
+</p>
+
+<button onclick="activityAnswer('Correct sentence: I am twenty years old.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 4</h3>
+
+<p>
+Build the question:
+</p>
+
+<p>
+<strong>
+old / are / How / you?
+</strong>
+</p>
+
+<button onclick="activityAnswer('Correct question: How old are you?')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 5</h3>
+
+<p>
+How many fingers do you have on one hand?
+</p>
+
+<button onclick="activityAnswer('Five fingers.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 6</h3>
+
+<p>
+What number comes after ninety-nine?
+</p>
+
+<button onclick="activityAnswer('One hundred.')">
+Check
+</button>
+
+</div>
+
+</section>
+
+
+<section id="speaking" class="card">
+
+<h2>🗣️ Speaking Challenge</h2>
+
+<div class="challenge">
+
+<h3>🎤 Talk About Numbers</h3>
+
+<p>
+Speak for 30–60 seconds.
+</p>
+
+<p>
+Try to answer:
+</p>
+
+<ul>
+
+<li>How old are you?</li>
+
+<li>How many brothers do you have?</li>
+
+<li>How many sisters do you have?</li>
+
+<li>How many students are in your class?</li>
+
+<li>What is your phone number?</li>
+
+<li>How much is a book?</li>
+
+</ul>
+
+<button class="listen-btn"
+onclick="speak('I am twenty years old. I have two brothers and one sister. There are thirty students in my class. My phone number is eight two, one two three, four five six seven. A book is ten dollars.')">
+
+🔊 Hear a Model
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="writing" class="card">
+
+<h2>✍️ Writing Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Write 6–8 sentences using numbers.
+</p>
+
+<p>
+Try to include:
+</p>
+
+<ul>
+
+<li>Your age</li>
+
+<li>Number of brothers</li>
+
+<li>Number of sisters</li>
+
+<li>Number of students in your class</li>
+
+<li>A phone number</li>
+
+<li>A price</li>
+
+</ul>
+
+<div class="example">
+
+<strong>Example:</strong>
+
+<br><br>
+
+I am twenty years old.
+
+I have two brothers.
+
+I have one sister.
+
+There are thirty students in my class.
+
+My phone number is 82 123 4567.
+
+My English book is ten dollars.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="quiz" class="card">
+
+<h2>🎯 10-Question Quiz</h2>
+
+<p>
+Choose the best answer.
+</p>
+
+<form id="quizForm">
+
+
+<div class="quiz-question">
+
+<p>
+1. What is 10 in English?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q1" value="a">
+Ten
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+Twenty
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+Twelve
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+2. What is 20 in English?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q2" value="a">
+Twelve
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+Twenty
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+Thirty
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+3. What is 50 in English?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q3" value="a">
+Fifteen
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+Fifty
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+Five
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+4. What is 100 in English?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q4" value="a">
+One hundred
+</label>
+
+<label>
+<input type="radio" name="q4" value="b">
+One thousand
+</label>
+
+<label>
+<input type="radio" name="q4" value="c">
+Ten hundred
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+5. Choose the correct sentence.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q5" value="a">
+I am twenty years old.
+</label>
+
+<label>
+<input type="radio" name="q5" value="b">
+I have twenty old.
+</label>
+
+<label>
+<input type="radio" name="q5" value="c">
+I twenty years am.
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+6. How do you ask someone's age?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q6" value="a">
+How many are you?
+</label>
+
+<label>
+<input type="radio" name="q6" value="b">
+How old are you?
+</label>
+
+<label>
+<input type="radio" name="q6" value="c">
+How much are you?
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+7. Choose the correct sentence.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q7" value="a">
+I have two brothers.
+</label>
+
+<label>
+<input type="radio" name="q7" value="b">
+I have second brothers.
+</label>
+
+<label>
+<input type="radio" name="q7" value="c">
+I two brothers have.
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+8. Complete: How ___ is it?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q8" value="a">
+old
+</label>
+
+<label>
+<input type="radio" name="q8" value="b">
+many
+</label>
+
+<label>
+<input type="radio" name="q8" value="c">
+much
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+9. What is 40 in English?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q9" value="a">
+Fourteen
+</label>
+
+<label>
+<input type="radio" name="q9" value="b">
+Forty
+</label>
+
+<label>
+<input type="radio" name="q9" value="c">
+Four
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+10. What comes after ninety-nine?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q10" value="a">
+Ninety
+</label>
+
+<label>
+<input type="radio" name="q10" value="b">
+One hundred
+</label>
+
+<label>
+<input type="radio" name="q10" value="c">
+One thousand
+</label>
+
+</div>
+
+</div>
+
+
+<button
+type="button"
+class="quiz-submit"
+onclick="submitQuiz()">
+
+🎯 Submit Quiz
+
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</section>
+
+
+<section id="review" class="card">
+
+<h2>🔄 Daily Review</h2>
+
+<p>
+Review the most important points from Lesson 3.
+</p>
+
+<div class="review-list">
+
+<div class="review-item">
+🔢 <strong>Number</strong> = Número
+</div>
+
+<div class="review-item">
+0️⃣ <strong>Zero</strong> = Zero
+</div>
+
+<div class="review-item">
+1️⃣ <strong>One</strong> = Um
+</div>
+
+<div class="review-item">
+2️⃣ <strong>Two</strong> = Dois
+</div>
+
+<div class="review-item">
+🔟 <strong>Ten</strong> = Dez
+</div>
+
+<div class="review-item">
+2️⃣0️⃣ <strong>Twenty</strong> = Vinte
+</div>
+
+<div class="review-item">
+5️⃣0️⃣ <strong>Fifty</strong> = Cinquenta
+</div>
+
+<div class="review-item">
+💯 <strong>One hundred</strong> = Cem
+</div>
+
+</div>
+
+<br>
+
+<h3>⭐ Key Sentences</h3>
+
+<p>
+I am twenty years old.
+</p>
+
+<p>
+How old are you?
+</p>
+
+<p>
+I have two brothers.
+</p>
+
+<p>
+There are thirty students.
+</p>
+
+<p>
+How much is it?
+</p>
+
+<p>
+It is ten dollars.
+</p>
+
+<br>
+
+<button
+class="listen-btn"
+onclick="speak('I am twenty years old. How old are you? I have two brothers. There are thirty students. How much is it? It is ten dollars.')">
+
+🔊 Listen
+
+</button>
+
+</section>
+
+
+<section class="card complete-box">
+
+<h2>
+🏆 Lesson 3 Complete
+</h2>
+
+<p>
+Finished all the activities?
+Save your lesson progress.
+</p>
+
+<button
+class="complete-btn"
+onclick="completeLesson()">
+
+✅ Complete Lesson 3
+
+</button>
+
+<div id="completeMessage">
+
+🎉 Lesson 3 completed successfully!
+
+</div>
+
+</section>
+
+
+<div class="page-navigation">
+
+<a href="lesson2.html">
+← Previous Lesson
+</a>
+
+<a href="lesson4.html">
+Next Lesson →
+</a>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p>
+Day 3 / Lesson 3
+</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+    if(!("speechSynthesis" in window)){
+
+        alert(
+            "Audio is not supported by this browser."
+        );
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang="en-US";
+    speech.rate=0.88;
+    speech.pitch=1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+
+function speakConversation(){
+
+    speak(
+
+        "José: Hi, Maria! How old are you? " +
+
+        "Maria: I am eighteen years old. How old are you? " +
+
+        "José: I am twenty years old. " +
+
+        "Maria: How many brothers do you have? " +
+
+        "José: I have two brothers. " +
+
+        "Maria: And how many sisters do you have? " +
+
+        "José: I have one sister. " +
+
+        "Maria: That's nice! How many students are in your class? " +
+
+        "José: There are thirty students. " +
+
+        "Maria: Wow! That's a big class. " +
+
+        "José: Yes, it is! " +
+
+        "Maria: How much is this book? " +
+
+        "José: It is ten dollars. " +
+
+        "Maria: Okay. Thank you! " +
+
+        "José: You're welcome!"
+
+    );
+
+}
+
+
+function checkAnswer(correct,answerId){
+
+    const answer=
+        document.getElementById(answerId);
+
+    answer.style.display="block";
+
+    if(correct){
+
+        answer.className="answer correct";
+
+        answer.textContent=
+            "✅ Correct! Well done.";
+
+    }else{
+
+        answer.className="answer wrong";
+
+        answer.textContent=
+            "❌ Try again.";
+
+    }
+
+}
+
+
+function activityAnswer(message){
+
+    alert("💡 "+message);
+
+}
+
+
+function submitQuiz(){
+
+    const answers={
+
+        q1:"a",
+        q2:"b",
+        q3:"b",
+        q4:"a",
+        q5:"a",
+        q6:"b",
+        q7:"a",
+        q8:"c",
+        q9:"b",
+        q10:"b"
+
+    };
+
+    let score=0;
+
+    for(let question in answers){
+
+        const selected=
+            document.querySelector(
+                'input[name="'+
+                question+
+                '"]:checked'
+            );
+
+        if(
+            selected &&
+            selected.value===
+            answers[question]
+        ){
+
+            score++;
+
+        }
+
+    }
+
+    const percentage=score*10;
+
+    const result=
+        document.getElementById("quizResult");
+
+    result.style.display="block";
+
+    result.innerHTML=
+
+        "🎯 Your Score: "+
+        score+
+        "/10 ("+
+        percentage+
+        "%)<br><br>"+
+        (
+            percentage>=70
+            ?
+            "🏆 Excellent! Keep learning!"
+            :
+            "📚 Keep practicing and try again!"
+        );
+
+    localStorage.setItem(
+        "lesson3Score",
+        percentage
+    );
+
+}
+
+
+function completeLesson(){
+
+    const message=
+        document.getElementById(
+            "completeMessage"
+        );
+
+    message.style.display="block";
+
+    let completed=
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+    if(!completed.includes(3)){
+
+        completed.push(3);
+
+    }
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+    updateProgress();
+
+}
+
+
+function updateProgress(){
+
+    const completed=
+        JSON.parse(
+            localStorage.getItem(
+                "completedLessons"
+            )
+        ) || [];
+
+    const isComplete=
+        completed.includes(3);
+
+    const percentage=
+        isComplete ? 100 : 0;
+
+    document.getElementById(
+        "progressFill"
+    ).style.width=
+        percentage+"%";
+
+    document.getElementById(
+        "progressText"
+    ).textContent=
+        percentage+"%";
+
+}
+
+
+updateProgress();
+
+
+window.addEventListener(
+    "beforeunload",
+    function(){
+
+        if("speechSynthesis" in window){
+
+            window.speechSynthesis.cancel();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Student Registration - Bright English Academy">
+
+<title>Student Registration | Bright English Academy</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8ff;
+    color: #17233c;
+    min-height: 100vh;
+}
+
+/* NAVIGATION */
+
+nav {
+    background: white;
+    box-shadow: 0 3px 18px rgba(0,0,0,.08);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #0757c9;
+
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #0757c9,
+        #13a6e8
+    );
+
+    color: white;
+    font-size: 22px;
+}
+
+.back {
+    text-decoration: none;
+    color: #0757c9;
+    font-weight: bold;
+}
+
+/* MAIN */
+
+main {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 520px;
+
+    background: white;
+
+    padding: 38px;
+
+    border-radius: 22px;
+
+    border: 1px solid #e0e7f1;
+
+    box-shadow:
+        0 15px 45px
+        rgba(20,53,100,.10);
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 20px;
+
+    background: #e8f5ff;
+
+    font-size: 35px;
+}
+
+h1 {
+    text-align: center;
+    color: #0757c9;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 28px;
+}
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #ccd7e7;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: white;
+}
+
+input:focus,
+select:focus {
+    border-color: #0757c9;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(7,87,201,.10);
+}
+
+/* PASSWORD */
+
+.password-box {
+    position: relative;
+    width: 100%;
+}
+
+.password-box input {
+    padding-right: 55px;
+}
+
+.show-password {
+    position: absolute;
+
+    right: 8px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    padding: 5px;
+
+    line-height: 1;
+}
+
+.password-note {
+    font-size: 12px;
+    color: #718096;
+    margin-top: 5px;
+}
+
+/* BUTTON */
+
+.register-btn {
+    width: 100%;
+
+    border: 0;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0757c9,
+            #13a6e8
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+}
+
+.register-btn:hover {
+    opacity: .92;
+}
+
+/* MESSAGE */
+
+.message {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-weight: bold;
+}
+
+.success {
+    background: #e9f8ef;
+    color: #138a4b;
+    border: 1px solid #b9e2ca;
+}
+
+.error {
+    background: #fff0f0;
+    color: #c62828;
+    border: 1px solid #f0bcbc;
+}
+
+/* LINKS */
+
+.login-link {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #64748b;
+}
+
+.login-link a {
+    color: #0757c9;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.security {
+    margin-top: 25px;
+
+    padding: 16px;
+
+    border-radius: 12px;
+
+    background: #f4f8ff;
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+    background: #17233c;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px 15px;
+}
+
+footer strong {
+    color: #58c7ff;
+}
+
+.creator {
+    margin-top: 7px;
+}
+
+/* MOBILE */
+
+@media(max-width:550px) {
+
+    .register-card {
+        padding: 25px 20px;
+    }
+
+    .nav-container {
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="nav-container">
+
+<a href="index.html"
+   class="logo">
+
+<span class="logo-icon">
+📚
+</span>
+
+Bright English Academy
+
+</a>
+
+<a href="index.html"
+   class="back">
+
+← Home
+
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- REGISTRATION -->
+
+<main>
+
+<div class="register-card">
+
+
+<div class="icon">
+👨‍🎓
+</div>
+
+
+<h1>
+Create Student Account
+</h1>
+
+
+<p class="subtitle">
+
+Join Bright English Academy
+and start your English learning journey.
+
+</p>
+
+
+<form id="registerForm">
+
+
+<div class="form-group">
+
+<label for="fullname">
+Full Name
+</label>
+
+<input
+type="text"
+id="fullname"
+placeholder="Enter your full name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="email">
+Email Address
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="username">
+Username
+</label>
+
+<input
+type="text"
+id="username"
+placeholder="Choose a username"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="password">
+Password
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="password"
+placeholder="Create a password"
+required
+minlength="6">
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('password', this)"
+title="Show password">
+
+👁️
+
+</button>
+
+</div>
+
+<div class="password-note">
+
+Password must contain at least 6 characters.
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="confirmPassword">
+Confirm Password
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="confirmPassword"
+placeholder="Repeat your password"
+required>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('confirmPassword', this)"
+title="Show password">
+
+👁️
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="course">
+Choose Course
+</label>
+
+<select id="course"
+        required>
+
+<option value="">
+Select a course
+</option>
+
+<option value="English Beginner A1">
+🇬🇧 English Beginner A1
+</option>
+
+</select>
+
+</div>
+
+
+<button
+type="submit"
+class="register-btn">
+
+🚀 Create My Account
+
+</button>
+
+
+</form>
+
+
+<div id="message"
+     class="message">
+</div>
+
+
+<div class="login-link">
+
+Already have an account?
+
+<a href="student-login.html">
+Student Login
+</a>
+
+</div>
+
+
+<div class="security">
+
+🔐 Your account information will be
+connected to the student system.
+
+<br><br>
+
+📊 Your lessons, exercises and test
+results will be tracked in your student area.
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<strong>
+Bright English Academy
+</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p class="creator">
+
+👤 Created by
+<strong>
+José Simeão
+</strong>
+
+</p>
+
+</footer>
+
+
+<script>
+
+/* SHOW / HIDE PASSWORD */
+
+function togglePassword(inputId, button) {
+
+    const input =
+        document.getElementById(inputId);
+
+    if (input.type === "password") {
+
+        input.type = "text";
+
+        button.textContent = "🙈";
+
+        button.title = "Hide password";
+
+    } else {
+
+        input.type = "password";
+
+        button.textContent = "👁️";
+
+        button.title = "Show password";
+
+    }
+
+}
+
+
+/* REGISTRATION */
+
+const form =
+document.getElementById("registerForm");
+
+const message =
+document.getElementById("message");
+
+
+form.addEventListener(
+"submit",
+function(event) {
+
+    event.preventDefault();
+
+
+    const fullname =
+        document.getElementById("fullname")
+        .value.trim();
+
+    const email =
+        document.getElementById("email")
+        .value.trim();
+
+    const username =
+        document.getElementById("username")
+        .value.trim();
+
+    const password =
+        document.getElementById("password")
+        .value;
+
+    const confirmPassword =
+        document.getElementById("confirmPassword")
+        .value;
+
+    const course =
+        document.getElementById("course")
+        .value;
+
+
+    message.className = "message";
+
+
+    if (password.length < 6) {
+
+        message.classList.add("error");
+
+        message.textContent =
+        "❌ Password must contain at least 6 characters.";
+
+        message.style.display = "block";
+
+        return;
+    }
+
+
+    if (password !== confirmPassword) {
+
+        message.classList.add("error");
+
+        message.textContent =
+        "❌ Passwords do not match.";
+
+        message.style.display = "block";
+
+        return;
+    }
+
+
+    if (!course) {
+
+        message.classList.add("error");
+
+        message.textContent =
+        "❌ Please select a course.";
+
+        message.style.display = "block";
+
+        return;
+    }
+
+
+    const student = {
+
+        fullname: fullname,
+
+        email: email,
+
+        username: username,
+
+        password: password,
+
+        course: course,
+
+        createdAt:
+            new Date().toISOString(),
+
+        progress: 0,
+
+        completedLessons: [],
+
+        scores: []
+
+    };
+
+
+    localStorage.setItem(
+        "brightAcademyStudent",
+        JSON.stringify(student)
+    );
+
+
+    message.classList.add("success");
+
+    message.textContent =
+        "✅ Account created successfully!";
+
+    message.style.display = "block";
+
+
+    form.reset();
+
+
+    setTimeout(
+        function() {
+
+            window.location.href =
+                "student-login.html";
+
+        },
+        1200
+    );
+
+});
+
+</script>
+
+
+</body>
+
+</html>

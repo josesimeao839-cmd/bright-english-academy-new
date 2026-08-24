@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 10 — Review 1 | Bright English Academy</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#17233c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#0b4f9c,#087fc1);
+color:white;
+padding:18px 20px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+color:white;
+text-decoration:none;
+font-size:21px;
+font-weight:800;
+}
+
+nav{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:8px 10px;
+border-radius:7px;
+font-weight:bold;
+}
+
+nav a:hover{
+background:rgba(255,255,255,.15);
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px 18px 60px;
+}
+
+.card{
+background:white;
+padding:28px;
+border-radius:18px;
+margin-bottom:24px;
+box-shadow:0 5px 22px rgba(20,53,100,.08);
+border:1px solid #e2eaf4;
+}
+
+.hero{
+background:linear-gradient(135deg,#0b4f9c,#087fc1);
+color:white;
+}
+
+.hero h1{
+color:white;
+font-size:34px;
+margin:8px 0;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.badge{
+display:inline-block;
+background:#ffd34d;
+color:#17233c;
+padding:7px 14px;
+border-radius:20px;
+font-weight:bold;
+}
+
+.progress-title{
+display:flex;
+justify-content:space-between;
+font-weight:bold;
+margin-top:20px;
+}
+
+.progress-bar{
+height:12px;
+background:rgba(255,255,255,.3);
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+height:100%;
+width:0%;
+background:#ffd34d;
+transition:.4s;
+}
+
+.lesson-nav{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:24px;
+}
+
+.lesson-nav a{
+background:#eaf3ff;
+color:#0b4f9c;
+text-decoration:none;
+padding:8px 12px;
+border-radius:7px;
+font-weight:bold;
+font-size:14px;
+}
+
+h2{
+color:#0b4f9c;
+font-size:26px;
+margin-top:0;
+}
+
+h3{
+color:#0b4f9c;
+}
+
+.objective-grid,
+.vocab-grid,
+.review-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.objective,
+.vocab-card,
+.review-item{
+background:#f5f9ff;
+padding:18px;
+border-radius:12px;
+border-left:5px solid #0b4f9c;
+}
+
+.objective strong,
+.vocab-word{
+display:block;
+color:#0b4f9c;
+font-weight:bold;
+font-size:18px;
+}
+
+.translation{
+color:#64748b;
+margin:4px 0 10px;
+}
+
+.listen-btn{
+border:0;
+background:#ffd34d;
+color:#17233c;
+padding:9px 14px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.listen-btn:hover{
+background:#f2bf1f;
+}
+
+.grammar-box{
+background:#f5f9ff;
+border-left:5px solid #0b4f9c;
+padding:20px;
+border-radius:10px;
+margin-bottom:18px;
+}
+
+.example{
+background:white;
+padding:15px;
+border-radius:9px;
+margin-top:12px;
+}
+
+.english{
+font-weight:bold;
+color:#0b4f9c;
+}
+
+.table-wrap{
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border:1px solid #dfe7f0;
+text-align:left;
+}
+
+th{
+background:#0b4f9c;
+color:white;
+}
+
+tr:nth-child(even){
+background:#f7faff;
+}
+
+.dialogue{
+background:#f7f9fc;
+padding:20px;
+border-radius:14px;
+}
+
+.dialogue p{
+margin:10px 0;
+}
+
+.a{
+color:#0b4f9c;
+font-weight:bold;
+}
+
+.b{
+color:#087f54;
+font-weight:bold;
+}
+
+.exercise{
+background:#f8fbff;
+border:1px solid #dfe8f3;
+padding:20px;
+border-radius:12px;
+margin-bottom:18px;
+}
+
+.options{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:12px;
+}
+
+.options button{
+border:1px solid #cdd9e8;
+background:white;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.options button:hover{
+background:#eaf3ff;
+}
+
+.answer{
+display:none;
+margin-top:12px;
+padding:10px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.correct{
+display:block;
+background:#e8f7ee;
+color:#168348;
+}
+
+.wrong{
+display:block;
+background:#fff0f0;
+color:#c62828;
+}
+
+.challenge{
+background:linear-gradient(135deg,#eef6ff,#f7fbff);
+border:1px solid #d8e8f8;
+padding:22px;
+border-radius:14px;
+}
+
+.quiz-question{
+padding:18px;
+border-bottom:1px solid #e3e9f1;
+}
+
+.quiz-question p{
+font-weight:bold;
+}
+
+.quiz-options{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.quiz-options label{
+background:#f7faff;
+padding:10px;
+border-radius:7px;
+cursor:pointer;
+}
+
+.quiz-options label:hover{
+background:#eaf3ff;
+}
+
+.quiz-submit,
+.complete-btn{
+border:0;
+color:white;
+padding:13px 24px;
+border-radius:9px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
+
+.quiz-submit{
+background:#0b4f9c;
+}
+
+.complete-btn{
+background:#168348;
+}
+
+#quizResult{
+display:none;
+margin-top:20px;
+padding:18px;
+border-radius:12px;
+background:#eaf7ef;
+color:#147844;
+font-weight:bold;
+font-size:18px;
+}
+
+#completeMessage{
+display:none;
+margin-top:15px;
+color:#168348;
+font-weight:bold;
+}
+
+.key{
+background:#fffaf0;
+border:1px solid #f0dfaa;
+padding:18px;
+border-radius:12px;
+}
+
+.navigation{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-top:25px;
+}
+
+.navigation a{
+background:#0b4f9c;
+color:white;
+text-decoration:none;
+padding:12px 18px;
+border-radius:9px;
+font-weight:bold;
+}
+
+footer{
+background:#17233c;
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+footer strong{
+color:#58c7ff;
+}
+
+@media(max-width:700px){
+
+.header-container{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.objective-grid,
+.vocab-grid,
+.review-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.card{
+padding:21px;
+}
+
+.navigation{
+flex-direction:column;
+}
+
+.navigation a{
+text-align:center;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a href="beginner1.html" class="logo">
+📚 Bright English Academy
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="beginner1.html">Beginner A1</a>
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<section class="card hero">
+
+<span class="badge">📚 Day 10 / 30</span>
+
+<h1>🏆 Lesson 10 — Review 1</h1>
+
+<p>
+Review Lessons 1–9 and test your English before moving to the next stage.
+</p>
+
+<div class="progress-title">
+<span>Lesson Progress</span>
+<span id="progressText">0%</span>
+</div>
+
+<div class="progress-bar">
+<div id="progressFill" class="progress-fill"></div>
+</div>
+
+</section>
+
+<div class="lesson-nav">
+<a href="#objectives">Objectives</a>
+<a href="#learned">Review</a>
+<a href="#greetings">Greetings</a>
+<a href="#tobe">To Be</a>
+<a href="#family">Family</a>
+<a href="#colors">Colors</a>
+<a href="#thisthat">This/That</a>
+<a href="#routine">Routine</a>
+<a href="#exercises">Exercises</a>
+<a href="#conversation">Conversation</a>
+<a href="#speaking">Speaking</a>
+<a href="#writing">Writing</a>
+<a href="#quiz">Quiz</a>
+<a href="#review">Final Review</a>
+</div>
+
+<section id="objectives" class="card">
+
+<h2>🎯 Review Objectives</h2>
+
+<p>
+By the end of this review, you should be able to:
+</p>
+
+<div class="objective-grid">
+
+<div class="objective">
+<strong>👋 Introductions</strong>
+Introduce yourself in English.
+</div>
+
+<div class="objective">
+<strong>🎒 School</strong>
+Use basic classroom and school vocabulary.
+</div>
+
+<div class="objective">
+<strong>👨‍👩‍👧 Family</strong>
+Talk about your family and home.
+</div>
+
+<div class="objective">
+<strong>🌈 Colors</strong>
+Talk about colors and objects.
+</div>
+
+<div class="objective">
+<strong>👉 This / That</strong>
+Use this, that, these and those.
+</div>
+
+<div class="objective">
+<strong>⏰ Routines</strong>
+Talk about your daily routine.
+</div>
+
+<div class="objective">
+<strong>📚 Present Simple</strong>
+Use the Present Simple in basic sentences.
+</div>
+
+<div class="objective">
+<strong>💬 Questions</strong>
+Ask and answer simple questions.
+</div>
+
+</div>
+
+</section>
+
+<section id="learned" class="card">
+
+<h2>📚 1. What Have We Learned?</h2>
+
+<div class="vocab-grid">
+
+<div class="vocab-card">
+<span class="vocab-word">👋 Greetings</span>
+Hello<br>
+Good morning<br>
+Nice to meet you
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">🔤 Alphabet</span>
+Letters<br>
+Spelling<br>
+Names
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">🔢 Numbers</span>
+Numbers<br>
+Age<br>
+Phone numbers
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">📅 Dates</span>
+Days<br>
+Months<br>
+Dates
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">🌈 Colors</span>
+Red<br>
+Blue<br>
+Green<br>
+Yellow
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">👨‍👩‍👧 Family</span>
+Mother<br>
+Father<br>
+Brother<br>
+Sister
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">🏠 Home</span>
+House<br>
+Rooms<br>
+Furniture
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">🎒 School</span>
+Teacher<br>
+Student<br>
+Book<br>
+Classroom
+</div>
+
+<div class="vocab-card">
+<span class="vocab-word">⏰ Routines</span>
+Wake up<br>
+Study<br>
+Work<br>
+Sleep
+</div>
+
+</div>
+
+</section>
+
+<section id="greetings" class="card">
+
+<h2>👋 2. Greetings & Introductions Review</h2>
+
+<div class="grammar-box">
+
+<p>
+<strong>Hello!</strong><br>
+Olá!
+</p>
+
+<button class="listen-btn" onclick="speak('Hello!')">🔊 Listen</button>
+
+<p>
+<strong>Good morning!</strong><br>
+Bom dia!
+</p>
+
+<button class="listen-btn" onclick="speak('Good morning!')">🔊 Listen</button>
+
+<p>
+<strong>What's your name?</strong><br>
+Qual é o seu nome?
+</p>
+
+<button class="listen-btn" onclick="speak('What is your name?')">🔊 Listen</button>
+
+<p>
+<strong>My name is Mano.</strong><br>
+O meu nome é Mano.
+</p>
+
+<button class="listen-btn" onclick="speak('My name is Mano.')">🔊 Listen</button>
+
+<p>
+<strong>Nice to meet you.</strong><br>
+Prazer em conhecer-te.
+</p>
+
+<button class="listen-btn" onclick="speak('Nice to meet you.')">🔊 Listen</button>
+
+<p>
+<strong>How are you?</strong><br>
+Como estás?
+</p>
+
+<button class="listen-btn" onclick="speak('How are you?')">🔊 Listen</button>
+
+<p>
+<strong>I'm fine, thank you.</strong><br>
+Estou bem, obrigado(a).
+</p>
+
+<button class="listen-btn" onclick="speak('I am fine, thank you.')">🔊 Listen</button>
+
+</div>
+
+</section>
+
+<section id="tobe" class="card">
+
+<h2>📖 3. Grammar Review — Verb To Be</h2>
+
+<div class="grammar-box">
+
+<p><strong>I am</strong> a student.</p>
+<p><strong>You are</strong> my friend.</p>
+<p><strong>He is</strong> a teacher.</p>
+<p><strong>She is</strong> a student.</p>
+<p><strong>We are</strong> classmates.</p>
+<p><strong>They are</strong> students.</p>
+
+<button class="listen-btn"
+onclick="speak('I am a student. You are my friend. He is a teacher. She is a student. We are classmates. They are students.')">
+🔊 Listen </button>
+
+</div>
+
+<div class="key">
+
+<h3>Remember:</h3>
+
+<p>
+I → <strong>am</strong>
+</p>
+
+<p>
+You / We / They → <strong>are</strong>
+</p>
+
+<p>
+He / She / It → <strong>is</strong>
+</p>
+
+</div>
+
+</section>
+
+<section id="family" class="card">
+
+<h2>👨‍👩‍👧 4. Family Review</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>English</th>
+<th>Portuguese</th>
+</tr>
+
+<tr>
+<td>Mother</td>
+<td>Mãe</td>
+</tr>
+
+<tr>
+<td>Father</td>
+<td>Pai</td>
+</tr>
+
+<tr>
+<td>Brother</td>
+<td>Irmão</td>
+</tr>
+
+<tr>
+<td>Sister</td>
+<td>Irmã</td>
+</tr>
+
+<tr>
+<td>Son</td>
+<td>Filho</td>
+</tr>
+
+<tr>
+<td>Daughter</td>
+<td>Filha</td>
+</tr>
+
+<tr>
+<td>Parents</td>
+<td>Pais</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="grammar-box">
+
+<p>
+<strong>This is my mother.</strong><br>
+Her name is Maria.
+</p>
+
+<p>
+<strong>This is my brother.</strong><br>
+His name is John.
+</p>
+
+<button class="listen-btn"
+onclick="speak('This is my mother. Her name is Maria. This is my brother. His name is John.')">
+🔊 Listen </button>
+
+</div>
+
+</section>
+
+<section id="colors" class="card">
+
+<h2>🌈 5. Colors Review</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>English</th>
+<th>Portuguese</th>
+</tr>
+
+<tr><td>Red</td><td>Vermelho</td></tr>
+<tr><td>Blue</td><td>Azul</td></tr>
+<tr><td>Green</td><td>Verde</td></tr>
+<tr><td>Yellow</td><td>Amarelo</td></tr>
+<tr><td>Black</td><td>Preto</td></tr>
+<tr><td>White</td><td>Branco</td></tr>
+<tr><td>Orange</td><td>Laranja</td></tr>
+<tr><td>Purple</td><td>Roxo</td></tr>
+<tr><td>Pink</td><td>Rosa</td></tr>
+<tr><td>Brown</td><td>Castanho / Marrom</td></tr>
+
+</table>
+
+</div>
+
+<div class="grammar-box">
+
+<p>The car is black.</p>
+<p>The sky is blue.</p>
+<p>The grass is green.</p>
+
+<button class="listen-btn"
+onclick="speak('The car is black. The sky is blue. The grass is green.')">
+🔊 Listen </button>
+
+</div>
+
+</section>
+
+<section id="thisthat" class="card">
+
+<h2>👉 6. This, That, These & Those</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Word</th>
+<th>Use</th>
+<th>Example</th>
+</tr>
+
+<tr>
+<td>This</td>
+<td>Singular + near</td>
+<td>This is my book.</td>
+</tr>
+
+<tr>
+<td>That</td>
+<td>Singular + far</td>
+<td>That is the board.</td>
+</tr>
+
+<tr>
+<td>These</td>
+<td>Plural + near</td>
+<td>These are my pens.</td>
+</tr>
+
+<tr>
+<td>Those</td>
+<td>Plural + far</td>
+<td>Those are chairs.</td>
+</tr>
+
+</table>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speak('This is my book. That is the board. These are my pens. Those are chairs.')">
+🔊 Listen </button>
+
+</section>
+
+<section id="routine" class="card">
+
+<h2>⏰ 7. Grammar Review — Present Simple</h2>
+
+<p>
+We use the Present Simple for routines, habits and regular activities.
+</p>
+
+<div class="grammar-box">
+
+<p><strong>I study English.</strong></p>
+<p><strong>You study English.</strong></p>
+<p><strong>We study English.</strong></p>
+<p><strong>They study English.</strong></p>
+
+<br>
+
+<p><strong>He studies English.</strong></p>
+<p><strong>She studies English.</strong></p>
+
+<button class="listen-btn"
+onclick="speak('I study English. You study English. We study English. They study English. He studies English. She studies English.')">
+🔊 Listen </button>
+
+</div>
+
+<div class="key">
+
+<h3>⚠️ Remember the third person:</h3>
+
+<p>He <strong>works</strong>.</p>
+<p>She <strong>studies</strong>.</p>
+<p>He <strong>goes</strong> to school.</p>
+
+</div>
+
+<h2>🕐 Daily Routine Review</h2>
+
+<div class="grammar-box">
+
+<p>I wake up at 6 o'clock.</p>
+<p>I brush my teeth.</p>
+<p>I take a shower.</p>
+<p>I have breakfast.</p>
+<p>I go to school.</p>
+<p>I study English.</p>
+<p>I go home.</p>
+<p>I do my homework.</p>
+<p>I have dinner.</p>
+<p>I go to bed at 10 o'clock.</p>
+
+<button class="listen-btn"
+onclick="speak('I wake up at six o’clock. I brush my teeth. I take a shower. I have breakfast. I go to school. I study English. I go home. I do my homework. I have dinner. I go to bed at ten o’clock.')">
+🔊 Listen </button>
+
+</div>
+
+</section>
+
+<section id="exercises" class="card">
+
+<h2>✏️ 9. Exercises — Complete the Sentences</h2>
+
+<div class="exercise">
+
+<strong>1. I ___ a student.</strong>
+
+<div class="options">
+<button onclick="answer(true,'e1')">am</button>
+<button onclick="answer(false,'e1')">is</button>
+<button onclick="answer(false,'e1')">are</button>
+</div>
+
+<div id="e1" class="answer"></div>
+
+</div>
+
+<div class="exercise">
+
+<strong>2. She ___ my sister.</strong>
+
+<div class="options">
+<button onclick="answer(false,'e2')">am</button>
+<button onclick="answer(true,'e2')">is</button>
+<button onclick="answer(false,'e2')">are</button>
+</div>
+
+<div id="e2" class="answer"></div>
+
+</div>
+
+<div class="exercise">
+
+<strong>3. They ___ students.</strong>
+
+<div class="options">
+<button onclick="answer(false,'e3')">am</button>
+<button onclick="answer(false,'e3')">is</button>
+<button onclick="answer(true,'e3')">are</button>
+</div>
+
+<div id="e3" class="answer"></div>
+
+</div>
+
+<div class="exercise">
+
+<strong>4. He ___ English every day.</strong>
+
+<div class="options">
+<button onclick="answer(false,'e4')">study</button>
+<button onclick="answer(true,'e4')">studies</button>
+<button onclick="answer(false,'e4')">studying</button>
+</div>
+
+<div id="e4" class="answer"></div>
+
+</div>
+
+<div class="exercise">
+
+<strong>5. I ___ to school every morning.</strong>
+
+<div class="options">
+<button onclick="answer(true,'e5')">go</button>
+<button onclick="answer(false,'e5')">goes</button>
+<button onclick="answer(false,'e5')">going</button>
+</div>
+
+<div id="e5" class="answer"></div>
+
+</div>
+
+<h2>🧩 10. Choose the Correct Answer</h2>
+
+<div class="exercise">
+
+<strong>1. This ___ my book.</strong>
+
+<div class="options">
+<button onclick="answer(true,'e6')">is</button>
+<button onclick="answer(false,'e6')">are</button>
+</div>
+
+<div id="e6" class="answer"></div>
+
+</div>
+
+<div class="exercise">
+
+<strong>2. These ___ my pencils.</strong>
+
+<div class="options">
+<button onclick="answer(false,'e7')">is</button>
+<button onclick="answer(true,'e7')">are</button>
+</div>
+
+<div id="e7" class="answer"></div>
+
+</div>
+
+<div class="exercise">
+
+<strong>3. She ___ to school every day.</strong>
+
+<div class="options">
+<button onclick="answer(false,'e8')">go</button>
+<button onclick="answer(true,'e8')">goes</button>
+</div>
+
+<div id="e8" class="answer"></div>
+
+</div>
+
+<div class="exercise">
+
+<strong>4. He ___ a teacher.</strong>
+
+<div class="options">
+<button onclick="answer(true,'e9')">is</button>
+<button onclick="answer(false,'e9')">are</button>
+</div>
+
+<div id="e9" class="answer"></div>
+
+</div>
+
+</section>
+
+<section id="conversation" class="card">
+
+<h2>🗣️ 11. Review Conversation</h2>
+
+<div class="dialogue">
+
+<p>
+<span class="a">A:</span>
+Hello! What's your name?
+</p>
+
+<p>
+<span class="b">B:</span>
+My name is Daniel. What's your name?
+</p>
+
+<p>
+<span class="a">A:</span>
+I'm Sarah. Nice to meet you.
+</p>
+
+<p>
+<span class="b">B:</span>
+Nice to meet you too.
+</p>
+
+<p>
+<span class="a">A:</span>
+Are you a student?
+</p>
+
+<p>
+<span class="b">B:</span>
+Yes, I am.
+</p>
+
+<p>
+<span class="a">A:</span>
+What time do you go to school?
+</p>
+
+<p>
+<span class="b">B:</span>
+I go to school at seven thirty.
+</p>
+
+<p>
+<span class="a">A:</span>
+What do you study?
+</p>
+
+<p>
+<span class="b">B:</span>
+I study English and mathematics.
+</p>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speakConversation()">
+🔊 Listen to Conversation </button>
+
+</section>
+
+<section id="speaking" class="card">
+
+<h2>🗣️ 12. Speaking Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Introduce yourself without reading a model.
+</p>
+
+<p>Try to talk about:</p>
+
+<ul>
+<li>Your name</li>
+<li>Your age</li>
+<li>Your school</li>
+<li>Your family</li>
+<li>Your favorite color</li>
+<li>Your daily routine</li>
+</ul>
+
+<p>
+<strong>Challenge:</strong> Speak for at least <strong>one minute</strong>.
+</p>
+
+<button class="listen-btn"
+onclick="speak('Hello. My name is Daniel. I am a student. I study English. I have a family. My favorite color is blue. I wake up at six o’clock and go to school in the morning. I study English every day.')">
+🔊 Hear a Model </button>
+
+</div>
+
+</section>
+
+<section id="writing" class="card">
+
+<h2>✍️ 13. Writing Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Write a short paragraph about yourself.
+</p>
+
+<p>
+Try to include at least <strong>eight sentences</strong>.
+</p>
+
+<div class="example">
+
+<strong>Example:</strong>
+
+<p>
+My name is Daniel. I am a student. I study English. I have a small family. My favorite color is blue. I go to school every morning. I study English every day. I go home in the afternoon.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="quiz" class="card">
+
+<h2>🏆 14. Review 1 — Final Quiz</h2>
+
+<p>
+This quiz checks your understanding of Lessons 1–9.
+</p>
+
+<form id="quizForm">
+
+<div class="quiz-question">
+
+<p>1. Complete: I ___ a student.</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q1" value="a"> am</label>
+<label><input type="radio" name="q1" value="b"> is</label>
+<label><input type="radio" name="q1" value="c"> are</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>2. Which word means "azul"?</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q2" value="a"> Blue</label>
+<label><input type="radio" name="q2" value="b"> Green</label>
+<label><input type="radio" name="q2" value="c"> Black</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>3. Choose the correct sentence.</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q3" value="a"> She goes to school.</label>
+<label><input type="radio" name="q3" value="b"> She go to school.</label>
+<label><input type="radio" name="q3" value="c"> She going school.</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>4. Which word means "estes"?</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q4" value="a"> These</label>
+<label><input type="radio" name="q4" value="b"> Those</label>
+<label><input type="radio" name="q4" value="c"> That</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>5. Complete: They ___ students.</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q5" value="a"> are</label>
+<label><input type="radio" name="q5" value="b"> is</label>
+<label><input type="radio" name="q5" value="c"> am</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>6. Complete: He ___ English every day.</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q6" value="a"> study</label>
+<label><input type="radio" name="q6" value="b"> studies</label>
+<label><input type="radio" name="q6" value="c"> studying</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>7. What is "mother" in Portuguese?</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q7" value="a"> Mãe</label>
+<label><input type="radio" name="q7" value="b"> Irmã</label>
+<label><input type="radio" name="q7" value="c"> Filha</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>8. "What time do you wake up?" is:</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q8" value="a"> A question about daily routine</label>
+<label><input type="radio" name="q8" value="b"> A question about colors</label>
+<label><input type="radio" name="q8" value="c"> A question about family</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>9. Which word means "professor"?</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q9" value="a"> Teacher</label>
+<label><input type="radio" name="q9" value="b"> Student</label>
+<label><input type="radio" name="q9" value="c"> Book</label>
+</div>
+
+</div>
+
+<div class="quiz-question">
+
+<p>10. Choose the correct sentence.</p>
+
+<div class="quiz-options">
+<label><input type="radio" name="q10" value="a"> I study English every day.</label>
+<label><input type="radio" name="q10" value="b"> I studies English every day.</label>
+<label><input type="radio" name="q10" value="c"> I studying English every day.</label>
+</div>
+
+</div>
+
+<button type="button" class="quiz-submit" onclick="submitQuiz()">
+🏆 Check My Score
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</section>
+
+<section id="review" class="card">
+
+<h2>🔄 15. Lesson 10 Final Review</h2>
+
+<div class="review-grid">
+
+<div class="review-item">✅ I can introduce myself.</div>
+<div class="review-item">✅ I can talk about my family.</div>
+<div class="review-item">✅ I can describe colors.</div>
+<div class="review-item">✅ I can talk about my school.</div>
+<div class="review-item">✅ I can describe objects using this and that.</div>
+<div class="review-item">✅ I can talk about my daily routine.</div>
+<div class="review-item">✅ I can use the Present Simple.</div>
+<div class="review-item">✅ I can ask and answer basic questions.</div>
+
+</div>
+
+<br>
+
+<div class="key">
+
+<h2>🎉 Congratulations!</h2>
+
+<p>
+You have completed the first 10 days of the Bright English Academy Beginner A1 course.
+</p>
+
+<p>
+Next, we move into the next stage of your English journey.
+</p>
+
+</div>
+
+</section>
+
+<section class="card" style="text-align:center">
+
+<h2>🏆 Complete Lesson 10</h2>
+
+<p>
+Finished the Review 1? Mark this lesson as completed.
+</p>
+
+<button class="complete-btn" onclick="completeLesson()">
+✅ Complete Lesson 10
+</button>
+
+<div id="completeMessage">
+🎉 Lesson 10 completed successfully!
+</div>
+
+</section>
+
+<div class="navigation">
+
+<a href="lesson9.html">
+⬅ Back to Lesson 9
+</a>
+
+<a href="lesson11.html">
+Lesson 11 ➡
+</a>
+
+</div>
+
+</main>
+
+<footer>
+
+<p><strong>Bright English Academy</strong></p>
+<p>Speak English with Confidence</p>
+<p>👤 Created by <strong>José Simeão</strong></p>
+<p>Day 10 / Lesson 10</p>
+
+</footer>
+
+<script>
+
+function speak(text){
+
+if(!("speechSynthesis" in window)){
+alert("Audio is not supported by this browser.");
+return;
+}
+
+window.speechSynthesis.cancel();
+
+const speech=new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+speech.rate=.88;
+speech.pitch=1;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+function speakConversation(){
+
+speak(
+"Hello! What's your name? "+
+"My name is Daniel. What's your name? "+
+"I'm Sarah. Nice to meet you. "+
+"Nice to meet you too. "+
+"Are you a student? "+
+"Yes, I am. "+
+"What time do you go to school? "+
+"I go to school at seven thirty. "+
+"What do you study? "+
+"I study English and mathematics."
+);
+
+}
+
+
+function answer(correct,id){
+
+const box=document.getElementById(id);
+
+box.style.display="block";
+
+if(correct){
+
+box.className="answer correct";
+box.textContent="✅ Correct! Well done.";
+
+}else{
+
+box.className="answer wrong";
+box.textContent="❌ Not correct. Try again.";
+
+}
+
+updateExerciseProgress();
+
+}
+
+
+function updateExerciseProgress(){
+
+const answers=document.querySelectorAll(".answer");
+
+let correct=0;
+
+answers.forEach(function(a){
+
+if(a.classList.contains("correct")){
+correct++;
+}
+
+});
+
+const percentage=Math.min(
+Math.round((correct/9)*100),
+100
+);
+
+document.getElementById("progressFill").style.width=
+percentage+"%";
+
+document.getElementById("progressText").textContent=
+percentage+"%";
+
+}
+
+
+function submitQuiz(){
+
+const answers={
+q1:"a",
+q2:"a",
+q3:"a",
+q4:"a",
+q5:"a",
+q6:"b",
+q7:"a",
+q8:"a",
+q9:"a",
+q10:"a"
+};
+
+let score=0;
+
+for(let q in answers){
+
+const selected=document.querySelector(
+'input[name="'+q+'"]:checked'
+);
+
+if(selected && selected.value===answers[q]){
+score++;
+}
+
+}
+
+const percentage=score*10;
+
+const result=document.getElementById("quizResult");
+
+result.style.display="block";
+
+result.innerHTML=
+"🏆 Your Score: "+score+"/10 ("+percentage+"%)<br><br>"+
+(
+percentage>=70
+?
+"🎉 Excellent! You are ready to continue to Lesson 11."
+:
+"📚 Keep practicing the lessons and try the quiz again."
+);
+
+localStorage.setItem("lesson10Score",percentage);
+
+if(percentage>=70){
+
+document.getElementById("progressFill").style.width="100%";
+document.getElementById("progressText").textContent="100%";
+
+}
+
+}
+
+
+function completeLesson(){
+
+localStorage.setItem("lesson10Completed","true");
+
+let completed=
+JSON.parse(localStorage.getItem("completedLessons")||"[]");
+
+if(!completed.includes(10)){
+completed.push(10);
+}
+
+localStorage.setItem(
+"completedLessons",
+JSON.stringify(completed)
+);
+
+document.getElementById("completeMessage").style.display="block";
+
+document.getElementById("progressFill").style.width="100%";
+
+document.getElementById("progressText").textContent="100%";
+
+}
+
+
+function loadProgress(){
+
+const completed=
+JSON.parse(localStorage.getItem("completedLessons")||"[]");
+
+if(completed.includes(10)){
+
+document.getElementById("progressFill").style.width="100%";
+
+document.getElementById("progressText").textContent="100%";
+
+document.getElementById("completeMessage").style.display="block";
+
+}
+
+}
+
+
+loadProgress();
+
+</script>
+
+</body>
+</html>

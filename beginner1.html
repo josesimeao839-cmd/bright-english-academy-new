@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Bright English Academy - Beginner A1 English Course">
+
+<title>Beginner 1 A1 | Bright English Academy</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8ff;
+    color: #17233c;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: white;
+    box-shadow: 0 3px 18px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #0757c9;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #0757c9,
+        #13a6e8
+    );
+
+    color: white;
+    font-size: 24px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #17233c;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #0757c9;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 20px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    background: white;
+    padding: 35px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 35px rgba(20,53,100,.08);
+
+    margin-bottom: 30px;
+}
+
+.intro h1 {
+    color: #0757c9;
+    margin-top: 0;
+    font-size: 38px;
+}
+
+.intro p {
+    color: #64748b;
+    font-size: 17px;
+}
+
+/* =========================
+   COURSE CARD
+========================= */
+
+.course-card {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px;
+
+    box-shadow:
+        0 10px 35px rgba(20,53,100,.08);
+}
+
+.course-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.course-title h2 {
+    color: #0757c9;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.course-title p {
+    color: #64748b;
+}
+
+/* =========================
+   LESSON
+========================= */
+
+.lesson {
+    background: #f4f8ff;
+
+    border-radius: 16px;
+
+    padding: 22px 25px;
+
+    margin-bottom: 16px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border: 1px solid #e1e9f5;
+
+    transition: .25s;
+}
+
+.lesson:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 22px rgba(20,53,100,.08);
+}
+
+.lesson-info {
+    flex: 1;
+}
+
+.lesson-number {
+    color: #0757c9;
+
+    font-weight: 800;
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.lesson-title {
+    font-size: 20px;
+
+    color: #17233c;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.lesson-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.listen-btn,
+.open-btn {
+    border: none;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    transition: .2s;
+}
+
+.listen-btn {
+    background: #ffbf00;
+
+    color: #111;
+}
+
+.listen-btn:hover {
+    background: #e6a900;
+
+    transform: translateY(-2px);
+}
+
+.open-btn {
+    background: #0757c9;
+
+    color: white;
+}
+
+.open-btn:hover {
+    background: #06469f;
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-box {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    background: #eef6ff;
+
+    text-align: center;
+}
+
+.progress-box h3 {
+    color: #0757c9;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 14px;
+
+    background: #dce8f7;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-top: 15px;
+}
+
+.progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #0757c9,
+        #13a6e8
+    );
+
+    border-radius: 20px;
+}
+
+/* =========================
+   BACK
+========================= */
+
+.back {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    color: #0757c9;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 17px;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 40px;
+
+    background: #17233c;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+}
+
+footer h3 {
+    color: #58c7ff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    .header-container {
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    .intro h1 {
+        font-size: 30px;
+    }
+
+    .lesson {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .lesson-buttons {
+        width: 100%;
+    }
+
+    .listen-btn,
+    .open-btn {
+        flex: 1;
+
+        text-align: center;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="header-container">
+
+    <div class="logo">
+
+        <span class="logo-icon">
+            📚
+        </span>
+
+        Bright English Academy
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="student-login.html">
+            Student Login
+        </a>
+
+    </nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="container">
+
+
+<!-- INTRO -->
+
+<div class="intro">
+
+    <h1>
+        🌱 Beginner 1 — A1
+    </h1>
+
+    <p>
+        Welcome to Beginner 1!
+        This course contains 30 structured
+        English lessons designed to build
+        your vocabulary, grammar,
+        pronunciation, speaking, reading
+        and writing skills.
+    </p>
+
+    <p>
+        🎧 Use <strong>Listen</strong> to hear
+        the lesson topic and practice English
+        pronunciation.
+    </p>
+
+</div>
+
+
+<!-- COURSE -->
+
+<div class="course-card">
+
+<div class="course-title">
+
+    <h2>
+        📚 30 English Lessons
+    </h2>
+
+    <p>
+        Beginner A1 — Speak English with Confidence
+    </p>
+
+</div>
+
+
+<!-- =========================
+     LESSON 1
+========================= -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 1
+</div>
+
+<div class="lesson-title">
+Greetings & Introductions
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 1. Greetings and Introductions')">
+🔊 Listen
+</button>
+
+<a href="lesson1.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 2 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 2
+</div>
+
+<div class="lesson-title">
+Personal Information
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 2. Personal Information')">
+🔊 Listen
+</button>
+
+<a href="lesson2.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 3 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 3
+</div>
+
+<div class="lesson-title">
+Numbers
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 3. Numbers')">
+🔊 Listen
+</button>
+
+<a href="lesson3.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 4 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 4
+</div>
+
+<div class="lesson-title">
+Days & Months
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 4. Days and Months')">
+🔊 Listen
+</button>
+
+<a href="lesson4.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 5 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 5
+</div>
+
+<div class="lesson-title">
+Colors
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 5. Colors')">
+🔊 Listen
+</button>
+
+<a href="lesson5.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 6 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 6
+</div>
+
+<div class="lesson-title">
+Classroom English
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 6. Classroom English')">
+🔊 Listen
+</button>
+
+<a href="lesson6.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 7 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 7
+</div>
+
+<div class="lesson-title">
+Family & Possessive Adjectives
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 7. Family and Possessive Adjectives')">
+🔊 Listen
+</button>
+
+<a href="lesson7.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 8 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 8
+</div>
+
+<div class="lesson-title">
+Daily Routines & Present Simple
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 8. Daily Routines and Present Simple')">
+🔊 Listen
+</button>
+
+<a href="lesson8.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 9 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 9
+</div>
+
+<div class="lesson-title">
+Past Simple — Yesterday & Past Activities
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 9. Past Simple. Yesterday and Past Activities')">
+🔊 Listen
+</button>
+
+<a href="lesson9.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 10 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 10
+</div>
+
+<div class="lesson-title">
+Future Plans — Will & Going To
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 10. Future Plans. Will and Going To')">
+🔊 Listen
+</button>
+
+<a href="lesson10.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     LESSON 11
+========================= -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 11
+</div>
+
+<div class="lesson-title">
+Food & Drinks
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 11. Food and Drinks')">
+🔊 Listen
+</button>
+
+<a href="lesson11.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 12 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 12
+</div>
+
+<div class="lesson-title">
+Likes & Dislikes
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 12. Likes and Dislikes')">
+🔊 Listen
+</button>
+
+<a href="lesson12.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 13 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 13
+</div>
+
+<div class="lesson-title">
+Shopping & Prices
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 13. Shopping and Prices')">
+🔊 Listen
+</button>
+
+<a href="lesson13.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 14 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 14
+</div>
+
+<div class="lesson-title">
+Clothes & Appearance
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 14. Clothes and Appearance')">
+🔊 Listen
+</button>
+
+<a href="lesson14.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 15 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 15
+</div>
+
+<div class="lesson-title">
+Weather & Seasons
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 15. Weather and Seasons')">
+🔊 Listen
+</button>
+
+<a href="lesson15.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 16 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 16
+</div>
+
+<div class="lesson-title">
+Places in Town
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 16. Places in Town')">
+🔊 Listen
+</button>
+
+<a href="lesson16.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 17 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 17
+</div>
+
+<div class="lesson-title">
+Directions & Prepositions
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 17. Directions and Prepositions')">
+🔊 Listen
+</button>
+
+<a href="lesson17.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 18 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 18
+</div>
+
+<div class="lesson-title">
+Transportation & Travel
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 18. Transportation and Travel')">
+🔊 Listen
+</button>
+
+<a href="lesson18.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 19 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 19
+</div>
+
+<div class="lesson-title">
+My City & Neighborhood
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 19. My City and Neighborhood')">
+🔊 Listen
+</button>
+
+<a href="lesson19.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 20 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 20
+</div>
+
+<div class="lesson-title">
+My Home & Rooms
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 20. My Home and Rooms')">
+🔊 Listen
+</button>
+
+<a href="lesson20.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 21 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 21
+</div>
+
+<div class="lesson-title">
+Furniture & Household Objects
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 21. Furniture and Household Objects')">
+🔊 Listen
+</button>
+
+<a href="lesson21.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 22 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 22
+</div>
+
+<div class="lesson-title">
+Jobs & Occupations
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 22. Jobs and Occupations')">
+🔊 Listen
+</button>
+
+<a href="lesson22.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 23 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 23
+</div>
+
+<div class="lesson-title">
+Abilities — Can & Can't
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 23. Abilities. Can and Cannot')">
+🔊 Listen
+</button>
+
+<a href="lesson23.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 24 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 24
+</div>
+
+<div class="lesson-title">
+Hobbies & Free Time
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 24. Hobbies and Free Time')">
+🔊 Listen
+</button>
+
+<a href="lesson24.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 25 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 25
+</div>
+
+<div class="lesson-title">
+Sports & Activities
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 25. Sports and Activities')">
+🔊 Listen
+</button>
+
+<a href="lesson25.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 26 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 26
+</div>
+
+<div class="lesson-title">
+Health & Healthy Habits
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 26. Health and Healthy Habits')">
+🔊 Listen
+</button>
+
+<a href="lesson26.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 27 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 27
+</div>
+
+<div class="lesson-title">
+Technology & Everyday Life
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 27. Technology and Everyday Life')">
+🔊 Listen
+</button>
+
+<a href="lesson27.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 28 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 28
+</div>
+
+<div class="lesson-title">
+Making Plans & Invitations
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 28. Making Plans and Invitations')">
+🔊 Listen
+</button>
+
+<a href="lesson28.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 29 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 29
+</div>
+
+<div class="lesson-title">
+English Review & Practice
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 29. English Review and Practice')">
+🔊 Listen
+</button>
+
+<a href="lesson29.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- LESSON 30 -->
+
+<div class="lesson">
+
+<div class="lesson-info">
+
+<div class="lesson-number">
+Lesson 30
+</div>
+
+<div class="lesson-title">
+🏆 Final Review & Assessment
+</div>
+
+</div>
+
+<div class="lesson-buttons">
+
+<button class="listen-btn"
+onclick="speak('Lesson 30. Final Review and Assessment')">
+🔊 Listen
+</button>
+
+<a href="lesson30.html"
+class="open-btn">
+Open Lesson
+</a>
+
+</div>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div class="progress-box">
+
+<h3>
+🎯 Beginner A1 — 30 Lessons
+</h3>
+
+<p>
+Complete the lessons step by step
+and improve your English every day.
+</p>
+
+<div class="progress-bar">
+
+<div class="progress-fill"
+     id="progressFill">
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<a href="index.html"
+   class="back">
+
+← Back to Home
+
+</a>
+
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<h3>
+Bright English Academy
+</h3>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+👤 Created by José Simeão
+</p>
+
+</footer>
+
+
+<!-- =========================
+     AUDIO
+========================= -->
+
+<script>
+
+function speak(text) {
+
+    if ("speechSynthesis" in window) {
+
+        window.speechSynthesis.cancel();
+
+        const speech =
+            new SpeechSynthesisUtterance(text);
+
+        speech.lang = "en-US";
+
+        speech.rate = 0.85;
+
+        speech.pitch = 1;
+
+        window.speechSynthesis.speak(speech);
+
+    } else {
+
+        alert(
+            "Audio is not supported by this browser."
+        );
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

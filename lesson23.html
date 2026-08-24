@@ -1,0 +1,2862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Bright English Academy - Day 23: Food & Drinks.">
+
+    <title>Day 23 — Food & Drinks | Bright English Academy</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8ff;
+            color: #17233c;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0757c9, #13a6e8);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,.12);
+        }
+
+        .academy-name {
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: clamp(30px, 5vw, 50px);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .day-badge {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 9px 18px;
+            background: rgba(255,255,255,.18);
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .progress-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+            padding: 10px 18px;
+        }
+
+        .progress-info {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            max-width: 1100px;
+            height: 9px;
+            background: #e5eaf2;
+            border-radius: 20px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg,#0757c9,#13a6e8);
+            border-radius: 20px;
+            transition: width .4s ease;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 22px auto;
+            padding: 0 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0757c9;
+            background: white;
+            border: 1px solid #d8e2f2;
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: #0757c9;
+            color: white;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 10px 18px 60px;
+        }
+
+        section {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            margin: 25px 0;
+            box-shadow: 0 7px 25px rgba(20,53,100,.07);
+            border: 1px solid #e6edf7;
+        }
+
+        .section-title {
+            color: #0757c9;
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .section-subtitle {
+            color: #4e5e78;
+            margin-bottom: 20px;
+        }
+
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+            gap: 15px;
+        }
+
+        .objective {
+            background: #f2f7ff;
+            border-left: 5px solid #0757c9;
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .objective strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+            gap: 14px;
+        }
+
+        .vocab-card {
+            border: 1px solid #e1e8f2;
+            border-radius: 14px;
+            padding: 18px;
+            background: #fbfdff;
+            transition: .2s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,.07);
+        }
+
+        .vocab-card h3 {
+            color: #0757c9;
+            margin-bottom: 4px;
+        }
+
+        .translation {
+            color: #6a7890;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .listen-btn {
+            border: none;
+            background: #0757c9;
+            color: white;
+            padding: 8px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .listen-btn:hover {
+            background: #06449e;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 15px;
+        }
+
+        .category-card {
+            padding: 20px;
+            background: #f7faff;
+            border: 1px solid #dce6f3;
+            border-radius: 15px;
+        }
+
+        .category-card h3 {
+            color: #0757c9;
+            margin-bottom: 10px;
+        }
+
+        .grammar-box {
+            background: #eef6ff;
+            border-left: 6px solid #0757c9;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+
+        .formula {
+            background: #17233c;
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            font-family: "Courier New", monospace;
+            margin: 12px 0;
+            overflow-x: auto;
+        }
+
+        .example {
+            background: #f7f9fc;
+            border: 1px solid #e1e7ef;
+            padding: 14px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .conversation {
+            background: linear-gradient(135deg,#f2f8ff,#ffffff);
+            padding: 22px;
+            border-radius: 15px;
+            border: 1px solid #dfe8f5;
+        }
+
+        .line {
+            padding: 9px 0;
+        }
+
+        .speaker {
+            color: #0757c9;
+            font-weight: bold;
+        }
+
+        .exercise {
+            margin: 18px 0;
+            padding: 20px;
+            border: 1px solid #dfe6f0;
+            border-radius: 14px;
+            background: #fcfdff;
+        }
+
+        .exercise p {
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 11px 13px;
+            border: 1px solid #cbd7e8;
+            border-radius: 9px;
+            font-size: 15px;
+            margin-top: 7px;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #0757c9;
+            box-shadow: 0 0 0 3px rgba(7,87,201,.08);
+        }
+
+        .check-btn {
+            margin-top: 12px;
+            background: #0757c9;
+            color: white;
+            border: none;
+            padding: 10px 17px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+            gap: 15px;
+        }
+
+        .activity-card {
+            padding: 20px;
+            border-radius: 15px;
+            background: #f4f8ff;
+            border: 1px solid #dbe5f3;
+        }
+
+        .activity-card h3 {
+            color: #0757c9;
+            margin-bottom: 8px;
+        }
+
+        .choice-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .choice-btn {
+            border: 1px solid #c9d7ea;
+            background: white;
+            padding: 8px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .choice-btn.selected {
+            background: #0757c9;
+            color: white;
+            border-color: #0757c9;
+        }
+
+        .challenge {
+            background: linear-gradient(135deg,#fff9e8,#fff);
+            border-left: 6px solid #f0a500;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        .quiz-question {
+            padding: 20px;
+            border: 1px solid #dfe6f0;
+            border-radius: 14px;
+            margin: 15px 0;
+            background: #fcfdff;
+        }
+
+        .quiz-question h3 {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .option {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #dce4ef;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background: #f0f6ff;
+        }
+
+        .option input {
+            margin-right: 8px;
+        }
+
+        .quiz-btn {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            background: linear-gradient(135deg,#0757c9,#13a6e8);
+            color: white;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .quiz-result {
+            display: none;
+            margin-top: 20px;
+            padding: 22px;
+            text-align: center;
+            background: #eef8f2;
+            border: 1px solid #b9e2ca;
+            border-radius: 14px;
+        }
+
+        .score-number {
+            font-size: 40px;
+            color: #138a4b;
+            font-weight: bold;
+        }
+
+        .review-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .review-item {
+            padding: 14px 17px;
+            border-radius: 10px;
+            background: #f5f8fc;
+            border-left: 4px solid #0757c9;
+        }
+
+        footer {
+            background: #17233c;
+            color: white;
+            text-align: center;
+            padding: 35px 18px;
+        }
+
+        footer strong {
+            color: #58c7ff;
+        }
+
+        .creator {
+            margin-top: 12px;
+            font-size: 15px;
+            opacity: .9;
+        }
+
+        @media(max-width:650px) {
+
+            header {
+                padding: 28px 15px;
+            }
+
+            section {
+                padding: 20px;
+                border-radius: 14px;
+            }
+
+            .section-title {
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="academy-name">
+        Bright English Academy
+    </div>
+
+    <h1>
+        🍎 Food & Drinks
+    </h1>
+
+    <p>
+        Talk about food, drinks and things you like or don't like.
+    </p>
+
+    <div class="day-badge">
+        📚 Day 23 / Lesson 23
+    </div>
+
+</header>
+
+
+<div class="progress-container">
+
+    <div class="progress-info">
+
+        <span>
+            Lesson Progress
+        </span>
+
+        <span id="progressText">
+            0%
+        </span>
+
+    </div>
+
+    <div class="progress-bar">
+
+        <div
+            class="progress-fill"
+            id="progressFill">
+        </div>
+
+    </div>
+
+</div>
+
+
+<nav>
+
+    <a href="#objectives">Objectives</a>
+    <a href="#food">Food</a>
+    <a href="#drinks">Drinks</a>
+    <a href="#pronunciation">Pronunciation</a>
+    <a href="#grammar">Grammar</a>
+    <a href="#conversation">Conversation</a>
+    <a href="#exercises">Exercises</a>
+    <a href="#activities">Activities</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#writing">Writing</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#review">Review</a>
+
+</nav>
+
+
+<main>
+
+
+<section id="objectives">
+
+    <h2 class="section-title">
+        🎯 Lesson Objectives
+    </h2>
+
+    <p class="section-subtitle">
+        By the end of this lesson, you will be able to:
+    </p>
+
+    <div class="objectives">
+
+        <div class="objective">
+            <strong>🍎 Food Vocabulary</strong>
+            Name common foods in English.
+        </div>
+
+        <div class="objective">
+            <strong>🥤 Drinks</strong>
+            Name common drinks.
+        </div>
+
+        <div class="objective">
+            <strong>❤️ Likes</strong>
+            Say what you like.
+        </div>
+
+        <div class="objective">
+            <strong>❌ Dislikes</strong>
+            Say what you don't like.
+        </div>
+
+        <div class="objective">
+            <strong>❓ Questions</strong>
+            Ask someone about food.
+        </div>
+
+        <div class="objective">
+            <strong>🗣️ Conversation</strong>
+            Talk about your favorite food and drinks.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="food">
+
+    <h2 class="section-title">
+        🍎 Food Vocabulary
+    </h2>
+
+    <p class="section-subtitle">
+        Learn these common food words and practice their pronunciation.
+    </p>
+
+
+    <div class="vocab-grid">
+
+
+        <div class="vocab-card">
+
+            <h3>🍞 Bread</h3>
+
+            <div class="translation">
+                Pão
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Bread')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍚 Rice</h3>
+
+            <div class="translation">
+                Arroz
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Rice')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍗 Chicken</h3>
+
+            <div class="translation">
+                Frango
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Chicken')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🥩 Meat</h3>
+
+            <div class="translation">
+                Carne
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Meat')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🐟 Fish</h3>
+
+            <div class="translation">
+                Peixe
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Fish')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🥚 Egg</h3>
+
+            <div class="translation">
+                Ovo
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Egg')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍎 Apple</h3>
+
+            <div class="translation">
+                Maçã
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Apple')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍌 Banana</h3>
+
+            <div class="translation">
+                Banana
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Banana')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍊 Orange</h3>
+
+            <div class="translation">
+                Laranja
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Orange')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🥔 Potato</h3>
+
+            <div class="translation">
+                Batata
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Potato')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍅 Tomato</h3>
+
+            <div class="translation">
+                Tomate
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Tomato')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🥕 Carrot</h3>
+
+            <div class="translation">
+                Cenoura
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Carrot')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍕 Pizza</h3>
+
+            <div class="translation">
+                Pizza
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Pizza')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🍔 Hamburger</h3>
+
+            <div class="translation">
+                Hambúrguer
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Hamburger')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="drinks">
+
+    <h2 class="section-title">
+        🥤 Drinks Vocabulary
+    </h2>
+
+    <div class="vocab-grid">
+
+
+        <div class="vocab-card">
+
+            <h3>💧 Water</h3>
+
+            <div class="translation">
+                Água
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Water')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🥛 Milk</h3>
+
+            <div class="translation">
+                Leite
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Milk')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🧃 Juice</h3>
+
+            <div class="translation">
+                Sumo
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Juice')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>☕ Tea</h3>
+
+            <div class="translation">
+                Chá
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Tea')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>☕ Coffee</h3>
+
+            <div class="translation">
+                Café
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Coffee')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>🥤 Soda</h3>
+
+            <div class="translation">
+                Refrigerante
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Soda')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="pronunciation">
+
+    <h2 class="section-title">
+        🔊 Pronunciation Practice
+    </h2>
+
+    <p class="section-subtitle">
+        Listen carefully and repeat each sentence.
+    </p>
+
+
+    <div class="example">
+
+        <strong>
+            I like rice.
+        </strong>
+
+        <br>
+
+        Eu gosto de arroz.
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak('I like rice.')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            I don't like fish.
+        </strong>
+
+        <br>
+
+        Eu não gosto de peixe.
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak(`I don't like fish.`)">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Do you like pizza?
+        </strong>
+
+        <br>
+
+        Você gosta de pizza?
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak('Do you like pizza?')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Yes, I do.
+        </strong>
+
+        <br>
+
+        Sim.
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak('Yes, I do.')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            No, I don't.
+        </strong>
+
+        <br>
+
+        Não.
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak(`No, I don't.`)">
+            🔊 Listen
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="grammar">
+
+    <h2 class="section-title">
+        📚 Grammar — I Like / I Don't Like
+    </h2>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            ❤️ Affirmative
+        </h3>
+
+        <p>
+            Use <strong>I like</strong> to talk about things you enjoy.
+        </p>
+
+        <div class="formula">
+            I like + food/drink.
+        </div>
+
+        <div class="example">
+
+            I like chicken.
+
+            <br>
+
+            Eu gosto de frango.
+
+            <br><br>
+
+            <button class="listen-btn"
+                    onclick="speak('I like chicken.')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            ❌ Negative
+        </h3>
+
+        <p>
+            Use <strong>I don't like</strong> when you don't enjoy something.
+        </p>
+
+        <div class="formula">
+            I don't like + food/drink.
+        </div>
+
+        <div class="example">
+
+            I don't like coffee.
+
+            <br>
+
+            Eu não gosto de café.
+
+            <br><br>
+
+            <button class="listen-btn"
+                    onclick="speak(`I don't like coffee.`)">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            ❓ Questions
+        </h3>
+
+        <div class="formula">
+            Do you like + food/drink?
+        </div>
+
+        <div class="example">
+
+            Do you like pizza?
+
+            <br><br>
+
+            <strong>
+                Yes, I do.
+            </strong>
+
+            <br>
+
+            <strong>
+                No, I don't.
+            </strong>
+
+            <br><br>
+
+            <button class="listen-btn"
+                    onclick="speak(`Do you like pizza? Yes, I do. No, I don't.`)">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            ⭐ Favorite Food
+        </h3>
+
+        <div class="formula">
+            My favorite food is + food.
+        </div>
+
+        <div class="example">
+
+            My favorite food is rice.
+
+            <br>
+
+            Minha comida favorita é arroz.
+
+            <br><br>
+
+            <button class="listen-btn"
+                    onclick="speak('My favorite food is rice.')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="conversation">
+
+    <h2 class="section-title">
+        💬 Real-life Conversation
+    </h2>
+
+    <p class="section-subtitle">
+        Carlos and Beatriz are talking about food during lunch.
+    </p>
+
+
+    <div class="conversation">
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            Hi, Beatriz! What are you eating?
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            Hi, Carlos! I'm eating rice and chicken.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            Do you like chicken?
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            Yes, I do. I really like chicken.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            What about fish?
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            I don't like fish very much.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            What's your favorite food?
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            My favorite food is pizza.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            Nice! Do you like fruit?
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            Yes, I do. I love bananas and apples.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            What do you like to drink?
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            I like orange juice and water.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            Do you like coffee?
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            No, I don't. I prefer tea.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Carlos:</span>
+            Great! Enjoy your lunch.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Beatriz:</span>
+            Thank you!
+        </div>
+
+    </div>
+
+
+    <br>
+
+
+    <button class="listen-btn"
+            onclick="speak(`Carlos: Hi, Beatriz! What are you eating? Beatriz: Hi, Carlos! I'm eating rice and chicken. Carlos: Do you like chicken? Beatriz: Yes, I do. I really like chicken. Carlos: What about fish? Beatriz: I don't like fish very much. Carlos: What's your favorite food? Beatriz: My favorite food is pizza. Carlos: Nice! Do you like fruit? Beatriz: Yes, I do. I love bananas and apples. Carlos: What do you like to drink? Beatriz: I like orange juice and water. Carlos: Do you like coffee? Beatriz: No, I don't. I prefer tea. Carlos: Great! Enjoy your lunch. Beatriz: Thank you!`)">
+
+        🔊 Listen to Conversation
+
+    </button>
+
+</section>
+
+
+<section id="exercises">
+
+    <h2 class="section-title">
+        ✏️ Exercises
+    </h2>
+
+
+    <div class="exercise">
+
+        <p>
+            1. Complete:
+        </p>
+
+        <p>
+            I ______ pizza.
+        </p>
+
+        <select id="ex1">
+
+            <option value="">Choose...</option>
+
+            <option value="like">
+                like
+            </option>
+
+            <option value="likes">
+                likes
+            </option>
+
+            <option value="liking">
+                liking
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex1','like','feedback1')">
+            Check Answer
+        </button>
+
+        <div id="feedback1"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            2. Complete:
+        </p>
+
+        <p>
+            I ______ like coffee.
+        </p>
+
+        <select id="ex2">
+
+            <option value="">Choose...</option>
+
+            <option value="don't">
+                don't
+            </option>
+
+            <option value="doesn't">
+                doesn't
+            </option>
+
+            <option value="not">
+                not
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex2',`don't`,'feedback2')">
+            Check Answer
+        </button>
+
+        <div id="feedback2"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            3. Complete the question:
+        </p>
+
+        <p>
+            ______ you like rice?
+        </p>
+
+        <select id="ex3">
+
+            <option value="">Choose...</option>
+
+            <option value="do">
+                Do
+            </option>
+
+            <option value="does">
+                Does
+            </option>
+
+            <option value="are">
+                Are
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex3','do','feedback3')">
+            Check Answer
+        </button>
+
+        <div id="feedback3"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            4. Translate:
+        </p>
+
+        <p>
+            "Eu gosto de arroz."
+        </p>
+
+        <input type="text"
+               id="ex4"
+               placeholder="Write in English">
+
+        <button class="check-btn"
+                onclick="checkTextAnswer(
+                    'ex4',
+                    ['i like rice'],
+                    'feedback4'
+                )">
+            Check Answer
+        </button>
+
+        <div id="feedback4"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            5. Translate:
+        </p>
+
+        <p>
+            "Eu não gosto de peixe."
+        </p>
+
+        <input type="text"
+               id="ex5"
+               placeholder="Write in English">
+
+        <button class="check-btn"
+                onclick="checkTextAnswer(
+                    'ex5',
+                    [\"i don't like fish\",'i do not like fish'],
+                    'feedback5'
+                )">
+            Check Answer
+        </button>
+
+        <div id="feedback5"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            6. Choose the correct answer:
+        </p>
+
+        <p>
+            Do you like bananas?
+        </p>
+
+        <select id="ex6">
+
+            <option value="">Choose...</option>
+
+            <option value="yes i do">
+                Yes, I do.
+            </option>
+
+            <option value="yes i am">
+                Yes, I am.
+            </option>
+
+            <option value="yes i does">
+                Yes, I does.
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex6','yes i do','feedback6')">
+            Check Answer
+        </button>
+
+        <div id="feedback6"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            7. What does "bread" mean?
+        </p>
+
+        <select id="ex7">
+
+            <option value="">Choose...</option>
+
+            <option value="pão">
+                Pão
+            </option>
+
+            <option value="arroz">
+                Arroz
+            </option>
+
+            <option value="peixe">
+                Peixe
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex7','pão','feedback7')">
+            Check Answer
+        </button>
+
+        <div id="feedback7"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            8. Complete:
+        </p>
+
+        <p>
+            My favorite food ______ pizza.
+        </p>
+
+        <select id="ex8">
+
+            <option value="">Choose...</option>
+
+            <option value="is">
+                is
+            </option>
+
+            <option value="are">
+                are
+            </option>
+
+            <option value="am">
+                am
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex8','is','feedback8')">
+            Check Answer
+        </button>
+
+        <div id="feedback8"
+             class="feedback">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="activities">
+
+    <h2 class="section-title">
+        🧩 Interactive Activities
+    </h2>
+
+
+    <div class="activity-grid">
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 1
+            </h3>
+
+            <p>
+                Choose the correct sentence.
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity1','❌ Try again.')">
+                    I likes pizza.
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity1','✅ Correct!')">
+                    I like pizza.
+                </button>
+
+            </div>
+
+            <p id="activity1"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 2
+            </h3>
+
+            <p>
+                Choose the correct negative sentence.
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity2','❌ Try again.')">
+                    I doesn't like milk.
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity2','✅ Correct!')">
+                    I don't like milk.
+                </button>
+
+            </div>
+
+            <p id="activity2"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 3
+            </h3>
+
+            <p>
+                Choose the correct question.
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity3','✅ Correct!')">
+                    Do you like chicken?
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity3','❌ Try again.')">
+                    Does you like chicken?
+                </button>
+
+            </div>
+
+            <p id="activity3"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 4
+            </h3>
+
+            <p>
+                What does "milk" mean?
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity4','❌ Try again.')">
+                    Água
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity4','✅ Correct!')">
+                    Leite
+                </button>
+
+            </div>
+
+            <p id="activity4"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 5
+            </h3>
+
+            <p>
+                Complete:
+            </p>
+
+            <p>
+                My favorite food ___ rice.
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity5','✅ Correct!')">
+                    is
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity5','❌ Try again.')">
+                    are
+                </button>
+
+            </div>
+
+            <p id="activity5"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 6
+            </h3>
+
+            <p>
+                Build the sentence:
+            </p>
+
+            <p>
+                <strong>
+                    like / I / bananas
+                </strong>
+            </p>
+
+            <input type="text"
+                   id="sentenceInput"
+                   placeholder="Write the sentence">
+
+            <button class="check-btn"
+                    onclick="checkSentence()">
+                Check
+            </button>
+
+            <p id="sentenceResult"
+               class="feedback">
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="speaking">
+
+    <h2 class="section-title">
+        🗣️ Speaking Challenge
+    </h2>
+
+    <div class="challenge">
+
+        <h3>
+            🎤 Talk about your favorite food.
+        </h3>
+
+        <p style="margin-top:10px;">
+            Speak for 30–60 seconds.
+        </p>
+
+        <br>
+
+        <p>
+            Answer these questions:
+        </p>
+
+        <ul style="margin-left:20px;margin-top:8px;">
+
+            <li>
+                What's your favorite food?
+            </li>
+
+            <li>
+                Do you like rice?
+            </li>
+
+            <li>
+                Do you like chicken?
+            </li>
+
+            <li>
+                What food don't you like?
+            </li>
+
+            <li>
+                What's your favorite drink?
+            </li>
+
+        </ul>
+
+        <br>
+
+        <button class="listen-btn"
+                onclick="speak(`My favorite food is rice. I like chicken and fish. I also like bananas and apples. I don't like coffee. My favorite drink is orange juice.`)">
+            🔊 Hear a Model
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="writing">
+
+    <h2 class="section-title">
+        ✍️ Writing Challenge
+    </h2>
+
+    <p class="section-subtitle">
+        Write 6–8 sentences about food and drinks.
+    </p>
+
+
+    <div class="challenge">
+
+        <p>
+            Try to use:
+        </p>
+
+        <ul style="margin-left:20px;margin-top:8px;">
+
+            <li>
+                I like...
+            </li>
+
+            <li>
+                I don't like...
+            </li>
+
+            <li>
+                My favorite food is...
+            </li>
+
+            <li>
+                My favorite drink is...
+            </li>
+
+            <li>
+                Do you like...?
+            </li>
+
+        </ul>
+
+        <br>
+
+        <p>
+            Example:
+        </p>
+
+        <p>
+            I like rice and chicken.
+            I like fruit too.
+            My favorite food is pizza.
+            I don't like fish very much.
+            My favorite drink is orange juice.
+            I don't like coffee.
+        </p>
+
+        <br>
+
+        <textarea id="writingArea"
+                  placeholder="Write about your favorite food and drinks here..."></textarea>
+
+        <button class="check-btn"
+                onclick="checkWriting()">
+            Check My Writing
+        </button>
+
+        <p id="writingFeedback"
+           class="feedback">
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="quiz">
+
+    <h2 class="section-title">
+        🎯 10-Question Quiz
+    </h2>
+
+    <p class="section-subtitle">
+        Choose the best answer.
+    </p>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            1. Complete: I _____ pizza.
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q1" value="a">
+            like
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1" value="b">
+            likes
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1" value="c">
+            liking
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            2. Complete: I _____ like coffee.
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q2" value="a">
+            don't
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2" value="b">
+            doesn't
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2" value="c">
+            am not
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            3. Choose the correct question.
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q3" value="a">
+            Do you like rice?
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3" value="b">
+            Does you like rice?
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3" value="c">
+            Are you like rice?
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            4. "Bread" means:
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q4" value="a">
+            Pão
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4" value="b">
+            Arroz
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4" value="c">
+            Carne
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            5. "Water" means:
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q5" value="a">
+            Leite
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5" value="b">
+            Água
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5" value="c">
+            Chá
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            6. Complete: My favorite food _____ pizza.
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q6" value="a">
+            is
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6" value="b">
+            are
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6" value="c">
+            am
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            7. What is the correct answer to "Do you like bananas?"
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q7" value="a">
+            Yes, I do.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="b">
+            Yes, I am.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="c">
+            Yes, I does.
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            8. "Chicken" means:
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q8" value="a">
+            Frango
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8" value="b">
+            Peixe
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8" value="c">
+            Ovo
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            9. Choose the correct negative sentence.
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q9" value="a">
+            I don't like coffee.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q9" value="b">
+            I doesn't like coffee.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q9" value="c">
+            I not like coffee.
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            10. "Juice" means:
+        </h3>
+
+        <label class="option">
+            <input type="radio" name="q10" value="a">
+            Sumo
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q10" value="b">
+            Café
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q10" value="c">
+            Refrigerante
+        </label>
+
+    </div>
+
+
+    <button class="quiz-btn"
+            onclick="calculateQuiz()">
+        🎯 Submit Quiz
+    </button>
+
+
+    <div class="quiz-result"
+         id="quizResult">
+
+        <div>
+            Your Score
+        </div>
+
+        <div class="score-number"
+             id="scoreNumber">
+            0/10
+        </div>
+
+        <h3 id="scoreMessage"></h3>
+
+        <p id="scoreDetails"></p>
+
+    </div>
+
+</section>
+
+
+<section id="review">
+
+    <h2 class="section-title">
+        🔄 Daily Review
+    </h2>
+
+    <p class="section-subtitle">
+        Review the most important points from Lesson 23.
+    </p>
+
+
+    <div class="review-list">
+
+        <div class="review-item">
+            🍞 <strong>Bread</strong> = Pão
+        </div>
+
+        <div class="review-item">
+            🍚 <strong>Rice</strong> = Arroz
+        </div>
+
+        <div class="review-item">
+            🍗 <strong>Chicken</strong> = Frango
+        </div>
+
+        <div class="review-item">
+            🐟 <strong>Fish</strong> = Peixe
+        </div>
+
+        <div class="review-item">
+            🍎 <strong>Apple</strong> = Maçã
+        </div>
+
+        <div class="review-item">
+            🍌 <strong>Banana</strong> = Banana
+        </div>
+
+        <div class="review-item">
+            💧 <strong>Water</strong> = Água
+        </div>
+
+        <div class="review-item">
+            🧃 <strong>Juice</strong> = Sumo
+        </div>
+
+        <div class="review-item">
+            ❤️ <strong>I like...</strong> = Eu gosto de...
+        </div>
+
+        <div class="review-item">
+            ❌ <strong>I don't like...</strong> = Eu não gosto de...
+        </div>
+
+        <div class="review-item">
+            ❓ <strong>Do you like...?</strong> = Você gosta de...?
+        </div>
+
+        <div class="review-item">
+            ⭐ <strong>My favorite food is...</strong> = Minha comida favorita é...
+        </div>
+
+    </div>
+
+
+    <br>
+
+
+    <div class="grammar-box">
+
+        <strong>
+            ⭐ Key Sentences
+        </strong>
+
+        <div class="formula">
+            I like rice.
+        </div>
+
+        <div class="formula">
+            I don't like fish.
+        </div>
+
+        <div class="formula">
+            Do you like pizza?
+        </div>
+
+        <div class="formula">
+            Yes, I do.
+        </div>
+
+        <div class="formula">
+            No, I don't.
+        </div>
+
+        <div class="formula">
+            My favorite food is chicken.
+        </div>
+
+
+        <button class="listen-btn"
+                onclick="speak(`I like rice. I don't like fish. Do you like pizza? Yes, I do. No, I don't. My favorite food is chicken.`)">
+            🔊 Listen
+        </button>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        <strong>
+            Bright English Academy
+        </strong>
+    </p>
+
+    <p>
+        Speak English with Confidence
+    </p>
+
+    <p class="creator">
+        👤 Created by <strong>José Simeão</strong>
+    </p>
+
+    <p style="margin-top:10px;opacity:.7;">
+        Day 23 / Lesson 23
+    </p>
+
+</footer>
+
+
+<script>
+
+
+function speak(text) {
+
+    if (!("speechSynthesis" in window)) {
+
+        alert("Audio is not supported by this browser.");
+
+        return;
+
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang = "en-US";
+    speech.rate = 0.85;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+
+}
+
+
+function checkExercise(inputId, answer, feedbackId) {
+
+    const input =
+        document.getElementById(inputId);
+
+    const feedback =
+        document.getElementById(feedbackId);
+
+    const value =
+        input.value
+            .trim()
+            .toLowerCase()
+            .replace(/[’']/g, "");
+
+    const correct =
+        answer
+            .toLowerCase()
+            .replace(/[’']/g, "");
+
+    if (value === correct) {
+
+        feedback.textContent =
+            "✅ Correct! Excellent work.";
+
+        feedback.style.color =
+            "#138a4b";
+
+    } else {
+
+        feedback.textContent =
+            "❌ Not quite. Try again.";
+
+        feedback.style.color =
+            "#c62828";
+
+    }
+
+    updateProgress();
+
+}
+
+
+function checkTextAnswer(inputId, answers, feedbackId) {
+
+    const input =
+        document.getElementById(inputId);
+
+    const feedback =
+        document.getElementById(feedbackId);
+
+    const value =
+        input.value
+            .trim()
+            .toLowerCase();
+
+    const correct =
+        answers.some(
+            answer =>
+                value === answer.toLowerCase()
+        );
+
+    if (correct) {
+
+        feedback.textContent =
+            "✅ Correct! Excellent!";
+
+        feedback.style.color =
+            "#138a4b";
+
+    } else {
+
+        feedback.textContent =
+            "❌ Try again.";
+
+        feedback.style.color =
+            "#c62828";
+
+    }
+
+    updateProgress();
+
+}
+
+
+function selectChoice(button, resultId, message) {
+
+    const buttons =
+        button.parentElement.querySelectorAll(
+            ".choice-btn"
+        );
+
+    buttons.forEach(
+        btn =>
+            btn.classList.remove("selected")
+    );
+
+    button.classList.add("selected");
+
+    document.getElementById(resultId)
+        .textContent = message;
+
+    document.getElementById(resultId)
+        .style.color =
+        message.startsWith("✅")
+            ? "#138a4b"
+            : "#c62828";
+
+    updateProgress();
+
+}
+
+
+function checkSentence() {
+
+    const input =
+        document.getElementById(
+            "sentenceInput"
+        );
+
+    const result =
+        document.getElementById(
+            "sentenceResult"
+        );
+
+    const value =
+        input.value
+            .trim()
+            .toLowerCase()
+            .replace(/[.!?]/g,"")
+            .replace(/\s+/g," ");
+
+    if (value === "i like bananas") {
+
+        result.textContent =
+            "✅ Perfect sentence!";
+
+        result.style.color =
+            "#138a4b";
+
+    } else {
+
+        result.textContent =
+            "❌ Try again: I like bananas.";
+
+        result.style.color =
+            "#c62828";
+
+    }
+
+    updateProgress();
+
+}
+
+
+function checkWriting() {
+
+    const text =
+        document.getElementById(
+            "writingArea"
+        ).value.trim();
+
+    const feedback =
+        document.getElementById(
+            "writingFeedback"
+        );
+
+    if (text.length < 60) {
+
+        feedback.textContent =
+            "✏️ Write a little more. Try 6–8 sentences.";
+
+        feedback.style.color =
+            "#c62828";
+
+        return;
+
+    }
+
+    const lower =
+        text.toLowerCase();
+
+    const words = [
+
+        "like",
+        "food",
+        "drink",
+        "rice",
+        "chicken",
+        "pizza",
+        "fish",
+        "water",
+        "juice",
+        "coffee",
+        "tea",
+        "banana",
+        "apple"
+
+    ];
+
+    const count =
+        words.filter(
+            word => lower.includes(word)
+        ).length;
+
+    if (count >= 3) {
+
+        feedback.textContent =
+            "✅ Excellent! You are using the lesson vocabulary.";
+
+        feedback.style.color =
+            "#138a4b";
+
+    } else {
+
+        feedback.textContent =
+            "👍 Good start! Try using more food and drink vocabulary.";
+
+        feedback.style.color =
+            "#b06b00";
+
+    }
+
+    updateProgress();
+
+}
+
+
+function calculateQuiz() {
+
+    const answers = {
+
+        q1: "a",
+        q2: "a",
+        q3: "a",
+        q4: "a",
+        q5: "b",
+        q6: "a",
+        q7: "a",
+        q8: "a",
+        q9: "a",
+        q10: "a"
+
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected =
+            document.querySelector(
+                `input[name="${question}"]:checked`
+            );
+
+        if (
+            selected &&
+            selected.value === answers[question]
+        ) {
+
+            score++;
+
+        }
+
+    }
+
+
+    const result =
+        document.getElementById(
+            "quizResult"
+        );
+
+    const number =
+        document.getElementById(
+            "scoreNumber"
+        );
+
+    const message =
+        document.getElementById(
+            "scoreMessage"
+        );
+
+    const details =
+        document.getElementById(
+            "scoreDetails"
+        );
+
+
+    number.textContent =
+        score + "/10";
+
+
+    if (score === 10) {
+
+        message.textContent =
+            "🏆 Perfect Score!";
+
+        details.textContent =
+            "Amazing! You mastered Lesson 23.";
+
+    } else if (score >= 8) {
+
+        message.textContent =
+            "🌟 Excellent Work!";
+
+        details.textContent =
+            "You have a strong understanding of food and drinks.";
+
+    } else if (score >= 6) {
+
+        message.textContent =
+            "👍 Good Job!";
+
+        details.textContent =
+            "You are making good progress. Review the lesson and try again.";
+
+    } else {
+
+        message.textContent =
+            "📚 Keep Practicing!";
+
+        details.textContent =
+            "Review the vocabulary and grammar, then try again.";
+
+    }
+
+
+    result.style.display =
+        "block";
+
+
+    result.scrollIntoView({
+
+        behavior: "smooth",
+        block: "center"
+
+    });
+
+
+    updateProgress();
+
+}
+
+
+function updateProgress() {
+
+    const ids = [
+
+        "objectives",
+        "food",
+        "drinks",
+        "pronunciation",
+        "grammar",
+        "conversation",
+        "exercises",
+        "activities",
+        "speaking",
+        "writing",
+        "quiz",
+        "review"
+
+    ];
+
+
+    const scrollTop =
+        window.scrollY;
+
+    const documentHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+
+    let scrollProgress = 0;
+
+
+    if (documentHeight > 0) {
+
+        scrollProgress =
+            (scrollTop / documentHeight) * 100;
+
+    }
+
+
+    let completed = 0;
+
+
+    ids.forEach(id => {
+
+        const section =
+            document.getElementById(id);
+
+        if (!section) return;
+
+        const rect =
+            section.getBoundingClientRect();
+
+        if (
+            rect.top < window.innerHeight * .75 &&
+            rect.bottom > window.innerHeight * .25
+        ) {
+
+            completed++;
+
+        }
+
+    });
+
+
+    let sectionProgress =
+        (completed / ids.length) * 100;
+
+
+    let finalProgress =
+        Math.max(
+            scrollProgress,
+            sectionProgress
+        );
+
+
+    finalProgress =
+        Math.min(
+            100,
+            Math.round(finalProgress)
+        );
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        finalProgress + "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+        finalProgress + "%";
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateProgress
+);
+
+
+window.addEventListener(
+    "load",
+    updateProgress
+);
+
+
+</script>
+
+
+</body>
+
+</html>

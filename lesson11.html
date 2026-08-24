@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Bright English Academy - Day 11: Daily Routines and Present Simple.">
+
+    <title>Day 11 — Daily Routines & Present Simple | Bright English Academy</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8ff;
+            color: #17233c;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: linear-gradient(135deg, #0757c9, #13a6e8);
+            color: white;
+            padding: 35px 20px 30px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .academy-name {
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: clamp(30px, 5vw, 50px);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .day-badge {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 9px 18px;
+            background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           PROGRESS
+        ========================= */
+
+        .progress-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            padding: 10px 18px;
+        }
+
+        .progress-info {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .progress-bar {
+            max-width: 1100px;
+            height: 9px;
+            background: #e5eaf2;
+            border-radius: 20px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #0757c9, #13a6e8);
+            border-radius: 20px;
+            transition: width 0.4s ease;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            max-width: 1100px;
+            margin: 22px auto;
+            padding: 0 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0757c9;
+            background: white;
+            border: 1px solid #d8e2f2;
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            background: #0757c9;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 10px 18px 60px;
+        }
+
+        section {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            margin: 25px 0;
+            box-shadow: 0 7px 25px rgba(20, 53, 100, 0.07);
+            border: 1px solid #e6edf7;
+        }
+
+        .section-title {
+            color: #0757c9;
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .section-subtitle {
+            color: #4e5e78;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           OBJECTIVES
+        ========================= */
+
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+        }
+
+        .objective {
+            background: #f2f7ff;
+            border-left: 5px solid #0757c9;
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .objective strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           VOCABULARY
+        ========================= */
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+        }
+
+        .vocab-card {
+            border: 1px solid #e1e8f2;
+            border-radius: 14px;
+            padding: 18px;
+            background: #fbfdff;
+            transition: 0.2s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+        }
+
+        .vocab-card h3 {
+            color: #0757c9;
+            margin-bottom: 4px;
+        }
+
+        .translation {
+            color: #6a7890;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .listen-btn {
+            border: none;
+            background: #0757c9;
+            color: white;
+            padding: 8px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .listen-btn:hover {
+            background: #06449e;
+        }
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th {
+            background: #0757c9;
+            color: white;
+            padding: 13px;
+            text-align: left;
+        }
+
+        td {
+            padding: 13px;
+            border-bottom: 1px solid #e4eaf2;
+        }
+
+        tr:nth-child(even) {
+            background: #f7faff;
+        }
+
+        /* =========================
+           GRAMMAR BOX
+        ========================= */
+
+        .grammar-box {
+            background: #eef6ff;
+            border-left: 6px solid #0757c9;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+
+        .formula {
+            background: #17233c;
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            font-family: "Courier New", monospace;
+            margin: 12px 0;
+            overflow-x: auto;
+        }
+
+        .example {
+            background: #f7f9fc;
+            border: 1px solid #e1e7ef;
+            padding: 14px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .correct {
+            color: #138a4b;
+            font-weight: bold;
+        }
+
+        .wrong {
+            color: #c62828;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FREQUENCY
+        ========================= */
+
+        .frequency-list {
+            display: grid;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .frequency-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 13px 16px;
+            border-radius: 10px;
+            background: #f6f9fd;
+            border: 1px solid #e4eaf2;
+        }
+
+        .frequency-number {
+            color: #0757c9;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CONVERSATION
+        ========================= */
+
+        .conversation {
+            background: linear-gradient(135deg, #f2f8ff, #ffffff);
+            padding: 22px;
+            border-radius: 15px;
+            border: 1px solid #dfe8f5;
+        }
+
+        .line {
+            padding: 8px 0;
+        }
+
+        .speaker {
+            color: #0757c9;
+            font-weight: bold;
+        }
+
+        /* =========================
+           EXERCISES
+        ========================= */
+
+        .exercise {
+            margin: 18px 0;
+            padding: 20px;
+            border: 1px solid #dfe6f0;
+            border-radius: 14px;
+            background: #fcfdff;
+        }
+
+        .exercise p {
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 11px 13px;
+            border: 1px solid #cbd7e8;
+            border-radius: 9px;
+            font-size: 15px;
+            margin-top: 7px;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #0757c9;
+            box-shadow: 0 0 0 3px rgba(7,87,201,0.08);
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .check-btn {
+            margin-top: 12px;
+            background: #0757c9;
+            color: white;
+            border: none;
+            padding: 10px 17px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .check-btn:hover {
+            background: #06449e;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           INTERACTIVE CARDS
+        ========================= */
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 15px;
+        }
+
+        .activity-card {
+            padding: 20px;
+            border-radius: 15px;
+            background: #f4f8ff;
+            border: 1px solid #dbe5f3;
+        }
+
+        .activity-card h3 {
+            color: #0757c9;
+            margin-bottom: 8px;
+        }
+
+        .choice-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .choice-btn {
+            border: 1px solid #c9d7ea;
+            background: white;
+            padding: 8px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .choice-btn:hover {
+            background: #eaf3ff;
+        }
+
+        .choice-btn.selected {
+            background: #0757c9;
+            color: white;
+            border-color: #0757c9;
+        }
+
+        /* =========================
+           CHALLENGES
+        ========================= */
+
+        .challenge {
+            background: linear-gradient(135deg, #fff9e8, #fff);
+            border-left: 6px solid #f0a500;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        /* =========================
+           QUIZ
+        ========================= */
+
+        .quiz-question {
+            padding: 20px;
+            border: 1px solid #dfe6f0;
+            border-radius: 14px;
+            margin: 15px 0;
+            background: #fcfdff;
+        }
+
+        .quiz-question h3 {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .option {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #dce4ef;
+            border-radius: 9px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .option:hover {
+            background: #f0f6ff;
+        }
+
+        .option input {
+            margin-right: 8px;
+        }
+
+        .quiz-btn {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            background: linear-gradient(135deg, #0757c9, #13a6e8);
+            color: white;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .quiz-result {
+            display: none;
+            margin-top: 20px;
+            padding: 22px;
+            text-align: center;
+            background: #eef8f2;
+            border: 1px solid #b9e2ca;
+            border-radius: 14px;
+        }
+
+        .score-number {
+            font-size: 40px;
+            color: #138a4b;
+            font-weight: bold;
+        }
+
+        /* =========================
+           REVIEW
+        ========================= */
+
+        .review-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .review-item {
+            padding: 14px 17px;
+            border-radius: 10px;
+            background: #f5f8fc;
+            border-left: 4px solid #0757c9;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #17233c;
+            color: white;
+            text-align: center;
+            padding: 30px 18px;
+            margin-top: 20px;
+        }
+
+        footer strong {
+            color: #58c7ff;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 28px 15px;
+            }
+
+            section {
+                padding: 20px;
+                border-radius: 14px;
+            }
+
+            .section-title {
+                font-size: 23px;
+            }
+
+            .frequency-item {
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            nav {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="academy-name">
+        Bright English Academy
+    </div>
+
+    <h1>Daily Routines & Present Simple</h1>
+
+    <p>Build stronger English for everyday life.</p>
+
+    <div class="day-badge">
+        📚 Day 11 / Lesson 11
+    </div>
+
+</header>
+
+<!-- PROGRESS -->
+<div class="progress-container">
+
+    <div class="progress-info">
+        <span>Lesson Progress</span>
+        <span id="progressText">0%</span>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+
+    <a href="#objectives">Objectives</a>
+    <a href="#vocabulary">Vocabulary</a>
+    <a href="#pronunciation">Pronunciation</a>
+    <a href="#affirmative">Affirmative</a>
+    <a href="#negative">Negative</a>
+    <a href="#questions">Questions</a>
+    <a href="#frequency">Frequency</a>
+    <a href="#conversation">Conversation</a>
+    <a href="#exercises">Exercises</a>
+    <a href="#activities">Activities</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#writing">Writing</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#review">Review</a>
+
+</nav>
+
+<main>
+
+<!-- =========================
+     OBJECTIVES
+========================= -->
+
+<section id="objectives">
+
+    <h2 class="section-title">
+        🎯 Lesson Objectives
+    </h2>
+
+    <p class="section-subtitle">
+        By the end of this lesson, you will be able to:
+    </p>
+
+    <div class="objectives">
+
+        <div class="objective">
+            <strong>🕐 Talk about routines</strong>
+            Describe your daily activities in English.
+        </div>
+
+        <div class="objective">
+            <strong>📚 Use Present Simple</strong>
+            Make affirmative sentences correctly.
+        </div>
+
+        <div class="objective">
+            <strong>❌ Make negatives</strong>
+            Use don't and doesn't correctly.
+        </div>
+
+        <div class="objective">
+            <strong>❓ Ask questions</strong>
+            Use Do and Does naturally.
+        </div>
+
+        <div class="objective">
+            <strong>🧠 Use frequency words</strong>
+            Talk about how often things happen.
+        </div>
+
+        <div class="objective">
+            <strong>🗣️ Speak confidently</strong>
+            Describe your own daily routine.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VOCABULARY
+========================= -->
+
+<section id="vocabulary">
+
+    <h2 class="section-title">
+        🕐 Daily Routines Vocabulary
+    </h2>
+
+    <p class="section-subtitle">
+        Learn these common verbs for talking about everyday activities.
+    </p>
+
+    <div class="vocab-grid">
+
+        <div class="vocab-card">
+            <h3>Wake up</h3>
+            <div class="translation">Acordar</div>
+            <button class="listen-btn" onclick="speak('Wake up')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Get up</h3>
+            <div class="translation">Levantar-se</div>
+            <button class="listen-btn" onclick="speak('Get up')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Brush my teeth</h3>
+            <div class="translation">Escovar os dentes</div>
+            <button class="listen-btn" onclick="speak('Brush my teeth')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Take a shower</h3>
+            <div class="translation">Tomar banho</div>
+            <button class="listen-btn" onclick="speak('Take a shower')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Have breakfast</h3>
+            <div class="translation">Tomar o pequeno-almoço</div>
+            <button class="listen-btn" onclick="speak('Have breakfast')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Go to school</h3>
+            <div class="translation">Ir à escola</div>
+            <button class="listen-btn" onclick="speak('Go to school')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Study English</h3>
+            <div class="translation">Estudar inglês</div>
+            <button class="listen-btn" onclick="speak('Study English')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Have lunch</h3>
+            <div class="translation">Almoçar</div>
+            <button class="listen-btn" onclick="speak('Have lunch')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Go home</h3>
+            <div class="translation">Ir para casa</div>
+            <button class="listen-btn" onclick="speak('Go home')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Do homework</h3>
+            <div class="translation">Fazer os trabalhos de casa</div>
+            <button class="listen-btn" onclick="speak('Do homework')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Have dinner</h3>
+            <div class="translation">Jantar</div>
+            <button class="listen-btn" onclick="speak('Have dinner')">🔊 Listen</button>
+        </div>
+
+        <div class="vocab-card">
+            <h3>Go to bed</h3>
+            <div class="translation">Ir para a cama</div>
+            <button class="listen-btn" onclick="speak('Go to bed')">🔊 Listen</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRONUNCIATION
+========================= -->
+
+<section id="pronunciation">
+
+    <h2 class="section-title">
+        🔊 Pronunciation Practice
+    </h2>
+
+    <p class="section-subtitle">
+        Listen and repeat these useful routine sentences.
+    </p>
+
+    <div class="example">
+        <strong>I wake up at six o'clock.</strong><br>
+        Eu acordo às seis horas.
+        <br><br>
+        <button class="listen-btn" onclick="speak('I wake up at six o’clock.')">
+            🔊 Listen
+        </button>
+    </div>
+
+    <div class="example">
+        <strong>I have breakfast at seven.</strong><br>
+        Eu tomo o pequeno-almoço às sete.
+        <br><br>
+        <button class="listen-btn" onclick="speak('I have breakfast at seven.')">
+            🔊 Listen
+        </button>
+    </div>
+
+    <div class="example">
+        <strong>I go to school every day.</strong><br>
+        Eu vou à escola todos os dias.
+        <br><br>
+        <button class="listen-btn" onclick="speak('I go to school every day.')">
+            🔊 Listen
+        </button>
+    </div>
+
+    <div class="example">
+        <strong>I study English in the evening.</strong><br>
+        Eu estudo inglês à noite.
+        <br><br>
+        <button class="listen-btn" onclick="speak('I study English in the evening.')">
+            🔊 Listen
+        </button>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AFFIRMATIVE
+========================= -->
+
+<section id="affirmative">
+
+    <h2 class="section-title">
+        📚 Present Simple — Affirmative
+    </h2>
+
+    <p class="section-subtitle">
+        We use the Present Simple to talk about routines, habits and facts.
+    </p>
+
+    <div class="grammar-box">
+
+        <strong>Basic structure:</strong>
+
+        <div class="formula">
+            I / You / We / They + base verb
+        </div>
+
+        <div class="formula">
+            He / She / It + verb + S
+        </div>
+
+    </div>
+
+    <div class="example">
+        <strong>I study English every day.</strong>
+        <br>
+        Eu estudo inglês todos os dias.
+    </div>
+
+    <div class="example">
+        <strong>They go to school at seven.</strong>
+        <br>
+        Eles vão à escola às sete.
+    </div>
+
+    <div class="example">
+        <strong>She studies English every day.</strong>
+        <br>
+        Ela estuda inglês todos os dias.
+    </div>
+
+    <div class="example">
+        <strong>He goes to work at eight.</strong>
+        <br>
+        Ele vai ao trabalho às oito.
+    </div>
+
+    <div class="grammar-box">
+
+        <strong>Remember:</strong>
+
+        <p>
+            With <strong>he, she, it</strong>, the verb normally takes
+            <strong>-s</strong>.
+        </p>
+
+        <p>
+            play → plays
+        </p>
+
+        <p>
+            work → works
+        </p>
+
+        <p>
+            study → studies
+        </p>
+
+        <p>
+            go → goes
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NEGATIVE
+========================= -->
+
+<section id="negative">
+
+    <h2 class="section-title">
+        ❌ Negative — Don't / Doesn't
+    </h2>
+
+    <p class="section-subtitle">
+        Use don't and doesn't to make negative Present Simple sentences.
+    </p>
+
+    <div class="grammar-box">
+
+        <div class="formula">
+            I / You / We / They + don't + base verb
+        </div>
+
+        <div class="formula">
+            He / She / It + doesn't + base verb
+        </div>
+
+    </div>
+
+    <div class="example">
+        <span class="correct">
+            I don't drink coffee.
+        </span>
+        <br>
+        Eu não bebo café.
+    </div>
+
+    <div class="example">
+        <span class="correct">
+            They don't go to school on Sunday.
+        </span>
+        <br>
+        Eles não vão à escola no domingo.
+    </div>
+
+    <div class="example">
+        <span class="correct">
+            She doesn't work on Sunday.
+        </span>
+        <br>
+        Ela não trabalha no domingo.
+    </div>
+
+    <div class="grammar-box">
+
+        <strong>Important!</strong>
+
+        <p>
+            After <strong>doesn't</strong>, use the base verb.
+        </p>
+
+        <p class="wrong">
+            ❌ She doesn't works.
+        </p>
+
+        <p class="correct">
+            ✅ She doesn't work.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUESTIONS
+========================= -->
+
+<section id="questions">
+
+    <h2 class="section-title">
+        ❓ Questions — Do / Does
+    </h2>
+
+    <p class="section-subtitle">
+        Use Do or Does to ask Present Simple questions.
+    </p>
+
+    <div class="grammar-box">
+
+        <div class="formula">
+            Do + I / you / we / they + base verb?
+        </div>
+
+        <div class="formula">
+            Does + he / she / it + base verb?
+        </div>
+
+    </div>
+
+    <div class="example">
+        <strong>Do you study English?</strong>
+        <br>
+        Yes, I do. / No, I don't.
+    </div>
+
+    <div class="example">
+        <strong>Does she work here?</strong>
+        <br>
+        Yes, she does. / No, she doesn't.
+    </div>
+
+    <div class="example">
+        <strong>Do they go to school every day?</strong>
+        <br>
+        Yes, they do.
+    </div>
+
+    <div class="grammar-box">
+
+        <strong>Remember:</strong>
+
+        <p class="wrong">
+            ❌ Does she studies English?
+        </p>
+
+        <p class="correct">
+            ✅ Does she study English?
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FREQUENCY
+========================= -->
+
+<section id="frequency">
+
+    <h2 class="section-title">
+        🧠 Adverbs of Frequency
+    </h2>
+
+    <p class="section-subtitle">
+        These words tell us how often something happens.
+    </p>
+
+    <div class="frequency-list">
+
+        <div class="frequency-item">
+            <span><strong>Always</strong></span>
+            <span class="frequency-number">100%</span>
+        </div>
+
+        <div class="frequency-item">
+            <span><strong>Usually</strong></span>
+            <span class="frequency-number">80%</span>
+        </div>
+
+        <div class="frequency-item">
+            <span><strong>Often</strong></span>
+            <span class="frequency-number">60%</span>
+        </div>
+
+        <div class="frequency-item">
+            <span><strong>Sometimes</strong></span>
+            <span class="frequency-number">40%</span>
+        </div>
+
+        <div class="frequency-item">
+            <span><strong>Rarely</strong></span>
+            <span class="frequency-number">20%</span>
+        </div>
+
+        <div class="frequency-item">
+            <span><strong>Never</strong></span>
+            <span class="frequency-number">0%</span>
+        </div>
+
+    </div>
+
+    <div class="example" style="margin-top:20px;">
+        <strong>I always wake up early.</strong>
+        <br>
+        Eu acordo sempre cedo.
+    </div>
+
+    <div class="example">
+        <strong>She usually has breakfast at seven.</strong>
+        <br>
+        Ela normalmente toma o pequeno-almoço às sete.
+    </div>
+
+    <div class="example">
+        <strong>They sometimes play football.</strong>
+        <br>
+        Eles às vezes jogam futebol.
+    </div>
+
+    <div class="example">
+        <strong>He never drinks coffee.</strong>
+        <br>
+        Ele nunca bebe café.
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONVERSATION
+========================= -->
+
+<section id="conversation">
+
+    <h2 class="section-title">
+        💬 Real-life Conversation
+    </h2>
+
+    <p class="section-subtitle">
+        Read the conversation and practice saying it aloud.
+    </p>
+
+    <div class="conversation">
+
+        <div class="line">
+            <span class="speaker">Anna:</span>
+            What time do you usually wake up?
+        </div>
+
+        <div class="line">
+            <span class="speaker">David:</span>
+            I usually wake up at six o'clock.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Anna:</span>
+            Do you have breakfast at home?
+        </div>
+
+        <div class="line">
+            <span class="speaker">David:</span>
+            Yes, I do. I have breakfast at seven.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Anna:</span>
+            Do you go to school every day?
+        </div>
+
+        <div class="line">
+            <span class="speaker">David:</span>
+            Yes, I do.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Anna:</span>
+            What do you do in the evening?
+        </div>
+
+        <div class="line">
+            <span class="speaker">David:</span>
+            I usually do my homework and study English.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Anna:</span>
+            What time do you go to bed?
+        </div>
+
+        <div class="line">
+            <span class="speaker">David:</span>
+            I go to bed at ten o'clock.
+        </div>
+
+    </div>
+
+    <br>
+
+    <button class="listen-btn"
+            onclick="speak(`Anna. What time do you usually wake up? David. I usually wake up at six o'clock. Anna. Do you have breakfast at home? David. Yes, I do. I have breakfast at seven. Anna. Do you go to school every day? David. Yes, I do. Anna. What do you do in the evening? David. I usually do my homework and study English.`)">
+        🔊 Listen to Conversation
+    </button>
+
+</section>
+
+
+<!-- =========================
+     EXERCISES
+========================= -->
+
+<section id="exercises">
+
+    <h2 class="section-title">
+        ✏️ Exercises
+    </h2>
+
+    <p class="section-subtitle">
+        Complete the activities and check your answers.
+    </p>
+
+    <!-- Exercise 1 -->
+
+    <div class="exercise">
+
+        <p>1. Choose the correct verb:</p>
+
+        <select id="ex1">
+            <option value="">Choose...</option>
+            <option value="go">She go to school every day.</option>
+            <option value="goes">She goes to school every day.</option>
+        </select>
+
+        <button class="check-btn" onclick="checkExercise('ex1','goes','feedback1')">
+            Check Answer
+        </button>
+
+        <div id="feedback1" class="feedback"></div>
+
+    </div>
+
+
+    <!-- Exercise 2 -->
+
+    <div class="exercise">
+
+        <p>2. Complete:</p>
+
+        <p>
+            He ________ drink coffee.
+        </p>
+
+        <input type="text" id="ex2" placeholder="Type your answer">
+
+        <button class="check-btn" onclick="checkExercise('ex2','doesn’t','feedback2', ['doesn\\'t','doesnt','doesn’t'])">
+            Check Answer
+        </button>
+
+        <div id="feedback2" class="feedback"></div>
+
+    </div>
+
+
+    <!-- Exercise 3 -->
+
+    <div class="exercise">
+
+        <p>3. Complete the question:</p>
+
+        <p>
+            ________ you study English?
+        </p>
+
+        <input type="text" id="ex3" placeholder="Do or Does?">
+
+        <button class="check-btn" onclick="checkExercise('ex3','do','feedback3')">
+            Check Answer
+        </button>
+
+        <div id="feedback3" class="feedback"></div>
+
+    </div>
+
+
+    <!-- Exercise 4 -->
+
+    <div class="exercise">
+
+        <p>4. Choose the correct sentence:</p>
+
+        <select id="ex4">
+
+            <option value="">Choose...</option>
+
+            <option value="wrong">
+                He don't go to school.
+            </option>
+
+            <option value="correct">
+                He doesn't go to school.
+            </option>
+
+            <option value="wrong2">
+                He doesn't goes to school.
+            </option>
+
+        </select>
+
+        <button class="check-btn" onclick="checkExercise('ex4','correct','feedback4')">
+            Check Answer
+        </button>
+
+        <div id="feedback4" class="feedback"></div>
+
+    </div>
+
+
+    <!-- Exercise 5 -->
+
+    <div class="exercise">
+
+        <p>5. Complete the sentence:</p>
+
+        <p>
+            They ________ to school every day.
+        </p>
+
+        <input type="text" id="ex5" placeholder="go / goes">
+
+        <button class="check-btn" onclick="checkExercise('ex5','go','feedback5')">
+            Check Answer
+        </button>
+
+        <div id="feedback5" class="feedback"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     INTERACTIVE ACTIVITIES
+========================= -->
+
+<section id="activities">
+
+    <h2 class="section-title">
+        🧩 Interactive Activities
+    </h2>
+
+    <div class="activity-grid">
+
+        <div class="activity-card">
+
+            <h3>Activity 1 — Frequency</h3>
+
+            <p>
+                How often do you study English?
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'frequencyResult','Great! Now make a sentence: I always study English.')">
+                    Always
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'frequencyResult','Good! Try: I usually study English.')">
+                    Usually
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'frequencyResult','Excellent! Try: I sometimes study English.')">
+                    Sometimes
+                </button>
+
+            </div>
+
+            <p id="frequencyResult" class="feedback"></p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>Activity 2 — Do or Does?</h3>
+
+            <p>
+                ______ she wake up early?
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'doResult','Not quite. Try again.')">
+                    Do
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'doResult','Correct! Does she wake up early?')">
+                    Does
+                </button>
+
+            </div>
+
+            <p id="doResult" class="feedback"></p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>Activity 3 — Make a sentence</h3>
+
+            <p>
+                Use these words:
+            </p>
+
+            <p>
+                <strong>she / study / English / every day</strong>
+            </p>
+
+            <input type="text"
+                   id="sentenceInput"
+                   placeholder="Write the sentence">
+
+            <button class="check-btn"
+                    onclick="checkSentence()">
+                Check
+            </button>
+
+            <p id="sentenceResult" class="feedback"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SPEAKING
+========================= -->
+
+<section id="speaking">
+
+    <h2 class="section-title">
+        🗣️ Speaking Challenge
+    </h2>
+
+    <div class="challenge">
+
+        <h3>🎤 Talk about your daily routine.</h3>
+
+        <p style="margin-top:10px;">
+            Speak for 30–60 seconds.
+        </p>
+
+        <br>
+
+        <p>
+            Try to include:
+        </p>
+
+        <ul style="margin-left:20px; margin-top:8px;">
+            <li>What time you wake up</li>
+            <li>What you do in the morning</li>
+            <li>When you study</li>
+            <li>What you do in the afternoon</li>
+            <li>What you do in the evening</li>
+            <li>What time you go to bed</li>
+        </ul>
+
+        <br>
+
+        <button class="listen-btn"
+                onclick="speak('I wake up at six o’clock. I have breakfast at seven. I go to school in the morning. I study English in the afternoon. In the evening, I do my homework. I go to bed at ten o’clock.')">
+            🔊 Hear a Model
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     WRITING
+========================= -->
+
+<section id="writing">
+
+    <h2 class="section-title">
+        ✍️ Writing Challenge
+    </h2>
+
+    <p class="section-subtitle">
+        Write 6–8 sentences about your daily routine.
+    </p>
+
+    <div class="challenge">
+
+        <p>
+            Use the Present Simple and at least
+            <strong>two adverbs of frequency.</strong>
+        </p>
+
+        <br>
+
+        <p>
+            Example:
+        </p>
+
+        <p>
+            I usually wake up early. I have breakfast at seven.
+            I always go to school in the morning.
+        </p>
+
+        <br>
+
+        <textarea
+            id="writingArea"
+            placeholder="Write your daily routine here..."></textarea>
+
+        <button class="check-btn"
+                onclick="checkWriting()">
+            Check My Writing
+        </button>
+
+        <p id="writingFeedback" class="feedback"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUIZ
+========================= -->
+
+<section id="quiz">
+
+    <h2 class="section-title">
+        🎯 10-Question Quiz
+    </h2>
+
+    <p class="section-subtitle">
+        Choose the best answer for each question.
+    </p>
+
+
+    <!-- Q1 -->
+
+    <div class="quiz-question">
+
+        <h3>1. She ________ English every day.</h3>
+
+        <label class="option">
+            <input type="radio" name="q1" value="a">
+            study
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1" value="b">
+            studies
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q1" value="c">
+            studying
+        </label>
+
+    </div>
+
+
+    <!-- Q2 -->
+
+    <div class="quiz-question">
+
+        <h3>2. They ________ go to school on Sunday.</h3>
+
+        <label class="option">
+            <input type="radio" name="q2" value="a">
+            doesn't
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2" value="b">
+            don't
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q2" value="c">
+            isn't
+        </label>
+
+    </div>
+
+
+    <!-- Q3 -->
+
+    <div class="quiz-question">
+
+        <h3>3. ________ you study English?</h3>
+
+        <label class="option">
+            <input type="radio" name="q3" value="a">
+            Does
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3" value="b">
+            Do
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q3" value="c">
+            Is
+        </label>
+
+    </div>
+
+
+    <!-- Q4 -->
+
+    <div class="quiz-question">
+
+        <h3>4. ________ he work here?</h3>
+
+        <label class="option">
+            <input type="radio" name="q4" value="a">
+            Do
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4" value="b">
+            Does
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q4" value="c">
+            Are
+        </label>
+
+    </div>
+
+
+    <!-- Q5 -->
+
+    <div class="quiz-question">
+
+        <h3>5. Choose the correct sentence.</h3>
+
+        <label class="option">
+            <input type="radio" name="q5" value="a">
+            He don't like coffee.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5" value="b">
+            He doesn't like coffee.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q5" value="c">
+            He doesn't likes coffee.
+        </label>
+
+    </div>
+
+
+    <!-- Q6 -->
+
+    <div class="quiz-question">
+
+        <h3>6. Which word means 100%?</h3>
+
+        <label class="option">
+            <input type="radio" name="q6" value="a">
+            Never
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6" value="b">
+            Sometimes
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q6" value="c">
+            Always
+        </label>
+
+    </div>
+
+
+    <!-- Q7 -->
+
+    <div class="quiz-question">
+
+        <h3>7. I ________ wake up early.</h3>
+
+        <label class="option">
+            <input type="radio" name="q7" value="a">
+            usually
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="b">
+            does
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q7" value="c">
+            don't
+        </label>
+
+    </div>
+
+
+    <!-- Q8 -->
+
+    <div class="quiz-question">
+
+        <h3>8. What is correct?</h3>
+
+        <label class="option">
+            <input type="radio" name="q8" value="a">
+            Does she study English?
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8" value="b">
+            Does she studies English?
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q8" value="c">
+            Do she study English?
+        </label>
+
+    </div>
+
+
+    <!-- Q9 -->
+
+    <div class="quiz-question">
+
+        <h3>9. Which verb means "acordar"?</h3>
+
+        <label class="option">
+            <input type="radio" name="q9" value="a">
+            Go to bed
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q9" value="b">
+            Wake up
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q9" value="c">
+            Have dinner
+        </label>
+
+    </div>
+
+
+    <!-- Q10 -->
+
+    <div class="quiz-question">
+
+        <h3>10. Choose the correct sentence.</h3>
+
+        <label class="option">
+            <input type="radio" name="q10" value="a">
+            They goes to school.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q10" value="b">
+            They go to school.
+        </label>
+
+        <label class="option">
+            <input type="radio" name="q10" value="c">
+            They going to school.
+        </label>
+
+    </div>
+
+
+    <button class="quiz-btn" onclick="calculateQuiz()">
+        🎯 Submit Quiz
+    </button>
+
+
+    <div class="quiz-result" id="quizResult">
+
+        <div>Your Score</div>
+
+        <div class="score-number" id="scoreNumber">
+            0/10
+        </div>
+
+        <h3 id="scoreMessage"></h3>
+
+        <p id="scoreDetails"></p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DAILY REVIEW
+========================= -->
+
+<section id="review">
+
+    <h2 class="section-title">
+        🔄 Daily Review
+    </h2>
+
+    <p class="section-subtitle">
+        Before finishing Lesson 11, review the most important points.
+    </p>
+
+    <div class="review-list">
+
+        <div class="review-item">
+            ✅ Present Simple describes routines and habits.
+        </div>
+
+        <div class="review-item">
+            ✅ He / She / It normally takes <strong>-s</strong>.
+        </div>
+
+        <div class="review-item">
+            ✅ Use <strong>don't</strong> with I, you, we and they.
+        </div>
+
+        <div class="review-item">
+            ✅ Use <strong>doesn't</strong> with he, she and it.
+        </div>
+
+        <div class="review-item">
+            ✅ Use <strong>Do</strong> for I, you, we and they.
+        </div>
+
+        <div class="review-item">
+            ✅ Use <strong>Does</strong> for he, she and it.
+        </div>
+
+        <div class="review-item">
+            ✅ After does/doesn't, use the base verb.
+        </div>
+
+        <div class="review-item">
+            ✅ Frequency adverbs tell us how often something happens.
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="grammar-box">
+
+        <strong>⭐ Key sentence:</strong>
+
+        <div class="formula">
+            I usually wake up early and I study English every day.
+        </div>
+
+        <button class="listen-btn"
+                onclick="speak('I usually wake up early and I study English every day.')">
+            🔊 Listen
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        <strong>Bright English Academy</strong>
+    </p>
+
+    <p>
+        Speak English with Confidence
+    </p>
+
+    <p style="margin-top:10px; opacity:0.75;">
+        Day 11 / Lesson 11
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* =========================
+       SPEECH
+    ========================= */
+
+    function speak(text) {
+
+        if (!("speechSynthesis" in window)) {
+            alert("Audio is not supported by this browser.");
+            return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const speech = new SpeechSynthesisUtterance(text);
+
+        speech.lang = "en-US";
+        speech.rate = 0.85;
+        speech.pitch = 1;
+
+        window.speechSynthesis.speak(speech);
+    }
+
+
+    /* =========================
+       EXERCISES
+    ========================= */
+
+    function checkExercise(inputId, answer, feedbackId, alternatives = []) {
+
+        const input = document.getElementById(inputId);
+        const feedback = document.getElementById(feedbackId);
+
+        let value = input.value.trim().toLowerCase();
+
+        let accepted = [
+            answer.toLowerCase(),
+            ...alternatives.map(item => item.toLowerCase())
+        ];
+
+        if (accepted.includes(value)) {
+
+            feedback.textContent = "✅ Correct! Excellent work.";
+            feedback.style.color = "#138a4b";
+
+        } else {
+
+            feedback.textContent = "❌ Not quite. Try again.";
+            feedback.style.color = "#c62828";
+
+        }
+
+        updateProgress();
+    }
+
+
+    /* =========================
+       CHOICE ACTIVITY
+    ========================= */
+
+    function selectChoice(button, resultId, message) {
+
+        const buttons =
+            button.parentElement.querySelectorAll(".choice-btn");
+
+        buttons.forEach(btn => {
+            btn.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+
+        document.getElementById(resultId).textContent = message;
+
+        updateProgress();
+    }
+
+
+    /* =========================
+       SENTENCE CHECK
+    ========================= */
+
+    function checkSentence() {
+
+        const input =
+            document.getElementById("sentenceInput");
+
+        const result =
+            document.getElementById("sentenceResult");
+
+        const value =
+            input.value.trim().toLowerCase().replace(/[.!?]/g, "");
+
+        const answers = [
+            "she studies english every day",
+            "she studies english everyday"
+        ];
+
+        if (answers.includes(value)) {
+
+            result.textContent =
+                "✅ Excellent! She studies English every day.";
+
+            result.style.color = "#138a4b";
+
+        } else {
+
+            result.textContent =
+                "❌ Try again. Remember: She + studies.";
+
+            result.style.color = "#c62828";
+
+        }
+
+        updateProgress();
+    }
+
+
+    /* =========================
+       WRITING
+    ========================= */
+
+    function checkWriting() {
+
+        const text =
+            document.getElementById("writingArea").value.trim();
+
+        const feedback =
+            document.getElementById("writingFeedback");
+
+        if (text.length < 50) {
+
+            feedback.textContent =
+                "✏️ Write a little more. Try to write 6–8 sentences.";
+
+            feedback.style.color = "#c62828";
+
+            return;
+        }
+
+        const lower = text.toLowerCase();
+
+        const frequencyWords = [
+            "always",
+            "usually",
+            "often",
+            "sometimes",
+            "rarely",
+            "never"
+        ];
+
+        const foundFrequency =
+            frequencyWords.filter(word => lower.includes(word));
+
+        if (foundFrequency.length >= 2) {
+
+            feedback.textContent =
+                "✅ Great! Your writing includes enough detail and frequency expressions.";
+
+            feedback.style.color = "#138a4b";
+
+        } else {
+
+            feedback.textContent =
+                "👍 Good start! Add at least two frequency words such as usually, always, sometimes or never.";
+
+            feedback.style.color = "#b06b00";
+
+        }
+
+        updateProgress();
+    }
+
+
+    /* =========================
+       QUIZ
+    ========================= */
+
+    function calculateQuiz() {
+
+        const answers = {
+            q1: "b",
+            q2: "b",
+            q3: "b",
+            q4: "b",
+            q5: "b",
+            q6: "c",
+            q7: "a",
+            q8: "a",
+            q9: "b",
+            q10: "b"
+        };
+
+        let score = 0;
+
+        for (let question in answers) {
+
+            const selected =
+                document.querySelector(
+                    `input[name="${question}"]:checked`
+                );
+
+            if (selected && selected.value === answers[question]) {
+                score++;
+            }
+        }
+
+        const result =
+            document.getElementById("quizResult");
+
+        const number =
+            document.getElementById("scoreNumber");
+
+        const message =
+            document.getElementById("scoreMessage");
+
+        const details =
+            document.getElementById("scoreDetails");
+
+        number.textContent = score + "/10";
+
+        if (score === 10) {
+
+            message.textContent =
+                "🏆 Perfect Score!";
+
+            details.textContent =
+                "Excellent! You have mastered the main points of Lesson 11.";
+
+        } else if (score >= 8) {
+
+            message.textContent =
+                "🌟 Excellent Work!";
+
+            details.textContent =
+                "You have a strong understanding of Daily Routines and Present Simple.";
+
+        } else if (score >= 6) {
+
+            message.textContent =
+                "👍 Good Job!";
+
+            details.textContent =
+                "You are making good progress. Review the grammar points and try again.";
+
+        } else {
+
+            message.textContent =
+                "📚 Keep Practicing!";
+
+            details.textContent =
+                "Review the lesson and try the quiz again. Practice makes progress!";
+
+        }
+
+        result.style.display = "block";
+
+        result.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        updateProgress();
+    }
+
+
+    /* =========================
+       PROGRESS
+    ========================= */
+
+    function updateProgress() {
+
+        const totalSections = 13;
+
+        let completed = 0;
+
+        const ids = [
+            "objectives",
+            "vocabulary",
+            "pronunciation",
+            "affirmative",
+            "negative",
+            "questions",
+            "frequency",
+            "conversation",
+            "exercises",
+            "activities",
+            "speaking",
+            "writing",
+            "quiz"
+        ];
+
+        ids.forEach(id => {
+
+            const section =
+                document.getElementById(id);
+
+            if (!section) return;
+
+            const rect =
+                section.getBoundingClientRect();
+
+            const visible =
+                rect.top < window.innerHeight * 0.75 &&
+                rect.bottom > window.innerHeight * 0.25;
+
+            if (visible) {
+                completed++;
+            }
+
+        });
+
+        const scrollTop =
+            window.scrollY;
+
+        const documentHeight =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
+
+        let scrollProgress = 0;
+
+        if (documentHeight > 0) {
+            scrollProgress =
+                (scrollTop / documentHeight) * 100;
+        }
+
+        let finalProgress =
+            Math.max(
+                scrollProgress,
+                (completed / totalSections) * 100
+            );
+
+        finalProgress =
+            Math.min(100, Math.round(finalProgress));
+
+        document.getElementById("progressFill").style.width =
+            finalProgress + "%";
+
+        document.getElementById("progressText").textContent =
+            finalProgress + "%";
+    }
+
+
+    window.addEventListener("scroll", updateProgress);
+
+    window.addEventListener("load", updateProgress);
+
+</script>
+
+</body>
+</html>

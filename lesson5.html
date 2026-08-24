@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson 5 — Colors | Bright English Academy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#17233c;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:30px 18px 60px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin-bottom:24px;
+    box-shadow:0 5px 22px rgba(20,53,100,.08);
+    border:1px solid #e2eaf4;
+}
+
+.hero{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+}
+
+.hero h1{
+    color:white;
+    font-size:34px;
+    margin-top:0;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+.day-badge{
+    display:inline-block;
+    background:#ffd34d;
+    color:#17233c;
+    padding:7px 13px;
+    border-radius:20px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.progress-area{
+    margin-top:20px;
+}
+
+.progress-title{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+.progress-bar{
+    width:100%;
+    height:12px;
+    background:rgba(255,255,255,.3);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:#ffd34d;
+    border-radius:20px;
+    transition:.4s;
+}
+
+.lesson-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:24px;
+}
+
+.lesson-nav a{
+    background:#eaf3ff;
+    color:#0b4f9c;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+h2{
+    color:#0b4f9c;
+    font-size:26px;
+    margin-top:0;
+}
+
+h3{
+    color:#0b4f9c;
+}
+
+.objective-grid,
+.vocabulary-grid,
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.objective{
+    background:#f5f9ff;
+    padding:18px;
+    border-radius:12px;
+    border-left:5px solid #0b4f9c;
+}
+
+.objective strong{
+    display:block;
+    color:#0b4f9c;
+    margin-bottom:5px;
+}
+
+.word-card{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:18px;
+    border-radius:12px;
+}
+
+.word{
+    font-size:22px;
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.translation{
+    color:#64748b;
+    margin:5px 0 12px;
+}
+
+.color-box{
+    height:60px;
+    border-radius:10px;
+    margin-bottom:14px;
+    border:1px solid #ddd;
+}
+
+.listen-btn{
+    border:none;
+    background:#ffd34d;
+    color:#17233c;
+    padding:9px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.listen-btn:hover{
+    background:#f2bf1f;
+}
+
+.grammar-box{
+    background:#f5f9ff;
+    border-left:5px solid #0b4f9c;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:18px;
+}
+
+.example{
+    background:white;
+    padding:15px;
+    border-radius:8px;
+    margin-top:12px;
+}
+
+.english{
+    font-weight:bold;
+    color:#0b4f9c;
+}
+
+.dialogue{
+    background:#f7f9fc;
+    padding:20px;
+    border-radius:14px;
+}
+
+.dialogue p{
+    margin:10px 0;
+}
+
+.jose{
+    color:#0b4f9c;
+    font-weight:bold;
+}
+
+.maria{
+    color:#087f54;
+    font-weight:bold;
+}
+
+.exercise{
+    background:#f8fbff;
+    border:1px solid #dfe8f3;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.options{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:12px;
+}
+
+.options button{
+    border:1px solid #cdd9e8;
+    background:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.options button:hover{
+    background:#eaf3ff;
+}
+
+.answer{
+    display:none;
+    margin-top:12px;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.correct{
+    background:#e8f7ee;
+    color:#168348;
+}
+
+.wrong{
+    background:#fff0f0;
+    color:#c62828;
+}
+
+.activity{
+    background:#fffaf0;
+    border:1px solid #f2dfaa;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:18px;
+}
+
+.activity button{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:10px 17px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.challenge{
+    background:linear-gradient(135deg,#eef6ff,#f7fbff);
+    border:1px solid #d8e8f8;
+    padding:22px;
+    border-radius:14px;
+}
+
+.challenge li{
+    margin-bottom:8px;
+}
+
+.quiz-question{
+    padding:18px;
+    border-bottom:1px solid #e3e9f1;
+}
+
+.quiz-question p{
+    font-weight:bold;
+}
+
+.quiz-options{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.quiz-options label{
+    background:#f7faff;
+    padding:10px;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.quiz-options label:hover{
+    background:#eaf3ff;
+}
+
+.quiz-submit{
+    border:none;
+    background:#0b4f9c;
+    color:white;
+    padding:13px 24px;
+    border-radius:9px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+#quizResult{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    background:#eaf7ef;
+    color:#147844;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.review-item{
+    background:#f5f9ff;
+    padding:13px;
+    border-radius:9px;
+}
+
+.complete-box{
+    text-align:center;
+}
+
+.complete-btn{
+    border:none;
+    background:#168348;
+    color:white;
+    padding:14px 25px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#completeMessage{
+    display:none;
+    margin-top:15px;
+    color:#168348;
+    font-weight:bold;
+}
+
+.page-navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:25px;
+}
+
+.page-navigation a{
+    background:#0b4f9c;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+footer{
+    background:#17233c;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:#58c7ff;
+}
+
+@media(max-width:700px){
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .objective-grid,
+    .vocabulary-grid,
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .card{
+        padding:21px;
+    }
+
+    .page-navigation{
+        flex-direction:column;
+    }
+
+    .page-navigation a{
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a href="beginner1.html" class="logo">
+📚 Bright English Academy
+</a>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="beginner1.html">Course</a>
+<a href="student-login.html">Login</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<section class="card hero">
+
+<span class="day-badge">
+📚 Day 5 / Lesson 5
+</span>
+
+<h1>
+🎨 Colors
+</h1>
+
+<p>
+Learn common colors and use them to describe people, objects and things around you.
+</p>
+
+<div class="progress-area">
+
+<div class="progress-title">
+<span>Lesson Progress</span>
+<span id="progressText">0%</span>
+</div>
+
+<div class="progress-bar">
+<div id="progressFill" class="progress-fill"></div>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="lesson-nav">
+
+<a href="#objectives">Objectives</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#phrases">Useful Phrases</a>
+<a href="#grammar">Grammar</a>
+<a href="#pronunciation">Pronunciation</a>
+<a href="#conversation">Conversation</a>
+<a href="#exercises">Exercises</a>
+<a href="#activities">Activities</a>
+<a href="#speaking">Speaking</a>
+<a href="#writing">Writing</a>
+<a href="#quiz">Quiz</a>
+<a href="#review">Review</a>
+
+</section>
+
+
+<section id="objectives" class="card">
+
+<h2>🎯 Lesson Objectives</h2>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<div class="objective-grid">
+
+<div class="objective">
+<strong>🎨 Name Colors</strong>
+Identify and pronounce common colors.
+</div>
+
+<div class="objective">
+<strong>👀 Describe Objects</strong>
+Say what color something is.
+</div>
+
+<div class="objective">
+<strong>❓ Ask Questions</strong>
+Ask someone about a color.
+</div>
+
+<div class="objective">
+<strong>💬 Give Answers</strong>
+Answer simple color questions.
+</div>
+
+<div class="objective">
+<strong>❤️ Preferences</strong>
+Talk about your favorite color.
+</div>
+
+<div class="objective">
+<strong>🗣️ Speaking</strong>
+Use colors in everyday conversations.
+</div>
+
+</div>
+
+</section>
+
+
+<section id="vocabulary" class="card">
+
+<h2>🎨 Colors Vocabulary</h2>
+
+<p>Learn the most common colors in English.</p>
+
+<div class="vocabulary-grid">
+
+
+<div class="word-card">
+<div class="color-box" style="background:red;"></div>
+<div class="word">Red</div>
+<div class="translation">Vermelho</div>
+<button class="listen-btn" onclick="speak('Red')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:blue;"></div>
+<div class="word">Blue</div>
+<div class="translation">Azul</div>
+<button class="listen-btn" onclick="speak('Blue')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:green;"></div>
+<div class="word">Green</div>
+<div class="translation">Verde</div>
+<button class="listen-btn" onclick="speak('Green')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:yellow;"></div>
+<div class="word">Yellow</div>
+<div class="translation">Amarelo</div>
+<button class="listen-btn" onclick="speak('Yellow')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:black;"></div>
+<div class="word">Black</div>
+<div class="translation">Preto</div>
+<button class="listen-btn" onclick="speak('Black')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:white;"></div>
+<div class="word">White</div>
+<div class="translation">Branco</div>
+<button class="listen-btn" onclick="speak('White')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:orange;"></div>
+<div class="word">Orange</div>
+<div class="translation">Laranja</div>
+<button class="listen-btn" onclick="speak('Orange')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:purple;"></div>
+<div class="word">Purple</div>
+<div class="translation">Roxo / Púrpura</div>
+<button class="listen-btn" onclick="speak('Purple')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:pink;"></div>
+<div class="word">Pink</div>
+<div class="translation">Rosa</div>
+<button class="listen-btn" onclick="speak('Pink')">🔊 Listen</button>
+</div>
+
+
+<div class="word-card">
+<div class="color-box" style="background:brown;"></div>
+<div class="word">Brown</div>
+<div class="translation">Castanho / Marrom</div>
+<button class="listen-btn" onclick="speak('Brown')">🔊 Listen</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="phrases" class="card">
+
+<h2>💬 Useful Color Phrases</h2>
+
+
+<div class="grammar-box">
+
+<h3>1️⃣ Asking About a Color</h3>
+
+<div class="example">
+
+<span class="english">What color is it?</span>
+
+<br>
+
+De que cor é?
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What color is it?')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>2️⃣ Answering</h3>
+
+<div class="example">
+
+<span class="english">It is blue.</span>
+
+<br>
+
+É azul.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('It is blue.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>3️⃣ Favorite Color</h3>
+
+<div class="example">
+
+<span class="english">My favorite color is green.</span>
+
+<br>
+
+A minha cor favorita é verde.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('My favorite color is green.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>4️⃣ Asking About a Favorite Color</h3>
+
+<div class="example">
+
+<span class="english">What is your favorite color?</span>
+
+<br>
+
+Qual é a tua cor favorita?
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What is your favorite color?')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="grammar" class="card">
+
+<h2>📚 Grammar — What Color Is It?</h2>
+
+
+<div class="grammar-box">
+
+<h3>1️⃣ It is + Color</h3>
+
+<p>
+Use <strong>It is</strong> to describe the color of one object.
+</p>
+
+<div class="example">
+
+<span class="english">
+It is red.
+</span>
+
+<br>
+
+É vermelho.
+
+<br><br>
+
+<span class="english">
+It is black.
+</span>
+
+<br>
+
+É preto.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('It is red. It is black.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>2️⃣ This is + Color</h3>
+
+<div class="example">
+
+<span class="english">
+This is a blue bag.
+</span>
+
+<br>
+
+Esta é uma bolsa azul.
+
+<br><br>
+
+<span class="english">
+This is a green book.
+</span>
+
+<br>
+
+Este é um livro verde.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('This is a blue bag. This is a green book.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>3️⃣ Color + Noun</h3>
+
+<p>
+In English, the color normally comes before the noun.
+</p>
+
+<div class="example">
+
+<span class="english">
+A red car.
+</span>
+
+<br>
+
+Um carro vermelho.
+
+<br><br>
+
+<span class="english">
+A yellow shirt.
+</span>
+
+<br>
+
+Uma camisa amarela.
+
+<br><br>
+
+<span class="english">
+A black phone.
+</span>
+
+<br>
+
+Um telefone preto.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('A red car. A yellow shirt. A black phone.')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pronunciation" class="card">
+
+<h2>🔊 Pronunciation Practice</h2>
+
+<p>Listen and repeat.</p>
+
+
+<div class="example">
+
+<strong>Red — Blue — Green — Yellow</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Red. Blue. Green. Yellow.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>Black — White — Orange — Purple</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Black. White. Orange. Purple.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>Pink — Brown</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Pink. Brown.')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>What color is it?</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('What color is it?')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>My favorite color is green.</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('My favorite color is green.')">
+🔊 Listen
+</button>
+
+</div>
+
+</section>
+
+
+<section id="conversation" class="card">
+
+<h2>💬 Real-life Conversation</h2>
+
+<p>José and Maria are talking about colors.</p>
+
+<div class="dialogue">
+
+<p>
+<span class="jose">José:</span>
+Hi, Maria! What color is your bag?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+It is blue.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Nice! Blue is a beautiful color.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+Thank you! What is your favorite color?
+</p>
+
+<p>
+<span class="jose">José:</span>
+My favorite color is green.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+Green? That's nice!
+</p>
+
+<p>
+<span class="jose">José:</span>
+Yes. What color is your phone?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+My phone is black.
+</p>
+
+<p>
+<span class="jose">José:</span>
+Is your notebook red?
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+No, it isn't. It is yellow.
+</p>
+
+<p>
+<span class="jose">José:</span>
+I like yellow too.
+</p>
+
+<p>
+<span class="maria">Maria:</span>
+Great! We both like bright colors.
+</p>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speakConversation()">
+🔊 Listen to Conversation
+</button>
+
+</section>
+
+
+<section id="exercises" class="card">
+
+<h2>✏️ Exercises</h2>
+
+
+<div class="exercise">
+
+<strong>1. Complete:</strong>
+
+<p>
+What color is it? It is ______.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer1')">blue</button>
+
+<button onclick="checkAnswer(false,'answer1')">chair</button>
+
+<button onclick="checkAnswer(false,'answer1')">book</button>
+
+</div>
+
+<div id="answer1" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>2. Choose the correct answer:</strong>
+
+<p>
+What is "red"?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer2')">Vermelho</button>
+
+<button onclick="checkAnswer(false,'answer2')">Verde</button>
+
+<button onclick="checkAnswer(false,'answer2')">Azul</button>
+
+</div>
+
+<div id="answer2" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>3. Choose the correct sentence:</strong>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer3')">
+It is green.
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+Green it is.
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+It green is.
+</button>
+
+</div>
+
+<div id="answer3" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>4. Complete:</strong>
+
+<p>
+My favorite color is ______.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer4')">purple</button>
+
+<button onclick="checkAnswer(false,'answer4')">table</button>
+
+<button onclick="checkAnswer(false,'answer4')">school</button>
+
+</div>
+
+<div id="answer4" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>5. What is "white"?</strong>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer5')">Branco</button>
+
+<button onclick="checkAnswer(false,'answer5')">Preto</button>
+
+<button onclick="checkAnswer(false,'answer5')">Rosa</button>
+
+</div>
+
+<div id="answer5" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>6. Choose the correct phrase:</strong>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer6')">
+What color is it?
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+What it color?
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+Color what it?
+</button>
+
+</div>
+
+<div id="answer6" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>7. Complete:</strong>
+
+<p>
+This is a ______ car.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer7')">red</button>
+
+<button onclick="checkAnswer(false,'answer7')">red is</button>
+
+<button onclick="checkAnswer(false,'answer7')">is red</button>
+
+</div>
+
+<div id="answer7" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>8. What color is "brown"?</strong>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer8')">Castanho / Marrom</button>
+
+<button onclick="checkAnswer(false,'answer8')">Amarelo</button>
+
+<button onclick="checkAnswer(false,'answer8')">Roxo</button>
+
+</div>
+
+<div id="answer8" class="answer"></div>
+
+</div>
+
+</section>
+
+
+<section id="activities" class="card">
+
+<h2>🧩 Interactive Activities</h2>
+
+
+<div class="activity">
+
+<h3>Activity 1</h3>
+
+<p>
+What color is the sky on a clear day?
+</p>
+
+<button onclick="activityAnswer('Blue')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 2</h3>
+
+<p>
+Choose the correct sentence:
+</p>
+
+<p>
+<strong>
+favorite / My / green / color / is
+</strong>
+</p>
+
+<button onclick="activityAnswer('My favorite color is green.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 3</h3>
+
+<p>
+What color is a banana usually?
+</p>
+
+<button onclick="activityAnswer('Yellow')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 4</h3>
+
+<p>
+Build the sentence:
+</p>
+
+<p>
+<strong>
+is / red / It
+</strong>
+</p>
+
+<button onclick="activityAnswer('It is red.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 5</h3>
+
+<p>
+What color is grass usually?
+</p>
+
+<button onclick="activityAnswer('Green')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 6</h3>
+
+<p>
+What color is your favorite object?
+</p>
+
+<button onclick="speak('My favorite object is blue.')">
+🔊 Hear a Model
+</button>
+
+</div>
+
+</section>
+
+
+<section id="speaking" class="card">
+
+<h2>🗣️ Speaking Challenge</h2>
+
+<div class="challenge">
+
+<h3>🎤 Talk About Colors</h3>
+
+<p>
+Speak for 30–60 seconds.
+</p>
+
+<p>Try to answer:</p>
+
+<ul>
+
+<li>What is your favorite color?</li>
+
+<li>What color is your phone?</li>
+
+<li>What color is your bag?</li>
+
+<li>What color is your shirt?</li>
+
+<li>What color is your notebook?</li>
+
+</ul>
+
+<button class="listen-btn"
+onclick="speak('My favorite color is blue. My phone is black. My bag is green. My shirt is white. My notebook is red.')">
+
+🔊 Hear a Model
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="writing" class="card">
+
+<h2>✍️ Writing Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Write 6–8 sentences about colors.
+</p>
+
+<p>Try to use:</p>
+
+<ul>
+
+<li>It is...</li>
+
+<li>This is a...</li>
+
+<li>My favorite color is...</li>
+
+<li>What color is it?</li>
+
+</ul>
+
+<div class="example">
+
+<strong>Example:</strong>
+
+<br><br>
+
+My favorite color is blue.
+
+My phone is black.
+
+My bag is green.
+
+My notebook is red.
+
+My shirt is white.
+
+My shoes are brown.
+
+I like yellow too.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="quiz" class="card">
+
+<h2>🎯 10-Question Quiz</h2>
+
+<p>Choose the best answer.</p>
+
+<form id="quizForm">
+
+
+<div class="quiz-question">
+
+<p>1. What color is "red"?</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q1" value="a"> Vermelho</label>
+<label><input type="radio" name="q1" value="b"> Azul</label>
+<label><input type="radio" name="q1" value="c"> Verde</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>2. What color is "blue"?</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q2" value="a"> Rosa</label>
+<label><input type="radio" name="q2" value="b"> Azul</label>
+<label><input type="radio" name="q2" value="c"> Preto</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>3. Complete: It is ______.</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q3" value="a"> green</label>
+<label><input type="radio" name="q3" value="b"> table</label>
+<label><input type="radio" name="q3" value="c"> school</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>4. What is "yellow"?</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q4" value="a"> Amarelo</label>
+<label><input type="radio" name="q4" value="b"> Branco</label>
+<label><input type="radio" name="q4" value="c"> Roxo</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>5. Choose the correct question.</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q5" value="a"> What color is it?</label>
+<label><input type="radio" name="q5" value="b"> What it color?</label>
+<label><input type="radio" name="q5" value="c"> Color what it?</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>6. What is "black"?</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q6" value="a"> Branco</label>
+<label><input type="radio" name="q6" value="b"> Preto</label>
+<label><input type="radio" name="q6" value="c"> Laranja</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>7. Complete: My favorite color is ______.</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q7" value="a"> blue</label>
+<label><input type="radio" name="q7" value="b"> chair</label>
+<label><input type="radio" name="q7" value="c"> house</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>8. What is "pink"?</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q8" value="a"> Rosa</label>
+<label><input type="radio" name="q8" value="b"> Castanho</label>
+<label><input type="radio" name="q8" value="c"> Verde</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>9. Choose the correct sentence.</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q9" value="a"> This is a red car.</label>
+<label><input type="radio" name="q9" value="b"> This red is a car.</label>
+<label><input type="radio" name="q9" value="c"> Red this car is.</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>10. What is "purple"?</p>
+
+<div class="quiz-options">
+
+<label><input type="radio" name="q10" value="a"> Roxo / Púrpura</label>
+<label><input type="radio" name="q10" value="b"> Amarelo</label>
+<label><input type="radio" name="q10" value="c"> Cinzento</label>
+
+</div>
+
+</div>
+
+
+<button
+type="button"
+class="quiz-submit"
+onclick="submitQuiz()">
+
+🎯 Submit Quiz
+
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</section>
+
+
+<section id="review" class="card">
+
+<h2>🔄 Daily Review</h2>
+
+<p>
+Review the most important points from Lesson 5.
+</p>
+
+<div class="review-grid">
+
+<div class="review-item">
+🔴 <strong>Red</strong> = Vermelho
+</div>
+
+<div class="review-item">
+🔵 <strong>Blue</strong> = Azul
+</div>
+
+<div class="review-item">
+🟢 <strong>Green</strong> = Verde
+</div>
+
+<div class="review-item">
+🟡 <strong>Yellow</strong> = Amarelo
+</div>
+
+<div class="review-item">
+⚫ <strong>Black</strong> = Preto
+</div>
+
+<div class="review-item">
+⚪ <strong>White</strong> = Branco
+</div>
+
+<div class="review-item">
+🟠 <strong>Orange</strong> = Laranja
+</div>
+
+<div class="review-item">
+🟣 <strong>Purple</strong> = Roxo / Púrpura
+</div>
+
+<div class="review-item">
+🩷 <strong>Pink</strong> = Rosa
+</div>
+
+<div class="review-item">
+🟤 <strong>Brown</strong> = Castanho / Marrom
+</div>
+
+</div>
+
+<br>
+
+<h3>⭐ Key Sentences</h3>
+
+<p>What color is it?</p>
+
+<p>It is blue.</p>
+
+<p>My favorite color is green.</p>
+
+<p>This is a red car.</p>
+
+<p>What is your favorite color?</p>
+
+<br>
+
+<button class="listen-btn"
+onclick="speak('What color is it? It is blue. My favorite color is green. This is a red car. What is your favorite color?')">
+
+🔊 Listen
+
+</button>
+
+</section>
+
+
+<section class="card complete-box">
+
+<h2>🏆 Lesson 5 Complete</h2>
+
+<p>
+Finished all the activities? Save your lesson progress.
+</p>
+
+<button class="complete-btn"
+onclick="completeLesson()">
+
+✅ Complete Lesson 5
+
+</button>
+
+<div id="completeMessage">
+🎉 Lesson 5 completed successfully!
+</div>
+
+</section>
+
+
+<div class="page-navigation">
+
+<a href="lesson4.html">
+← Previous Lesson
+</a>
+
+<a href="lesson6.html">
+Next Lesson →
+</a>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p>
+Day 5 / Lesson 5
+</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+    if(!("speechSynthesis" in window)){
+
+        alert("Audio is not supported by this browser.");
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang="en-US";
+    speech.rate=0.88;
+    speech.pitch=1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+
+function speakConversation(){
+
+    speak(
+        "José: Hi, Maria! What color is your bag? " +
+        "Maria: It is blue. " +
+        "José: Nice! Blue is a beautiful color. " +
+        "Maria: Thank you! What is your favorite color? " +
+        "José: My favorite color is green. " +
+        "Maria: Green? That's nice! " +
+        "José: Yes. What color is your phone? " +
+        "Maria: My phone is black. " +
+        "José: Is your notebook red? " +
+        "Maria: No, it isn't. It is yellow. " +
+        "José: I like yellow too. " +
+        "Maria: Great! We both like bright colors."
+    );
+
+}
+
+
+function checkAnswer(correct,answerId){
+
+    const answer=
+        document.getElementById(answerId);
+
+    answer.style.display="block";
+
+    if(correct){
+
+        answer.className="answer correct";
+
+        answer.textContent=
+            "✅ Correct! Well done.";
+
+    }else{
+
+        answer.className="answer wrong";
+
+        answer.textContent=
+            "❌ Try again.";
+
+    }
+
+}
+
+
+function activityAnswer(message){
+
+    alert("💡 "+message);
+
+}
+
+
+function submitQuiz(){
+
+    const answers={
+
+        q1:"a",
+        q2:"b",
+        q3:"a",
+        q4:"a",
+        q5:"a",
+        q6:"b",
+        q7:"a",
+        q8:"a",
+        q9:"a",
+        q10:"a"
+
+    };
+
+    let score=0;
+
+    for(let question in answers){
+
+        const selected=
+            document.querySelector(
+                'input[name="'+question+'"]:checked'
+            );
+
+        if(
+            selected &&
+            selected.value===answers[question]
+        ){
+
+            score++;
+
+        }
+
+    }
+
+    const percentage=score*10;
+
+    const result=
+        document.getElementById("quizResult");
+
+    result.style.display="block";
+
+    result.innerHTML=
+        "🎯 Your Score: "+
+        score+
+        "/10 ("+
+        percentage+
+        "%)<br><br>"+
+        (
+            percentage>=70
+            ?
+            "🏆 Excellent! Keep learning!"
+            :
+            "📚 Keep practicing and try again!"
+        );
+
+    localStorage.setItem(
+        "lesson5Score",
+        percentage
+    );
+
+}
+
+
+function completeLesson(){
+
+    const message=
+        document.getElementById("completeMessage");
+
+    message.style.display="block";
+
+    let completed=
+        JSON.parse(
+            localStorage.getItem("completedLessons")
+        ) || [];
+
+    if(!completed.includes(5)){
+
+        completed.push(5);
+
+    }
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+    updateProgress();
+
+}
+
+
+function updateProgress(){
+
+    const completed=
+        JSON.parse(
+            localStorage.getItem("completedLessons")
+        ) || [];
+
+    const isComplete=
+        completed.includes(5);
+
+    const percentage=
+        isComplete ? 100 : 0;
+
+    document.getElementById(
+        "progressFill"
+    ).style.width=
+        percentage+"%";
+
+    document.getElementById(
+        "progressText"
+    ).textContent=
+        percentage+"%";
+
+}
+
+
+updateProgress();
+
+</script>
+
+</body>
+
+</html>

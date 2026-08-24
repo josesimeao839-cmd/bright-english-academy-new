@@ -1,0 +1,2870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Bright English Academy - Day 18: My Home & Rooms.">
+
+    <title>Day 18 — My Home & Rooms | Bright English Academy</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8ff;
+            color: #17233c;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0757c9, #13a6e8);
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,.12);
+        }
+
+        .academy-name {
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: clamp(30px, 5vw, 50px);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .day-badge {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 9px 18px;
+            background: rgba(255,255,255,.18);
+            border: 1px solid rgba(255,255,255,.35);
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .progress-container {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+            padding: 10px 18px;
+        }
+
+        .progress-info {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .progress-bar {
+            max-width: 1100px;
+            height: 9px;
+            background: #e5eaf2;
+            border-radius: 20px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg,#0757c9,#13a6e8);
+            border-radius: 20px;
+            transition: width .4s ease;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 22px auto;
+            padding: 0 18px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0757c9;
+            background: white;
+            border: 1px solid #d8e2f2;
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background: #0757c9;
+            color: white;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 10px 18px 60px;
+        }
+
+        section {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            margin: 25px 0;
+            box-shadow: 0 7px 25px rgba(20,53,100,.07);
+            border: 1px solid #e6edf7;
+        }
+
+        .section-title {
+            color: #0757c9;
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .section-subtitle {
+            color: #4e5e78;
+            margin-bottom: 20px;
+        }
+
+        .objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+            gap: 15px;
+        }
+
+        .objective {
+            background: #f2f7ff;
+            border-left: 5px solid #0757c9;
+            padding: 18px;
+            border-radius: 12px;
+        }
+
+        .objective strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+            gap: 14px;
+        }
+
+        .vocab-card {
+            border: 1px solid #e1e8f2;
+            border-radius: 14px;
+            padding: 18px;
+            background: #fbfdff;
+            transition: .2s;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,.07);
+        }
+
+        .vocab-card h3 {
+            color: #0757c9;
+            margin-bottom: 4px;
+        }
+
+        .translation {
+            color: #6a7890;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .listen-btn {
+            border: none;
+            background: #0757c9;
+            color: white;
+            padding: 8px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .listen-btn:hover {
+            background: #06449e;
+        }
+
+        .grammar-box {
+            background: #eef6ff;
+            border-left: 6px solid #0757c9;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 18px 0;
+        }
+
+        .formula {
+            background: #17233c;
+            color: white;
+            padding: 16px;
+            border-radius: 10px;
+            font-family: "Courier New", monospace;
+            margin: 12px 0;
+            overflow-x: auto;
+        }
+
+        .example {
+            background: #f7f9fc;
+            border: 1px solid #e1e7ef;
+            padding: 14px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .conversation {
+            background: linear-gradient(135deg,#f2f8ff,#ffffff);
+            padding: 22px;
+            border-radius: 15px;
+            border: 1px solid #dfe8f5;
+        }
+
+        .line {
+            padding: 9px 0;
+        }
+
+        .speaker {
+            color: #0757c9;
+            font-weight: bold;
+        }
+
+        .exercise {
+            margin: 18px 0;
+            padding: 20px;
+            border: 1px solid #dfe6f0;
+            border-radius: 14px;
+            background: #fcfdff;
+        }
+
+        .exercise p {
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 11px 13px;
+            border: 1px solid #cbd7e8;
+            border-radius: 9px;
+            font-size: 15px;
+            margin-top: 7px;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #0757c9;
+            box-shadow: 0 0 0 3px rgba(7,87,201,.08);
+        }
+
+        .check-btn {
+            margin-top: 12px;
+            background: #0757c9;
+            color: white;
+            border: none;
+            padding: 10px 17px;
+            border-radius: 9px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+            gap: 15px;
+        }
+
+        .activity-card {
+            padding: 20px;
+            border-radius: 15px;
+            background: #f4f8ff;
+            border: 1px solid #dbe5f3;
+        }
+
+        .activity-card h3 {
+            color: #0757c9;
+            margin-bottom: 8px;
+        }
+
+        .choice-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .choice-btn {
+            border: 1px solid #c9d7ea;
+            background: white;
+            padding: 8px 13px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .choice-btn.selected {
+            background: #0757c9;
+            color: white;
+            border-color: #0757c9;
+        }
+
+        .challenge {
+            background: linear-gradient(135deg,#fff9e8,#fff);
+            border-left: 6px solid #f0a500;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        .quiz-question {
+            padding: 20px;
+            border: 1px solid #dfe6f0;
+            border-radius: 14px;
+            margin: 15px 0;
+            background: #fcfdff;
+        }
+
+        .quiz-question h3 {
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+
+        .option {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #dce4ef;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+
+        .option:hover {
+            background: #f0f6ff;
+        }
+
+        .option input {
+            margin-right: 8px;
+        }
+
+        .quiz-btn {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            background: linear-gradient(135deg,#0757c9,#13a6e8);
+            color: white;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .quiz-result {
+            display: none;
+            margin-top: 20px;
+            padding: 22px;
+            text-align: center;
+            background: #eef8f2;
+            border: 1px solid #b9e2ca;
+            border-radius: 14px;
+        }
+
+        .score-number {
+            font-size: 40px;
+            color: #138a4b;
+            font-weight: bold;
+        }
+
+        .review-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .review-item {
+            padding: 14px 17px;
+            border-radius: 10px;
+            background: #f5f8fc;
+            border-left: 4px solid #0757c9;
+        }
+
+        footer {
+            background: #17233c;
+            color: white;
+            text-align: center;
+            padding: 35px 18px;
+        }
+
+        footer strong {
+            color: #58c7ff;
+        }
+
+        .creator {
+            margin-top: 12px;
+            font-size: 15px;
+            opacity: .9;
+        }
+
+        @media(max-width:650px) {
+
+            header {
+                padding: 28px 15px;
+            }
+
+            section {
+                padding: 20px;
+                border-radius: 14px;
+            }
+
+            .section-title {
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="academy-name">
+        Bright English Academy
+    </div>
+
+    <h1>
+        🏠 My Home & Rooms
+    </h1>
+
+    <p>
+        Describe your home, rooms and everyday objects.
+    </p>
+
+    <div class="day-badge">
+        📚 Day 18 / Lesson 18
+    </div>
+
+</header>
+
+
+<div class="progress-container">
+
+    <div class="progress-info">
+
+        <span>
+            Lesson Progress
+        </span>
+
+        <span id="progressText">
+            0%
+        </span>
+
+    </div>
+
+    <div class="progress-bar">
+
+        <div
+            class="progress-fill"
+            id="progressFill">
+        </div>
+
+    </div>
+
+</div>
+
+
+<nav>
+
+    <a href="#objectives">Objectives</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#objects">Objects</a>
+    <a href="#grammar">Grammar</a>
+    <a href="#pronunciation">Pronunciation</a>
+    <a href="#conversation">Conversation</a>
+    <a href="#exercises">Exercises</a>
+    <a href="#activities">Activities</a>
+    <a href="#speaking">Speaking</a>
+    <a href="#writing">Writing</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#review">Review</a>
+
+</nav>
+
+
+<main>
+
+
+<section id="objectives">
+
+    <h2 class="section-title">
+        🎯 Lesson Objectives
+    </h2>
+
+    <p class="section-subtitle">
+        By the end of this lesson, you will be able to:
+    </p>
+
+    <div class="objectives">
+
+        <div class="objective">
+            <strong>🏠 Home</strong>
+            Talk about your home.
+        </div>
+
+        <div class="objective">
+            <strong>🚪 Rooms</strong>
+            Name common rooms.
+        </div>
+
+        <div class="objective">
+            <strong>🪑 Objects</strong>
+            Describe things in your home.
+        </div>
+
+        <div class="objective">
+            <strong>📍 Location</strong>
+            Say where objects are.
+        </div>
+
+        <div class="objective">
+            <strong>💬 Conversation</strong>
+            Talk about your house.
+        </div>
+
+        <div class="objective">
+            <strong>✍️ Writing</strong>
+            Write about your home.
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="rooms">
+
+    <h2 class="section-title">
+        🚪 Rooms in the House
+    </h2>
+
+    <p class="section-subtitle">
+        Learn the names of common rooms.
+    </p>
+
+
+    <div class="vocab-grid">
+
+
+        <div class="vocab-card">
+
+            <h3>Living room</h3>
+
+            <div class="translation">
+                Sala de estar
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Living room')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Bedroom</h3>
+
+            <div class="translation">
+                Quarto
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Bedroom')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Kitchen</h3>
+
+            <div class="translation">
+                Cozinha
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Kitchen')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Bathroom</h3>
+
+            <div class="translation">
+                Casa de banho
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Bathroom')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Dining room</h3>
+
+            <div class="translation">
+                Sala de jantar
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Dining room')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Garden</h3>
+
+            <div class="translation">
+                Jardim
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Garden')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Garage</h3>
+
+            <div class="translation">
+                Garagem
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Garage')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Balcony</h3>
+
+            <div class="translation">
+                Varanda
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Balcony')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="objects">
+
+    <h2 class="section-title">
+        🪑 Things at Home
+    </h2>
+
+    <p class="section-subtitle">
+        Learn common objects found in a home.
+    </p>
+
+
+    <div class="vocab-grid">
+
+
+        <div class="vocab-card">
+
+            <h3>Table</h3>
+
+            <div class="translation">
+                Mesa
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Table')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Chair</h3>
+
+            <div class="translation">
+                Cadeira
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Chair')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Sofa</h3>
+
+            <div class="translation">
+                Sofá
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Sofa')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Bed</h3>
+
+            <div class="translation">
+                Cama
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Bed')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Television</h3>
+
+            <div class="translation">
+                Televisão
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Television')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Refrigerator</h3>
+
+            <div class="translation">
+                Geladeira
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Refrigerator')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Lamp</h3>
+
+            <div class="translation">
+                Candeeiro / Lâmpada
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Lamp')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Door</h3>
+
+            <div class="translation">
+                Porta
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Door')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Window</h3>
+
+            <div class="translation">
+                Janela
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Window')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="vocab-card">
+
+            <h3>Computer</h3>
+
+            <div class="translation">
+                Computador
+            </div>
+
+            <button class="listen-btn"
+                    onclick="speak('Computer')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="grammar">
+
+    <h2 class="section-title">
+        📚 Grammar — There is / There are
+    </h2>
+
+    <p class="section-subtitle">
+        Use <strong>There is</strong> for one thing and
+        <strong>There are</strong> for two or more things.
+    </p>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            Singular
+        </h3>
+
+        <div class="formula">
+            There is + one thing
+        </div>
+
+        <div class="example">
+
+            There is a sofa in the living room.
+
+            <br>
+
+            Há um sofá na sala.
+
+            <br><br>
+
+            <button class="listen-btn"
+                    onclick="speak('There is a sofa in the living room.')">
+
+                🔊 Listen
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            Plural
+        </h3>
+
+        <div class="formula">
+            There are + two or more things
+        </div>
+
+        <div class="example">
+
+            There are two chairs in the kitchen.
+
+            <br>
+
+            Há duas cadeiras na cozinha.
+
+            <br><br>
+
+            <button class="listen-btn"
+                    onclick="speak('There are two chairs in the kitchen.')">
+
+                🔊 Listen
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            Negative
+        </h3>
+
+        <div class="formula">
+            There isn't + singular
+        </div>
+
+        <div class="formula">
+            There aren't + plural
+        </div>
+
+        <div class="example">
+
+            There isn't a television in my bedroom.
+
+            <br>
+
+            Não há televisão no meu quarto.
+
+        </div>
+
+        <div class="example">
+
+            There aren't any chairs in the garden.
+
+            <br>
+
+            Não há cadeiras no jardim.
+
+        </div>
+
+    </div>
+
+
+    <div class="grammar-box">
+
+        <h3>
+            Questions
+        </h3>
+
+        <div class="formula">
+            Is there + singular...?
+        </div>
+
+        <div class="formula">
+            Are there + plural...?
+        </div>
+
+        <div class="example">
+
+            Is there a bathroom upstairs?
+
+            <br><br>
+
+            Yes, there is.
+
+            <br>
+
+            No, there isn't.
+
+        </div>
+
+        <div class="example">
+
+            Are there two bedrooms?
+
+            <br><br>
+
+            Yes, there are.
+
+            <br>
+
+            No, there aren't.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="pronunciation">
+
+    <h2 class="section-title">
+        🔊 Pronunciation Practice
+    </h2>
+
+    <p class="section-subtitle">
+        Listen and repeat.
+    </p>
+
+
+    <div class="example">
+
+        <strong>
+            This is my house.
+        </strong>
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak('This is my house.')">
+
+            🔊 Listen
+
+        </button>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            There is a sofa in the living room.
+        </strong>
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak('There is a sofa in the living room.')">
+
+            🔊 Listen
+
+        </button>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            There are two bedrooms.
+        </strong>
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak('There are two bedrooms.')">
+
+            🔊 Listen
+
+        </button>
+
+    </div>
+
+
+    <div class="example">
+
+        <strong>
+            Is there a kitchen?
+        </strong>
+
+        <br><br>
+
+        <button class="listen-btn"
+                onclick="speak('Is there a kitchen?')">
+
+            🔊 Listen
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="conversation">
+
+    <h2 class="section-title">
+        💬 Real-life Conversation
+    </h2>
+
+    <p class="section-subtitle">
+        José is showing Álvaro his home.
+    </p>
+
+
+    <div class="conversation">
+
+        <div class="line">
+            <span class="speaker">José:</span>
+            Welcome to my house, Álvaro!
+        </div>
+
+        <div class="line">
+            <span class="speaker">Álvaro:</span>
+            Thank you, José! Your house is beautiful.
+        </div>
+
+        <div class="line">
+            <span class="speaker">José:</span>
+            Thanks! This is the living room.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Álvaro:</span>
+            Is there a television in the living room?
+        </div>
+
+        <div class="line">
+            <span class="speaker">José:</span>
+            Yes, there is. There is also a big sofa.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Álvaro:</span>
+            Nice! How many bedrooms are there?
+        </div>
+
+        <div class="line">
+            <span class="speaker">José:</span>
+            There are three bedrooms.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Álvaro:</span>
+            And where is the kitchen?
+        </div>
+
+        <div class="line">
+            <span class="speaker">José:</span>
+            The kitchen is next to the living room.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Álvaro:</span>
+            Is there a garden?
+        </div>
+
+        <div class="line">
+            <span class="speaker">José:</span>
+            Yes, there is a small garden behind the house.
+        </div>
+
+        <div class="line">
+            <span class="speaker">Álvaro:</span>
+            Your home sounds great!
+        </div>
+
+        <div class="line">
+            <span class="speaker">José:</span>
+            Thank you! I really like it.
+        </div>
+
+    </div>
+
+
+    <br>
+
+
+    <button class="listen-btn"
+            onclick="speak(`José: Welcome to my house, Álvaro! Álvaro: Thank you, José! Your house is beautiful. José: Thanks! This is the living room. Álvaro: Is there a television in the living room? José: Yes, there is. There is also a big sofa. Álvaro: Nice! How many bedrooms are there? José: There are three bedrooms. Álvaro: And where is the kitchen? José: The kitchen is next to the living room. Álvaro: Is there a garden? José: Yes, there is a small garden behind the house. Álvaro: Your home sounds great! José: Thank you! I really like it.`)">
+
+        🔊 Listen to Conversation
+
+    </button>
+
+</section>
+
+
+<section id="exercises">
+
+    <h2 class="section-title">
+        ✏️ Exercises
+    </h2>
+
+
+    <div class="exercise">
+
+        <p>
+            1. Complete:
+        </p>
+
+        <p>
+            ________ a sofa in the living room.
+        </p>
+
+        <select id="ex1">
+
+            <option value="">
+                Choose...
+            </option>
+
+            <option value="There is">
+                There is
+            </option>
+
+            <option value="There are">
+                There are
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex1','There is','feedback1')">
+
+            Check Answer
+
+        </button>
+
+        <div id="feedback1"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            2. Complete:
+        </p>
+
+        <p>
+            ________ two bedrooms.
+        </p>
+
+        <select id="ex2">
+
+            <option value="">
+                Choose...
+            </option>
+
+            <option value="There is">
+                There is
+            </option>
+
+            <option value="There are">
+                There are
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex2','There are','feedback2')">
+
+            Check Answer
+
+        </button>
+
+        <div id="feedback2"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            3. Choose the correct room:
+        </p>
+
+        <p>
+            We cook in the ________.
+        </p>
+
+        <select id="ex3">
+
+            <option value="">
+                Choose...
+            </option>
+
+            <option value="kitchen">
+                kitchen
+            </option>
+
+            <option value="bedroom">
+                bedroom
+            </option>
+
+            <option value="garage">
+                garage
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex3','kitchen','feedback3')">
+
+            Check Answer
+
+        </button>
+
+        <div id="feedback3"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            4. Complete:
+        </p>
+
+        <p>
+            There ________ a bathroom.
+        </p>
+
+        <select id="ex4">
+
+            <option value="">
+                Choose...
+            </option>
+
+            <option value="is">
+                is
+            </option>
+
+            <option value="are">
+                are
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex4','is','feedback4')">
+
+            Check Answer
+
+        </button>
+
+        <div id="feedback4"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            5. Complete:
+        </p>
+
+        <p>
+            There ________ three chairs.
+        </p>
+
+        <select id="ex5">
+
+            <option value="">
+                Choose...
+            </option>
+
+            <option value="is">
+                is
+            </option>
+
+            <option value="are">
+                are
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex5','are','feedback5')">
+
+            Check Answer
+
+        </button>
+
+        <div id="feedback5"
+             class="feedback">
+        </div>
+
+    </div>
+
+
+    <div class="exercise">
+
+        <p>
+            6. Choose the correct question:
+        </p>
+
+        <select id="ex6">
+
+            <option value="">
+                Choose...
+            </option>
+
+            <option value="Is there a garden?">
+                Is there a garden?
+            </option>
+
+            <option value="Are there a garden?">
+                Are there a garden?
+            </option>
+
+        </select>
+
+        <button class="check-btn"
+                onclick="checkExercise('ex6','Is there a garden?','feedback6')">
+
+            Check Answer
+
+        </button>
+
+        <div id="feedback6"
+             class="feedback">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="activities">
+
+    <h2 class="section-title">
+        🧩 Interactive Activities
+    </h2>
+
+
+    <div class="activity-grid">
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 1
+            </h3>
+
+            <p>
+                You sleep in the...
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity1','❌ Try again.')">
+
+                    Kitchen
+
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity1','✅ Correct!')">
+
+                    Bedroom
+
+                </button>
+
+            </div>
+
+            <p id="activity1"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 2
+            </h3>
+
+            <p>
+                You cook in the...
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity2','✅ Correct!')">
+
+                    Kitchen
+
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity2','❌ Try again.')">
+
+                    Bathroom
+
+                </button>
+
+            </div>
+
+            <p id="activity2"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 3
+            </h3>
+
+            <p>
+                Choose the correct sentence.
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity3','❌ Try again.')">
+
+                    There are a sofa.
+
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity3','✅ Correct!')">
+
+                    There is a sofa.
+
+                </button>
+
+            </div>
+
+            <p id="activity3"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 4
+            </h3>
+
+            <p>
+                Which room has a bed?
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity4','❌ Try again.')">
+
+                    Kitchen
+
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity4','✅ Correct!')">
+
+                    Bedroom
+
+                </button>
+
+            </div>
+
+            <p id="activity4"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 5
+            </h3>
+
+            <p>
+                Complete:
+                "There are ________ chairs."
+            </p>
+
+            <div class="choice-group">
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity5','❌ Try again.')">
+
+                    a
+
+                </button>
+
+                <button class="choice-btn"
+                        onclick="selectChoice(this,'activity5','✅ Correct!')">
+
+                    two
+
+                </button>
+
+            </div>
+
+            <p id="activity5"
+               class="feedback">
+            </p>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <h3>
+                Activity 6
+            </h3>
+
+            <p>
+                Build the sentence:
+            </p>
+
+            <p>
+                <strong>
+                    is / there / kitchen / a
+                </strong>
+            </p>
+
+            <input type="text"
+                   id="sentenceInput"
+                   placeholder="Write the sentence">
+
+            <button class="check-btn"
+                    onclick="checkSentence()">
+
+                Check
+
+            </button>
+
+            <p id="sentenceResult"
+               class="feedback">
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="speaking">
+
+    <h2 class="section-title">
+        🗣️ Speaking Challenge
+    </h2>
+
+
+    <div class="challenge">
+
+        <h3>
+            🎤 Describe your home.
+        </h3>
+
+        <p style="margin-top:10px;">
+            Speak for 30–60 seconds.
+        </p>
+
+        <br>
+
+        <p>
+            Try to answer:
+        </p>
+
+        <ul style="margin-left:20px;margin-top:8px;">
+
+            <li>
+                How many rooms are there?
+            </li>
+
+            <li>
+                What is in your living room?
+            </li>
+
+            <li>
+                What is in your bedroom?
+            </li>
+
+            <li>
+                Is there a garden?
+            </li>
+
+            <li>
+                Where is the kitchen?
+            </li>
+
+        </ul>
+
+        <br>
+
+        <button class="listen-btn"
+                onclick="speak('My house has three bedrooms. There is a living room with a sofa and a television. The kitchen is next to the living room. There is a small garden behind my house.')">
+
+            🔊 Hear a Model
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="writing">
+
+    <h2 class="section-title">
+        ✍️ Writing Challenge
+    </h2>
+
+    <p class="section-subtitle">
+        Write 6–8 sentences about your home.
+    </p>
+
+
+    <div class="challenge">
+
+        <p>
+            Try to use:
+        </p>
+
+        <ul style="margin-left:20px;margin-top:8px;">
+
+            <li>
+                There is...
+            </li>
+
+            <li>
+                There are...
+            </li>
+
+            <li>
+                living room
+            </li>
+
+            <li>
+                bedroom
+            </li>
+
+            <li>
+                kitchen
+            </li>
+
+            <li>
+                bathroom
+            </li>
+
+            <li>
+                next to
+            </li>
+
+            <li>
+                behind
+            </li>
+
+        </ul>
+
+        <br>
+
+        <p>
+            Example:
+        </p>
+
+        <p>
+            My house is comfortable.
+            There is a big living room.
+            There is a sofa and a television in the living room.
+            There are two bedrooms.
+            The kitchen is next to the living room.
+            There is a small garden behind the house.
+        </p>
+
+        <br>
+
+        <textarea id="writingArea"
+                  placeholder="Write about your home..."></textarea>
+
+        <button class="check-btn"
+                onclick="checkWriting()">
+
+            Check My Writing
+
+        </button>
+
+        <p id="writingFeedback"
+           class="feedback">
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="quiz">
+
+    <h2 class="section-title">
+        🎯 10-Question Quiz
+    </h2>
+
+    <p class="section-subtitle">
+        Choose the best answer.
+    </p>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            1. Where do you sleep?
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q1"
+                   value="a">
+
+            Kitchen
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q1"
+                   value="b">
+
+            Bedroom
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q1"
+                   value="c">
+
+            Garden
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            2. Where do you cook?
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q2"
+                   value="a">
+
+            Kitchen
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q2"
+                   value="b">
+
+            Bedroom
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q2"
+                   value="c">
+
+            Bathroom
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            3. Choose the correct sentence.
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q3"
+                   value="a">
+
+            There is two chairs.
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q3"
+                   value="b">
+
+            There are two chairs.
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q3"
+                   value="c">
+
+            There are a chair.
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            4. Complete:
+            "There ________ a sofa."
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q4"
+                   value="a">
+
+            is
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q4"
+                   value="b">
+
+            are
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q4"
+                   value="c">
+
+            am
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            5. Complete:
+            "There ________ three bedrooms."
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q5"
+                   value="a">
+
+            is
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q5"
+                   value="b">
+
+            are
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q5"
+                   value="c">
+
+            am
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            6. Which question is correct?
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q6"
+                   value="a">
+
+            Is there a garden?
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q6"
+                   value="b">
+
+            Are there a garden?
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q6"
+                   value="c">
+
+            Is there garden a?
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            7. What is "living room"?
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q7"
+                   value="a">
+
+            Cozinha
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q7"
+                   value="b">
+
+            Sala de estar
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q7"
+                   value="c">
+
+            Quarto
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            8. Which object is used for sitting?
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q8"
+                   value="a">
+
+            Chair
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q8"
+                   value="b">
+
+            Bed
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q8"
+                   value="c">
+
+            Door
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            9. Complete:
+            "There isn't ________ television."
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q9"
+                   value="a">
+
+            a
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q9"
+                   value="b">
+
+            two
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q9"
+                   value="c">
+
+            are
+
+        </label>
+
+    </div>
+
+
+    <div class="quiz-question">
+
+        <h3>
+            10. Choose the correct sentence.
+        </h3>
+
+        <label class="option">
+            <input type="radio"
+                   name="q10"
+                   value="a">
+
+            There are two bedrooms.
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q10"
+                   value="b">
+
+            There is two bedrooms.
+
+        </label>
+
+        <label class="option">
+            <input type="radio"
+                   name="q10"
+                   value="c">
+
+            There are a bedrooms.
+
+        </label>
+
+    </div>
+
+
+    <button class="quiz-btn"
+            onclick="calculateQuiz()">
+
+        🎯 Submit Quiz
+
+    </button>
+
+
+    <div class="quiz-result"
+         id="quizResult">
+
+        <div>
+            Your Score
+        </div>
+
+        <div class="score-number"
+             id="scoreNumber">
+
+            0/10
+
+        </div>
+
+        <h3 id="scoreMessage"></h3>
+
+        <p id="scoreDetails"></p>
+
+    </div>
+
+</section>
+
+
+<section id="review">
+
+    <h2 class="section-title">
+        🔄 Daily Review
+    </h2>
+
+    <p class="section-subtitle">
+        Review the most important points from Lesson 18.
+    </p>
+
+
+    <div class="review-list">
+
+        <div class="review-item">
+            🏠 <strong>Living room</strong> = sala de estar.
+        </div>
+
+        <div class="review-item">
+            🛏️ <strong>Bedroom</strong> = quarto.
+        </div>
+
+        <div class="review-item">
+            🍳 <strong>Kitchen</strong> = cozinha.
+        </div>
+
+        <div class="review-item">
+            🚿 <strong>Bathroom</strong> = casa de banho.
+        </div>
+
+        <div class="review-item">
+            1️⃣ Use <strong>There is</strong> for one thing.
+        </div>
+
+        <div class="review-item">
+            2️⃣ Use <strong>There are</strong> for two or more things.
+        </div>
+
+        <div class="review-item">
+            ❓ <strong>Is there...?</strong> is used for singular questions.
+        </div>
+
+        <div class="review-item">
+            ❓ <strong>Are there...?</strong> is used for plural questions.
+        </div>
+
+    </div>
+
+
+    <br>
+
+
+    <div class="grammar-box">
+
+        <strong>
+            ⭐ Key Sentences
+        </strong>
+
+        <div class="formula">
+            There is a sofa in the living room.
+        </div>
+
+        <div class="formula">
+            There are two bedrooms.
+        </div>
+
+        <div class="formula">
+            Is there a kitchen?
+        </div>
+
+        <div class="formula">
+            Are there three chairs?
+        </div>
+
+
+        <button class="listen-btn"
+                onclick="speak('There is a sofa in the living room. There are two bedrooms. Is there a kitchen? Are there three chairs?')">
+
+            🔊 Listen
+
+        </button>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    <p>
+        <strong>
+            Bright English Academy
+        </strong>
+    </p>
+
+    <p>
+        Speak English with Confidence
+    </p>
+
+    <p class="creator">
+        👤 Created by <strong>José Simeão</strong>
+    </p>
+
+    <p style="margin-top:10px;opacity:.7;">
+        Day 18 / Lesson 18
+    </p>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   AUDIO
+========================= */
+
+function speak(text) {
+
+    if (!("speechSynthesis" in window)) {
+
+        alert(
+            "Audio is not supported by this browser."
+        );
+
+        return;
+    }
+
+    window.speechSynthesis.cancel();
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+    speech.lang = "en-US";
+
+    speech.rate = 0.85;
+
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+
+}
+
+
+/* =========================
+   EXERCISES
+========================= */
+
+function checkExercise(
+    inputId,
+    answer,
+    feedbackId
+) {
+
+    const input =
+        document.getElementById(inputId);
+
+    const feedback =
+        document.getElementById(feedbackId);
+
+    const value =
+        input.value
+            .trim()
+            .toLowerCase();
+
+    if (value === answer.toLowerCase()) {
+
+        feedback.textContent =
+            "✅ Correct! Excellent work.";
+
+        feedback.style.color =
+            "#138a4b";
+
+    } else {
+
+        feedback.textContent =
+            "❌ Not quite. Try again.";
+
+        feedback.style.color =
+            "#c62828";
+
+    }
+
+    updateProgress();
+
+}
+
+
+/* =========================
+   INTERACTIVE ACTIVITIES
+========================= */
+
+function selectChoice(
+    button,
+    resultId,
+    message
+) {
+
+    const buttons =
+        button.parentElement
+            .querySelectorAll(".choice-btn");
+
+    buttons.forEach(
+        btn => btn.classList.remove("selected")
+    );
+
+    button.classList.add("selected");
+
+    document.getElementById(resultId)
+        .textContent = message;
+
+    updateProgress();
+
+}
+
+
+/* =========================
+   SENTENCE BUILDER
+========================= */
+
+function checkSentence() {
+
+    const input =
+        document.getElementById(
+            "sentenceInput"
+        );
+
+    const result =
+        document.getElementById(
+            "sentenceResult"
+        );
+
+    const value =
+        input.value
+            .trim()
+            .toLowerCase()
+            .replace(/[.!?]/g,"");
+
+    if (
+        value ===
+        "is there a kitchen"
+    ) {
+
+        result.textContent =
+            "✅ Perfect sentence!";
+
+        result.style.color =
+            "#138a4b";
+
+    } else {
+
+        result.textContent =
+            "❌ Try again: Is there a kitchen?";
+
+        result.style.color =
+            "#c62828";
+
+    }
+
+    updateProgress();
+
+}
+
+
+/* =========================
+   WRITING
+========================= */
+
+function checkWriting() {
+
+    const text =
+        document.getElementById(
+            "writingArea"
+        ).value.trim();
+
+    const feedback =
+        document.getElementById(
+            "writingFeedback"
+        );
+
+    if (text.length < 70) {
+
+        feedback.textContent =
+            "✏️ Write a little more. Try 6–8 sentences.";
+
+        feedback.style.color =
+            "#c62828";
+
+        return;
+
+    }
+
+    const lower =
+        text.toLowerCase();
+
+    const usefulWords = [
+
+        "there is",
+        "there are",
+        "house",
+        "home",
+        "living room",
+        "bedroom",
+        "kitchen",
+        "bathroom",
+        "garden",
+        "next to"
+
+    ];
+
+    const count =
+        usefulWords.filter(
+            word => lower.includes(word)
+        ).length;
+
+    if (count >= 4) {
+
+        feedback.textContent =
+            "✅ Excellent! Your writing uses the lesson vocabulary.";
+
+        feedback.style.color =
+            "#138a4b";
+
+    } else {
+
+        feedback.textContent =
+            "👍 Good start! Try using more expressions from the lesson.";
+
+        feedback.style.color =
+            "#b06b00";
+
+    }
+
+    updateProgress();
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+function calculateQuiz() {
+
+    const answers = {
+
+        q1: "b",
+        q2: "a",
+        q3: "b",
+        q4: "a",
+        q5: "b",
+        q6: "a",
+        q7: "b",
+        q8: "a",
+        q9: "a",
+        q10: "a"
+
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected =
+            document.querySelector(
+                `input[name="${question}"]:checked`
+            );
+
+        if (
+            selected &&
+            selected.value === answers[question]
+        ) {
+
+            score++;
+
+        }
+
+    }
+
+
+    const result =
+        document.getElementById(
+            "quizResult"
+        );
+
+    const number =
+        document.getElementById(
+            "scoreNumber"
+        );
+
+    const message =
+        document.getElementById(
+            "scoreMessage"
+        );
+
+    const details =
+        document.getElementById(
+            "scoreDetails"
+        );
+
+
+    number.textContent =
+        score + "/10";
+
+
+    if (score === 10) {
+
+        message.textContent =
+            "🏆 Perfect Score!";
+
+        details.textContent =
+            "Amazing! You mastered Lesson 18.";
+
+    }
+
+    else if (score >= 8) {
+
+        message.textContent =
+            "🌟 Excellent Work!";
+
+        details.textContent =
+            "You have a strong understanding of homes and rooms.";
+
+    }
+
+    else if (score >= 6) {
+
+        message.textContent =
+            "👍 Good Job!";
+
+        details.textContent =
+            "You are making good progress. Review the lesson and try again.";
+
+    }
+
+    else {
+
+        message.textContent =
+            "📚 Keep Practicing!";
+
+        details.textContent =
+            "Review the vocabulary and There is / There are, then try again.";
+
+    }
+
+
+    result.style.display =
+        "block";
+
+
+    result.scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "center"
+
+    });
+
+
+    updateProgress();
+
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+function updateProgress() {
+
+    const ids = [
+
+        "objectives",
+        "rooms",
+        "objects",
+        "grammar",
+        "pronunciation",
+        "conversation",
+        "exercises",
+        "activities",
+        "speaking",
+        "writing",
+        "quiz",
+        "review"
+
+    ];
+
+
+    const scrollTop =
+        window.scrollY;
+
+    const documentHeight =
+        document.documentElement.scrollHeight
+        -
+        window.innerHeight;
+
+
+    let scrollProgress = 0;
+
+
+    if (documentHeight > 0) {
+
+        scrollProgress =
+            (scrollTop / documentHeight)
+            * 100;
+
+    }
+
+
+    let completed = 0;
+
+
+    ids.forEach(id => {
+
+        const section =
+            document.getElementById(id);
+
+        if (!section) return;
+
+
+        const rect =
+            section.getBoundingClientRect();
+
+
+        if (
+            rect.top <
+            window.innerHeight * .75
+            &&
+            rect.bottom >
+            window.innerHeight * .25
+        ) {
+
+            completed++;
+
+        }
+
+    });
+
+
+    let sectionProgress =
+        (completed / ids.length) * 100;
+
+
+    let finalProgress =
+        Math.max(
+            scrollProgress,
+            sectionProgress
+        );
+
+
+    finalProgress =
+        Math.min(
+            100,
+            Math.round(finalProgress)
+        );
+
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        finalProgress + "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+        finalProgress + "%";
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    updateProgress
+);
+
+
+window.addEventListener(
+    "load",
+    updateProgress
+);
+
+
+</script>
+
+
+</body>
+
+</html>

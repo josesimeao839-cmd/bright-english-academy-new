@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Visitor Mode | Bright English Academy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#17233c;
+}
+
+/* HEADER */
+
+header{
+    background:#ffffff;
+    border-bottom:1px solid #e2e8f0;
+    padding:18px 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-container{
+    max-width:1250px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#075dcc;
+    font-size:25px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:#0878d1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#0b4f9c;
+    font-weight:bold;
+    padding:10px 15px;
+    border-radius:9px;
+}
+
+nav a:hover{
+    background:#edf5ff;
+}
+
+.login{
+    color:#c62828 !important;
+    background:#fff0f0;
+}
+
+.register{
+    color:white !important;
+    background:#075dcc;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1250px;
+    margin:auto;
+    padding:35px 20px 60px;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,#075dcc,#0787d1);
+    color:white;
+    border-radius:22px;
+    padding:45px 35px;
+    margin-bottom:30px;
+    box-shadow:0 8px 30px rgba(0,70,150,.15);
+}
+
+.visitor-badge{
+    display:inline-block;
+    background:#ffd34d;
+    color:#17233c;
+    padding:8px 15px;
+    border-radius:25px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:38px;
+    margin:5px 0 15px;
+}
+
+.hero p{
+    max-width:800px;
+    font-size:18px;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+.hero-buttons a{
+    text-decoration:none;
+    padding:13px 20px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.explore{
+    background:white;
+    color:#075dcc;
+}
+
+.student{
+    border:1px solid rgba(255,255,255,.6);
+    color:white;
+}
+
+/* SECTION */
+
+.section-title{
+    text-align:center;
+    margin:40px 0 25px;
+}
+
+.section-title h2{
+    color:#075dcc;
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+/* COURSE */
+
+.course-card{
+    background:white;
+    border:1px solid #dce6f2;
+    border-radius:18px;
+    padding:28px;
+    margin-bottom:30px;
+    box-shadow:0 5px 20px rgba(30,70,120,.07);
+}
+
+.course-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.course-title{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.course-icon{
+    width:58px;
+    height:58px;
+    background:#eaf3ff;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:31px;
+}
+
+.course-title h2{
+    margin:0;
+    color:#075dcc;
+}
+
+.course-title p{
+    margin:4px 0 0;
+    color:#64748b;
+}
+
+.open-course{
+    text-decoration:none;
+    background:#075dcc;
+    color:white;
+    padding:12px 18px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+/* LESSON GRID */
+
+.lessons{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.lesson{
+    border:1px solid #dce6f2;
+    border-radius:15px;
+    padding:20px;
+    background:#fbfdff;
+    transition:.2s;
+}
+
+.lesson:hover{
+    transform:translateY(-3px);
+    box-shadow:0 7px 20px rgba(30,70,120,.10);
+}
+
+.lesson-number{
+    color:#075dcc;
+    font-size:13px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+}
+
+.lesson h3{
+    margin:7px 0 12px;
+    font-size:19px;
+}
+
+.lesson p{
+    color:#64748b;
+    min-height:43px;
+    margin-bottom:15px;
+}
+
+.lesson-button{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#075dcc;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.lesson-button:hover{
+    background:#064aa2;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.feature{
+    background:white;
+    padding:25px 20px;
+    border-radius:15px;
+    text-align:center;
+    border:1px solid #dce6f2;
+}
+
+.feature-icon{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.feature h3{
+    color:#075dcc;
+    margin:8px 0;
+}
+
+.feature p{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* VISITOR INFO */
+
+.info{
+    background:#eef6ff;
+    border:1px solid #cfe3fa;
+    border-radius:18px;
+    padding:28px;
+    margin-top:30px;
+}
+
+.info h2{
+    color:#075dcc;
+    margin-top:0;
+}
+
+.info ul{
+    line-height:2;
+}
+
+/* CTA */
+
+.cta{
+    margin-top:35px;
+    background:#17233c;
+    color:white;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+}
+
+.cta h2{
+    margin-top:0;
+    color:white;
+}
+
+.cta p{
+    color:#d7e0ed;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.cta-buttons a{
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:9px;
+    font-weight:bold;
+}
+
+.cta-register{
+    background:#0878d1;
+    color:white;
+}
+
+.cta-login{
+    background:white;
+    color:#075dcc;
+}
+
+/* FOOTER */
+
+footer{
+    background:#ffffff;
+    border-top:1px solid #e2e8f0;
+    text-align:center;
+    padding:30px 15px;
+    color:#64748b;
+}
+
+footer strong{
+    color:#075dcc;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .lessons{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    header{
+        padding:15px;
+    }
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav{
+        width:100%;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .hero{
+        padding:30px 22px;
+    }
+
+    .hero h1{
+        font-size:29px;
+    }
+
+    .course-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .lessons{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="header-container">
+
+<div class="logo">
+
+<div class="logo-icon">
+📚
+</div>
+
+Bright English Academy
+
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="login.html" class="login">
+🔐 Login
+</a>
+
+<a href="student-register.html" class="register">
+📝 Register
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main class="container">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<span class="visitor-badge">
+🌍 VISITOR MODE
+</span>
+
+<h1>
+Learn English for Free
+</h1>
+
+<p>
+Welcome to Bright English Academy. Explore our English lessons,
+practice vocabulary and grammar, listen to pronunciation,
+complete exercises and test your knowledge.
+</p>
+
+<p>
+<strong>No account is required to explore the lessons.</strong>
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#lessons" class="explore">
+📚 Explore Lessons
+</a>
+
+<a href="student-register.html" class="student">
+🎓 Become a Student
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURES -->
+
+<div class="section-title">
+
+<h2>
+✨ Learn & Practice
+</h2>
+
+<p>
+Everything you need to practice your English.
+</p>
+
+</div>
+
+
+<section class="features">
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🔊
+</div>
+
+<h3>
+Audio
+</h3>
+
+<p>
+Listen to English words, phrases and conversations.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+✏️
+</div>
+
+<h3>
+Exercises
+</h3>
+
+<p>
+Practice what you learn with interactive exercises.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🎯
+</div>
+
+<h3>
+Quizzes
+</h3>
+
+<p>
+Test your knowledge after each lesson.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+🗣️
+</div>
+
+<h3>
+Speaking
+</h3>
+
+<p>
+Practice speaking English with real-life challenges.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<!-- LESSONS -->
+
+<div id="lessons" class="section-title">
+
+<h2>
+📚 Beginner A1
+</h2>
+
+<p>
+Start learning English from the beginning.
+</p>
+
+</div>
+
+
+
+<section class="course-card">
+
+
+<div class="course-top">
+
+<div class="course-title">
+
+<div class="course-icon">
+🌱
+</div>
+
+<div>
+
+<h2>
+Beginner 1 — A1
+</h2>
+
+<p>
+30 lessons • Beginner level • English
+</p>
+
+</div>
+
+</div>
+
+
+<a href="beginner1.html" class="open-course">
+View Course
+</a>
+
+</div>
+
+
+
+<div class="lessons">
+
+
+<!-- LESSON 1 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 1
+</div>
+
+<h3>
+Greetings & Introductions
+</h3>
+
+<p>
+Learn greetings, introductions and basic expressions.
+</p>
+
+<a href="lesson1.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 2 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 2
+</div>
+
+<h3>
+Personal Information
+</h3>
+
+<p>
+Talk about your name, age and personal information.
+</p>
+
+<a href="lesson2.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 3 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 3
+</div>
+
+<h3>
+Numbers
+</h3>
+
+<p>
+Learn numbers and use them in everyday situations.
+</p>
+
+<a href="lesson3.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 4 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 4
+</div>
+
+<h3>
+Days & Months
+</h3>
+
+<p>
+Learn days, months and basic dates.
+</p>
+
+<a href="lesson4.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 5 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 5
+</div>
+
+<h3>
+Colors
+</h3>
+
+<p>
+Learn common colors and useful expressions.
+</p>
+
+<a href="lesson5.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 6 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 6
+</div>
+
+<h3>
+Classroom English
+</h3>
+
+<p>
+Learn useful English for the classroom.
+</p>
+
+<a href="lesson6.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 7 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 7
+</div>
+
+<h3>
+Personal Information
+</h3>
+
+<p>
+Practice talking about yourself.
+</p>
+
+<a href="lesson7.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 8 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 8
+</div>
+
+<h3>
+Countries & Nationalities
+</h3>
+
+<p>
+Talk about countries and nationalities.
+</p>
+
+<a href="lesson8.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 9 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 9
+</div>
+
+<h3>
+Verb To Be
+</h3>
+
+<p>
+Practice am, is and are.
+</p>
+
+<a href="lesson9.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 10 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 10
+</div>
+
+<h3>
+🏆 Review 1
+</h3>
+
+<p>
+Review Lessons 1–9 and test your English.
+</p>
+
+<a href="lesson10.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 11 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 11
+</div>
+
+<h3>
+Daily Routines
+</h3>
+
+<p>
+Talk about your everyday activities.
+</p>
+
+<a href="lesson11.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 12 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 12
+</div>
+
+<h3>
+Present Simple
+</h3>
+
+<p>
+Learn basic Present Simple sentences.
+</p>
+
+<a href="lesson12.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 13 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 13
+</div>
+
+<h3>
+Daily Activities
+</h3>
+
+<p>
+Practice common activities and routines.
+</p>
+
+<a href="lesson13.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 14 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 14
+</div>
+
+<h3>
+Free Time
+</h3>
+
+<p>
+Talk about hobbies and free-time activities.
+</p>
+
+<a href="lesson14.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 15 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 15
+</div>
+
+<h3>
+Food & Drinks
+</h3>
+
+<p>
+Learn useful vocabulary for food and drinks.
+</p>
+
+<a href="lesson15.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 16 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 16
+</div>
+
+<h3>
+At the Restaurant
+</h3>
+
+<p>
+Practice ordering food in English.
+</p>
+
+<a href="lesson16.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 17 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 17
+</div>
+
+<h3>
+Shopping
+</h3>
+
+<p>
+Learn useful English for shopping.
+</p>
+
+<a href="lesson17.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 18 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 18
+</div>
+
+<h3>
+Clothes
+</h3>
+
+<p>
+Talk about clothes and everyday items.
+</p>
+
+<a href="lesson18.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 19 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 19
+</div>
+
+<h3>
+Places in Town
+</h3>
+
+<p>
+Learn places and locations around town.
+</p>
+
+<a href="lesson19.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 20 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 20
+</div>
+
+<h3>
+My Home & Rooms
+</h3>
+
+<p>
+Talk about your home, rooms and furniture.
+</p>
+
+<a href="lesson20.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 21 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 21
+</div>
+
+<h3>
+Prepositions
+</h3>
+
+<p>
+Learn basic prepositions of place.
+</p>
+
+<a href="lesson21.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 22 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 22
+</div>
+
+<h3>
+Weather
+</h3>
+
+<p>
+Talk about weather and seasons.
+</p>
+
+<a href="lesson22.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 23 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 23
+</div>
+
+<h3>
+Present Continuous
+</h3>
+
+<p>
+Talk about actions happening now.
+</p>
+
+<a href="lesson23.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 24 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 24
+</div>
+
+<h3>
+Past Simple
+</h3>
+
+<p>
+Talk about finished actions in the past.
+</p>
+
+<a href="lesson24.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 25 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 25
+</div>
+
+<h3>
+Future — Will
+</h3>
+
+<p>
+Talk about future plans and predictions.
+</p>
+
+<a href="lesson25.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 26 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 26
+</div>
+
+<h3>
+Everyday English
+</h3>
+
+<p>
+Practice useful English for real-life situations.
+</p>
+
+<a href="lesson26.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 27 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 27
+</div>
+
+<h3>
+Review 2
+</h3>
+
+<p>
+Review the main grammar and vocabulary.
+</p>
+
+<a href="lesson27.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 28 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 28
+</div>
+
+<h3>
+Real-Life English
+</h3>
+
+<p>
+Practice English through everyday conversations.
+</p>
+
+<a href="lesson28.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 29 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 29
+</div>
+
+<h3>
+Final Preparation
+</h3>
+
+<p>
+Prepare for the final assessment.
+</p>
+
+<a href="lesson29.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+
+<!-- LESSON 30 -->
+
+<div class="lesson">
+
+<div class="lesson-number">
+Lesson 30
+</div>
+
+<h3>
+🎓 Final Review & Test
+</h3>
+
+<p>
+Complete your final A1 review and test.
+</p>
+
+<a href="lesson30.html" class="lesson-button">
+▶ Open Lesson
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- VISITOR INFORMATION -->
+
+<section class="info">
+
+<h2>
+🌍 What can visitors do?
+</h2>
+
+<ul>
+
+<li>✅ Open the available English lessons.</li>
+
+<li>✅ Listen to pronunciation and conversations.</li>
+
+<li>✅ Complete exercises.</li>
+
+<li>✅ Practice speaking.</li>
+
+<li>✅ Complete writing challenges.</li>
+
+<li>✅ Take quizzes.</li>
+
+<li>✅ Learn without creating an account.</li>
+
+<li>🔐 Create an account anytime to become a student.</li>
+
+</ul>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<h2>
+🎓 Want to track your progress?
+</h2>
+
+<p>
+Create a student account to save your progress and allow your teacher
+to follow your learning performance.
+</p>
+
+
+<div class="cta-buttons">
+
+<a href="student-register.html" class="cta-register">
+📝 Create Student Account
+</a>
+
+<a href="login.html" class="cta-login">
+🔐 Student Login
+</a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+🌍 Visitor Mode • Beginner A1
+</p>
+
+<p>
+Created by <strong>José Simeão</strong>
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Teacher Login - Bright English Academy">
+
+<title>Teacher Login | Bright English Academy</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8ff;
+    color:#17233c;
+    min-height:100vh;
+}
+
+/* NAVIGATION */
+
+nav{
+    background:white;
+    box-shadow:0 3px 18px rgba(0,0,0,.08);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+    color:#0757c9;
+
+    font-size:20px;
+    font-weight:800;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0757c9,
+            #13a6e8
+        );
+
+    color:white;
+    font-size:22px;
+}
+
+.back{
+    text-decoration:none;
+    color:#0757c9;
+    font-weight:bold;
+}
+
+/* MAIN */
+
+main{
+    min-height:calc(100vh - 75px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 20px;
+}
+
+.login-card{
+    width:100%;
+    max-width:460px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:22px;
+
+    border:1px solid #e0e7f1;
+
+    box-shadow:
+        0 15px 45px
+        rgba(20,53,100,.10);
+}
+
+.icon{
+    width:75px;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 18px;
+
+    border-radius:20px;
+
+    background:#fff4d8;
+
+    font-size:38px;
+}
+
+h1{
+    text-align:center;
+
+    color:#0757c9;
+
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+
+    color:#64748b;
+
+    margin-bottom:28px;
+}
+
+/* FORM */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:7px;
+}
+
+input{
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ccd7e7;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+input:focus{
+    border-color:#0757c9;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(7,87,201,.10);
+}
+
+/* PASSWORD */
+
+.password-box{
+    position:relative;
+    width:100%;
+}
+
+.password-box input{
+    padding-right:55px;
+}
+
+.show-password{
+    position:absolute;
+
+    right:8px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    padding:5px;
+
+    line-height:1;
+}
+
+/* BUTTON */
+
+.login-btn{
+    width:100%;
+
+    border:0;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0757c9,
+            #13a6e8
+        );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.login-btn:hover{
+    opacity:.92;
+}
+
+/* MESSAGE */
+
+.message{
+    display:none;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:bold;
+}
+
+.error{
+    background:#fff0f0;
+
+    color:#c62828;
+
+    border:1px solid #f0bcbc;
+}
+
+.success{
+    background:#e9f8ef;
+
+    color:#138a4b;
+
+    border:1px solid #b9e2ca;
+}
+
+/* INFO */
+
+.info{
+    margin-top:25px;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    background:#f4f8ff;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+    background:#17233c;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px 15px;
+}
+
+footer strong{
+    color:#58c7ff;
+}
+
+.creator{
+    margin-top:7px;
+}
+
+/* MOBILE */
+
+@media(max-width:550px){
+
+    .login-card{
+        padding:28px 20px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="nav-container">
+
+<a href="index.html"
+   class="logo">
+
+<span class="logo-icon">
+📚
+</span>
+
+Bright English Academy
+
+</a>
+
+<a href="index.html"
+   class="back">
+
+← Home
+
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- LOGIN -->
+
+<main>
+
+<div class="login-card">
+
+
+<div class="icon">
+👨‍🏫
+</div>
+
+
+<h1>
+Teacher Login
+</h1>
+
+
+<p class="subtitle">
+
+Access the Bright English Academy
+teacher dashboard.
+
+</p>
+
+
+<form id="teacherLoginForm">
+
+
+<div class="form-group">
+
+<label for="username">
+Teacher Username
+</label>
+
+<input
+type="text"
+id="username"
+placeholder="Enter teacher username"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="password">
+Password
+</label>
+
+<div class="password-box">
+
+<input
+type="password"
+id="password"
+placeholder="Enter teacher password"
+required>
+
+<button
+type="button"
+class="show-password"
+onclick="togglePassword('password', this)"
+title="Show password">
+
+👁️
+
+</button>
+
+</div>
+
+</div>
+
+
+<button
+type="submit"
+class="login-btn">
+
+🔐 Access Teacher Dashboard
+
+</button>
+
+
+</form>
+
+
+<div id="message"
+     class="message">
+</div>
+
+
+<div class="info">
+
+👨‍🏫 Teacher area
+
+<br><br>
+
+📊 Monitor student progress
+
+<br>
+
+📝 View exercise results
+
+<br>
+
+🏆 Track student scores
+
+<br>
+
+📚 Manage course progress
+
+</div>
+
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+
+<strong>
+Bright English Academy
+</strong>
+
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p class="creator">
+
+👤 Created by
+
+<strong>
+José Simeão
+</strong>
+
+</p>
+
+</footer>
+
+
+<script>
+
+/* SHOW / HIDE PASSWORD */
+
+function togglePassword(inputId, button){
+
+    const input =
+        document.getElementById(inputId);
+
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        button.textContent = "🙈";
+
+        button.title = "Hide password";
+
+    }
+    else{
+
+        input.type = "password";
+
+        button.textContent = "👁️";
+
+        button.title = "Show password";
+
+    }
+
+}
+
+
+/* TEACHER LOGIN */
+
+const form =
+    document.getElementById(
+        "teacherLoginForm"
+    );
+
+
+const message =
+    document.getElementById(
+        "message"
+    );
+
+
+form.addEventListener(
+"submit",
+function(event){
+
+    event.preventDefault();
+
+
+    const username =
+        document.getElementById(
+            "username"
+        ).value.trim();
+
+
+    const password =
+        document.getElementById(
+            "password"
+        ).value;
+
+
+    /*
+       TEMPORARY DEMO ACCESS
+
+       Later we will replace this
+       with a secure online system.
+    */
+
+    const correctUsername =
+        "teacher";
+
+
+    const correctPassword =
+        "BrightTeacher2026";
+
+
+    message.className =
+        "message";
+
+
+    if(
+        username === correctUsername &&
+        password === correctPassword
+    ){
+
+        message.classList.add(
+            "success"
+        );
+
+        message.textContent =
+            "✅ Login successful!";
+
+
+        message.style.display =
+            "block";
+
+
+        localStorage.setItem(
+            "brightAcademyTeacherLoggedIn",
+            "true"
+        );
+
+
+        setTimeout(
+        function(){
+
+            window.location.href =
+                "teacher-dashboard.html";
+
+        },
+        1000
+        );
+
+
+    }
+    else{
+
+        message.classList.add(
+            "error"
+        );
+
+        message.textContent =
+            "❌ Incorrect teacher username or password.";
+
+        message.style.display =
+            "block";
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>

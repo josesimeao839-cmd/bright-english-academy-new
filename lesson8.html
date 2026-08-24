@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lesson 8 — Daily Routines | Bright English Academy</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#17233c;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(135deg,#0b4f9c,#087fc1);
+color:white;
+padding:18px 20px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.logo{
+color:white;
+text-decoration:none;
+font-size:21px;
+font-weight:800;
+}
+
+nav{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+padding:7px 10px;
+border-radius:6px;
+font-weight:bold;
+}
+
+nav a:hover{
+background:rgba(255,255,255,.15);
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:30px 18px 60px;
+}
+
+.card{
+background:white;
+padding:28px;
+border-radius:18px;
+margin-bottom:24px;
+box-shadow:0 5px 22px rgba(20,53,100,.08);
+border:1px solid #e2eaf4;
+}
+
+.hero{
+background:linear-gradient(135deg,#0b4f9c,#087fc1);
+color:white;
+}
+
+.hero h1{
+color:white;
+font-size:34px;
+margin-top:0;
+}
+
+.day-badge{
+display:inline-block;
+background:#ffd34d;
+color:#17233c;
+padding:7px 13px;
+border-radius:20px;
+font-weight:bold;
+margin-bottom:12px;
+}
+
+.progress-title{
+display:flex;
+justify-content:space-between;
+margin-bottom:7px;
+font-weight:bold;
+}
+
+.progress-bar{
+width:100%;
+height:12px;
+background:rgba(255,255,255,.3);
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-fill{
+width:0%;
+height:100%;
+background:#ffd34d;
+transition:.4s;
+}
+
+.lesson-nav{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-bottom:24px;
+}
+
+.lesson-nav a{
+background:#eaf3ff;
+color:#0b4f9c;
+text-decoration:none;
+padding:8px 12px;
+border-radius:7px;
+font-size:14px;
+font-weight:bold;
+}
+
+h2{
+color:#0b4f9c;
+font-size:26px;
+margin-top:0;
+}
+
+h3{
+color:#0b4f9c;
+}
+
+.objective-grid,
+.vocabulary-grid,
+.review-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.objective{
+background:#f5f9ff;
+padding:18px;
+border-radius:12px;
+border-left:5px solid #0b4f9c;
+}
+
+.objective strong{
+display:block;
+color:#0b4f9c;
+margin-bottom:5px;
+}
+
+.word-card{
+background:#f8fbff;
+border:1px solid #dfe8f3;
+padding:18px;
+border-radius:12px;
+}
+
+.word{
+font-size:22px;
+font-weight:bold;
+color:#0b4f9c;
+}
+
+.translation{
+color:#64748b;
+margin:5px 0 12px;
+}
+
+.listen-btn{
+border:none;
+background:#ffd34d;
+color:#17233c;
+padding:9px 14px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.listen-btn:hover{
+background:#f2bf1f;
+}
+
+.grammar-box{
+background:#f5f9ff;
+border-left:5px solid #0b4f9c;
+padding:20px;
+border-radius:10px;
+margin-bottom:18px;
+}
+
+.example{
+background:white;
+padding:15px;
+border-radius:8px;
+margin-top:12px;
+}
+
+.english{
+font-weight:bold;
+color:#0b4f9c;
+}
+
+.dialogue{
+background:#f7f9fc;
+padding:20px;
+border-radius:14px;
+}
+
+.dialogue p{
+margin:10px 0;
+}
+
+.person1{
+color:#0b4f9c;
+font-weight:bold;
+}
+
+.person2{
+color:#087f54;
+font-weight:bold;
+}
+
+.exercise{
+background:#f8fbff;
+border:1px solid #dfe8f3;
+padding:20px;
+border-radius:12px;
+margin-bottom:18px;
+}
+
+.options{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:12px;
+}
+
+.options button{
+border:1px solid #cdd9e8;
+background:white;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.options button:hover{
+background:#eaf3ff;
+}
+
+.answer{
+display:none;
+margin-top:12px;
+padding:10px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.correct{
+background:#e8f7ee;
+color:#168348;
+}
+
+.wrong{
+background:#fff0f0;
+color:#c62828;
+}
+
+.activity{
+background:#fffaf0;
+border:1px solid #f2dfaa;
+padding:20px;
+border-radius:12px;
+margin-bottom:18px;
+}
+
+.activity button{
+border:none;
+background:#0b4f9c;
+color:white;
+padding:10px 17px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.challenge{
+background:linear-gradient(135deg,#eef6ff,#f7fbff);
+border:1px solid #d8e8f8;
+padding:22px;
+border-radius:14px;
+}
+
+.quiz-question{
+padding:18px;
+border-bottom:1px solid #e3e9f1;
+}
+
+.quiz-question p{
+font-weight:bold;
+}
+
+.quiz-options{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.quiz-options label{
+background:#f7faff;
+padding:10px;
+border-radius:7px;
+cursor:pointer;
+}
+
+.quiz-options label:hover{
+background:#eaf3ff;
+}
+
+.quiz-submit{
+border:none;
+background:#0b4f9c;
+color:white;
+padding:13px 24px;
+border-radius:9px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+}
+
+#quizResult{
+display:none;
+margin-top:20px;
+padding:18px;
+border-radius:12px;
+background:#eaf7ef;
+color:#147844;
+font-weight:bold;
+font-size:18px;
+}
+
+.review-item{
+background:#f5f9ff;
+padding:13px;
+border-radius:9px;
+}
+
+.complete-box{
+text-align:center;
+}
+
+.complete-btn{
+border:none;
+background:#168348;
+color:white;
+padding:14px 25px;
+border-radius:10px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#completeMessage{
+display:none;
+margin-top:15px;
+color:#168348;
+font-weight:bold;
+}
+
+.page-navigation{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-top:25px;
+}
+
+.page-navigation a{
+background:#0b4f9c;
+color:white;
+text-decoration:none;
+padding:12px 18px;
+border-radius:9px;
+font-weight:bold;
+}
+
+footer{
+background:#17233c;
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+footer strong{
+color:#58c7ff;
+}
+
+@media(max-width:700px){
+
+.header-container{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.objective-grid,
+.vocabulary-grid,
+.review-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:27px;
+}
+
+.card{
+padding:21px;
+}
+
+.page-navigation{
+flex-direction:column;
+}
+
+.page-navigation a{
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="header-container">
+
+<a href="beginner1.html" class="logo">
+📚 Bright English Academy
+</a>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="beginner1.html">Course</a>
+
+<a href="student-login.html">Login</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main class="container">
+
+
+<section class="card hero">
+
+<span class="day-badge">
+📚 Day 8 / Lesson 8
+</span>
+
+<h1>
+⏰ Daily Routines
+</h1>
+
+<p>
+Talk about your daily activities and everyday routine.
+</p>
+
+<div class="progress-title">
+
+<span>Lesson Progress</span>
+
+<span id="progressText">0%</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div id="progressFill" class="progress-fill"></div>
+
+</div>
+
+</section>
+
+
+<section class="lesson-nav">
+
+<a href="#objectives">Objectives</a>
+
+<a href="#vocabulary">Vocabulary</a>
+
+<a href="#routines">Daily Routines</a>
+
+<a href="#grammar">Grammar</a>
+
+<a href="#pronunciation">Pronunciation</a>
+
+<a href="#conversation">Conversation</a>
+
+<a href="#exercises">Exercises</a>
+
+<a href="#activities">Activities</a>
+
+<a href="#speaking">Speaking</a>
+
+<a href="#writing">Writing</a>
+
+<a href="#quiz">Quiz</a>
+
+<a href="#review">Review</a>
+
+</section>
+
+
+<section id="objectives" class="card">
+
+<h2>🎯 Lesson Objectives</h2>
+
+<p>
+By the end of this lesson, you will be able to:
+</p>
+
+<div class="objective-grid">
+
+<div class="objective">
+
+<strong>⏰ Daily Vocabulary</strong>
+
+Talk about common daily activities.
+
+</div>
+
+<div class="objective">
+
+<strong>🌅 Morning Routine</strong>
+
+Describe what you do in the morning.
+
+</div>
+
+<div class="objective">
+
+<strong>📚 Present Simple</strong>
+
+Use the Present Simple for routines.
+
+</div>
+
+<div class="objective">
+
+<strong>❓ Ask Questions</strong>
+
+Ask people about their daily routines.
+
+</div>
+
+<div class="objective">
+
+<strong>🕐 Time</strong>
+
+Talk about activities at different times.
+
+</div>
+
+<div class="objective">
+
+<strong>💬 Real Communication</strong>
+
+Describe your everyday life.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="vocabulary" class="card">
+
+<h2>⏰ Daily Routine Vocabulary</h2>
+
+<p>
+Learn useful words for talking about your daily routine.
+</p>
+
+<div class="vocabulary-grid">
+
+
+<div class="word-card">
+
+<div class="word">
+Wake up
+</div>
+
+<div class="translation">
+Acordar
+</div>
+
+<button class="listen-btn"
+onclick="speak('Wake up')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Get up
+</div>
+
+<div class="translation">
+Levantar-se
+</div>
+
+<button class="listen-btn"
+onclick="speak('Get up')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Brush my teeth
+</div>
+
+<div class="translation">
+Escovar os dentes
+</div>
+
+<button class="listen-btn"
+onclick="speak('Brush my teeth')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Take a shower
+</div>
+
+<div class="translation">
+Tomar banho
+</div>
+
+<button class="listen-btn"
+onclick="speak('Take a shower')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Get dressed
+</div>
+
+<div class="translation">
+Vestir-se
+</div>
+
+<button class="listen-btn"
+onclick="speak('Get dressed')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Have breakfast
+</div>
+
+<div class="translation">
+Tomar o pequeno-almoço
+</div>
+
+<button class="listen-btn"
+onclick="speak('Have breakfast')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Go to school
+</div>
+
+<div class="translation">
+Ir à escola
+</div>
+
+<button class="listen-btn"
+onclick="speak('Go to school')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Go to work
+</div>
+
+<div class="translation">
+Ir ao trabalho
+</div>
+
+<button class="listen-btn"
+onclick="speak('Go to work')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Have lunch
+</div>
+
+<div class="translation">
+Almoçar
+</div>
+
+<button class="listen-btn"
+onclick="speak('Have lunch')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Go home
+</div>
+
+<div class="translation">
+Ir para casa
+</div>
+
+<button class="listen-btn"
+onclick="speak('Go home')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Have dinner
+</div>
+
+<div class="translation">
+Jantar
+</div>
+
+<button class="listen-btn"
+onclick="speak('Have dinner')">
+🔊 Listen
+</button>
+
+</div>
+
+
+<div class="word-card">
+
+<div class="word">
+Go to bed
+</div>
+
+<div class="translation">
+Ir para a cama
+</div>
+
+<button class="listen-btn"
+onclick="speak('Go to bed')">
+🔊 Listen
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="routines" class="card">
+
+<h2>🌅 My Daily Routine</h2>
+
+<p>
+Here is an example of a typical daily routine.
+</p>
+
+
+<div class="grammar-box">
+
+<h3>🌅 Morning</h3>
+
+<div class="example">
+
+<span class="english">
+I wake up at 6:00.
+</span>
+
+<br>
+
+Eu acordo às 6:00.
+
+<br><br>
+
+<span class="english">
+I brush my teeth.
+</span>
+
+<br>
+
+Eu escovo os dentes.
+
+<br><br>
+
+<span class="english">
+I take a shower.
+</span>
+
+<br>
+
+Eu tomo banho.
+
+<br><br>
+
+<span class="english">
+I have breakfast.
+</span>
+
+<br>
+
+Eu tomo o pequeno-almoço.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I wake up at six. I brush my teeth. I take a shower. I have breakfast.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>☀️ Afternoon</h3>
+
+<div class="example">
+
+<span class="english">
+I have lunch at 1:00.
+</span>
+
+<br>
+
+Eu almoço à 1:00.
+
+<br><br>
+
+<span class="english">
+I study English.
+</span>
+
+<br>
+
+Eu estudo inglês.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I have lunch at one. I study English.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>🌙 Evening</h3>
+
+<div class="example">
+
+<span class="english">
+I go home at 5:00.
+</span>
+
+<br>
+
+Eu vou para casa às 5:00.
+
+<br><br>
+
+<span class="english">
+I have dinner with my family.
+</span>
+
+<br>
+
+Eu janto com a minha família.
+
+<br><br>
+
+<span class="english">
+I go to bed at 10:00.
+</span>
+
+<br>
+
+Eu vou para a cama às 10:00.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I go home at five. I have dinner with my family. I go to bed at ten.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="grammar" class="card">
+
+<h2>📚 Grammar — Present Simple</h2>
+
+
+<div class="grammar-box">
+
+<h3>1️⃣ I / You / We / They</h3>
+
+<p>
+Use the base verb with I, you, we and they.
+</p>
+
+<div class="example">
+
+<span class="english">
+I wake up at six.
+</span>
+
+<br>
+
+Eu acordo às seis.
+
+<br><br>
+
+<span class="english">
+They go to school.
+</span>
+
+<br>
+
+Eles vão à escola.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I wake up at six. They go to school.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>2️⃣ He / She / It</h3>
+
+<p>
+With he, she and it, normally add <strong>-s</strong> to the verb.
+</p>
+
+<div class="example">
+
+<span class="english">
+He wakes up at six.
+</span>
+
+<br>
+
+Ele acorda às seis.
+
+<br><br>
+
+<span class="english">
+She goes to school.
+</span>
+
+<br>
+
+Ela vai à escola.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('He wakes up at six. She goes to school.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>3️⃣ Negative Form</h3>
+
+<p>
+Use <strong>don't</strong> with I, you, we and they.
+</p>
+
+<p>
+Use <strong>doesn't</strong> with he, she and it.
+</p>
+
+<div class="example">
+
+<span class="english">
+I don't wake up late.
+</span>
+
+<br>
+
+Eu não acordo tarde.
+
+<br><br>
+
+<span class="english">
+She doesn't go to school on Sunday.
+</span>
+
+<br>
+
+Ela não vai à escola no domingo.
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I do not wake up late. She does not go to school on Sunday.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<h3>4️⃣ Questions</h3>
+
+<div class="example">
+
+<span class="english">
+Do you wake up early?
+</span>
+
+<br>
+
+Você acorda cedo?
+
+<br><br>
+
+<span class="english">
+Does he go to work?
+</span>
+
+<br>
+
+Ele vai ao trabalho?
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Do you wake up early? Does he go to work?')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="pronunciation" class="card">
+
+<h2>🔊 Pronunciation Practice</h2>
+
+<p>
+Listen and repeat.
+</p>
+
+
+<div class="example">
+
+<strong>
+I wake up at six every day.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I wake up at six every day.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+I have breakfast in the morning.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I have breakfast in the morning.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+I go to school at seven.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('I go to school at seven.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+She goes to work every day.
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('She goes to work every day.')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+
+<div class="example">
+
+<strong>
+Do you have breakfast at home?
+</strong>
+
+<br><br>
+
+<button class="listen-btn"
+onclick="speak('Do you have breakfast at home?')">
+
+🔊 Listen
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="conversation" class="card">
+
+<h2>💬 Real-life Conversation</h2>
+
+<p>
+Anna and David are talking about their daily routines.
+</p>
+
+<div class="dialogue">
+
+<p>
+<span class="person1">Anna:</span>
+What time do you wake up?
+</p>
+
+<p>
+<span class="person2">David:</span>
+I wake up at six o'clock.
+</p>
+
+<p>
+<span class="person1">Anna:</span>
+What do you do after you wake up?
+</p>
+
+<p>
+<span class="person2">David:</span>
+I brush my teeth and take a shower.
+</p>
+
+<p>
+<span class="person1">Anna:</span>
+Do you have breakfast at home?
+</p>
+
+<p>
+<span class="person2">David:</span>
+Yes, I do.
+</p>
+
+<p>
+<span class="person1">Anna:</span>
+What time do you go to school?
+</p>
+
+<p>
+<span class="person2">David:</span>
+I go to school at seven thirty.
+</p>
+
+<p>
+<span class="person1">Anna:</span>
+What do you do in the afternoon?
+</p>
+
+<p>
+<span class="person2">David:</span>
+I study English and do my homework.
+</p>
+
+<p>
+<span class="person1">Anna:</span>
+What time do you go home?
+</p>
+
+<p>
+<span class="person2">David:</span>
+I go home at five.
+</p>
+
+<p>
+<span class="person1">Anna:</span>
+And what time do you go to bed?
+</p>
+
+<p>
+<span class="person2">David:</span>
+I go to bed at ten.
+</p>
+
+<p>
+<span class="person1">Anna:</span>
+That's a busy day!
+</p>
+
+<p>
+<span class="person2">David:</span>
+Yes, it is!
+</p>
+
+</div>
+
+<br>
+
+<button class="listen-btn"
+onclick="speakConversation()">
+
+🔊 Listen to Conversation
+
+</button>
+
+</section>
+
+
+<section id="exercises" class="card">
+
+<h2>✏️ Exercises</h2>
+
+
+<div class="exercise">
+
+<strong>1. Complete:</strong>
+
+<p>
+I ______ up at six.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer1')">
+wake
+</button>
+
+<button onclick="checkAnswer(false,'answer1')">
+wakes
+</button>
+
+<button onclick="checkAnswer(false,'answer1')">
+waking
+</button>
+
+</div>
+
+<div id="answer1" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>2. Complete:</strong>
+
+<p>
+She ______ to school every day.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer2')">
+go
+</button>
+
+<button onclick="checkAnswer(true,'answer2')">
+goes
+</button>
+
+<button onclick="checkAnswer(false,'answer2')">
+going
+</button>
+
+</div>
+
+<div id="answer2" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>3. Choose the correct answer:</strong>
+
+<p>
+What do you do in the morning?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer3')">
+I have breakfast.
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+I has breakfast.
+</button>
+
+<button onclick="checkAnswer(false,'answer3')">
+I having breakfast.
+</button>
+
+</div>
+
+<div id="answer3" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>4. Complete:</strong>
+
+<p>
+He ______ his teeth every morning.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer4')">
+brush
+</button>
+
+<button onclick="checkAnswer(true,'answer4')">
+brushes
+</button>
+
+<button onclick="checkAnswer(false,'answer4')">
+brushing
+</button>
+
+</div>
+
+<div id="answer4" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>5. Complete the negative:</strong>
+
+<p>
+I ______ wake up late.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer5')">
+don't
+</button>
+
+<button onclick="checkAnswer(false,'answer5')">
+doesn't
+</button>
+
+<button onclick="checkAnswer(false,'answer5')">
+not
+</button>
+
+</div>
+
+<div id="answer5" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>6. Complete the negative:</strong>
+
+<p>
+She ______ go to school on Sunday.
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(false,'answer6')">
+don't
+</button>
+
+<button onclick="checkAnswer(true,'answer6')">
+doesn't
+</button>
+
+<button onclick="checkAnswer(false,'answer6')">
+not
+</button>
+
+</div>
+
+<div id="answer6" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>7. Choose the correct question:</strong>
+
+<p>
+______ you have breakfast at home?
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer7')">
+Do
+</button>
+
+<button onclick="checkAnswer(false,'answer7')">
+Does
+</button>
+
+<button onclick="checkAnswer(false,'answer7')">
+Are
+</button>
+
+</div>
+
+<div id="answer7" class="answer"></div>
+
+</div>
+
+
+<div class="exercise">
+
+<strong>8. Translate:</strong>
+
+<p>
+"I go to bed at ten."
+</p>
+
+<div class="options">
+
+<button onclick="checkAnswer(true,'answer8')">
+Eu vou para a cama às dez.
+</button>
+
+<button onclick="checkAnswer(false,'answer8')">
+Eu acordo às dez.
+</button>
+
+<button onclick="checkAnswer(false,'answer8')">
+Eu almoço às dez.
+</button>
+
+</div>
+
+<div id="answer8" class="answer"></div>
+
+</div>
+
+</section>
+
+
+<section id="activities" class="card">
+
+<h2>🧩 Interactive Activities</h2>
+
+
+<div class="activity">
+
+<h3>Activity 1</h3>
+
+<p>
+I ______ up at seven.
+</p>
+
+<button onclick="activityAnswer('wake')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 2</h3>
+
+<p>
+She ______ breakfast every morning.
+</p>
+
+<button onclick="activityAnswer('has')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 3</h3>
+
+<p>
+Build the sentence:
+</p>
+
+<p>
+<strong>
+school / go / I / to
+</strong>
+</p>
+
+<button onclick="activityAnswer('I go to school.')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 4</h3>
+
+<p>
+He ______ to bed at ten.
+</p>
+
+<button onclick="activityAnswer('goes')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 5</h3>
+
+<p>
+Choose the correct form:
+</p>
+
+<p>
+<strong>
+She don't / doesn't work.
+</strong>
+</p>
+
+<button onclick="activityAnswer('doesn’t')">
+Check
+</button>
+
+</div>
+
+
+<div class="activity">
+
+<h3>Activity 6</h3>
+
+<p>
+Build the question:
+</p>
+
+<p>
+<strong>
+you / Do / early / wake up?
+</strong>
+</p>
+
+<button onclick="activityAnswer('Do you wake up early?')">
+Check
+</button>
+
+</div>
+
+</section>
+
+
+<section id="speaking" class="card">
+
+<h2>🗣️ Speaking Challenge</h2>
+
+<div class="challenge">
+
+<h3>🎤 Describe Your Daily Routine</h3>
+
+<p>
+Speak for 30–60 seconds.
+</p>
+
+<p>
+Try to answer:
+</p>
+
+<ul>
+
+<li>What time do you wake up?</li>
+
+<li>What do you do in the morning?</li>
+
+<li>What time do you go to school or work?</li>
+
+<li>What do you do in the afternoon?</li>
+
+<li>What time do you go home?</li>
+
+<li>What time do you go to bed?</li>
+
+</ul>
+
+<button class="listen-btn"
+onclick="speak('I wake up at six. I brush my teeth and take a shower. I have breakfast. I go to school at seven. In the afternoon, I study English. I go home at five. I have dinner and go to bed at ten.')">
+
+🔊 Hear a Model
+
+</button>
+
+</div>
+
+</section>
+
+
+<section id="writing" class="card">
+
+<h2>✍️ Writing Challenge</h2>
+
+<div class="challenge">
+
+<p>
+Write 6–8 sentences about your daily routine.
+</p>
+
+<p>
+Try to use:
+</p>
+
+<ul>
+
+<li>I wake up...</li>
+
+<li>I have breakfast...</li>
+
+<li>I go to...</li>
+
+<li>I study...</li>
+
+<li>I have lunch...</li>
+
+<li>I go home...</li>
+
+<li>I go to bed...</li>
+
+</ul>
+
+<div class="example">
+
+<strong>Example:</strong>
+
+<br><br>
+
+I wake up at six o'clock.
+
+I brush my teeth.
+
+I take a shower.
+
+I have breakfast at home.
+
+I go to school at seven.
+
+I study English in the afternoon.
+
+I go home at five.
+
+I go to bed at ten.
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="quiz" class="card">
+
+<h2>🎯 10-Question Quiz</h2>
+
+<p>
+Choose the best answer.
+</p>
+
+<form id="quizForm">
+
+
+<div class="quiz-question">
+
+<p>
+1. What is "wake up"?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q1" value="a">
+Acordar
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+Dormir
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+Almoçar
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+2. Complete: I ______ breakfast at seven.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q2" value="a">
+have
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+has
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+having
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+3. Complete: She ______ to school.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q3" value="a">
+go
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+goes
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+going
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+4. Choose the correct negative:
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q4" value="a">
+I don't wake up late.
+</label>
+
+<label>
+<input type="radio" name="q4" value="b">
+I doesn't wake up late.
+</label>
+
+<label>
+<input type="radio" name="q4" value="c">
+I not wake up late.
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+5. Choose the correct negative:
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q5" value="a">
+She don't work.
+</label>
+
+<label>
+<input type="radio" name="q5" value="b">
+She doesn't work.
+</label>
+
+<label>
+<input type="radio" name="q5" value="c">
+She not work.
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+6. What is "have lunch"?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q6" value="a">
+Almoçar
+</label>
+
+<label>
+<input type="radio" name="q6" value="b">
+Jantar
+</label>
+
+<label>
+<input type="radio" name="q6" value="c">
+Dormir
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+7. Choose the correct question:
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q7" value="a">
+Do you wake up early?
+</label>
+
+<label>
+<input type="radio" name="q7" value="b">
+Does you wake up early?
+</label>
+
+<label>
+<input type="radio" name="q7" value="c">
+You do wake up early?
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+8. What is "go to bed"?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q8" value="a">
+Ir para a cama
+</label>
+
+<label>
+<input type="radio" name="q8" value="b">
+Ir para a escola
+</label>
+
+<label>
+<input type="radio" name="q8" value="c">
+Ir para o trabalho
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+9. Complete: He ______ his teeth every morning.
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q9" value="a">
+brush
+</label>
+
+<label>
+<input type="radio" name="q9" value="b">
+brushes
+</label>
+
+<label>
+<input type="radio" name="q9" value="c">
+brushing
+</label>
+
+</div>
+
+</div>
+
+
+<div class="quiz-question">
+
+<p>
+10. Complete: ______ you have breakfast at home?
+</p>
+
+<div class="quiz-options">
+
+<label>
+<input type="radio" name="q10" value="a">
+Do
+</label>
+
+<label>
+<input type="radio" name="q10" value="b">
+Does
+</label>
+
+<label>
+<input type="radio" name="q10" value="c">
+Are
+</label>
+
+</div>
+
+</div>
+
+
+<button
+type="button"
+class="quiz-submit"
+onclick="submitQuiz()">
+
+🎯 Submit Quiz
+
+</button>
+
+</form>
+
+<div id="quizResult"></div>
+
+</section>
+
+
+<section id="review" class="card">
+
+<h2>🔄 Daily Review</h2>
+
+<p>
+Review the most important points from Lesson 8.
+</p>
+
+<div class="review-grid">
+
+<div class="review-item">
+⏰ <strong>Wake up</strong> = Acordar
+</div>
+
+<div class="review-item">
+🛏️ <strong>Get up</strong> = Levantar-se
+</div>
+
+<div class="review-item">
+🪥 <strong>Brush my teeth</strong> = Escovar os dentes
+</div>
+
+<div class="review-item">
+🚿 <strong>Take a shower</strong> = Tomar banho
+</div>
+
+<div class="review-item">
+👕 <strong>Get dressed</strong> = Vestir-se
+</div>
+
+<div class="review-item">
+🍳 <strong>Have breakfast</strong> = Tomar o pequeno-almoço
+</div>
+
+<div class="review-item">
+🏫 <strong>Go to school</strong> = Ir à escola
+</div>
+
+<div class="review-item">
+🍽️ <strong>Have lunch</strong> = Almoçar
+</div>
+
+<div class="review-item">
+🏠 <strong>Go home</strong> = Ir para casa
+</div>
+
+<div class="review-item">
+🌙 <strong>Go to bed</strong> = Ir para a cama
+</div>
+
+</div>
+
+<br>
+
+<h3>⭐ Key Sentences</h3>
+
+<p>
+I wake up at six.
+</p>
+
+<p>
+I have breakfast at seven.
+</p>
+
+<p>
+I go to school every day.
+</p>
+
+<p>
+She goes to work every day.
+</p>
+
+<p>
+I don't wake up late.
+</p>
+
+<p>
+Does he go to work?
+</p>
+
+<br>
+
+<button class="listen-btn"
+onclick="speak('I wake up at six. I have breakfast at seven. I go to school every day. She goes to work every day. I do not wake up late. Does he go to work?')">
+
+🔊 Listen
+
+</button>
+
+</section>
+
+
+<section class="card complete-box">
+
+<h2>🏆 Lesson 8 Complete</h2>
+
+<p>
+Finished all the activities? Save your lesson progress.
+</p>
+
+<button class="complete-btn"
+onclick="completeLesson()">
+
+✅ Complete Lesson 8
+
+</button>
+
+<div id="completeMessage">
+🎉 Lesson 8 completed successfully!
+</div>
+
+</section>
+
+
+<div class="page-navigation">
+
+<a href="lesson7.html">
+← Previous Lesson
+</a>
+
+<a href="lesson9.html">
+Next Lesson →
+</a>
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p>
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p>
+Day 8 / Lesson 8
+</p>
+
+</footer>
+
+
+<script>
+
+function speak(text){
+
+if(!("speechSynthesis" in window)){
+
+alert("Audio is not supported by this browser.");
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+speech.rate=.88;
+speech.pitch=1;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+function speakConversation(){
+
+speak(
+"Anna: What time do you wake up? "+
+"David: I wake up at six o'clock. "+
+"Anna: What do you do after you wake up? "+
+"David: I brush my teeth and take a shower. "+
+"Anna: Do you have breakfast at home? "+
+"David: Yes, I do. "+
+"Anna: What time do you go to school? "+
+"David: I go to school at seven thirty. "+
+"Anna: What do you do in the afternoon? "+
+"David: I study English and do my homework. "+
+"Anna: What time do you go home? "+
+"David: I go home at five. "+
+"Anna: And what time do you go to bed? "+
+"David: I go to bed at ten. "+
+"Anna: That's a busy day! "+
+"David: Yes, it is!"
+);
+
+}
+
+
+function checkAnswer(correct,id){
+
+const answer =
+document.getElementById(id);
+
+answer.style.display="block";
+
+if(correct){
+
+answer.className="answer correct";
+
+answer.textContent="✅ Correct! Well done.";
+
+}else{
+
+answer.className="answer wrong";
+
+answer.textContent="❌ Try again.";
+
+}
+
+}
+
+
+function activityAnswer(message){
+
+alert("💡 "+message);
+
+}
+
+
+function submitQuiz(){
+
+const answers={
+
+q1:"a",
+q2:"a",
+q3:"b",
+q4:"a",
+q5:"b",
+q6:"a",
+q7:"a",
+q8:"a",
+q9:"b",
+q10:"a"
+
+};
+
+let score=0;
+
+for(let question in answers){
+
+const selected =
+document.querySelector(
+'input[name="'+question+'"]:checked'
+);
+
+if(
+selected &&
+selected.value===answers[question]
+){
+
+score++;
+
+}
+
+}
+
+const percentage=score*10;
+
+const result =
+document.getElementById("quizResult");
+
+result.style.display="block";
+
+result.innerHTML=
+"🎯 Your Score: "+
+score+
+"/10 ("+
+percentage+
+"%)<br><br>"+
+(
+percentage>=70
+?
+"🏆 Excellent! Keep learning!"
+:
+"📚 Keep practicing and try again!"
+);
+
+localStorage.setItem(
+"lesson8Score",
+percentage
+);
+
+}
+
+
+function completeLesson(){
+
+const message =
+document.getElementById("completeMessage");
+
+message.style.display="block";
+
+let completed =
+JSON.parse(
+localStorage.getItem("completedLessons")
+)||[];
+
+if(!completed.includes(8)){
+
+completed.push(8);
+
+}
+
+localStorage.setItem(
+"completedLessons",
+JSON.stringify(completed)
+);
+
+updateProgress();
+
+}
+
+
+function updateProgress(){
+
+const completed =
+JSON.parse(
+localStorage.getItem("completedLessons")
+)||[];
+
+const complete =
+completed.includes(8);
+
+const percentage =
+complete ? 100 : 0;
+
+document.getElementById(
+"progressFill"
+).style.width=
+percentage+"%";
+
+document.getElementById(
+"progressText"
+).textContent=
+percentage+"%";
+
+}
+
+
+updateProgress();
+
+</script>
+
+</body>
+
+</html>

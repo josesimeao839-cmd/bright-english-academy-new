@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Bright English Academy - Day 30 Timed Final Test - A1 English Course.">
+
+<title>Day 30 — Timed Final Test | Bright English Academy</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f8ff;
+    color:#17233c;
+    line-height:1.6;
+}
+
+header{
+    background:linear-gradient(135deg,#0757c9,#13a6e8);
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+.academy{
+    font-size:15px;
+    font-weight:bold;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+header h1{
+    font-size:clamp(30px,5vw,50px);
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+.badge{
+    display:inline-block;
+    margin-top:18px;
+    padding:9px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
+    font-weight:bold;
+}
+
+.timer-bar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    padding:12px 18px;
+    box-shadow:0 3px 15px rgba(0,0,0,.12);
+}
+
+.timer-content{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.timer-label{
+    font-weight:bold;
+    color:#0757c9;
+}
+
+#timer{
+    font-size:28px;
+    font-weight:bold;
+    color:#c62828;
+}
+
+.timer-warning{
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.45;
+    }
+
+}
+
+.progress-container{
+    background:white;
+    padding:9px 18px;
+}
+
+.progress-info{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.progress-bar{
+    max-width:1100px;
+    margin:auto;
+    height:8px;
+    background:#e3e9f2;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#0757c9,#13a6e8);
+    transition:.3s;
+}
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:20px 18px 60px;
+}
+
+section{
+    background:white;
+    border:1px solid #e2e8f1;
+    border-radius:18px;
+    padding:28px;
+    margin:25px 0;
+    box-shadow:0 7px 25px rgba(20,53,100,.07);
+}
+
+.section-title{
+    color:#0757c9;
+    font-size:27px;
+    margin-bottom:16px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(210px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.info-card{
+    padding:20px;
+    background:#f3f7ff;
+    border-left:5px solid #0757c9;
+    border-radius:12px;
+}
+
+.info-card strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.instructions{
+    background:#fff9e8;
+    border-left:6px solid #f0a500;
+    padding:20px;
+    border-radius:12px;
+    margin-top:20px;
+}
+
+.question{
+    padding:22px;
+    margin:18px 0;
+    border:1px solid #dfe6f0;
+    border-radius:14px;
+    background:#fcfdff;
+}
+
+.question h3{
+    margin-bottom:13px;
+    font-size:17px;
+}
+
+.option{
+    display:block;
+    padding:11px 13px;
+    border:1px solid #dce4ef;
+    border-radius:9px;
+    margin:8px 0;
+    cursor:pointer;
+}
+
+.option:hover{
+    background:#f0f6ff;
+}
+
+.option input{
+    margin-right:8px;
+}
+
+.listen{
+    border:0;
+    background:#0757c9;
+    color:white;
+    padding:9px 15px;
+    border-radius:20px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.listen:hover{
+    background:#06459f;
+}
+
+.text-answer{
+    width:100%;
+    padding:11px;
+    border:1px solid #cbd7e8;
+    border-radius:9px;
+    font-size:15px;
+}
+
+textarea{
+    width:100%;
+    min-height:150px;
+    padding:12px;
+    border:1px solid #cbd7e8;
+    border-radius:10px;
+    resize:vertical;
+    font-size:15px;
+}
+
+.submit-btn{
+    width:100%;
+    padding:17px;
+    border:0;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0757c9,#13a6e8);
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.submit-btn:hover{
+    opacity:.9;
+}
+
+.result{
+    display:none;
+    text-align:center;
+    margin-top:25px;
+    padding:30px;
+    background:#eef8f2;
+    border:1px solid #b9e2ca;
+    border-radius:16px;
+}
+
+.final-score{
+    font-size:52px;
+    font-weight:bold;
+    color:#138a4b;
+    margin:10px 0;
+}
+
+.result h2{
+    margin-bottom:10px;
+}
+
+.certificate{
+    display:none;
+    margin-top:20px;
+    padding:25px;
+    background:#fffdf3;
+    border:2px solid #d5ad36;
+    border-radius:15px;
+}
+
+.certificate h2{
+    color:#0757c9;
+    margin-bottom:10px;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.review-card{
+    padding:20px;
+    background:#f5f8fd;
+    border:1px solid #dfe6f0;
+    border-radius:14px;
+}
+
+.review-card h3{
+    color:#0757c9;
+    margin-bottom:8px;
+}
+
+footer{
+    background:#17233c;
+    color:white;
+    text-align:center;
+    padding:35px 18px;
+}
+
+footer strong{
+    color:#58c7ff;
+}
+
+.creator{
+    margin-top:12px;
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:20px;
+    }
+
+    .timer-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="academy">
+Bright English Academy
+</div>
+
+<h1>
+🏆 Timed Final Test
+</h1>
+
+<p>
+A1 English — Final Assessment
+</p>
+
+<div class="badge">
+📚 Day 30 / Lesson 30
+</div>
+
+</header>
+
+
+<div class="timer-bar">
+
+<div class="timer-content">
+
+<div class="timer-label">
+⏱️ TIME REMAINING
+</div>
+
+<div id="timer">
+30:00
+</div>
+
+</div>
+
+</div>
+
+
+<div class="progress-container">
+
+<div class="progress-info">
+
+<span>Test Progress</span>
+
+<span id="progressText">0%</span>
+
+</div>
+
+<div class="progress-bar">
+
+<div class="progress-fill"
+id="progressFill">
+</div>
+
+</div>
+
+</div>
+
+
+<main>
+
+
+<section>
+
+<h2 class="section-title">
+🎯 Final Test
+</h2>
+
+<p>
+Welcome to the final A1 assessment of Bright English Academy!
+</p>
+
+<div class="info-grid">
+
+<div class="info-card">
+<strong>📝 Questions</strong>
+20 questions
+</div>
+
+<div class="info-card">
+<strong>⏱️ Time</strong>
+30 minutes
+</div>
+
+<div class="info-card">
+<strong>🎯 Level</strong>
+A1 Beginner
+</div>
+
+<div class="info-card">
+<strong>🏆 Goal</strong>
+Show what you learned
+</div>
+
+</div>
+
+<div class="instructions">
+
+<h3>📌 Instructions</h3>
+
+<br>
+
+<ul style="margin-left:20px;">
+
+<li>Read every question carefully.</li>
+
+<li>Choose only one answer.</li>
+
+<li>You have 30 minutes.</li>
+
+<li>Do not refresh the page during the test.</li>
+
+<li>When you finish, click <strong>Submit Final Test</strong>.</li>
+
+<li>If the timer reaches zero, the test will be submitted automatically.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+<section id="test">
+
+
+<h2 class="section-title">
+📝 Part 1 — Grammar
+</h2>
+
+
+<div class="question">
+
+<h3>
+1. She ______ English every day.
+</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+study
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+studies
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+studying
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+2. They ______ like coffee.
+</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+doesn't
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+don't
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+isn't
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+3. ______ you speak English?
+</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+Do
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+Does
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+Are
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+4. He ______ at home yesterday.
+</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+is
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+was
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+were
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+5. We ______ visit our grandmother tomorrow.
+</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+will
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+did
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+was
+</label>
+
+</div>
+
+
+<section>
+
+<h2 class="section-title">
+📚 Part 2 — Vocabulary
+</h2>
+
+
+<div class="question">
+
+<h3>
+6. What is the opposite of "big"?
+</h3>
+
+<label class="option">
+<input type="radio" name="q6" value="a">
+small
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="b">
+long
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="c">
+fast
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+7. Which word means "aeroporto"?
+</h3>
+
+<label class="option">
+<input type="radio" name="q7" value="a">
+station
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="b">
+airport
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="c">
+hotel
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+8. Which word is a family member?
+</h3>
+
+<label class="option">
+<input type="radio" name="q8" value="a">
+brother
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="b">
+teacher
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="c">
+driver
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+9. Which word means "comida"?
+</h3>
+
+<label class="option">
+<input type="radio" name="q9" value="a">
+food
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="b">
+house
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="c">
+street
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+10. Which one is a color?
+</h3>
+
+<label class="option">
+<input type="radio" name="q10" value="a">
+purple
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="b">
+Monday
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="c">
+kitchen
+</label>
+
+</div>
+
+
+<section>
+
+<h2 class="section-title">
+📍 Part 3 — Everyday English
+</h2>
+
+
+<div class="question">
+
+<h3>
+11. "How are you?"
+</h3>
+
+<label class="option">
+<input type="radio" name="q11" value="a">
+I'm fine, thank you.
+</label>
+
+<label class="option">
+<input type="radio" name="q11" value="b">
+I'm sixteen o'clock.
+</label>
+
+<label class="option">
+<input type="radio" name="q11" value="c">
+I'm Monday.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+12. "Where do you live?"
+</h3>
+
+<label class="option">
+<input type="radio" name="q12" value="a">
+I live in Maputo.
+</label>
+
+<label class="option">
+<input type="radio" name="q12" value="b">
+I am twenty years.
+</label>
+
+<label class="option">
+<input type="radio" name="q12" value="c">
+I live yesterday.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+13. "How much is it?"
+</h3>
+
+<label class="option">
+<input type="radio" name="q13" value="a">
+It is five dollars.
+</label>
+
+<label class="option">
+<input type="radio" name="q13" value="b">
+It is Monday.
+</label>
+
+<label class="option">
+<input type="radio" name="q13" value="c">
+It is my brother.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+14. "Where is the station?"
+</h3>
+
+<label class="option">
+<input type="radio" name="q14" value="a">
+It is near the hotel.
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="b">
+It is yesterday.
+</label>
+
+<label class="option">
+<input type="radio" name="q14" value="c">
+It is blue.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+15. "What time do you get up?"
+</h3>
+
+<label class="option">
+<input type="radio" name="q15" value="a">
+I get up at seven.
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="b">
+I get up in Maputo.
+</label>
+
+<label class="option">
+<input type="radio" name="q15" value="c">
+I get up a teacher.
+</label>
+
+</div>
+
+
+<section>
+
+<h2 class="section-title">
+🧠 Part 4 — Mixed Review
+</h2>
+
+
+<div class="question">
+
+<h3>
+16. I ______ to the cinema last Saturday.
+</h3>
+
+<label class="option">
+<input type="radio" name="q16" value="a">
+go
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="b">
+went
+</label>
+
+<label class="option">
+<input type="radio" name="q16" value="c">
+going
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+17. She is ______ late. She arrives at 8:00 every day.
+</h3>
+
+<label class="option">
+<input type="radio" name="q17" value="a">
+always
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="b">
+yesterday
+</label>
+
+<label class="option">
+<input type="radio" name="q17" value="c">
+tomorrow
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+18. The book is ______ the table.
+</h3>
+
+<label class="option">
+<input type="radio" name="q18" value="a">
+on
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="b">
+at
+</label>
+
+<label class="option">
+<input type="radio" name="q18" value="c">
+from
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+19. Which sentence talks about the future?
+</h3>
+
+<label class="option">
+<input type="radio" name="q19" value="a">
+I went to school yesterday.
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="b">
+I go to school every day.
+</label>
+
+<label class="option">
+<input type="radio" name="q19" value="c">
+I will travel tomorrow.
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+20. Choose the correct sentence.
+</h3>
+
+<label class="option">
+<input type="radio" name="q20" value="a">
+He don't like tea.
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="b">
+He doesn't like tea.
+</label>
+
+<label class="option">
+<input type="radio" name="q20" value="c">
+He doesn't likes tea.
+</label>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">
+🗣️ Final Speaking Challenge
+</h2>
+
+<p>
+Speak for 1–2 minutes about yourself and your daily life.
+</p>
+
+<div class="instructions">
+
+Include:
+
+<br><br>
+
+• Your name
+
+<br>
+• Where you live
+
+<br>
+• Your daily routine
+
+<br>
+• Your family
+
+<br>
+• What you did yesterday
+
+<br>
+• What you will do tomorrow
+
+<br>
+• A place you would like to visit
+
+</div>
+
+<button class="listen"
+onclick="speak('Hello. My name is Mano. I live in a beautiful city. Every day I study and practice English. I spend time with my family. Yesterday I studied English. Tomorrow I will continue learning. I would like to travel and visit new places.')">
+
+🔊 Listen to Model
+
+</button>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">
+✍️ Final Writing Challenge
+</h2>
+
+<p>
+Write 8–10 sentences about yourself.
+</p>
+
+<br>
+
+<textarea
+id="finalWriting"
+placeholder="Write your final English text here..."></textarea>
+
+</section>
+
+
+<button class="submit-btn"
+onclick="submitTest(false)">
+
+🏆 Submit Final Test
+
+</button>
+
+
+<div class="result" id="result">
+
+<h2 id="resultTitle">
+Final Result
+</h2>
+
+<div class="final-score"
+id="finalScore">
+0/20
+</div>
+
+<p id="resultMessage"></p>
+
+
+<div class="certificate"
+id="certificate">
+
+<h2>
+🎓 A1 COURSE COMPLETED
+</h2>
+
+<p>
+Congratulations!
+</p>
+
+<p style="margin-top:10px;">
+You completed the Bright English Academy
+A1 English Course.
+</p>
+
+<p style="margin-top:10px;">
+Keep practicing and continue building
+your English confidence.
+</p>
+
+<br>
+
+<strong>
+Bright English Academy
+</strong>
+
+<br>
+
+Speak English with Confidence
+
+<br><br>
+
+Created by José Simeão
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">
+🔄 Course Review
+</h2>
+
+<p>
+Congratulations on reaching Day 30!
+</p>
+
+<div class="review-grid">
+
+<div class="review-card">
+
+<h3>👋 Basics</h3>
+
+<p>
+Greetings, introductions, numbers,
+days and months.
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>👨‍👩‍👧 Family</h3>
+
+<p>
+Family vocabulary and possessive
+adjectives.
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>🕐 Present</h3>
+
+<p>
+Present Simple and daily routines.
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>⏮️ Past</h3>
+
+<p>
+Past Simple and past activities.
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>🔮 Future</h3>
+
+<p>
+Will and going to.
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>📍 Places</h3>
+
+<p>
+Prepositions and directions.
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>💬 Communication</h3>
+
+<p>
+Real-life English conversations.
+</p>
+
+</div>
+
+
+<div class="review-card">
+
+<h3>🗣️ Confidence</h3>
+
+<p>
+Speaking and writing practice.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+<p>
+<strong>Bright English Academy</strong>
+</p>
+
+<p>
+Speak English with Confidence
+</p>
+
+<p class="creator">
+👤 Created by <strong>José Simeão</strong>
+</p>
+
+<p style="margin-top:10px;opacity:.7;">
+Day 30 / Lesson 30 — Timed Final Test
+</p>
+
+</footer>
+
+
+<script>
+
+let timeLeft = 30 * 60;
+
+let timerStarted = false;
+
+let submitted = false;
+
+
+function startTimer(){
+
+if(timerStarted)return;
+
+timerStarted=true;
+
+const timer =
+setInterval(function(){
+
+if(submitted){
+
+clearInterval(timer);
+
+return;
+
+}
+
+let minutes =
+Math.floor(timeLeft/60);
+
+let seconds =
+timeLeft%60;
+
+let displayMinutes =
+String(minutes).padStart(2,"0");
+
+let displaySeconds =
+String(seconds).padStart(2,"0");
+
+const timerElement =
+document.getElementById("timer");
+
+timerElement.textContent =
+displayMinutes + ":" + displaySeconds;
+
+
+if(timeLeft<=60){
+
+timerElement.classList.add(
+"timer-warning"
+);
+
+}
+
+
+if(timeLeft<=0){
+
+clearInterval(timer);
+
+submitTest(true);
+
+return;
+
+}
+
+timeLeft--;
+
+},1000);
+
+}
+
+
+function speak(text){
+
+if(!("speechSynthesis" in window)){
+
+alert(
+"Audio is not supported by this browser."
+);
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+const speech =
+new SpeechSynthesisUtterance(text);
+
+speech.lang="en-US";
+
+speech.rate=.85;
+
+speech.pitch=1;
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+function submitTest(autoSubmit){
+
+if(submitted)return;
+
+submitted=true;
+
+
+const answers={
+
+q1:"b",
+q2:"b",
+q3:"a",
+q4:"b",
+q5:"a",
+q6:"a",
+q7:"b",
+q8:"a",
+q9:"a",
+q10:"a",
+q11:"a",
+q12:"a",
+q13:"a",
+q14:"a",
+q15:"a",
+q16:"b",
+q17:"a",
+q18:"a",
+q19:"c",
+q20:"b"
+
+};
+
+
+let score=0;
+
+
+for(
+const question in answers
+){
+
+const selected =
+document.querySelector(
+'input[name="'+question+'"]:checked'
+);
+
+
+if(
+selected &&
+selected.value ===
+answers[question]
+){
+
+score++;
+
+}
+
+}
+
+
+const result =
+document.getElementById("result");
+
+const finalScore =
+document.getElementById("finalScore");
+
+const title =
+document.getElementById("resultTitle");
+
+const message =
+document.getElementById("resultMessage");
+
+const certificate =
+document.getElementById("certificate");
+
+
+finalScore.textContent =
+score + "/20";
+
+
+const percentage =
+score * 5;
+
+
+if(score>=18){
+
+title.textContent =
+"🏆 Excellent — A1 Mastery!";
+
+message.textContent =
+"You achieved an excellent result. Your A1 foundation is very strong.";
+
+certificate.style.display="block";
+
+}
+else if(score>=15){
+
+title.textContent =
+"🌟 Very Good — A1 Passed!";
+
+message.textContent =
+"Excellent work! You have demonstrated a strong A1 level.";
+
+certificate.style.display="block";
+
+}
+else if(score>=12){
+
+title.textContent =
+"👏 Good — Keep Practicing!";
+
+message.textContent =
+"You have a good A1 foundation. Review the lessons and keep practicing.";
+
+}
+else{
+
+title.textContent =
+"📚 Keep Learning!";
+
+message.textContent =
+"Review the course lessons and try again when you are ready.";
+
+}
+
+
+if(autoSubmit){
+
+message.textContent +=
+" The 30-minute timer reached zero, so your test was submitted automatically.";
+
+}
+
+
+result.style.display="block";
+
+
+result.scrollIntoView({
+
+behavior:"smooth",
+
+block:"center"
+
+});
+
+
+document
+.querySelector(".submit-btn")
+.disabled=true;
+
+
+updateProgress();
+
+}
+
+
+function updateProgress(){
+
+const total =
+document.querySelectorAll(
+'input[type="radio"]'
+).length / 3;
+
+
+let answered=0;
+
+
+for(let i=1;i<=20;i++){
+
+if(
+document.querySelector(
+'input[name="q'+i+'"]:checked'
+)
+){
+
+answered++;
+
+}
+
+}
+
+
+const progress =
+Math.round(
+(answered/20)*100
+);
+
+
+document.getElementById(
+"progressFill"
+).style.width =
+progress+"%";
+
+
+document.getElementById(
+"progressText"
+).textContent =
+progress+"%";
+
+}
+
+
+document.addEventListener(
+"change",
+function(event){
+
+if(
+event.target.matches(
+'input[type="radio"]'
+)
+){
+
+startTimer();
+
+updateProgress();
+
+}
+
+});
+
+
+window.addEventListener(
+"load",
+function(){
+
+updateProgress();
+
+});
+
+</script>
+
+</body>
+
+</html>
