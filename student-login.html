@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="Student Login - Bright English Academy">
+content="Student Login - Bright English Academy">
 
 <title>Student Login | Bright English Academy</title>
 
@@ -18,19 +18,19 @@
 <style>
 
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 body{
+
+    min-height:100vh;
 
     font-family:
     Arial,
     Helvetica,
     sans-serif;
-
-    min-height:100vh;
 
     background:
     linear-gradient(
@@ -198,11 +198,17 @@ body{
 
 }
 
+.input-wrapper{
+
+    position:relative;
+
+}
+
 .form-group input{
 
     width:100%;
 
-    padding:13px 45px 13px 14px;
+    padding:13px 48px 13px 14px;
 
     border:1px solid #d5dfeb;
 
@@ -226,30 +232,11 @@ body{
 
 }
 
-
-/* =========================
-   PASSWORD WRAPPER
-========================= */
-
-.password-wrapper{
-
-    position:relative;
-
-    width:100%;
-
-}
-
-.password-wrapper input{
-
-    padding-right:48px;
-
-}
-
 .password-toggle{
 
     position:absolute;
 
-    right:10px;
+    right:9px;
 
     top:50%;
 
@@ -261,28 +248,11 @@ body{
 
     cursor:pointer;
 
-    font-size:19px;
+    font-size:20px;
 
-    width:34px;
-
-    height:34px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:8px;
+    padding:5px;
 
 }
-
-.password-toggle:hover{
-
-    background:#eef4fb;
-
-}
-
 
 .main-btn{
 
@@ -375,6 +345,12 @@ body{
 
 }
 
+.hidden{
+
+    display:none !important;
+
+}
+
 .back-link{
 
     display:block;
@@ -417,12 +393,6 @@ body{
 
 }
 
-.hidden{
-
-    display:none;
-
-}
-
 @media(max-width:500px){
 
     .login-card{
@@ -436,7 +406,6 @@ body{
 </style>
 
 </head>
-
 
 <body>
 
@@ -469,6 +438,7 @@ Speak English with Confidence
 <button
 id="loginTab"
 class="tab active"
+type="button"
 onclick="showLogin()">
 
 Login
@@ -479,6 +449,7 @@ Login
 <button
 id="registerTab"
 class="tab"
+type="button"
 onclick="showRegister()">
 
 Register
@@ -491,12 +462,11 @@ Register
 <div
 id="message"
 class="message">
-
 </div>
 
 
 <!-- =========================
-     LOGIN FORM
+     LOGIN
 ========================= -->
 
 <form
@@ -507,9 +477,7 @@ onsubmit="loginStudent(event)">
 <div class="form-group">
 
 <label for="loginEmail">
-
 Email
-
 </label>
 
 <input
@@ -525,12 +493,10 @@ required>
 <div class="form-group">
 
 <label for="loginPassword">
-
 Password
-
 </label>
 
-<div class="password-wrapper">
+<div class="input-wrapper">
 
 <input
 type="password"
@@ -542,8 +508,8 @@ required>
 <button
 type="button"
 class="password-toggle"
-onclick="togglePassword('loginPassword', this)"
-aria-label="Show password">
+onclick="togglePassword('loginPassword','loginEye')"
+id="loginEye">
 
 👁️
 
@@ -568,7 +534,7 @@ type="submit">
 
 
 <!-- =========================
-     REGISTER FORM
+     REGISTER
 ========================= -->
 
 <form
@@ -580,9 +546,7 @@ onsubmit="registerStudent(event)">
 <div class="form-group">
 
 <label for="registerName">
-
 Full Name
-
 </label>
 
 <input
@@ -598,9 +562,7 @@ required>
 <div class="form-group">
 
 <label for="registerEmail">
-
 Email
-
 </label>
 
 <input
@@ -616,12 +578,10 @@ required>
 <div class="form-group">
 
 <label for="registerPassword">
-
 Password
-
 </label>
 
-<div class="password-wrapper">
+<div class="input-wrapper">
 
 <input
 type="password"
@@ -634,8 +594,8 @@ required>
 <button
 type="button"
 class="password-toggle"
-onclick="togglePassword('registerPassword', this)"
-aria-label="Show password">
+onclick="togglePassword('registerPassword','registerEye')"
+id="registerEye">
 
 👁️
 
@@ -649,12 +609,10 @@ aria-label="Show password">
 <div class="form-group">
 
 <label for="registerPassword2">
-
 Confirm Password
-
 </label>
 
-<div class="password-wrapper">
+<div class="input-wrapper">
 
 <input
 type="password"
@@ -667,8 +625,8 @@ required>
 <button
 type="button"
 class="password-toggle"
-onclick="togglePassword('registerPassword2', this)"
-aria-label="Show password">
+onclick="togglePassword('registerPassword2','registerEye2')"
+id="registerEye2">
 
 👁️
 
@@ -707,11 +665,9 @@ class="back-link">
 <div class="footer">
 
 <p>
-
 <strong>
 Bright English Academy
 </strong>
-
 </p>
 
 <p>
@@ -727,39 +683,118 @@ Created by José Simeão
 <script>
 
 /* =====================================================
-   SUPABASE CONFIGURATION
+   NEW SUPABASE PROJECT
 ===================================================== */
 
 const SUPABASE_URL =
-    "https://yvdadrqimaavubqcxned.supabase.co";
+"https://yvdadrqimaavubqcxned.supabase.co";
 
 
 const SUPABASE_PUBLISHABLE_KEY =
-    "sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
+"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
 
 
 const supabaseClient =
-    window.supabase.createClient(
+window.supabase.createClient(
 
-        SUPABASE_URL,
+    SUPABASE_URL,
 
-        SUPABASE_PUBLISHABLE_KEY,
+    SUPABASE_PUBLISHABLE_KEY,
 
-        {
+    {
 
-            auth:{
+        auth:{
 
-                autoRefreshToken:true,
+            autoRefreshToken:true,
 
-                persistSession:true,
+            persistSession:true,
 
-                detectSessionInUrl:true
-
-            }
+            detectSessionInUrl:true
 
         }
 
-    );
+    }
+
+);
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(text,type){
+
+    const message =
+        document.getElementById("message");
+
+    message.textContent = text;
+
+    message.className =
+        "message " + type;
+
+}
+
+
+function clearMessage(){
+
+    const message =
+        document.getElementById("message");
+
+    message.textContent = "";
+
+    message.className = "message";
+
+}
+
+
+/* =====================================================
+   TABS
+===================================================== */
+
+function showLogin(){
+
+    document
+        .getElementById("loginForm")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("registerForm")
+        .classList.add("hidden");
+
+    document
+        .getElementById("loginTab")
+        .classList.add("active");
+
+    document
+        .getElementById("registerTab")
+        .classList.remove("active");
+
+    clearMessage();
+
+}
+
+
+function showRegister(){
+
+    document
+        .getElementById("registerForm")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("loginForm")
+        .classList.add("hidden");
+
+    document
+        .getElementById("registerTab")
+        .classList.add("active");
+
+    document
+        .getElementById("loginTab")
+        .classList.remove("active");
+
+    clearMessage();
+
+}
 
 
 /* =====================================================
@@ -768,27 +803,21 @@ const supabaseClient =
 
 function togglePassword(
     inputId,
-    button
+    buttonId
 ){
 
     const input =
-        document.getElementById(
-            inputId
-        );
+        document.getElementById(inputId);
+
+    const button =
+        document.getElementById(buttonId);
 
 
-    if(
-        input.type === "password"
-    ){
+    if(input.type === "password"){
 
         input.type = "text";
 
         button.textContent = "🙈";
-
-        button.setAttribute(
-            "aria-label",
-            "Hide password"
-        );
 
     }
     else{
@@ -797,138 +826,7 @@ function togglePassword(
 
         button.textContent = "👁️";
 
-        button.setAttribute(
-            "aria-label",
-            "Show password"
-        );
-
     }
-
-}
-
-
-/* =====================================================
-   MESSAGE SYSTEM
-===================================================== */
-
-function showMessage(
-    text,
-    type
-){
-
-    const message =
-        document.getElementById(
-            "message"
-        );
-
-
-    message.textContent =
-        text;
-
-
-    message.className =
-        "message " + type;
-
-
-    message.style.display =
-        "block";
-
-}
-
-
-function clearMessage(){
-
-    const message =
-        document.getElementById(
-            "message"
-        );
-
-
-    message.textContent = "";
-
-    message.className =
-        "message";
-
-    message.style.display =
-        "none";
-
-}
-
-
-/* =====================================================
-   LOGIN TAB
-===================================================== */
-
-function showLogin(){
-
-    document.getElementById(
-        "loginForm"
-    ).classList.remove(
-        "hidden"
-    );
-
-
-    document.getElementById(
-        "registerForm"
-    ).classList.add(
-        "hidden"
-    );
-
-
-    document.getElementById(
-        "loginTab"
-    ).classList.add(
-        "active"
-    );
-
-
-    document.getElementById(
-        "registerTab"
-    ).classList.remove(
-        "active"
-    );
-
-
-    clearMessage();
-
-}
-
-
-/* =====================================================
-   REGISTER TAB
-===================================================== */
-
-function showRegister(){
-
-    document.getElementById(
-        "registerForm"
-    ).classList.remove(
-        "hidden"
-    );
-
-
-    document.getElementById(
-        "loginForm"
-    ).classList.add(
-        "hidden"
-    );
-
-
-    document.getElementById(
-        "registerTab"
-    ).classList.add(
-        "active"
-    );
-
-
-    document.getElementById(
-        "loginTab"
-    ).classList.remove(
-        "active"
-    );
-
-
-    clearMessage();
 
 }
 
@@ -941,29 +839,34 @@ async function registerStudent(event){
 
     event.preventDefault();
 
+    clearMessage();
+
 
     const name =
-        document.getElementById(
-            "registerName"
-        ).value.trim();
+        document
+        .getElementById("registerName")
+        .value
+        .trim();
 
 
     const email =
-        document.getElementById(
-            "registerEmail"
-        ).value.trim();
+        document
+        .getElementById("registerEmail")
+        .value
+        .trim()
+        .toLowerCase();
 
 
     const password =
-        document.getElementById(
-            "registerPassword"
-        ).value;
+        document
+        .getElementById("registerPassword")
+        .value;
 
 
     const password2 =
-        document.getElementById(
-            "registerPassword2"
-        ).value;
+        document
+        .getElementById("registerPassword2")
+        .value;
 
 
     if(!name){
@@ -978,10 +881,10 @@ async function registerStudent(event){
     }
 
 
-    if(password !== password2){
+    if(password.length < 6){
 
         showMessage(
-            "❌ The passwords do not match.",
+            "❌ Password must contain at least 6 characters.",
             "error"
         );
 
@@ -990,10 +893,10 @@ async function registerStudent(event){
     }
 
 
-    if(password.length < 6){
+    if(password !== password2){
 
         showMessage(
-            "❌ Password must contain at least 6 characters.",
+            "❌ The passwords do not match.",
             "error"
         );
 
@@ -1021,6 +924,10 @@ async function registerStudent(event){
 
 
     try{
+
+        /* =========================================
+           CREATE AUTH ACCOUNT
+        ========================================= */
 
         const result =
             await supabaseClient.auth.signUp({
@@ -1061,11 +968,15 @@ async function registerStudent(event){
         if(!data || !data.user){
 
             throw new Error(
-                "The account could not be created."
+                "Supabase did not return a student account."
             );
 
         }
 
+
+        /* =========================================
+           IF SESSION EXISTS
+        ========================================= */
 
         if(data.session){
 
@@ -1086,16 +997,12 @@ async function registerStudent(event){
             if(profileResult.error){
 
                 console.error(
-                    "Profile error:",
+                    "Profile creation error:",
                     profileResult.error
                 );
 
             }
 
-        }
-
-
-        if(data.session){
 
             localStorage.setItem(
                 "brightAcademyLoggedIn",
@@ -1120,7 +1027,7 @@ async function registerStudent(event){
 
 
             showMessage(
-                "✅ Account created successfully! Opening your dashboard...",
+                "✅ Account created! Opening your dashboard...",
                 "success"
             );
 
@@ -1132,30 +1039,33 @@ async function registerStudent(event){
                         "student-dashboard.html";
 
                 },
-                1000
+                900
             );
+
+            return;
 
         }
 
-        else{
 
-            showMessage(
-                "✅ Account created successfully! Please check your email to confirm your account, then return here and log in.",
-                "success"
-            );
+        /* =========================================
+           EMAIL CONFIRMATION
+        ========================================= */
+
+        showMessage(
+            "✅ Account created! Please check your email to confirm your account, then return and log in.",
+            "success"
+        );
 
 
-            document.getElementById(
-                "registerForm"
-            ).reset();
-
-        }
+        document
+            .getElementById("registerForm")
+            .reset();
 
     }
     catch(error){
 
         console.error(
-            "Registration error:",
+            "REGISTER ERROR:",
             error
         );
 
@@ -1187,17 +1097,21 @@ async function loginStudent(event){
 
     event.preventDefault();
 
+    clearMessage();
+
 
     const email =
-        document.getElementById(
-            "loginEmail"
-        ).value.trim();
+        document
+        .getElementById("loginEmail")
+        .value
+        .trim()
+        .toLowerCase();
 
 
     const password =
-        document.getElementById(
-            "loginPassword"
-        ).value;
+        document
+        .getElementById("loginPassword")
+        .value;
 
 
     const button =
@@ -1231,28 +1145,29 @@ async function loginStudent(event){
                 });
 
 
-        const data =
-            result.data;
+        if(result.error){
 
-        const error =
-            result.error;
-
-
-        if(error){
-
-            throw error;
+            throw result.error;
 
         }
 
 
-        if(!data || !data.user){
+        const user =
+            result.data?.user;
+
+
+        if(!user){
 
             throw new Error(
-                "Unable to find your account."
+                "Student account not found."
             );
 
         }
 
+
+        /* =========================================
+           GET PROFILE
+        ========================================= */
 
         let profile = null;
 
@@ -1265,40 +1180,39 @@ async function loginStudent(event){
                 )
                 .eq(
                     "id",
-                    data.user.id
+                    user.id
                 )
                 .maybeSingle();
 
 
         if(profileResult.error){
 
-            console.error(
-                "Profile read error:",
-                profileResult.error
-            );
-
-        }
-        else{
-
-            profile =
-                profileResult.data;
+            throw profileResult.error;
 
         }
 
+
+        profile =
+            profileResult.data;
+
+
+        /* =========================================
+           CREATE PROFILE IF MISSING
+        ========================================= */
 
         if(!profile){
 
             const name =
-                data.user.user_metadata?.full_name ||
+                user.user_metadata?.full_name ||
                 email.split("@")[0];
 
 
-            const newProfileResult =
+            const newProfile =
                 await supabaseClient
                     .from("profiles")
                     .insert({
 
-                        id:data.user.id,
+                        id:user.id,
 
                         full_name:name,
 
@@ -1309,40 +1223,37 @@ async function loginStudent(event){
                     .single();
 
 
-            if(newProfileResult.error){
+            if(newProfile.error){
 
-                throw newProfileResult.error;
+                throw newProfile.error;
 
             }
 
 
             profile =
-                newProfileResult.data;
+                newProfile.data;
 
         }
 
+
+        /* =========================================
+           BLOCK TEACHER
+        ========================================= */
 
         if(profile.role === "teacher"){
 
-            showMessage(
-                "👨‍🏫 This is a teacher account. Please use the teacher login.",
-                "error"
-            );
-
-
             await supabaseClient.auth.signOut();
 
-
-            button.disabled = false;
-
-            button.textContent =
-                "🔐 Login";
-
-
-            return;
+            throw new Error(
+                "This is a teacher account. Please use the teacher login."
+            );
 
         }
 
+
+        /* =========================================
+           SAVE STUDENT
+        ========================================= */
 
         localStorage.setItem(
             "brightAcademyLoggedIn",
@@ -1355,13 +1266,13 @@ async function loginStudent(event){
 
             JSON.stringify({
 
-                id:data.user.id,
+                id:user.id,
 
                 fullname:
                     profile.full_name,
 
                 email:
-                    data.user.email
+                    user.email
 
             })
 
@@ -1388,7 +1299,7 @@ async function loginStudent(event){
     catch(error){
 
         console.error(
-            "Login error:",
+            "LOGIN ERROR:",
             error
         );
 
@@ -1427,11 +1338,22 @@ function getFriendlyError(error){
 
     if(
         lower.includes(
-            "invalid login credentials"
+            "failed to fetch"
         )
     ){
 
-        return "Email or password is incorrect.";
+        return "Could not connect to the new Supabase project. Please check the Supabase URL and Publishable Key.";
+
+    }
+
+
+    if(
+        lower.includes(
+            "invalid api key"
+        )
+    ){
+
+        return "The Supabase Publishable Key is invalid for this project.";
 
     }
 
@@ -1442,18 +1364,18 @@ function getFriendlyError(error){
         )
     ){
 
-        return "This email is already registered. Please log in.";
+        return "This email is already registered. Please use Login.";
 
     }
 
 
     if(
         lower.includes(
-            "password should be at least"
+            "invalid login credentials"
         )
     ){
 
-        return "Password must contain at least 6 characters.";
+        return "Email or password is incorrect.";
 
     }
 
@@ -1471,11 +1393,11 @@ function getFriendlyError(error){
 
     if(
         lower.includes(
-            "invalid api key"
+            "password should be at least"
         )
     ){
 
-        return "The Supabase API key is not being accepted by this project. Please verify the Publishable key in Supabase.";
+        return "Password must contain at least 6 characters.";
 
     }
 
@@ -1486,7 +1408,7 @@ function getFriendlyError(error){
 
 
 /* =====================================================
-   CHECK EXISTING SESSION
+   EXISTING SESSION
 ===================================================== */
 
 async function checkExistingSession(){
@@ -1498,69 +1420,70 @@ async function checkExistingSession(){
                 .getSession();
 
 
+        if(result.error){
+
+            console.error(
+                result.error
+            );
+
+            return;
+
+        }
+
+
         const session =
             result.data?.session;
 
 
         if(
-            session &&
-            session.user
+            !session ||
+            !session.user
         ){
 
-            const user =
-                session.user;
+            return;
+
+        }
 
 
-            const profileResult =
-                await supabaseClient
-                    .from("profiles")
-                    .select(
-                        "id, full_name, role"
-                    )
-                    .eq(
-                        "id",
-                        user.id
-                    )
-                    .maybeSingle();
+        const user =
+            session.user;
 
 
-            const profile =
-                profileResult.data;
+        const profileResult =
+            await supabaseClient
+                .from("profiles")
+                .select(
+                    "id, full_name, role"
+                )
+                .eq(
+                    "id",
+                    user.id
+                )
+                .maybeSingle();
 
 
-            if(
-                profile &&
-                profile.role === "student"
-            ){
+        if(profileResult.error){
 
-                localStorage.setItem(
-                    "brightAcademyLoggedIn",
-                    "true"
-                );
+            console.error(
+                profileResult.error
+            );
 
+            return;
 
-                localStorage.setItem(
-                    "brightAcademyStudent",
-
-                    JSON.stringify({
-
-                        id:user.id,
-
-                        fullname:
-                            profile.full_name,
-
-                        email:
-                            user.email
-
-                    })
-
-                );
+        }
 
 
-                window.location.href =
-                    "student-dashboard.html";
+        const profile =
+            profileResult.data;
 
-            }
+
+        if(
+            profile &&
+            profile.role === "student"
+        ){
+
+            window.location.href =
+                "student-dashboard.html";
 
         }
 
@@ -1568,7 +1491,7 @@ async function checkExistingSession(){
     catch(error){
 
         console.error(
-            "Session check error:",
+            "SESSION ERROR:",
             error
         );
 
@@ -1584,7 +1507,6 @@ async function checkExistingSession(){
 checkExistingSession();
 
 </script>
-
 
 </body>
 
