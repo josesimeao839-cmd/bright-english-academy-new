@@ -13,7 +13,7 @@
 
 <title>Lesson 2 — Personal Information | Bright English Academy</title>
 
-<!-- SUPABASE -->
+<!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
@@ -424,6 +424,10 @@ h3{
     cursor:pointer;
 }
 
+.complete-btn:hover{
+    background:#116b3b;
+}
+
 #completeMessage{
     display:none;
     margin-top:15px;
@@ -445,6 +449,10 @@ h3{
     padding:12px 18px;
     border-radius:9px;
     font-weight:bold;
+}
+
+.page-navigation a:hover{
+    background:#083d79;
 }
 
 footer{
@@ -507,9 +515,7 @@ footer strong{
 
 <a href="index.html">Home</a>
 
-<a href="beginner1.html">Course</a>
-
-<a href="student-dashboard.html">Dashboard</a>
+<a href="student-dashboard.html">📊 Dashboard</a>
 
 </nav>
 
@@ -629,73 +635,109 @@ Ask simple questions about another person.
 <div class="word-card">
 <div class="word">Name</div>
 <div class="translation">Nome</div>
-<button class="listen-btn" onclick="speak('Name')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Name')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Age</div>
 <div class="translation">Idade</div>
-<button class="listen-btn" onclick="speak('Age')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Age')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Country</div>
 <div class="translation">País</div>
-<button class="listen-btn" onclick="speak('Country')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Country')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Nationality</div>
 <div class="translation">Nacionalidade</div>
-<button class="listen-btn" onclick="speak('Nationality')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Nationality')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">City</div>
 <div class="translation">Cidade</div>
-<button class="listen-btn" onclick="speak('City')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('City')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Address</div>
 <div class="translation">Endereço</div>
-<button class="listen-btn" onclick="speak('Address')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Address')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Phone number</div>
 <div class="translation">Número de telefone</div>
-<button class="listen-btn" onclick="speak('Phone number')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Phone number')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Email</div>
 <div class="translation">E-mail</div>
-<button class="listen-btn" onclick="speak('Email')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Email')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Student</div>
 <div class="translation">Estudante</div>
-<button class="listen-btn" onclick="speak('Student')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Student')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Teacher</div>
 <div class="translation">Professor / Professora</div>
-<button class="listen-btn" onclick="speak('Teacher')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Teacher')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">From</div>
 <div class="translation">De</div>
-<button class="listen-btn" onclick="speak('From')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('From')">
+🔊 Listen
+</button>
 </div>
 
 <div class="word-card">
 <div class="word">Live</div>
 <div class="translation">Morar / Viver</div>
-<button class="listen-btn" onclick="speak('Live')">🔊 Listen</button>
+<button class="listen-btn"
+onclick="speak('Live')">
+🔊 Listen
+</button>
 </div>
 
 </div>
@@ -929,7 +971,9 @@ Listen and repeat.
 
 <div class="example">
 
-<strong>My name is José.</strong>
+<strong>
+My name is José.
+</strong>
 
 <br><br>
 
@@ -942,7 +986,9 @@ onclick="speak('My name is José.')">
 
 <div class="example">
 
-<strong>I am from Mozambique.</strong>
+<strong>
+I am from Mozambique.
+</strong>
 
 <br><br>
 
@@ -955,7 +1001,9 @@ onclick="speak('I am from Mozambique.')">
 
 <div class="example">
 
-<strong>I live in Maputo.</strong>
+<strong>
+I live in Maputo.
+</strong>
 
 <br><br>
 
@@ -968,7 +1016,9 @@ onclick="speak('I live in Maputo.')">
 
 <div class="example">
 
-<strong>How old are you?</strong>
+<strong>
+How old are you?
+</strong>
 
 <br><br>
 
@@ -981,7 +1031,9 @@ onclick="speak('How old are you?')">
 
 <div class="example">
 
-<strong>What is your nationality?</strong>
+<strong>
+What is your nationality?
+</strong>
 
 <br><br>
 
@@ -1005,37 +1057,85 @@ José and Maria are meeting and sharing personal information.
 
 <div class="dialogue">
 
-<p><span class="jose">José:</span> Hello! What's your name?</p>
+<p>
+<span class="jose">José:</span>
+Hello! What's your name?
+</p>
 
-<p><span class="student">Maria:</span> Hi! My name is Maria. What's your name?</p>
+<p>
+<span class="student">Maria:</span>
+Hi! My name is Maria. What's your name?
+</p>
 
-<p><span class="jose">José:</span> My name is José. Nice to meet you.</p>
+<p>
+<span class="jose">José:</span>
+My name is José. Nice to meet you.
+</p>
 
-<p><span class="student">Maria:</span> Nice to meet you too.</p>
+<p>
+<span class="student">Maria:</span>
+Nice to meet you too.
+</p>
 
-<p><span class="jose">José:</span> Where are you from?</p>
+<p>
+<span class="jose">José:</span>
+Where are you from?
+</p>
 
-<p><span class="student">Maria:</span> I am from Mozambique.</p>
+<p>
+<span class="student">Maria:</span>
+I am from Mozambique.
+</p>
 
-<p><span class="jose">José:</span> Where do you live?</p>
+<p>
+<span class="jose">José:</span>
+Where do you live?
+</p>
 
-<p><span class="student">Maria:</span> I live in Maputo.</p>
+<p>
+<span class="student">Maria:</span>
+I live in Maputo.
+</p>
 
-<p><span class="jose">José:</span> How old are you?</p>
+<p>
+<span class="jose">José:</span>
+How old are you?
+</p>
 
-<p><span class="student">Maria:</span> I am eighteen years old. How old are you?</p>
+<p>
+<span class="student">Maria:</span>
+I am eighteen years old. How old are you?
+</p>
 
-<p><span class="jose">José:</span> I am twenty years old.</p>
+<p>
+<span class="jose">José:</span>
+I am twenty years old.
+</p>
 
-<p><span class="student">Maria:</span> What is your nationality?</p>
+<p>
+<span class="student">Maria:</span>
+What is your nationality?
+</p>
 
-<p><span class="jose">José:</span> I am Mozambican.</p>
+<p>
+<span class="jose">José:</span>
+I am Mozambican.
+</p>
 
-<p><span class="student">Maria:</span> That's great!</p>
+<p>
+<span class="student">Maria:</span>
+That's great!
+</p>
 
-<p><span class="jose">José:</span> It was nice talking to you.</p>
+<p>
+<span class="jose">José:</span>
+It was nice talking to you.
+</p>
 
-<p><span class="student">Maria:</span> Nice talking to you too. See you later!</p>
+<p>
+<span class="student">Maria:</span>
+Nice talking to you too. See you later!
+</p>
 
 </div>
 
@@ -1057,13 +1157,23 @@ onclick="speakConversation()">
 
 <strong>1. Complete:</strong>
 
-<p>I ___ from Mozambique.</p>
+<p>
+I ___ from Mozambique.
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer1')">am</button>
-<button onclick="checkAnswer(this,false,'answer1')">is</button>
-<button onclick="checkAnswer(this,false,'answer1')">are</button>
+<button onclick="checkAnswer(this,true,'answer1')">
+am
+</button>
+
+<button onclick="checkAnswer(this,false,'answer1')">
+is
+</button>
+
+<button onclick="checkAnswer(this,false,'answer1')">
+are
+</button>
 
 </div>
 
@@ -1076,13 +1186,23 @@ onclick="speakConversation()">
 
 <strong>2. Complete:</strong>
 
-<p>I ___ in Maputo.</p>
+<p>
+I ___ in Maputo.
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer2')">live</button>
-<button onclick="checkAnswer(this,false,'answer2')">lives</button>
-<button onclick="checkAnswer(this,false,'answer2')">living</button>
+<button onclick="checkAnswer(this,true,'answer2')">
+live
+</button>
+
+<button onclick="checkAnswer(this,false,'answer2')">
+lives
+</button>
+
+<button onclick="checkAnswer(this,false,'answer2')">
+living
+</button>
 
 </div>
 
@@ -1095,13 +1215,23 @@ onclick="speakConversation()">
 
 <strong>3. Choose the correct question:</strong>
 
-<p>You want to ask someone's age.</p>
+<p>
+You want to ask someone's age.
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer3')">How old are you?</button>
-<button onclick="checkAnswer(this,false,'answer3')">Where do you live?</button>
-<button onclick="checkAnswer(this,false,'answer3')">What is your name?</button>
+<button onclick="checkAnswer(this,true,'answer3')">
+How old are you?
+</button>
+
+<button onclick="checkAnswer(this,false,'answer3')">
+Where do you live?
+</button>
+
+<button onclick="checkAnswer(this,false,'answer3')">
+What is your name?
+</button>
 
 </div>
 
@@ -1114,13 +1244,23 @@ onclick="speakConversation()">
 
 <strong>4. Choose the correct question:</strong>
 
-<p>You want to know where someone lives.</p>
+<p>
+You want to know where someone lives.
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,false,'answer4')">How old are you?</button>
-<button onclick="checkAnswer(this,true,'answer4')">Where do you live?</button>
-<button onclick="checkAnswer(this,false,'answer4')">What is your nationality?</button>
+<button onclick="checkAnswer(this,false,'answer4')">
+How old are you?
+</button>
+
+<button onclick="checkAnswer(this,true,'answer4')">
+Where do you live?
+</button>
+
+<button onclick="checkAnswer(this,false,'answer4')">
+What is your nationality?
+</button>
 
 </div>
 
@@ -1133,13 +1273,23 @@ onclick="speakConversation()">
 
 <strong>5. Complete:</strong>
 
-<p>I am ___ Mozambique.</p>
+<p>
+I am ___ Mozambique.
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer5')">from</button>
-<button onclick="checkAnswer(this,false,'answer5')">in</button>
-<button onclick="checkAnswer(this,false,'answer5')">at</button>
+<button onclick="checkAnswer(this,true,'answer5')">
+from
+</button>
+
+<button onclick="checkAnswer(this,false,'answer5')">
+in
+</button>
+
+<button onclick="checkAnswer(this,false,'answer5')">
+at
+</button>
 
 </div>
 
@@ -1152,13 +1302,23 @@ onclick="speakConversation()">
 
 <strong>6. Translate:</strong>
 
-<p>"I live in Maputo."</p>
+<p>
+"I live in Maputo."
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer6')">Eu moro em Maputo.</button>
-<button onclick="checkAnswer(this,false,'answer6')">Eu sou de Maputo.</button>
-<button onclick="checkAnswer(this,false,'answer6')">Eu tenho Maputo.</button>
+<button onclick="checkAnswer(this,true,'answer6')">
+Eu moro em Maputo.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer6')">
+Eu sou de Maputo.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer6')">
+Eu tenho Maputo.
+</button>
 
 </div>
 
@@ -1171,13 +1331,23 @@ onclick="speakConversation()">
 
 <strong>7. Complete:</strong>
 
-<p>How ___ are you?</p>
+<p>
+How ___ are you?
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer7')">old</button>
-<button onclick="checkAnswer(this,false,'answer7')">many</button>
-<button onclick="checkAnswer(this,false,'answer7')">much</button>
+<button onclick="checkAnswer(this,true,'answer7')">
+old
+</button>
+
+<button onclick="checkAnswer(this,false,'answer7')">
+many
+</button>
+
+<button onclick="checkAnswer(this,false,'answer7')">
+much
+</button>
 
 </div>
 
@@ -1190,13 +1360,23 @@ onclick="speakConversation()">
 
 <strong>8. Choose the correct answer:</strong>
 
-<p>Where are you from?</p>
+<p>
+Where are you from?
+</p>
 
 <div class="options">
 
-<button onclick="checkAnswer(this,true,'answer8')">I am from Mozambique.</button>
-<button onclick="checkAnswer(this,false,'answer8')">I am eighteen.</button>
-<button onclick="checkAnswer(this,false,'answer8')">My name is Maria.</button>
+<button onclick="checkAnswer(this,true,'answer8')">
+I am from Mozambique.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer8')">
+I am eighteen.
+</button>
+
+<button onclick="checkAnswer(this,false,'answer8')">
+My name is Maria.
+</button>
 
 </div>
 
@@ -1231,10 +1411,14 @@ Check
 
 <h3>Activity 2</h3>
 
-<p>Build the sentence:</p>
+<p>
+Build the sentence:
+</p>
 
 <p>
-<strong>am / I / Mozambique / from</strong>
+<strong>
+am / I / Mozambique / from
+</strong>
 </p>
 
 <button onclick="activityAnswer('Correct sentence: I am from Mozambique.')">
@@ -1248,10 +1432,14 @@ Check
 
 <h3>Activity 3</h3>
 
-<p>Build the question:</p>
+<p>
+Build the question:
+</p>
 
 <p>
-<strong>old / are / How / you?</strong>
+<strong>
+old / are / How / you?
+</strong>
 </p>
 
 <button onclick="activityAnswer('Correct question: How old are you?')">
@@ -1270,7 +1458,9 @@ Someone says:
 <strong>I live in Maputo.</strong>
 </p>
 
-<p>What information did they give?</p>
+<p>
+What information did they give?
+</p>
 
 <button onclick="activityAnswer('They gave their city or place of residence.')">
 Check
@@ -1289,9 +1479,13 @@ Check
 
 <h3>🎤 Talk About Yourself</h3>
 
-<p>Speak for 30–60 seconds.</p>
+<p>
+Speak for 30–60 seconds.
+</p>
 
-<p>Try to answer:</p>
+<p>
+Try to answer:
+</p>
 
 <ul>
 
@@ -1379,7 +1573,6 @@ Choose the best answer.
 </p>
 
 <form id="quizForm">
-
 
 <div class="quiz-question">
 
@@ -1734,21 +1927,37 @@ Review the most important points from Lesson 2.
 
 <h3>⭐ Key Sentences</h3>
 
-<p>My name is José.</p>
+<p>
+My name is José.
+</p>
 
-<p>I am twenty years old.</p>
+<p>
+I am twenty years old.
+</p>
 
-<p>I am from Mozambique.</p>
+<p>
+I am from Mozambique.
+</p>
 
-<p>I am Mozambican.</p>
+<p>
+I am Mozambican.
+</p>
 
-<p>I live in Maputo.</p>
+<p>
+I live in Maputo.
+</p>
 
-<p>How old are you?</p>
+<p>
+How old are you?
+</p>
 
-<p>Where do you live?</p>
+<p>
+Where do you live?
+</p>
 
-<p>What is your nationality?</p>
+<p>
+What is your nationality?
+</p>
 
 <br>
 
@@ -1830,8 +2039,8 @@ Day 2 / Lesson 2
 <script>
 
 /* =========================================================
-   SUPABASE CONFIGURATION
-========================================================= */
+   SUPABASE SESSION
+   ========================================================= */
 
 const SUPABASE_URL =
 "https://yvdadrqimaavubqcxned.supabase.co";
@@ -1855,7 +2064,7 @@ window.supabase.createClient(
 
 /* =========================================================
    CHECK STUDENT SESSION
-========================================================= */
+   ========================================================= */
 
 async function checkStudentSession(){
 
@@ -1867,11 +2076,10 @@ async function checkStudentSession(){
         } =
         await supabaseClient.auth.getSession();
 
-
         if(error){
 
             console.error(
-                "Session error:",
+                "Supabase session error:",
                 error
             );
 
@@ -1879,6 +2087,12 @@ async function checkStudentSession(){
 
         }
 
+        /*
+         * If there is no session, do NOT redirect
+         * immediately. This prevents a valid page
+         * from flashing or breaking while Supabase
+         * restores the saved session.
+         */
 
         if(
             !data ||
@@ -1886,87 +2100,45 @@ async function checkStudentSession(){
             !data.session.user
         ){
 
-            window.location.href =
-                "student-login.html";
+            console.warn(
+                "No active Supabase session found."
+            );
 
             return;
 
         }
-
 
         const user =
             data.session.user;
 
 
-        const {
-            data: profile,
-            error: profileError
-        } =
-        await supabaseClient
-            .from("profiles")
-            .select(
-                "id, full_name, role"
-            )
-            .eq(
-                "id",
-                user.id
-            )
-            .maybeSingle();
-
-
-        if(profileError){
-
-            console.error(
-                "Profile error:",
-                profileError
-            );
-
-        }
-
-
-        if(
-            profile &&
-            profile.role === "teacher"
-        ){
-
-            await supabaseClient.auth.signOut();
-
-            window.location.href =
-                "student-login.html";
-
-            return;
-
-        }
-
+        /*
+         * Save local information only as a
+         * synchronization helper.
+         */
 
         localStorage.setItem(
             "brightAcademyLoggedIn",
             "true"
         );
 
-
         localStorage.setItem(
             "brightAcademyStudent",
+
             JSON.stringify({
 
                 id:user.id,
 
                 fullname:
-                    profile?.full_name ||
                     user.user_metadata?.full_name ||
+                    user.user_metadata?.name ||
                     user.email,
 
                 email:user.email
 
             })
+
         );
-
-
-        console.log(
-            "Student session active:",
-            user.email
-        );
-
 
     }
     catch(error){
@@ -1981,59 +2153,47 @@ async function checkStudentSession(){
 }
 
 
-/* START SESSION CHECK */
+/*
+ * Start Supabase session check.
+ */
 
 checkStudentSession();
 
 
 /* =========================================================
    AUDIO
-========================================================= */
+   ========================================================= */
 
 function speak(text){
 
-    if(
-        !("speechSynthesis" in window)
-    ){
+    if(!("speechSynthesis" in window)){
 
         alert(
             "Audio is not supported by this browser."
         );
 
         return;
-
     }
-
 
     window.speechSynthesis.cancel();
 
-
     const speech =
-        new SpeechSynthesisUtterance(
-            text
-        );
+        new SpeechSynthesisUtterance(text);
 
+    speech.lang="en-US";
 
-    speech.lang =
-        "en-US";
+    speech.rate=0.88;
 
-    speech.rate =
-        0.88;
+    speech.pitch=1;
 
-    speech.pitch =
-        1;
-
-
-    window.speechSynthesis.speak(
-        speech
-    );
+    window.speechSynthesis.speak(speech);
 
 }
 
 
 /* =========================================================
    CONVERSATION AUDIO
-========================================================= */
+   ========================================================= */
 
 function speakConversation(){
 
@@ -2078,7 +2238,7 @@ function speakConversation(){
 
 /* =========================================================
    EXERCISES
-========================================================= */
+   ========================================================= */
 
 function checkAnswer(
     button,
@@ -2087,30 +2247,23 @@ function checkAnswer(
 ){
 
     const answer =
-        document.getElementById(
-            answerId
-        );
+        document.getElementById(answerId);
 
-
-    answer.style.display =
-        "block";
-
+    answer.style.display="block";
 
     if(correct){
 
-        answer.className =
-            "answer correct";
+        answer.className="answer correct";
 
-        answer.textContent =
+        answer.textContent=
             "✅ Correct! Well done.";
 
     }
     else{
 
-        answer.className =
-            "answer wrong";
+        answer.className="answer wrong";
 
-        answer.textContent =
+        answer.textContent=
             "❌ Try again.";
 
     }
@@ -2120,25 +2273,22 @@ function checkAnswer(
 
 /* =========================================================
    ACTIVITIES
-========================================================= */
+   ========================================================= */
 
 function activityAnswer(message){
 
-    alert(
-        "💡 " +
-        message
-    );
+    alert("💡 "+message);
 
 }
 
 
 /* =========================================================
    QUIZ
-========================================================= */
+   ========================================================= */
 
 function submitQuiz(){
 
-    const answers = {
+    const answers={
 
         q1:"a",
         q2:"a",
@@ -2153,25 +2303,22 @@ function submitQuiz(){
 
     };
 
-
-    let score = 0;
-
+    let score=0;
 
     for(
         let question in answers
     ){
 
-        const selected =
+        const selected=
             document.querySelector(
-                'input[name="' +
-                question +
+                'input[name="'+
+                question+
                 '"]:checked'
             );
 
-
         if(
             selected &&
-            selected.value ===
+            selected.value===
             answers[question]
         ){
 
@@ -2181,43 +2328,30 @@ function submitQuiz(){
 
     }
 
+    const percentage=
+        score*10;
 
-    const percentage =
-        score * 10;
-
-
-    const result =
+    const result=
         document.getElementById(
             "quizResult"
         );
 
+    result.style.display="block";
 
-    result.style.display =
-        "block";
+    result.innerHTML=
 
-
-    result.innerHTML =
-
-        "🎯 Your Score: " +
-        score +
-        "/10 (" +
-        percentage +
-        "%)<br><br>" +
-
+        "🎯 Your Score: "+
+        score+
+        "/10 ("+
+        percentage+
+        "%)<br><br>"+
         (
-
-            percentage >= 70
-
+            percentage>=70
             ?
-
             "🏆 Excellent! Keep learning!"
-
             :
-
             "📚 Keep practicing and try again!"
-
         );
-
 
     localStorage.setItem(
         "lesson2Score",
@@ -2229,27 +2363,23 @@ function submitQuiz(){
 
 /* =========================================================
    COMPLETE LESSON 2
-========================================================= */
+   ========================================================= */
 
 function completeLesson(){
 
-    const message =
+    const message=
         document.getElementById(
             "completeMessage"
         );
 
+    message.style.display="block";
 
-    message.style.display =
-        "block";
-
-
-    let completed =
+    let completed=
         JSON.parse(
             localStorage.getItem(
                 "completedLessons"
             )
         ) || [];
-
 
     if(
         !completed.includes(2)
@@ -2259,14 +2389,33 @@ function completeLesson(){
 
     }
 
-
     localStorage.setItem(
         "completedLessons",
-        JSON.stringify(
-            completed
-        )
+        JSON.stringify(completed)
     );
 
+    /*
+     * Also keep the existing Bright Academy
+     * progress system synchronized if available.
+     */
+
+    try{
+
+        if(
+            typeof completeLessonProgress ===
+            "function"
+        ){
+
+            completeLessonProgress(2);
+
+        }
+
+    }
+    catch(error){
+
+        console.log(error);
+
+    }
 
     updateProgress();
 
@@ -2274,80 +2423,105 @@ function completeLesson(){
 
 
 /* =========================================================
-   PROGRESS
-========================================================= */
+   LESSON PROGRESS
+   ========================================================= */
 
 function updateProgress(){
 
-    const completed =
+    const completed=
         JSON.parse(
             localStorage.getItem(
                 "completedLessons"
             )
         ) || [];
 
-
-    const isComplete =
+    const isComplete=
         completed.includes(2);
 
+    const percentage=
+        isComplete ? 100 : 0;
 
-    const percentage =
-        isComplete
-        ?
-        100
-        :
-        0;
-
-
-    const progressFill =
+    const progressFill=
         document.getElementById(
             "progressFill"
         );
 
-
-    const progressText =
+    const progressText=
         document.getElementById(
             "progressText"
         );
 
-
     if(progressFill){
 
-        progressFill.style.width =
-            percentage + "%";
+        progressFill.style.width=
+            percentage+"%";
 
     }
 
-
     if(progressText){
 
-        progressText.textContent =
-            percentage + "%";
+        progressText.textContent=
+            percentage+"%";
+
+    }
+
+    const message=
+        document.getElementById(
+            "completeMessage"
+        );
+
+    if(
+        message &&
+        isComplete
+    ){
+
+        message.style.display="block";
 
     }
 
 }
 
 
-/* INITIAL PROGRESS */
+/* =========================================================
+   INITIALIZE PROGRESS
+   ========================================================= */
 
 updateProgress();
 
 
 /* =========================================================
-   STOP AUDIO WHEN LEAVING
-========================================================= */
+   STOP AUDIO WHEN LEAVING PAGE
+   ========================================================= */
 
 window.addEventListener(
     "beforeunload",
     function(){
 
         if(
-            "speechSynthesis"
-            in window
+            "speechSynthesis" in window
         ){
 
             window.speechSynthesis.cancel();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   KEEP SESSION ALIVE
+   ========================================================= */
+
+supabaseClient.auth.onAuthStateChange(
+    function(event, session){
+
+        if(session && session.user){
+
+            localStorage.setItem(
+                "brightAcademyLoggedIn",
+                "true"
+            );
 
         }
 
