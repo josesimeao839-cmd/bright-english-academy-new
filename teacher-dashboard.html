@@ -8,16 +8,17 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Teacher Dashboard | Bright English Academy</title>
+<meta name="description"
+      content="Teacher Dashboard - Bright English Academy">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<title>Teacher Dashboard | Bright English Academy</title>
 
 <style>
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 body{
@@ -26,75 +27,150 @@ body{
     color:#17233c;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header{
-    background:linear-gradient(135deg,#0757c9,#13a6e8);
-    color:white;
-    padding:22px;
+    background:white;
+    box-shadow:0 3px 18px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .header-container{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
+    padding:14px 20px;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
+    gap:15px;
 }
 
 .logo{
-    font-size:22px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#0757c9;
+    text-decoration:none;
+
+    font-size:20px;
     font-weight:800;
 }
 
-.logout{
-    border:none;
-    background:white;
-    color:#c62828;
-    padding:10px 16px;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
+.logo-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #0757c9,
+        #13a6e8
+    );
+
+    color:white;
+    font-size:22px;
 }
+
+.teacher-badge{
+    background:#eaf3ff;
+    color:#0757c9;
+    padding:9px 14px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+/* =========================
+   MAIN
+========================= */
 
 main{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
-    padding:30px 20px 60px;
+    padding:35px 20px 60px;
 }
 
-.welcome{
-    background:white;
-    padding:28px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(20,53,100,.08);
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    background:
+        linear-gradient(
+            135deg,
+            #0757c9,
+            #13a6e8
+        );
+
+    color:white;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(7,87,201,.20);
+
     margin-bottom:25px;
 }
 
-.welcome h1{
-    color:#0757c9;
+.hero h1{
+    font-size:32px;
     margin-bottom:8px;
 }
 
+.hero p{
+    opacity:.95;
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
 .stats{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,1fr);
+
     gap:18px;
+
     margin-bottom:25px;
 }
 
 .stat{
     background:white;
+
     padding:22px;
-    border-radius:16px;
-    box-shadow:0 8px 25px rgba(20,53,100,.07);
+
+    border-radius:18px;
+
+    border:1px solid #e0e7f1;
+
+    box-shadow:
+        0 8px 25px
+        rgba(20,53,100,.07);
 }
 
 .stat-icon{
     font-size:28px;
+    margin-bottom:8px;
 }
 
 .stat-title{
     color:#64748b;
-    margin-top:8px;
+    font-size:14px;
 }
 
 .stat-value{
@@ -104,167 +180,391 @@ main{
     margin-top:5px;
 }
 
-.card{
+/* =========================
+   PANEL
+========================= */
+
+.panel{
     background:white;
-    padding:25px;
-    border-radius:18px;
-    box-shadow:0 8px 25px rgba(20,53,100,.07);
+
+    padding:28px;
+
+    border-radius:20px;
+
+    border:1px solid #e0e7f1;
+
+    box-shadow:
+        0 8px 25px
+        rgba(20,53,100,.07);
+
     margin-bottom:25px;
 }
 
-h2{
+.section-title{
     color:#0757c9;
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+    display:flex;
+    gap:10px;
     margin-bottom:20px;
+}
+
+.search-box input{
+    flex:1;
+
+    padding:13px 15px;
+
+    border:1px solid #ccd8e8;
+
+    border-radius:9px;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+.search-box input:focus{
+    border-color:#0757c9;
+}
+
+.refresh-btn{
+    border:none;
+
+    background:#0757c9;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.refresh-btn:hover{
+    background:#064ba9;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container{
+    width:100%;
+    overflow-x:auto;
 }
 
 table{
     width:100%;
     border-collapse:collapse;
+    min-width:850px;
+}
+
+thead{
+    background:#f1f6fd;
 }
 
 th{
-    background:#0757c9;
-    color:white;
-    padding:13px;
     text-align:left;
+
+    padding:14px;
+
+    color:#0757c9;
+
+    font-size:13px;
+
+    border-bottom:1px solid #dce5f1;
 }
 
 td{
-    padding:13px;
-    border-bottom:1px solid #e4eaf2;
+    padding:14px;
+
+    border-bottom:1px solid #e6edf5;
+
+    font-size:14px;
 }
 
-tr:hover{
-    background:#f5f9ff;
+tr:hover td{
+    background:#f9fbff;
 }
 
-.progress{
-    width:120px;
-    height:10px;
-    background:#e5ebf3;
+/* =========================
+   STUDENT
+========================= */
+
+.student-name-cell{
+    font-weight:bold;
+    color:#17233c;
+}
+
+.email{
+    color:#64748b;
+    font-size:12px;
+    margin-top:3px;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-mini{
+    width:140px;
+    height:9px;
+
+    background:#e6edf7;
+
     border-radius:20px;
+
     overflow:hidden;
+
+    margin-bottom:5px;
 }
 
-.progress-fill{
+.progress-mini-fill{
     height:100%;
-    background:linear-gradient(90deg,#0757c9,#13a6e8);
+    width:0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0757c9,
+            #13a6e8
+        );
 }
+
+.progress-text{
+    font-size:12px;
+    color:#64748b;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status{
+    display:inline-block;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+}
+
+.status-active{
+    background:#e8f7ee;
+    color:#168348;
+}
+
+.status-new{
+    background:#fff7df;
+    color:#9a7000;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .view-btn{
     border:none;
+
     background:#0757c9;
+
     color:white;
+
     padding:8px 12px;
-    border-radius:7px;
-    cursor:pointer;
+
+    border-radius:8px;
+
     font-weight:bold;
+
+    cursor:pointer;
 }
 
 .view-btn:hover{
     background:#064ba9;
 }
 
-#studentDetails{
-    display:none;
-}
+/* =========================
+   EMPTY
+========================= */
 
-.detail-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-    margin-bottom:20px;
-}
+.empty{
+    text-align:center;
 
-.detail{
-    background:#f5f9ff;
-    padding:18px;
-    border-radius:12px;
-}
+    padding:40px 20px;
 
-.detail strong{
-    display:block;
     color:#64748b;
-    font-size:13px;
-    margin-bottom:5px;
-}
-
-.lesson-list{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-}
-
-.lesson-item{
-    padding:13px;
-    border-radius:9px;
-    background:#f5f9ff;
-}
-
-.completed{
-    background:#eaf8ef;
-    color:#147844;
-}
-
-.pending{
-    color:#64748b;
-}
-
-textarea{
-    width:100%;
-    min-height:120px;
-    padding:13px;
-    border:1px solid #d7e0ec;
-    border-radius:10px;
-    resize:vertical;
-    font-family:Arial;
-}
-
-.save-btn{
-    margin-top:10px;
-    border:none;
-    background:#168348;
-    color:white;
-    padding:11px 18px;
-    border-radius:8px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.message{
-    margin-top:10px;
-    font-weight:bold;
 }
 
 .loading{
     text-align:center;
     padding:30px;
-    color:#64748b;
+    color:#0757c9;
+    font-weight:bold;
 }
+
+/* =========================
+   STUDENT DETAILS
+========================= */
+
+.details{
+    display:none;
+
+    background:#f8fbff;
+
+    border:1px solid #dce5f1;
+
+    padding:22px;
+
+    border-radius:14px;
+
+    margin-top:20px;
+}
+
+.details h3{
+    color:#0757c9;
+    margin-bottom:15px;
+}
+
+.detail-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:12px;
+}
+
+.detail-card{
+    background:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    border:1px solid #e0e7f1;
+}
+
+.detail-label{
+    color:#64748b;
+    font-size:12px;
+}
+
+.detail-value{
+    color:#0757c9;
+    font-size:20px;
+    font-weight:bold;
+    margin-top:4px;
+}
+
+/* =========================
+   EVALUATION
+========================= */
+
+.evaluation{
+    margin-top:20px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    border:1px solid #dce5f1;
+}
+
+.evaluation textarea{
+    width:100%;
+
+    min-height:100px;
+
+    resize:vertical;
+
+    padding:12px;
+
+    border:1px solid #ccd8e8;
+
+    border-radius:9px;
+
+    font-family:Arial;
+
+    margin-top:10px;
+}
+
+.save-btn{
+    border:none;
+
+    background:#168348;
+
+    color:white;
+
+    padding:11px 18px;
+
+    border-radius:9px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:10px;
+}
+
+.save-btn:hover{
+    background:#116b3b;
+}
+
+.message{
+    margin-top:10px;
+
+    font-weight:bold;
+
+    color:#168348;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     background:#17233c;
+
     color:white;
+
     text-align:center;
-    padding:25px;
+
+    padding:28px 15px;
 }
 
 footer strong{
     color:#58c7ff;
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:900px){
 
     .stats{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .detail-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .lesson-list{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
 }
@@ -272,28 +572,44 @@ footer strong{
 @media(max-width:600px){
 
     .header-container{
-        flex-direction:column;
-        gap:15px;
+        padding:10px 15px;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .teacher-badge{
+        font-size:12px;
+    }
+
+    main{
+        padding:
+            25px 15px 45px;
+    }
+
+    .hero{
+        padding:25px;
+    }
+
+    .hero h1{
+        font-size:25px;
     }
 
     .stats{
         grid-template-columns:1fr;
     }
 
+    .panel{
+        padding:20px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
     .detail-grid{
         grid-template-columns:1fr;
-    }
-
-    .lesson-list{
-        grid-template-columns:1fr;
-    }
-
-    table{
-        font-size:13px;
-    }
-
-    .table-wrapper{
-        overflow-x:auto;
     }
 
 }
@@ -302,46 +618,70 @@ footer strong{
 
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
 <div class="header-container">
 
-<div class="logo">
-👨‍🏫 Bright English Academy — Teacher
+<a href="index.html"
+   class="logo">
+
+<span class="logo-icon">
+📚
+</span>
+
+Bright English Academy
+
+</a>
+
+
+<div class="teacher-badge">
+
+👨‍🏫 Teacher Dashboard
+
 </div>
-
-<button
-class="logout"
-onclick="logout()">
-
-🚪 Logout
-
-</button>
 
 </div>
 
 </header>
 
 
+
+<!-- =========================
+     MAIN
+========================= -->
+
 <main>
 
-<section class="welcome">
+
+<section class="hero">
 
 <h1>
-👋 Teacher Dashboard
+Welcome, Teacher! 👋
 </h1>
 
 <p>
-Monitor your students, their lessons,
-progress, scores and evaluations.
+Monitor your students, follow their progress
+and evaluate their learning.
 </p>
 
 </section>
 
 
+
+<!-- =========================
+     STATISTICS
+========================= -->
+
 <section class="stats">
+
 
 <div class="stat">
 
@@ -350,7 +690,7 @@ progress, scores and evaluations.
 </div>
 
 <div class="stat-title">
-Students
+Registered Students
 </div>
 
 <div
@@ -362,6 +702,7 @@ class="stat-value">
 </div>
 
 </div>
+
 
 
 <div class="stat">
@@ -385,6 +726,7 @@ class="stat-value">
 </div>
 
 
+
 <div class="stat">
 
 <div class="stat-icon">
@@ -404,6 +746,7 @@ class="stat-value">
 </div>
 
 </div>
+
 
 
 <div class="stat">
@@ -426,16 +769,71 @@ class="stat-value">
 
 </div>
 
+
 </section>
 
 
-<section class="card">
 
-<h2>
+<!-- =========================
+     STUDENTS
+========================= -->
+
+<section class="panel">
+
+
+<h2 class="section-title">
+
 👨‍🎓 My Students
+
 </h2>
 
-<div class="table-wrapper">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search student by name or email..."
+oninput="filterStudents()">
+
+
+<button
+class="refresh-btn"
+onclick="loadStudents()">
+
+🔄 Refresh
+
+</button>
+
+</div>
+
+
+
+<div
+id="loading"
+class="loading">
+
+Loading students...
+
+</div>
+
+
+
+<div
+id="empty"
+class="empty"
+style="display:none;">
+
+No students registered yet.
+
+</div>
+
+
+
+<div
+class="table-container"
+id="tableContainer"
+style="display:none;">
 
 <table>
 
@@ -448,7 +846,7 @@ Student
 </th>
 
 <th>
-Email
+Progress
 </th>
 
 <th>
@@ -456,11 +854,11 @@ Lessons
 </th>
 
 <th>
-Progress
+Average Score
 </th>
 
 <th>
-Score
+Status
 </th>
 
 <th>
@@ -471,19 +869,9 @@ Action
 
 </thead>
 
+
 <tbody
 id="studentsTable">
-
-<tr>
-
-<td colspan="6"
-class="loading">
-
-Loading students...
-
-</td>
-
-</tr>
 
 </tbody>
 
@@ -491,97 +879,102 @@ Loading students...
 
 </div>
 
-</section>
 
 
-<section
+<!-- STUDENT DETAILS -->
+
+<div
 id="studentDetails"
-class="card">
+class="details">
 
-<h2>
-📋 Student Details
-</h2>
+<h3>
+📊 Student Progress
+</h3>
+
+
+<div
+id="detailName"
+style="font-weight:bold;
+       font-size:18px;
+       margin-bottom:15px;">
+
+</div>
 
 
 <div class="detail-grid">
 
-<div class="detail">
 
-<strong>
-Student
-</strong>
+<div class="detail-card">
 
-<span id="detailName">
-—
-</span>
-
+<div class="detail-label">
+Lessons Completed
 </div>
-
-
-<div class="detail">
-
-<strong>
-Email
-</strong>
-
-<span id="detailEmail">
-—
-</span>
-
-</div>
-
-
-<div class="detail">
-
-<strong>
-Progress
-</strong>
-
-<span id="detailProgress">
-0%
-</span>
-
-</div>
-
-
-<div class="detail">
-
-<strong>
-Average Score
-</strong>
-
-<span id="detailScore">
-—
-</span>
-
-</div>
-
-</div>
-
-
-<h2>
-📚 Lesson Progress
-</h2>
-
 
 <div
-id="lessonList"
-class="lesson-list">
+id="detailLessons"
+class="detail-value">
+
+0 / 30
+
+</div>
 
 </div>
 
 
-<br>
+
+<div class="detail-card">
+
+<div class="detail-label">
+Course Progress
+</div>
+
+<div
+id="detailProgress"
+class="detail-value">
+
+0%
+
+</div>
+
+</div>
 
 
-<h2>
+
+<div class="detail-card">
+
+<div class="detail-label">
+Average Score
+</div>
+
+<div
+id="detailScore"
+class="detail-value">
+
+—
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="evaluation">
+
+<h3>
 📝 Teacher Evaluation
-</h2>
+</h3>
+
+<p>
+Write feedback for this student:
+</p>
 
 
 <textarea
-id="evaluation"
-placeholder="Write your evaluation for this student...">
+id="evaluationText"
+placeholder="Write your evaluation here...">
 </textarea>
 
 
@@ -600,17 +993,31 @@ class="message">
 
 </div>
 
+</div>
+
+
+</div>
+
+
 </section>
+
 
 </main>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
 <p>
+
 <strong>
 Bright English Academy
 </strong>
+
 </p>
 
 <p>
@@ -627,68 +1034,126 @@ José Simeão
 </footer>
 
 
+
 <script>
 
 /* =====================================================
-   SUPABASE
+   SUPABASE CONFIGURATION
 ===================================================== */
+
+/*
+   IMPORTANT:
+
+   Use your Supabase project URL
+   and your PUBLIC / PUBLISHABLE key.
+
+   NEVER put a service_role key here.
+*/
+
 
 const SUPABASE_URL =
 "https://yvdadrqimaavubqcxned.supabase.co";
 
-const SUPABASE_KEY =
-"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
 
-const supabaseClient =
-supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
+const SUPABASE_KEY =
+"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49Cb4";
 
 
 /* =====================================================
-   LESSONS
+   DATABASE TABLE
 ===================================================== */
 
-const lessons = [
+/*
+   Change this only if your table has another name.
 
-"Greetings & Introductions",
-"The Alphabet",
-"Numbers 0–100",
-"Days & Months",
-"Colors",
-"Classroom English",
-"Personal Information",
-"Countries & Nationalities",
-"Verb To Be",
-"Family",
-"Possessive Adjectives",
-"This / That / These / Those",
-"Daily Routines",
-"Present Simple",
-"Questions & Answers",
-"Time & Schedules",
-"Places in Town",
-"Prepositions",
-"Food & Drinks",
-"Inocêncio & Antônio Conversation",
-"Juan & Laima Conversation",
-"Felizarda & Promisse Conversation",
-"José & Álvaro Conversation",
-"Ácima & Yasmine Conversation",
-"Review & Practice",
-"Extra Practice",
-"Real-Life English",
-"Grammar Review",
-"Final Preparation",
-"Final Review — A1 Review & Real-Life English"
+   The example assumes the table is:
 
-];
+   students
 
+   with columns such as:
+
+   id
+   fullname
+   email
+   completed_lessons
+   scores
+   evaluation
+*/
+
+
+const STUDENTS_TABLE =
+"students";
+
+
+/* =====================================================
+   GLOBAL DATA
+===================================================== */
 
 let students = [];
 
 let selectedStudent = null;
+
+
+/* =====================================================
+   SUPABASE REQUEST
+===================================================== */
+
+async function supabaseRequest(
+    endpoint,
+    options = {}
+){
+
+    const response =
+        await fetch(
+            SUPABASE_URL +
+            "/rest/v1/" +
+            endpoint,
+            {
+
+                ...options,
+
+                headers:{
+                    "apikey":
+                        SUPABASE_KEY,
+
+                    "Authorization":
+                        "Bearer " +
+                        SUPABASE_KEY,
+
+                    "Content-Type":
+                        "application/json",
+
+                    ...(options.headers || {})
+
+                }
+
+            }
+        );
+
+
+    if(!response.ok){
+
+        const errorText =
+            await response.text();
+
+        throw new Error(
+            errorText ||
+            "Supabase request failed."
+        );
+
+    }
+
+
+    if(response.status === 204){
+
+        return null;
+
+    }
+
+
+    return response.json();
+
+}
 
 
 /* =====================================================
@@ -697,301 +1162,205 @@ let selectedStudent = null;
 
 async function loadStudents(){
 
-    const table =
+    const loading =
         document.getElementById(
-            "studentsTable"
+            "loading"
         );
 
-    table.innerHTML = `
-        <tr>
-            <td colspan="6"
-                class="loading">
-                Loading students...
-            </td>
-        </tr>
-    `;
+
+    const empty =
+        document.getElementById(
+            "empty"
+        );
+
+
+    const tableContainer =
+        document.getElementById(
+            "tableContainer"
+        );
+
+
+    loading.style.display =
+        "block";
+
+
+    empty.style.display =
+        "none";
+
+
+    tableContainer.style.display =
+        "none";
 
 
     try{
 
-        const {
-            data,
-            error
-        } =
-        await supabaseClient
-        .from("students")
-        .select("*");
+        students =
+            await supabaseRequest(
+                STUDENTS_TABLE +
+                "?select=*"
+            );
 
 
-        if(error){
+        if(!Array.isArray(students)){
 
-            console.error(error);
-
-            table.innerHTML = `
-                <tr>
-                    <td colspan="6">
-                        ❌ Could not load students.
-                        <br><br>
-                        ${error.message}
-                    </td>
-                </tr>
-            `;
-
-            return;
+            students = [];
 
         }
 
 
-        students = data || [];
+        renderStudents(
+            students
+        );
 
 
-        displayStudents();
+        updateStatistics(
+            students
+        );
 
-        updateStatistics();
 
     }
-
     catch(error){
 
         console.error(error);
 
-        table.innerHTML = `
-            <tr>
-                <td colspan="6">
-                    ❌ Connection error.
-                </td>
-            </tr>
-        `;
 
-    }
-
-}
+        loading.style.display =
+            "none";
 
 
-/* =====================================================
-   DISPLAY STUDENTS
-===================================================== */
-
-function displayStudents(){
-
-    const table =
-        document.getElementById(
-            "studentsTable"
-        );
+        empty.style.display =
+            "block";
 
 
-    table.innerHTML = "";
+        empty.innerHTML =
 
+            "⚠️ Could not load students.<br><br>" +
 
-    if(students.length === 0){
+            "<small>" +
 
-        table.innerHTML = `
-            <tr>
-                <td colspan="6">
-                    No students registered yet.
-                </td>
-            </tr>
-        `;
+            escapeHtml(
+                error.message
+            ) +
+
+            "</small>";
 
         return;
 
     }
 
 
-    students.forEach(
-        function(student,index){
-
-            const completed =
-                getCompletedLessons(
-                    student
-                );
-
-
-            const progress =
-                Math.round(
-                    completed.length / 30 * 100
-                );
-
-
-            const score =
-                getAverageScore(
-                    student
-                );
-
-
-            const row =
-                document.createElement(
-                    "tr"
-                );
-
-
-            row.innerHTML = `
-
-                <td>
-                    <strong>
-                        ${getName(student)}
-                    </strong>
-                </td>
-
-                <td>
-                    ${getEmail(student)}
-                </td>
-
-                <td>
-                    ${completed.length} / 30
-                </td>
-
-                <td>
-
-                    <div class="progress">
-
-                        <div
-                            class="progress-fill"
-                            style="width:${progress}%">
-                        </div>
-
-                    </div>
-
-                    ${progress}%
-
-                </td>
-
-                <td>
-                    ${score}
-                </td>
-
-                <td>
-
-                    <button
-                        class="view-btn"
-                        onclick="viewStudent(${index})">
-
-                        👁️ View
-
-                    </button>
-
-                </td>
-
-            `;
-
-
-            table.appendChild(row);
-
-        }
-    );
+    loading.style.display =
+        "none";
 
 }
 
 
 /* =====================================================
-   GET NAME
-===================================================== */
-
-function getName(student){
-
-    return (
-        student.fullname ||
-        student.name ||
-        student.full_name ||
-        "Student"
-    );
-
-}
-
-
-/* =====================================================
-   GET EMAIL
-===================================================== */
-
-function getEmail(student){
-
-    return (
-        student.email ||
-        "—"
-    );
-
-}
-
-
-/* =====================================================
-   COMPLETED LESSONS
+   NORMALIZE LESSON DATA
 ===================================================== */
 
 function getCompletedLessons(student){
 
-    let completed =
-        student.completed_lessons ||
-        student.completedLessons ||
-        [];
+    let value =
+        student.completed_lessons;
 
 
-    if(typeof completed === "string"){
+    if(value === undefined ||
+       value === null){
+
+        value =
+            student.completedLessons;
+
+    }
+
+
+    if(Array.isArray(value)){
+
+        return value;
+
+    }
+
+
+    if(typeof value === "string"){
 
         try{
 
-            completed =
-                JSON.parse(completed);
+            const parsed =
+                JSON.parse(value);
+
+            if(Array.isArray(parsed)){
+
+                return parsed;
+
+            }
 
         }
-
-        catch(error){
-
-            completed = [];
-
-        }
+        catch(e){}
 
     }
 
 
-    if(!Array.isArray(completed)){
-
-        completed = [];
-
-    }
-
-
-    return completed;
+    return [];
 
 }
 
 
 /* =====================================================
-   SCORES
+   GET SCORES
 ===================================================== */
 
 function getScores(student){
 
-    let scores =
-        student.scores ||
-        [];
+    let value =
+        student.scores;
 
 
-    if(typeof scores === "string"){
+    if(Array.isArray(value)){
+
+        return value;
+
+    }
+
+
+    if(typeof value === "string"){
 
         try{
 
-            scores =
-                JSON.parse(scores);
+            const parsed =
+                JSON.parse(value);
+
+            if(Array.isArray(parsed)){
+
+                return parsed;
+
+            }
 
         }
-
-        catch(error){
-
-            scores = [];
-
-        }
+        catch(e){}
 
     }
 
 
-    if(!Array.isArray(scores)){
+    return [];
 
-        scores = [];
-
-    }
+}
 
 
-    return scores;
+/* =====================================================
+   STUDENT PROGRESS
+===================================================== */
+
+function getProgress(student){
+
+    const completed =
+        getCompletedLessons(
+            student
+        ).length;
+
+
+    return Math.round(
+        (completed / 30) * 100
+    );
 
 }
 
@@ -1003,12 +1372,14 @@ function getScores(student){
 function getAverageScore(student){
 
     const scores =
-        getScores(student);
+        getScores(
+            student
+        );
 
 
     if(scores.length === 0){
 
-        return "—";
+        return null;
 
     }
 
@@ -1027,107 +1398,187 @@ function getAverageScore(student){
 
     return Math.round(
         total / scores.length
-    ) + "%";
+    );
 
 }
 
 
 /* =====================================================
-   STATISTICS
+   RENDER STUDENTS
 ===================================================== */
 
-function updateStatistics(){
+function renderStudents(
+    list
+){
 
-    const count =
-        students.length;
-
-
-    let totalLessons = 0;
-
-    let totalProgress = 0;
-
-    let scoreStudents = 0;
-
-    let totalScore = 0;
+    const tbody =
+        document.getElementById(
+            "studentsTable"
+        );
 
 
-    students.forEach(
+    tbody.innerHTML = "";
+
+
+    if(!list.length){
+
+        document.getElementById(
+            "empty"
+        ).style.display =
+            "block";
+
+        document.getElementById(
+            "tableContainer"
+        ).style.display =
+            "none";
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "tableContainer"
+    ).style.display =
+        "block";
+
+
+    list.forEach(
         function(student){
 
-            const completed =
+            const lessons =
                 getCompletedLessons(
+                    student
+                ).length;
+
+
+            const progress =
+                getProgress(
                     student
                 );
 
 
-            totalLessons +=
-                completed.length;
+            const average =
+                getAverageScore(
+                    student
+                );
 
 
-            totalProgress +=
-                completed.length / 30 * 100;
+            const name =
+                student.fullname ||
+                student.name ||
+                "Student";
 
 
-            const scores =
-                getScores(student);
+            const email =
+                student.email ||
+                "";
 
 
-            if(scores.length){
-
-                const average =
-                    scores.reduce(
-                        function(sum,score){
-
-                            return sum +
-                                Number(score);
-
-                        },
-                        0
-                    ) / scores.length;
+            const row =
+                document.createElement(
+                    "tr"
+                );
 
 
-                totalScore +=
-                    average;
+            row.innerHTML = `
 
-                scoreStudents++;
+                <td>
 
-            }
+                    <div class="student-name-cell">
+
+                        ${escapeHtml(name)}
+
+                    </div>
+
+                    <div class="email">
+
+                        ${escapeHtml(email)}
+
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    <div class="progress-mini">
+
+                        <div
+                            class="progress-mini-fill"
+                            style="width:${progress}%">
+
+                        </div>
+
+                    </div>
+
+                    <div class="progress-text">
+
+                        ${progress}%
+
+                    </div>
+
+                </td>
+
+
+                <td>
+
+                    ${lessons} / 30
+
+                </td>
+
+
+                <td>
+
+                    ${
+                        average === null
+                        ? "—"
+                        : average + "%"
+                    }
+
+                </td>
+
+
+                <td>
+
+                    <span class="status ${
+                        lessons > 0
+                        ? "status-active"
+                        : "status-new"
+                    }">
+
+                    ${
+                        lessons > 0
+                        ? "Active"
+                        : "New"
+                    }
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        class="view-btn"
+                        onclick="viewStudent('${escapeAttribute(student.id)}')">
+
+                        👁️ View
+
+                    </button>
+
+                </td>
+
+            `;
+
+
+            tbody.appendChild(
+                row
+            );
 
         }
     );
-
-
-    document.getElementById(
-        "studentCount"
-    ).textContent =
-        count;
-
-
-    document.getElementById(
-        "lessonCount"
-    ).textContent =
-        totalLessons;
-
-
-    document.getElementById(
-        "averageProgress"
-    ).textContent =
-        count
-        ? Math.round(
-            totalProgress / count
-        ) + "%"
-        : "0%";
-
-
-    document.getElementById(
-        "averageScore"
-    ).textContent =
-        scoreStudents
-        ? Math.round(
-            totalScore /
-            scoreStudents
-        ) + "%"
-        : "—";
 
 }
 
@@ -1136,14 +1587,47 @@ function updateStatistics(){
    VIEW STUDENT
 ===================================================== */
 
-function viewStudent(index){
+function viewStudent(id){
 
     selectedStudent =
-        students[index];
+        students.find(
+            function(student){
+
+                return String(
+                    student.id
+                ) === String(id);
+
+            }
+        );
 
 
-    const completed =
+    if(!selectedStudent){
+
+        return;
+
+    }
+
+
+    const name =
+        selectedStudent.fullname ||
+        selectedStudent.name ||
+        "Student";
+
+
+    const lessons =
         getCompletedLessons(
+            selectedStudent
+        ).length;
+
+
+    const progress =
+        getProgress(
+            selectedStudent
+        );
+
+
+    const score =
+        getAverageScore(
             selectedStudent
         );
 
@@ -1157,99 +1641,47 @@ function viewStudent(index){
     document.getElementById(
         "detailName"
     ).textContent =
-        getName(selectedStudent);
+        name;
 
 
     document.getElementById(
-        "detailEmail"
+        "detailLessons"
     ).textContent =
-        getEmail(selectedStudent);
+        lessons + " / 30";
 
 
     document.getElementById(
         "detailProgress"
     ).textContent =
-        Math.round(
-            completed.length / 30 * 100
-        ) + "%";
+        progress + "%";
 
 
     document.getElementById(
         "detailScore"
     ).textContent =
-        getAverageScore(
-            selectedStudent
-        );
-
-
-    const list =
-        document.getElementById(
-            "lessonList"
-        );
-
-
-    list.innerHTML = "";
-
-
-    lessons.forEach(
-        function(title,index){
-
-            const number =
-                index + 1;
-
-
-            const done =
-                completed.includes(number);
-
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-
-            item.className =
-                done
-                ? "lesson-item completed"
-                : "lesson-item pending";
-
-
-            item.innerHTML = `
-
-                ${
-                    done
-                    ? "✅"
-                    : "🔒"
-                }
-
-                Lesson ${number}
-
-                <br>
-
-                <strong>
-                    ${title}
-                </strong>
-
-            `;
-
-
-            list.appendChild(item);
-
-        }
-    );
+        score === null
+        ? "—"
+        : score + "%";
 
 
     document.getElementById(
-        "evaluation"
+        "evaluationText"
     ).value =
         selectedStudent.evaluation ||
         "";
 
 
     document.getElementById(
+        "evaluationMessage"
+    ).textContent =
+        "";
+
+
+    document.getElementById(
         "studentDetails"
     ).scrollIntoView({
-        behavior:"smooth"
+        behavior:"smooth",
+        block:"start"
     });
 
 }
@@ -1263,6 +1695,10 @@ async function saveEvaluation(){
 
     if(!selectedStudent){
 
+        alert(
+            "Select a student first."
+        );
+
         return;
 
     }
@@ -1270,7 +1706,7 @@ async function saveEvaluation(){
 
     const evaluation =
         document.getElementById(
-            "evaluation"
+            "evaluationText"
         ).value.trim();
 
 
@@ -1280,74 +1716,257 @@ async function saveEvaluation(){
         );
 
 
-    if(!selectedStudent.id){
+    message.textContent =
+        "Saving...";
+
+
+    try{
+
+        await supabaseRequest(
+            STUDENTS_TABLE +
+            "?id=eq." +
+            encodeURIComponent(
+                selectedStudent.id
+            ),
+            {
+
+                method:"PATCH",
+
+                headers:{
+                    "Prefer":
+                        "return=minimal"
+                },
+
+                body:JSON.stringify({
+
+                    evaluation:
+                        evaluation
+
+                })
+
+            }
+        );
+
+
+        selectedStudent.evaluation =
+            evaluation;
+
 
         message.textContent =
-            "❌ Student ID not found.";
-
-        return;
+            "✅ Evaluation saved successfully.";
 
     }
-
-
-    const {
-        error
-    } =
-    await supabaseClient
-    .from("students")
-    .update({
-        evaluation:evaluation
-    })
-    .eq(
-        "id",
-        selectedStudent.id
-    );
-
-
-    if(error){
+    catch(error){
 
         console.error(error);
 
-        message.style.color =
-            "#c62828";
 
         message.textContent =
-            "❌ " + error.message;
+            "❌ Could not save evaluation.";
 
-        return;
+        alert(
+            error.message
+        );
 
     }
-
-
-    selectedStudent.evaluation =
-        evaluation;
-
-
-    message.style.color =
-        "#168348";
-
-    message.textContent =
-        "✅ Evaluation saved successfully!";
 
 }
 
 
 /* =====================================================
-   LOGOUT
+   SEARCH
 ===================================================== */
 
-function logout(){
+function filterStudents(){
 
-    localStorage.removeItem(
-        "brightAcademyLoggedIn"
+    const search =
+        document.getElementById(
+            "searchInput"
+        ).value
+        .toLowerCase()
+        .trim();
+
+
+    if(!search){
+
+        renderStudents(
+            students
+        );
+
+        return;
+
+    }
+
+
+    const filtered =
+        students.filter(
+            function(student){
+
+                const name =
+                    (
+                        student.fullname ||
+                        student.name ||
+                        ""
+                    ).toLowerCase();
+
+
+                const email =
+                    (
+                        student.email ||
+                        ""
+                    ).toLowerCase();
+
+
+                return (
+                    name.includes(search) ||
+                    email.includes(search)
+                );
+
+            }
+        );
+
+
+    renderStudents(
+        filtered
     );
 
-    localStorage.removeItem(
-        "brightAcademyStudent"
+}
+
+
+/* =====================================================
+   GLOBAL STATISTICS
+===================================================== */
+
+function updateStatistics(
+    list
+){
+
+    const studentCount =
+        list.length;
+
+
+    let totalLessons = 0;
+
+    let progressTotal = 0;
+
+    let scoreTotal = 0;
+
+    let scoreStudents = 0;
+
+
+    list.forEach(
+        function(student){
+
+            const lessons =
+                getCompletedLessons(
+                    student
+                ).length;
+
+
+            const progress =
+                getProgress(
+                    student
+                );
+
+
+            const score =
+                getAverageScore(
+                    student
+                );
+
+
+            totalLessons +=
+                lessons;
+
+
+            progressTotal +=
+                progress;
+
+
+            if(score !== null){
+
+                scoreTotal +=
+                    score;
+
+                scoreStudents++;
+
+            }
+
+        }
     );
 
-    window.location.href =
-        "student-login.html";
+
+    const averageProgress =
+        studentCount === 0
+        ? 0
+        : Math.round(
+            progressTotal /
+            studentCount
+        );
+
+
+    const averageScore =
+        scoreStudents === 0
+        ? null
+        : Math.round(
+            scoreTotal /
+            scoreStudents
+        );
+
+
+    document.getElementById(
+        "studentCount"
+    ).textContent =
+        studentCount;
+
+
+    document.getElementById(
+        "lessonCount"
+    ).textContent =
+        totalLessons;
+
+
+    document.getElementById(
+        "averageProgress"
+    ).textContent =
+        averageProgress + "%";
+
+
+    document.getElementById(
+        "averageScore"
+    ).textContent =
+        averageScore === null
+        ? "—"
+        : averageScore + "%";
+
+}
+
+
+/* =====================================================
+   SECURITY HELPERS
+===================================================== */
+
+function escapeHtml(
+    value
+){
+
+    return String(value)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+
+}
+
+
+function escapeAttribute(
+    value
+){
+
+    return String(value)
+        .replace(/\\/g,"\\\\")
+        .replace(/'/g,"\\'");
 
 }
 
@@ -1359,6 +1978,7 @@ function logout(){
 loadStudents();
 
 </script>
+
 
 </body>
 
