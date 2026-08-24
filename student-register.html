@@ -9,224 +9,27 @@
       content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="Student Registration - Bright English Academy">
+      content="Bright English Academy - Student Registration">
 
-<title>Student Registration | Bright English Academy</title>
+<title>Student Register | Bright English Academy</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f8ff;
-    color: #17233c;
-    min-height: 100vh;
-}
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
 
-/* NAVIGATION */
-
-nav {
-    background: white;
-    box-shadow: 0 3px 18px rgba(0,0,0,.08);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    text-decoration: none;
-    color: #0757c9;
-
-    font-size: 20px;
-    font-weight: 800;
-}
-
-.logo-icon {
-    width: 42px;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 12px;
-
-    background: linear-gradient(
-        135deg,
-        #0757c9,
-        #13a6e8
-    );
-
-    color: white;
-    font-size: 22px;
-}
-
-.back {
-    text-decoration: none;
-    color: #0757c9;
-    font-weight: bold;
-}
-
-/* MAIN */
-
-main {
-    min-height: calc(100vh - 75px);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 40px 20px;
-}
-
-.register-card {
-    width: 100%;
-    max-width: 520px;
-
-    background: white;
-
-    padding: 38px;
-
-    border-radius: 22px;
-
-    border: 1px solid #e0e7f1;
-
-    box-shadow:
-        0 15px 45px
-        rgba(20,53,100,.10);
-}
-
-.icon {
-    width: 70px;
-    height: 70px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin: 0 auto 18px;
-
-    border-radius: 20px;
-
-    background: #e8f5ff;
-
-    font-size: 35px;
-}
-
-h1 {
-    text-align: center;
-    color: #0757c9;
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #64748b;
-    margin-bottom: 28px;
-}
-
-/* FORM */
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 7px;
-}
-
-input,
-select {
-    width: 100%;
-
-    padding: 13px 14px;
-
-    border: 1px solid #ccd7e7;
-
-    border-radius: 10px;
-
-    font-size: 15px;
-
-    outline: none;
-
-    background: white;
-}
-
-input:focus,
-select:focus {
-    border-color: #0757c9;
-
-    box-shadow:
-        0 0 0 3px
-        rgba(7,87,201,.10);
-}
-
-/* PASSWORD */
-
-.password-box {
-    position: relative;
-    width: 100%;
-}
-
-.password-box input {
-    padding-right: 55px;
-}
-
-.show-password {
-    position: absolute;
-
-    right: 8px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    border: none;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    font-size: 20px;
-
-    padding: 5px;
-
-    line-height: 1;
-}
-
-.password-note {
-    font-size: 12px;
-    color: #718096;
-    margin-top: 5px;
-}
-
-/* BUTTON */
-
-.register-btn {
-    width: 100%;
-
-    border: 0;
-
-    padding: 15px;
-
-    border-radius: 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
     background:
         linear-gradient(
@@ -235,117 +38,261 @@ select:focus {
             #13a6e8
         );
 
-    color: white;
-
-    font-size: 17px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    margin-top: 8px;
+    padding:20px;
 }
 
-.register-btn:hover {
-    opacity: .92;
+.register-card{
+    width:100%;
+    max-width:450px;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.20);
 }
 
-/* MESSAGE */
+.logo{
+    text-align:center;
 
-.message {
-    display: none;
+    font-size:24px;
 
-    margin-top: 18px;
+    font-weight:800;
 
-    padding: 14px;
+    color:#0757c9;
 
-    border-radius: 10px;
-
-    text-align: center;
-
-    font-weight: bold;
+    margin-bottom:8px;
 }
 
-.success {
-    background: #e9f8ef;
-    color: #138a4b;
-    border: 1px solid #b9e2ca;
+.subtitle{
+    text-align:center;
+
+    color:#64748b;
+
+    margin-bottom:25px;
 }
 
-.error {
-    background: #fff0f0;
-    color: #c62828;
-    border: 1px solid #f0bcbc;
+.student-icon{
+    text-align:center;
+
+    font-size:55px;
+
+    margin-bottom:10px;
 }
 
-/* LINKS */
+h1{
+    text-align:center;
 
-.login-link {
-    text-align: center;
+    color:#17233c;
 
-    margin-top: 22px;
+    font-size:25px;
 
-    color: #64748b;
+    margin-bottom:8px;
 }
 
-.login-link a {
-    color: #0757c9;
+.description{
+    text-align:center;
 
-    font-weight: bold;
+    color:#64748b;
 
-    text-decoration: none;
+    font-size:14px;
+
+    margin-bottom:25px;
 }
 
-.security {
-    margin-top: 25px;
-
-    padding: 16px;
-
-    border-radius: 12px;
-
-    background: #f4f8ff;
-
-    font-size: 13px;
-
-    color: #64748b;
-
-    text-align: center;
+.form-group{
+    margin-bottom:17px;
 }
 
-/* FOOTER */
+label{
+    display:block;
 
-footer {
-    background: #17233c;
+    font-size:14px;
 
-    color: white;
+    font-weight:bold;
 
-    text-align: center;
+    color:#17233c;
 
-    padding: 25px 15px;
+    margin-bottom:7px;
 }
 
-footer strong {
-    color: #58c7ff;
+.input-wrapper{
+    position:relative;
 }
 
-.creator {
-    margin-top: 7px;
+input{
+    width:100%;
+
+    padding:13px 45px 13px 13px;
+
+    border:1px solid #dce5f1;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
 }
 
-/* MOBILE */
+input:focus{
+    border-color:#0757c9;
 
-@media(max-width:550px) {
+    box-shadow:
+        0 0 0 3px
+        rgba(7,87,201,.10);
+}
 
-    .register-card {
-        padding: 25px 20px;
-    }
+.password-toggle{
+    position:absolute;
 
-    .nav-container {
-        padding: 12px 15px;
-    }
+    right:12px;
 
-    .logo {
-        font-size: 16px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+.register-btn{
+    width:100%;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0757c9,
+            #13a6e8
+        );
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    margin-top:5px;
+}
+
+.register-btn:hover{
+    opacity:.92;
+}
+
+.register-btn:disabled{
+    opacity:.6;
+
+    cursor:not-allowed;
+}
+
+.error{
+    display:none;
+
+    background:#fff0f0;
+
+    color:#c62828;
+
+    padding:12px;
+
+    border-radius:9px;
+
+    margin-bottom:18px;
+
+    font-size:14px;
+
+    text-align:center;
+}
+
+.success{
+    display:none;
+
+    background:#effff5;
+
+    color:#138a4b;
+
+    padding:12px;
+
+    border-radius:9px;
+
+    margin-bottom:18px;
+
+    font-size:14px;
+
+    text-align:center;
+}
+
+.login-link{
+    text-align:center;
+
+    margin-top:20px;
+
+    color:#64748b;
+
+    font-size:14px;
+}
+
+.login-link a{
+    color:#0757c9;
+
+    font-weight:bold;
+
+    text-decoration:none;
+}
+
+.login-link a:hover{
+    text-decoration:underline;
+}
+
+.info-box{
+    margin-top:22px;
+
+    padding:15px;
+
+    background:#f4f8ff;
+
+    border-radius:11px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+.footer{
+    text-align:center;
+
+    margin-top:22px;
+
+    color:#64748b;
+
+    font-size:13px;
+}
+
+.footer strong{
+    color:#0757c9;
+}
+
+@media(max-width:500px){
+
+    .register-card{
+        padding:25px 20px;
     }
 
 }
@@ -358,128 +305,124 @@ footer strong {
 <body>
 
 
-<!-- NAVIGATION -->
-
-<nav>
-
-<div class="nav-container">
-
-<a href="index.html"
-   class="logo">
-
-<span class="logo-icon">
-📚
-</span>
-
-Bright English Academy
-
-</a>
-
-<a href="index.html"
-   class="back">
-
-← Home
-
-</a>
-
-</div>
-
-</nav>
-
-
-<!-- REGISTRATION -->
-
-<main>
-
 <div class="register-card">
 
 
-<div class="icon">
+<div class="logo">
+
+📚 Bright English Academy
+
+</div>
+
+
+<div class="subtitle">
+
+Student Portal
+
+</div>
+
+
+<div class="student-icon">
+
 👨‍🎓
+
 </div>
 
 
 <h1>
+
 Create Student Account
+
 </h1>
 
 
-<p class="subtitle">
+<p class="description">
 
-Join Bright English Academy
-and start your English learning journey.
+Create your account and start your
+English learning journey.
 
 </p>
 
 
-<form id="registerForm">
+<div
+id="errorBox"
+class="error">
+</div>
 
+
+<div
+id="successBox"
+class="success">
+</div>
+
+
+<!-- =========================
+     FULL NAME
+========================== -->
 
 <div class="form-group">
 
-<label for="fullname">
+<label for="fullName">
+
 Full Name
+
 </label>
 
 <input
+id="fullName"
 type="text"
-id="fullname"
 placeholder="Enter your full name"
-required>
+autocomplete="name">
 
 </div>
 
+
+<!-- =========================
+     EMAIL
+========================== -->
 
 <div class="form-group">
 
 <label for="email">
-Email Address
+
+Email
+
 </label>
 
 <input
-type="email"
 id="email"
+type="email"
 placeholder="Enter your email"
-required>
+autocomplete="email">
 
 </div>
 
 
-<div class="form-group">
-
-<label for="username">
-Username
-</label>
-
-<input
-type="text"
-id="username"
-placeholder="Choose a username"
-required>
-
-</div>
-
+<!-- =========================
+     PASSWORD
+========================== -->
 
 <div class="form-group">
 
 <label for="password">
+
 Password
+
 </label>
 
-<div class="password-box">
+<div class="input-wrapper">
 
 <input
-type="password"
 id="password"
+type="password"
 placeholder="Create a password"
-required
-minlength="6">
+autocomplete="new-password">
 
 <button
 type="button"
-class="show-password"
-onclick="togglePassword('password', this)"
-title="Show password">
+class="password-toggle"
+onclick="togglePassword('password','passwordEye')"
+id="passwordEye">
 
 👁️
 
@@ -487,34 +430,34 @@ title="Show password">
 
 </div>
 
-<div class="password-note">
-
-Password must contain at least 6 characters.
-
 </div>
 
-</div>
 
+<!-- =========================
+     CONFIRM PASSWORD
+========================== -->
 
 <div class="form-group">
 
 <label for="confirmPassword">
+
 Confirm Password
+
 </label>
 
-<div class="password-box">
+<div class="input-wrapper">
 
 <input
-type="password"
 id="confirmPassword"
-placeholder="Repeat your password"
-required>
+type="password"
+placeholder="Confirm your password"
+autocomplete="new-password">
 
 <button
 type="button"
-class="show-password"
-onclick="togglePassword('confirmPassword', this)"
-title="Show password">
+class="password-toggle"
+onclick="togglePassword('confirmPassword','confirmEye')"
+id="confirmEye">
 
 👁️
 
@@ -525,42 +468,48 @@ title="Show password">
 </div>
 
 
-<div class="form-group">
-
-<label for="course">
-Choose Course
-</label>
-
-<select id="course"
-        required>
-
-<option value="">
-Select a course
-</option>
-
-<option value="English Beginner A1">
-🇬🇧 English Beginner A1
-</option>
-
-</select>
-
-</div>
-
+<!-- =========================
+     REGISTER
+========================== -->
 
 <button
-type="submit"
-class="register-btn">
+id="registerBtn"
+class="register-btn"
+onclick="registerStudent()">
 
-🚀 Create My Account
+🚀 Create Student Account
 
 </button>
 
 
-</form>
+<div class="info-box">
 
+<strong>📚 Your student account includes:</strong>
 
-<div id="message"
-     class="message">
+<br>
+
+✅ Access to the Beginner A1 course
+
+<br>
+
+✅ 30 English lessons
+
+<br>
+
+✅ Exercises and activities
+
+<br>
+
+✅ Audio pronunciation practice
+
+<br>
+
+✅ Progress tracking
+
+<br>
+
+✅ Quizzes and assessments
+
 </div>
 
 
@@ -569,224 +518,550 @@ class="register-btn">
 Already have an account?
 
 <a href="student-login.html">
+
 Student Login
+
 </a>
 
 </div>
 
 
-<div class="security">
-
-🔐 Your account information will be
-connected to the student system.
-
-<br><br>
-
-📊 Your lessons, exercises and test
-results will be tracked in your student area.
-
-</div>
-
-
-</div>
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
+<div class="footer">
 
 <p>
-<strong>
-Bright English Academy
-</strong>
+<strong>Bright English Academy</strong>
 </p>
 
 <p>
 Speak English with Confidence
 </p>
 
-<p class="creator">
+<p style="margin-top:6px;">
 
 👤 Created by
-<strong>
-José Simeão
-</strong>
+<strong>José Simeão</strong>
 
 </p>
 
-</footer>
+</div>
+
+
+</div>
 
 
 <script>
 
-/* SHOW / HIDE PASSWORD */
+/* =====================================
+   SUPABASE CONFIGURATION
+===================================== */
 
-function togglePassword(inputId, button) {
+const SUPABASE_URL =
+"https://yvdadrqimaavubqcxned.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
+
+
+const supabaseClient =
+supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+/* =====================================
+   PASSWORD VISIBILITY
+===================================== */
+
+function togglePassword(
+    inputId,
+    buttonId
+){
 
     const input =
-        document.getElementById(inputId);
+        document.getElementById(
+            inputId
+        );
 
-    if (input.type === "password") {
+    const button =
+        document.getElementById(
+            buttonId
+        );
+
+
+    if(
+        input.type === "password"
+    ){
 
         input.type = "text";
 
         button.textContent = "🙈";
 
-        button.title = "Hide password";
-
-    } else {
+    }
+    else{
 
         input.type = "password";
 
         button.textContent = "👁️";
-
-        button.title = "Show password";
 
     }
 
 }
 
 
-/* REGISTRATION */
+/* =====================================
+   MESSAGES
+===================================== */
 
-const form =
-document.getElementById("registerForm");
+function showError(message){
 
-const message =
-document.getElementById("message");
+    const errorBox =
+        document.getElementById(
+            "errorBox"
+        );
+
+    const successBox =
+        document.getElementById(
+            "successBox"
+        );
 
 
-form.addEventListener(
-"submit",
-function(event) {
-
-    event.preventDefault();
+    successBox.style.display =
+        "none";
 
 
-    const fullname =
-        document.getElementById("fullname")
-        .value.trim();
+    errorBox.textContent =
+        "❌ " + message;
+
+
+    errorBox.style.display =
+        "block";
+
+}
+
+
+function showSuccess(message){
+
+    const errorBox =
+        document.getElementById(
+            "errorBox"
+        );
+
+    const successBox =
+        document.getElementById(
+            "successBox"
+        );
+
+
+    errorBox.style.display =
+        "none";
+
+
+    successBox.textContent =
+        "✅ " + message;
+
+
+    successBox.style.display =
+        "block";
+
+}
+
+
+function hideMessages(){
+
+    document.getElementById(
+        "errorBox"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "successBox"
+    ).style.display =
+        "none";
+
+}
+
+
+/* =====================================
+   REGISTER STUDENT
+===================================== */
+
+async function registerStudent(){
+
+    hideMessages();
+
+
+    const fullName =
+        document.getElementById(
+            "fullName"
+        ).value.trim();
+
 
     const email =
-        document.getElementById("email")
-        .value.trim();
+        document.getElementById(
+            "email"
+        ).value.trim()
+        .toLowerCase();
 
-    const username =
-        document.getElementById("username")
-        .value.trim();
 
     const password =
-        document.getElementById("password")
-        .value;
+        document.getElementById(
+            "password"
+        ).value;
+
 
     const confirmPassword =
-        document.getElementById("confirmPassword")
-        .value;
-
-    const course =
-        document.getElementById("course")
-        .value;
+        document.getElementById(
+            "confirmPassword"
+        ).value;
 
 
-    message.className = "message";
+    /* ================================
+       VALIDATION
+    ================================= */
 
+    if(!fullName){
 
-    if (password.length < 6) {
-
-        message.classList.add("error");
-
-        message.textContent =
-        "❌ Password must contain at least 6 characters.";
-
-        message.style.display = "block";
+        showError(
+            "Please enter your full name."
+        );
 
         return;
+
     }
 
 
-    if (password !== confirmPassword) {
+    if(fullName.length < 2){
 
-        message.classList.add("error");
-
-        message.textContent =
-        "❌ Passwords do not match.";
-
-        message.style.display = "block";
+        showError(
+            "Please enter a valid full name."
+        );
 
         return;
+
     }
 
 
-    if (!course) {
+    if(!email){
 
-        message.classList.add("error");
-
-        message.textContent =
-        "❌ Please select a course.";
-
-        message.style.display = "block";
+        showError(
+            "Please enter your email."
+        );
 
         return;
+
     }
 
 
-    const student = {
+    if(!email.includes("@")){
 
-        fullname: fullname,
+        showError(
+            "Please enter a valid email address."
+        );
 
-        email: email,
+        return;
 
-        username: username,
-
-        password: password,
-
-        course: course,
-
-        createdAt:
-            new Date().toISOString(),
-
-        progress: 0,
-
-        completedLessons: [],
-
-        scores: []
-
-    };
+    }
 
 
-    localStorage.setItem(
-        "brightAcademyStudent",
-        JSON.stringify(student)
-    );
+    if(!password){
+
+        showError(
+            "Please create a password."
+        );
+
+        return;
+
+    }
 
 
-    message.classList.add("success");
+    if(password.length < 6){
 
-    message.textContent =
-        "✅ Account created successfully!";
+        showError(
+            "Password must contain at least 6 characters."
+        );
 
-    message.style.display = "block";
+        return;
+
+    }
 
 
-    form.reset();
+    if(password !== confirmPassword){
+
+        showError(
+            "Passwords do not match."
+        );
+
+        return;
+
+    }
 
 
-    setTimeout(
-        function() {
+    /* ================================
+       BUTTON
+    ================================= */
 
-            window.location.href =
-                "student-login.html";
+    const button =
+        document.getElementById(
+            "registerBtn"
+        );
 
-        },
-        1200
-    );
 
-});
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "⏳ Creating account...";
+
+
+    try{
+
+
+        /* ================================
+           CREATE SUPABASE AUTH USER
+        ================================= */
+
+        const {
+            data,
+            error
+        } =
+        await supabaseClient.auth
+            .signUp({
+
+                email:
+                    email,
+
+                password:
+                    password,
+
+                options:{
+
+                    data:{
+
+                        full_name:
+                            fullName,
+
+                        role:
+                            "student"
+
+                    }
+
+                }
+
+            });
+
+
+        if(error){
+
+            showError(
+                error.message
+            );
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "🚀 Create Student Account";
+
+            return;
+
+        }
+
+
+        if(
+            !data ||
+            !data.user
+        ){
+
+            showError(
+                "Account could not be created. Please try again."
+            );
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "🚀 Create Student Account";
+
+            return;
+
+        }
+
+
+        /* ================================
+           CREATE / UPDATE PROFILE
+        ================================= */
+
+        const userId =
+            data.user.id;
+
+
+        const {
+            error:profileError
+        } =
+        await supabaseClient
+            .from("profiles")
+            .upsert({
+
+                id:
+                    userId,
+
+                full_name:
+                    fullName,
+
+                role:
+                    "student"
+
+            },{
+                onConflict:
+                    "id"
+
+            });
+
+
+        if(profileError){
+
+            console.error(
+                "Profile error:",
+                profileError
+            );
+
+
+            /*
+               If email confirmation is enabled,
+               the user may not have an active
+               session yet. The profile insert
+               can therefore be blocked by RLS.
+            */
+
+            if(
+                profileError.code ===
+                "42501"
+            ){
+
+                showError(
+                    "Account created, but the student profile could not be saved. Please check your Supabase profiles table permissions."
+                );
+
+            }
+            else{
+
+                showError(
+                    "Account created, but the student profile could not be created: " +
+                    profileError.message
+                );
+
+            }
+
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                "🚀 Create Student Account";
+
+            return;
+
+        }
+
+
+        /* ================================
+           SUCCESS
+        ================================= */
+
+        showSuccess(
+            "Student account created successfully!"
+        );
+
+
+        button.textContent =
+            "✅ Account Created";
+
+
+        /*
+           If the account has an active session,
+           go directly to the student dashboard.
+        */
+
+        if(
+            data.session
+        ){
+
+            setTimeout(
+                function(){
+
+                    window.location.href =
+                        "student-dashboard.html";
+
+                },
+                1000
+            );
+
+        }
+        else{
+
+            /*
+               Email confirmation enabled.
+            */
+
+            showSuccess(
+                "Account created! Please check your email to confirm your account."
+            );
+
+
+            button.disabled =
+                false;
+
+        }
+
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
+
+
+        showError(
+            "An unexpected error occurred. Please try again."
+        );
+
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "🚀 Create Student Account";
+
+    }
+
+}
+
+
+/* =====================================
+   ENTER KEY
+===================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter"
+        ){
+
+            registerStudent();
+
+        }
+
+    }
+);
 
 </script>
-
 
 </body>
 
