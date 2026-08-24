@@ -51,11 +51,6 @@ body{
 
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
-
 .login-container{
 
     width:100%;
@@ -63,11 +58,6 @@ body{
     max-width:460px;
 
 }
-
-
-/* =========================
-   CARD
-========================= */
 
 .login-card{
 
@@ -85,11 +75,6 @@ body{
 
 }
 
-
-/* =========================
-   LOGO
-========================= */
-
 .logo{
 
     text-align:center;
@@ -97,7 +82,6 @@ body{
     margin-bottom:25px;
 
 }
-
 
 .logo-icon{
 
@@ -128,7 +112,6 @@ body{
 
 }
 
-
 .logo h1{
 
     color:#0757c9;
@@ -139,7 +122,6 @@ body{
 
 }
 
-
 .logo p{
 
     color:#64748b;
@@ -147,11 +129,6 @@ body{
     font-size:14px;
 
 }
-
-
-/* =========================
-   TABS
-========================= */
 
 .tabs{
 
@@ -171,7 +148,6 @@ body{
 
 }
 
-
 .tab{
 
     border:none;
@@ -190,7 +166,6 @@ body{
 
 }
 
-
 .tab.active{
 
     background:white;
@@ -203,17 +178,11 @@ body{
 
 }
 
-
-/* =========================
-   FORM
-========================= */
-
 .form-group{
 
     margin-bottom:17px;
 
 }
-
 
 .form-group label{
 
@@ -229,12 +198,11 @@ body{
 
 }
 
-
 .form-group input{
 
     width:100%;
 
-    padding:13px 14px;
+    padding:13px 45px 13px 14px;
 
     border:1px solid #d5dfeb;
 
@@ -248,7 +216,6 @@ body{
 
 }
 
-
 .form-group input:focus{
 
     border-color:#0757c9;
@@ -261,8 +228,61 @@ body{
 
 
 /* =========================
-   MAIN BUTTON
+   PASSWORD WRAPPER
 ========================= */
+
+.password-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+.password-wrapper input{
+
+    padding-right:48px;
+
+}
+
+.password-toggle{
+
+    position:absolute;
+
+    right:10px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:none;
+
+    background:transparent;
+
+    cursor:pointer;
+
+    font-size:19px;
+
+    width:34px;
+
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:8px;
+
+}
+
+.password-toggle:hover{
+
+    background:#eef4fb;
+
+}
+
 
 .main-btn{
 
@@ -293,13 +313,11 @@ body{
 
 }
 
-
 .main-btn:hover{
 
     opacity:.93;
 
 }
-
 
 .main-btn:disabled{
 
@@ -308,11 +326,6 @@ body{
     cursor:not-allowed;
 
 }
-
-
-/* =========================
-   MESSAGE
-========================= */
 
 .message{
 
@@ -332,7 +345,6 @@ body{
 
 }
 
-
 .message.success{
 
     display:block;
@@ -342,7 +354,6 @@ body{
     color:#147844;
 
 }
-
 
 .message.error{
 
@@ -354,7 +365,6 @@ body{
 
 }
 
-
 .message.info{
 
     display:block;
@@ -364,11 +374,6 @@ body{
     color:#0757c9;
 
 }
-
-
-/* =========================
-   BACK
-========================= */
 
 .back-link{
 
@@ -388,17 +393,11 @@ body{
 
 }
 
-
 .back-link:hover{
 
     text-decoration:underline;
 
 }
-
-
-/* =========================
-   FOOTER
-========================= */
 
 .footer{
 
@@ -412,28 +411,17 @@ body{
 
 }
 
-
 .footer strong{
 
     color:#0757c9;
 
 }
 
-
-/* =========================
-   HIDDEN
-========================= */
-
 .hidden{
 
     display:none;
 
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:500px){
 
@@ -459,10 +447,6 @@ body{
 <div class="login-card">
 
 
-<!-- =========================
-     LOGO
-========================= -->
-
 <div class="logo">
 
 <div class="logo-icon">
@@ -479,10 +463,6 @@ Speak English with Confidence
 
 </div>
 
-
-<!-- =========================
-     TABS
-========================= -->
 
 <div class="tabs">
 
@@ -507,10 +487,6 @@ Register
 
 </div>
 
-
-<!-- =========================
-     MESSAGE
-========================= -->
 
 <div
 id="message"
@@ -554,12 +530,26 @@ Password
 
 </label>
 
+<div class="password-wrapper">
+
 <input
 type="password"
 id="loginPassword"
 placeholder="Enter your password"
 autocomplete="current-password"
 required>
+
+<button
+type="button"
+class="password-toggle"
+onclick="togglePassword('loginPassword', this)"
+aria-label="Show password">
+
+👁️
+
+</button>
+
+</div>
 
 </div>
 
@@ -631,6 +621,8 @@ Password
 
 </label>
 
+<div class="password-wrapper">
+
 <input
 type="password"
 id="registerPassword"
@@ -638,6 +630,18 @@ placeholder="Create a password"
 autocomplete="new-password"
 minlength="6"
 required>
+
+<button
+type="button"
+class="password-toggle"
+onclick="togglePassword('registerPassword', this)"
+aria-label="Show password">
+
+👁️
+
+</button>
+
+</div>
 
 </div>
 
@@ -650,6 +654,8 @@ Confirm Password
 
 </label>
 
+<div class="password-wrapper">
+
 <input
 type="password"
 id="registerPassword2"
@@ -657,6 +663,18 @@ placeholder="Repeat your password"
 autocomplete="new-password"
 minlength="6"
 required>
+
+<button
+type="button"
+class="password-toggle"
+onclick="togglePassword('registerPassword2', this)"
+aria-label="Show password">
+
+👁️
+
+</button>
+
+</div>
 
 </div>
 
@@ -710,7 +728,6 @@ Created by José Simeão
 
 /* =====================================================
    SUPABASE CONFIGURATION
-   NEW BRIGHT ENGLISH ACADEMY PROJECT
 ===================================================== */
 
 const SUPABASE_URL =
@@ -746,6 +763,51 @@ const supabaseClient =
 
 
 /* =====================================================
+   SHOW / HIDE PASSWORD
+===================================================== */
+
+function togglePassword(
+    inputId,
+    button
+){
+
+    const input =
+        document.getElementById(
+            inputId
+        );
+
+
+    if(
+        input.type === "password"
+    ){
+
+        input.type = "text";
+
+        button.textContent = "🙈";
+
+        button.setAttribute(
+            "aria-label",
+            "Hide password"
+        );
+
+    }
+    else{
+
+        input.type = "password";
+
+        button.textContent = "👁️";
+
+        button.setAttribute(
+            "aria-label",
+            "Show password"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
    MESSAGE SYSTEM
 ===================================================== */
 
@@ -773,10 +835,6 @@ function showMessage(
 
 }
 
-
-/* =====================================================
-   CLEAR MESSAGE
-===================================================== */
 
 function clearMessage(){
 
@@ -1009,10 +1067,6 @@ async function registerStudent(event){
         }
 
 
-        /* =========================================
-           CREATE PROFILE
-        ========================================= */
-
         if(data.session){
 
             const profileResult =
@@ -1040,10 +1094,6 @@ async function registerStudent(event){
 
         }
 
-
-        /* =========================================
-           SESSION EXISTS
-        ========================================= */
 
         if(data.session){
 
@@ -1085,12 +1135,7 @@ async function registerStudent(event){
                 1000
             );
 
-
         }
-
-        /* =========================================
-           EMAIL CONFIRMATION REQUIRED
-        ========================================= */
 
         else{
 
@@ -1209,10 +1254,6 @@ async function loginStudent(event){
         }
 
 
-        /* =========================================
-           GET PROFILE
-        ========================================= */
-
         let profile = null;
 
 
@@ -1244,10 +1285,6 @@ async function loginStudent(event){
 
         }
 
-
-        /* =========================================
-           CREATE PROFILE IF MISSING
-        ========================================= */
 
         if(!profile){
 
@@ -1285,10 +1322,6 @@ async function loginStudent(event){
         }
 
 
-        /* =========================================
-           PREVENT TEACHER LOGIN HERE
-        ========================================= */
-
         if(profile.role === "teacher"){
 
             showMessage(
@@ -1310,10 +1343,6 @@ async function loginStudent(event){
 
         }
 
-
-        /* =========================================
-           SAVE STUDENT DATA
-        ========================================= */
 
         localStorage.setItem(
             "brightAcademyLoggedIn",
@@ -1338,10 +1367,6 @@ async function loginStudent(event){
 
         );
 
-
-        /* =========================================
-           SUCCESS
-        ========================================= */
 
         showMessage(
             "✅ Login successful! Opening your dashboard...",
