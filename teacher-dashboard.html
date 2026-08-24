@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+      content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+      content="Teacher Dashboard - Bright English Academy">
 
 <title>Teacher Dashboard | Bright English Academy</title>
 
@@ -21,40 +24,74 @@ content="width=device-width, initial-scale=1.0">
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
     background:#f4f8ff;
+
     color:#17233c;
+
+    min-height:100vh;
+
 }
 
-/* =========================
+
+/* =========================================
    HEADER
-========================= */
+========================================= */
 
 header{
-    background:linear-gradient(135deg,#0757c9,#13a6e8);
+
+    background:
+    linear-gradient(
+        135deg,
+        #0757c9,
+        #13a6e8
+    );
+
     color:white;
+
     padding:18px 20px;
-    box-shadow:0 3px 15px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 3px 15px
+        rgba(0,0,0,.15);
+
 }
 
 .header-container{
+
     max-width:1200px;
+
     margin:auto;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:15px;
+
 }
 
 .logo{
+
     font-size:21px;
+
     font-weight:800;
+
 }
 
 .logout{
+
     border:none;
+
     background:white;
+
     color:#0757c9;
 
     padding:10px 16px;
@@ -64,27 +101,37 @@ header{
     font-weight:bold;
 
     cursor:pointer;
+
 }
 
 .logout:hover{
+
     background:#eef7ff;
+
 }
 
-/* =========================
+
+/* =========================================
    MAIN
-========================= */
+========================================= */
 
 main{
+
     max-width:1200px;
+
     margin:auto;
+
     padding:30px 20px 60px;
+
 }
 
-/* =========================
+
+/* =========================================
    WELCOME
-========================= */
+========================================= */
 
 .welcome{
+
     background:white;
 
     padding:28px;
@@ -96,22 +143,34 @@ main{
         rgba(20,53,100,.08);
 
     margin-bottom:25px;
+
+    border:1px solid #e0e7f1;
+
 }
 
 .welcome h1{
+
     color:#0757c9;
+
     margin-bottom:8px;
+
 }
 
 .welcome p{
+
     color:#64748b;
+
+    line-height:1.5;
+
 }
 
-/* =========================
+
+/* =========================================
    ERROR
-========================= */
+========================================= */
 
 .error{
+
     background:#fff0f0;
 
     color:#c62828;
@@ -125,13 +184,39 @@ main{
     display:none;
 
     white-space:pre-wrap;
+
+    line-height:1.5;
+
 }
 
-/* =========================
+
+/* =========================================
+   SUCCESS
+========================================= */
+
+.success-message{
+
+    background:#e8f7ee;
+
+    color:#147844;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    display:none;
+
+}
+
+
+/* =========================================
    STATS
-========================= */
+========================================= */
 
 .stats{
+
     display:grid;
 
     grid-template-columns:
@@ -140,9 +225,11 @@ main{
     gap:18px;
 
     margin-bottom:25px;
+
 }
 
 .stat{
+
     background:white;
 
     padding:22px;
@@ -154,29 +241,36 @@ main{
         rgba(20,53,100,.07);
 
     border:1px solid #e0e7f1;
+
 }
 
 .stat-title{
+
     color:#64748b;
 
     font-size:14px;
 
     margin-bottom:7px;
+
 }
 
 .stat-value{
+
     color:#0757c9;
 
     font-size:28px;
 
     font-weight:800;
+
 }
 
-/* =========================
+
+/* =========================================
    CARD
-========================= */
+========================================= */
 
 .card{
+
     background:white;
 
     padding:28px;
@@ -190,19 +284,24 @@ main{
     border:1px solid #e0e7f1;
 
     margin-bottom:25px;
+
 }
 
 .section-title{
+
     color:#0757c9;
 
     margin-bottom:20px;
+
 }
 
-/* =========================
+
+/* =========================================
    TOP BAR
-========================= */
+========================================= */
 
 .top-bar{
+
     display:flex;
 
     justify-content:space-between;
@@ -212,9 +311,11 @@ main{
     gap:15px;
 
     margin-bottom:20px;
+
 }
 
 .refresh{
+
     border:none;
 
     background:#0757c9;
@@ -228,26 +329,41 @@ main{
     font-weight:bold;
 
     cursor:pointer;
+
 }
 
 .refresh:hover{
+
     background:#064ba9;
+
 }
 
-/* =========================
+.refresh:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+}
+
+
+/* =========================================
    STUDENTS
-========================= */
+========================================= */
 
 .students{
+
     display:grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
     gap:18px;
+
 }
 
 .student-card{
+
     border:1px solid #dce5f1;
 
     border-radius:15px;
@@ -255,33 +371,70 @@ main{
     padding:20px;
 
     background:#fbfdff;
+
+    transition:.2s;
+
+}
+
+.student-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(20,53,100,.08);
+
 }
 
 .student-name{
+
     font-size:20px;
 
     font-weight:800;
 
     color:#0757c9;
 
-    margin-bottom:5px;
+    margin-bottom:6px;
+
 }
 
 .student-email{
+
     color:#64748b;
 
     font-size:14px;
 
     margin-bottom:15px;
+
+    word-break:break-word;
+
 }
 
+.student-date{
+
+    color:#64748b;
+
+    font-size:12px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
 .progress-title{
+
     font-weight:bold;
 
     margin-bottom:5px;
+
 }
 
 .progress-bar{
+
     width:100%;
 
     height:13px;
@@ -293,9 +446,11 @@ main{
     overflow:hidden;
 
     margin:8px 0 15px;
+
 }
 
 .progress-fill{
+
     height:100%;
 
     background:
@@ -306,9 +461,18 @@ main{
         );
 
     border-radius:20px;
+
+    transition:width .4s ease;
+
 }
 
+
+/* =========================================
+   INFO
+========================================= */
+
 .info{
+
     display:grid;
 
     grid-template-columns:
@@ -317,33 +481,42 @@ main{
     gap:10px;
 
     margin-bottom:15px;
+
 }
 
 .info-box{
+
     background:#f4f8ff;
 
     padding:12px;
 
     border-radius:9px;
+
 }
 
 .info-label{
+
     font-size:12px;
 
     color:#64748b;
+
 }
 
 .info-value{
+
     font-weight:bold;
 
     margin-top:3px;
+
 }
 
-/* =========================
+
+/* =========================================
    EVALUATION
-========================= */
+========================================= */
 
 .evaluate-btn{
+
     width:100%;
 
     border:none;
@@ -359,29 +532,39 @@ main{
     font-weight:bold;
 
     cursor:pointer;
+
 }
 
 .evaluate-btn:hover{
+
     background:#0d713c;
+
 }
 
-/* =========================
+
+/* =========================================
    LOADING
-========================= */
+========================================= */
 
 .loading{
+
     text-align:center;
 
     padding:30px;
 
     color:#64748b;
+
+    line-height:1.6;
+
 }
 
-/* =========================
+
+/* =========================================
    MODAL
-========================= */
+========================================= */
 
 .modal{
+
     display:none;
 
     position:fixed;
@@ -397,14 +580,20 @@ main{
     justify-content:center;
 
     padding:20px;
+
 }
 
 .modal-box{
+
     background:white;
 
     width:100%;
 
     max-width:500px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
 
     border-radius:18px;
 
@@ -413,19 +602,41 @@ main{
     box-shadow:
         0 20px 50px
         rgba(0,0,0,.2);
+
 }
 
 .modal-box h2{
+
     color:#0757c9;
 
     margin-bottom:18px;
+
+}
+
+.evaluation-student{
+
+    font-weight:bold;
+
+    color:#0757c9;
+
+    margin-bottom:20px;
+
+    padding:12px;
+
+    background:#f4f8ff;
+
+    border-radius:9px;
+
 }
 
 .form-group{
+
     margin-bottom:15px;
+
 }
 
 .form-group label{
+
     display:block;
 
     font-size:13px;
@@ -433,11 +644,13 @@ main{
     font-weight:bold;
 
     margin-bottom:6px;
+
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
+
     width:100%;
 
     padding:11px;
@@ -447,24 +660,46 @@ main{
     border-radius:9px;
 
     font-family:Arial,sans-serif;
+
+    font-size:14px;
+
+    outline:none;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+    border-color:#0757c9;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(7,87,201,.10);
+
 }
 
 .form-group textarea{
+
     min-height:110px;
 
     resize:vertical;
+
 }
 
 .modal-buttons{
+
     display:flex;
 
     gap:10px;
 
     margin-top:20px;
+
 }
 
 .save-btn,
 .cancel-btn{
+
     flex:1;
 
     border:none;
@@ -476,25 +711,52 @@ main{
     font-weight:bold;
 
     cursor:pointer;
+
 }
 
 .save-btn{
+
     background:#0757c9;
 
     color:white;
+
+}
+
+.save-btn:hover{
+
+    background:#064ba9;
+
+}
+
+.save-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
 }
 
 .cancel-btn{
+
     background:#e9eef5;
 
     color:#17233c;
+
 }
 
-/* =========================
+.cancel-btn:hover{
+
+    background:#dfe6ef;
+
+}
+
+
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer{
+
     background:#17233c;
 
     color:white;
@@ -502,25 +764,35 @@ footer{
     text-align:center;
 
     padding:25px;
+
+    line-height:1.8;
+
 }
 
 footer strong{
+
     color:#58c7ff;
+
 }
 
-/* =========================
+
+/* =========================================
    RESPONSIVE
-========================= */
+========================================= */
 
 @media(max-width:900px){
 
     .stats{
+
         grid-template-columns:
             repeat(2,1fr);
+
     }
 
     .students{
+
         grid-template-columns:1fr;
+
     }
 
 }
@@ -528,27 +800,55 @@ footer strong{
 @media(max-width:600px){
 
     .stats{
+
         grid-template-columns:1fr;
+
     }
 
     .header-container{
+
         flex-direction:column;
 
         align-items:flex-start;
+
     }
 
     main{
-        padding:20px 15px;
+
+        padding:20px 15px 50px;
+
     }
 
     .top-bar{
+
         flex-direction:column;
 
-        align-items:flex-start;
+        align-items:stretch;
+
     }
 
     .refresh{
+
         width:100%;
+
+    }
+
+    .card{
+
+        padding:20px;
+
+    }
+
+    .welcome{
+
+        padding:22px;
+
+    }
+
+    .modal-buttons{
+
+        flex-direction:column;
+
     }
 
 }
@@ -561,20 +861,23 @@ footer strong{
 <body>
 
 
-<!-- =========================
+<!-- =========================================
      HEADER
-========================= -->
+========================================= -->
 
 <header>
 
 <div class="header-container">
 
 <div class="logo">
+
 📚 Bright English Academy — Teacher
+
 </div>
 
 <button
 class="logout"
+id="logoutButton"
 onclick="logout()">
 
 🚪 Logout
@@ -586,9 +889,9 @@ onclick="logout()">
 </header>
 
 
-<!-- =========================
+<!-- =========================================
      MAIN
-========================= -->
+========================================= -->
 
 <main>
 
@@ -599,8 +902,10 @@ onclick="logout()">
 👨‍🏫 Teacher Dashboard
 </h1>
 
-<p>
+<p id="teacherWelcome">
+
 Manage students and monitor their English learning progress.
+
 </p>
 
 </section>
@@ -612,9 +917,15 @@ class="error">
 </div>
 
 
-<!-- =========================
+<div
+id="successBox"
+class="success-message">
+</div>
+
+
+<!-- =========================================
      STATISTICS
-========================= -->
+========================================= -->
 
 <section class="stats">
 
@@ -690,9 +1001,9 @@ class="stat-value">
 </section>
 
 
-<!-- =========================
+<!-- =========================================
      STUDENTS
-========================= -->
+========================================= -->
 
 <section class="card">
 
@@ -709,6 +1020,7 @@ style="margin-bottom:0;">
 
 
 <button
+id="refreshButton"
 class="refresh"
 onclick="loadStudents()">
 
@@ -725,7 +1037,7 @@ class="students">
 
 <div class="loading">
 
-Loading students...
+⏳ Loading students...
 
 </div>
 
@@ -738,9 +1050,9 @@ Loading students...
 </main>
 
 
-<!-- =========================
+<!-- =========================================
      EVALUATION MODAL
-========================= -->
+========================================= -->
 
 <div
 id="evaluationModal"
@@ -755,21 +1067,21 @@ class="modal">
 
 <div
 id="evaluationStudentName"
-style="
-font-weight:bold;
-color:#0757c9;
-margin-bottom:20px;">
+class="evaluation-student">
 
 </div>
 
 
 <div class="form-group">
 
-<label>
+<label for="evaluationLesson">
+
 Lesson
+
 </label>
 
-<select id="evaluationLesson">
+<select
+id="evaluationLesson">
 
 <option value="1">Lesson 1</option>
 <option value="2">Lesson 2</option>
@@ -809,8 +1121,10 @@ Lesson
 
 <div class="form-group">
 
-<label>
+<label for="evaluationScore">
+
 Score
+
 </label>
 
 <input
@@ -818,6 +1132,7 @@ id="evaluationScore"
 type="number"
 min="0"
 max="100"
+step="1"
 placeholder="Example: 85">
 
 </div>
@@ -825,15 +1140,15 @@ placeholder="Example: 85">
 
 <div class="form-group">
 
-<label>
+<label for="evaluationText">
+
 Evaluation / Comment
+
 </label>
 
 <textarea
 id="evaluationText"
-placeholder="Write your evaluation of the student...">
-
-</textarea>
+placeholder="Write your evaluation of the student..."></textarea>
 
 </div>
 
@@ -850,6 +1165,7 @@ Cancel
 
 
 <button
+id="saveEvaluationButton"
 class="save-btn"
 onclick="saveEvaluation()">
 
@@ -864,9 +1180,9 @@ onclick="saveEvaluation()">
 </div>
 
 
-<!-- =========================
+<!-- =========================================
      FOOTER
-========================= -->
+========================================= -->
 
 <footer>
 
@@ -887,6 +1203,7 @@ Speak English with Confidence
 <strong>
 José Simeão
 </strong>
+
 </p>
 
 </footer>
@@ -894,124 +1211,261 @@ José Simeão
 
 <script>
 
-/* =====================================
-   SUPABASE
-===================================== */
+/* =====================================================
+   SUPABASE — NEW PROJECT
+===================================================== */
 
 const SUPABASE_URL =
-"https://yvdadrqimaavubqcxned.supabase.co";
+    "https://yvdadrqimaavubqcxned.supabase.co";
 
-const SUPABASE_KEY =
-"sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
+
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_YALE2o5AFLktfK39sjgPBA_u_W49CbT";
 
 
 const supabaseClient =
-supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-);
+    window.supabase.createClient(
+
+        SUPABASE_URL,
+
+        SUPABASE_PUBLISHABLE_KEY,
+
+        {
+
+            auth:{
+
+                autoRefreshToken:true,
+
+                persistSession:true,
+
+                detectSessionInUrl:true
+
+            }
+
+        }
+
+    );
 
 
-/* =====================================
+/* =====================================================
+   CONSTANTS
+===================================================== */
+
+const TOTAL_LESSONS = 30;
+
+
+/* =====================================================
    GLOBAL VARIABLES
-===================================== */
+===================================================== */
 
 let currentTeacher = null;
 
 let selectedStudent = null;
 
 
-/* =====================================
-   CHECK TEACHER
-===================================== */
+/* =====================================================
+   MESSAGE FUNCTIONS
+===================================================== */
 
-async function checkTeacher(){
+function showError(message){
 
-    const {
-        data,
-        error
-    } =
-    await supabaseClient.auth.getUser();
-
-
-    if(
-        error ||
-        !data ||
-        !data.user
-    ){
-
-        window.location.href =
-            "teacher-login.html";
-
-        return false;
-
-    }
-
-
-    currentTeacher =
-        data.user;
-
-
-    /*
-       Check profile role
-    */
-
-    const {
-        data:profile,
-        error:profileError
-    } =
-    await supabaseClient
-        .from("profiles")
-        .select("id, full_name, role")
-        .eq("id", currentTeacher.id)
-        .single();
-
-
-    if(profileError){
-
-        showError(
-            "Could not verify teacher profile: " +
-            profileError.message
+    const box =
+        document.getElementById(
+            "errorBox"
         );
 
-        return false;
+    box.textContent =
+        message;
 
-    }
-
-
-    if(
-        !profile ||
-        profile.role !== "teacher"
-    ){
-
-        alert(
-            "This account is not registered as a teacher."
-        );
-
-        await supabaseClient
-            .auth
-            .signOut();
-
-        window.location.href =
-            "teacher-login.html";
-
-        return false;
-
-    }
-
-
-    return true;
+    box.style.display =
+        "block";
 
 }
 
 
-/* =====================================
+function hideError(){
+
+    const box =
+        document.getElementById(
+            "errorBox"
+        );
+
+    box.textContent =
+        "";
+
+    box.style.display =
+        "none";
+
+}
+
+
+function showSuccess(message){
+
+    const box =
+        document.getElementById(
+            "successBox"
+        );
+
+    box.textContent =
+        message;
+
+    box.style.display =
+        "block";
+
+
+    setTimeout(
+        function(){
+
+            box.style.display =
+                "none";
+
+        },
+        4000
+    );
+
+}
+
+
+/* =====================================================
+   CHECK TEACHER
+===================================================== */
+
+async function checkTeacher(){
+
+    try{
+
+        const {
+            data:userData,
+            error:userError
+        } =
+        await supabaseClient.auth.getUser();
+
+
+        if(
+            userError ||
+            !userData ||
+            !userData.user
+        ){
+
+            window.location.href =
+                "teacher-login.html";
+
+            return false;
+
+        }
+
+
+        currentTeacher =
+            userData.user;
+
+
+        const {
+            data:profile,
+            error:profileError
+        } =
+        await supabaseClient
+            .from("profiles")
+            .select(
+                "id, full_name, role"
+            )
+            .eq(
+                "id",
+                currentTeacher.id
+            )
+            .maybeSingle();
+
+
+        if(profileError){
+
+            showError(
+                "Could not verify teacher profile:\n\n" +
+                profileError.message
+            );
+
+            return false;
+
+        }
+
+
+        if(
+            !profile ||
+            profile.role !== "teacher"
+        ){
+
+            alert(
+                "This account is not registered as a teacher."
+            );
+
+
+            await supabaseClient
+                .auth
+                .signOut();
+
+
+            window.location.href =
+                "teacher-login.html";
+
+
+            return false;
+
+        }
+
+
+        const teacherName =
+            profile.full_name ||
+            "Teacher";
+
+
+        document.getElementById(
+            "teacherWelcome"
+        ).textContent =
+            "Welcome, " +
+            teacherName +
+            "! Manage students and monitor their English learning progress.";
+
+
+        return true;
+
+    }
+    catch(error){
+
+        console.error(
+            "Teacher verification error:",
+            error
+        );
+
+
+        showError(
+            "Unable to verify teacher account."
+        );
+
+
+        return false;
+
+    }
+
+}
+
+
+/* =====================================================
    LOAD STUDENTS
-===================================== */
+===================================================== */
 
 async function loadStudents(){
 
     hideError();
+
+    const refreshButton =
+        document.getElementById(
+            "refreshButton"
+        );
+
+
+    refreshButton.disabled =
+        true;
+
+    refreshButton.textContent =
+        "⏳ Loading...";
 
 
     const allowed =
@@ -1019,7 +1473,15 @@ async function loadStudents(){
 
 
     if(!allowed){
+
+        refreshButton.disabled =
+            false;
+
+        refreshButton.textContent =
+            "🔄 Refresh";
+
         return;
+
     }
 
 
@@ -1030,141 +1492,212 @@ async function loadStudents(){
 
 
     container.innerHTML =
-        '<div class="loading">Loading students...</div>';
+        '<div class="loading">⏳ Loading students...</div>';
 
 
-    /*
-       Get all student profiles
-    */
+    try{
 
-    const {
-        data:students,
-        error:studentsError
-    } =
-    await supabaseClient
-        .from("profiles")
-        .select("id, full_name, role, created_at")
-        .eq("role","student")
-        .order(
-            "created_at",
-            {
-                ascending:false
-            }
+        /* =========================================
+           GET STUDENTS
+        ========================================= */
+
+        const {
+            data:students,
+            error:studentsError
+        } =
+        await supabaseClient
+            .from("profiles")
+            .select(
+                "id, full_name, role, created_at"
+            )
+            .eq(
+                "role",
+                "student"
+            )
+            .order(
+                "created_at",
+                {
+                    ascending:false
+                }
+            );
+
+
+        if(studentsError){
+
+            throw new Error(
+                "Could not load students: " +
+                studentsError.message
+            );
+
+        }
+
+
+        const studentList =
+            students || [];
+
+
+        if(studentList.length === 0){
+
+            container.innerHTML = `
+
+                <div class="loading">
+
+                    👨‍🎓 No students registered yet.
+
+                    <br><br>
+
+                    When a student creates an account,
+                    the student will appear here.
+
+                </div>
+
+            `;
+
+
+            updateStatistics(
+                [],
+                [],
+                []
+            );
+
+
+            return;
+
+        }
+
+
+        /* =========================================
+           GET LESSON PROGRESS
+        ========================================= */
+
+        const {
+            data:progressData,
+            error:progressError
+        } =
+        await supabaseClient
+            .from("lesson_progress")
+            .select(
+                "user_id, lesson_number, completed"
+            );
+
+
+        if(progressError){
+
+            throw new Error(
+                "Could not load lesson progress: " +
+                progressError.message
+            );
+
+        }
+
+
+        /* =========================================
+           GET QUIZ RESULTS
+        ========================================= */
+
+        const {
+            data:quizData,
+            error:quizError
+        } =
+        await supabaseClient
+            .from("quiz_results")
+            .select(
+                "user_id, lesson_number, score"
+            );
+
+
+        if(quizError){
+
+            throw new Error(
+                "Could not load quiz results: " +
+                quizError.message
+            );
+
+        }
+
+
+        renderStudents(
+            studentList,
+            progressData || [],
+            quizData || []
         );
 
 
-    if(studentsError){
-
-        showError(
-            "Could not load students: " +
-            studentsError.message
+        updateStatistics(
+            studentList,
+            progressData || [],
+            quizData || []
         );
-
-        container.innerHTML = "";
-
-        return;
 
     }
+    catch(error){
+
+        console.error(
+            "Load students error:",
+            error
+        );
 
 
-    if(
-        !students ||
-        students.length === 0
-    ){
+        showError(
+            error.message ||
+            "Could not load students."
+        );
+
 
         container.innerHTML = `
 
             <div class="loading">
 
-                👨‍🎓 No students registered yet.
+                ❌ Unable to load students.
 
                 <br><br>
 
-                When a student creates an account,
-                the student will appear here.
+                Check the Supabase tables and
+                permissions.
 
             </div>
 
         `;
 
-        updateStatistics([]);
+    }
+    finally{
 
-        return;
+        refreshButton.disabled =
+            false;
+
+        refreshButton.textContent =
+            "🔄 Refresh";
 
     }
 
+}
 
-    /*
-       Get progress
-    */
 
-    const {
-        data:progressData,
-        error:progressError
-    } =
-    await supabaseClient
-        .from("lesson_progress")
-        .select(
-            "user_id, lesson_number, completed"
+/* =====================================================
+   RENDER STUDENTS
+===================================================== */
+
+function renderStudents(
+    students,
+    progressData,
+    quizData
+){
+
+    const container =
+        document.getElementById(
+            "studentsContainer"
         );
 
 
-    if(progressError){
-
-        showError(
-            "Could not load lesson progress: " +
-            progressError.message
-        );
-
-        container.innerHTML = "";
-
-        return;
-
-    }
-
-
-    /*
-       Get quiz results
-    */
-
-    const {
-        data:quizData,
-        error:quizError
-    } =
-    await supabaseClient
-        .from("quiz_results")
-        .select(
-            "user_id, lesson_number, score"
-        );
-
-
-    if(quizError){
-
-        showError(
-            "Could not load quiz results: " +
-            quizError.message
-        );
-
-        container.innerHTML = "";
-
-        return;
-
-    }
-
-
-    container.innerHTML = "";
+    container.innerHTML =
+        "";
 
 
     students.forEach(
         function(student){
 
-            /*
-               Student lessons
-            */
-
             const studentProgress =
-                (progressData || [])
-                .filter(
+                progressData.filter(
                     function(item){
 
                         return (
@@ -1172,32 +1705,57 @@ async function loadStudents(){
                             student.id
                             &&
                             item.completed === true
+                            &&
+                            Number(item.lesson_number) >= 1
+                            &&
+                            Number(item.lesson_number) <=
+                                TOTAL_LESSONS
                         );
 
                     }
                 );
 
 
+            /*
+             * Remove duplicate lessons.
+             */
+
+            const completedLessons =
+                new Set(
+                    studentProgress.map(
+                        function(item){
+
+                            return Number(
+                                item.lesson_number
+                            );
+
+                        }
+                    )
+                );
+
+
             const completed =
-                studentProgress.length;
+                completedLessons.size;
 
 
             const progress =
                 Math.min(
                     100,
                     Math.round(
-                        (completed / 30) * 100
+                        (
+                            completed /
+                            TOTAL_LESSONS
+                        ) * 100
                     )
                 );
 
 
-            /*
-               Student quiz scores
-            */
+            /* =====================================
+               QUIZ SCORES
+            ===================================== */
 
             const studentQuizzes =
-                (quizData || [])
-                .filter(
+                quizData.filter(
                     function(item){
 
                         return (
@@ -1209,39 +1767,101 @@ async function loadStudents(){
                 );
 
 
-            let average = "—";
+            let average =
+                "—";
 
 
             if(
                 studentQuizzes.length > 0
             ){
 
-                const total =
-                    studentQuizzes.reduce(
-                        function(sum,item){
+                const scoreValues =
+                    studentQuizzes
+                        .map(
+                            function(item){
 
-                            return (
-                                sum +
-                                Number(item.score)
-                            );
+                                return Number(
+                                    item.score
+                                );
 
-                        },
-                        0
-                    );
+                            }
+                        )
+                        .filter(
+                            function(score){
+
+                                return (
+                                    Number.isFinite(
+                                        score
+                                    )
+                                );
+
+                            }
+                        );
 
 
-                average =
-                    Math.round(
-                        total /
-                        studentQuizzes.length
-                    ) + "%";
+                if(scoreValues.length > 0){
+
+                    const total =
+                        scoreValues.reduce(
+                            function(
+                                sum,
+                                score
+                            ){
+
+                                return (
+                                    sum +
+                                    score
+                                );
+
+                            },
+                            0
+                        );
+
+
+                    average =
+                        Math.round(
+                            total /
+                            scoreValues.length
+                        ) + "%";
+
+                }
 
             }
 
 
-            /*
-               Create card
-            */
+            /* =====================================
+               DATE
+            ===================================== */
+
+            let createdDate =
+                "—";
+
+
+            if(student.created_at){
+
+                const date =
+                    new Date(
+                        student.created_at
+                    );
+
+
+                if(
+                    !Number.isNaN(
+                        date.getTime()
+                    )
+                ){
+
+                    createdDate =
+                        date.toLocaleDateString();
+
+                }
+
+            }
+
+
+            /* =====================================
+               CARD
+            ===================================== */
 
             const card =
                 document.createElement(
@@ -1258,20 +1878,29 @@ async function loadStudents(){
                 <div class="student-name">
 
                     👨‍🎓
-                    ${
-                        escapeHTML(
-                            student.full_name ||
-                            "Student"
-                        )
-                    }
+                    ${escapeHTML(
+                        student.full_name ||
+                        "Student"
+                    )}
 
                 </div>
 
 
                 <div class="student-email">
 
-                    Student ID:
-                    ${student.id}
+                    🆔 ${escapeHTML(
+                        student.id
+                    )}
+
+                </div>
+
+
+                <div class="student-date">
+
+                    📅 Registered:
+                    ${escapeHTML(
+                        createdDate
+                    )}
 
                 </div>
 
@@ -1287,8 +1916,8 @@ async function loadStudents(){
                 <div class="progress-bar">
 
                     <div
-                    class="progress-fill"
-                    style="width:${progress}%">
+                        class="progress-fill"
+                        style="width:${progress}%">
 
                     </div>
 
@@ -1296,6 +1925,7 @@ async function loadStudents(){
 
 
                 <div class="info">
+
 
                     <div class="info-box">
 
@@ -1307,7 +1937,9 @@ async function loadStudents(){
 
                         <div class="info-value">
 
-                            ${completed} / 30
+                            ${completed}
+                            /
+                            ${TOTAL_LESSONS}
 
                         </div>
 
@@ -1330,24 +1962,45 @@ async function loadStudents(){
 
                     </div>
 
+
                 </div>
 
 
                 <button
-                class="evaluate-btn"
-                onclick="openEvaluation(
-                    '${student.id}',
-                    '${escapeAttribute(
+                    class="evaluate-btn"
+                    data-student-id="${escapeAttribute(
+                        student.id
+                    )}"
+                    data-student-name="${escapeAttribute(
                         student.full_name ||
                         "Student"
-                    )}'
-                )">
+                    )}">
 
                     📝 Evaluate Student
 
                 </button>
 
             `;
+
+
+            const evaluateButton =
+                card.querySelector(
+                    ".evaluate-btn"
+                );
+
+
+            evaluateButton.addEventListener(
+                "click",
+                function(){
+
+                    openEvaluation(
+                        student.id,
+                        student.full_name ||
+                        "Student"
+                    );
+
+                }
+            );
 
 
             container.appendChild(
@@ -1357,19 +2010,12 @@ async function loadStudents(){
         }
     );
 
-
-    updateStatistics(
-        students,
-        progressData || [],
-        quizData || []
-    );
-
 }
 
 
-/* =====================================
+/* =====================================================
    STATISTICS
-===================================== */
+===================================================== */
 
 function updateStatistics(
     students,
@@ -1383,29 +2029,62 @@ function updateStatistics(
         students.length;
 
 
-    let totalLessons = 0;
+    let totalLessons =
+        0;
 
-    let totalProgress = 0;
 
-    let scoreValues = [];
+    let totalProgress =
+        0;
+
+
+    const scoreValues =
+        [];
 
 
     students.forEach(
         function(student){
 
+            const completedLessons =
+                new Set(
+
+                    progressData
+                        .filter(
+                            function(item){
+
+                                return (
+                                    item.user_id ===
+                                    student.id
+                                    &&
+                                    item.completed ===
+                                    true
+                                    &&
+                                    Number(
+                                        item.lesson_number
+                                    ) >= 1
+                                    &&
+                                    Number(
+                                        item.lesson_number
+                                    ) <=
+                                        TOTAL_LESSONS
+                                );
+
+                            }
+                        )
+                        .map(
+                            function(item){
+
+                                return Number(
+                                    item.lesson_number
+                                );
+
+                            }
+                        )
+
+                );
+
+
             const completed =
-                progressData.filter(
-                    function(item){
-
-                        return (
-                            item.user_id ===
-                            student.id
-                            &&
-                            item.completed === true
-                        );
-
-                    }
-                ).length;
+                completedLessons.size;
 
 
             totalLessons +=
@@ -1414,7 +2093,10 @@ function updateStatistics(
 
             totalProgress +=
                 Math.round(
-                    (completed / 30) * 100
+                    (
+                        completed /
+                        TOTAL_LESSONS
+                    ) * 100
                 );
 
 
@@ -1432,9 +2114,23 @@ function updateStatistics(
                 .forEach(
                     function(item){
 
-                        scoreValues.push(
-                            Number(item.score)
-                        );
+                        const score =
+                            Number(
+                                item.score
+                            );
+
+
+                        if(
+                            Number.isFinite(
+                                score
+                            )
+                        ){
+
+                            scoreValues.push(
+                                score
+                            );
+
+                        }
 
                     }
                 );
@@ -1463,16 +2159,23 @@ function updateStatistics(
     document.getElementById(
         "averageProgress"
     ).textContent =
-        averageProgress + "%";
+        averageProgress +
+        "%";
 
 
     if(scoreValues.length > 0){
 
         const total =
             scoreValues.reduce(
-                function(sum,score){
+                function(
+                    sum,
+                    score
+                ){
 
-                    return sum + score;
+                    return (
+                        sum +
+                        score
+                    );
 
                 },
                 0
@@ -1485,7 +2188,8 @@ function updateStatistics(
             Math.round(
                 total /
                 scoreValues.length
-            ) + "%";
+            ) +
+            "%";
 
     }
     else{
@@ -1500,9 +2204,9 @@ function updateStatistics(
 }
 
 
-/* =====================================
+/* =====================================================
    OPEN EVALUATION
-===================================== */
+===================================================== */
 
 function openEvaluation(
     studentId,
@@ -1546,9 +2250,9 @@ function openEvaluation(
 }
 
 
-/* =====================================
+/* =====================================================
    CLOSE EVALUATION
-===================================== */
+===================================================== */
 
 function closeEvaluation(){
 
@@ -1564,9 +2268,9 @@ function closeEvaluation(){
 }
 
 
-/* =====================================
+/* =====================================================
    SAVE EVALUATION
-===================================== */
+===================================================== */
 
 async function saveEvaluation(){
 
@@ -1601,6 +2305,21 @@ async function saveEvaluation(){
         document.getElementById(
             "evaluationText"
         ).value.trim();
+
+
+    if(
+        !Number.isInteger(lesson) ||
+        lesson < 1 ||
+        lesson > TOTAL_LESSONS
+    ){
+
+        alert(
+            "Please select a valid lesson."
+        );
+
+        return;
+
+    }
 
 
     if(
@@ -1640,105 +2359,97 @@ async function saveEvaluation(){
     }
 
 
-    const {
-        error
-    } =
-    await supabaseClient
-        .from("teacher_evaluations")
-        .insert({
-
-            student_id:
-                selectedStudent,
-
-            teacher_id:
-                currentTeacher.id,
-
-            lesson_number:
-                lesson,
-
-            evaluation:
-                evaluation,
-
-            score:
-                score
-
-        });
+    const button =
+        document.getElementById(
+            "saveEvaluationButton"
+        );
 
 
-    if(error){
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "Saving...";
+
+
+    try{
+
+        const {
+            error
+        } =
+        await supabaseClient
+            .from("teacher_evaluations")
+            .insert({
+
+                student_id:
+                    selectedStudent,
+
+                teacher_id:
+                    currentTeacher.id,
+
+                lesson_number:
+                    lesson,
+
+                evaluation:
+                    evaluation,
+
+                score:
+                    score
+
+            });
+
+
+        if(error){
+
+            throw error;
+
+        }
+
+
+        closeEvaluation();
+
+
+        showSuccess(
+            "✅ Evaluation saved successfully!"
+        );
+
+
+        await loadStudents();
+
+    }
+    catch(error){
+
+        console.error(
+            "Evaluation error:",
+            error
+        );
+
 
         alert(
             "Could not save evaluation:\n\n" +
             error.message
         );
 
-        return;
+    }
+    finally{
+
+        button.disabled =
+            false;
+
+        button.textContent =
+            "💾 Save Evaluation";
 
     }
 
-
-    alert(
-        "✅ Evaluation saved successfully!"
-    );
-
-
-    closeEvaluation();
-
-
-    loadStudents();
-
 }
 
 
-/* =====================================
-   ERROR
-===================================== */
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
 
-function showError(
-    message
-){
-
-    const box =
-        document.getElementById(
-            "errorBox"
-        );
-
-
-    box.textContent =
-        message;
-
-
-    box.style.display =
-        "block";
-
-}
-
-
-function hideError(){
-
-    const box =
-        document.getElementById(
-            "errorBox"
-        );
-
-
-    box.textContent =
-        "";
-
-
-    box.style.display =
-        "none";
-
-}
-
-
-/* =====================================
-   SECURITY HELPERS
-===================================== */
-
-function escapeHTML(
-    value
-){
+function escapeHTML(value){
 
     return String(value)
         .replace(
@@ -1765,9 +2476,11 @@ function escapeHTML(
 }
 
 
-function escapeAttribute(
-    value
-){
+/* =====================================================
+   ESCAPE ATTRIBUTE
+===================================================== */
+
+function escapeAttribute(value){
 
     return String(value)
         .replace(
@@ -1786,15 +2499,51 @@ function escapeAttribute(
 }
 
 
-/* =====================================
+/* =====================================================
    LOGOUT
-===================================== */
+===================================================== */
 
 async function logout(){
 
-    await supabaseClient
-        .auth
-        .signOut();
+    const button =
+        document.getElementById(
+            "logoutButton"
+        );
+
+
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "Logging out...";
+
+
+    try{
+
+        await supabaseClient
+            .auth
+            .signOut();
+
+    }
+    catch(error){
+
+        console.error(
+            "Logout error:",
+            error
+        );
+
+    }
+
+
+    localStorage.removeItem(
+        "brightAcademyLoggedIn"
+    );
+
+
+    localStorage.removeItem(
+        "brightAcademyStudent"
+    );
 
 
     window.location.href =
@@ -1803,9 +2552,9 @@ async function logout(){
 }
 
 
-/* =====================================
-   CLOSE MODAL WHEN CLICK OUTSIDE
-===================================== */
+/* =====================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+===================================================== */
 
 document.getElementById(
     "evaluationModal"
@@ -1826,13 +2575,59 @@ document.getElementById(
 );
 
 
-/* =====================================
-   START
-===================================== */
+/* =====================================================
+   CLOSE MODAL WITH ESC
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key ===
+            "Escape"
+        ){
+
+            closeEvaluation();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   AUTH STATE
+===================================================== */
+
+supabaseClient.auth.onAuthStateChange(
+    function(
+        event,
+        session
+    ){
+
+        if(
+            event ===
+            "SIGNED_OUT"
+        ){
+
+            window.location.href =
+                "teacher-login.html";
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   START DASHBOARD
+===================================================== */
 
 loadStudents();
 
 </script>
+
 
 </body>
 
