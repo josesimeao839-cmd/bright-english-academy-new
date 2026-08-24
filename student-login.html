@@ -683,7 +683,7 @@ Created by José Simeão
 <script>
 
 /* =====================================================
-   NEW SUPABASE PROJECT
+   SUPABASE CONFIGURATION
 ===================================================== */
 
 const SUPABASE_URL =
@@ -925,10 +925,6 @@ async function registerStudent(event){
 
     try{
 
-        /* =========================================
-           CREATE AUTH ACCOUNT
-        ========================================= */
-
         const result =
             await supabaseClient.auth.signUp({
 
@@ -975,7 +971,7 @@ async function registerStudent(event){
 
 
         /* =========================================
-           IF SESSION EXISTS
+           SESSION CREATED
         ========================================= */
 
         if(data.session){
@@ -1048,7 +1044,7 @@ async function registerStudent(event){
 
 
         /* =========================================
-           EMAIL CONFIRMATION
+           EMAIL CONFIRMATION REQUIRED
         ========================================= */
 
         showMessage(
@@ -1134,6 +1130,10 @@ async function loginStudent(event){
 
     try{
 
+        /* =========================================
+           SUPABASE LOGIN
+        ========================================= */
+
         const result =
             await supabaseClient.auth
                 .signInWithPassword({
@@ -1156,7 +1156,14 @@ async function loginStudent(event){
             result.data?.user;
 
 
-        if(!user){
+        const session =
+            result.data?.session;
+
+
+        if(
+            !user ||
+            !session
+        ){
 
             throw new Error(
                 "Student account not found."
@@ -1252,7 +1259,7 @@ async function loginStudent(event){
 
 
         /* =========================================
-           SAVE STUDENT
+           SAVE SESSION
         ========================================= */
 
         localStorage.setItem(
@@ -1408,7 +1415,7 @@ function getFriendlyError(error){
 
 
 /* =====================================================
-   EXISTING SESSION
+   CHECK EXISTING SUPABASE SESSION
 ===================================================== */
 
 async function checkExistingSession(){
@@ -1449,6 +1456,10 @@ async function checkExistingSession(){
             session.user;
 
 
+        /* =========================================
+           GET STUDENT PROFILE
+        ========================================= */
+
         const profileResult =
             await supabaseClient
                 .from("profiles")
@@ -1477,10 +1488,52 @@ async function checkExistingSession(){
             profileResult.data;
 
 
+        /* =========================================
+           TEACHER
+        ========================================= */
+
+        if(
+            profile &&
+            profile.role === "teacher"
+        ){
+
+            return;
+
+        }
+
+
+        /* =========================================
+           EXISTING STUDENT
+        ========================================= */
+
         if(
             profile &&
             profile.role === "student"
         ){
+
+            localStorage.setItem(
+                "brightAcademyLoggedIn",
+                "true"
+            );
+
+
+            localStorage.setItem(
+                "brightAcademyStudent",
+
+                JSON.stringify({
+
+                    id:user.id,
+
+                    fullname:
+                        profile.full_name,
+
+                    email:
+                        user.email
+
+                })
+
+            );
+
 
             window.location.href =
                 "student-dashboard.html";
@@ -1498,6 +1551,31 @@ async function checkExistingSession(){
     }
 
 }
+
+
+/* =====================================================
+   SUPABASE AUTH STATE
+===================================================== */
+
+supabaseClient.auth.onAuthStateChange(
+    function(event, session){
+
+        if(
+            event === "SIGNED_OUT"
+        ){
+
+            localStorage.removeItem(
+                "brightAcademyLoggedIn"
+            );
+
+            localStorage.removeItem(
+                "brightAcademyStudent"
+            );
+
+        }
+
+    }
+);
 
 
 /* =====================================================
