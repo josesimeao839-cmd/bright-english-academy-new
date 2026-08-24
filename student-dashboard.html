@@ -412,6 +412,36 @@ main{
     background:#064ba9;
 }
 
+/* =========================
+   LOCKED
+========================= */
+
+.lesson.locked{
+    background:#f8fafc;
+
+    border-color:#e2e8f0;
+
+    opacity:.75;
+}
+
+.lesson.locked:hover{
+    transform:none;
+
+    box-shadow:none;
+}
+
+.lesson.locked .lesson-number{
+    color:#64748b;
+}
+
+.lesson.locked .lesson-btn{
+    background:#cbd5e1;
+
+    color:#475569;
+
+    cursor:not-allowed;
+}
+
 .lesson.completed{
     border-color:#b9e2ca;
 
@@ -420,6 +450,10 @@ main{
 
 .lesson.completed .lesson-btn{
     background:#138a4b;
+}
+
+.lesson.completed .lesson-btn:hover{
+    background:#0f703d;
 }
 
 /* =========================
@@ -964,6 +998,10 @@ const student =
 JSON.parse(savedStudent);
 
 
+/* =========================
+   NAME
+========================= */
+
 document.getElementById(
     "studentName"
 ).textContent =
@@ -1020,11 +1058,80 @@ const lessons = [
    COMPLETED LESSONS
 ========================= */
 
-if(!Array.isArray(
-    student.completedLessons
-)){
+/*
+   We use ONE system for the course:
+
+   student.completedLessons
+
+   Example:
+
+   []          = nothing completed
+   [1]         = Lesson 1 completed
+   [1,2]       = Lessons 1 and 2 completed
+*/
+
+if(
+    !Array.isArray(
+        student.completedLessons
+    )
+){
 
     student.completedLessons = [];
+
+}
+
+
+/* =========================
+   SAVE STUDENT
+========================= */
+
+function saveStudent(){
+
+    localStorage.setItem(
+        "brightAcademyStudent",
+        JSON.stringify(student)
+    );
+
+}
+
+
+/* =========================
+   CHECK IF COMPLETED
+========================= */
+
+function isCompleted(number){
+
+    return student.completedLessons
+        .includes(number);
+
+}
+
+
+/* =========================
+   CHECK IF UNLOCKED
+========================= */
+
+function isUnlocked(number){
+
+    /*
+       Lesson 1 is always available.
+    */
+
+    if(number === 1){
+
+        return true;
+
+    }
+
+
+    /*
+       Every next lesson requires
+       the previous lesson.
+    */
+
+    return isCompleted(
+        number - 1
+    );
 
 }
 
@@ -1045,24 +1152,107 @@ function(title,index){
     const lessonNumber =
         index + 1;
 
+
     const completed =
-        student.completedLessons
-        .includes(lessonNumber);
+        isCompleted(
+            lessonNumber
+        );
+
+
+    const unlocked =
+        isUnlocked(
+            lessonNumber
+        );
 
 
     const lesson =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     lesson.className =
         "lesson";
 
 
+    /*
+       COMPLETED
+    */
+
     if(completed){
 
         lesson.classList.add(
             "completed"
         );
+
+    }
+
+
+    /*
+       LOCKED
+    */
+
+    if(!unlocked){
+
+        lesson.classList.add(
+            "locked"
+        );
+
+    }
+
+
+    /* =====================
+       STATUS
+    ===================== */
+
+    let statusText;
+
+
+    if(completed){
+
+        statusText =
+            "✅ Completed";
+
+    }
+    else if(unlocked){
+
+        statusText =
+            "🔓 Available";
+
+    }
+    else{
+
+        statusText =
+            "🔒 Complete Lesson " +
+            (lessonNumber - 1) +
+            " first";
+
+    }
+
+
+    /* =====================
+       BUTTON
+    ===================== */
+
+    let buttonText;
+
+
+    if(completed){
+
+        buttonText =
+            "🔄 Review Lesson";
+
+    }
+    else if(unlocked){
+
+        buttonText =
+            "▶️ Start Lesson";
+
+    }
+    else{
+
+        buttonText =
+            "🔒 Locked";
 
     }
 
@@ -1085,11 +1275,7 @@ function(title,index){
 
         <div class="lesson-status">
 
-            ${
-                completed
-                ? "✅ Completed"
-                : "🔒 Not completed"
-            }
+            ${statusText}
 
         </div>
 
@@ -1098,11 +1284,7 @@ function(title,index){
             class="lesson-btn"
             onclick="openLesson(${lessonNumber})">
 
-            ${
-                completed
-                ? "🔄 Review Lesson"
-                : "▶️ Start Lesson"
-            }
+            ${buttonText}
 
         </button>
 
@@ -1114,6 +1296,53 @@ function(title,index){
     );
 
 });
+
+
+/* =========================
+   OPEN LESSON
+========================= */
+
+function openLesson(number){
+
+    /*
+       IMPORTANT:
+
+       The student can only open
+       the current unlocked lesson.
+
+       There is NO beginner1.html
+       in this system.
+    */
+
+    if(
+        !isUnlocked(number)
+    ){
+
+        alert(
+            "🔒 Lesson " +
+            number +
+            " is locked.\n\n" +
+            "Complete Lesson " +
+            (number - 1) +
+            " first."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Direct connection to
+       the real lesson page.
+    */
+
+    window.location.href =
+        "lesson" +
+        number +
+        ".html";
+
+}
 
 
 /* =========================
@@ -1174,8 +1403,12 @@ if(scores.length > 0){
 
     const total =
         scores.reduce(
-            (sum,score) =>
-            sum + Number(score),
+            function(sum,score){
+
+                return sum +
+                    Number(score);
+
+            },
             0
         );
 
@@ -1195,45 +1428,9 @@ if(scores.length > 0){
     document.getElementById(
         "lastScore"
     ).textContent =
-        "Latest result: "
-        + scores[scores.length - 1]
-        + "%";
-
-}
-
-
-/* =========================
-   OPEN LESSON
-========================= */
-
-function openLesson(number){
-
-    /*
-       The real lesson files will be
-       connected here.
-
-       Example:
-
-       Lesson 1 → beginner1.html
-       Lesson 2 → lesson2.html
-       etc.
-    */
-
-    if(number === 1){
-
-        window.location.href =
-            "beginner1.html";
-
-        return;
-
-    }
-
-
-    alert(
-        "Lesson " +
-        number +
-        " will be connected to its page next."
-    );
+        "Latest result: " +
+        scores[scores.length - 1] +
+        "%";
 
 }
 
