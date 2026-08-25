@@ -29,13 +29,7 @@ body{
     line-height:1.6;
 }
 
-header{
-    background:linear-gradient(135deg,#0757c9,#13a6e8);
-    color:white;
-    text-align:center;
-    padding:45px 20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.12);
-}
+
 
 .academy{
     font-size:15px;
@@ -351,32 +345,95 @@ footer strong{
 
 }
 
+
+
+header{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+@media(max-width:700px){
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav{
+        width:100%;
+    }
+
+}
+
 </style>
 
 </head>
 
 <body>
 
-
 <header>
 
-<div class="academy">
-Bright English Academy
-</div>
+<div class="header-container">
 
-<h1>
-🏆 Timed Final Test
-</h1>
+<a href="index.html" class="logo">
+📚 Bright English Academy
+</a>
 
-<p>
-A1 English — Final Assessment
-</p>
+<nav>
 
-<div class="badge">
-📚 Day 30 / Lesson 30
+<a href="index.html">Home</a>
+
+<a href="student-dashboard.html">📊 Dashboard</a>
+
+</nav>
+
 </div>
 
 </header>
+
+
+
+
+
 
 
 <div class="timer-bar">
@@ -1500,35 +1557,10 @@ block:"center"
 document
 .querySelector(".submit-btn")
 .disabled=true;
-
-
-updateProgress();
-
 }
 
 
-function updateProgress(){
 
-const total =
-document.querySelectorAll(
-'input[type="radio"]'
-).length / 3;
-
-
-let answered=0;
-
-
-for(let i=1;i<=20;i++){
-
-if(
-document.querySelector(
-'input[name="q'+i+'"]:checked'
-)
-){
-
-answered++;
-
-}
 
 }
 
@@ -1564,9 +1596,6 @@ event.target.matches(
 ){
 
 startTimer();
-
-updateProgress();
-
 }
 
 });
@@ -1575,10 +1604,148 @@ updateProgress();
 window.addEventListener(
 "load",
 function(){
-
-updateProgress();
-
 });
+
+
+
+/* ===== BRIGHT ENGLISH ACADEMY - PROGRESS SYSTEM ===== */
+/* Lesson 30 */
+
+function getCompletedLessons() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem("completedLessons")
+        ) || [];
+
+    } catch (error) {
+
+        console.error(
+            "Could not read completed lessons:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+function saveCompletedLessons(completed) {
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+}
+
+
+function completeLesson() {
+
+    const completed = getCompletedLessons();
+
+    if (!completed.includes(30)) {
+
+        completed.push(30);
+
+    }
+
+    saveCompletedLessons(completed);
+
+    updateProgress();
+
+    const message =
+        document.getElementById("completeMessage");
+
+    if (message) {
+
+        message.style.display = "block";
+
+    }
+
+}
+
+
+function updateProgress() {
+
+    const completed = getCompletedLessons();
+
+    const isComplete =
+        completed.includes(30);
+
+    const percentage =
+        isComplete ? 100 : 0;
+
+
+    const progressFill =
+        document.getElementById("progressFill");
+
+    const progressText =
+        document.getElementById("progressText");
+
+
+    if (progressFill) {
+
+        progressFill.style.width =
+            percentage + "%";
+
+    }
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            percentage + "%";
+
+    }
+
+
+    const message =
+        document.getElementById("completeMessage");
+
+    if (message && isComplete) {
+
+        message.style.display = "block";
+
+    }
+
+}
+
+
+/*
+   IMPORTANT:
+   Check saved progress immediately
+   when the page opens.
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateProgress();
+
+    }
+);
+
+
+/* Also update when the browser page becomes visible again. */
+
+document.addEventListener(
+    "visibilitychange",
+    function() {
+
+        if (!document.hidden) {
+
+            updateProgress();
+
+        }
+
+    }
+);
+
 
 </script>
 

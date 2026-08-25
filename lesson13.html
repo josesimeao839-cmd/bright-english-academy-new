@@ -32,13 +32,7 @@
             line-height: 1.6;
         }
 
-        header {
-            background: linear-gradient(135deg, #0757c9, #13a6e8);
-            color: white;
-            padding: 35px 20px 30px;
-            text-align: center;
-            box-shadow: 0 5px 18px rgba(0,0,0,.12);
-        }
+        
 
         .academy-name {
             font-size: 15px;
@@ -105,33 +99,11 @@
             transition: width .4s ease;
         }
 
-        nav {
-            max-width: 1100px;
-            margin: 22px auto;
-            padding: 0 18px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
+        
 
-        nav a {
-            text-decoration: none;
-            color: #0757c9;
-            background: white;
-            border: 1px solid #d8e2f2;
-            padding: 8px 13px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-            transition: .2s;
-        }
+        
 
-        nav a:hover {
-            background: #0757c9;
-            color: white;
-            transform: translateY(-2px);
-        }
+        
 
         main {
             max-width: 1100px;
@@ -472,9 +444,7 @@
 
         @media(max-width:650px) {
 
-            header {
-                padding: 28px 15px;
-            }
+            
 
             section {
                 padding: 20px;
@@ -487,33 +457,96 @@
 
         }
 
-    </style>
+    
+
+header{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+@media(max-width:700px){
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav{
+        width:100%;
+    }
+
+}
+
+</style>
 
 </head>
 
 
 <body>
 
-
 <header>
 
-    <div class="academy-name">
-        Bright English Academy
-    </div>
+<div class="header-container">
 
-    <h1>
-        Home, Rooms & There is / There are
-    </h1>
+<a href="index.html" class="logo">
+📚 Bright English Academy
+</a>
 
-    <p>
-        Describe your home and talk about things around you.
-    </p>
+<nav>
 
-    <div class="day-badge">
-        📚 Day 13 / Lesson 13
-    </div>
+<a href="index.html">Home</a>
+
+<a href="student-dashboard.html">📊 Dashboard</a>
+
+</nav>
+
+</div>
 
 </header>
+
+
+
+
+
 
 
 <div class="progress-container">
@@ -544,35 +577,9 @@
 
 <nav>
 
-    <a href="#objectives">Objectives</a>
+<a href="index.html">Home</a>
 
-    <a href="#vocabulary">Vocabulary</a>
-
-    <a href="#pronunciation">Pronunciation</a>
-
-    <a href="#thereis">There is</a>
-
-    <a href="#thereare">There are</a>
-
-    <a href="#negative">Negative</a>
-
-    <a href="#questions">Questions</a>
-
-    <a href="#prepositions">Prepositions</a>
-
-    <a href="#conversation">Conversation</a>
-
-    <a href="#exercises">Exercises</a>
-
-    <a href="#activities">Activities</a>
-
-    <a href="#speaking">Speaking</a>
-
-    <a href="#writing">Writing</a>
-
-    <a href="#quiz">Quiz</a>
-
-    <a href="#review">Review</a>
+<a href="student-dashboard.html">📊 Dashboard</a>
 
 </nav>
 
@@ -2577,10 +2584,7 @@
                 "#c62828";
 
         }
-
-        updateProgress();
-
-    }
+}
 
 
     /* =========================
@@ -2605,10 +2609,7 @@
 
         document.getElementById(resultId)
             .textContent = message;
-
-        updateProgress();
-
-    }
+}
 
 
     /* =========================
@@ -2653,10 +2654,7 @@
                 "#c62828";
 
         }
-
-        updateProgress();
-
-    }
+}
 
 
     /* =========================
@@ -2737,10 +2735,7 @@
                 "#b06b00";
 
         }
-
-        updateProgress();
-
-    }
+}
 
 
     /* =========================
@@ -2859,10 +2854,7 @@
             block: "center"
 
         });
-
-        updateProgress();
-
-    }
+}
 
 
     /* =========================
@@ -2979,6 +2971,147 @@
         "load",
         updateProgress
     );
+
+
+
+/* ===== BRIGHT ENGLISH ACADEMY - PROGRESS SYSTEM ===== */
+/* Lesson 13 */
+
+function getCompletedLessons() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem("completedLessons")
+        ) || [];
+
+    } catch (error) {
+
+        console.error(
+            "Could not read completed lessons:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+function saveCompletedLessons(completed) {
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+}
+
+
+function completeLesson() {
+
+    const completed = getCompletedLessons();
+
+    if (!completed.includes(13)) {
+
+        completed.push(13);
+
+    }
+
+    saveCompletedLessons(completed);
+
+    updateProgress();
+
+    const message =
+        document.getElementById("completeMessage");
+
+    if (message) {
+
+        message.style.display = "block";
+
+    }
+
+}
+
+
+function updateProgress() {
+
+    const completed = getCompletedLessons();
+
+    const isComplete =
+        completed.includes(13);
+
+    const percentage =
+        isComplete ? 100 : 0;
+
+
+    const progressFill =
+        document.getElementById("progressFill");
+
+    const progressText =
+        document.getElementById("progressText");
+
+
+    if (progressFill) {
+
+        progressFill.style.width =
+            percentage + "%";
+
+    }
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            percentage + "%";
+
+    }
+
+
+    const message =
+        document.getElementById("completeMessage");
+
+    if (message && isComplete) {
+
+        message.style.display = "block";
+
+    }
+
+}
+
+
+/*
+   IMPORTANT:
+   Check saved progress immediately
+   when the page opens.
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateProgress();
+
+    }
+);
+
+
+/* Also update when the browser page becomes visible again. */
+
+document.addEventListener(
+    "visibilitychange",
+    function() {
+
+        if (!document.hidden) {
+
+            updateProgress();
+
+        }
+
+    }
+);
+
 
 </script>
 

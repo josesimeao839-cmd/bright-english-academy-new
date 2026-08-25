@@ -19,49 +19,17 @@ color:#17233c;
 line-height:1.6;
 }
 
-header{
-background:linear-gradient(135deg,#0b4f9c,#087fc1);
-color:white;
-padding:18px 20px;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 3px 15px rgba(0,0,0,.15);
-}
 
-.header-container{
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-}
 
-.logo{
-color:white;
-text-decoration:none;
-font-size:21px;
-font-weight:800;
-}
 
-nav{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-}
 
-nav a{
-color:white;
-text-decoration:none;
-padding:8px 10px;
-border-radius:7px;
-font-weight:bold;
-}
 
-nav a:hover{
-background:rgba(255,255,255,.15);
-}
+
+
+
+
+
+
 
 .container{
 max-width:1000px;
@@ -123,22 +91,9 @@ background:#ffd34d;
 transition:.4s;
 }
 
-.lesson-nav{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:24px;
-}
+.lesson-
 
-.lesson-nav a{
-background:#eaf3ff;
-color:#0b4f9c;
-text-decoration:none;
-padding:8px 12px;
-border-radius:7px;
-font-weight:bold;
-font-size:14px;
-}
+.lesson-
 
 h2{
 color:#0b4f9c;
@@ -413,10 +368,7 @@ color:#58c7ff;
 
 @media(max-width:700px){
 
-.header-container{
-flex-direction:column;
-align-items:flex-start;
-}
+
 
 .objective-grid,
 .vocab-grid,
@@ -441,6 +393,65 @@ text-align:center;
 }
 
 }
+
+
+header{
+    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.header-container{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:800;
+}
+
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:7px 10px;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+}
+
+@media(max-width:700px){
+
+    .header-container{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    nav{
+        width:100%;
+    }
+
+}
+
 </style>
 
 </head>
@@ -451,18 +462,25 @@ text-align:center;
 
 <div class="header-container">
 
-<a href="beginner1.html" class="logo">
+<a href="index.html" class="logo">
 📚 Bright English Academy
 </a>
 
 <nav>
+
 <a href="index.html">Home</a>
-<a href="beginner1.html">Beginner A1</a>
+
+<a href="student-dashboard.html">📊 Dashboard</a>
+
 </nav>
 
 </div>
 
 </header>
+
+
+
+
 
 <main class="container">
 
@@ -1577,16 +1595,7 @@ document.getElementById("progressText").textContent="100%";
 }
 
 
-function completeLesson(){
 
-localStorage.setItem("lesson10Completed","true");
-
-let completed=
-JSON.parse(localStorage.getItem("completedLessons")||"[]");
-
-if(!completed.includes(10)){
-completed.push(10);
-}
 
 localStorage.setItem(
 "completedLessons",
@@ -1621,6 +1630,147 @@ document.getElementById("completeMessage").style.display="block";
 
 
 loadProgress();
+
+
+
+/* ===== BRIGHT ENGLISH ACADEMY - PROGRESS SYSTEM ===== */
+/* Lesson 10 */
+
+function getCompletedLessons() {
+
+    try {
+
+        return JSON.parse(
+            localStorage.getItem("completedLessons")
+        ) || [];
+
+    } catch (error) {
+
+        console.error(
+            "Could not read completed lessons:",
+            error
+        );
+
+        return [];
+
+    }
+
+}
+
+
+function saveCompletedLessons(completed) {
+
+    localStorage.setItem(
+        "completedLessons",
+        JSON.stringify(completed)
+    );
+
+}
+
+
+function completeLesson() {
+
+    const completed = getCompletedLessons();
+
+    if (!completed.includes(10)) {
+
+        completed.push(10);
+
+    }
+
+    saveCompletedLessons(completed);
+
+    updateProgress();
+
+    const message =
+        document.getElementById("completeMessage");
+
+    if (message) {
+
+        message.style.display = "block";
+
+    }
+
+}
+
+
+function updateProgress() {
+
+    const completed = getCompletedLessons();
+
+    const isComplete =
+        completed.includes(10);
+
+    const percentage =
+        isComplete ? 100 : 0;
+
+
+    const progressFill =
+        document.getElementById("progressFill");
+
+    const progressText =
+        document.getElementById("progressText");
+
+
+    if (progressFill) {
+
+        progressFill.style.width =
+            percentage + "%";
+
+    }
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            percentage + "%";
+
+    }
+
+
+    const message =
+        document.getElementById("completeMessage");
+
+    if (message && isComplete) {
+
+        message.style.display = "block";
+
+    }
+
+}
+
+
+/*
+   IMPORTANT:
+   Check saved progress immediately
+   when the page opens.
+*/
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        updateProgress();
+
+    }
+);
+
+
+/* Also update when the browser page becomes visible again. */
+
+document.addEventListener(
+    "visibilitychange",
+    function() {
+
+        if (!document.hidden) {
+
+            updateProgress();
+
+        }
+
+    }
+);
+
 
 </script>
 
