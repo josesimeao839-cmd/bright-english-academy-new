@@ -496,6 +496,48 @@ nav a:hover{
 
 </style>
 
+
+<style id="bright-progress-style">
+
+.complete-box-bright{
+    background:white;
+    padding:28px;
+    border-radius:18px;
+    margin:25px 0;
+    box-shadow:0 5px 22px rgba(20,53,100,.08);
+    border:1px solid #e2eaf4;
+    text-align:center;
+}
+
+.complete-box-bright h2{
+    color:#0b4f9c;
+    margin-top:0;
+}
+
+.complete-btn-bright{
+    border:none;
+    background:#168348;
+    color:white;
+    padding:14px 25px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.complete-btn-bright:hover{
+    background:#116b3a;
+}
+
+.complete-message-bright{
+    display:none;
+    margin-top:15px;
+    color:#168348;
+    font-weight:bold;
+}
+
+</style>
+
 </head>
 
 
@@ -2447,6 +2489,35 @@ nav a:hover{
 </main>
 
 
+
+<section class="complete-box-bright" id="lessonCompleteBox">
+
+    <h2>🏆 Lesson 17 Complete</h2>
+
+    <p>
+        Finished all the activities?
+        Save your lesson progress.
+    </p>
+
+    <button
+        type="button"
+        class="complete-btn-bright"
+        onclick="completeLesson()">
+
+        ✅ Complete Lesson 17
+
+    </button>
+
+    <div
+        id="completeMessage"
+        class="complete-message-bright">
+
+        🎉 Lesson 17 completed successfully!
+
+    </div>
+
+</section>
+
 <footer>
 
     <p>
@@ -2971,6 +3042,186 @@ document.addEventListener(
 
 </script>
 
+
+
+<script id="bright-progress-script">
+
+(function() {
+
+    const LESSON_NUMBER = 17;
+
+    function getCompletedLessons() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem("completedLessons")
+            ) || [];
+
+        } catch(error) {
+
+            return [];
+
+        }
+
+    }
+
+
+    function saveCompletedLessons(completed) {
+
+        localStorage.setItem(
+            "completedLessons",
+            JSON.stringify(completed)
+        );
+
+    }
+
+
+    function updateProgress() {
+
+        const completed =
+            getCompletedLessons();
+
+        const isComplete =
+            completed.includes(LESSON_NUMBER);
+
+        const percentage =
+            isComplete ? 100 : 0;
+
+
+        const progressFill =
+            document.getElementById("progressFill");
+
+        const progressText =
+            document.getElementById("progressText");
+
+
+        if(progressFill) {
+
+            progressFill.style.width =
+                percentage + "%";
+
+        }
+
+
+        if(progressText) {
+
+            progressText.textContent =
+                percentage + "%";
+
+        }
+
+
+        const message =
+            document.getElementById(
+                "completeMessage"
+            );
+
+
+        const button =
+            document.querySelector(
+                ".complete-btn-bright"
+            );
+
+
+        if(isComplete) {
+
+            if(message) {
+
+                message.style.display =
+                    "block";
+
+            }
+
+
+            if(button) {
+
+                button.textContent =
+                    "✅ Lesson 17 Completed";
+
+            }
+
+        } else {
+
+            if(message) {
+
+                message.style.display =
+                    "none";
+
+            }
+
+
+            if(button) {
+
+                button.textContent =
+                    "✅ Complete Lesson 17";
+
+            }
+
+        }
+
+    }
+
+
+    window.completeLesson = function() {
+
+        let completed =
+            getCompletedLessons();
+
+
+        if(!completed.includes(LESSON_NUMBER)) {
+
+            completed.push(LESSON_NUMBER);
+
+        }
+
+
+        completed =
+            [...new Set(completed)].sort(
+                (a,b) => a-b
+            );
+
+
+        saveCompletedLessons(
+            completed
+        );
+
+
+        updateProgress();
+
+
+        const message =
+            document.getElementById(
+                "completeMessage"
+            );
+
+
+        if(message) {
+
+            message.style.display =
+                "block";
+
+        }
+
+    };
+
+
+    window.updateLessonProgress =
+        updateProgress;
+
+
+    updateProgress();
+
+
+    window.addEventListener(
+        "storage",
+        updateProgress
+    );
+
+
+})();
+
+</script>
 
 </body>
 
