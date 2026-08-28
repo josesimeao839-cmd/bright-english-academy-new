@@ -1,0 +1,2222 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Listen & Choose | Bright Games</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    background:linear-gradient(
+        135deg,
+        #071a52,
+        #0b3d91,
+        #1261c9
+    );
+    color:white;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.25);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.stats{
+    display:flex;
+    gap:20px;
+    font-size:15px;
+}
+
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.wrapper{
+    width:min(950px,92%);
+    margin:40px auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.badge{
+    display:inline-block;
+    background:#ffd21f;
+    color:#111;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+h1{
+    font-size:clamp(32px,6vw,52px);
+    margin-bottom:8px;
+}
+
+.subtitle{
+    opacity:.85;
+}
+
+
+/* =====================================================
+   LEVEL
+===================================================== */
+
+.level-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.level-name{
+    color:#ffd21f;
+}
+
+.progress{
+    height:12px;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:18px;
+}
+
+#progressBar{
+    height:100%;
+    width:3.33%;
+    background:#ffd21f;
+    transition:.4s;
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.timer-box{
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.timer{
+    display:inline-block;
+    min-width:100px;
+    padding:10px 18px;
+    border-radius:30px;
+    background:white;
+    color:#1261c9;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.timer.warning{
+    background:#ffd21f;
+    color:#111;
+}
+
+.timer.danger{
+    background:#d62828;
+    color:white;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card{
+    background:white;
+    color:#17213b;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.question-number{
+    color:#1261c9;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.mode{
+    display:inline-block;
+    padding:7px 13px;
+    background:#eef5ff;
+    color:#1261c9;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+
+/* =====================================================
+   LISTEN AREA
+===================================================== */
+
+.listen-area{
+    margin:10px auto 25px;
+}
+
+.listen-icon{
+    font-size:75px;
+    margin-bottom:10px;
+}
+
+.instruction{
+    font-size:18px;
+    color:#555;
+    margin-bottom:18px;
+}
+
+.listen-button{
+    border:none;
+    background:#1261c9;
+    color:white;
+    border-radius:50%;
+    width:90px;
+    height:90px;
+    font-size:38px;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(18,97,201,.3);
+    transition:.2s;
+}
+
+.listen-button:hover{
+    transform:scale(1.06);
+}
+
+.listen-button.playing{
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.options{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.option{
+    border:2px solid #dce4f3;
+    background:#f7f9fc;
+    color:#17213b;
+    padding:18px;
+    border-radius:15px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.option:hover{
+    border-color:#1261c9;
+    background:#eef5ff;
+    transform:translateY(-2px);
+}
+
+.option.correct{
+    background:#dff7e7;
+    border-color:#2ca45c;
+    color:#176b39;
+}
+
+.option.wrong{
+    background:#ffe1e1;
+    border-color:#d62828;
+    color:#9d1616;
+}
+
+.option:disabled{
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback{
+    min-height:30px;
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.score{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+}
+
+.result-icon{
+    font-size:85px;
+}
+
+.result h2{
+    font-size:36px;
+    margin:15px 0;
+}
+
+.result p{
+    font-size:19px;
+    margin:9px;
+}
+
+.result-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.main-button{
+    border:none;
+    border-radius:12px;
+    padding:15px 24px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    background:#1261c9;
+    color:white;
+}
+
+.yellow{
+    background:#ffd21f;
+    color:#111;
+}
+
+
+/* =====================================================
+   RESTART MESSAGE
+===================================================== */
+
+.restart-message{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.restart-box{
+    background:white;
+    color:#17213b;
+    padding:35px;
+    border-radius:25px;
+    width:min(420px,90%);
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.restart-box .icon{
+    font-size:65px;
+}
+
+.restart-box h2{
+    margin:15px 0 8px;
+}
+
+.restart-box p{
+    color:#555;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:.8;
+    font-size:14px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .topbar{
+        padding:15px 4%;
+    }
+
+    .stats{
+        gap:8px;
+        font-size:12px;
+    }
+
+    .card{
+        padding:23px 17px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+    }
+
+    .listen-button{
+        width:80px;
+        height:80px;
+    }
+
+}
+
+</style>
+
+
+<style>
+
+/* =====================================
+   BRIGHT GAMES - FINAL BACK TO MENU
+===================================== */
+
+.bright-back-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    box-sizing: border-box !important;
+    width: min(280px, 90%) !important;
+
+    margin: 30px auto 25px !important;
+    padding: 14px 22px !important;
+
+    border: none !important;
+    border-radius: 14px !important;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+    color: #FFFFFF !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+
+    box-shadow: 0 7px 18px rgba(37,99,235,.30) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.bright-back-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37,99,235,.40) !important;
+}
+
+.bright-back-menu:active {
+    transform: translateY(0);
+}
+
+.bright-back-menu .back-arrow {
+    font-size: 21px;
+    line-height: 1;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="logo">
+        🎮 Bright Games
+    </div>
+
+    <div class="stats">
+
+        <span>
+            ⭐ <b id="xp">0</b> XP
+        </span>
+
+        <span>
+            🪙 <b id="coins">0</b>
+        </span>
+
+        <span>
+            🏆 Lv. <b id="level">1</b>
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="wrapper">
+
+
+    <div class="header">
+
+        <span class="badge">
+            🎧 LISTEN & CHOOSE
+        </span>
+
+        <h1>
+            Listen & Choose
+        </h1>
+
+        <p class="subtitle">
+            Listen carefully and choose the correct answer.
+        </p>
+
+    </div>
+
+
+
+    <!-- LEVEL / SCORE -->
+
+    <div class="level-box">
+
+        <span
+            class="level-name"
+            id="levelName">
+
+            Level 1
+
+        </span>
+
+
+        <span id="questionText">
+
+            Question 1 / 30
+
+        </span>
+
+
+        <span>
+
+            Score:
+            <b id="score">0</b>
+
+        </span>
+
+    </div>
+
+
+
+    <!-- PROGRESS -->
+
+    <div class="progress">
+
+        <div id="progressBar"></div>
+
+    </div>
+
+
+
+    <!-- TIMER -->
+
+    <div class="timer-box">
+
+        <div
+            class="timer"
+            id="timer">
+
+            ⏱️ 20
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         GAME CARD
+    ================================================= -->
+
+    <section class="card">
+
+
+        <div id="game">
+
+
+            <div
+                class="question-number"
+                id="questionNumber">
+
+                QUESTION 1
+
+            </div>
+
+
+            <div
+                class="mode"
+                id="mode">
+
+                LEVEL 1
+
+            </div>
+
+
+
+            <!-- LISTEN -->
+
+            <div class="listen-area">
+
+                <div class="listen-icon">
+                    🎧
+                </div>
+
+
+                <p class="instruction">
+                    Listen to the audio and choose the correct answer.
+                </p>
+
+
+                <button
+                    class="listen-button"
+                    id="listenButton"
+                    onclick="playAudio()">
+
+                    🔊
+
+                </button>
+
+            </div>
+
+
+
+            <!-- OPTIONS -->
+
+            <div
+                class="options"
+                id="options">
+
+            </div>
+
+
+
+            <!-- FEEDBACK -->
+
+            <div
+                class="feedback"
+                id="feedback">
+
+            </div>
+
+
+            <div class="score">
+
+                ⭐ Points:
+                <span id="liveScore">0</span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESULT
+        ================================================= -->
+
+        <div
+            class="result"
+            id="result">
+
+            <div class="result-icon">
+                🏆
+            </div>
+
+
+            <h2>
+                Listen & Choose Complete!
+            </h2>
+
+
+            <p>
+                Final Score:
+                <strong id="finalScore">0</strong>
+                / 30
+            </p>
+
+
+            <p>
+                ⭐ XP Earned:
+                <strong id="earnedXP">0</strong>
+            </p>
+
+
+            <p>
+                🪙 Coins Earned:
+                <strong id="earnedCoins">0</strong>
+            </p>
+
+
+            <p>
+                📊 Accuracy:
+                <strong id="accuracy">0%</strong>
+            </p>
+
+
+            <div class="result-buttons">
+
+                <button
+                    class="main-button yellow"
+                    onclick="restartGame()">
+
+                    🔄 PLAY AGAIN
+
+                </button>
+
+
+                <button
+                    class="main-button"
+                    onclick="goHome()">
+
+                    🏠 BRIGHT GAMES
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     RESTART POPUP
+===================================================== -->
+
+<div
+    class="restart-message"
+    id="restartMessage">
+
+    <div class="restart-box">
+
+        <div
+            class="icon"
+            id="restartIcon">
+
+            ❌
+
+        </div>
+
+
+        <h2 id="restartTitle">
+            Wrong Answer!
+        </h2>
+
+
+        <p id="restartText">
+            The game will restart.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    🎮 Bright Games
+    —
+    Bright English Academy
+
+    <br><br>
+
+    Created by José Simeão
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   QUESTIONS
+   30 QUESTIONS — 5 LEVELS
+===================================================== */
+
+const questions = [
+
+/* =====================================================
+   LEVEL 1 — BASIC WORDS
+===================================================== */
+
+{
+    level:1,
+    mode:"EASY LISTENING",
+    audio:"apple",
+    options:[
+        "Apple",
+        "Orange",
+        "Banana",
+        "Mango"
+    ],
+    answer:"Apple"
+},
+
+{
+    level:1,
+    mode:"EASY LISTENING",
+    audio:"book",
+    options:[
+        "Pen",
+        "Book",
+        "Bag",
+        "Chair"
+    ],
+    answer:"Book"
+},
+
+{
+    level:1,
+    mode:"EASY LISTENING",
+    audio:"water",
+    options:[
+        "Milk",
+        "Juice",
+        "Water",
+        "Coffee"
+    ],
+    answer:"Water"
+},
+
+{
+    level:1,
+    mode:"EASY LISTENING",
+    audio:"school",
+    options:[
+        "Hospital",
+        "School",
+        "Market",
+        "Bank"
+    ],
+    answer:"School"
+},
+
+{
+    level:1,
+    mode:"EASY LISTENING",
+    audio:"teacher",
+    options:[
+        "Doctor",
+        "Teacher",
+        "Driver",
+        "Farmer"
+    ],
+    answer:"Teacher"
+},
+
+{
+    level:1,
+    mode:"EASY LISTENING",
+    audio:"house",
+    options:[
+        "House",
+        "Office",
+        "School",
+        "Shop"
+    ],
+    answer:"House"
+},
+
+
+/* =====================================================
+   LEVEL 2
+===================================================== */
+
+{
+    level:2,
+    mode:"MEDIUM LISTENING",
+    audio:"Good morning",
+    options:[
+        "Good morning",
+        "Good night",
+        "Goodbye",
+        "Good afternoon"
+    ],
+    answer:"Good morning"
+},
+
+{
+    level:2,
+    mode:"MEDIUM LISTENING",
+    audio:"How are you",
+    options:[
+        "What is your name?",
+        "How are you?",
+        "Where are you?",
+        "How old are you?"
+    ],
+    answer:"How are you?"
+},
+
+{
+    level:2,
+    mode:"MEDIUM LISTENING",
+    audio:"My name is Daniel",
+    options:[
+        "My name is Daniel",
+        "I am a teacher",
+        "I live in Maputo",
+        "I am fifteen"
+    ],
+    answer:"My name is Daniel"
+},
+
+{
+    level:2,
+    mode:"MEDIUM LISTENING",
+    audio:"I like football",
+    options:[
+        "I play tennis",
+        "I like football",
+        "I watch television",
+        "I like music"
+    ],
+    answer:"I like football"
+},
+
+{
+    level:2,
+    mode:"MEDIUM LISTENING",
+    audio:"She is my sister",
+    options:[
+        "She is my mother",
+        "She is my teacher",
+        "She is my sister",
+        "She is my friend"
+    ],
+    answer:"She is my sister"
+},
+
+{
+    level:2,
+    mode:"MEDIUM LISTENING",
+    audio:"Where do you live",
+    options:[
+        "What do you eat?",
+        "Where do you live?",
+        "What do you like?",
+        "Where do you study?"
+    ],
+    answer:"Where do you live?"
+},
+
+
+/* =====================================================
+   LEVEL 3
+===================================================== */
+
+{
+    level:3,
+    mode:"HARD LISTENING",
+    audio:"I usually wake up at seven o'clock",
+    options:[
+        "I usually wake up at seven o'clock",
+        "I usually go to bed at seven o'clock",
+        "I usually eat dinner at seven o'clock",
+        "I usually go to school at eight o'clock"
+    ],
+    answer:"I usually wake up at seven o'clock"
+},
+
+{
+    level:3,
+    mode:"HARD LISTENING",
+    audio:"She doesn't like coffee",
+    options:[
+        "She likes coffee",
+        "She doesn't like coffee",
+        "She drinks coffee every day",
+        "She doesn't drink tea"
+    ],
+    answer:"She doesn't like coffee"
+},
+
+{
+    level:3,
+    mode:"HARD LISTENING",
+    audio:"They are studying English",
+    options:[
+        "They are studying English",
+        "They are teaching English",
+        "They studied English",
+        "They speak French"
+    ],
+    answer:"They are studying English"
+},
+
+{
+    level:3,
+    mode:"HARD LISTENING",
+    audio:"We went to the market yesterday",
+    options:[
+        "We go to the market today",
+        "We went to the market yesterday",
+        "We will go to the market tomorrow",
+        "We work at the market"
+    ],
+    answer:"We went to the market yesterday"
+},
+
+{
+    level:3,
+    mode:"HARD LISTENING",
+    audio:"There are three books on the table",
+    options:[
+        "There are two books on the table",
+        "There are three books on the table",
+        "There are three bags on the table",
+        "There is one book on the table"
+    ],
+    answer:"There are three books on the table"
+},
+
+{
+    level:3,
+    mode:"HARD LISTENING",
+    audio:"My brother is taller than me",
+    options:[
+        "My brother is younger than me",
+        "My brother is taller than me",
+        "My brother is shorter than me",
+        "My brother is older than me"
+    ],
+    answer:"My brother is taller than me"
+},
+
+
+/* =====================================================
+   LEVEL 4
+===================================================== */
+
+{
+    level:4,
+    mode:"EXPERT LISTENING",
+    audio:"If I have enough money, I will buy a new computer",
+    options:[
+        "I will buy a new computer if I have enough money",
+        "I bought a new computer yesterday",
+        "I don't want a new computer",
+        "I have already sold my computer"
+    ],
+    answer:"I will buy a new computer if I have enough money"
+},
+
+{
+    level:4,
+    mode:"EXPERT LISTENING",
+    audio:"She has been learning English for two years",
+    options:[
+        "She started learning English two years ago",
+        "She stopped learning English two years ago",
+        "She will learn English next year",
+        "She has never studied English"
+    ],
+    answer:"She started learning English two years ago"
+},
+
+{
+    level:4,
+    mode:"EXPERT LISTENING",
+    audio:"Although it was raining, we went to school",
+    options:[
+        "We stayed home because it rained",
+        "We went to school even though it was raining",
+        "We went to school before it rained",
+        "We didn't go to school"
+    ],
+    answer:"We went to school even though it was raining"
+},
+
+{
+    level:4,
+    mode:"EXPERT LISTENING",
+    audio:"The woman who lives next door is a doctor",
+    options:[
+        "The woman next door is a doctor",
+        "The woman next door is a teacher",
+        "The woman lives in a hospital",
+        "The doctor lives far away"
+    ],
+    answer:"The woman next door is a doctor"
+},
+
+{
+    level:4,
+    mode:"EXPERT LISTENING",
+    audio:"I have never visited another country",
+    options:[
+        "I have visited many countries",
+        "I have never visited another country",
+        "I am visiting another country",
+        "I lived in another country"
+    ],
+    answer:"I have never visited another country"
+},
+
+{
+    level:4,
+    mode:"EXPERT LISTENING",
+    audio:"You should study harder if you want to pass the exam",
+    options:[
+        "You should study harder to pass the exam",
+        "You should stop studying",
+        "The exam has already finished",
+        "You don't need to study"
+    ],
+    answer:"You should study harder to pass the exam"
+},
+
+
+/* =====================================================
+   LEVEL 5 — FINAL CHALLENGE
+===================================================== */
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    audio:"If I had known about the meeting, I would have attended it",
+    options:[
+        "I attended the meeting",
+        "I didn't know about the meeting, so I didn't attend it",
+        "I organized the meeting",
+        "I will attend the meeting tomorrow"
+    ],
+    answer:"I didn't know about the meeting, so I didn't attend it"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    audio:"By the time we arrived, the movie had already started",
+    options:[
+        "The movie started after we arrived",
+        "The movie had already started when we arrived",
+        "We arrived before the movie",
+        "The movie was cancelled"
+    ],
+    answer:"The movie had already started when we arrived"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    audio:"She would have called me if she had had my number",
+    options:[
+        "She called me yesterday",
+        "She didn't have my number, so she couldn't call me",
+        "She lost her phone",
+        "She never wanted to call me"
+    ],
+    answer:"She didn't have my number, so she couldn't call me"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    audio:"Despite being tired, he continued working until midnight",
+    options:[
+        "He stopped working because he was tired",
+        "He continued working even though he was tired",
+        "He went to sleep early",
+        "He started working at midnight"
+    ],
+    answer:"He continued working even though he was tired"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    audio:"The students will have completed the project by Friday",
+    options:[
+        "The students completed the project last Friday",
+        "The students will finish the project before or by Friday",
+        "The students have cancelled the project",
+        "The students started the project on Friday"
+    ],
+    answer:"The students will finish the project before or by Friday"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    audio:"Learning a language requires patience, practice and consistent effort",
+    options:[
+        "Learning a language is always easy",
+        "Learning a language requires regular effort",
+        "Learning a language requires no practice",
+        "Learning languages takes only one day"
+    ],
+    answer:"Learning a language requires regular effort"
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let answered = false;
+
+let restarting = false;
+
+let timeLeft = 20;
+
+let timerInterval = null;
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array){
+
+    const newArray = [...array];
+
+    for(
+        let i = newArray.length - 1;
+        i > 0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            newArray[i],
+            newArray[j]
+        ] =
+        [
+            newArray[j],
+            newArray[i]
+        ];
+
+    }
+
+    return newArray;
+
+}
+
+
+/* =====================================================
+   PLAYER DATA
+===================================================== */
+
+function loadPlayerData(){
+
+    const xp =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    const coins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    const level =
+        Math.floor(xp / 500) + 1;
+
+
+    document.getElementById(
+        "xp"
+    ).textContent = xp;
+
+
+    document.getElementById(
+        "coins"
+    ).textContent = coins;
+
+
+    document.getElementById(
+        "level"
+    ).textContent = level;
+
+}
+
+
+/* =====================================================
+   SPEECH
+===================================================== */
+
+function playAudio(){
+
+    if(
+        answered ||
+        restarting
+    ){
+        return;
+    }
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    const button =
+        document.getElementById(
+            "listenButton"
+        );
+
+
+    window.speechSynthesis.cancel();
+
+
+    const speech =
+        new SpeechSynthesisUtterance(
+            q.audio
+        );
+
+
+    speech.lang = "en-US";
+
+    speech.rate =
+        q.level >= 4
+        ? 0.82
+        : 0.95;
+
+
+    speech.pitch = 1;
+
+
+    button.classList.add(
+        "playing"
+    );
+
+
+    speech.onend =
+        function(){
+
+            button.classList.remove(
+                "playing"
+            );
+
+        };
+
+
+    window.speechSynthesis.speak(
+        speech
+    );
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function startTimer(){
+
+    clearInterval(timerInterval);
+
+    timeLeft = 20;
+
+    updateTimer();
+
+
+    timerInterval =
+        setInterval(function(){
+
+            timeLeft--;
+
+            updateTimer();
+
+
+            if(
+                timeLeft <= 0
+            ){
+
+                clearInterval(
+                    timerInterval
+                );
+
+                timeOut();
+
+            }
+
+        },1000);
+
+}
+
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById(
+            "timer"
+        );
+
+
+    timer.textContent =
+        "⏱️ " + timeLeft;
+
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+
+    if(
+        timeLeft <= 8
+    ){
+
+        timer.classList.add(
+            "warning"
+        );
+
+    }
+
+
+    if(
+        timeLeft <= 3
+    ){
+
+        timer.classList.remove(
+            "warning"
+        );
+
+        timer.classList.add(
+            "danger"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TIME OUT
+===================================================== */
+
+function timeOut(){
+
+    if(
+        answered ||
+        restarting
+    ){
+        return;
+    }
+
+
+    answered = true;
+
+    restarting = true;
+
+
+    window.speechSynthesis.cancel();
+
+
+    disableOptions();
+
+
+    showRestartMessage(
+        "⏰",
+        "Time's Up!",
+        "You did not answer in time. The game will restart."
+    );
+
+
+    setTimeout(function(){
+
+        restartGame();
+
+    },1800);
+
+}
+
+
+/* =====================================================
+   RESTART POPUP
+===================================================== */
+
+function showRestartMessage(
+    icon,
+    title,
+    text
+){
+
+    document.getElementById(
+        "restartIcon"
+    ).textContent = icon;
+
+
+    document.getElementById(
+        "restartTitle"
+    ).textContent = title;
+
+
+    document.getElementById(
+        "restartText"
+    ).textContent = text;
+
+
+    document.getElementById(
+        "restartMessage"
+    ).style.display = "flex";
+
+}
+
+
+function hideRestartMessage(){
+
+    document.getElementById(
+        "restartMessage"
+    ).style.display = "none";
+
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function showQuestion(){
+
+    answered = false;
+
+    restarting = false;
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        "QUESTION " +
+        (currentQuestion + 1);
+
+
+    document.getElementById(
+        "questionText"
+    ).textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " / 30";
+
+
+    document.getElementById(
+        "levelName"
+    ).textContent =
+        "Level " + q.level;
+
+
+    document.getElementById(
+        "mode"
+    ).textContent =
+        q.mode;
+
+
+    document.getElementById(
+        "score"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "liveScore"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        (
+            (currentQuestion + 1)
+            /
+            questions.length
+            *
+            100
+        ) + "%";
+
+
+    document.getElementById(
+        "feedback"
+    ).textContent = "";
+
+
+    createOptions(
+        q
+    );
+
+
+    document.getElementById(
+        "listenButton"
+    ).classList.remove(
+        "playing"
+    );
+
+
+    window.speechSynthesis.cancel();
+
+
+    startTimer();
+
+}
+
+
+/* =====================================================
+   CREATE OPTIONS
+===================================================== */
+
+function createOptions(q){
+
+    const container =
+        document.getElementById(
+            "options"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const shuffled =
+        shuffle(
+            q.options
+        );
+
+
+    shuffled.forEach(function(option){
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "option";
+
+
+        button.textContent =
+            option;
+
+
+        button.onclick =
+            function(){
+
+                checkAnswer(
+                    option,
+                    button
+                );
+
+            };
+
+
+        container.appendChild(
+            button
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+===================================================== */
+
+function checkAnswer(
+    selected,
+    button
+){
+
+    if(
+        answered ||
+        restarting
+    ){
+        return;
+    }
+
+
+    answered = true;
+
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    window.speechSynthesis.cancel();
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    if(
+        selected === q.answer
+    ){
+
+        /* =========================
+           CORRECT
+        ========================= */
+
+        score++;
+
+
+        button.classList.add(
+            "correct"
+        );
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "✅ Correct! Excellent listening!";
+
+
+        document.getElementById(
+            "score"
+        ).textContent =
+            score;
+
+
+        document.getElementById(
+            "liveScore"
+        ).textContent =
+            score;
+
+
+        disableOptions();
+
+
+        setTimeout(function(){
+
+            currentQuestion++;
+
+
+            if(
+                currentQuestion <
+                questions.length
+            ){
+
+                showQuestion();
+
+            }
+
+            else{
+
+                finishGame();
+
+            }
+
+        },850);
+
+    }
+
+    else{
+
+        /* =========================
+           WRONG
+        ========================= */
+
+        restarting = true;
+
+
+        button.classList.add(
+            "wrong"
+        );
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "❌ Wrong answer!";
+
+
+        disableOptions();
+
+
+        showRestartMessage(
+            "❌",
+            "Wrong Answer!",
+            "The game will restart. Try again!"
+        );
+
+
+        setTimeout(function(){
+
+            restartGame();
+
+        },1800);
+
+    }
+
+}
+
+
+/* =====================================================
+   DISABLE OPTIONS
+===================================================== */
+
+function disableOptions(){
+
+    document
+        .querySelectorAll(".option")
+        .forEach(function(button){
+
+            button.disabled = true;
+
+        });
+
+}
+
+
+/* =====================================================
+   FINISH GAME
+===================================================== */
+
+function finishGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    window.speechSynthesis.cancel();
+
+
+    document.getElementById(
+        "game"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "block";
+
+
+    const earnedXP =
+        score * 20;
+
+
+    const earnedCoins =
+        score * 5;
+
+
+    const accuracy =
+        Math.round(
+            score /
+            questions.length *
+            100
+        );
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "earnedXP"
+    ).textContent =
+        earnedXP;
+
+
+    document.getElementById(
+        "earnedCoins"
+    ).textContent =
+        earnedCoins;
+
+
+    document.getElementById(
+        "accuracy"
+    ).textContent =
+        accuracy + "%";
+
+
+    /* =========================
+       XP
+    ========================= */
+
+    const oldXP =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesXP",
+        oldXP + earnedXP
+    );
+
+
+    /* =========================
+       COINS
+    ========================= */
+
+    const oldCoins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesCoins",
+        oldCoins + earnedCoins
+    );
+
+
+    /* =========================
+       COMPLETION
+    ========================= */
+
+    let completed =
+        Number(
+            localStorage.getItem(
+                "brightGamesCompleted"
+            )
+        ) || 0;
+
+
+    let completedList =
+        JSON.parse(
+            localStorage.getItem(
+                "brightGamesCompletedList"
+            )
+        ) || [];
+
+
+    if(
+        !completedList.includes(
+            "listen-choose"
+        )
+    ){
+
+        completedList.push(
+            "listen-choose"
+        );
+
+
+        completed++;
+
+
+        localStorage.setItem(
+            "brightGamesCompleted",
+            Math.min(
+                completed,
+                10
+            )
+        );
+
+
+        localStorage.setItem(
+            "brightGamesCompletedList",
+            JSON.stringify(
+                completedList
+            )
+        );
+
+    }
+
+
+    loadPlayerData();
+
+}
+
+
+/* =====================================================
+   RESTART GAME
+===================================================== */
+
+function restartGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    window.speechSynthesis.cancel();
+
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    answered = false;
+
+    restarting = false;
+
+
+    hideRestartMessage();
+
+
+    document.getElementById(
+        "game"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display = "inline-block";
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    showQuestion();
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadPlayerData();
+
+showQuestion();
+
+</script>
+
+
+
+
+
+
+<script>
+(function () {
+    function addBackToMenu() {
+        if (document.getElementById("bright-back-menu")) return;
+
+        const button = document.createElement("button");
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        /*
+         * Put the button after the main game content.
+         * We look for common game containers first.
+         */
+        const selectors = [
+            ".game-container",
+            ".game-content",
+            ".game-area",
+            "#game",
+            "#game-container",
+            "main"
+        ];
+
+        let target = null;
+
+        for (const selector of selectors) {
+            const element = document.querySelector(selector);
+            if (element) {
+                target = element;
+                break;
+            }
+        }
+
+        if (target) {
+            target.appendChild(button);
+        } else {
+            document.body.appendChild(button);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", addBackToMenu);
+    } else {
+        addBackToMenu();
+    }
+})();
+</script>
+
+
+<script>
+/* =====================================
+   BRIGHT GAMES - BACK TO MENU
+   FINAL VERSION
+===================================== */
+
+(function () {
+
+    function createBackMenu() {
+
+        if (document.getElementById("bright-back-menu")) {
+            return;
+        }
+
+        var button = document.createElement("button");
+
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+        button.setAttribute("aria-label", "Back to Bright Games menu");
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.onclick = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Always return to the Bright Games main menu.
+            window.location.assign("./index.html");
+        };
+
+        // IMPORTANT:
+        // Put the button directly in BODY, outside the game's dynamic container.
+        document.body.appendChild(button);
+    }
+
+    function start() {
+        createBackMenu();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+
+})();
+</script>
+
+</body>
+
+</html>
+```

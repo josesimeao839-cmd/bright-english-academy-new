@@ -1,0 +1,2199 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Word Scramble | Bright Games</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    background:linear-gradient(
+        135deg,
+        #071a52,
+        #0b3d91,
+        #1261c9
+    );
+    color:white;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar{
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,.25);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.stats{
+    display:flex;
+    gap:20px;
+    font-size:15px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.wrapper{
+    width:min(950px,92%);
+    margin:40px auto;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.badge{
+    display:inline-block;
+    background:#ffd21f;
+    color:#111;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+h1{
+    font-size:clamp(32px,6vw,52px);
+    margin-bottom:8px;
+}
+
+.subtitle{
+    opacity:.85;
+}
+
+/* =========================
+   LEVEL / PROGRESS
+========================= */
+
+.level-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+    font-weight:bold;
+    gap:10px;
+}
+
+.level-name{
+    color:#ffd21f;
+}
+
+.progress{
+    height:12px;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:18px;
+}
+
+#progressBar{
+    height:100%;
+    width:3.33%;
+    background:#ffd21f;
+    transition:.4s;
+}
+
+/* =========================
+   TIMER
+========================= */
+
+.timer-box{
+    text-align:center;
+    margin-bottom:18px;
+}
+
+.timer{
+    display:inline-block;
+    min-width:100px;
+    padding:10px 18px;
+    border-radius:30px;
+    background:white;
+    color:#1261c9;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.timer.warning{
+    background:#ffd21f;
+    color:#111;
+}
+
+.timer.danger{
+    background:#d62828;
+    color:white;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+    background:white;
+    color:#17213b;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.question-number{
+    color:#1261c9;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.mode{
+    display:inline-block;
+    padding:7px 13px;
+    background:#eef5ff;
+    color:#1261c9;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+/* =========================
+   CLUE
+========================= */
+
+.clue{
+    font-size:22px;
+    font-weight:bold;
+    line-height:1.5;
+    margin:25px auto;
+    max-width:700px;
+}
+
+.picture{
+    font-size:85px;
+    margin:15px 0;
+}
+
+.category{
+    display:inline-block;
+    background:#f1f4f9;
+    color:#555;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:13px;
+    margin-top:10px;
+}
+
+/* =========================
+   ANSWER AREA
+========================= */
+
+.answer-area{
+    min-height:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:15px;
+    border:2px dashed #ccd6e6;
+    border-radius:16px;
+    margin:25px 0 18px;
+}
+
+.answer-letter{
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:10px;
+    background:#1261c9;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.answer-letter:hover{
+    transform:translateY(-2px);
+}
+
+.answer-empty{
+    color:#8a94a6;
+    font-weight:bold;
+}
+
+/* =========================
+   LETTERS
+========================= */
+
+.letters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:20px 0;
+}
+
+.letter{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:13px;
+    background:#f2f5fa;
+    color:#17213b;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    border:2px solid #dce4f3;
+    transition:.2s;
+}
+
+.letter:hover{
+    transform:translateY(-3px);
+    border-color:#1261c9;
+    background:#eef5ff;
+}
+
+.letter.used{
+    opacity:.25;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.control-button{
+    border:none;
+    border-radius:12px;
+    padding:13px 22px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.clear-button{
+    background:#e9edf4;
+    color:#17213b;
+}
+
+.check-button{
+    background:#1261c9;
+    color:white;
+}
+
+.check-button:hover{
+    background:#0b4fa9;
+}
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.feedback{
+    min-height:30px;
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.score{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+/* =========================
+   RESULT
+========================= */
+
+.result{
+    display:none;
+}
+
+.result-icon{
+    font-size:85px;
+}
+
+.result h2{
+    font-size:36px;
+    margin:15px 0;
+}
+
+.result p{
+    font-size:19px;
+    margin:9px;
+}
+
+.result-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.main-button{
+    border:none;
+    border-radius:12px;
+    padding:15px 24px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    background:#1261c9;
+    color:white;
+}
+
+.yellow{
+    background:#ffd21f;
+    color:#111;
+}
+
+/* =========================
+   RESTART MESSAGE
+========================= */
+
+.restart-message{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:1000;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.restart-box{
+    background:white;
+    color:#17213b;
+    padding:35px;
+    border-radius:25px;
+    width:min(420px,90%);
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.restart-box .icon{
+    font-size:65px;
+}
+
+.restart-box h2{
+    margin:15px 0 8px;
+}
+
+.restart-box p{
+    color:#555;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:.8;
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .topbar{
+        padding:15px 4%;
+    }
+
+    .stats{
+        gap:8px;
+        font-size:12px;
+    }
+
+    .card{
+        padding:23px 17px;
+    }
+
+    .answer-letter{
+        width:42px;
+        height:42px;
+        font-size:19px;
+    }
+
+    .letter{
+        width:48px;
+        height:48px;
+        font-size:19px;
+    }
+
+    .picture{
+        font-size:70px;
+    }
+
+}
+
+</style>
+
+
+<style>
+
+/* =====================================
+   BRIGHT GAMES - FINAL BACK TO MENU
+===================================== */
+
+.bright-back-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    box-sizing: border-box !important;
+    width: min(280px, 90%) !important;
+
+    margin: 30px auto 25px !important;
+    padding: 14px 22px !important;
+
+    border: none !important;
+    border-radius: 14px !important;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+    color: #FFFFFF !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+
+    box-shadow: 0 7px 18px rgba(37,99,235,.30) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.bright-back-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37,99,235,.40) !important;
+}
+
+.bright-back-menu:active {
+    transform: translateY(0);
+}
+
+.bright-back-menu .back-arrow {
+    font-size: 21px;
+    line-height: 1;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="topbar">
+
+    <div class="logo">
+        🎮 Bright Games
+    </div>
+
+    <div class="stats">
+
+        <span>
+            ⭐ <b id="xp">0</b> XP
+        </span>
+
+        <span>
+            🪙 <b id="coins">0</b>
+        </span>
+
+        <span>
+            🏆 Lv. <b id="level">1</b>
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<main class="wrapper">
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<div class="header">
+
+    <span class="badge">
+        🔤 WORD SCRAMBLE
+    </span>
+
+    <h1>
+        Word Scramble
+    </h1>
+
+    <p class="subtitle">
+        Rearrange the letters and discover the word.
+    </p>
+
+</div>
+
+
+
+<!-- =========================
+     LEVEL / PROGRESS
+========================= -->
+
+<div class="level-box">
+
+    <span class="level-name"
+          id="levelName">
+
+        Level 1
+
+    </span>
+
+    <span id="questionText">
+
+        Question 1 / 30
+
+    </span>
+
+    <span>
+
+        Score:
+        <b id="score">0</b>
+
+    </span>
+
+</div>
+
+
+<div class="progress">
+
+    <div id="progressBar"></div>
+
+</div>
+
+
+
+<!-- =========================
+     TIMER
+========================= -->
+
+<div class="timer-box">
+
+    <div class="timer"
+         id="timer">
+
+        ⏱️ 10
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     GAME CARD
+========================= -->
+
+<section class="card">
+
+
+<div id="game">
+
+
+    <div class="question-number"
+         id="questionNumber">
+
+        QUESTION 1
+
+    </div>
+
+
+    <div class="mode"
+         id="mode">
+
+        SCRAMBLE
+
+    </div>
+
+
+    <div id="clue"></div>
+
+
+    <!-- ANSWER -->
+
+    <div class="answer-area"
+         id="answerArea">
+
+        <span class="answer-empty">
+            Click letters to build the word
+        </span>
+
+    </div>
+
+
+    <!-- LETTERS -->
+
+    <div class="letters"
+         id="letters"></div>
+
+
+    <!-- CONTROLS -->
+
+    <div class="controls">
+
+        <button
+            class="control-button clear-button"
+            onclick="clearAnswer()">
+
+            ↩ CLEAR
+
+        </button>
+
+
+        <button
+            class="control-button check-button"
+            onclick="checkAnswer()">
+
+            ✓ CHECK
+
+        </button>
+
+    </div>
+
+
+    <div class="feedback"
+         id="feedback"></div>
+
+
+    <div class="score">
+
+        ⭐ Points:
+        <span id="liveScore">0</span>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     RESULT
+========================= -->
+
+<div class="result"
+     id="result">
+
+    <div class="result-icon">
+        🏆
+    </div>
+
+    <h2>
+        Word Scramble Complete!
+    </h2>
+
+    <p>
+        Final Score:
+        <strong id="finalScore">0</strong>
+        / 30
+    </p>
+
+    <p>
+        ⭐ XP Earned:
+        <strong id="earnedXP">0</strong>
+    </p>
+
+    <p>
+        🪙 Coins Earned:
+        <strong id="earnedCoins">0</strong>
+    </p>
+
+    <p>
+        📊 Accuracy:
+        <strong id="accuracy">0%</strong>
+    </p>
+
+    <div class="result-buttons">
+
+        <button
+            class="main-button yellow"
+            onclick="restartGame()">
+
+            🔄 PLAY AGAIN
+
+        </button>
+
+        <button
+            class="main-button"
+            onclick="goHome()">
+
+            🏠 BRIGHT GAMES
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+
+<!-- =========================
+     RESTART MESSAGE
+========================= -->
+
+<div class="restart-message"
+     id="restartMessage">
+
+    <div class="restart-box">
+
+        <div class="icon"
+             id="restartIcon">
+
+            ❌
+
+        </div>
+
+        <h2 id="restartTitle">
+            Wrong Answer!
+        </h2>
+
+        <p id="restartText">
+            Your attempt has ended.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    🎮 Bright Games
+    —
+    Bright English Academy
+
+    <br><br>
+
+    Created by José Simeão
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   30 WORD SCRAMBLE QUESTIONS
+   6 × 5 LEVELS
+===================================================== */
+
+const questions = [
+
+/* =========================
+   LEVEL 1
+========================= */
+
+{
+    level:1,
+    mode:"EASY SCRAMBLE",
+    word:"APPLE",
+    clue:"🍎 A fruit that is often red or green.",
+    category:"FRUIT"
+},
+
+{
+    level:1,
+    mode:"EASY SCRAMBLE",
+    word:"HOUSE",
+    clue:"🏠 A place where people live.",
+    category:"PLACE"
+},
+
+{
+    level:1,
+    mode:"EASY SCRAMBLE",
+    word:"BOOK",
+    clue:"📚 You read this.",
+    category:"OBJECT"
+},
+
+{
+    level:1,
+    mode:"EASY SCRAMBLE",
+    word:"WATER",
+    clue:"💧 We drink this every day.",
+    category:"DRINK"
+},
+
+{
+    level:1,
+    mode:"EASY SCRAMBLE",
+    word:"SCHOOL",
+    clue:"🏫 A place where students learn.",
+    category:"PLACE"
+},
+
+{
+    level:1,
+    mode:"EASY SCRAMBLE",
+    word:"CHAIR",
+    clue:"🪑 You sit on this.",
+    category:"OBJECT"
+},
+
+
+/* =========================
+   LEVEL 2
+========================= */
+
+{
+    level:2,
+    mode:"MEDIUM SCRAMBLE",
+    word:"BANANA",
+    clue:"🍌 A long yellow fruit.",
+    category:"FRUIT"
+},
+
+{
+    level:2,
+    mode:"MEDIUM SCRAMBLE",
+    word:"TEACHER",
+    clue:"👨‍🏫 A person who teaches students.",
+    category:"PEOPLE"
+},
+
+{
+    level:2,
+    mode:"MEDIUM SCRAMBLE",
+    word:"MORNING",
+    clue:"🌅 The beginning of the day.",
+    category:"TIME"
+},
+
+{
+    level:2,
+    mode:"MEDIUM SCRAMBLE",
+    word:"WINDOW",
+    clue:"🪟 You can look through this in a wall.",
+    category:"OBJECT"
+},
+
+{
+    level:2,
+    mode:"MEDIUM SCRAMBLE",
+    word:"FAMILY",
+    clue:"👨‍👩‍👧 Parents, children and relatives.",
+    category:"PEOPLE"
+},
+
+{
+    level:2,
+    mode:"MEDIUM SCRAMBLE",
+    word:"KITCHEN",
+    clue:"🍳 A room where people prepare food.",
+    category:"PLACE"
+},
+
+
+/* =========================
+   LEVEL 3
+========================= */
+
+{
+    level:3,
+    mode:"HARD SCRAMBLE",
+    word:"IMPORTANT",
+    clue:"Something that has great value or meaning.",
+    category:"ADJECTIVE"
+},
+
+{
+    level:3,
+    mode:"HARD SCRAMBLE",
+    word:"BEAUTIFUL",
+    clue:"Something very pleasant to look at.",
+    category:"ADJECTIVE"
+},
+
+{
+    level:3,
+    mode:"HARD SCRAMBLE",
+    word:"DIFFERENT",
+    clue:"Not the same.",
+    category:"ADJECTIVE"
+},
+
+{
+    level:3,
+    mode:"HARD SCRAMBLE",
+    word:"LANGUAGE",
+    clue:"English is an example of this.",
+    category:"LEARNING"
+},
+
+{
+    level:3,
+    mode:"HARD SCRAMBLE",
+    word:"VACATION",
+    clue:"A period when you are away from school or work.",
+    category:"TIME"
+},
+
+{
+    level:3,
+    mode:"HARD SCRAMBLE",
+    word:"BREAKFAST",
+    clue:"The first meal of the day.",
+    category:"FOOD"
+},
+
+
+/* =========================
+   LEVEL 4
+========================= */
+
+{
+    level:4,
+    mode:"EXPERT SCRAMBLE",
+    word:"COMMUNICATION",
+    clue:"The process of sharing information with others.",
+    category:"LANGUAGE"
+},
+
+{
+    level:4,
+    mode:"EXPERT SCRAMBLE",
+    word:"ENVIRONMENT",
+    clue:"The natural world around us.",
+    category:"SCIENCE"
+},
+
+{
+    level:4,
+    mode:"EXPERT SCRAMBLE",
+    word:"EDUCATION",
+    clue:"The process of learning and teaching.",
+    category:"SCHOOL"
+},
+
+{
+    level:4,
+    mode:"EXPERT SCRAMBLE",
+    word:"EXPERIENCE",
+    clue:"Knowledge gained by doing or seeing something.",
+    category:"GENERAL"
+},
+
+{
+    level:4,
+    mode:"EXPERT SCRAMBLE",
+    word:"OPPORTUNITY",
+    clue:"A good chance to do something.",
+    category:"GENERAL"
+},
+
+{
+    level:4,
+    mode:"EXPERT SCRAMBLE",
+    word:"KNOWLEDGE",
+    clue:"Information and understanding that you have learned.",
+    category:"LEARNING"
+},
+
+
+/* =========================
+   LEVEL 5
+========================= */
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    word:"CONFIDENCE",
+    clue:"The feeling that you can do something successfully.",
+    category:"PERSONALITY"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    word:"RESPONSIBILITY",
+    clue:"A duty or task that you are expected to take care of.",
+    category:"GENERAL"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    word:"IMAGINATION",
+    clue:"The ability to create ideas or pictures in your mind.",
+    category:"MIND"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    word:"CONVERSATION",
+    clue:"A spoken exchange of ideas between people.",
+    category:"COMMUNICATION"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    word:"UNDERSTANDING",
+    clue:"The ability to know the meaning of something.",
+    category:"LEARNING"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    word:"ACHIEVEMENT",
+    clue:"Something successfully completed after effort.",
+    category:"SUCCESS"
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+let score = 0;
+let selectedLetters = [];
+let answered = false;
+let timeLeft = 10;
+let timerInterval = null;
+let restarting = false;
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array){
+
+    const newArray = [...array];
+
+    for(
+        let i = newArray.length - 1;
+        i > 0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            newArray[i],
+            newArray[j]
+        ] =
+        [
+            newArray[j],
+            newArray[i]
+        ];
+
+    }
+
+    return newArray;
+}
+
+
+/* =====================================================
+   PLAYER DATA
+===================================================== */
+
+function loadPlayerData(){
+
+    const xp =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+    const coins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+    const level =
+        Math.floor(xp / 500) + 1;
+
+    document.getElementById("xp")
+        .textContent = xp;
+
+    document.getElementById("coins")
+        .textContent = coins;
+
+    document.getElementById("level")
+        .textContent = level;
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function startTimer(){
+
+    clearInterval(timerInterval);
+
+    timeLeft = 10;
+
+    updateTimer();
+
+    timerInterval =
+        setInterval(function(){
+
+            timeLeft--;
+
+            updateTimer();
+
+            if(timeLeft <= 0){
+
+                clearInterval(timerInterval);
+
+                timeOut();
+
+            }
+
+        },1000);
+}
+
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById("timer");
+
+    timer.textContent =
+        "⏱️ " + timeLeft;
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+    if(timeLeft <= 5){
+
+        timer.classList.add(
+            "warning"
+        );
+
+    }
+
+    if(timeLeft <= 3){
+
+        timer.classList.remove(
+            "warning"
+        );
+
+        timer.classList.add(
+            "danger"
+        );
+
+    }
+}
+
+
+/* =====================================================
+   TIME OUT
+===================================================== */
+
+function timeOut(){
+
+    if(
+        answered ||
+        restarting
+    ){
+        return;
+    }
+
+    answered = true;
+    restarting = true;
+
+    showRestartMessage(
+        "⏰",
+        "Time's Up!",
+        "You did not answer in time. The game will restart."
+    );
+
+    disableLetters();
+
+    setTimeout(function(){
+
+        restartGame();
+
+    },1800);
+}
+
+
+/* =====================================================
+   RESTART MESSAGE
+===================================================== */
+
+function showRestartMessage(
+    icon,
+    title,
+    text
+){
+
+    document.getElementById(
+        "restartIcon"
+    ).textContent = icon;
+
+    document.getElementById(
+        "restartTitle"
+    ).textContent = title;
+
+    document.getElementById(
+        "restartText"
+    ).textContent = text;
+
+    document.getElementById(
+        "restartMessage"
+    ).style.display = "flex";
+}
+
+
+function hideRestartMessage(){
+
+    document.getElementById(
+        "restartMessage"
+    ).style.display = "none";
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function showQuestion(){
+
+    answered = false;
+    restarting = false;
+
+    selectedLetters = [];
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        "QUESTION " +
+        (currentQuestion + 1);
+
+
+    document.getElementById(
+        "questionText"
+    ).textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " / 30";
+
+
+    document.getElementById(
+        "levelName"
+    ).textContent =
+        "Level " + q.level;
+
+
+    document.getElementById(
+        "mode"
+    ).textContent =
+        q.mode;
+
+
+    document.getElementById(
+        "score"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "liveScore"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        (
+            (currentQuestion + 1)
+            /
+            questions.length
+            *
+            100
+        ) + "%";
+
+
+    document.getElementById(
+        "feedback"
+    ).textContent = "";
+
+
+    /* =========================
+       CLUE
+    ========================= */
+
+    const clue =
+        document.getElementById("clue");
+
+    clue.innerHTML = "";
+
+
+    if(
+        q.clue.includes("🍎") ||
+        q.clue.includes("🏠") ||
+        q.clue.includes("📚") ||
+        q.clue.includes("💧") ||
+        q.clue.includes("🏫") ||
+        q.clue.includes("🪑") ||
+        q.clue.includes("🍌") ||
+        q.clue.includes("👨‍🏫") ||
+        q.clue.includes("🌅") ||
+        q.clue.includes("🪟") ||
+        q.clue.includes("👨‍👩‍👧") ||
+        q.clue.includes("🍳")
+    ){
+
+        const picture =
+            document.createElement("div");
+
+        picture.className = "picture";
+
+        picture.textContent =
+            q.clue.split(" ")[0];
+
+        clue.appendChild(picture);
+
+        const text =
+            document.createElement("div");
+
+        text.className = "clue";
+
+        text.textContent =
+            q.clue.substring(
+                q.clue.indexOf(" ") + 1
+            );
+
+        clue.appendChild(text);
+
+    }
+
+    else{
+
+        const text =
+            document.createElement("div");
+
+        text.className = "clue";
+
+        text.textContent =
+            q.clue;
+
+        clue.appendChild(text);
+
+    }
+
+
+    const category =
+        document.createElement("span");
+
+    category.className =
+        "category";
+
+    category.textContent =
+        q.category;
+
+    clue.appendChild(category);
+
+
+    createLetters(q.word);
+
+
+    renderAnswer();
+
+    startTimer();
+}
+
+
+/* =====================================================
+   CREATE LETTERS
+===================================================== */
+
+function createLetters(word){
+
+    const lettersContainer =
+        document.getElementById("letters");
+
+    lettersContainer.innerHTML = "";
+
+
+    const letters =
+        word.split("");
+
+
+    const shuffled =
+        shuffle(
+            letters.map(
+                (letter,index) => ({
+                    letter:letter,
+                    id:index
+                })
+            )
+        );
+
+
+    shuffled.forEach(function(item){
+
+        const button =
+            document.createElement("button");
+
+        button.className =
+            "letter";
+
+        button.textContent =
+            item.letter;
+
+        button.dataset.id =
+            item.id;
+
+        button.onclick =
+            function(){
+
+                selectLetter(
+                    button,
+                    item
+                );
+
+            };
+
+        lettersContainer.appendChild(
+            button
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   SELECT LETTER
+===================================================== */
+
+function selectLetter(
+    button,
+    item
+){
+
+    if(
+        answered ||
+        restarting ||
+        button.classList.contains("used")
+    ){
+        return;
+    }
+
+
+    button.classList.add("used");
+
+
+    selectedLetters.push({
+        letter:item.letter,
+        id:item.id
+    });
+
+
+    renderAnswer();
+}
+
+
+/* =====================================================
+   RENDER ANSWER
+===================================================== */
+
+function renderAnswer(){
+
+    const area =
+        document.getElementById(
+            "answerArea"
+        );
+
+    area.innerHTML = "";
+
+
+    if(
+        selectedLetters.length === 0
+    ){
+
+        const empty =
+            document.createElement("span");
+
+        empty.className =
+            "answer-empty";
+
+        empty.textContent =
+            "Click letters to build the word";
+
+        area.appendChild(empty);
+
+        return;
+    }
+
+
+    selectedLetters.forEach(
+        function(item,index){
+
+            const button =
+                document.createElement("button");
+
+            button.className =
+                "answer-letter";
+
+            button.textContent =
+                item.letter;
+
+            button.title =
+                "Click to remove";
+
+            button.onclick =
+                function(){
+
+                    removeLetter(index);
+
+                };
+
+            area.appendChild(button);
+
+        }
+    );
+}
+
+
+/* =====================================================
+   REMOVE LETTER
+===================================================== */
+
+function removeLetter(index){
+
+    if(
+        answered ||
+        restarting
+    ){
+        return;
+    }
+
+
+    const removed =
+        selectedLetters.splice(
+            index,
+            1
+        )[0];
+
+
+    document
+        .querySelectorAll(".letter")
+        .forEach(function(button){
+
+            if(
+                Number(button.dataset.id)
+                ===
+                removed.id
+            ){
+
+                button.classList.remove(
+                    "used"
+                );
+
+            }
+
+        });
+
+
+    renderAnswer();
+}
+
+
+/* =====================================================
+   CLEAR ANSWER
+===================================================== */
+
+function clearAnswer(){
+
+    if(
+        answered ||
+        restarting
+    ){
+        return;
+    }
+
+
+    selectedLetters = [];
+
+
+    document
+        .querySelectorAll(".letter")
+        .forEach(function(button){
+
+            button.classList.remove(
+                "used"
+            );
+
+        });
+
+
+    renderAnswer();
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+===================================================== */
+
+function checkAnswer(){
+
+    if(
+        answered ||
+        restarting
+    ){
+        return;
+    }
+
+
+    if(
+        selectedLetters.length === 0
+    ){
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "⚠️ Choose the letters first.";
+
+        return;
+
+    }
+
+
+    const answer =
+        selectedLetters
+            .map(
+                item => item.letter
+            )
+            .join("")
+            .toUpperCase();
+
+
+    const correct =
+        questions[currentQuestion]
+            .word
+            .toUpperCase();
+
+
+    answered = true;
+
+    clearInterval(timerInterval);
+
+
+    /* =========================
+       CORRECT
+    ========================= */
+
+    if(answer === correct){
+
+        score++;
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "✅ Correct! Excellent!";
+
+
+        document.getElementById(
+            "score"
+        ).textContent =
+            score;
+
+
+        document.getElementById(
+            "liveScore"
+        ).textContent =
+            score;
+
+
+        disableLetters();
+
+
+        setTimeout(function(){
+
+            currentQuestion++;
+
+
+            if(
+                currentQuestion <
+                questions.length
+            ){
+
+                showQuestion();
+
+            }
+
+            else{
+
+                finishGame();
+
+            }
+
+        },900);
+
+    }
+
+
+    /* =========================
+       WRONG
+    ========================= */
+
+    else{
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "❌ Wrong word!";
+
+
+        disableLetters();
+
+
+        restarting = true;
+
+
+        showRestartMessage(
+            "❌",
+            "Wrong Answer!",
+            "Your attempt has ended. The game will restart."
+        );
+
+
+        setTimeout(function(){
+
+            restartGame();
+
+        },1800);
+
+    }
+
+}
+
+
+/* =====================================================
+   DISABLE LETTERS
+===================================================== */
+
+function disableLetters(){
+
+    document
+        .querySelectorAll(".letter")
+        .forEach(function(button){
+
+            button.disabled = true;
+
+        });
+}
+
+
+/* =====================================================
+   FINISH GAME
+===================================================== */
+
+function finishGame(){
+
+    clearInterval(timerInterval);
+
+
+    document.getElementById(
+        "game"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "block";
+
+
+    const earnedXP =
+        score * 20;
+
+
+    const earnedCoins =
+        score * 5;
+
+
+    const accuracy =
+        Math.round(
+            (
+                score /
+                questions.length
+            ) * 100
+        );
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "earnedXP"
+    ).textContent =
+        earnedXP;
+
+
+    document.getElementById(
+        "earnedCoins"
+    ).textContent =
+        earnedCoins;
+
+
+    document.getElementById(
+        "accuracy"
+    ).textContent =
+        accuracy + "%";
+
+
+    /* =========================
+       XP
+    ========================= */
+
+    const oldXP =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesXP",
+        oldXP + earnedXP
+    );
+
+
+    /* =========================
+       COINS
+    ========================= */
+
+    const oldCoins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesCoins",
+        oldCoins + earnedCoins
+    );
+
+
+    /* =========================
+       COMPLETED GAME
+    ========================= */
+
+    let completed =
+        Number(
+            localStorage.getItem(
+                "brightGamesCompleted"
+            )
+        ) || 0;
+
+
+    let completedList =
+        JSON.parse(
+            localStorage.getItem(
+                "brightGamesCompletedList"
+            )
+        ) || [];
+
+
+    if(
+        !completedList.includes(
+            "word-scramble"
+        )
+    ){
+
+        completedList.push(
+            "word-scramble"
+        );
+
+
+        completed++;
+
+
+        localStorage.setItem(
+            "brightGamesCompleted",
+            Math.min(
+                completed,
+                10
+            )
+        );
+
+
+        localStorage.setItem(
+            "brightGamesCompletedList",
+            JSON.stringify(
+                completedList
+            )
+        );
+
+    }
+
+
+    loadPlayerData();
+}
+
+
+/* =====================================================
+   RESTART
+===================================================== */
+
+function restartGame(){
+
+    clearInterval(timerInterval);
+
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    selectedLetters = [];
+
+    answered = false;
+
+    restarting = false;
+
+
+    hideRestartMessage();
+
+
+    document.getElementById(
+        "game"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display = "inline-block";
+
+
+    document.getElementById(
+        "result"
+    ).style.display = "none";
+
+
+    showQuestion();
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadPlayerData();
+
+showQuestion();
+
+</script>
+
+
+
+
+
+<script>
+(function () {
+    function addBackToMenu() {
+        if (document.getElementById("bright-back-menu")) return;
+
+        const button = document.createElement("button");
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        /*
+         * Put the button after the main game content.
+         * We look for common game containers first.
+         */
+        const selectors = [
+            ".game-container",
+            ".game-content",
+            ".game-area",
+            "#game",
+            "#game-container",
+            "main"
+        ];
+
+        let target = null;
+
+        for (const selector of selectors) {
+            const element = document.querySelector(selector);
+            if (element) {
+                target = element;
+                break;
+            }
+        }
+
+        if (target) {
+            target.appendChild(button);
+        } else {
+            document.body.appendChild(button);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", addBackToMenu);
+    } else {
+        addBackToMenu();
+    }
+})();
+</script>
+
+
+<script>
+/* =====================================
+   BRIGHT GAMES - BACK TO MENU
+   FINAL VERSION
+===================================== */
+
+(function () {
+
+    function createBackMenu() {
+
+        if (document.getElementById("bright-back-menu")) {
+            return;
+        }
+
+        var button = document.createElement("button");
+
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+        button.setAttribute("aria-label", "Back to Bright Games menu");
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.onclick = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Always return to the Bright Games main menu.
+            window.location.assign("./index.html");
+        };
+
+        // IMPORTANT:
+        // Put the button directly in BODY, outside the game's dynamic container.
+        document.body.appendChild(button);
+    }
+
+    function start() {
+        createBackMenu();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+
+})();
+</script>
+
+</body>
+
+</html>
+```

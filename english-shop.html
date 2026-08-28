@@ -1,0 +1,1508 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English Shop | Bright Games</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:Arial,sans-serif;
+min-height:100vh;
+background:radial-gradient(circle at top,#ff9f1c,#713600 75%);
+color:#17213b;
+}
+
+.topbar{
+min-height:70px;
+padding:14px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.3);
+color:white;
+}
+
+.logo{
+font-size:22px;
+font-weight:900;
+}
+
+.stats{
+display:flex;
+gap:18px;
+font-size:14px;
+font-weight:bold;
+}
+
+.wrapper{
+width:min(1000px,94%);
+margin:30px auto 50px;
+}
+
+.header{
+text-align:center;
+color:white;
+margin-bottom:20px;
+}
+
+.badge{
+display:inline-block;
+padding:8px 17px;
+border-radius:30px;
+background:#ffd21f;
+color:#111;
+font-size:12px;
+font-weight:900;
+margin-bottom:10px;
+}
+
+.header h1{
+font-size:clamp(38px,7vw,60px);
+}
+
+.subtitle{
+margin-top:7px;
+opacity:.9;
+}
+
+.info{
+display:flex;
+justify-content:space-between;
+gap:10px;
+color:white;
+font-weight:900;
+margin-bottom:8px;
+}
+
+.level{
+color:#ffd21f;
+}
+
+.progress{
+height:9px;
+background:rgba(255,255,255,.2);
+border-radius:20px;
+overflow:hidden;
+margin-bottom:14px;
+}
+
+#progressBar{
+height:100%;
+width:3.33%;
+background:#ffd21f;
+}
+
+.timer{
+text-align:center;
+margin-bottom:14px;
+}
+
+#timer{
+display:inline-block;
+background:white;
+color:#e67d00;
+padding:9px 24px;
+border-radius:30px;
+font-size:21px;
+font-weight:900;
+}
+
+#timer.warning{
+background:#ffd21f;
+color:#111;
+}
+
+#timer.danger{
+background:#d62828;
+color:white;
+}
+
+.card{
+background:#f8fbff;
+border-radius:28px;
+padding:30px;
+box-shadow:0 25px 70px rgba(0,0,0,.4);
+}
+
+.shop{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:18px;
+margin-bottom:20px;
+}
+
+.shop-icon{
+font-size:70px;
+}
+
+.money{
+padding:10px 18px;
+background:#e8fff0;
+border-radius:20px;
+font-weight:900;
+color:#16803c;
+}
+
+.question-number{
+text-align:center;
+color:#e67d00;
+font-size:13px;
+font-weight:900;
+}
+
+.type{
+width:max-content;
+margin:8px auto 15px;
+padding:7px 15px;
+border-radius:20px;
+background:#fff1dc;
+color:#e67d00;
+font-size:11px;
+font-weight:900;
+}
+
+.question{
+text-align:center;
+font-size:clamp(21px,4vw,29px);
+font-weight:900;
+line-height:1.4;
+margin-bottom:22px;
+}
+
+.item{
+width:120px;
+height:120px;
+margin:0 auto 20px;
+border-radius:20px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:65px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.price{
+text-align:center;
+font-size:24px;
+font-weight:900;
+margin-bottom:20px;
+color:#16803c;
+}
+
+.answers{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:13px;
+max-width:700px;
+margin:auto;
+}
+
+.answer{
+min-height:60px;
+border:3px solid #f0dfc7;
+background:white;
+border-radius:15px;
+font-size:17px;
+font-weight:800;
+cursor:pointer;
+padding:10px;
+transition:.18s;
+}
+
+.answer:hover{
+transform:translateY(-3px);
+border-color:#e67d00;
+}
+
+.answer.correct{
+background:#c9f7d5;
+border-color:#24a148;
+}
+
+.answer.wrong{
+background:#ffd2d2;
+border-color:#d62828;
+}
+
+.answer:disabled{
+cursor:not-allowed;
+}
+
+.feedback{
+min-height:32px;
+text-align:center;
+margin-top:17px;
+font-size:18px;
+font-weight:900;
+}
+
+.result{
+display:none;
+text-align:center;
+padding:20px;
+}
+
+.result-icon{
+font-size:80px;
+}
+
+.result h2{
+font-size:35px;
+margin:10px 0 15px;
+}
+
+.result p{
+font-size:18px;
+margin:9px;
+}
+
+.main{
+border:0;
+border-radius:13px;
+padding:14px 25px;
+font-weight:900;
+cursor:pointer;
+margin:8px;
+background:#e67d00;
+color:white;
+}
+
+.yellow{
+background:#ffd21f;
+color:#111;
+}
+
+.overlay{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.78);
+z-index:99;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.popup{
+background:white;
+border-radius:25px;
+padding:35px 25px;
+text-align:center;
+width:min(430px,94%);
+}
+
+.popup-icon{
+font-size:65px;
+}
+
+.popup h2{
+margin:10px 0;
+font-size:28px;
+}
+
+.popup p{
+color:#555;
+}
+
+footer{
+text-align:center;
+color:white;
+opacity:.7;
+padding:30px;
+}
+
+@media(max-width:600px){
+
+.topbar{
+flex-direction:column;
+gap:10px;
+}
+
+.stats{
+font-size:12px;
+gap:10px;
+}
+
+.card{
+padding:20px;
+}
+
+.answers{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+
+<style>
+
+/* =====================================
+   BRIGHT GAMES - FINAL BACK TO MENU
+===================================== */
+
+.bright-back-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    box-sizing: border-box !important;
+    width: min(280px, 90%) !important;
+
+    margin: 30px auto 25px !important;
+    padding: 14px 22px !important;
+
+    border: none !important;
+    border-radius: 14px !important;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+    color: #FFFFFF !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+
+    box-shadow: 0 7px 18px rgba(37,99,235,.30) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.bright-back-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37,99,235,.40) !important;
+}
+
+.bright-back-menu:active {
+    transform: translateY(0);
+}
+
+.bright-back-menu .back-arrow {
+    font-size: 21px;
+    line-height: 1;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+<div class="logo">
+🎮 Bright Games
+</div>
+
+<div class="stats">
+
+<span>
+⭐ <b id="xp">0</b> XP
+</span>
+
+<span>
+🪙 <b id="coins">0</b>
+</span>
+
+<span>
+🏆 Level <b id="playerLevel">1</b>
+</span>
+
+</div>
+
+</header>
+
+
+<main class="wrapper">
+
+
+<section class="header">
+
+<span class="badge">
+🛒 ENGLISH SHOP
+</span>
+
+<h1>
+English Shop
+</h1>
+
+<p class="subtitle">
+Shop, calculate and speak English!
+</p>
+
+</section>
+
+
+<div class="info">
+
+<span class="level" id="levelName">
+Level 1
+</span>
+
+<span id="counter">
+Question 1 / 30
+</span>
+
+<span>
+Score: <b id="score">0</b>
+</span>
+
+</div>
+
+
+<div class="progress">
+<div id="progressBar"></div>
+</div>
+
+
+<div class="timer">
+<span id="timer">⏱️ 20</span>
+</div>
+
+
+<section class="card">
+
+
+<div id="gameContent">
+
+
+<div class="shop">
+
+<div class="shop-icon">
+🛒
+</div>
+
+<div class="money">
+💵 $<span id="money">50</span>
+</div>
+
+</div>
+
+
+<div class="question-number"
+id="questionNumber">
+
+QUESTION 1
+
+</div>
+
+
+<div class="type"
+id="type">
+
+SHOPPING
+
+</div>
+
+
+<div class="item"
+id="item">
+
+🍎
+
+</div>
+
+
+<div class="question"
+id="question">
+
+How much is the apple?
+
+</div>
+
+
+<div class="price"
+id="price">
+
+$2
+
+</div>
+
+
+<div class="answers"
+id="answers"></div>
+
+
+<div class="feedback"
+id="feedback"></div>
+
+
+</div>
+
+
+<div class="result"
+id="result">
+
+<div class="result-icon">
+🛍️
+</div>
+
+<h2>
+English Shop Complete!
+</h2>
+
+<p>
+Final Score:
+<strong id="finalScore">0</strong> / 30
+</p>
+
+<p>
+⭐ XP Earned:
+<strong id="earnedXP">0</strong>
+</p>
+
+<p>
+🪙 Coins Earned:
+<strong id="earnedCoins">0</strong>
+</p>
+
+<p>
+🎯 Accuracy:
+<strong id="accuracy">0%</strong>
+</p>
+
+<button
+class="main yellow"
+onclick="restartGame()">
+
+🔄 PLAY AGAIN
+
+</button>
+
+<button
+class="main"
+onclick="goHome()">
+
+🏠 BRIGHT GAMES
+
+</button>
+
+</div>
+
+</section>
+
+</main>
+
+
+<div class="overlay" id="overlay">
+
+<div class="popup">
+
+<div class="popup-icon" id="popupIcon">
+❌
+</div>
+
+<h2 id="popupTitle">
+Wrong Answer!
+</h2>
+
+<p id="popupText">
+The shop challenge will restart.
+</p>
+
+</div>
+
+</div>
+
+
+<footer>
+
+🎮 Bright Games<br>
+Bright English Academy<br><br>
+Created by José Simeão
+
+</footer>
+
+
+<script>
+
+
+/* =====================================================
+30 SHOPPING CHALLENGES
+5 LEVELS
+===================================================== */
+
+const questions=[
+
+/* LEVEL 1 */
+
+{
+level:1,
+type:"SHOPPING BASICS",
+item:"🍎",
+q:"How much is the apple?",
+price:"$2",
+a:"Two dollars",
+o:["Two dollars","Five dollars","Ten dollars","One dollar"]
+},
+
+{
+level:1,
+type:"SHOPPING BASICS",
+item:"🥛",
+q:"How much is the milk?",
+price:"$3",
+a:"Three dollars",
+o:["One dollar","Three dollars","Six dollars","Ten dollars"]
+},
+
+{
+level:1,
+type:"SHOPPING BASICS",
+item:"🍞",
+q:"How much is the bread?",
+price:"$4",
+a:"Four dollars",
+o:["Four dollars","Two dollars","Eight dollars","Ten dollars"]
+},
+
+{
+level:1,
+type:"SHOPPING BASICS",
+item:"🍌",
+q:"How much are the bananas?",
+price:"$5",
+a:"Five dollars",
+o:["Three dollars","Five dollars","Seven dollars","Ten dollars"]
+},
+
+{
+level:1,
+type:"SHOPPING BASICS",
+item:"🥚",
+q:"How much are the eggs?",
+price:"$6",
+a:"Six dollars",
+o:["Two dollars","Four dollars","Six dollars","Nine dollars"]
+},
+
+{
+level:1,
+type:"SHOPPING BASICS",
+item:"🧃",
+q:"How much is the juice?",
+price:"$7",
+a:"Seven dollars",
+o:["Seven dollars","Five dollars","Three dollars","Ten dollars"]
+},
+
+
+/* LEVEL 2 */
+
+{
+level:2,
+type:"MONEY MATH",
+item:"🍕",
+q:"A pizza costs $8. You pay $10. How much change do you get?",
+price:"$8",
+a:"$2",
+o:["$1","$2","$3","$5"]
+},
+
+{
+level:2,
+type:"MONEY MATH",
+item:"🍔",
+q:"A burger costs $6. You pay $10. What is your change?",
+price:"$6",
+a:"$4",
+o:["$2","$3","$4","$6"]
+},
+
+{
+level:2,
+type:"MONEY MATH",
+item:"🥤",
+q:"A drink costs $3. You pay $5. What is your change?",
+price:"$3",
+a:"$2",
+o:["$1","$2","$3","$4"]
+},
+
+{
+level:2,
+type:"MONEY MATH",
+item:"🍪",
+q:"Cookies cost $4. You buy two packs. How much?",
+price:"$4 each",
+a:"$8",
+o:["$6","$7","$8","$10"]
+},
+
+{
+level:2,
+type:"MONEY MATH",
+item:"🍫",
+q:"A chocolate costs $3. You buy three. Total?",
+price:"$3 each",
+a:"$9",
+o:["$6","$8","$9","$12"]
+},
+
+{
+level:2,
+type:"MONEY MATH",
+item:"🥪",
+q:"A sandwich costs $5. You buy two. Total?",
+price:"$5 each",
+a:"$10",
+o:["$7","$8","$10","$15"]
+},
+
+
+/* LEVEL 3 */
+
+{
+level:3,
+type:"SHOPPING ENGLISH",
+item:"👕",
+q:"Which sentence is correct?",
+price:"$15",
+a:"I'd like this shirt, please.",
+o:[
+"I'd like this shirt, please.",
+"I like buy this shirt.",
+"I want buying shirt.",
+"I'd this shirt like."
+]
+},
+
+{
+level:3,
+type:"SHOPPING ENGLISH",
+item:"👟",
+q:"Which question is correct?",
+price:"$30",
+a:"How much are these shoes?",
+o:[
+"How much are these shoes?",
+"How many is these shoes?",
+"How much is these shoes?",
+"How are much shoes?"
+]
+},
+
+{
+level:3,
+type:"SHOPPING ENGLISH",
+item:"🎒",
+q:"What do you say when you want to know the price?",
+price:"$20",
+a:"How much is it?",
+o:[
+"How much is it?",
+"How old is it?",
+"How many is it?",
+"How long is it?"
+]
+},
+
+{
+level:3,
+type:"SHOPPING ENGLISH",
+item:"🧢",
+q:"Choose the best reply: 'Can I help you?'",
+price:"$10",
+a:"Yes, I'm looking for a cap.",
+o:[
+"Yes, I'm looking for a cap.",
+"No, I am ten.",
+"I have a cap yesterday.",
+"Yes, it is Monday."
+]
+},
+
+{
+level:3,
+type:"SHOPPING ENGLISH",
+item:"🧥",
+q:"Choose the correct sentence.",
+price:"$40",
+a:"Can I try it on?",
+o:[
+"Can I try it on?",
+"Can I try on it?",
+"Can I trying it?",
+"Can I tried it?"
+]
+},
+
+{
+level:3,
+type:"SHOPPING ENGLISH",
+item:"⌚",
+q:"Choose the correct sentence.",
+price:"$50",
+a:"Do you accept cards?",
+o:[
+"Do you accept cards?",
+"Do you accepting cards?",
+"Does you accept cards?",
+"Are you accept cards?"
+]
+},
+
+
+/* LEVEL 4 */
+
+{
+level:4,
+type:"SMART SHOPPER",
+item:"🛒",
+q:"A shirt is $20 and trousers are $30. What is the total?",
+price:"$20 + $30",
+a:"$50",
+o:["$40","$45","$50","$60"]
+},
+
+{
+level:4,
+type:"SMART SHOPPER",
+item:"🛍️",
+q:"You have $100 and spend $65. How much is left?",
+price:"$100 - $65",
+a:"$35",
+o:["$25","$30","$35","$45"]
+},
+
+{
+level:4,
+type:"SMART SHOPPER",
+item:"🍎",
+q:"Apples cost $2 each. How much are 5 apples?",
+price:"$2 each",
+a:"$10",
+o:["$7","$8","$10","$12"]
+},
+
+{
+level:4,
+type:"SMART SHOPPER",
+item:"🥤",
+q:"A drink is $4. A sandwich is $7. What is the total?",
+price:"$4 + $7",
+a:"$11",
+o:["$9","$10","$11","$12"]
+},
+
+{
+level:4,
+type:"SMART SHOPPER",
+item:"🍕",
+q:"A pizza is $12. You have $20. Can you buy it?",
+price:"$12",
+a:"Yes, I can.",
+o:[
+"Yes, I can.",
+"No, I can't.",
+"Yes, I did.",
+"No, I am."
+]
+},
+
+{
+level:4,
+type:"SMART SHOPPER",
+item:"🎁",
+q:"A gift costs $18. You pay $20. What change do you get?",
+price:"$18",
+a:"$2",
+o:["$1","$2","$3","$4"]
+},
+
+
+/* LEVEL 5 */
+
+{
+level:5,
+type:"FINAL SHOP BOSS",
+item:"🛒",
+q:"Which sentence sounds most natural in a shop?",
+price:"Challenge",
+a:"I'd like to buy this, please.",
+o:[
+"I'd like to buy this, please.",
+"I like buy this now.",
+"I buying this please.",
+"I'd buying this."
+]
+},
+
+{
+level:5,
+type:"FINAL SHOP BOSS",
+item:"💳",
+q:"The price is $75. You pay $100. What change should you receive?",
+price:"$75",
+a:"$25",
+o:["$15","$20","$25","$30"]
+},
+
+{
+level:5,
+type:"FINAL SHOP BOSS",
+item:"🛍️",
+q:"You buy a $25 jacket and a $15 shirt. Total?",
+price:"$25 + $15",
+a:"$40",
+o:["$30","$35","$40","$45"]
+},
+
+{
+level:5,
+type:"FINAL SHOP BOSS",
+item:"🏪",
+q:"What is the best question when asking for a cheaper price?",
+price:"Challenge",
+a:"Is there a discount?",
+o:[
+"Is there a discount?",
+"Is there a yesterday?",
+"Is there a money?",
+"Is there a shopping?"
+]
+},
+
+{
+level:5,
+type:"FINAL SHOP BOSS",
+item:"💰",
+q:"You have $50. You buy items costing $12, $8 and $15. How much remains?",
+price:"$50 - $35",
+a:"$15",
+o:["$10","$12","$15","$20"]
+},
+
+{
+level:5,
+type:"FINAL SHOP BOSS",
+item:"🏆",
+q:"Choose the correct sentence.",
+price:"Final Challenge",
+a:"Could I have a receipt, please?",
+o:[
+"Could I have a receipt, please?",
+"Could I having receipt?",
+"Could I has a receipt?",
+"Could have I receipt?"
+]
+}
+
+];
+
+
+let current=0;
+let score=0;
+let time=20;
+let timer=null;
+let answered=false;
+let restarting=false;
+
+
+/* SHUFFLE */
+
+function shuffle(arr){
+
+let x=[...arr];
+
+for(let i=x.length-1;i>0;i--){
+
+let j=Math.floor(Math.random()*(i+1));
+
+[x[i],x[j]]=[x[j],x[i]];
+
+}
+
+return x;
+
+}
+
+
+/* PLAYER */
+
+function loadPlayer(){
+
+let xp=
+Number(localStorage.getItem("brightGamesXP"))||0;
+
+let coins=
+Number(localStorage.getItem("brightGamesCoins"))||0;
+
+document.getElementById("xp").textContent=xp;
+
+document.getElementById("coins").textContent=coins;
+
+document.getElementById("playerLevel").textContent=
+Math.floor(xp/500)+1;
+
+}
+
+
+/* SHOW */
+
+function showQuestion(){
+
+answered=false;
+restarting=false;
+
+let q=questions[current];
+
+document.getElementById("questionNumber").textContent=
+"QUESTION "+(current+1);
+
+document.getElementById("counter").textContent=
+"Question "+(current+1)+" / 30";
+
+document.getElementById("levelName").textContent=
+"Level "+q.level;
+
+document.getElementById("type").textContent=q.type;
+
+document.getElementById("item").textContent=q.item;
+
+document.getElementById("question").textContent=q.q;
+
+document.getElementById("price").textContent=q.price;
+
+document.getElementById("score").textContent=score;
+
+document.getElementById("feedback").textContent="";
+
+document.getElementById("progressBar").style.width=
+((current+1)/30*100)+"%";
+
+createAnswers(q);
+
+startTimer();
+
+}
+
+
+/* ANSWERS */
+
+function createAnswers(q){
+
+let box=document.getElementById("answers");
+
+box.innerHTML="";
+
+shuffle(q.o).forEach(option=>{
+
+let btn=document.createElement("button");
+
+btn.className="answer";
+
+btn.textContent=option;
+
+btn.onclick=()=>checkAnswer(option,btn);
+
+box.appendChild(btn);
+
+});
+
+}
+
+
+/* CHECK */
+
+function checkAnswer(selected,btn){
+
+if(answered||restarting)return;
+
+answered=true;
+
+clearInterval(timer);
+
+let q=questions[current];
+
+if(selected===q.a){
+
+btn.classList.add("correct");
+
+document.getElementById("feedback").textContent=
+"✅ Correct! Great shopping!";
+
+document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+
+setTimeout(()=>{
+
+current++;
+
+if(current<questions.length){
+
+showQuestion();
+
+}else{
+
+finishGame();
+
+}
+
+},650);
+
+}else{
+
+btn.classList.add("wrong");
+
+document.getElementById("feedback").textContent=
+"❌ Wrong!";
+
+restarting=true;
+
+document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+
+showRestart(
+"💸",
+"Shopping Challenge Failed!",
+"The shop will restart from Question 1."
+);
+
+setTimeout(restartGame,1800);
+
+}
+
+}
+
+
+/* TIMER */
+
+function startTimer(){
+
+clearInterval(timer);
+
+time=20;
+
+updateTimer();
+
+timer=setInterval(()=>{
+
+time--;
+
+updateTimer();
+
+if(time<=0){
+
+clearInterval(timer);
+
+timeOut();
+
+}
+
+},1000);
+
+}
+
+
+function updateTimer(){
+
+let el=document.getElementById("timer");
+
+el.textContent="⏱️ "+time;
+
+el.classList.remove("warning","danger");
+
+if(time<=7)el.classList.add("warning");
+
+if(time<=3){
+
+el.classList.remove("warning");
+
+el.classList.add("danger");
+
+}
+
+}
+
+
+/* TIME OUT */
+
+function timeOut(){
+
+if(answered||restarting)return;
+
+answered=true;
+restarting=true;
+
+document.querySelectorAll(".answer").forEach(b=>b.disabled=true);
+
+showRestart(
+"⏰",
+"Time's Up!",
+"The shopping game will restart."
+);
+
+setTimeout(restartGame,1800);
+
+}
+
+
+/* POPUP */
+
+function showRestart(icon,title,text){
+
+document.getElementById("popupIcon").textContent=icon;
+
+document.getElementById("popupTitle").textContent=title;
+
+document.getElementById("popupText").textContent=text;
+
+document.getElementById("overlay").style.display="flex";
+
+}
+
+function hideRestart(){
+
+document.getElementById("overlay").style.display="none";
+
+}
+
+
+/* FINISH */
+
+function finishGame(){
+
+clearInterval(timer);
+
+document.getElementById("gameContent").style.display="none";
+
+document.getElementById("timer").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+let xp=score*20;
+
+let coins=score*5;
+
+let accuracy=Math.round(score/30*100);
+
+document.getElementById("finalScore").textContent=score;
+
+document.getElementById("earnedXP").textContent=xp;
+
+document.getElementById("earnedCoins").textContent=coins;
+
+document.getElementById("accuracy").textContent=accuracy+"%";
+
+
+let oldXP=
+Number(localStorage.getItem("brightGamesXP"))||0;
+
+let oldCoins=
+Number(localStorage.getItem("brightGamesCoins"))||0;
+
+localStorage.setItem(
+"brightGamesXP",
+oldXP+xp
+);
+
+localStorage.setItem(
+"brightGamesCoins",
+oldCoins+coins
+);
+
+
+let completed=
+Number(localStorage.getItem("brightGamesCompleted"))||0;
+
+let list=
+JSON.parse(
+localStorage.getItem("brightGamesCompletedList")
+)||[];
+
+
+if(!list.includes("english-shop")){
+
+list.push("english-shop");
+
+completed++;
+
+localStorage.setItem(
+"brightGamesCompleted",
+Math.min(completed,10)
+);
+
+localStorage.setItem(
+"brightGamesCompletedList",
+JSON.stringify(list)
+);
+
+}
+
+loadPlayer();
+
+}
+
+
+/* RESTART */
+
+function restartGame(){
+
+clearInterval(timer);
+
+current=0;
+score=0;
+answered=false;
+restarting=false;
+
+hideRestart();
+
+document.getElementById("gameContent").style.display="block";
+
+document.getElementById("timer").style.display="inline-block";
+
+document.getElementById("result").style.display="none";
+
+showQuestion();
+
+}
+
+
+/* HOME */
+
+function goHome(){
+
+window.location.href="index.html";
+
+}
+
+
+/* START */
+
+loadPlayer();
+
+showQuestion();
+
+</script>
+
+
+
+
+
+<script>
+(function () {
+    function addBackToMenu() {
+        if (document.getElementById("bright-back-menu")) return;
+
+        const button = document.createElement("button");
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        /*
+         * Put the button after the main game content.
+         * We look for common game containers first.
+         */
+        const selectors = [
+            ".game-container",
+            ".game-content",
+            ".game-area",
+            "#game",
+            "#game-container",
+            "main"
+        ];
+
+        let target = null;
+
+        for (const selector of selectors) {
+            const element = document.querySelector(selector);
+            if (element) {
+                target = element;
+                break;
+            }
+        }
+
+        if (target) {
+            target.appendChild(button);
+        } else {
+            document.body.appendChild(button);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", addBackToMenu);
+    } else {
+        addBackToMenu();
+    }
+})();
+</script>
+
+
+<script>
+/* =====================================
+   BRIGHT GAMES - BACK TO MENU
+   FINAL VERSION
+===================================== */
+
+(function () {
+
+    function createBackMenu() {
+
+        if (document.getElementById("bright-back-menu")) {
+            return;
+        }
+
+        var button = document.createElement("button");
+
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+        button.setAttribute("aria-label", "Back to Bright Games menu");
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.onclick = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Always return to the Bright Games main menu.
+            window.location.assign("./index.html");
+        };
+
+        // IMPORTANT:
+        // Put the button directly in BODY, outside the game's dynamic container.
+        document.body.appendChild(button);
+    }
+
+    function start() {
+        createBackMenu();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+
+})();
+</script>
+
+</body>
+</html>
+```

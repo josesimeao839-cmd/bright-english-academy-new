@@ -1,0 +1,2043 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Speed English | Bright Games</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    color:#17213b;
+
+    background:
+        radial-gradient(circle at top,#2382e8,#071b55 75%);
+}
+
+
+/* TOP BAR */
+
+.topbar{
+    min-height:72px;
+    padding:14px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(0,0,0,.28);
+    color:white;
+
+    backdrop-filter:blur(12px);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+}
+
+.stats{
+    display:flex;
+    gap:18px;
+
+    font-size:15px;
+    font-weight:bold;
+}
+
+
+/* WRAPPER */
+
+.wrapper{
+    width:min(1000px,94%);
+    margin:30px auto 50px;
+}
+
+
+/* HEADER */
+
+.header{
+    text-align:center;
+    color:white;
+
+    margin-bottom:25px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 17px;
+
+    border-radius:30px;
+
+    background:#ffd21f;
+    color:#111;
+
+    font-size:12px;
+    font-weight:900;
+
+    margin-bottom:12px;
+}
+
+.header h1{
+    font-size:clamp(35px,7vw,58px);
+    margin-bottom:8px;
+}
+
+.subtitle{
+    opacity:.85;
+}
+
+
+/* GAME INFO */
+
+.game-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:8px;
+
+    color:white;
+    font-weight:800;
+}
+
+.level-name{
+    color:#ffd21f;
+}
+
+.progress{
+    width:100%;
+    height:9px;
+
+    background:rgba(255,255,255,.2);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+}
+
+#progressBar{
+    width:3.33%;
+    height:100%;
+
+    background:#ffd21f;
+
+    transition:.3s;
+}
+
+
+/* TIMER */
+
+.timer-area{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.timer{
+    display:inline-block;
+
+    min-width:110px;
+
+    padding:9px 22px;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#1261c9;
+
+    font-size:21px;
+    font-weight:900;
+}
+
+.timer.warning{
+    background:#ffd21f;
+    color:#111;
+}
+
+.timer.danger{
+    background:#d62828;
+    color:white;
+}
+
+
+/* GAME CARD */
+
+.game-card{
+    background:#f8fbff;
+
+    border-radius:28px;
+
+    padding:28px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35);
+}
+
+
+/* QUESTION */
+
+.question-number{
+    text-align:center;
+
+    color:#1261c9;
+
+    font-size:13px;
+
+    font-weight:900;
+
+    margin-bottom:8px;
+}
+
+.challenge-type{
+    width:max-content;
+
+    margin:0 auto 15px;
+
+    padding:7px 15px;
+
+    border-radius:20px;
+
+    background:#e8f1ff;
+
+    color:#1261c9;
+
+    font-size:11px;
+
+    font-weight:900;
+}
+
+.question{
+    text-align:center;
+
+    font-size:clamp(21px,4vw,29px);
+
+    font-weight:900;
+
+    line-height:1.4;
+
+    margin-bottom:25px;
+}
+
+
+/* SPEED DISPLAY */
+
+.speed-display{
+    width:180px;
+    height:180px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e8f2ff
+        );
+
+    box-shadow:
+        inset 0 0 0 4px #d8e7fb,
+        0 15px 30px
+        rgba(0,0,0,.12);
+}
+
+.speed-icon{
+    font-size:90px;
+}
+
+
+/* ANSWERS */
+
+.answers{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+
+    max-width:720px;
+
+    margin:auto;
+}
+
+.answer{
+    min-height:70px;
+
+    border:3px solid #dbe7f6;
+
+    border-radius:16px;
+
+    background:white;
+
+    color:#17213b;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    padding:12px;
+
+    transition:.18s;
+}
+
+.answer:hover{
+    transform:translateY(-3px);
+
+    border-color:#1261c9;
+
+    box-shadow:
+        0 8px 18px
+        rgba(18,97,201,.15);
+}
+
+.answer:disabled{
+    cursor:not-allowed;
+}
+
+.answer.correct{
+    background:#c9f7d5;
+    border-color:#24a148;
+}
+
+.answer.wrong{
+    background:#ffd2d2;
+    border-color:#d62828;
+}
+
+
+/* FEEDBACK */
+
+.feedback{
+    min-height:32px;
+
+    text-align:center;
+
+    margin-top:18px;
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+
+/* RESULT */
+
+.result{
+    display:none;
+
+    text-align:center;
+
+    padding:20px 5px;
+}
+
+.result-icon{
+    font-size:80px;
+}
+
+.result h2{
+    font-size:36px;
+
+    margin:10px 0 15px;
+}
+
+.result p{
+    font-size:18px;
+
+    margin:9px;
+}
+
+.buttons{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.main-button{
+    border:0;
+
+    border-radius:13px;
+
+    padding:14px 25px;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    background:#1261c9;
+
+    color:white;
+}
+
+.main-button.yellow{
+    background:#ffd21f;
+    color:#111;
+}
+
+
+/* RESTART */
+
+.restart-overlay{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,.75);
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+}
+
+.restart-box{
+    width:min(430px,94%);
+
+    padding:35px 25px;
+
+    background:white;
+
+    border-radius:25px;
+
+    text-align:center;
+}
+
+.restart-icon{
+    font-size:65px;
+}
+
+.restart-box h2{
+    margin:10px 0;
+
+    font-size:28px;
+}
+
+.restart-box p{
+    color:#555;
+}
+
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    color:white;
+
+    opacity:.75;
+
+    padding:25px;
+
+    font-size:14px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .topbar{
+        flex-direction:column;
+    }
+
+    .stats{
+        gap:10px;
+        font-size:12px;
+    }
+
+    .game-card{
+        padding:18px;
+    }
+
+    .answers{
+        grid-template-columns:1fr;
+    }
+
+    .speed-display{
+        width:145px;
+        height:145px;
+    }
+
+    .speed-icon{
+        font-size:70px;
+    }
+
+}
+
+</style>
+
+
+<style>
+
+/* =====================================
+   BRIGHT GAMES - FINAL BACK TO MENU
+===================================== */
+
+.bright-back-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    box-sizing: border-box !important;
+    width: min(280px, 90%) !important;
+
+    margin: 30px auto 25px !important;
+    padding: 14px 22px !important;
+
+    border: none !important;
+    border-radius: 14px !important;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+    color: #FFFFFF !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+
+    box-shadow: 0 7px 18px rgba(37,99,235,.30) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.bright-back-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37,99,235,.40) !important;
+}
+
+.bright-back-menu:active {
+    transform: translateY(0);
+}
+
+.bright-back-menu .back-arrow {
+    font-size: 21px;
+    line-height: 1;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+    <div class="logo">
+        🎮 Bright Games
+    </div>
+
+    <div class="stats">
+
+        <span>
+            ⭐ <b id="xp">0</b> XP
+        </span>
+
+        <span>
+            🪙 <b id="coins">0</b>
+        </span>
+
+        <span>
+            🏆 Level <b id="level">1</b>
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<main class="wrapper">
+
+
+<section class="header">
+
+    <span class="badge">
+        ⚡ SPEED ENGLISH
+    </span>
+
+    <h1>
+        Speed English
+    </h1>
+
+    <p class="subtitle">
+        Think fast. Answer fast. Learn faster!
+    </p>
+
+</section>
+
+
+
+<div class="game-info">
+
+    <span
+        class="level-name"
+        id="levelName">
+
+        Level 1
+
+    </span>
+
+    <span id="questionCounter">
+        Question 1 / 30
+    </span>
+
+    <span>
+        Score:
+        <b id="score">0</b>
+    </span>
+
+</div>
+
+
+<div class="progress">
+
+    <div id="progressBar"></div>
+
+</div>
+
+
+<div class="timer-area">
+
+    <div
+        class="timer"
+        id="timer">
+
+        ⏱️ 20
+
+    </div>
+
+</div>
+
+
+
+<section class="game-card">
+
+
+<div id="gameContent">
+
+
+    <div
+        class="question-number"
+        id="questionNumber">
+
+        QUESTION 1
+
+    </div>
+
+
+    <div
+        class="challenge-type"
+        id="challengeType">
+
+        QUICK CHOICE
+
+    </div>
+
+
+    <div class="speed-display">
+
+        <span
+            class="speed-icon"
+            id="speedIcon">
+
+            ⚡
+
+        </span>
+
+    </div>
+
+
+    <div
+        class="question"
+        id="question">
+
+        Choose the correct answer.
+
+    </div>
+
+
+    <div
+        class="answers"
+        id="answers">
+
+    </div>
+
+
+    <div
+        class="feedback"
+        id="feedback">
+
+    </div>
+
+
+</div>
+
+
+
+<div
+    class="result"
+    id="result">
+
+    <div class="result-icon">
+        🏆
+    </div>
+
+    <h2>
+        Speed English Complete!
+    </h2>
+
+    <p>
+        Final Score:
+        <strong id="finalScore">0</strong>
+        / 30
+    </p>
+
+    <p>
+        ⭐ XP Earned:
+        <strong id="earnedXP">0</strong>
+    </p>
+
+    <p>
+        🪙 Coins Earned:
+        <strong id="earnedCoins">0</strong>
+    </p>
+
+    <p>
+        🎯 Accuracy:
+        <strong id="accuracy">0%</strong>
+    </p>
+
+
+    <div class="buttons">
+
+        <button
+            class="main-button yellow"
+            onclick="restartGame()">
+
+            🔄 PLAY AGAIN
+
+        </button>
+
+
+        <button
+            class="main-button"
+            onclick="goHome()">
+
+            🏠 BRIGHT GAMES
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+
+<div
+    class="restart-overlay"
+    id="restartOverlay">
+
+    <div class="restart-box">
+
+        <div
+            class="restart-icon"
+            id="restartIcon">
+
+            ❌
+
+        </div>
+
+        <h2 id="restartTitle">
+            Wrong Answer!
+        </h2>
+
+        <p id="restartText">
+            The game will restart.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    🎮 Bright Games
+    <br>
+
+    Bright English Academy
+
+    <br><br>
+
+    Created by José Simeão
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   30 QUESTIONS
+   5 LEVELS × 6
+===================================================== */
+
+const questions = [
+
+/* LEVEL 1 */
+
+{
+    level:1,
+    type:"QUICK CHOICE",
+    icon:"👋",
+    question:"Which word means the opposite of 'good'?",
+    answer:"Bad",
+    options:["Bad","Big","Fast","New"]
+},
+
+{
+    level:1,
+    type:"QUICK CHOICE",
+    icon:"🍎",
+    question:"Which one is a fruit?",
+    answer:"Apple",
+    options:["Apple","Chair","Book","Shoe"]
+},
+
+{
+    level:1,
+    type:"QUICK CHOICE",
+    icon:"🐶",
+    question:"Which animal says 'woof'?",
+    answer:"Dog",
+    options:["Cat","Dog","Fish","Bird"]
+},
+
+{
+    level:1,
+    type:"QUICK CHOICE",
+    icon:"🏫",
+    question:"Where do students learn?",
+    answer:"School",
+    options:["Hospital","School","Market","Airport"]
+},
+
+{
+    level:1,
+    type:"QUICK CHOICE",
+    icon:"🌙",
+    question:"What appears in the sky at night?",
+    answer:"Moon",
+    options:["Sun","Moon","Cloud","Rainbow"]
+},
+
+{
+    level:1,
+    type:"QUICK CHOICE",
+    icon:"🔢",
+    question:"What number comes after nine?",
+    answer:"Ten",
+    options:["Eight","Nine","Ten","Eleven"]
+},
+
+
+/* LEVEL 2 */
+
+{
+    level:2,
+    type:"FAST GRAMMAR",
+    icon:"⚡",
+    question:"She ___ a student.",
+    answer:"is",
+    options:["is","are","am","be"]
+},
+
+{
+    level:2,
+    type:"FAST GRAMMAR",
+    icon:"⚡",
+    question:"They ___ football every Sunday.",
+    answer:"play",
+    options:["plays","play","playing","played"]
+},
+
+{
+    level:2,
+    type:"FAST GRAMMAR",
+    icon:"⚡",
+    question:"I ___ from Mozambique.",
+    answer:"am",
+    options:["is","are","am","be"]
+},
+
+{
+    level:2,
+    type:"FAST GRAMMAR",
+    icon:"⚡",
+    question:"He ___ coffee every morning.",
+    answer:"drinks",
+    options:["drink","drinks","drinking","drank"]
+},
+
+{
+    level:2,
+    type:"FAST GRAMMAR",
+    icon:"⚡",
+    question:"We ___ English at school.",
+    answer:"study",
+    options:["studies","study","studying","studied"]
+},
+
+{
+    level:2,
+    type:"FAST GRAMMAR",
+    icon:"⚡",
+    question:"There ___ two books on the table.",
+    answer:"are",
+    options:["is","are","am","be"]
+},
+
+
+/* LEVEL 3 */
+
+{
+    level:3,
+    type:"VOCABULARY RUSH",
+    icon:"🚀",
+    question:"Choose the synonym of 'happy'.",
+    answer:"Glad",
+    options:["Angry","Glad","Sad","Tired"]
+},
+
+{
+    level:3,
+    type:"VOCABULARY RUSH",
+    icon:"🚀",
+    question:"Choose the opposite of 'expensive'.",
+    answer:"Cheap",
+    options:["Rich","Cheap","Large","Heavy"]
+},
+
+{
+    level:3,
+    type:"VOCABULARY RUSH",
+    icon:"🚀",
+    question:"What does 'begin' mean?",
+    answer:"Start",
+    options:["Finish","Start","Stop","Wait"]
+},
+
+{
+    level:3,
+    type:"VOCABULARY RUSH",
+    icon:"🚀",
+    question:"What does 'quick' mean?",
+    answer:"Fast",
+    options:["Slow","Fast","Late","Weak"]
+},
+
+{
+    level:3,
+    type:"VOCABULARY RUSH",
+    icon:"🚀",
+    question:"What is the opposite of 'difficult'?",
+    answer:"Easy",
+    options:["Hard","Easy","Strong","Heavy"]
+},
+
+{
+    level:3,
+    type:"VOCABULARY RUSH",
+    icon:"🚀",
+    question:"What does 'purchase' mean?",
+    answer:"Buy",
+    options:["Sell","Buy","Borrow","Break"]
+},
+
+
+/* LEVEL 4 */
+
+{
+    level:4,
+    type:"GRAMMAR SPEED",
+    icon:"🔥",
+    question:"If I ___ time, I will call you.",
+    answer:"have",
+    options:["have","has","had","having"]
+},
+
+{
+    level:4,
+    type:"GRAMMAR SPEED",
+    icon:"🔥",
+    question:"She has lived here ___ 2020.",
+    answer:"since",
+    options:["for","since","during","from"]
+},
+
+{
+    level:4,
+    type:"GRAMMAR SPEED",
+    icon:"🔥",
+    question:"I have ___ finished my homework.",
+    answer:"already",
+    options:["yet","already","ever","never"]
+},
+
+{
+    level:4,
+    type:"GRAMMAR SPEED",
+    icon:"🔥",
+    question:"He is taller ___ his brother.",
+    answer:"than",
+    options:["then","than","that","as"]
+},
+
+{
+    level:4,
+    type:"GRAMMAR SPEED",
+    icon:"🔥",
+    question:"You ___ wear a seat belt in a car.",
+    answer:"should",
+    options:["should","would","could","might"]
+},
+
+{
+    level:4,
+    type:"GRAMMAR SPEED",
+    icon:"🔥",
+    question:"She ___ to London last year.",
+    answer:"went",
+    options:["go","goes","went","going"]
+},
+
+
+/* LEVEL 5 */
+
+{
+    level:5,
+    type:"⚡ FINAL SPEED",
+    icon:"🏆",
+    question:"Choose the correct sentence.",
+    answer:"She doesn't like coffee.",
+    options:[
+        "She don't like coffee.",
+        "She doesn't like coffee.",
+        "She doesn't likes coffee.",
+        "She not like coffee."
+    ]
+},
+
+{
+    level:5,
+    type:"⚡ FINAL SPEED",
+    icon:"🏆",
+    question:"Choose the correct sentence.",
+    answer:"I have never seen that movie.",
+    options:[
+        "I never have seen that movie.",
+        "I have never seen that movie.",
+        "I has never seen that movie.",
+        "I never saw have that movie."
+    ]
+},
+
+{
+    level:5,
+    type:"⚡ FINAL SPEED",
+    icon:"🏆",
+    question:"Choose the best answer: 'How long have you lived here?'",
+    answer:"For five years.",
+    options:[
+        "Since five years.",
+        "For five years.",
+        "At five years.",
+        "From five years."
+    ]
+},
+
+{
+    level:5,
+    type:"⚡ FINAL SPEED",
+    icon:"🏆",
+    question:"Choose the correct question.",
+    answer:"Where did you go yesterday?",
+    options:[
+        "Where did you go yesterday?",
+        "Where you did go yesterday?",
+        "Where did you went yesterday?",
+        "Where you went yesterday?"
+    ]
+},
+
+{
+    level:5,
+    type:"⚡ FINAL SPEED",
+    icon:"🏆",
+    question:"Complete: 'If I were rich, I ___ a big house.'",
+    answer:"would buy",
+    options:[
+        "will buy",
+        "would buy",
+        "buy",
+        "bought"
+    ]
+},
+
+{
+    level:5,
+    type:"⚡ FINAL SPEED",
+    icon:"🏆",
+    question:"Choose the most natural sentence.",
+    answer:"I've been studying English for two years.",
+    options:[
+        "I've been studying English for two years.",
+        "I am studying English since two years.",
+        "I study English for two years.",
+        "I studied English since two years."
+    ]
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let timeLeft = 20;
+
+let timerInterval = null;
+
+let answered = false;
+
+let restarting = false;
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array){
+
+    const result = [...array];
+
+    for(
+        let i=result.length-1;
+        i>0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random()*(i+1)
+            );
+
+        [
+            result[i],
+            result[j]
+        ] =
+        [
+            result[j],
+            result[i]
+        ];
+
+    }
+
+    return result;
+
+}
+
+
+/* =====================================================
+   PLAYER DATA
+===================================================== */
+
+function loadPlayerData(){
+
+    const xp =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+    const coins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+    const level =
+        Math.floor(
+            xp/500
+        )+1;
+
+
+    document.getElementById(
+        "xp"
+    ).textContent=xp;
+
+    document.getElementById(
+        "coins"
+    ).textContent=coins;
+
+    document.getElementById(
+        "level"
+    ).textContent=level;
+
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function showQuestion(){
+
+    answered=false;
+
+    restarting=false;
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent=
+        "QUESTION "+
+        (currentQuestion+1);
+
+
+    document.getElementById(
+        "questionCounter"
+    ).textContent=
+        "Question "+
+        (currentQuestion+1)+
+        " / 30";
+
+
+    document.getElementById(
+        "levelName"
+    ).textContent=
+        "Level "+
+        q.level;
+
+
+    document.getElementById(
+        "challengeType"
+    ).textContent=
+        q.type;
+
+
+    document.getElementById(
+        "question"
+    ).textContent=
+        q.question;
+
+
+    document.getElementById(
+        "speedIcon"
+    ).textContent=
+        q.icon;
+
+
+    document.getElementById(
+        "score"
+    ).textContent=
+        score;
+
+
+    document.getElementById(
+        "feedback"
+    ).textContent="";
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width=
+        (
+            (currentQuestion+1)
+            /
+            questions.length
+            *
+            100
+        )+"%";
+
+
+    createAnswers(q);
+
+    startTimer();
+
+}
+
+
+/* =====================================================
+   ANSWERS
+===================================================== */
+
+function createAnswers(q){
+
+    const container =
+        document.getElementById(
+            "answers"
+        );
+
+
+    container.innerHTML="";
+
+
+    const options =
+        shuffle(q.options);
+
+
+    options.forEach(
+        function(option){
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className=
+                "answer";
+
+
+            button.textContent=
+                option;
+
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    checkAnswer(
+                        option,
+                        button
+                    );
+
+                }
+            );
+
+
+            container.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   TIMER — 20 SECONDS
+===================================================== */
+
+function startTimer(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    timeLeft=20;
+
+    updateTimer();
+
+
+    timerInterval=
+        setInterval(
+            function(){
+
+                timeLeft--;
+
+                updateTimer();
+
+
+                if(
+                    timeLeft<=0
+                ){
+
+                    clearInterval(
+                        timerInterval
+                    );
+
+                    timeOut();
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById(
+            "timer"
+        );
+
+
+    timer.textContent=
+        "⏱️ "+
+        timeLeft;
+
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+
+    if(
+        timeLeft<=7
+    ){
+
+        timer.classList.add(
+            "warning"
+        );
+
+    }
+
+
+    if(
+        timeLeft<=3
+    ){
+
+        timer.classList.remove(
+            "warning"
+        );
+
+        timer.classList.add(
+            "danger"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+===================================================== */
+
+function checkAnswer(
+    selected,
+    button
+){
+
+    if(
+        answered ||
+        restarting
+    ){
+
+        return;
+
+    }
+
+
+    answered=true;
+
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    if(
+        selected===q.answer
+    ){
+
+        score++;
+
+
+        button.classList.add(
+            "correct"
+        );
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent=
+            "⚡ Correct!";
+
+
+        disableAnswers();
+
+
+        setTimeout(
+            function(){
+
+                currentQuestion++;
+
+
+                if(
+                    currentQuestion<
+                    questions.length
+                ){
+
+                    showQuestion();
+
+                }
+                else{
+
+                    finishGame();
+
+                }
+
+            },
+            650
+        );
+
+    }
+    else{
+
+        button.classList.add(
+            "wrong"
+        );
+
+
+        restarting=true;
+
+
+        disableAnswers();
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent=
+            "❌ Wrong answer!";
+
+
+        showRestart(
+            "❌",
+            "Wrong Answer!",
+            "Speed English will restart from Question 1."
+        );
+
+
+        setTimeout(
+            function(){
+
+                restartGame();
+
+            },
+            1800
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TIME OUT
+===================================================== */
+
+function timeOut(){
+
+    if(
+        answered ||
+        restarting
+    ){
+
+        return;
+
+    }
+
+
+    answered=true;
+
+    restarting=true;
+
+
+    disableAnswers();
+
+
+    showRestart(
+        "⏰",
+        "Time's Up!",
+        "You didn't answer in 20 seconds."
+    );
+
+
+    setTimeout(
+        function(){
+
+            restartGame();
+
+        },
+        1800
+    );
+
+}
+
+
+/* =====================================================
+   DISABLE
+===================================================== */
+
+function disableAnswers(){
+
+    document
+        .querySelectorAll(
+            ".answer"
+        )
+        .forEach(
+            function(button){
+
+                button.disabled=true;
+
+            }
+        );
+
+}
+
+
+/* =====================================================
+   RESTART POPUP
+===================================================== */
+
+function showRestart(
+    icon,
+    title,
+    text
+){
+
+    document.getElementById(
+        "restartIcon"
+    ).textContent=
+        icon;
+
+
+    document.getElementById(
+        "restartTitle"
+    ).textContent=
+        title;
+
+
+    document.getElementById(
+        "restartText"
+    ).textContent=
+        text;
+
+
+    document.getElementById(
+        "restartOverlay"
+    ).style.display=
+        "flex";
+
+}
+
+
+function hideRestart(){
+
+    document.getElementById(
+        "restartOverlay"
+    ).style.display=
+        "none";
+
+}
+
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+function finishGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    document.getElementById(
+        "gameContent"
+    ).style.display=
+        "none";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display=
+        "none";
+
+
+    document.getElementById(
+        "result"
+    ).style.display=
+        "block";
+
+
+    const earnedXP=
+        score*20;
+
+
+    const earnedCoins=
+        score*5;
+
+
+    const accuracy=
+        Math.round(
+            score/
+            questions.length*
+            100
+        );
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent=
+        score;
+
+
+    document.getElementById(
+        "earnedXP"
+    ).textContent=
+        earnedXP;
+
+
+    document.getElementById(
+        "earnedCoins"
+    ).textContent=
+        earnedCoins;
+
+
+    document.getElementById(
+        "accuracy"
+    ).textContent=
+        accuracy+"%";
+
+
+    const oldXP=
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesXP",
+        oldXP+earnedXP
+    );
+
+
+    const oldCoins=
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesCoins",
+        oldCoins+earnedCoins
+    );
+
+
+    let completed=
+        Number(
+            localStorage.getItem(
+                "brightGamesCompleted"
+            )
+        ) || 0;
+
+
+    let completedList=
+        JSON.parse(
+            localStorage.getItem(
+                "brightGamesCompletedList"
+            )
+        ) || [];
+
+
+    if(
+        !completedList.includes(
+            "speed-english"
+        )
+    ){
+
+        completedList.push(
+            "speed-english"
+        );
+
+        completed++;
+
+        localStorage.setItem(
+            "brightGamesCompleted",
+            Math.min(
+                completed,
+                10
+            )
+        );
+
+        localStorage.setItem(
+            "brightGamesCompletedList",
+            JSON.stringify(
+                completedList
+            )
+        );
+
+    }
+
+
+    loadPlayerData();
+
+}
+
+
+/* =====================================================
+   RESTART GAME
+===================================================== */
+
+function restartGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    currentQuestion=0;
+
+    score=0;
+
+    answered=false;
+
+    restarting=false;
+
+
+    hideRestart();
+
+
+    document.getElementById(
+        "gameContent"
+    ).style.display=
+        "block";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display=
+        "inline-block";
+
+
+    document.getElementById(
+        "result"
+    ).style.display=
+        "none";
+
+
+    showQuestion();
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome(){
+
+    window.location.href=
+        "index.html";
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadPlayerData();
+
+showQuestion();
+
+</script>
+
+
+
+
+
+
+<script>
+(function () {
+    function addBackToMenu() {
+        if (document.getElementById("bright-back-menu")) return;
+
+        const button = document.createElement("button");
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        /*
+         * Put the button after the main game content.
+         * We look for common game containers first.
+         */
+        const selectors = [
+            ".game-container",
+            ".game-content",
+            ".game-area",
+            "#game",
+            "#game-container",
+            "main"
+        ];
+
+        let target = null;
+
+        for (const selector of selectors) {
+            const element = document.querySelector(selector);
+            if (element) {
+                target = element;
+                break;
+            }
+        }
+
+        if (target) {
+            target.appendChild(button);
+        } else {
+            document.body.appendChild(button);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", addBackToMenu);
+    } else {
+        addBackToMenu();
+    }
+})();
+</script>
+
+
+<script>
+/* =====================================
+   BRIGHT GAMES - BACK TO MENU
+   FINAL VERSION
+===================================== */
+
+(function () {
+
+    function createBackMenu() {
+
+        if (document.getElementById("bright-back-menu")) {
+            return;
+        }
+
+        var button = document.createElement("button");
+
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+        button.setAttribute("aria-label", "Back to Bright Games menu");
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.onclick = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Always return to the Bright Games main menu.
+            window.location.assign("./index.html");
+        };
+
+        // IMPORTANT:
+        // Put the button directly in BODY, outside the game's dynamic container.
+        document.body.appendChild(button);
+    }
+
+    function start() {
+        createBackMenu();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+
+})();
+</script>
+
+</body>
+
+</html>
+```

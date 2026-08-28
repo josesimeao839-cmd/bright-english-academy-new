@@ -1,0 +1,3174 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Picture Hunt | Bright Games</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    background:
+        radial-gradient(circle at top,#1768d8,#071a52 70%);
+    color:white;
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+    height:72px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(0,0,0,.30);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+}
+
+.stats{
+    display:flex;
+    gap:20px;
+    font-size:15px;
+}
+
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.wrapper{
+    width:min(1150px,94%);
+    margin:30px auto 50px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    text-align:center;
+    margin-bottom:24px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 17px;
+    border-radius:30px;
+    background:#ffd21f;
+    color:#111;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.5px;
+    margin-bottom:10px;
+}
+
+.header h1{
+    font-size:clamp(34px,6vw,55px);
+    margin-bottom:7px;
+}
+
+.subtitle{
+    opacity:.82;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.game-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:9px;
+    font-weight:bold;
+    gap:10px;
+}
+
+.level-name{
+    color:#ffd21f;
+}
+
+.progress{
+    width:100%;
+    height:10px;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:13px;
+}
+
+#progressBar{
+    width:3.33%;
+    height:100%;
+    background:#ffd21f;
+    transition:.35s;
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.timer-area{
+    text-align:center;
+    margin-bottom:14px;
+}
+
+.timer{
+    display:inline-block;
+    min-width:105px;
+    padding:9px 20px;
+    border-radius:30px;
+    background:white;
+    color:#1261c9;
+    font-size:21px;
+    font-weight:900;
+}
+
+.timer.warning{
+    background:#ffd21f;
+    color:#111;
+}
+
+.timer.danger{
+    background:#d62828;
+    color:white;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.card{
+    background:#f8fbff;
+    color:#18223b;
+    border-radius:28px;
+    padding:25px;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35);
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question-number{
+    text-align:center;
+    color:#1261c9;
+    font-weight:900;
+    margin-bottom:8px;
+}
+
+.mode{
+    width:max-content;
+    margin:0 auto 12px;
+    padding:7px 13px;
+    border-radius:20px;
+    background:#e9f2ff;
+    color:#1261c9;
+    font-size:11px;
+    font-weight:900;
+}
+
+.instruction{
+    text-align:center;
+    font-size:clamp(18px,3vw,23px);
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.target{
+    color:#1261c9;
+}
+
+
+/* =====================================================
+   REALISTIC SCENE
+===================================================== */
+
+.scene{
+    position:relative;
+    width:100%;
+    height:550px;
+    overflow:hidden;
+    border-radius:22px;
+    background:#cce8ff;
+    box-shadow:
+        inset 0 0 0 3px rgba(255,255,255,.8),
+        0 12px 35px rgba(0,0,0,.18);
+}
+
+
+/* =====================================================
+   SCENE BACKGROUND
+===================================================== */
+
+.scene-classroom{
+    background:
+        linear-gradient(
+            to bottom,
+            #a9d8f7 0 48%,
+            #d5b58c 48% 100%
+        );
+}
+
+.scene-bedroom{
+    background:
+        linear-gradient(
+            to bottom,
+            #c8ddf0 0 60%,
+            #9b7655 60% 100%
+        );
+}
+
+.scene-supermarket{
+    background:
+        linear-gradient(
+            to bottom,
+            #e8eef4 0 70%,
+            #b7c2cc 70% 100%
+        );
+}
+
+.scene-park{
+    background:
+        linear-gradient(
+            to bottom,
+            #8ed0f2 0 52%,
+            #79ba61 52% 100%
+        );
+}
+
+
+/* =====================================================
+   WINDOWS
+===================================================== */
+
+.window{
+    position:absolute;
+    top:35px;
+    left:45px;
+    width:190px;
+    height:135px;
+    background:
+        linear-gradient(
+            90deg,
+            transparent 48%,
+            #ffffff 48% 52%,
+            transparent 52%
+        ),
+        linear-gradient(
+            0deg,
+            transparent 47%,
+            #ffffff 47% 53%,
+            transparent 53%
+        ),
+        #79c6ed;
+    border:10px solid #f3f3f3;
+    box-shadow:0 8px 15px rgba(0,0,0,.18);
+}
+
+
+/* =====================================================
+   WALL DECOR
+===================================================== */
+
+.wall-clock{
+    position:absolute;
+    top:42px;
+    right:55px;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:white;
+    border:7px solid #444;
+    box-shadow:0 5px 12px rgba(0,0,0,.2);
+}
+
+.wall-clock:after{
+    content:"";
+    position:absolute;
+    width:3px;
+    height:25px;
+    background:#333;
+    left:50%;
+    top:10px;
+    transform-origin:bottom;
+    transform:rotate(35deg);
+}
+
+
+/* =====================================================
+   BOARD
+===================================================== */
+
+.board{
+    position:absolute;
+    top:60px;
+    left:50%;
+    transform:translateX(-50%);
+    width:360px;
+    height:135px;
+    background:#294b43;
+    border:10px solid #744a2e;
+    border-radius:5px;
+    box-shadow:0 12px 18px rgba(0,0,0,.25);
+}
+
+.board:after{
+    content:"ENGLISH";
+    position:absolute;
+    color:white;
+    font-size:27px;
+    font-weight:bold;
+    left:80px;
+    top:40px;
+    opacity:.8;
+}
+
+
+/* =====================================================
+   DESK
+===================================================== */
+
+.desk{
+    position:absolute;
+    width:170px;
+    height:95px;
+    background:#b87945;
+    border-radius:8px;
+    box-shadow:0 10px 15px rgba(0,0,0,.2);
+}
+
+.desk:before,
+.desk:after{
+    content:"";
+    position:absolute;
+    bottom:-75px;
+    width:13px;
+    height:80px;
+    background:#74472b;
+}
+
+.desk:before{
+    left:18px;
+}
+
+.desk:after{
+    right:18px;
+}
+
+
+/* =====================================================
+   CHAIR
+===================================================== */
+
+.chair{
+    position:absolute;
+    width:100px;
+    height:150px;
+}
+
+.chair-back{
+    position:absolute;
+    left:18px;
+    top:0;
+    width:65px;
+    height:75px;
+    background:#3d69a7;
+    border-radius:12px 12px 5px 5px;
+}
+
+.chair-seat{
+    position:absolute;
+    left:10px;
+    top:65px;
+    width:80px;
+    height:22px;
+    background:#315584;
+    border-radius:7px;
+}
+
+.chair-leg1,
+.chair-leg2{
+    position:absolute;
+    top:82px;
+    width:10px;
+    height:70px;
+    background:#303b4b;
+}
+
+.chair-leg1{
+    left:20px;
+}
+
+.chair-leg2{
+    right:20px;
+}
+
+
+/* =====================================================
+   BOOK
+===================================================== */
+
+.book{
+    position:absolute;
+    width:90px;
+    height:65px;
+    background:#315bc2;
+    border-radius:5px;
+    transform:rotate(-7deg);
+    box-shadow:0 8px 10px rgba(0,0,0,.2);
+}
+
+.book:after{
+    content:"ENGLISH";
+    position:absolute;
+    color:white;
+    font-size:10px;
+    font-weight:bold;
+    top:25px;
+    left:15px;
+}
+
+
+/* =====================================================
+   PENCIL
+===================================================== */
+
+.pencil{
+    position:absolute;
+    width:115px;
+    height:17px;
+    background:#f5d342;
+    border-radius:10px;
+    transform:rotate(-12deg);
+    box-shadow:0 5px 8px rgba(0,0,0,.15);
+}
+
+.pencil:after{
+    content:"";
+    position:absolute;
+    right:-14px;
+    top:0;
+    border-top:8px solid transparent;
+    border-bottom:8px solid transparent;
+    border-left:15px solid #d5a66d;
+}
+
+
+/* =====================================================
+   BACKPACK
+===================================================== */
+
+.backpack{
+    position:absolute;
+    width:90px;
+    height:115px;
+    background:#d74646;
+    border-radius:22px 22px 15px 15px;
+    box-shadow:0 9px 14px rgba(0,0,0,.22);
+}
+
+.backpack:before{
+    content:"";
+    position:absolute;
+    width:45px;
+    height:15px;
+    border:7px solid #333;
+    border-bottom:0;
+    border-radius:30px 30px 0 0;
+    top:-18px;
+    left:20px;
+}
+
+.backpack:after{
+    content:"";
+    position:absolute;
+    width:55px;
+    height:35px;
+    background:#ef6767;
+    border-radius:8px;
+    bottom:15px;
+    left:17px;
+}
+
+
+/* =====================================================
+   LAMP
+===================================================== */
+
+.lamp{
+    position:absolute;
+    width:80px;
+    height:120px;
+}
+
+.lamp-shade{
+    position:absolute;
+    top:0;
+    left:10px;
+    width:60px;
+    height:45px;
+    background:#f3b63d;
+    clip-path:polygon(20% 0,80% 0,100% 100%,0 100%);
+}
+
+.lamp-stand{
+    position:absolute;
+    top:40px;
+    left:37px;
+    width:7px;
+    height:70px;
+    background:#444;
+}
+
+.lamp-base{
+    position:absolute;
+    bottom:0;
+    left:15px;
+    width:50px;
+    height:12px;
+    border-radius:50%;
+    background:#444;
+}
+
+
+/* =====================================================
+   BED
+===================================================== */
+
+.bed{
+    position:absolute;
+    width:300px;
+    height:145px;
+    background:#6b8fd0;
+    border-radius:15px;
+    box-shadow:0 12px 18px rgba(0,0,0,.25);
+}
+
+.bed-head{
+    position:absolute;
+    left:-15px;
+    top:-70px;
+    width:30px;
+    height:215px;
+    background:#68462f;
+    border-radius:8px;
+}
+
+.pillow{
+    position:absolute;
+    top:15px;
+    left:25px;
+    width:90px;
+    height:55px;
+    background:#fff;
+    border-radius:12px;
+}
+
+
+/* =====================================================
+   WARDROBE
+===================================================== */
+
+.wardrobe{
+    position:absolute;
+    width:150px;
+    height:260px;
+    background:#7a5439;
+    border-radius:8px;
+    box-shadow:0 12px 18px rgba(0,0,0,.25);
+}
+
+.wardrobe:before{
+    content:"";
+    position:absolute;
+    left:73px;
+    top:0;
+    width:4px;
+    height:100%;
+    background:#523824;
+}
+
+.wardrobe:after{
+    content:"••";
+    position:absolute;
+    color:#d9b77a;
+    font-size:35px;
+    left:61px;
+    top:110px;
+}
+
+
+/* =====================================================
+   NIGHTSTAND
+===================================================== */
+
+.nightstand{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:#815b3f;
+    border-radius:8px;
+    box-shadow:0 10px 14px rgba(0,0,0,.2);
+}
+
+.nightstand:after{
+    content:"";
+    position:absolute;
+    width:65px;
+    height:12px;
+    background:#5e402d;
+    left:18px;
+    top:25px;
+    border-radius:10px;
+}
+
+
+/* =====================================================
+   PLANT
+===================================================== */
+
+.plant{
+    position:absolute;
+    width:90px;
+    height:140px;
+}
+
+.pot{
+    position:absolute;
+    bottom:0;
+    left:20px;
+    width:50px;
+    height:55px;
+    background:#bd694b;
+    clip-path:polygon(10% 0,90% 0,78% 100%,22% 100%);
+}
+
+.leaf{
+    position:absolute;
+    width:42px;
+    height:70px;
+    background:#31884d;
+    border-radius:50% 10% 50% 10%;
+}
+
+.leaf1{
+    left:5px;
+    top:15px;
+    transform:rotate(-35deg);
+}
+
+.leaf2{
+    right:4px;
+    top:0;
+    transform:rotate(35deg);
+}
+
+.leaf3{
+    left:27px;
+    top:5px;
+}
+
+
+/* =====================================================
+   SHOPPING SHELVES
+===================================================== */
+
+.shelf{
+    position:absolute;
+    width:180px;
+    height:280px;
+    background:#596777;
+    border-radius:5px;
+    box-shadow:0 10px 15px rgba(0,0,0,.18);
+}
+
+.shelf-line{
+    position:absolute;
+    left:0;
+    width:100%;
+    height:8px;
+    background:#343f4d;
+}
+
+.shelf-line.one{
+    top:65px;
+}
+
+.shelf-line.two{
+    top:135px;
+}
+
+.shelf-line.three{
+    top:205px;
+}
+
+
+/* =====================================================
+   PRODUCT
+===================================================== */
+
+.product{
+    position:absolute;
+    width:42px;
+    height:55px;
+    border-radius:7px;
+    background:#e44d4d;
+    box-shadow:0 4px 5px rgba(0,0,0,.2);
+}
+
+
+/* =====================================================
+   BASKET
+===================================================== */
+
+.basket{
+    position:absolute;
+    width:110px;
+    height:75px;
+    border:12px solid #e7a43b;
+    border-top:0;
+    border-radius:5px 5px 25px 25px;
+}
+
+.basket:before{
+    content:"";
+    position:absolute;
+    width:70px;
+    height:40px;
+    border:8px solid #e7a43b;
+    border-bottom:0;
+    border-radius:50px 50px 0 0;
+    left:8px;
+    top:-40px;
+}
+
+
+/* =====================================================
+   PARK TREE
+===================================================== */
+
+.park-tree{
+    position:absolute;
+    width:150px;
+    height:250px;
+}
+
+.tree-trunk{
+    position:absolute;
+    bottom:0;
+    left:62px;
+    width:35px;
+    height:140px;
+    background:#70472c;
+    border-radius:8px;
+}
+
+.tree-crown{
+    position:absolute;
+    top:0;
+    left:5px;
+    width:140px;
+    height:150px;
+    background:#358a45;
+    border-radius:50%;
+    box-shadow:
+        35px 15px 0 #419650,
+        -25px 25px 0 #2f7d3d;
+}
+
+
+/* =====================================================
+   BENCH
+===================================================== */
+
+.bench{
+    position:absolute;
+    width:190px;
+    height:90px;
+}
+
+.bench-seat{
+    position:absolute;
+    width:190px;
+    height:25px;
+    background:#8a5836;
+    top:25px;
+    border-radius:5px;
+}
+
+.bench-back{
+    position:absolute;
+    width:190px;
+    height:18px;
+    background:#70462d;
+    top:0;
+    border-radius:5px;
+}
+
+.bench-leg1,
+.bench-leg2{
+    position:absolute;
+    width:15px;
+    height:60px;
+    background:#4c3a2c;
+    top:45px;
+}
+
+.bench-leg1{
+    left:25px;
+}
+
+.bench-leg2{
+    right:25px;
+}
+
+
+/* =====================================================
+   BALL
+===================================================== */
+
+.ball{
+    position:absolute;
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            white 0 8%,
+            transparent 9%
+        ),
+        #e74949;
+    box-shadow:0 9px 12px rgba(0,0,0,.22);
+}
+
+
+/* =====================================================
+   BICYCLE
+===================================================== */
+
+.bicycle{
+    position:absolute;
+    width:190px;
+    height:110px;
+}
+
+.wheel{
+    position:absolute;
+    width:65px;
+    height:65px;
+    border:7px solid #333;
+    border-radius:50%;
+    bottom:0;
+}
+
+.wheel.left{
+    left:5px;
+}
+
+.wheel.right{
+    right:5px;
+}
+
+.bike-frame{
+    position:absolute;
+    left:40px;
+    top:25px;
+    width:105px;
+    height:65px;
+    border:7px solid #555;
+    transform:skew(-20deg);
+}
+
+
+/* =====================================================
+   FLOWER
+===================================================== */
+
+.flower{
+    position:absolute;
+    width:70px;
+    height:90px;
+}
+
+.flower-stem{
+    position:absolute;
+    width:7px;
+    height:55px;
+    background:#318b4b;
+    left:31px;
+    bottom:0;
+}
+
+.flower-head{
+    position:absolute;
+    font-size:50px;
+    top:0;
+    left:4px;
+}
+
+
+/* =====================================================
+   DOG
+===================================================== */
+
+.dog{
+    position:absolute;
+    width:120px;
+    height:90px;
+}
+
+.dog-body{
+    position:absolute;
+    width:90px;
+    height:55px;
+    background:#b5794b;
+    border-radius:50%;
+    bottom:0;
+    left:15px;
+}
+
+.dog-head{
+    position:absolute;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#c48755;
+    left:0;
+    top:5px;
+}
+
+.dog-ear{
+    position:absolute;
+    width:25px;
+    height:35px;
+    background:#71472d;
+    border-radius:50%;
+}
+
+.dog-ear.one{
+    left:0;
+    top:0;
+}
+
+.dog-ear.two{
+    right:5px;
+    top:0;
+}
+
+
+/* =====================================================
+   OBJECT INTERACTION
+===================================================== */
+
+.scene-object{
+    cursor:pointer;
+    z-index:20;
+    transition:
+        transform .18s,
+        filter .18s;
+}
+
+.scene-object:hover{
+    transform:scale(1.08);
+    filter:brightness(1.08);
+}
+
+.scene-object:disabled{
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback{
+    min-height:30px;
+    text-align:center;
+    margin-top:15px;
+    font-size:18px;
+    font-weight:800;
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+    text-align:center;
+    padding:25px 10px;
+}
+
+.result-icon{
+    font-size:80px;
+}
+
+.result h2{
+    font-size:36px;
+    margin:12px 0;
+}
+
+.result p{
+    margin:9px;
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.main-button{
+    border:0;
+    padding:14px 24px;
+    border-radius:12px;
+    background:#1261c9;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.yellow{
+    background:#ffd21f;
+    color:#111;
+}
+
+
+/* =====================================================
+   RESTART POPUP
+===================================================== */
+
+.restart-message{
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    background:rgba(0,0,0,.75);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.restart-box{
+    width:min(430px,92%);
+    padding:35px;
+    text-align:center;
+    border-radius:25px;
+    background:white;
+    color:#17213b;
+}
+
+.restart-icon{
+    font-size:65px;
+}
+
+.restart-box h2{
+    margin:12px 0 8px;
+}
+
+.restart-box p{
+    color:#555;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    text-align:center;
+    padding:25px;
+    opacity:.75;
+    font-size:14px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .topbar{
+        height:auto;
+        padding:15px 4%;
+        gap:10px;
+        flex-direction:column;
+    }
+
+    .stats{
+        font-size:12px;
+        gap:10px;
+    }
+
+    .card{
+        padding:14px;
+    }
+
+    .scene{
+        height:450px;
+    }
+
+    .board{
+        width:240px;
+    }
+
+    .window{
+        width:130px;
+        height:100px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL SCREEN
+===================================================== */
+
+@media(max-width:450px){
+
+    .scene{
+        height:400px;
+    }
+
+    .instruction{
+        font-size:17px;
+    }
+
+}
+
+</style>
+
+
+<style>
+
+/* =====================================
+   BRIGHT GAMES - FINAL BACK TO MENU
+===================================== */
+
+.bright-back-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    box-sizing: border-box !important;
+    width: min(280px, 90%) !important;
+
+    margin: 30px auto 25px !important;
+    padding: 14px 22px !important;
+
+    border: none !important;
+    border-radius: 14px !important;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+    color: #FFFFFF !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+
+    box-shadow: 0 7px 18px rgba(37,99,235,.30) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.bright-back-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37,99,235,.40) !important;
+}
+
+.bright-back-menu:active {
+    transform: translateY(0);
+}
+
+.bright-back-menu .back-arrow {
+    font-size: 21px;
+    line-height: 1;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="logo">
+        🎮 Bright Games
+    </div>
+
+    <div class="stats">
+
+        <span>
+            ⭐ <b id="xp">0</b> XP
+        </span>
+
+        <span>
+            🪙 <b id="coins">0</b>
+        </span>
+
+        <span>
+            🏆 Lv. <b id="level">1</b>
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<main class="wrapper">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<div class="header">
+
+    <span class="badge">
+        🖼️ PICTURE HUNT
+    </span>
+
+    <h1>
+        Picture Hunt
+    </h1>
+
+    <p class="subtitle">
+        Look carefully. Read the English instruction. Find the correct object.
+    </p>
+
+</div>
+
+
+
+<!-- =====================================================
+     GAME INFO
+===================================================== -->
+
+<div class="game-info">
+
+    <span
+        class="level-name"
+        id="levelName">
+
+        Level 1
+
+    </span>
+
+    <span id="questionText">
+        Question 1 / 30
+    </span>
+
+    <span>
+        Score:
+        <b id="score">0</b>
+    </span>
+
+</div>
+
+
+<div class="progress">
+
+    <div id="progressBar"></div>
+
+</div>
+
+
+<div class="timer-area">
+
+    <div
+        class="timer"
+        id="timer">
+
+        ⏱️ 20
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CARD
+===================================================== -->
+
+<section class="card">
+
+
+<div id="game">
+
+    <div
+        class="question-number"
+        id="questionNumber">
+
+        QUESTION 1
+
+    </div>
+
+
+    <div
+        class="mode"
+        id="mode">
+
+        EASY
+
+    </div>
+
+
+    <p class="instruction">
+
+        Find:
+
+        <span
+            class="target"
+            id="target">
+
+            the book
+
+        </span>
+
+    </p>
+
+
+
+    <!-- =================================================
+         SCENE
+    ================================================= -->
+
+    <div
+        class="scene"
+        id="scene">
+
+
+        <!-- CLASSROOM BACKGROUND -->
+
+        <div
+            class="window"
+            data-scene="classroom">
+        </div>
+
+
+        <div
+            class="board"
+            data-scene="classroom">
+        </div>
+
+
+        <div
+            class="wall-clock"
+            data-scene="classroom">
+        </div>
+
+
+        <!-- DESKS -->
+
+        <div
+            class="desk"
+            style="left:8%;bottom:14%;"
+            data-scene="classroom">
+        </div>
+
+
+        <div
+            class="desk"
+            style="left:42%;bottom:12%;"
+            data-scene="classroom">
+        </div>
+
+
+        <!-- CHAIRS -->
+
+        <div
+            class="chair"
+            style="left:25%;bottom:10%;"
+            data-scene="classroom">
+
+            <div class="chair-back"></div>
+            <div class="chair-seat"></div>
+            <div class="chair-leg1"></div>
+            <div class="chair-leg2"></div>
+
+        </div>
+
+
+        <div
+            class="chair"
+            style="right:14%;bottom:10%;"
+            data-scene="classroom">
+
+            <div class="chair-back"></div>
+            <div class="chair-seat"></div>
+            <div class="chair-leg1"></div>
+            <div class="chair-leg2"></div>
+
+        </div>
+
+
+
+        <!-- OBJECTS -->
+
+        <button
+            class="scene-object book"
+            data-object="book"
+            style="left:18%;top:60%;">
+
+        </button>
+
+
+        <button
+            class="scene-object pencil"
+            data-object="pencil"
+            style="left:49%;top:65%;">
+
+        </button>
+
+
+        <button
+            class="scene-object backpack"
+            data-object="backpack"
+            style="right:10%;bottom:8%;">
+
+        </button>
+
+
+        <!-- BEDROOM OBJECTS -->
+
+        <div
+            class="bed"
+            data-scene="bedroom"
+            style="left:10%;bottom:12%;">
+
+            <div class="bed-head"></div>
+            <div class="pillow"></div>
+
+        </div>
+
+
+        <div
+            class="wardrobe"
+            data-scene="bedroom"
+            style="right:7%;bottom:12%;">
+
+        </div>
+
+
+        <div
+            class="nightstand"
+            data-scene="bedroom"
+            style="left:63%;bottom:14%;">
+
+        </div>
+
+
+        <button
+            class="scene-object lamp"
+            data-object="lamp"
+            style="left:65%;top:52%;">
+
+            <span class="lamp-shade"></span>
+            <span class="lamp-stand"></span>
+            <span class="lamp-base"></span>
+
+        </button>
+
+
+        <button
+            class="scene-object book"
+            data-object="book"
+            style="left:30%;bottom:28%;">
+
+        </button>
+
+
+        <div
+            class="plant"
+            data-scene="bedroom"
+            style="right:32%;top:16%;">
+
+            <div class="leaf leaf1"></div>
+            <div class="leaf leaf2"></div>
+            <div class="leaf leaf3"></div>
+            <div class="pot"></div>
+
+        </div>
+
+
+
+        <!-- SUPERMARKET -->
+
+        <div
+            class="shelf"
+            data-scene="supermarket"
+            style="left:5%;bottom:10%;">
+
+            <span class="shelf-line one"></span>
+            <span class="shelf-line two"></span>
+            <span class="shelf-line three"></span>
+
+        </div>
+
+
+        <div
+            class="shelf"
+            data-scene="supermarket"
+            style="right:5%;bottom:10%;">
+
+            <span class="shelf-line one"></span>
+            <span class="shelf-line two"></span>
+            <span class="shelf-line three"></span>
+
+        </div>
+
+
+        <button
+            class="scene-object product"
+            data-object="apple"
+            style="left:20%;bottom:43%;">
+
+        </button>
+
+
+        <button
+            class="scene-object product"
+            data-object="bottle"
+            style="right:22%;bottom:35%;background:#4d94d6;">
+
+        </button>
+
+
+        <button
+            class="scene-object basket"
+            data-object="basket"
+            style="left:43%;bottom:12%;">
+
+        </button>
+
+
+
+        <!-- PARK -->
+
+        <div
+            class="park-tree"
+            data-scene="park"
+            style="left:4%;bottom:8%;">
+
+            <div class="tree-crown"></div>
+            <div class="tree-trunk"></div>
+
+        </div>
+
+
+        <div
+            class="bench"
+            data-scene="park"
+            style="left:38%;bottom:15%;">
+
+            <div class="bench-back"></div>
+            <div class="bench-seat"></div>
+            <div class="bench-leg1"></div>
+            <div class="bench-leg2"></div>
+
+        </div>
+
+
+        <button
+            class="scene-object ball"
+            data-object="ball"
+            style="left:70%;bottom:15%;">
+
+        </button>
+
+
+        <button
+            class="scene-object bicycle"
+            data-object="bicycle"
+            style="right:5%;bottom:25%;">
+
+            <span class="wheel left"></span>
+            <span class="wheel right"></span>
+            <span class="bike-frame"></span>
+
+        </button>
+
+
+        <button
+            class="scene-object flower"
+            data-object="flower"
+            style="left:27%;bottom:12%;">
+
+            <span class="flower-head">🌻</span>
+            <span class="flower-stem"></span>
+
+        </button>
+
+
+        <button
+            class="scene-object dog"
+            data-object="dog"
+            style="right:30%;bottom:12%;">
+
+            <span class="dog-body"></span>
+            <span class="dog-head"></span>
+            <span class="dog-ear one"></span>
+            <span class="dog-ear two"></span>
+
+        </button>
+
+
+    </div>
+
+
+
+    <div
+        class="feedback"
+        id="feedback">
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     RESULT
+===================================================== -->
+
+<div
+    class="result"
+    id="result">
+
+    <div class="result-icon">
+        🏆
+    </div>
+
+    <h2>
+        Picture Hunt Complete!
+    </h2>
+
+    <p>
+        Final Score:
+        <strong id="finalScore">0</strong>
+        / 30
+    </p>
+
+    <p>
+        ⭐ XP Earned:
+        <strong id="earnedXP">0</strong>
+    </p>
+
+    <p>
+        🪙 Coins Earned:
+        <strong id="earnedCoins">0</strong>
+    </p>
+
+    <p>
+        📊 Accuracy:
+        <strong id="accuracy">0%</strong>
+    </p>
+
+
+    <div class="buttons">
+
+        <button
+            class="main-button yellow"
+            onclick="restartGame()">
+
+            🔄 PLAY AGAIN
+
+        </button>
+
+
+        <button
+            class="main-button"
+            onclick="goHome()">
+
+            🏠 BRIGHT GAMES
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     RESTART POPUP
+===================================================== -->
+
+<div
+    class="restart-message"
+    id="restartMessage">
+
+    <div class="restart-box">
+
+        <div
+            class="restart-icon"
+            id="restartIcon">
+
+            ❌
+
+        </div>
+
+
+        <h2 id="restartTitle">
+            Wrong Object!
+        </h2>
+
+
+        <p id="restartText">
+            Try again.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    🎮 Bright Games —
+    Bright English Academy
+
+    <br><br>
+
+    Created by José Simeão
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   QUESTIONS
+===================================================== */
+
+const questions = [
+
+/* =====================================================
+   LEVEL 1 — EASY
+===================================================== */
+
+{
+    level:1,
+    mode:"EASY",
+    scene:"classroom",
+    target:"the book",
+    answer:"book"
+},
+
+{
+    level:1,
+    mode:"EASY",
+    scene:"classroom",
+    target:"the pencil",
+    answer:"pencil"
+},
+
+{
+    level:1,
+    mode:"EASY",
+    scene:"classroom",
+    target:"the backpack",
+    answer:"backpack"
+},
+
+{
+    level:1,
+    mode:"EASY",
+    scene:"bedroom",
+    target:"the lamp",
+    answer:"lamp"
+},
+
+{
+    level:1,
+    mode:"EASY",
+    scene:"park",
+    target:"the ball",
+    answer:"ball"
+},
+
+{
+    level:1,
+    mode:"EASY",
+    scene:"park",
+    target:"the bicycle",
+    answer:"bicycle"
+},
+
+
+/* =====================================================
+   LEVEL 2 — MEDIUM
+===================================================== */
+
+{
+    level:2,
+    mode:"MEDIUM",
+    scene:"bedroom",
+    target:"something you can read",
+    answer:"book"
+},
+
+{
+    level:2,
+    mode:"MEDIUM",
+    scene:"park",
+    target:"something you can play with",
+    answer:"ball"
+},
+
+{
+    level:2,
+    mode:"MEDIUM",
+    scene:"park",
+    target:"something you can ride",
+    answer:"bicycle"
+},
+
+{
+    level:2,
+    mode:"MEDIUM",
+    scene:"bedroom",
+    target:"something that gives light",
+    answer:"lamp"
+},
+
+{
+    level:2,
+    mode:"MEDIUM",
+    scene:"classroom",
+    target:"something you use for writing",
+    answer:"pencil"
+},
+
+{
+    level:2,
+    mode:"MEDIUM",
+    scene:"classroom",
+    target:"something you carry your school things in",
+    answer:"backpack"
+},
+
+
+/* =====================================================
+   LEVEL 3 — HARD
+===================================================== */
+
+{
+    level:3,
+    mode:"HARD",
+    scene:"classroom",
+    target:"Find the object a student can use to write notes",
+    answer:"pencil"
+},
+
+{
+    level:3,
+    mode:"HARD",
+    scene:"classroom",
+    target:"Find the object that contains pages for reading",
+    answer:"book"
+},
+
+{
+    level:3,
+    mode:"HARD",
+    scene:"bedroom",
+    target:"Find the object that can brighten a dark room",
+    answer:"lamp"
+},
+
+{
+    level:3,
+    mode:"HARD",
+    scene:"park",
+    target:"Find the object designed for travelling on two wheels",
+    answer:"bicycle"
+},
+
+{
+    level:3,
+    mode:"HARD",
+    scene:"park",
+    target:"Find the round object used in many sports",
+    answer:"ball"
+},
+
+{
+    level:3,
+    mode:"HARD",
+    scene:"classroom",
+    target:"Find the object used to carry books and school materials",
+    answer:"backpack"
+},
+
+
+/* =====================================================
+   LEVEL 4 — EXPERT
+===================================================== */
+
+{
+    level:4,
+    mode:"EXPERT",
+    scene:"classroom",
+    target:"Find the item a learner would most likely use when writing an answer",
+    answer:"pencil"
+},
+
+{
+    level:4,
+    mode:"EXPERT",
+    scene:"bedroom",
+    target:"Find the object that produces light without being a window",
+    answer:"lamp"
+},
+
+{
+    level:4,
+    mode:"EXPERT",
+    scene:"park",
+    target:"Find the object that can be ridden but is not a car",
+    answer:"bicycle"
+},
+
+{
+    level:4,
+    mode:"EXPERT",
+    scene:"park",
+    target:"Find the object that can be kicked during a game",
+    answer:"ball"
+},
+
+{
+    level:4,
+    mode:"EXPERT",
+    scene:"classroom",
+    target:"Find the item that normally contains written information",
+    answer:"book"
+},
+
+{
+    level:4,
+    mode:"EXPERT",
+    scene:"classroom",
+    target:"Find the item that a student carries on their back",
+    answer:"backpack"
+},
+
+
+/* =====================================================
+   LEVEL 5 — FINAL CHALLENGE
+===================================================== */
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    scene:"classroom",
+    target:"Find something that helps a learner produce written answers",
+    answer:"pencil"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    scene:"bedroom",
+    target:"Find something that provides artificial light for reading",
+    answer:"lamp"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    scene:"park",
+    target:"Find something with two wheels that a person can ride",
+    answer:"bicycle"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    scene:"park",
+    target:"Find the round object commonly used in physical games",
+    answer:"ball"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    scene:"classroom",
+    target:"Find something containing pages that a learner might study from",
+    answer:"book"
+},
+
+{
+    level:5,
+    mode:"🔥 FINAL CHALLENGE",
+    scene:"classroom",
+    target:"Find something designed to carry several school supplies",
+    answer:"backpack"
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let answered = false;
+
+let restarting = false;
+
+let timeLeft = 20;
+
+let timerInterval = null;
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array){
+
+    const arr = [...array];
+
+    for(
+        let i = arr.length - 1;
+        i > 0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            arr[i],
+            arr[j]
+        ] =
+        [
+            arr[j],
+            arr[i]
+        ];
+
+    }
+
+    return arr;
+
+}
+
+
+/* =====================================================
+   PLAYER DATA
+===================================================== */
+
+function loadPlayerData(){
+
+    const xp =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    const coins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    const level =
+        Math.floor(xp / 500) + 1;
+
+
+    document.getElementById("xp").textContent = xp;
+
+    document.getElementById("coins").textContent = coins;
+
+    document.getElementById("level").textContent = level;
+
+}
+
+
+/* =====================================================
+   SCENE
+===================================================== */
+
+function prepareScene(){
+
+    const q =
+        questions[currentQuestion];
+
+
+    const scene =
+        document.getElementById(
+            "scene"
+        );
+
+
+    /* Background */
+
+    scene.className =
+        "scene scene-" +
+        q.scene;
+
+
+    /*
+       Hide all scene-specific
+       decorative elements first.
+    */
+
+    document
+        .querySelectorAll(
+            "[data-scene]"
+        )
+        .forEach(function(element){
+
+            element.style.display =
+                "none";
+
+        });
+
+
+    /*
+       Show only the current scene.
+    */
+
+    document
+        .querySelectorAll(
+            '[data-scene="' +
+            q.scene +
+            '"]'
+        )
+        .forEach(function(element){
+
+            element.style.display =
+                "block";
+
+        });
+
+
+    /*
+       Show objects needed
+       for this scene.
+    */
+
+    document
+        .querySelectorAll(
+            ".scene-object"
+        )
+        .forEach(function(object){
+
+            object.style.display =
+                "none";
+
+            object.disabled =
+                true;
+
+        });
+
+
+    const available =
+        getSceneObjects(
+            q.scene
+        );
+
+
+    available.forEach(function(object){
+
+        object.style.display =
+            "block";
+
+        object.disabled =
+            false;
+
+    });
+
+
+    /*
+       Random positions
+    */
+
+    randomizeSceneObjects(
+        available
+    );
+
+}
+
+
+/* =====================================================
+   SCENE OBJECTS
+===================================================== */
+
+function getSceneObjects(scene){
+
+    let names = [];
+
+
+    if(scene === "classroom"){
+
+        names = [
+            "book",
+            "pencil",
+            "backpack"
+        ];
+
+    }
+
+    if(scene === "bedroom"){
+
+        names = [
+            "lamp",
+            "book"
+        ];
+
+    }
+
+    if(scene === "park"){
+
+        names = [
+            "ball",
+            "bicycle",
+            "flower",
+            "dog"
+        ];
+
+    }
+
+    if(scene === "supermarket"){
+
+        names = [
+            "apple",
+            "bottle",
+            "basket"
+        ];
+
+    }
+
+
+    return names.map(function(name){
+
+        return document.querySelector(
+            '.scene-object[data-object="' +
+            name +
+            '"]'
+        );
+
+    }).filter(Boolean);
+
+}
+
+
+/* =====================================================
+   RANDOM POSITIONS
+===================================================== */
+
+function randomizeSceneObjects(objects){
+
+    const positions = [];
+
+
+    objects.forEach(function(object){
+
+        let left;
+        let top;
+        let valid = false;
+
+
+        while(!valid){
+
+            left =
+                Math.random() * 75 + 8;
+
+            top =
+                Math.random() * 55 + 28;
+
+
+            valid = true;
+
+
+            positions.forEach(function(pos){
+
+                const dx =
+                    left - pos.left;
+
+                const dy =
+                    top - pos.top;
+
+
+                if(
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    ) < 14
+                ){
+
+                    valid = false;
+
+                }
+
+            });
+
+        }
+
+
+        positions.push({
+            left:left,
+            top:top
+        });
+
+    });
+
+
+    objects.forEach(function(object,index){
+
+        object.style.left =
+            positions[index].left + "%";
+
+        object.style.top =
+            positions[index].top + "%";
+
+        object.style.right =
+            "auto";
+
+        object.style.bottom =
+            "auto";
+
+        object.style.transform =
+            "none";
+
+    });
+
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function showQuestion(){
+
+    answered = false;
+
+    restarting = false;
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        "QUESTION " +
+        (currentQuestion + 1);
+
+
+    document.getElementById(
+        "questionText"
+    ).textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " / 30";
+
+
+    document.getElementById(
+        "levelName"
+    ).textContent =
+        "Level " +
+        q.level;
+
+
+    document.getElementById(
+        "mode"
+    ).textContent =
+        q.mode;
+
+
+    document.getElementById(
+        "target"
+    ).textContent =
+        q.target;
+
+
+    document.getElementById(
+        "score"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "feedback"
+    ).textContent =
+        "";
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        (
+            (currentQuestion + 1)
+            /
+            questions.length
+            *
+            100
+        ) + "%";
+
+
+    prepareScene();
+
+
+    startTimer();
+
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+function startTimer(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    timeLeft = 20;
+
+    updateTimer();
+
+
+    timerInterval =
+        setInterval(function(){
+
+            timeLeft--;
+
+            updateTimer();
+
+
+            if(
+                timeLeft <= 0
+            ){
+
+                clearInterval(
+                    timerInterval
+                );
+
+                timeOut();
+
+            }
+
+        },1000);
+
+}
+
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById(
+            "timer"
+        );
+
+
+    timer.textContent =
+        "⏱️ " + timeLeft;
+
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+
+    if(
+        timeLeft <= 8
+    ){
+
+        timer.classList.add(
+            "warning"
+        );
+
+    }
+
+
+    if(
+        timeLeft <= 3
+    ){
+
+        timer.classList.remove(
+            "warning"
+        );
+
+        timer.classList.add(
+            "danger"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TIME OUT
+===================================================== */
+
+function timeOut(){
+
+    if(
+        answered ||
+        restarting
+    ){
+
+        return;
+
+    }
+
+
+    answered = true;
+
+    restarting = true;
+
+
+    disableObjects();
+
+
+    showRestart(
+        "⏰",
+        "Time's Up!",
+        "You didn't find the object in time."
+    );
+
+
+    setTimeout(function(){
+
+        restartGame();
+
+    },1800);
+
+}
+
+
+/* =====================================================
+   CHECK OBJECT
+===================================================== */
+
+function checkObject(object){
+
+    if(
+        answered ||
+        restarting
+    ){
+
+        return;
+
+    }
+
+
+    answered = true;
+
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    const selected =
+        object.dataset.object;
+
+
+    if(
+        selected === q.answer
+    ){
+
+        score++;
+
+
+        object.style.transform =
+            "scale(1.25)";
+
+
+        object.style.filter =
+            "brightness(1.3)";
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "✅ Correct! Great observation!";
+
+
+        disableObjects();
+
+
+        setTimeout(function(){
+
+            currentQuestion++;
+
+
+            if(
+                currentQuestion <
+                questions.length
+            ){
+
+                showQuestion();
+
+            }
+            else{
+
+                finishGame();
+
+            }
+
+        },850);
+
+    }
+
+    else{
+
+        restarting = true;
+
+
+        object.style.filter =
+            "grayscale(1)";
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "❌ Wrong object!";
+
+
+        disableObjects();
+
+
+        showRestart(
+            "❌",
+            "Wrong Object!",
+            "Carefully read the English instruction and try again."
+        );
+
+
+        setTimeout(function(){
+
+            restartGame();
+
+        },1800);
+
+    }
+
+}
+
+
+/* =====================================================
+   DISABLE
+===================================================== */
+
+function disableObjects(){
+
+    document
+        .querySelectorAll(
+            ".scene-object"
+        )
+        .forEach(function(object){
+
+            object.disabled =
+                true;
+
+        });
+
+}
+
+
+/* =====================================================
+   RESTART POPUP
+===================================================== */
+
+function showRestart(
+    icon,
+    title,
+    text
+){
+
+    document.getElementById(
+        "restartIcon"
+    ).textContent =
+        icon;
+
+
+    document.getElementById(
+        "restartTitle"
+    ).textContent =
+        title;
+
+
+    document.getElementById(
+        "restartText"
+    ).textContent =
+        text;
+
+
+    document.getElementById(
+        "restartMessage"
+    ).style.display =
+        "flex";
+
+}
+
+
+function hideRestart(){
+
+    document.getElementById(
+        "restartMessage"
+    ).style.display =
+        "none";
+
+}
+
+
+/* =====================================================
+   FINISH
+===================================================== */
+
+function finishGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    document.getElementById(
+        "game"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "block";
+
+
+    const earnedXP =
+        score * 20;
+
+
+    const earnedCoins =
+        score * 5;
+
+
+    const accuracy =
+        Math.round(
+            score /
+            questions.length *
+            100
+        );
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "earnedXP"
+    ).textContent =
+        earnedXP;
+
+
+    document.getElementById(
+        "earnedCoins"
+    ).textContent =
+        earnedCoins;
+
+
+    document.getElementById(
+        "accuracy"
+    ).textContent =
+        accuracy + "%";
+
+
+    /* XP */
+
+    const oldXP =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesXP",
+        oldXP + earnedXP
+    );
+
+
+    /* COINS */
+
+    const oldCoins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesCoins",
+        oldCoins + earnedCoins
+    );
+
+
+    /* COMPLETION */
+
+    let completed =
+        Number(
+            localStorage.getItem(
+                "brightGamesCompleted"
+            )
+        ) || 0;
+
+
+    let list =
+        JSON.parse(
+            localStorage.getItem(
+                "brightGamesCompletedList"
+            )
+        ) || [];
+
+
+    if(
+        !list.includes(
+            "picture-hunt"
+        )
+    ){
+
+        list.push(
+            "picture-hunt"
+        );
+
+        completed++;
+
+
+        localStorage.setItem(
+            "brightGamesCompleted",
+            Math.min(
+                completed,
+                10
+            )
+        );
+
+
+        localStorage.setItem(
+            "brightGamesCompletedList",
+            JSON.stringify(list)
+        );
+
+    }
+
+
+    loadPlayerData();
+
+}
+
+
+/* =====================================================
+   RESTART GAME
+===================================================== */
+
+function restartGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    answered = false;
+
+    restarting = false;
+
+
+    hideRestart();
+
+
+    document.getElementById(
+        "game"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display =
+        "inline-block";
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    document
+        .querySelectorAll(
+            ".scene-object"
+        )
+        .forEach(function(object){
+
+            object.disabled =
+                false;
+
+            object.style.filter =
+                "none";
+
+        });
+
+
+    showQuestion();
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =====================================================
+   CLICK EVENTS
+===================================================== */
+
+document
+    .querySelectorAll(
+        ".scene-object"
+    )
+    .forEach(function(object){
+
+        object.addEventListener(
+            "click",
+            function(){
+
+                checkObject(
+                    object
+                );
+
+            });
+
+    });
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadPlayerData();
+
+showQuestion();
+
+</script>
+
+
+
+
+
+<script>
+(function () {
+    function addBackToMenu() {
+        if (document.getElementById("bright-back-menu")) return;
+
+        const button = document.createElement("button");
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        /*
+         * Put the button after the main game content.
+         * We look for common game containers first.
+         */
+        const selectors = [
+            ".game-container",
+            ".game-content",
+            ".game-area",
+            "#game",
+            "#game-container",
+            "main"
+        ];
+
+        let target = null;
+
+        for (const selector of selectors) {
+            const element = document.querySelector(selector);
+            if (element) {
+                target = element;
+                break;
+            }
+        }
+
+        if (target) {
+            target.appendChild(button);
+        } else {
+            document.body.appendChild(button);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", addBackToMenu);
+    } else {
+        addBackToMenu();
+    }
+})();
+</script>
+
+
+<script>
+/* =====================================
+   BRIGHT GAMES - BACK TO MENU
+   FINAL VERSION
+===================================== */
+
+(function () {
+
+    function createBackMenu() {
+
+        if (document.getElementById("bright-back-menu")) {
+            return;
+        }
+
+        var button = document.createElement("button");
+
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+        button.setAttribute("aria-label", "Back to Bright Games menu");
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.onclick = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Always return to the Bright Games main menu.
+            window.location.assign("./index.html");
+        };
+
+        // IMPORTANT:
+        // Put the button directly in BODY, outside the game's dynamic container.
+        document.body.appendChild(button);
+    }
+
+    function start() {
+        createBackMenu();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+
+})();
+</script>
+
+</body>
+
+</html>
+```

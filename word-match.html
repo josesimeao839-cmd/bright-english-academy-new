@@ -1,0 +1,2487 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Word Match | Bright Games</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    min-height:100vh;
+    color:#17213b;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #2382e8,
+            #071b55 75%
+        );
+}
+
+
+/* =====================================================
+   TOP BAR
+===================================================== */
+
+.topbar{
+    min-height:72px;
+    padding:14px 6%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+
+    background:rgba(0,0,0,.28);
+    color:white;
+
+    backdrop-filter:blur(12px);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+}
+
+.stats{
+    display:flex;
+    gap:18px;
+
+    font-size:15px;
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.wrapper{
+    width:min(1000px,94%);
+    margin:30px auto 50px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header{
+    text-align:center;
+    color:white;
+    margin-bottom:25px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 17px;
+
+    border-radius:30px;
+
+    background:#ffd21f;
+    color:#111;
+
+    font-size:12px;
+    font-weight:900;
+
+    margin-bottom:12px;
+}
+
+.header h1{
+    font-size:clamp(35px,7vw,58px);
+    margin-bottom:8px;
+}
+
+.subtitle{
+    opacity:.85;
+}
+
+
+/* =====================================================
+   GAME INFO
+===================================================== */
+
+.game-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:8px;
+
+    color:white;
+    font-weight:800;
+}
+
+.level-name{
+    color:#ffd21f;
+}
+
+.progress{
+    width:100%;
+    height:9px;
+
+    background:rgba(255,255,255,.2);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:15px;
+}
+
+#progressBar{
+    width:3.33%;
+    height:100%;
+
+    background:#ffd21f;
+
+    transition:.3s;
+}
+
+
+/* =====================================================
+   TIMER
+===================================================== */
+
+.timer-area{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.timer{
+    display:inline-block;
+
+    min-width:110px;
+
+    padding:9px 22px;
+
+    border-radius:30px;
+
+    background:white;
+    color:#1261c9;
+
+    font-size:21px;
+    font-weight:900;
+}
+
+.timer.warning{
+    background:#ffd21f;
+    color:#111;
+}
+
+.timer.danger{
+    background:#d62828;
+    color:white;
+}
+
+
+/* =====================================================
+   GAME CARD
+===================================================== */
+
+.game-card{
+    background:#f8fbff;
+
+    border-radius:28px;
+
+    padding:28px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35);
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+.question-number{
+    text-align:center;
+
+    color:#1261c9;
+
+    font-size:13px;
+    font-weight:900;
+
+    margin-bottom:8px;
+}
+
+.challenge-type{
+    width:max-content;
+
+    margin:0 auto 15px;
+
+    padding:7px 15px;
+
+    border-radius:20px;
+
+    background:#e8f1ff;
+
+    color:#1261c9;
+
+    font-size:11px;
+    font-weight:900;
+}
+
+.question{
+    text-align:center;
+
+    font-size:clamp(21px,4vw,29px);
+
+    font-weight:900;
+
+    line-height:1.35;
+
+    margin-bottom:22px;
+}
+
+
+/* =====================================================
+   MAIN EMOJI
+===================================================== */
+
+.picture-box{
+    width:170px;
+    height:170px;
+
+    margin:0 auto 22px;
+
+    border-radius:25px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #e8f2ff
+        );
+
+    box-shadow:
+        inset 0 0 0 3px #d8e7fb,
+        0 10px 25px
+        rgba(0,0,0,.12);
+}
+
+.picture{
+    font-size:95px;
+}
+
+
+/* =====================================================
+   WORD QUESTION
+===================================================== */
+
+.word-box{
+    width:min(600px,100%);
+
+    margin:0 auto 22px;
+
+    padding:22px;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #edf5ff
+        );
+
+    text-align:center;
+
+    box-shadow:
+        inset 0 0 0 3px #d8e7fb;
+}
+
+.word-display{
+    font-size:clamp(32px,8vw,55px);
+
+    font-weight:900;
+
+    color:#1261c9;
+
+    letter-spacing:1px;
+}
+
+
+/* =====================================================
+   ANSWERS — WORDS
+===================================================== */
+
+.answers{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:14px;
+
+    max-width:720px;
+
+    margin:auto;
+}
+
+.answer{
+    min-height:72px;
+
+    border:3px solid #dbe7f6;
+
+    border-radius:16px;
+
+    background:white;
+
+    color:#17213b;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+    padding:12px;
+}
+
+.answer:hover{
+    transform:translateY(-3px);
+
+    border-color:#1261c9;
+
+    box-shadow:
+        0 8px 18px
+        rgba(18,97,201,.15);
+}
+
+.answer:disabled{
+    cursor:not-allowed;
+}
+
+.answer.correct{
+    background:#c9f7d5;
+    border-color:#24a148;
+}
+
+.answer.wrong{
+    background:#ffd2d2;
+    border-color:#d62828;
+}
+
+
+/* =====================================================
+   PICTURE OPTIONS
+===================================================== */
+
+.picture-options{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px;
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+.picture-option{
+    height:150px;
+
+    border:3px solid #dbe7f6;
+
+    border-radius:20px;
+
+    background:white;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    transition:.18s;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.08);
+}
+
+.picture-option:hover{
+    transform:translateY(-4px);
+
+    border-color:#1261c9;
+
+    box-shadow:
+        0 10px 22px
+        rgba(18,97,201,.18);
+}
+
+.picture-option .option-emoji{
+    font-size:75px;
+}
+
+.picture-option.correct{
+    background:#c9f7d5;
+    border-color:#24a148;
+}
+
+.picture-option.wrong{
+    background:#ffd2d2;
+    border-color:#d62828;
+}
+
+.picture-option:disabled{
+    cursor:not-allowed;
+}
+
+
+/* =====================================================
+   MIXED CHALLENGE
+===================================================== */
+
+.mixed-box{
+    max-width:650px;
+
+    margin:0 auto 20px;
+
+    padding:22px;
+
+    border-radius:18px;
+
+    background:#eef5ff;
+
+    text-align:center;
+}
+
+.mixed-word{
+    font-size:35px;
+
+    font-weight:900;
+
+    color:#1261c9;
+
+    letter-spacing:4px;
+}
+
+
+/* =====================================================
+   FEEDBACK
+===================================================== */
+
+.feedback{
+    min-height:32px;
+
+    text-align:center;
+
+    margin-top:18px;
+
+    font-size:18px;
+
+    font-weight:900;
+}
+
+
+/* =====================================================
+   RESULT
+===================================================== */
+
+.result{
+    display:none;
+
+    text-align:center;
+
+    padding:20px 5px;
+}
+
+.result-icon{
+    font-size:80px;
+}
+
+.result h2{
+    font-size:36px;
+
+    margin:10px 0 15px;
+}
+
+.result p{
+    font-size:18px;
+
+    margin:9px;
+}
+
+.buttons{
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:25px;
+}
+
+.main-button{
+    border:0;
+
+    border-radius:13px;
+
+    padding:14px 25px;
+
+    font-size:15px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    background:#1261c9;
+
+    color:white;
+}
+
+.main-button.yellow{
+    background:#ffd21f;
+    color:#111;
+}
+
+
+/* =====================================================
+   RESTART OVERLAY
+===================================================== */
+
+.restart-overlay{
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:1000;
+
+    background:rgba(0,0,0,.75);
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+}
+
+.restart-box{
+    width:min(430px,94%);
+
+    padding:35px 25px;
+
+    background:white;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    color:#17213b;
+}
+
+.restart-icon{
+    font-size:65px;
+}
+
+.restart-box h2{
+    margin:10px 0;
+
+    font-size:28px;
+}
+
+.restart-box p{
+    color:#555;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    text-align:center;
+
+    color:white;
+
+    opacity:.75;
+
+    padding:25px;
+
+    font-size:14px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+    .topbar{
+        flex-direction:column;
+    }
+
+    .stats{
+        gap:10px;
+        font-size:12px;
+    }
+
+    .game-card{
+        padding:18px;
+    }
+
+    .answers,
+    .picture-options{
+        grid-template-columns:1fr;
+    }
+
+    .picture-box{
+        width:145px;
+        height:145px;
+    }
+
+    .picture{
+        font-size:78px;
+    }
+
+    .picture-option{
+        height:130px;
+    }
+
+}
+
+</style>
+
+
+<style>
+
+/* =====================================
+   BRIGHT GAMES - FINAL BACK TO MENU
+===================================== */
+
+.bright-back-menu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+
+    box-sizing: border-box !important;
+    width: min(280px, 90%) !important;
+
+    margin: 30px auto 25px !important;
+    padding: 14px 22px !important;
+
+    border: none !important;
+    border-radius: 14px !important;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+    color: #FFFFFF !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+
+    box-shadow: 0 7px 18px rgba(37,99,235,.30) !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 999999 !important;
+}
+
+.bright-back-menu:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37,99,235,.40) !important;
+}
+
+.bright-back-menu:active {
+    transform: translateY(0);
+}
+
+.bright-back-menu .back-arrow {
+    font-size: 21px;
+    line-height: 1;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<header class="topbar">
+
+    <div class="logo">
+        🎮 Bright Games
+    </div>
+
+    <div class="stats">
+
+        <span>
+            ⭐ <b id="xp">0</b> XP
+        </span>
+
+        <span>
+            🪙 <b id="coins">0</b>
+        </span>
+
+        <span>
+            🏆 Level <b id="level">1</b>
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<main class="wrapper">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<section class="header">
+
+    <span class="badge">
+        🧠 WORD MATCH
+    </span>
+
+    <h1>
+        Word Match
+    </h1>
+
+    <p class="subtitle">
+        Match words and pictures. Think fast!
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     GAME INFO
+===================================================== -->
+
+<div class="game-info">
+
+    <span
+        class="level-name"
+        id="levelName">
+
+        Level 1
+
+    </span>
+
+    <span id="questionCounter">
+        Question 1 / 30
+    </span>
+
+    <span>
+        Score:
+        <b id="score">0</b>
+    </span>
+
+</div>
+
+
+<div class="progress">
+
+    <div id="progressBar"></div>
+
+</div>
+
+
+<div class="timer-area">
+
+    <div
+        class="timer"
+        id="timer">
+
+        ⏱️ 20
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     GAME CARD
+===================================================== -->
+
+<section class="game-card">
+
+
+<div id="gameContent">
+
+
+    <div
+        class="question-number"
+        id="questionNumber">
+
+        QUESTION 1
+
+    </div>
+
+
+    <div
+        class="challenge-type"
+        id="challengeType">
+
+        PICTURE → WORD
+
+    </div>
+
+
+    <div
+        class="picture-box"
+        id="pictureBox">
+
+        <span
+            class="picture"
+            id="picture">
+
+            📚
+
+        </span>
+
+    </div>
+
+
+    <div
+        class="word-box"
+        id="wordBox"
+        style="display:none;">
+
+        <div
+            class="word-display"
+            id="wordDisplay">
+
+            APPLE
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="mixed-box"
+        id="mixedBox"
+        style="display:none;">
+
+        <div
+            class="mixed-word"
+            id="mixedWord">
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="question"
+        id="question">
+
+        Match the picture with the correct word.
+
+    </div>
+
+
+    <div
+        class="answers"
+        id="answers">
+
+    </div>
+
+
+    <div
+        class="picture-options"
+        id="pictureOptions"
+        style="display:none;">
+
+    </div>
+
+
+    <div
+        class="feedback"
+        id="feedback">
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     RESULT
+===================================================== -->
+
+<div
+    class="result"
+    id="result">
+
+    <div class="result-icon">
+        🏆
+    </div>
+
+    <h2>
+        Word Match Complete!
+    </h2>
+
+    <p>
+        Final Score:
+        <strong id="finalScore">0</strong>
+        / 30
+    </p>
+
+    <p>
+        ⭐ XP Earned:
+        <strong id="earnedXP">0</strong>
+    </p>
+
+    <p>
+        🪙 Coins Earned:
+        <strong id="earnedCoins">0</strong>
+    </p>
+
+    <p>
+        🎯 Accuracy:
+        <strong id="accuracy">0%</strong>
+    </p>
+
+
+    <div class="buttons">
+
+        <button
+            class="main-button yellow"
+            onclick="restartGame()">
+
+            🔄 PLAY AGAIN
+
+        </button>
+
+
+        <button
+            class="main-button"
+            onclick="goHome()">
+
+            🏠 BRIGHT GAMES
+
+        </button>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================================
+     RESTART OVERLAY
+===================================================== -->
+
+<div
+    class="restart-overlay"
+    id="restartOverlay">
+
+    <div class="restart-box">
+
+        <div
+            class="restart-icon"
+            id="restartIcon">
+
+            ❌
+
+        </div>
+
+        <h2 id="restartTitle">
+            Wrong Answer!
+        </h2>
+
+        <p id="restartText">
+            The game will restart.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    🎮 Bright Games
+    <br>
+
+    Bright English Academy
+
+    <br><br>
+
+    Created by José Simeão
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   30 QUESTIONS
+   5 LEVELS × 6
+===================================================== */
+
+const questions = [
+
+/* =====================================================
+   LEVEL 1 — PICTURE → WORD
+===================================================== */
+
+{
+    level:1,
+    type:"PICTURE → WORD",
+    picture:"📚",
+    question:"Match the picture with the correct word.",
+    answer:"Book",
+    options:["Book","Chair","Apple","Car"]
+},
+
+{
+    level:1,
+    type:"PICTURE → WORD",
+    picture:"✏️",
+    question:"Match the picture with the correct word.",
+    answer:"Pencil",
+    options:["Pencil","Table","Dog","House"]
+},
+
+{
+    level:1,
+    type:"PICTURE → WORD",
+    picture:"🍎",
+    question:"Match the picture with the correct word.",
+    answer:"Apple",
+    options:["Orange","Apple","Bread","Milk"]
+},
+
+{
+    level:1,
+    type:"PICTURE → WORD",
+    picture:"🐱",
+    question:"Match the picture with the correct word.",
+    answer:"Cat",
+    options:["Dog","Cat","Bird","Fish"]
+},
+
+{
+    level:1,
+    type:"PICTURE → WORD",
+    picture:"🚗",
+    question:"Match the picture with the correct word.",
+    answer:"Car",
+    options:["Bus","Bike","Car","Train"]
+},
+
+{
+    level:1,
+    type:"PICTURE → WORD",
+    picture:"🏠",
+    question:"Match the picture with the correct word.",
+    answer:"House",
+    options:["School","House","Shop","Park"]
+},
+
+
+/* =====================================================
+   LEVEL 2 — WORD → PICTURE
+===================================================== */
+
+{
+    level:2,
+    type:"FIND THE CORRECT PICTURE",
+    mode:"picture",
+    word:"APPLE",
+    question:"Find the correct picture for the word:",
+    answer:"🍎",
+    options:["🍎","🍌","🍊","🍇"]
+},
+
+{
+    level:2,
+    type:"FIND THE CORRECT PICTURE",
+    mode:"picture",
+    word:"DOG",
+    question:"Find the correct picture for the word:",
+    answer:"🐶",
+    options:["🐱","🐭","🐶","🐰"]
+},
+
+{
+    level:2,
+    type:"FIND THE CORRECT PICTURE",
+    mode:"picture",
+    word:"CAR",
+    question:"Find the correct picture for the word:",
+    answer:"🚗",
+    options:["🚗","🚲","🚌","🚆"]
+},
+
+{
+    level:2,
+    type:"FIND THE CORRECT PICTURE",
+    mode:"picture",
+    word:"PHONE",
+    question:"Find the correct picture for the word:",
+    answer:"📱",
+    options:["💻","📱","📺","⌚"]
+},
+
+{
+    level:2,
+    type:"FIND THE CORRECT PICTURE",
+    mode:"picture",
+    word:"BALL",
+    question:"Find the correct picture for the word:",
+    answer:"⚽",
+    options:["🏀","🎾","⚽","🏈"]
+},
+
+{
+    level:2,
+    type:"FIND THE CORRECT PICTURE",
+    mode:"picture",
+    word:"BAG",
+    question:"Find the correct picture for the word:",
+    answer:"🎒",
+    options:["👜","👟","🎒","🧢"]
+},
+
+
+/* =====================================================
+   LEVEL 3 — DEFINITION → WORD
+===================================================== */
+
+{
+    level:3,
+    type:"DEFINITION → WORD",
+    question:"You use it to write on paper.",
+    answer:"Pencil",
+    options:["Pencil","Window","Shoe","Plate"]
+},
+
+{
+    level:3,
+    type:"DEFINITION → WORD",
+    question:"You sleep on it.",
+    answer:"Bed",
+    options:["Desk","Bed","Door","Chair"]
+},
+
+{
+    level:3,
+    type:"DEFINITION → WORD",
+    question:"You use it to tell the time.",
+    answer:"Clock",
+    options:["Clock","Book","Bag","Cup"]
+},
+
+{
+    level:3,
+    type:"DEFINITION → WORD",
+    question:"You drink water from it.",
+    answer:"Glass",
+    options:["Glass","Shoe","Pen","Hat"]
+},
+
+{
+    level:3,
+    type:"DEFINITION → WORD",
+    question:"You wear it on your feet.",
+    answer:"Shoes",
+    options:["Gloves","Shoes","Shirt","Cap"]
+},
+
+{
+    level:3,
+    type:"DEFINITION → WORD",
+    question:"You use it to open a locked door.",
+    answer:"Key",
+    options:["Key","Book","Fork","Bottle"]
+},
+
+
+/* =====================================================
+   LEVEL 4 — SENTENCE → WORD
+===================================================== */
+
+{
+    level:4,
+    type:"SENTENCE → WORD",
+    question:"I read a ______ every evening.",
+    answer:"book",
+    options:["book","shoe","apple","chair"]
+},
+
+{
+    level:4,
+    type:"SENTENCE → WORD",
+    question:"She writes with a ______.",
+    answer:"pencil",
+    options:["pencil","window","bed","car"]
+},
+
+{
+    level:4,
+    type:"SENTENCE → WORD",
+    question:"They play football with a ______.",
+    answer:"ball",
+    options:["ball","book","lamp","table"]
+},
+
+{
+    level:4,
+    type:"SENTENCE → WORD",
+    question:"He sleeps in a ______.",
+    answer:"bed",
+    options:["bed","school","bag","bike"]
+},
+
+{
+    level:4,
+    type:"SENTENCE → WORD",
+    question:"We sit on a ______.",
+    answer:"chair",
+    options:["chair","pencil","phone","apple"]
+},
+
+{
+    level:4,
+    type:"SENTENCE → WORD",
+    question:"The teacher writes on the ______.",
+    answer:"board",
+    options:["board","shoe","door","cup"]
+},
+
+
+/* =====================================================
+   LEVEL 5 — MIXED CHALLENGE
+===================================================== */
+
+{
+    level:5,
+    type:"🔥 MIXED CHALLENGE",
+    mode:"mixed",
+    mixed:"TCA",
+    question:"Unscramble the letters and choose the correct word.",
+    answer:"CAT",
+    options:["CAT","ACT","COT","CUT"]
+},
+
+{
+    level:5,
+    type:"🔥 MIXED CHALLENGE",
+    mode:"mixed",
+    mixed:"OGD",
+    question:"Unscramble the letters and choose the correct word.",
+    answer:"DOG",
+    options:["DOG","GOD","DIG","DUG"]
+},
+
+{
+    level:5,
+    type:"🔥 MIXED CHALLENGE",
+    mode:"mixed",
+    mixed:"KOBO",
+    question:"Unscramble the letters and choose the correct word.",
+    answer:"BOOK",
+    options:["BOOK","COOK","LOOK","BOOM"]
+},
+
+{
+    level:5,
+    type:"🔥 MIXED CHALLENGE",
+    mode:"mixed",
+    mixed:"RCA",
+    question:"Unscramble the letters and choose the correct word.",
+    answer:"CAR",
+    options:["CAR","ARC","CAN","CAP"]
+},
+
+{
+    level:5,
+    type:"🔥 MIXED CHALLENGE",
+    mode:"mixed",
+    mixed:"PAPLE",
+    question:"Unscramble the letters and choose the correct word.",
+    answer:"APPLE",
+    options:["APPLE","APPLY","AMPLE","APRON"]
+},
+
+{
+    level:5,
+    type:"🔥 MIXED CHALLENGE",
+    mode:"mixed",
+    mixed:"NIPCEL",
+    question:"Unscramble the letters and choose the correct word.",
+    answer:"PENCIL",
+    options:["PENCIL","PENILE","PENCIL'S","PEBBLE"]
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let currentQuestion = 0;
+
+let score = 0;
+
+let timeLeft = 20;
+
+let timerInterval = null;
+
+let answered = false;
+
+let restarting = false;
+
+
+/* =====================================================
+   SHUFFLE
+===================================================== */
+
+function shuffle(array){
+
+    const result = [...array];
+
+    for(
+        let i = result.length - 1;
+        i > 0;
+        i--
+    ){
+
+        const j =
+            Math.floor(
+                Math.random() * (i + 1)
+            );
+
+        [
+            result[i],
+            result[j]
+        ] =
+        [
+            result[j],
+            result[i]
+        ];
+
+    }
+
+    return result;
+
+}
+
+
+/* =====================================================
+   PLAYER DATA
+===================================================== */
+
+function loadPlayerData(){
+
+    const xp =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    const coins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    const level =
+        Math.floor(
+            xp / 500
+        ) + 1;
+
+
+    document.getElementById(
+        "xp"
+    ).textContent = xp;
+
+
+    document.getElementById(
+        "coins"
+    ).textContent = coins;
+
+
+    document.getElementById(
+        "level"
+    ).textContent = level;
+
+}
+
+
+/* =====================================================
+   SHOW QUESTION
+===================================================== */
+
+function showQuestion(){
+
+    answered = false;
+
+    restarting = false;
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    document.getElementById(
+        "questionNumber"
+    ).textContent =
+        "QUESTION " +
+        (currentQuestion + 1);
+
+
+    document.getElementById(
+        "questionCounter"
+    ).textContent =
+        "Question " +
+        (currentQuestion + 1) +
+        " / 30";
+
+
+    document.getElementById(
+        "levelName"
+    ).textContent =
+        "Level " +
+        q.level;
+
+
+    document.getElementById(
+        "challengeType"
+    ).textContent =
+        q.type;
+
+
+    document.getElementById(
+        "question"
+    ).textContent =
+        q.question;
+
+
+    document.getElementById(
+        "score"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "feedback"
+    ).textContent =
+        "";
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+        (
+            (
+                currentQuestion + 1
+            )
+            /
+            questions.length
+            *
+            100
+        ) + "%";
+
+
+    const pictureBox =
+        document.getElementById(
+            "pictureBox"
+        );
+
+    const wordBox =
+        document.getElementById(
+            "wordBox"
+        );
+
+    const mixedBox =
+        document.getElementById(
+            "mixedBox"
+        );
+
+    const answers =
+        document.getElementById(
+            "answers"
+        );
+
+    const pictureOptions =
+        document.getElementById(
+            "pictureOptions"
+        );
+
+
+    pictureBox.style.display =
+        "none";
+
+    wordBox.style.display =
+        "none";
+
+    mixedBox.style.display =
+        "none";
+
+    answers.style.display =
+        "none";
+
+    pictureOptions.style.display =
+        "none";
+
+
+    /* LEVEL 1 */
+
+    if(q.level === 1){
+
+        pictureBox.style.display =
+            "flex";
+
+
+        document.getElementById(
+            "picture"
+        ).textContent =
+            q.picture;
+
+
+        answers.style.display =
+            "grid";
+
+
+        createWordAnswers(q);
+
+    }
+
+
+    /* LEVEL 2 */
+
+    else if(q.level === 2){
+
+        wordBox.style.display =
+            "block";
+
+
+        document.getElementById(
+            "wordDisplay"
+        ).textContent =
+            q.word;
+
+
+        pictureOptions.style.display =
+            "grid";
+
+
+        createPictureAnswers(q);
+
+    }
+
+
+    /* LEVEL 3 */
+
+    else if(q.level === 3){
+
+        answers.style.display =
+            "grid";
+
+
+        createWordAnswers(q);
+
+    }
+
+
+    /* LEVEL 4 */
+
+    else if(q.level === 4){
+
+        answers.style.display =
+            "grid";
+
+
+        createWordAnswers(q);
+
+    }
+
+
+    /* LEVEL 5 */
+
+    else if(q.level === 5){
+
+        mixedBox.style.display =
+            "block";
+
+
+        document.getElementById(
+            "mixedWord"
+        ).textContent =
+            q.mixed;
+
+
+        answers.style.display =
+            "grid";
+
+
+        createWordAnswers(q);
+
+    }
+
+
+    startTimer();
+
+}
+
+
+/* =====================================================
+   WORD ANSWERS
+===================================================== */
+
+function createWordAnswers(q){
+
+    const container =
+        document.getElementById(
+            "answers"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const options =
+        shuffle(q.options);
+
+
+    options.forEach(
+        function(option){
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "answer";
+
+
+            button.textContent =
+                option;
+
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    checkAnswer(
+                        option,
+                        button
+                    );
+
+                }
+            );
+
+
+            container.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   PICTURE ANSWERS
+===================================================== */
+
+function createPictureAnswers(q){
+
+    const container =
+        document.getElementById(
+            "pictureOptions"
+        );
+
+
+    container.innerHTML = "";
+
+
+    const options =
+        shuffle(q.options);
+
+
+    options.forEach(
+        function(option){
+
+            const button =
+                document.createElement(
+                    "button"
+                );
+
+
+            button.className =
+                "picture-option";
+
+
+            const emoji =
+                document.createElement(
+                    "span"
+                );
+
+
+            emoji.className =
+                "option-emoji";
+
+
+            emoji.textContent =
+                option;
+
+
+            button.appendChild(
+                emoji
+            );
+
+
+            button.addEventListener(
+                "click",
+                function(){
+
+                    checkAnswer(
+                        option,
+                        button
+                    );
+
+                }
+            );
+
+
+            container.appendChild(
+                button
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   TIMER — 20 SECONDS
+===================================================== */
+
+function startTimer(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    timeLeft = 20;
+
+    updateTimer();
+
+
+    timerInterval =
+        setInterval(
+            function(){
+
+                timeLeft--;
+
+                updateTimer();
+
+
+                if(
+                    timeLeft <= 0
+                ){
+
+                    clearInterval(
+                        timerInterval
+                    );
+
+                    timeOut();
+
+                }
+
+            },
+            1000
+        );
+
+}
+
+
+function updateTimer(){
+
+    const timer =
+        document.getElementById(
+            "timer"
+        );
+
+
+    timer.textContent =
+        "⏱️ " +
+        timeLeft;
+
+
+    timer.classList.remove(
+        "warning",
+        "danger"
+    );
+
+
+    if(
+        timeLeft <= 7
+    ){
+
+        timer.classList.add(
+            "warning"
+        );
+
+    }
+
+
+    if(
+        timeLeft <= 3
+    ){
+
+        timer.classList.remove(
+            "warning"
+        );
+
+        timer.classList.add(
+            "danger"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+===================================================== */
+
+function checkAnswer(
+    selected,
+    button
+){
+
+    if(
+        answered ||
+        restarting
+    ){
+
+        return;
+
+    }
+
+
+    answered = true;
+
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    const q =
+        questions[currentQuestion];
+
+
+    if(
+        selected === q.answer
+    ){
+
+        score++;
+
+
+        button.classList.add(
+            "correct"
+        );
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "✅ Correct!";
+
+
+        disableAnswers();
+
+
+        setTimeout(
+            function(){
+
+                currentQuestion++;
+
+
+                if(
+                    currentQuestion <
+                    questions.length
+                ){
+
+                    showQuestion();
+
+                }
+                else{
+
+                    finishGame();
+
+                }
+
+            },
+            700
+        );
+
+    }
+    else{
+
+        button.classList.add(
+            "wrong"
+        );
+
+
+        restarting = true;
+
+
+        disableAnswers();
+
+
+        document.getElementById(
+            "feedback"
+        ).textContent =
+            "❌ Wrong answer!";
+
+
+        showRestart(
+            "❌",
+            "Wrong Answer!",
+            "The game will restart from Question 1."
+        );
+
+
+        setTimeout(
+            function(){
+
+                restartGame();
+
+            },
+            1800
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TIME OUT
+===================================================== */
+
+function timeOut(){
+
+    if(
+        answered ||
+        restarting
+    ){
+
+        return;
+
+    }
+
+
+    answered = true;
+
+    restarting = true;
+
+
+    disableAnswers();
+
+
+    showRestart(
+        "⏰",
+        "Time's Up!",
+        "You didn't answer in 20 seconds."
+    );
+
+
+    setTimeout(
+        function(){
+
+            restartGame();
+
+        },
+        1800
+    );
+
+}
+
+
+/* =====================================================
+   DISABLE ANSWERS
+===================================================== */
+
+function disableAnswers(){
+
+    document
+        .querySelectorAll(
+            ".answer"
+        )
+        .forEach(
+            function(button){
+
+                button.disabled =
+                    true;
+
+            }
+        );
+
+
+    document
+        .querySelectorAll(
+            ".picture-option"
+        )
+        .forEach(
+            function(button){
+
+                button.disabled =
+                    true;
+
+            }
+        );
+
+}
+
+
+/* =====================================================
+   RESTART POPUP
+===================================================== */
+
+function showRestart(
+    icon,
+    title,
+    text
+){
+
+    document.getElementById(
+        "restartIcon"
+    ).textContent =
+        icon;
+
+
+    document.getElementById(
+        "restartTitle"
+    ).textContent =
+        title;
+
+
+    document.getElementById(
+        "restartText"
+    ).textContent =
+        text;
+
+
+    document.getElementById(
+        "restartOverlay"
+    ).style.display =
+        "flex";
+
+}
+
+
+function hideRestart(){
+
+    document.getElementById(
+        "restartOverlay"
+    ).style.display =
+        "none";
+
+}
+
+
+/* =====================================================
+   FINISH GAME
+===================================================== */
+
+function finishGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    document.getElementById(
+        "gameContent"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "block";
+
+
+    const earnedXP =
+        score * 20;
+
+
+    const earnedCoins =
+        score * 5;
+
+
+    const accuracy =
+        Math.round(
+            score /
+            questions.length *
+            100
+        );
+
+
+    document.getElementById(
+        "finalScore"
+    ).textContent =
+        score;
+
+
+    document.getElementById(
+        "earnedXP"
+    ).textContent =
+        earnedXP;
+
+
+    document.getElementById(
+        "earnedCoins"
+    ).textContent =
+        earnedCoins;
+
+
+    document.getElementById(
+        "accuracy"
+    ).textContent =
+        accuracy + "%";
+
+
+    const oldXP =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesXP",
+        oldXP + earnedXP
+    );
+
+
+    const oldCoins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+    localStorage.setItem(
+        "brightGamesCoins",
+        oldCoins + earnedCoins
+    );
+
+
+    let completed =
+        Number(
+            localStorage.getItem(
+                "brightGamesCompleted"
+            )
+        ) || 0;
+
+
+    let completedList =
+        JSON.parse(
+            localStorage.getItem(
+                "brightGamesCompletedList"
+            )
+        ) || [];
+
+
+    if(
+        !completedList.includes(
+            "word-match"
+        )
+    ){
+
+        completedList.push(
+            "word-match"
+        );
+
+
+        completed++;
+
+
+        localStorage.setItem(
+            "brightGamesCompleted",
+            Math.min(
+                completed,
+                10
+            )
+        );
+
+
+        localStorage.setItem(
+            "brightGamesCompletedList",
+            JSON.stringify(
+                completedList
+            )
+        );
+
+    }
+
+
+    loadPlayerData();
+
+}
+
+
+/* =====================================================
+   RESTART GAME
+===================================================== */
+
+function restartGame(){
+
+    clearInterval(
+        timerInterval
+    );
+
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    answered = false;
+
+    restarting = false;
+
+
+    hideRestart();
+
+
+    document.getElementById(
+        "gameContent"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "timer"
+    ).style.display =
+        "inline-block";
+
+
+    document.getElementById(
+        "result"
+    ).style.display =
+        "none";
+
+
+    showQuestion();
+
+}
+
+
+/* =====================================================
+   HOME
+===================================================== */
+
+function goHome(){
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadPlayerData();
+
+showQuestion();
+
+</script>
+
+
+
+
+
+<script>
+(function () {
+    function addBackToMenu() {
+        if (document.getElementById("bright-back-menu")) return;
+
+        const button = document.createElement("button");
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        /*
+         * Put the button after the main game content.
+         * We look for common game containers first.
+         */
+        const selectors = [
+            ".game-container",
+            ".game-content",
+            ".game-area",
+            "#game",
+            "#game-container",
+            "main"
+        ];
+
+        let target = null;
+
+        for (const selector of selectors) {
+            const element = document.querySelector(selector);
+            if (element) {
+                target = element;
+                break;
+            }
+        }
+
+        if (target) {
+            target.appendChild(button);
+        } else {
+            document.body.appendChild(button);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", addBackToMenu);
+    } else {
+        addBackToMenu();
+    }
+})();
+</script>
+
+
+<script>
+/* =====================================
+   BRIGHT GAMES - BACK TO MENU
+   FINAL VERSION
+===================================== */
+
+(function () {
+
+    function createBackMenu() {
+
+        if (document.getElementById("bright-back-menu")) {
+            return;
+        }
+
+        var button = document.createElement("button");
+
+        button.id = "bright-back-menu";
+        button.className = "bright-back-menu";
+        button.type = "button";
+        button.setAttribute("aria-label", "Back to Bright Games menu");
+
+        button.innerHTML =
+            '<span class="back-arrow">←</span>' +
+            '<span>BACK TO MENU</span>';
+
+        button.onclick = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            // Always return to the Bright Games main menu.
+            window.location.assign("./index.html");
+        };
+
+        // IMPORTANT:
+        // Put the button directly in BODY, outside the game's dynamic container.
+        document.body.appendChild(button);
+    }
+
+    function start() {
+        createBackMenu();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", start);
+    } else {
+        start();
+    }
+
+})();
+</script>
+
+</body>
+
+</html>
+```
