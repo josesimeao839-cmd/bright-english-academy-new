@@ -1,0 +1,1191 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bright Games | Bright English Academy</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     TOP BAR
+===================================== -->
+
+<header class="topbar">
+
+    <div class="logo">
+        🎮 Bright Games
+    </div>
+
+
+    <div class="stats">
+
+        <span>
+            ⭐ <b id="xp">0</b> XP
+        </span>
+
+        <span>
+            🪙 <b id="coins">0</b>
+        </span>
+
+        <span>
+            🏆 Level <b id="level">1</b>
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<nav class="games-navigation">
+
+    <button
+        type="button"
+        onclick="backToAcademy()">
+
+        📚 Back to Academy
+
+    </button>
+
+
+    <button
+        type="button"
+        onclick="backToMenu()">
+
+        🎮 Games Menu
+
+    </button>
+
+</nav>
+
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            🎮 ENGLISH LEARNING GAMES
+        </span>
+
+
+        <h1>
+            BRIGHT GAMES
+        </h1>
+
+
+        <p>
+            Learn English. Play. Improve.
+        </p>
+
+
+        <p class="hero-small">
+            10 dynamic games designed to make
+            English learning fun.
+        </p>
+
+
+
+        <!-- =================================
+             GAME PROGRESS
+             IMPORTANT:
+             This is ONLY GAME progress.
+             It does NOT affect course progress.
+        ================================== -->
+
+        <div class="progress-box">
+
+            <div class="progress-top">
+
+                <span>
+                    🎮 Game Progress
+                </span>
+
+
+                <strong id="progress-text">
+                    0 / 10 Games
+                </strong>
+
+            </div>
+
+
+            <div class="progress">
+
+                <div id="progress-bar">
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     GAMES
+===================================== -->
+
+<main>
+
+<section class="games-section">
+
+
+    <div class="section-title">
+
+        <span>
+            CHOOSE YOUR GAME
+        </span>
+
+
+        <h2>
+            🎯 Play & Learn
+        </h2>
+
+    </div>
+
+
+
+    <div class="games-container">
+
+
+
+        <!-- =================================
+             GAME 1
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="word-match">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/word-match.png"
+                    alt="Word Match">
+
+
+                <span class="game-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag easy">
+                    EASY
+                </span>
+
+
+                <h2>
+                    🧠 Word Match
+                </h2>
+
+
+                <p>
+                    Match pictures with the correct
+                    English words.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('word-match.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-word-match">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 2
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="word-scramble">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/word-scramble.png"
+                    alt="Word Scramble">
+
+
+                <span class="game-number">
+                    02
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag easy">
+                    EASY
+                </span>
+
+
+                <h2>
+                    🔤 Word Scramble
+                </h2>
+
+
+                <p>
+                    Arrange the letters and discover
+                    the correct English word.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('word-scramble.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-word-scramble">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 3
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="listen-choose">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/listen-choose.png"
+                    alt="Listen and Choose">
+
+
+                <span class="game-number">
+                    03
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag medium">
+                    MEDIUM
+                </span>
+
+
+                <h2>
+                    🎧 Listen & Choose
+                </h2>
+
+
+                <p>
+                    Listen carefully and choose
+                    the correct answer.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('listen-choose.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-listen-choose">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 4
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="picture-hunt">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/picture-hunt.png"
+                    alt="Picture Hunt">
+
+
+                <span class="game-number">
+                    04
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag easy">
+                    EASY
+                </span>
+
+
+                <h2>
+                    🖼️ Picture Hunt
+                </h2>
+
+
+                <p>
+                    Find objects and learn their
+                    English names.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('picture-hunt.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-picture-hunt">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 5
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="speed-english">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/speed-english.png"
+                    alt="Speed English">
+
+
+                <span class="game-number">
+                    05
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag medium">
+                    MEDIUM
+                </span>
+
+
+                <h2>
+                    ⚡ Speed English
+                </h2>
+
+
+                <p>
+                    Answer quickly before the
+                    time runs out.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('speed-english.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-speed-english">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 6
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="sentence-builder">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/sentence-builder.png"
+                    alt="Sentence Builder">
+
+
+                <span class="game-number">
+                    06
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag medium">
+                    MEDIUM
+                </span>
+
+
+                <h2>
+                    🏗️ Sentence Builder
+                </h2>
+
+
+                <p>
+                    Build correct English sentences
+                    from word blocks.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('sentence-builder.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-sentence-builder">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 7
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="grammar-battle">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/grammar-battle.png"
+                    alt="Grammar Battle">
+
+
+                <span class="game-number">
+                    07
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag hard">
+                    HARD
+                </span>
+
+
+                <h2>
+                    👾 Grammar Battle
+                </h2>
+
+
+                <p>
+                    Answer grammar questions and
+                    win the battle.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('grammar-battle.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-grammar-battle">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 8
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="speak-up">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/speak-up.png"
+                    alt="Speak Up">
+
+
+                <span class="game-number">
+                    08
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag medium">
+                    MEDIUM
+                </span>
+
+
+                <h2>
+                    🎤 Speak Up
+                </h2>
+
+
+                <p>
+                    Practice speaking English with
+                    interactive challenges.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('speak-up.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-speak-up">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 9
+        ================================== -->
+
+        <article class="game-card"
+                 data-game="english-shop">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/english-shop.png"
+                    alt="English Shop">
+
+
+                <span class="game-number">
+                    09
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag medium">
+                    MEDIUM
+                </span>
+
+
+                <h2>
+                    🛒 English Shop
+                </h2>
+
+
+                <p>
+                    Shop, count money and practice
+                    English conversations.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('english-shop.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-english-shop">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================
+             GAME 10
+        ================================== -->
+
+        <article class="game-card final-card"
+                 data-game="bright-challenge">
+
+
+            <div class="game-image-container">
+
+                <img
+                    class="game-image"
+                    src="images/bright-challenge.png"
+                    alt="Bright Challenge">
+
+
+                <span class="game-number">
+                    10
+                </span>
+
+
+                <span class="final-badge">
+                    🏆 FINAL
+                </span>
+
+            </div>
+
+
+            <div class="game-content">
+
+                <span class="game-tag hard">
+                    CHALLENGE
+                </span>
+
+
+                <h2>
+                    🏆 Bright Challenge
+                </h2>
+
+
+                <p>
+                    The ultimate challenge combining
+                    all your English skills.
+                </p>
+
+
+                <button
+                    type="button"
+                    onclick="openGame('bright-challenge.html')">
+
+                    ▶ PLAY NOW
+
+                </button>
+
+
+                <div
+                    class="completed-status"
+                    id="status-bright-challenge">
+                </div>
+
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <h3>
+        🎮 Bright Games
+    </h3>
+
+
+    <p>
+        Bright English Academy
+    </p>
+
+
+    <small>
+        Created by José Simeão
+    </small>
+
+</footer>
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+
+/* =====================================
+   MAIN MENU
+===================================== */
+
+const MAIN_MENU = "index.html";
+
+
+
+/* =====================================
+   ACADEMY
+===================================== */
+
+function backToAcademy() {
+
+    /*
+       IMPORTANTE:
+       Por enquanto usamos o caminho
+       principal da Academy.
+
+       Quando ligarmos ao seu sistema
+       atual de login, vamos colocar aqui
+       o endereço correto do Dashboard.
+    */
+
+    window.location.href = "../index.html";
+
+}
+
+
+
+/* =====================================
+   OPEN GAME
+===================================== */
+
+function openGame(game) {
+
+    if (!game) {
+        return;
+    }
+
+    window.location.href = game;
+
+}
+
+
+
+/* =====================================
+   BACK TO MENU
+===================================== */
+
+function backToMenu() {
+
+    window.location.href = MAIN_MENU;
+
+}
+
+
+
+/* =====================================
+   LOAD PLAYER DATA
+===================================== */
+
+function loadPlayerData() {
+
+
+    /*
+       =================================
+       GAME XP ONLY
+       =================================
+
+       Estes dados pertencem somente
+       ao Bright Games.
+
+       NÃO alteram o progresso das aulas.
+    */
+
+    let xp =
+        Number(
+            localStorage.getItem(
+                "brightGamesXP"
+            )
+        ) || 0;
+
+
+
+    /*
+       =================================
+       GAME COINS ONLY
+       =================================
+    */
+
+    let coins =
+        Number(
+            localStorage.getItem(
+                "brightGamesCoins"
+            )
+        ) || 0;
+
+
+
+    /*
+       =================================
+       OFFICIAL GAMES
+       =================================
+    */
+
+    const officialGames = [
+
+        "word-match",
+
+        "word-scramble",
+
+        "listen-choose",
+
+        "picture-hunt",
+
+        "speed-english",
+
+        "sentence-builder",
+
+        "grammar-battle",
+
+        "speak-up",
+
+        "english-shop",
+
+        "bright-challenge"
+
+    ];
+
+
+
+    /*
+       =================================
+       COMPLETED GAME LIST
+       =================================
+    */
+
+    let completedList =
+        JSON.parse(
+            localStorage.getItem(
+                "brightGamesCompletedList"
+            )
+        ) || [];
+
+
+
+    /*
+       Remove duplicados
+    */
+
+    completedList =
+        [...new Set(completedList)];
+
+
+
+    /*
+       Mantém apenas jogos oficiais
+    */
+
+    completedList =
+        completedList.filter(
+            game =>
+                officialGames.includes(game)
+        );
+
+
+
+    const completed =
+        completedList.length;
+
+
+
+    /*
+       =================================
+       XP
+       =================================
+    */
+
+    const xpElement =
+        document.getElementById("xp");
+
+
+    if (xpElement) {
+
+        xpElement.textContent = xp;
+
+    }
+
+
+
+    /*
+       =================================
+       COINS
+       =================================
+    */
+
+    const coinsElement =
+        document.getElementById("coins");
+
+
+    if (coinsElement) {
+
+        coinsElement.textContent = coins;
+
+    }
+
+
+
+    /*
+       =================================
+       LEVEL
+       =================================
+    */
+
+    const level =
+        Math.floor(xp / 500) + 1;
+
+
+    const levelElement =
+        document.getElementById("level");
+
+
+    if (levelElement) {
+
+        levelElement.textContent = level;
+
+    }
+
+
+
+    /*
+       =================================
+       GAME PROGRESS
+       =================================
+    */
+
+    const progress =
+        Math.min(
+            completed / 10 * 100,
+            100
+        );
+
+
+    const progressBar =
+        document.getElementById(
+            "progress-bar"
+        );
+
+
+    if (progressBar) {
+
+        progressBar.style.width =
+            progress + "%";
+
+    }
+
+
+
+    const progressText =
+        document.getElementById(
+            "progress-text"
+        );
+
+
+    if (progressText) {
+
+        progressText.textContent =
+            completed +
+            " / 10 Games";
+
+    }
+
+
+
+    /*
+       =================================
+       COMPLETED BADGES
+       =================================
+    */
+
+    officialGames.forEach(
+        game => {
+
+            const status =
+                document.getElementById(
+                    "status-" + game
+                );
+
+
+            if (!status) {
+                return;
+            }
+
+
+            if (
+                completedList.includes(game)
+            ) {
+
+                status.textContent =
+                    "✅ COMPLETED";
+
+
+                status.classList.add(
+                    "completed"
+                );
+
+            } else {
+
+                status.textContent =
+                    "";
+
+
+                status.classList.remove(
+                    "completed"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =====================================
+   UPDATE WHEN RETURNING TO MENU
+===================================== */
+
+window.addEventListener(
+    "pageshow",
+    loadPlayerData
+);
+
+
+
+/* =====================================
+   START
+===================================== */
+
+loadPlayerData();
+
+
+</script>
+
+
+</body>
+
+</html>
+```
