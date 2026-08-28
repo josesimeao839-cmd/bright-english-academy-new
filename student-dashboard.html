@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,352 +31,751 @@ body{
     color:#17233c;
 }
 
+
+/* =========================================
+   HEADER
+========================================= */
+
 header{
-    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+    background:
+        linear-gradient(
+            135deg,
+            #0b4f9c,
+            #087fc1
+        );
+
     color:white;
+
     padding:18px 20px;
-    box-shadow:0 3px 15px rgba(0,0,0,.15);
+
+    box-shadow:
+        0 3px 15px
+        rgba(0,0,0,.15);
 }
 
 .header-container{
+
     max-width:1100px;
+
     margin:auto;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
 }
 
 .logo{
+
     color:white;
+
     text-decoration:none;
+
     font-size:21px;
+
     font-weight:800;
 }
 
 nav{
+
     display:flex;
+
     gap:10px;
+
     flex-wrap:wrap;
 }
 
 nav a{
+
     color:white;
+
     text-decoration:none;
-    padding:8px 12px;
-    border-radius:7px;
+
+    padding:9px 13px;
+
+    border-radius:8px;
+
     font-weight:bold;
+
+    transition:.2s;
 }
 
 nav a:hover{
-    background:rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.15);
+
+    transform:
+        translateY(-1px);
 }
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
 
 .container{
+
     max-width:1100px;
+
     margin:auto;
-    padding:30px 18px 60px;
+
+    padding:
+        30px 18px 60px;
 }
 
+
+/* =========================================
+   WELCOME
+========================================= */
+
 .welcome{
-    background:linear-gradient(135deg,#0b4f9c,#087fc1);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b4f9c,
+            #087fc1
+        );
+
     color:white;
+
     padding:30px;
+
     border-radius:18px;
+
     margin-bottom:25px;
-    box-shadow:0 5px 22px rgba(20,53,100,.12);
+
+    box-shadow:
+        0 5px 22px
+        rgba(20,53,100,.12);
 }
 
 .welcome h1{
+
     margin-top:0;
+
     font-size:32px;
 }
 
 .welcome p{
+
     font-size:17px;
+
+    margin-bottom:0;
 }
 
+
+/* =========================================
+   STATS
+========================================= */
+
 .stats{
+
     display:grid;
+
     grid-template-columns:
         repeat(4,1fr);
+
     gap:15px;
+
     margin-bottom:25px;
 }
 
 .stat{
+
     background:white;
+
     padding:22px;
+
     border-radius:15px;
+
     text-align:center;
-    box-shadow:0 5px 22px rgba(20,53,100,.08);
-    border:1px solid #e2eaf4;
+
+    box-shadow:
+        0 5px 22px
+        rgba(20,53,100,.08);
+
+    border:
+        1px solid
+        #e2eaf4;
 }
 
 .stat-icon{
+
     font-size:30px;
+
     margin-bottom:8px;
 }
 
 .stat-title{
+
     color:#64748b;
+
     font-size:14px;
+
     font-weight:bold;
 }
 
 .stat-value{
+
     color:#0b4f9c;
+
     font-size:25px;
+
     font-weight:800;
+
     margin-top:5px;
 }
 
+
+/* =========================================
+   CARD
+========================================= */
+
 .card{
+
     background:white;
+
     padding:25px;
+
     border-radius:18px;
+
     margin-bottom:25px;
-    box-shadow:0 5px 22px rgba(20,53,100,.08);
-    border:1px solid #e2eaf4;
+
+    box-shadow:
+        0 5px 22px
+        rgba(20,53,100,.08);
+
+    border:
+        1px solid
+        #e2eaf4;
 }
 
 .card h2{
+
     margin-top:0;
+
     color:#0b4f9c;
 }
 
+
+/* =========================================
+   COURSE PROGRESS
+========================================= */
+
 .progress-title{
+
     display:flex;
+
     justify-content:space-between;
+
     font-weight:bold;
+
     margin-bottom:8px;
 }
 
 .progress-bar{
+
     width:100%;
+
     height:14px;
+
     background:#e5edf7;
+
     border-radius:20px;
+
     overflow:hidden;
 }
 
 .progress-fill{
+
     width:0%;
+
     height:100%;
+
     background:#ffd34d;
+
     border-radius:20px;
+
     transition:.4s;
 }
 
+
+/* =========================================
+   COURSE BOX
+========================================= */
+
 .course-box{
+
     display:flex;
+
     align-items:center;
+
     gap:20px;
+
     background:#f5f9ff;
-    border:1px solid #dce9f6;
+
+    border:
+        1px solid
+        #dce9f6;
+
     border-radius:14px;
+
     padding:20px;
+
     margin-top:20px;
 }
 
 .course-icon{
+
     font-size:45px;
 }
 
 .course-info h3{
-    margin:0 0 5px;
+
+    margin:
+        0 0 5px;
+
     color:#0b4f9c;
 }
 
 .course-info p{
+
     margin:3px 0;
 }
 
 .badge{
+
     display:inline-block;
+
     margin-top:7px;
+
     background:#ffd34d;
+
     color:#17233c;
-    padding:5px 10px;
+
+    padding:
+        5px 10px;
+
     border-radius:15px;
+
     font-size:12px;
+
     font-weight:bold;
 }
 
+
+/* =========================================
+   BRIGHT GAMES
+========================================= */
+
+.games-box{
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a4d,
+            #0b4f9c,
+            #087fc1
+        );
+
+    color:white;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.games-box::after{
+
+    content:"🎮";
+
+    position:absolute;
+
+    right:25px;
+
+    bottom:-18px;
+
+    font-size:110px;
+
+    opacity:.10;
+
+}
+
+.games-info{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.games-info h3{
+
+    margin:
+        0 0 8px;
+
+    font-size:25px;
+}
+
+.games-info p{
+
+    margin:
+        0 0 15px;
+
+    opacity:.85;
+
+    line-height:1.5;
+}
+
+.games-button{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#ffd34d;
+
+    color:#17233c;
+
+    padding:
+        12px 20px;
+
+    border-radius:10px;
+
+    font-weight:900;
+
+    transition:.2s;
+
+    position:relative;
+
+    z-index:3;
+}
+
+.games-button:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(0,0,0,.20);
+}
+
+
+/* =========================================
+   LESSONS
+========================================= */
+
 .lessons{
+
     display:grid;
+
     grid-template-columns:
         repeat(2,1fr);
+
     gap:15px;
 }
 
 .lesson{
-    border:1px solid #dfe8f3;
+
+    border:
+        1px solid
+        #dfe8f3;
+
     border-radius:14px;
+
     padding:20px;
+
     background:white;
+
     position:relative;
+
     transition:.2s;
 }
 
 .lesson.available{
-    border-left:5px solid #168348;
+
+    border-left:
+        5px solid
+        #168348;
 }
 
 .lesson.completed{
-    border-left:5px solid #168348;
+
+    border-left:
+        5px solid
+        #168348;
+
     background:#f5fff8;
 }
 
 .lesson.locked{
+
     background:#f1f3f6;
-    border-left:5px solid #94a3b8;
+
+    border-left:
+        5px solid
+        #94a3b8;
 }
 
 .lesson-number{
+
     color:#64748b;
+
     font-size:13px;
+
     font-weight:bold;
+
     margin-bottom:6px;
 }
 
 .lesson h3{
-    margin:0 0 12px;
+
+    margin:
+        0 0 12px;
+
     color:#0b4f9c;
 }
 
 .lesson.locked h3{
+
     color:#64748b;
 }
 
 .lesson-status{
+
     font-size:14px;
+
     font-weight:bold;
+
     margin-bottom:14px;
 }
 
 .status-available{
+
     color:#168348;
 }
 
 .status-completed{
+
     color:#168348;
 }
 
 .status-locked{
+
     color:#64748b;
 }
 
+
+/* =========================================
+   LESSON BUTTON
+========================================= */
+
 .lesson-button{
+
     display:inline-block;
+
     text-decoration:none;
+
     border:none;
+
     background:#0b4f9c;
+
     color:white;
-    padding:10px 16px;
+
+    padding:
+        10px 16px;
+
     border-radius:8px;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
 .lesson-button:hover{
+
     background:#087fc1;
 }
 
 .locked-button{
+
     display:inline-block;
+
     background:#cbd5e1;
+
     color:#64748b;
-    padding:10px 16px;
+
+    padding:
+        10px 16px;
+
     border-radius:8px;
+
     font-weight:bold;
+
     cursor:not-allowed;
 }
 
 .completed-button{
+
     background:#168348;
 }
 
 .completed-button:hover{
+
     background:#116b3a;
 }
 
+
+/* =========================================
+   LESSON PROGRESS
+========================================= */
+
 .lesson-progress{
-    margin:12px 0;
+
+    margin:
+        12px 0;
 }
 
 .lesson-progress-title{
+
     display:flex;
+
     justify-content:space-between;
+
     font-size:12px;
+
     font-weight:bold;
+
     color:#64748b;
+
     margin-bottom:5px;
 }
 
 .lesson-progress-bar{
+
     width:100%;
+
     height:8px;
+
     background:#e5edf7;
+
     border-radius:20px;
+
     overflow:hidden;
 }
 
 .lesson-progress-fill{
+
     height:100%;
+
     width:0%;
+
     background:#ffd34d;
+
     transition:.4s;
 }
 
-.empty-message{
-    text-align:center;
-    padding:30px;
-    color:#64748b;
-}
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer{
+
     background:#17233c;
+
     color:white;
+
     text-align:center;
+
     padding:30px 15px;
 }
 
 footer strong{
+
     color:#58c7ff;
 }
+
+
+/* =========================================
+   TABLET
+========================================= */
 
 @media(max-width:800px){
 
     .stats{
+
         grid-template-columns:
             repeat(2,1fr);
     }
 
     .lessons{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
 }
 
+
+/* =========================================
+   MOBILE
+========================================= */
+
 @media(max-width:600px){
 
     .header-container{
+
         flex-direction:column;
+
         align-items:flex-start;
     }
 
     .stats{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
     }
 
     .welcome h1{
+
         font-size:27px;
     }
 
     .course-box{
+
         flex-direction:column;
+
         align-items:flex-start;
+    }
+
+    .games-box{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .games-info h3{
+
+        font-size:22px;
     }
 
 }
@@ -384,23 +784,36 @@ footer strong{
 
 </head>
 
+
 <body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
 
 <header>
 
 <div class="header-container">
 
-<a href="index.html"
-   class="logo">
+<a
+    href="index.html"
+    class="logo">
 
 📚 Bright English Academy
 
 </a>
 
+
 <nav>
 
 <a href="index.html">
 Home
+</a>
+
+
+<a href="bright-games.html">
+🎮 Bright Games
 </a>
 
 </nav>
@@ -410,13 +823,21 @@ Home
 </header>
 
 
+<!-- =========================================
+     MAIN
+========================================= -->
+
 <main class="container">
 
+
+<!-- =========================================
+     WELCOME
+========================================= -->
 
 <section class="welcome">
 
 <h1 id="welcomeTitle">
-# Welcome! 👋
+Welcome! 👋
 </h1>
 
 <p>
@@ -425,6 +846,10 @@ Keep learning, complete your lessons and improve your English every day.
 
 </section>
 
+
+<!-- =========================================
+     STATS
+========================================= -->
 
 <section class="stats">
 
@@ -481,8 +906,7 @@ Course Progress
 Exercises Completed
 </div>
 
-<div
-    class="stat-value">
+<div class="stat-value">
 
 0
 
@@ -501,8 +925,7 @@ Exercises Completed
 Average Score
 </div>
 
-<div
-    class="stat-value">
+<div class="stat-value">
 
 —
 
@@ -513,6 +936,10 @@ Average Score
 
 </section>
 
+
+<!-- =========================================
+     COURSE PROGRESS
+========================================= -->
 
 <section class="card">
 
@@ -551,6 +978,7 @@ Course Progress
 🇬🇧
 </div>
 
+
 <div class="course-info">
 
 <h3>
@@ -572,11 +1000,56 @@ A1 BEGINNER
 </section>
 
 
+<!-- =========================================
+     BRIGHT GAMES
+     SEPARATE FROM COURSE PROGRESS
+========================================= -->
+
+<section class="card">
+
+<h2>
+🎮 Bright Games
+</h2>
+
+
+<div class="games-box">
+
+<div class="games-info">
+
+<h3>
+Learn English Through Games
+</h3>
+
+<p>
+Play fun English games, earn game XP and coins,
+and improve your English skills.
+</p>
+
+<a
+    href="bright-games.html"
+    class="games-button">
+
+🎮 Play Bright Games
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     30 LESSONS
+========================================= -->
+
 <section class="card">
 
 <h2>
 📚 My 30 Lessons
 </h2>
+
 
 <div
     id="lessonsContainer"
@@ -590,23 +1063,34 @@ A1 BEGINNER
 </main>
 
 
+<!-- =========================================
+     FOOTER
+========================================= -->
+
 <footer>
 
 <p>
+
 <strong>
 Bright English Academy
 </strong>
+
 </p>
+
 
 <p>
 Speak English with Confidence
 </p>
 
+
 <p>
+
 👤 Created by
+
 <strong>
 José Simeão
 </strong>
+
 </p>
 
 </footer>
@@ -614,11 +1098,16 @@ José Simeão
 
 <script>
 
+
 /* =========================================================
    BRIGHT ENGLISH ACADEMY
-   PROGRESSIVE LESSON SYSTEM
+   COURSE PROGRESS
    ========================================================= */
 
+
+/* =========================================
+   LESSON LIST
+========================================= */
 
 const lessons = [
 
@@ -656,9 +1145,9 @@ const lessons = [
 ];
 
 
-/* =========================================================
+/* =========================================
    GET COMPLETED LESSONS
-   ========================================================= */
+========================================= */
 
 function getCompletedLessons(){
 
@@ -670,6 +1159,7 @@ function getCompletedLessons(){
                     "completedLessons"
                 )
             );
+
 
         if(
             Array.isArray(data)
@@ -685,7 +1175,8 @@ function getCompletedLessons(){
 
         }
 
-    }catch(error){
+    }
+    catch(error){
 
         console.log(
             "Progress data error:",
@@ -694,14 +1185,15 @@ function getCompletedLessons(){
 
     }
 
+
     return [];
 
 }
 
 
-/* =========================================================
+/* =========================================
    SAVE COMPLETED LESSONS
-   ========================================================= */
+========================================= */
 
 function saveCompletedLessons(
     completed
@@ -716,8 +1208,10 @@ function saveCompletedLessons(
                         n >= 1 &&
                         n <= 30
                 )
-        )].sort(
-            (a,b) => a-b
+        )]
+        .sort(
+            (a,b) =>
+                a-b
         );
 
 
@@ -729,26 +1223,14 @@ function saveCompletedLessons(
 }
 
 
-/* =========================================================
-   CHECK IF LESSON IS UNLOCKED
-   ========================================================= */
+/* =========================================
+   CHECK LESSON UNLOCK
+========================================= */
 
 function isLessonUnlocked(
     lessonNumber,
     completed
 ){
-
-    /*
-       Lesson 1 is always unlocked.
-
-       Lesson 2 is unlocked when Lesson 1
-       is completed.
-
-       Lesson 3 is unlocked when Lesson 2
-       is completed.
-
-       etc.
-    */
 
     if(
         lessonNumber === 1
@@ -766,9 +1248,9 @@ function isLessonUnlocked(
 }
 
 
-/* =========================================================
-   CREATE LESSON CARDS
-   ========================================================= */
+/* =========================================
+   RENDER LESSONS
+========================================= */
 
 function renderLessons(){
 
@@ -817,12 +1299,14 @@ function renderLessons(){
                     "lesson completed";
 
             }
+
             else if(isUnlocked){
 
                 lesson.className =
                     "lesson available";
 
             }
+
             else{
 
                 lesson.className =
@@ -839,13 +1323,19 @@ function renderLessons(){
             if(isCompleted){
 
                 status = `
-                    <div class="lesson-status status-completed">
+
+                    <div
+                        class="lesson-status status-completed">
+
                         ✅ Completed — 100%
+
                     </div>
+
                 `;
 
 
                 button = `
+
                     <a
                         class="lesson-button completed-button"
                         href="lesson${number}.html">
@@ -853,6 +1343,7 @@ function renderLessons(){
                         🔄 Review Lesson
 
                     </a>
+
                 `;
 
             }
@@ -861,13 +1352,19 @@ function renderLessons(){
             else if(isUnlocked){
 
                 status = `
-                    <div class="lesson-status status-available">
+
+                    <div
+                        class="lesson-status status-available">
+
                         🟢 Available
+
                     </div>
+
                 `;
 
 
                 button = `
+
                     <a
                         class="lesson-button"
                         href="lesson${number}.html">
@@ -875,6 +1372,7 @@ function renderLessons(){
                         ▶️ Start Lesson
 
                     </a>
+
                 `;
 
             }
@@ -883,16 +1381,27 @@ function renderLessons(){
             else{
 
                 status = `
-                    <div class="lesson-status status-locked">
-                        🔒 Locked — Complete Lesson ${number - 1} first
+
+                    <div
+                        class="lesson-status status-locked">
+
+                        🔒 Locked — Complete Lesson
+                        ${number - 1} first
+
                     </div>
+
                 `;
 
 
                 button = `
-                    <span class="locked-button">
+
+                    <span
+                        class="locked-button">
+
                         🔒 Locked
+
                     </span>
+
                 `;
 
             }
@@ -925,7 +1434,8 @@ function renderLessons(){
 
                 <div class="lesson-progress">
 
-                    <div class="lesson-progress-title">
+                    <div
+                        class="lesson-progress-title">
 
                         <span>
                             Lesson Progress
@@ -938,7 +1448,8 @@ function renderLessons(){
                     </div>
 
 
-                    <div class="lesson-progress-bar">
+                    <div
+                        class="lesson-progress-bar">
 
                         <div
                             class="lesson-progress-fill"
@@ -971,9 +1482,9 @@ function renderLessons(){
 }
 
 
-/* =========================================================
+/* =========================================
    UPDATE COURSE STATS
-   ========================================================= */
+========================================= */
 
 function updateCourseStats(
     completed
@@ -1024,19 +1535,14 @@ function updateCourseStats(
 }
 
 
-/* =========================================================
+/* =========================================
    STUDENT NAME
-   ========================================================= */
+========================================= */
 
 function loadStudentName(){
 
     let name = null;
 
-
-    /*
-       Try common localStorage names
-       used by the academy.
-    */
 
     const possibleKeys = [
 
@@ -1073,35 +1579,76 @@ function loadStudentName(){
     }
 
 
+    /*
+       Also check the academy
+       student object.
+    */
+
     if(!name){
 
-        name = "Student";
+        try{
+
+            const student =
+                JSON.parse(
+                    localStorage.getItem(
+                        "brightAcademyStudent"
+                    )
+                );
+
+
+            if(
+                student &&
+                student.fullname
+            ){
+
+                name =
+                    student.fullname;
+
+            }
+
+        }
+        catch(error){
+
+            console.log(
+                "Student data error:",
+                error
+            );
+
+        }
+
+    }
+
+
+    if(!name){
+
+        name =
+            "Student";
 
     }
 
 
     document.getElementById(
         "welcomeTitle"
-    ).innerHTML =
-        "# Welcome, " +
+    ).textContent =
+        "Welcome, " +
         name +
         "! 👋";
 
 }
 
 
-/* =========================================================
+/* =========================================
    INITIALIZE
-   ========================================================= */
+========================================= */
 
 loadStudentName();
 
 renderLessons();
 
 
-/* =========================================================
-   UPDATE IF ANOTHER TAB CHANGES PROGRESS
-   ========================================================= */
+/* =========================================
+   UPDATE WHEN ANOTHER TAB CHANGES
+========================================= */
 
 window.addEventListener(
     "storage",
@@ -1119,9 +1666,9 @@ window.addEventListener(
     }
 );
 
-
 </script>
 
 </body>
 
 </html>
+```
